@@ -38,7 +38,21 @@
 
   /* Toast de status */
   const toast=document.createElement('div'); toast.id='pwaToast'; toast.hidden=true; toast.setAttribute('role','status'); document.body.appendChild(toast);
-  let tt; function say(html,ms){ toast.innerHTML=html; toast.hidden=false; clearTimeout(tt); if(ms) tt=setTimeout(()=>toast.hidden=true,ms); }
+  let tt, sticky=false; function say(html,ms,stk){ if(sticky&&!stk) return; sticky=!!stk; toast.innerHTML=html; toast.hidden=false; clearTimeout(tt); if(ms) tt=setTimeout(()=>{ toast.hidden=true; sticky=false; },ms); }
+  const unstick=()=>{ sticky=false; toast.hidden=true; };
+
+
+  /* Progresso vindo do Claude pelo link mágico (#importar=...) */
+  (function(){
+    const h=location.hash; if(!h.startsWith('#importar=')) return;
+    const code=decodeURIComponent(h.slice(10)); try{ history.replaceState(null,'',location.pathname+location.search); }catch(e){}
+    unpackS(code).then(r=>{
+      const here=countRec(S), there=countRec(r);
+      say(`<span>Chegou o progresso do Claude: ${there} registros (aqui: ${here}). Importar substitui o deste aparelho.</span><button class="btn gold" id="pwaImp">Importar</button><button class="btn" id="pwaImpNo">Agora não</button>`,0,true);
+      document.getElementById('pwaImp').onclick=()=>{ applyImport(r); sticky=false; say('<span>Progresso importado.</span>',3000); };
+      document.getElementById('pwaImpNo').onclick=unstick;
+    }).catch(()=>say('<span>O link de progresso veio incompleto. No Claude, use Aa → Copiar código do progresso e cole aqui no mesmo menu.</span>',7000));
+  })();
 
   /* Instalação */
   let deferred=null;

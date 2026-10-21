@@ -481,6 +481,15 @@ select{font:inherit;padding:8px 12px;border-radius:10px;border:1px solid var(--r
   .pvq{font-size:19px}
   .pagehead h1{font-size:32px}
 }
+
+.pin{display:block;margin-top:6px;font:inherit;font-size:16px;padding:9px 12px;border-radius:10px;border:1px solid var(--rule);background:var(--surface);color:var(--ink)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:6px 22px}
+.prow{display:grid;grid-template-columns:40px repeat(5,1fr);gap:5px;align-items:center;padding:3px 0;border-bottom:1px solid var(--rule)}
+.prow>span{font-size:13px;font-weight:600}
+.prow button{height:38px;border-radius:999px;border:1.5px solid var(--rule);background:var(--surface);color:var(--ink);font-family:var(--mono);font-weight:600;font-size:14px;cursor:pointer;transition:background .12s}
+.prow button:hover{border-color:var(--ink)}
+.prow button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.ankip{margin-top:18px;display:grid;gap:10px}
 </style>
 
 <header class="top">
@@ -610,13 +619,13 @@ function go(v,p){ view=v; param=p||null; if(v==='mod'&&param){ lsSet('humanas-la
 $('#tabs').addEventListener('click',e=>{const b=e.target.closest('button'); if(b) go(b.dataset.v);});
 $('#brand').addEventListener('click',()=>go('linhas'));
 function render(){
-  document.querySelectorAll('#tabs button').forEach(b=>b.setAttribute('aria-current', String(b.dataset.v===view || (view==='mod'&&b.dataset.v==='linhas') || (view==='game'&&b.dataset.v==='arena') || ((view==='prova'||view==='provares')&&b.dataset.v==='provas'))));
+  document.querySelectorAll('#tabs button').forEach(b=>b.setAttribute('aria-current', String(b.dataset.v===view || (view==='mod'&&b.dataset.v==='linhas') || (view==='game'&&b.dataset.v==='arena') || ((view==='prova'||view==='provares'||view==='papel')&&b.dataset.v==='provas'))));
   if(view!=='prova' && typeof pvTimer!=='undefined') clearInterval(pvTimer);
   document.body.dataset.view=view;
   if(view!=='game') clearInterval(gameTimer);
   $('#readbar').hidden=true; updateGoal();
   const d=daysLeft(); $('#count').textContent = d===1? 'falta 1 dia · 08/11' : `faltam ${d} dias · 08/11`;
-  ({linhas:vLinhas,mod:vMod,arena:vArena,game:vGame,biblioteca:vBib,treino:vTreino,plano:vPlano,painel:vPainel,busca:vBusca,provas:vProvas,prova:vProva,provares:vProvaRes}[view])();
+  ({linhas:vLinhas,mod:vMod,arena:vArena,game:vGame,biblioteca:vBib,treino:vTreino,plano:vPlano,painel:vPainel,busca:vBusca,provas:vProvas,prova:vProva,provares:vProvaRes,papel:vPapel}[view])();
 }
 
 /* ---------- LINHAS ---------- */
@@ -624,8 +633,11 @@ function vLinhas(){
   const nm=nextModules(2); const due=dueCards().length; const pday=planToday();
   const rc=DATA.recal.find(r=>!S.recal[r.vol+r.num]);
   const tasks=[];
-  { const r25=allRuns('25d2'); const cur=pvState('25d2').runs.find(r=>!r.done); const doneAreas=r25.filter(r=>r.done).map(r=>r.areas).join(''); const miss=['N','M'].filter(a=>!doneAreas.includes(a));
-    if(miss.length) tasks.push({ic:'!',t:cur?'Continuar o ENEM 2025 · 2º dia':`Diagnóstico pendente: ENEM 2025 · ${miss.map(a=>AREAS[a].name).join(' e ')}`,s:cur?`${Object.keys(cur.ans).length} questões respondidas · o cronômetro continua correndo`:'A prova oficial está dentro do app, com cartão-resposta e correção. É a tarefa mais importante da semana.',act:()=> cur? go('prova',{id:'25d2',run:pvState('25d2').runs.indexOf(cur)}) : go('provas')}); }
+  { const r25=allRuns('25d2'); const cur=pvState('25d2').runs.find(r=>!r.done); const doneAreas=r25.filter(runReal).map(r=>r.areas).join(''); const miss=['N','M'].filter(a=>!doneAreas.includes(a));
+    if(miss.length) tasks.push({ic:'!',t:cur?'Continuar o ENEM 2025 · 2º dia':`Diagnóstico pendente: ENEM 2025 · ${miss.map(a=>AREAS[a].name).join(' e ')}`,s:cur?`${Object.keys(cur.ans).length} questões respondidas · o cronômetro continua correndo`:'A prova oficial está dentro do app, com cartão-resposta e correção. É a tarefa mais importante da semana.',act:()=> cur? go('prova',{id:'25d2',run:pvState('25d2').runs.indexOf(cur)}) : go('provas')});
+    if(miss.length) tasks.push({ic:'✎',t:'Fez a prova no papel? Lance as respostas',s:'Marque as letras no cartão-resposta e o app corrige pelo gabarito oficial, como se você tivesse feito aqui.',act:()=>go('papel',{id:'25d2',areas:miss.join('')})}); }
+  { const w=Object.values(S.ans).filter(a=>!a.ok); const au=w.filter(a=>a.trap==='autor').length;
+    if(w.length>=3 && au>=2 && au/w.length>=0.4) tasks.push({ic:'?',t:`Seu padrão: ${au} de ${w.length} erros foram "autor errado"`,s:'Não é falta de conteúdo: você conhece a ideia e troca o dono dela. O Quem disse? agora coloca lado a lado os autores que se confundem.',act:()=>go('game',{g:'quem'})}); }
   const last=lsGet('humanas-last'); if(last&&M[last.id]){ const lm=M[last.id], ls=modStats(lm.id); if(ls.done<ls.n) tasks.push({lc:lm.line,ic:'▸',t:`Continuar: ${lm.id} · ${lm.title}`,s:`Você parou em ${({teoria:'Teoria',resumo:'Cartões-resumo',vf:'V ou F',q:'Questões',tutor:'Tutor',notas:'Anotações'})[last.tab]||'Teoria'} · ${ls.done}/${ls.n} questões`,act:()=>go('mod',{id:lm.id,tab:last.tab})}); }
   if(pday){ const pd=planDone(pday); tasks.push({ic:'▦',t:`Plano de hoje: ${pday.foco}`,s:`${pd.done} de ${pd.n} tarefas feitas · ${pday.l}`,act:()=>go('plano'),done:pd.done===pd.n}); }
   nm.forEach(m=>{const s=modStats(m.id); tasks.push({lc:m.line,ic:m.id,t:`${m.id} · ${m.title}`,s: s.read? `Teoria lida. Faltam ${s.n-s.done} de ${s.n} questões.` : `Faixa ${m.faixa}${ERRMOD[m.id]?` · ligado ao seu erro na questão ${ERRMOD[m.id]} de 2025`:''}`,act:()=>go('mod',{id:m.id,tab:s.read?'q':'teoria'})});});
@@ -780,7 +792,7 @@ function questionCard(el,q,opts={}){
 
 /* ---------- ARENA ---------- */
 const GAMES=[
-  {g:'quem',t:'Quem disse?',i:'40 autores',p:'Aparecem as palavras típicas de um texto. Você tem 12 segundos para dizer de quem é. Treina o erro "autor errado", que derrubou você na questão 79.'},
+  {g:'quem',t:'Quem disse?',i:'40 autores',p:'Aparecem as palavras típicas de um texto. Você tem 12 segundos para dizer de quem é. Treina o erro "autor errado": as opções erradas são os autores que mais se confundem com o certo.'},
   {g:'opostos',t:'Duelo de opostos',i:'9 pares · 18 lados',p:'Kant ou utilitarismo? Hobbes ou Rousseau? Uma descrição aparece e você escolhe o lado. Rápido e sem dó.'},
   {g:'traps',t:'Detector de armadilhas',i:'45 alternativas erradas',p:'Uma alternativa errada de verdade. Você diz qual armadilha ela usa: termo oposto, autor errado, anacronismo, detalhe verdadeiro ou exagero.'},
   {g:'cards',t:'Cartões de véspera',i:`${DATA.cards.length} cartões · caixas de Leitner`,p:'As perguntas da revisão de véspera das duas apostilas. O que você erra volta hoje; o que acerta volta cada vez mais tarde.'},
@@ -793,6 +805,20 @@ function vArena(){
   app.innerHTML=`<div class="sec-title"><h2>Arena</h2><span class="eyebrow">jogos curtos para fixar conceito</span></div>
   <div class="games">${GAMES.map(g=>`<button class="game" data-g="${g.g}"><span class="gi">${esc(g.i)}</span><h3>${esc(g.t)}</h3><p>${esc(g.p)}</p><span class="best">${g.g==='cards'?`${dueCards().length} vencidos hoje`:(S.best[g.g]!=null?`recorde: ${S.best[g.g]} pontos`:'sem recorde ainda')}</span></button>`).join('')}</div>`;
   app.querySelectorAll('.game').forEach(b=>b.onclick=()=>go('game',{g:b.dataset.g}));
+  const ak=document.createElement('div'); ak.className='panel ankip'; const AK=ankiText(); const nAK=AK.split('\n').filter(l=>l&&l[0]!=='#').length;
+  ak.innerHTML=`<div><div class="eyebrow">levar para o Anki</div><p style="font-family:var(--read);margin:6px 0 0">Os ${nAK} cartões do app (revisão de véspera, cartões-resumo das estações e autores) num texto que o Anki importa direto: no Anki do computador, <b>Arquivo → Importar</b>, escolha o arquivo e confirme <b>Tabulação</b> como separador. Cada cartão vem com a etiqueta da estação.</p></div>
+    <div class="row"><button class="btn" id="akCopy">Copiar os cartões</button>${window.__PWA?'<button class="btn" id="akFile">Salvar como arquivo .txt</button>':''}</div><textarea id="akTxt" hidden readonly style="min-height:90px;font-family:var(--mono);font-size:12px"></textarea><p class="muted" id="akSt" style="font-size:12.5px;margin:0" aria-live="polite"></p>`;
+  app.appendChild(ak);
+  $('#akCopy').onclick=()=>{ const fb=()=>{ const ta=$('#akTxt'); ta.hidden=false; ta.value=AK; ta.focus(); ta.select(); $('#akSt').textContent='Copie o texto selecionado, cole num arquivo .txt e importe no Anki.'; };
+    try{ navigator.clipboard.writeText(AK).then(()=>{ $('#akSt').textContent='Copiado. Cole num arquivo de texto (.txt) e importe no Anki.'; },fb); }catch(e){ fb(); } };
+  if($('#akFile')) $('#akFile').onclick=()=>{ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([AK],{type:'text/plain'})); a.download='humanas-de-ouro-anki.txt'; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),4000); $('#akSt').textContent='Arquivo salvo nos downloads.'; };
+}
+function ankiText(){
+  const cl=s=>strip(String(s)).replace(/[\t\r\n]+/g,' ').trim(); const rows=[];
+  DATA.cards.forEach(c=>rows.push([cl(c.q),cl(c.a),'humanas-de-ouro véspera '+(c.vol||'')]));
+  DATA.modules.forEach(m=>(m.resumo||[]).forEach(([k,v])=>rows.push([`${cl(k)} (${m.id} · ${cl(m.title)})`,cl(v),'humanas-de-ouro '+m.id])));
+  DATA.quem.forEach(q=>rows.push([`Quem? ${cl(q.conceito)} · palavras: ${cl(q.palavras)}`,cl(q.autor),'humanas-de-ouro autores']));
+  return '#separator:tab\n#html:false\n#tags column:3\n'+rows.map(r=>r.map(x=>x.replace(/\t/g,' ')).join('\t')).join('\n');
 }
 let gameTimer=null;
 function vGame(){ clearInterval(gameTimer); ({quem:gQuem,opostos:gOpostos,traps:gTraps,cards:gCards,vf:gVF,ordem:gOrdem,antes:gAntes,geo:gGeo}[param.g])(); }
@@ -823,9 +849,15 @@ function optsHTML(list){ return `<div class="opts">${list.map(o=>`<button class=
 function bindOpts(el,finish,missLine,after){
   el.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{ el.querySelectorAll('.opt').forEach(x=>{x.disabled=true; if(x.dataset.ok==='1') x.classList.add('right');}); const ok=b.dataset.ok==='1'; if(!ok) b.classList.add('wrong'); if(after) after(ok); finish(ok,missLine); });
 }
+function confusers(autor){ const F=DATA.fichas||[], names=DATA.quem.map(x=>x.autor); const me=F.find(f=>f.autor===autor); const out=new Set();
+  const hit=(txt,nm)=>{ if(!txt) return false; if(txt.includes(nm)) return true; const last=nm.split(' ').pop(); return last.length>3 && txt.includes(last); };
+  if(me) names.forEach(nm=>{ if(nm!==autor && hit(me.conf,nm)) out.add(nm); });
+  F.forEach(f=>{ if(f.autor!==autor && hit(f.conf,autor)) out.add(f.autor); });
+  const close=[...out]; const same=me?F.filter(f=>f.autor!==autor && f.mod===me.mod && !out.has(f.autor)).map(f=>f.autor):[];
+  return shuffle(close).concat(shuffle(same)).filter(n=>names.includes(n)); }
 function gQuem(){
   const items=shuffle(DATA.quem).slice(0,10);
-  runRounds({key:'quem',secs:12,rounds:items.map(it=>{ const mode=Math.random()<.6?'palavras':'conceito'; const others=shuffle(DATA.quem.filter(x=>x.autor!==it.autor)).slice(0,3);
+  runRounds({key:'quem',secs:12,rounds:items.map(it=>{ const mode=Math.random()<.6?'palavras':'conceito'; const cf=confusers(it.autor).slice(0,3); const others=cf.map(n=>({autor:n})).concat(shuffle(DATA.quem.filter(x=>x.autor!==it.autor && !cf.includes(x.autor)))).slice(0,3);
       return {it,mode,opts:shuffle([{label:it.autor,ok:true},...others.map(o=>({label:o.autor}))]),missLine:`<strong>${esc(it.autor)}</strong>: ${esc(it.conceito)}. <span class="muted">Palavras: ${esc(it.palavras)}</span>`};}),
     renderRound(el,r,finish){ el.innerHTML=`<div class="prompt"><span class="k">${r.mode==='palavras'?'palavras que aparecem no texto':'conceito central'}</span>${esc(r.mode==='palavras'?r.it.palavras:r.it.conceito)}</div>${optsHTML(r.opts.map(o=>({label:esc(o.label),ok:o.ok})))}`;
       bindOpts(el,finish,r.missLine,()=>{ const p=document.createElement('p'); p.className='muted'; p.style.fontFamily='var(--read)'; p.innerHTML=`<strong>${esc(r.it.autor)}</strong> · ${esc(r.it.conceito)}`; el.appendChild(p); }); }});
@@ -1214,7 +1246,7 @@ function bGlos(){
 /* ---- Plano ---- */
 function isoToday(){ const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
 function planToday(){ return DATA.plan.find(p=>p.d===isoToday()); }
-function taskDone(p,i){ const t=p.tasks[i]; if(t.k==='mod'){ const s=modStats(t.a); if(s.done===s.n) return true; } if(t.k==='prova'){ const [ex,ar]=t.a.split(':'); const ds=allRuns(ex).filter(r=>r.done).map(r=>r.areas).join(''); if(ar.split('').every(a=>ds.includes(a))) return true; } return !!S.plan[p.d+'|'+i]; }
+function taskDone(p,i){ const t=p.tasks[i]; if(t.k==='mod'){ const s=modStats(t.a); if(s.done===s.n) return true; } if(t.k==='prova'){ const [ex,ar]=t.a.split(':'); const ds=allRuns(ex).filter(runReal).map(r=>r.areas).join(''); if(ar.split('').every(a=>ds.includes(a))) return true; } return !!S.plan[p.d+'|'+i]; }
 function planDone(p){ let d=0; p.tasks.forEach((t,i)=>{ if(taskDone(p,i)) d++; }); return {done:d,n:p.tasks.length}; }
 function taskLabel(t){ if(t.k==='mod'){ const m=M[t.a]; return `${m.id} · ${m.title} <span class="muted">(teoria, cartões, V ou F e 5 questões)</span>`; } return esc(t.t); }
 function taskGo(t){
@@ -1336,26 +1368,34 @@ function popPrefs(){
   $('#keysBtn').onclick=()=>{ popKind=null; openPop('keys'); }; $('#pc').onclick=closePop;
   $('#syncBtn').onclick=()=>{ popKind=null; openPop('sync'); };
 }
+const APP_URL='https://filippotop.github.io/humanas-de-ouro/';
+async function packS(){ const json=JSON.stringify(S); try{ const cs=new Blob([json]).stream().pipeThrough(new CompressionStream('deflate-raw')); const buf=new Uint8Array(await new Response(cs).arrayBuffer()); let s=''; for(let i=0;i<buf.length;i+=0x8000) s+=String.fromCharCode.apply(null,buf.subarray(i,i+0x8000)); return 'HDO1.'+btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); }catch(e){ return json; } }
+async function unpackS(txt){ txt=String(txt).trim(); const m=txt.match(/HDO1\.([A-Za-z0-9_-]+)/); let o;
+  if(m){ let b=m[1].replace(/-/g,'+').replace(/_/g,'/'); while(b.length%4) b+='='; const u=Uint8Array.from(atob(b),c=>c.charCodeAt(0)); const ds=new Blob([u]).stream().pipeThrough(new DecompressionStream('deflate-raw')); o=JSON.parse(await new Response(ds).text()); }
+  else o=JSON.parse(txt);
+  const r=o&&o.S?o.S:o; if(!r||typeof r!=='object'||!r.ans) throw new Error('formato'); return r; }
+function countRec(r){ return Object.keys(r.ans||{}).length+Object.values(r.pv||{}).reduce((a,p)=>a+(p.runs||[]).length,0); }
 function popSync(){
-  const p=$('#pop'); const n=Object.keys(S.ans).length+Object.keys(S.pv).length;
+  const p=$('#pop'); const n=countRec(S); let code=null;
   p.innerHTML=`<h3>Levar o progresso para outro lugar</h3>
-    <p class="muted" style="font-size:13px;margin:0">Copie aqui e cole no outro lugar (o app instalado ou o app dentro do Claude). Ao importar, o progresso deste aparelho é substituído pelo colado.</p>
-    <div class="row"><button class="btn gold" id="spCopy">Copiar meu progresso</button>${window.__PWA?'<button class="btn" id="spFile">Salvar em arquivo</button>':''}</div>
-    <textarea id="spTxt" placeholder="Cole aqui o progresso copiado do outro lugar" style="min-height:90px;font-family:var(--mono);font-size:12px"></textarea>
-    <div class="row"><button class="btn" id="spImp">Importar o que colei</button>${window.__PWA?'<label class="btn" style="cursor:pointer">Abrir arquivo<input type="file" id="spIn" accept=".json,application/json,text/plain" hidden></label>':''}<button class="btn" id="pc">Fechar</button></div>
-    <p class="muted" id="spSt" style="font-size:12.5px;margin:0" aria-live="polite"></p>`;
-  const st=$('#spSt'); const dump=()=>JSON.stringify({app:'humanas-de-ouro',v:1,at:Date.now(),S});
-  $('#spCopy').onclick=()=>{ const txt=dump(); const fb=()=>{ const ta=$('#spTxt'); ta.value=txt; ta.focus(); ta.select(); st.textContent='Não consegui copiar sozinho: o texto está selecionado na caixa, copie manualmente.'; };
-    try{ navigator.clipboard.writeText(txt).then(()=>{ st.textContent='Copiado ('+Math.round(txt.length/1024)+' KB). Agora cole no outro lugar.'; },fb); }catch(e){ fb(); } };
-  if($('#spFile')) $('#spFile').onclick=()=>{ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([dump()],{type:'application/json'})); a.download='humanas-de-ouro-progresso-'+isoToday()+'.json'; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),4000); st.textContent='Arquivo salvo nos downloads.'; };
+    <p class="muted" style="font-size:13px;margin:0">${window.__PWA?'Para mandar o progresso deste app para o app dentro do Claude: copie aqui e cole lá, no mesmo menu.':'O jeito mais rápido: o botão abaixo abre o app instalado já trazendo este progresso. Ou copie o código e cole no outro app, no mesmo menu.'} Importar substitui o progresso de onde você colar.</p>
+    ${window.__PWA?'':`<a class="btn gold" id="spApp" href="${APP_URL}" target="_blank" rel="noopener" style="text-align:center;text-decoration:none">Abrir o app instalado com este progresso</a>`}
+    <div class="row"><button class="btn ${window.__PWA?'gold':''}" id="spCopy" disabled>Copiar código do progresso</button>${window.__PWA?'<button class="btn" id="spFile">Salvar em arquivo</button>':''}</div>
+    <textarea id="spTxt" placeholder="Cole aqui o código copiado do outro app" style="min-height:80px;font-family:var(--mono);font-size:12px"></textarea>
+    <div class="row"><button class="btn" id="spImp">Importar o que colei</button>${window.__PWA?'<label class="btn" style="cursor:pointer">Abrir arquivo<input type="file" id="spIn" accept=".json,.txt,application/json,text/plain" hidden></label>':''}<button class="btn" id="pc">Fechar</button></div>
+    <p class="muted" id="spSt" style="font-size:12.5px;margin:0" aria-live="polite">Preparando o código…</p>`;
+  const st=$('#spSt');
+  packS().then(c=>{ code=c; $('#spCopy').disabled=false; st.textContent=`${n} registros de questões e provas · código de ${Math.max(1,Math.round(c.length/1024))} KB`; const a=$('#spApp'); if(a) a.href=APP_URL+'#importar='+encodeURIComponent(c); });
+  $('#spCopy').onclick=()=>{ if(!code) return; const fb=()=>{ const ta=$('#spTxt'); ta.value=code; ta.focus(); ta.select(); st.textContent='Não consegui copiar sozinho: o código está selecionado na caixa, copie manualmente.'; };
+    try{ navigator.clipboard.writeText(code).then(()=>{ st.textContent='Código copiado. Agora cole no outro app, em Aa → Copiar ou importar progresso.'; },fb); }catch(e){ fb(); } };
+  if($('#spFile')) $('#spFile').onclick=()=>{ if(!code) return; const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([code],{type:'text/plain'})); a.download='humanas-de-ouro-progresso-'+isoToday()+'.txt'; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),4000); st.textContent='Arquivo salvo nos downloads.'; };
   let pending=null;
-  const take=txt=>{ try{ const o=JSON.parse(txt.trim()); const r=o&&o.S?o.S:o; if(!r||typeof r!=='object'||!r.ans) throw 0;
-      const m=Object.keys(r.ans||{}).length+Object.keys(r.pv||{}).length; pending=r; $('#spImp').textContent='Confirmar: substituir pelo colado'; st.textContent=`O colado tem ${m} registros de questões e provas; este aparelho tem ${n}. Toque de novo para confirmar.`; }
-    catch(e){ st.textContent='Isso não parece um progresso do Humanas de Ouro. Copie de novo pelo botão "Copiar meu progresso".'; } };
-  $('#spImp').onclick=()=>{ if(pending){ S=Object.assign({v:1},pending); fix(); S.updated=Date.now(); save(); render(); st.textContent='Progresso importado.'; pending=null; $('#spImp').textContent='Importar o que colei'; return; } take($('#spTxt').value); };
-  if($('#spIn')) $('#spIn').onchange=e=>{ const f=e.target.files[0]; if(!f) return; f.text().then(t=>{ $('#spTxt').value=t.slice(0,200)+(t.length>200?'…':''); take(t); }); };
+  const take=txt=>unpackS(txt).then(r=>{ pending=r; $('#spImp').textContent='Confirmar: substituir pelo colado'; st.textContent=`O colado tem ${countRec(r)} registros; este aparelho tem ${n}. Toque de novo para confirmar.`; }).catch(()=>{ st.textContent='Isso não parece um progresso do Humanas de Ouro. Copie de novo pelo botão "Copiar código do progresso".'; });
+  $('#spImp').onclick=()=>{ if(pending){ applyImport(pending); st.textContent='Progresso importado.'; pending=null; $('#spImp').textContent='Importar o que colei'; return; } take($('#spTxt').value); };
+  if($('#spIn')) $('#spIn').onchange=e=>{ const f=e.target.files[0]; if(!f) return; f.text().then(tx=>{ $('#spTxt').value=tx.slice(0,120)+(tx.length>120?'…':''); take(tx); }); };
   $('#pc').onclick=closePop;
 }
+function applyImport(r){ S=Object.assign({v:1},r); fix(); S.updated=Date.now(); save(); render(); }
 function popGoal(){
   const p=$('#pop'); const n=S.act[isoToday()]||0, g=prefs.goal||20;
   const ansToday=Object.values(S.ans).filter(a=>a.t && new Date(a.t).toDateString()===new Date().toDateString());
@@ -1531,6 +1571,7 @@ function areaNums(areas){ const out=[]; areas.split('').forEach(a=>{ for(let n=A
 function examAreas(ex){ return EX[ex].dia===1?'LH':'NM'; }
 function runLimit(areas){ if(areas.length===2) return areas==='LH'?330:300; return 150; }
 function synthRun(ex){ const e=EX[ex]; if(!e.his) return null; return {id:'papel',areas:'LH',mode:'prova',ans:Object.assign({},e.his),flag:{},cut:{},start:Date.parse('2026-09-20T12:00:00-03:00'),done:true,end:Date.parse('2026-09-21T12:00:00-03:00'),time:null,papel:true}; }
+function runReal(r){ if(!r||!r.done) return false; if(r.papel) return true; const n=areaNums(r.areas).length; return Object.keys(r.ans||{}).length>=Math.ceil(n*0.6); }
 function allRuns(ex){ const st=pvState(ex); const r=st.runs.slice(); const s=synthRun(ex); if(s) r.unshift(s); return r; }
 function scoreRun(ex,run){
   const e=EX[ex], res={total:0,ok:0,blank:0,anul:0,areas:{},wrong:[],flagWrong:0,flagOk:0,thirds:[[0,0],[0,0],[0,0]]};
@@ -1545,14 +1586,14 @@ function scoreRun(ex,run){
   });
   return res;
 }
-function runLabel(run){ return run.papel?'Diagnóstico no papel (set/2026)':`${new Date(run.start).toLocaleDateString('pt-BR')} · ${run.areas.split('').map(a=>AREAS[a].name.split(' ').pop()).join(' + ')} · ${run.mode==='estudo'?'modo estudo':'modo prova'}`; }
+function runLabel(run){ if(run.id==='papel') return 'Diagnóstico no papel (set/2026)'; return `${new Date(run.start).toLocaleDateString('pt-BR')} · ${run.areas.split('').map(a=>AREAS[a].name.split(' ').pop()).join(' + ')} · ${run.papel?'lançada do papel':run.mode==='estudo'?'modo estudo':'modo prova'}${runReal(run)?'':' · incompleta'}`; }
 
 /* ---------- lista ---------- */
 function vProvas(){
   const order=['25d2','25d1','24d1','24d2'];
   app.innerHTML=`<div class="pagehead"><div><div class="eyebrow">provas oficiais do Inep · Caderno Azul</div><h1>Provas</h1><p class="lede">As provas de verdade, questão por questão, com cartão-resposta, cronômetro e correção pelo gabarito oficial. As imagens são recortes do caderno original.</p></div></div>
   <div class="exgrid">${order.map(id=>{ const e=EX[id]; const runs=allRuns(id); const st=pvState(id); const cur=st.runs.find(r=>!r.done);
-    const done=runs.filter(r=>r.done); const last=done[done.length-1]; const sc=last?scoreRun(id,last):null;
+    const done=runs.filter(r=>r.done); const real=done.filter(runReal); const last=real[real.length-1]||done[done.length-1]; const sc=last?scoreRun(id,last):null;
     const badge={pendente:['Diagnóstico pendente','warn'],feita:['Feita no papel','ok'],guardada:['Guardada para simulado','muted']}[e.status];
     return `<article class="excard ${e.status}">
       <div class="row" style="justify-content:space-between"><span class="pill ${badge[1]}">${badge[0]}</span><span class="mono muted" style="font-size:12px">${e.last-e.first+1} questões</span></div>
@@ -1560,8 +1601,8 @@ function vProvas(){
       ${sc?`<div class="exscore">${Object.entries(sc.areas).map(([a,v])=>`<div><span class="big3">${v.ok}<small>/${v.n}</small></span><span class="lbl">${AREAS[a].name}</span></div>`).join('')}</div><p class="mono muted" style="font-size:12px;margin:0">${runLabel(last)}</p>`:''}
       ${e.status==='pendente'&&!sc?`<p class="note">Este é o diagnóstico que falta. Sem ele, ninguém sabe onde você está em Natureza e Matemática, nem você.</p>`:''}
       ${e.status==='guardada'&&!sc?`<p class="note">Faça uma vez só, inteira e cronometrada, como no dia. Depois de ver o gabarito, ela deixa de valer como simulado.</p>`:''}
-      <div class="exactions">${cur?`<button class="btn gold" data-cont="${id}">Continuar (${Object.keys(cur.ans).length}/${areaNums(cur.areas).length})</button>`:startButtons(id)}
-      ${done.length?`<button class="btn" data-res="${id}">Ver correção</button>`:''}</div>
+      <div class="exactions">${cur?`<button class="btn gold" data-cont="${id}">Continuar (${Object.keys(cur.ans).length}/${areaNums(cur.areas).length})</button><button class="btn ghost" data-drop="${id}">Descartar esta tentativa</button>`:startButtons(id)}
+      ${done.length?`<button class="btn" data-res="${id}">Ver correção</button>`:''}<button class="btn ghost" data-papel="${id}">Fiz no papel: lançar respostas</button></div>
       <p class="fonte">${e.fonte}</p></article>`}).join('')}</div>
   <div class="panel" style="margin-top:18px"><b>Sobre a nota.</b> <span class="muted">O app conta acertos. A nota do ENEM usa a TRI e depende dos parâmetros de cada questão, então não dá para converter acertos em nota com segurança. O que a correção mostra de útil: quantas fáceis você perdeu, como você vai no fim da prova (cansaço) e quantas certezas estavam erradas.</span></div>`;
   app.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>{ const [id,areas,mode]=b.dataset.start.split('|');
@@ -1569,6 +1610,8 @@ function vProvas(){
     startRun(id,areas,mode); });
   app.querySelectorAll('[data-cont]').forEach(b=>b.onclick=()=>{ const st=pvState(b.dataset.cont); go('prova',{id:b.dataset.cont,run:st.runs.findIndex(r=>!r.done)}); });
   app.querySelectorAll('[data-res]').forEach(b=>b.onclick=()=>go('provares',{id:b.dataset.res}));
+  app.querySelectorAll('[data-papel]').forEach(b=>b.onclick=()=>go('papel',{id:b.dataset.papel}));
+  app.querySelectorAll('[data-drop]').forEach(b=>b.onclick=()=>{ if(!b.dataset.ok){ b.dataset.ok=1; b.textContent='Toque de novo para descartar'; return; } const st=pvState(b.dataset.drop); const ix=st.runs.findIndex(r=>!r.done); if(ix>=0){ st.runs.splice(ix,1); save(); toast('Tentativa descartada.'); } vProvas(); });
 }
 function startButtons(id){
   const e=EX[id], full=examAreas(id);
@@ -1578,6 +1621,47 @@ function startButtons(id){
 function startRun(id,areas,mode){
   const st=pvState(id); st.runs.push({id:Date.now().toString(36),areas,mode,ans:{},flag:{},cut:{},start:Date.now(),limit:runLimit(areas)*60000,done:false,cur:0});
   save(); go('prova',{id,run:st.runs.length-1});
+}
+
+
+/* ---------- lançar respostas feitas no papel ---------- */
+function vPapel(){
+  const id=param.id, e=EX[id]; const dk='humanas-papel-'+id;
+  const D=lsGet(dk)||{areas:param.areas||(e.dia===2?'N':'H'),ans:{},min:''}; if(param.areas) D.areas=param.areas;
+  const keep=()=>lsSet(dk,D);
+  const opts=e.dia===2?[['N','Natureza'],['M','Matemática'],['NM','As duas']]:[['L','Linguagens'],['H','Humanas'],['LH','As duas']];
+  let warned=false;
+  const paint=()=>{
+    const nums=areaNums(D.areas);
+    app.innerHTML=`<button class="back" id="back">← provas</button>
+    <div class="pagehead"><div><div class="eyebrow">lançar respostas feitas no papel</div><h1>${e.title}</h1><p class="lede">Resolveu no caderno impresso ou numa folha? Marque o que você respondeu e o app corrige pelo gabarito oficial, com a mesma revisão de uma prova feita aqui. Treinar no papel é treinar como no dia da prova.</p></div></div>
+    <div class="panel" style="display:grid;gap:16px">
+      <div><div class="eyebrow" style="margin-bottom:6px">o que você fez</div><div class="choice" id="parea">${opts.map(([k,l])=>`<button data-a="${k}" aria-pressed="${D.areas===k}">${l}</button>`).join('')}</div></div>
+      <div><label class="eyebrow" for="pmin">tempo que você levou, em minutos (opcional)</label><input id="pmin" class="pin" type="number" inputmode="numeric" min="1" max="400" value="${D.min||''}" style="width:150px"></div>
+      <div><label class="eyebrow" for="pseq">atalho: digite as letras em sequência</label><p class="muted" style="font-size:12.5px;margin:4px 0 6px">Começa na questão ${nums[0]}, uma letra por questão. Use - ou . para deixar em branco. Exemplo: ABDCE-EA</p><input id="pseq" class="pin mono" autocomplete="off" autocapitalize="characters" spellcheck="false" style="width:100%;letter-spacing:.14em"></div>
+    </div>
+    <div class="sec-title"><h2>Cartão-resposta</h2><span class="mono muted" id="pcount"></span></div>
+    <div class="pgrid">${nums.map(x=>`<div class="prow" data-n="${x}"><span class="mono">${x}</span>${'ABCDE'.split('').map(L=>`<button data-l="${L}" aria-label="Questão ${x}, letra ${L}">${L}</button>`).join('')}</div>`).join('')}</div>
+    <div class="row" style="margin-top:18px"><button class="btn gold" id="pfix">Corrigir pelo gabarito</button><button class="btn ghost" id="pclr">Limpar tudo</button></div>
+    <p class="muted" id="pst" style="font-size:13px" aria-live="polite"></p>`;
+    const sync=(fromSeq)=>{ const n=nums.filter(x=>D.ans[x]).length; $('#pcount').textContent=`${n}/${nums.length} marcadas`;
+      app.querySelectorAll('.prow').forEach(r=>{ const g=D.ans[r.dataset.n]; r.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.l===g))); });
+      if(!fromSeq) $('#pseq').value=nums.map(x=>D.ans[x]||'-').join('').replace(/-+$/,''); };
+    sync();
+    $('#back').onclick=()=>go('provas');
+    app.querySelectorAll('#parea button').forEach(b=>b.onclick=()=>{ D.areas=b.dataset.a; keep(); paint(); });
+    $('#pmin').oninput=ev=>{ D.min=ev.target.value; keep(); };
+    $('#pseq').oninput=ev=>{ const s=ev.target.value.toUpperCase().replace(/\s/g,''); s.split('').forEach((c,i)=>{ const x=nums[i]; if(x==null) return; if('ABCDE'.includes(c)) D.ans[x]=c; else delete D.ans[x]; }); keep(); sync(true); };
+    app.querySelectorAll('.prow button').forEach(b=>b.onclick=()=>{ const x=b.parentElement.dataset.n; if(D.ans[x]===b.dataset.l) delete D.ans[x]; else D.ans[x]=b.dataset.l; keep(); sync(); });
+    $('#pclr').onclick=()=>{ const b=$('#pclr'); if(!b.dataset.ok){ b.dataset.ok=1; b.textContent='Toque de novo para limpar'; return; } D.ans={}; keep(); paint(); };
+    $('#pfix').onclick=()=>{ const ans={}; nums.forEach(x=>{ if(D.ans[x]) ans[x]=D.ans[x]; }); const n=Object.keys(ans).length;
+      if(!n){ $('#pst').textContent='Nenhuma resposta marcada ainda.'; return; }
+      if(n<nums.length*0.6 && !warned){ warned=true; $('#pst').textContent=`Só ${n} de ${nums.length} marcadas: a correção vai contar o resto como em branco e a tentativa fica como incompleta (não conta como diagnóstico feito). Toque de novo em Corrigir para seguir.`; return; }
+      const min=+D.min||0, now=Date.now(); const st=pvState(id);
+      st.runs.push({id:now.toString(36),areas:D.areas,mode:'prova',ans,flag:{},cut:{},start:now-(min*60000),end:now,time:min?min*60000:null,limit:runLimit(D.areas)*60000,done:true,papel:true});
+      lsDel(dk); bump(n); save(); go('provares',{id,run:st.runs.length-1}); };
+  };
+  paint();
 }
 
 /* ---------- aplicação ---------- */
@@ -1641,13 +1725,13 @@ function finishRun(id,ri){ clearInterval(pvTimer); const run=pvState(id).runs[ri
 function vProvaRes(){
   const id=param.id, e=EX[id]; const runs=allRuns(id).filter(r=>r.done);
   if(!runs.length){ go('provas'); return; }
-  let run; if(param.run==='papel') run=runs.find(r=>r.papel); else if(param.run!=null && pvState(id).runs[param.run] && pvState(id).runs[param.run].done) run=pvState(id).runs[param.run]; if(!run) run=runs[runs.length-1];
+  let run; if(param.run==='papel') run=runs.find(r=>r.id==='papel'); else if(param.run!=null && pvState(id).runs[param.run] && pvState(id).runs[param.run].done) run=pvState(id).runs[param.run]; if(!run) run=runs[runs.length-1];
   const sc=scoreRun(id,run); const filt=param.f||'erradas'; const st=pvState(id);
   const list=areaNums(run.areas).filter(n=>{ const g=run.ans[n], k=e.key[n]; if(filt==='erradas') return k!=null && g!==k; if(filt==='duvida') return run.flag&&run.flag[n]; if(filt==='certas') return k!=null && g===k; return true; });
   const th=sc.thirds.map(([o,t])=>t?Math.round(100*o/t):0);
   app.innerHTML=`<button class="back" id="back">← provas</button>
   <div class="pagehead"><div><div class="eyebrow">correção pelo gabarito oficial · ${runLabel(run)}</div><h1>${e.title}</h1></div>
-    ${runs.length>1?`<select id="runsel" aria-label="Escolher tentativa">${runs.map((r,i)=>`<option value="${i}" ${r===run?'selected':''}>${runLabel(r)}</option>`).join('')}</select>`:''}</div>
+    ${run.id!=='papel'?`<button class="btn ghost" id="delrun">Apagar esta tentativa</button>`:''}${runs.length>1?`<select id="runsel" aria-label="Escolher tentativa">${runs.map((r,i)=>`<option value="${i}" ${r===run?'selected':''}>${runLabel(r)}</option>`).join('')}</select>`:''}</div>
   <div class="resgrid">
     ${Object.entries(sc.areas).map(([a,v])=>`<div class="panel kpi"><span class="lbl">${AREAS[a].name}</span><span class="big3">${v.ok}<small>/${v.n}</small></span><div class="bar2"><i style="width:${pct(v.ok,v.n)}%"></i></div><span class="mono muted" style="font-size:12px">${pct(v.ok,v.n)}% · ${v.blank} em branco</span></div>`).join('')}
     <div class="panel kpi"><span class="lbl">tempo usado</span><span class="big3">${run.time?Math.round(run.time/60000)+'<small> min</small>':'—'}</span><span class="mono muted" style="font-size:12px">${run.time?`${(run.time/60000/Math.max(1,Object.keys(run.ans).length)).toFixed(1)} min por questão respondida`:'feita no papel'}</span></div>
@@ -1664,7 +1748,8 @@ function vProvaRes(){
   <div id="rvlist"></div>
   <div class="row" style="margin-top:18px"><button class="btn" id="toPv">Voltar às provas</button>${run.papel?'':`<button class="btn" id="delrun">Apagar esta tentativa</button>`}</div>`;
   $('#back').onclick=$('#toPv').onclick=()=>go('provas');
-  const rs=$('#runsel'); if(rs) rs.onchange=()=>{ const r=runs[+rs.value]; const i=pvState(id).runs.indexOf(r); go('provares',{id,run:r.papel?'papel':i,f:filt}); };
+  const rs=$('#runsel'); if(rs) rs.onchange=()=>{ const r=runs[+rs.value]; const i=pvState(id).runs.indexOf(r); go('provares',{id,run:r.id==='papel'?'papel':i,f:filt}); };
+  const dlb=$('#delrun'); if(dlb) dlb.onclick=()=>{ if(!dlb.dataset.ok){ dlb.dataset.ok=1; dlb.textContent='Toque de novo para apagar'; return; } const ix=pvState(id).runs.indexOf(run); if(ix>=0){ pvState(id).runs.splice(ix,1); save(); toast('Tentativa apagada.'); } go('provas'); };
   app.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{ param.f=b.dataset.f; vProvaRes(); });
   app.querySelectorAll('[data-go-q]').forEach(b=>b.onclick=()=>{ const n=areaNums(run.areas)[+b.dataset.goQ]; const el=document.getElementById('rv-'+n); if(el){ el.open=true; el.scrollIntoView({behavior:'smooth',block:'start'}); } else { param.f='todas'; vProvaRes(); setTimeout(()=>{ const x=document.getElementById('rv-'+n); if(x){ x.open=true; x.scrollIntoView({block:'start'}); } },60); } });
   const dr=$('#delrun'); if(dr) dr.onclick=()=>{ if(!dr.dataset.c){ dr.dataset.c=1; dr.textContent='Toque de novo para apagar'; return; } const i=st.runs.indexOf(run); st.runs.splice(i,1); save(); go('provas'); };
