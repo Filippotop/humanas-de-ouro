@@ -68,17 +68,35 @@
   const ios=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
   if(ios&&!isStandalone()) setTimeout(()=>{ let seen=0; try{ seen=+localStorage.getItem('pwa-install-seen')||0; }catch(e){} if(Date.now()-seen>3*864e5){ say(`<span>Para instalar: toque em Compartilhar e depois em <b>Adicionar à Tela de Início</b>.</span><button class="btn" id="pwaNo">Ok</button>`); document.getElementById('pwaNo').onclick=()=>{ toast.hidden=true; try{ localStorage.setItem('pwa-install-seen',Date.now()); }catch(e){} }; } },2500);
 
-  /* Service worker e download das provas para uso offline */
+  /* Service worker e download das provas para uso offline.
+     São 22 MB de imagens: no Wi-Fi baixa sozinho; fora dele (ou quando o aparelho não diz, como no iPhone) pergunta antes. */
+  let warmed=false;
+  const WARM_MB=22, WARM_OK='pwa-warm-ok', WARM_LATER='pwa-warm-later';
+  const onWifi=()=>{ const c=navigator.connection; return !!c&&!c.saveData&&(c.type==='wifi'||c.type==='ethernet'); };
+  async function mayWarm(){
+    try{ if(localStorage.getItem(WARM_OK)) return true; }catch(e){}
+    if(onWifi()) return true;
+    try{ if((await (await caches.open('hdo-provas-v1')).keys()).length>=300) return true; }catch(e){} /* quem já tinha baixado antes desta versão */
+    return false;
+  }
+  function askWarm(go){
+    let later=0; try{ later=+localStorage.getItem(WARM_LATER)||0; }catch(e){}
+    if(Date.now()-later<864e5) return;
+    say(`<span>Baixar as provas (${WARM_MB} MB) para usar sem internet? Prefira o Wi-Fi.</span><button class="btn gold" id="pwaWarm">Baixar</button><button class="btn" id="pwaWarmNo">Depois</button>`,0,true);
+    document.getElementById('pwaWarm').onclick=()=>{ try{ localStorage.setItem(WARM_OK,'1'); }catch(e){} unstick(); go(); };
+    document.getElementById('pwaWarmNo').onclick=()=>{ try{ localStorage.setItem(WARM_LATER,Date.now()); }catch(e){} unstick(); };
+  }
   if('serviceWorker' in navigator){
     navigator.serviceWorker.register('sw.js').then(reg=>{
-      const warm=()=>{ const w=reg.active||navigator.serviceWorker.controller; if(w) w.postMessage({type:'warm'}); };
+      const post=()=>{ const w=reg.active||navigator.serviceWorker.controller; if(w) w.postMessage({type:'warm'}); };
+      const warm=()=>mayWarm().then(ok=>ok?post():askWarm(post));
       if(reg.active) warm(); else navigator.serviceWorker.addEventListener('controllerchange',warm,{once:true});
       reg.addEventListener('updatefound',()=>{ const nw=reg.installing; if(!nw) return; nw.addEventListener('statechange',()=>{ if(nw.state==='activated'&&navigator.serviceWorker.controller) say(`<span>Nova versão do app disponível.</span><button class="btn gold" id="pwaRl">Atualizar</button>`); const b=document.getElementById('pwaRl'); if(b) b.onclick=()=>location.reload(); }); });
     }).catch(()=>{});
     navigator.serviceWorker.addEventListener('message',e=>{ const d=e.data||{};
       if(d.type==='warm-progress'&&!d.done){ say(`<span>Baixando as provas para usar sem internet: ${d.have}/${d.total}</span>`); }
-      if(d.type==='warm-progress'&&d.done){ if(d.fresh) say('<span>Pronto: o app inteiro funciona sem internet.</span>',4000); else toast.hidden=true; try{ setSync('funciona offline'); }catch(err){} }
+      if(d.type==='warm-progress'&&d.done){ warmed=d.have>=d.total; if(d.fresh) say(warmed?'<span>Pronto: o app inteiro funciona sem internet.</span>':`<span>Baixei ${d.have} de ${d.total} imagens das provas. O resto vem na próxima vez com internet.</span>`,4000); else toast.hidden=true; if(warmed) try{ setSync('funciona offline'); }catch(err){} }
     });
   }
-  window.addEventListener('offline',()=>say('<span>Sem internet: tudo continua funcionando, menos o tutor.</span>',4000));
+  window.addEventListener('offline',()=>say(warmed?'<span>Sem internet: tudo continua funcionando, menos o tutor.</span>':'<span>Sem internet: o estudo continua, mas as provas que você ainda não abriu não carregam.</span>',5000));
 })();
