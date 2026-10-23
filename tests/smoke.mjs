@@ -441,7 +441,7 @@ async function testLinguagensUI(browser) {
 }
 
 /* Aprofundamento de Humanas: três seções, 3 questões novas, todas as questões oficiais do tema citadas e tocáveis. */
-const DEEP_REQUIRED = ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'S1', 'S2', 'S3', 'S4', 'S5', 'G9', 'G5', 'H3', 'H7', 'H5'];
+const DEEP_REQUIRED = [...'1234567'.split('').map(n => 'F' + n), ...'12345'.split('').map(n => 'S' + n), ...Array.from({ length: 10 }, (_, i) => 'H' + (i + 1)), ...Array.from({ length: 9 }, (_, i) => 'G' + (i + 1))];
 function testDeepContent() {
   if (!DATA_FILES.length) return;
   const D = loadData(), deep = D.deep || {}, map = D.enemMap || {};
