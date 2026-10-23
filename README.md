@@ -6,6 +6,10 @@ Instalável no celular (PWA) e funciona sem internet depois do primeiro acesso. 
 
 Conteúdo das estações: apostilas no método "Apostila de Ouro em Camadas", criado por Anália. Provas e gabaritos: Inep/MEC.
 
+## Bancada Virtual de Manutenção
+
+O app de diagnóstico elétrico para o Processo Seletivo Transpetro 2026 (Ênfase 8) fica em [`bancada/`](bancada/) e é publicado em `/bancada/`. Ele é independente: tem manifesto, ícones e service worker próprios. Veja [`bancada/README.md`](bancada/README.md).
+
 ## Teste antes de publicar
 
 ```
