@@ -692,6 +692,15 @@ function dueCards(vol){ const t=today(); return DATA.cards.filter(c=>(!vol||c.vo
 /* Modo Dia 1: o dia 2 fica guardado até 72/90 no dia 1 de 2024 (inteiro, cronometrado), até 9/11 ou até a liberação manual. */
 const DIA2_META=72, DIA2_DATA='2026-11-09';
 function dia2Best(){ const rs=pvState('24d1').runs.filter(r=>r.done&&r.mode==='prova'&&r.areas==='LH'); return rs.length?Math.max(...rs.map(r=>scoreRun('24d1',r).ok)):null; }
+/* O 1º dia de 2024 é o ensaio que libera o dia 2: até ele ser entregue, o aprofundamento esconde as questões dele e as respostas. */
+function spoil24(){ const runs=((S.pv||{})['24d1']||{runs:[]}).runs; return !dia2Status().open&&!runs.some(r=>r.done&&r.mode==='prova'&&/H/.test(r.areas)); }
+function modHtml(m){ if(!m.html.includes('data-ex="24d1"')||!spoil24()) return m.html;
+  const d=document.createElement('div'); d.innerHTML=m.html;
+  d.querySelectorAll('a[data-ex="24d1"]').forEach(a=>{ const li=a.closest('li'); if(li) li.remove(); else a.replaceWith('uma questão do Enem 2024'); });
+  d.querySelectorAll('ul').forEach(u=>{ if(!u.children.length) u.remove(); });
+  const h=[...d.querySelectorAll('h4')].find(x=>x.textContent.includes('Como o Enem cobra'));
+  if(h) h.insertAdjacentHTML('afterend','<p class="note sp24">As questões do 1º dia de 2024 desta estação aparecem aqui depois que você entregar o simulado de 1/11: elas são o seu ensaio geral, então não vale vê-las antes.</p>');
+  return d.innerHTML; }
 function dia2Status(){ const best=dia2Best();
   if(best!=null&&best>=DIA2_META) return {open:true,via:'criterio',best};
   if(S.dia2&&S.dia2.via) return {open:true,via:'manual',best};
@@ -811,7 +820,7 @@ function vMod(){
   app.querySelectorAll('.subtabs button').forEach(b=>b.onclick=()=>{param.tab=b.dataset.t; lsSet('humanas-last',{id:m.id,tab:param.tab,t:Date.now()}); vMod();});
   const body=$('#modbody');
   if(tab==='teoria'){
-    body.innerHTML=`<div class="layout2"><article class="prose" id="prose"><details class="toc-m"><summary>Nesta estação</summary><nav class="toc" id="tocm"></nav></details>${m.html}
+    body.innerHTML=`<div class="layout2"><article class="prose" id="prose"><details class="toc-m"><summary>Nesta estação</summary><nav class="toc" id="tocm"></nav></details>${modHtml(m)}
       <div class="callout" style="margin-top:24px"><strong>Terminou a leitura?</strong> Vire os cartões-resumo e depois faça as ${m.qs.length} questões. A teoria fica marcada como lida.</div>
       <div class="row"><button class="btn primary" id="toResumo">Ir para os cartões-resumo →</button></div></article>
       <aside class="side"><div class="eyebrow">Nesta estação</div><nav class="toc" id="toc"></nav></aside></div>`;
@@ -1405,8 +1414,8 @@ function vPlano(){
 /* ---- Busca ---- */
 let IDX=null;
 function buildIndex(){
-  IDX=[];
-  DATA.modules.forEach(m=>{ const d=document.createElement('div'); d.innerHTML=m.html; let sec='Introdução'; let buf='';
+  IDX=[]; IDX.sp=spoil24();
+  DATA.modules.forEach(m=>{ const d=document.createElement('div'); d.innerHTML=modHtml(m); let sec='Introdução'; let buf='';
     const push=()=>{ if(buf.trim()) IDX.push({g:'Teoria',t:`${m.id} · ${sec}`,txt:buf,act:()=>go('mod',{id:m.id,tab:'teoria'})}); buf=''; };
     [...d.children].forEach(c=>{ if(c.tagName==='H4'){ push(); sec=c.textContent; } else buf+=' '+c.textContent; }); push();
     m.resumo.forEach(r=>IDX.push({g:'Glossário',t:strip(r[0]),txt:strip(r[1]),act:()=>go('biblioteca',{s:'glos',q:strip(r[0])})}));
@@ -1422,7 +1431,7 @@ function buildIndex(){
 function snippet(txt,qn){ const n=norm(txt); const i=n.indexOf(qn); if(i<0) return esc(txt.slice(0,160)); const a=Math.max(0,i-60), b=Math.min(txt.length,i+qn.length+100);
   return (a?'…':'')+esc(txt.slice(a,i))+'<mark>'+esc(txt.slice(i,i+qn.length))+'</mark>'+esc(txt.slice(i+qn.length,b))+(b<txt.length?'…':''); }
 function vBusca(){
-  if(!IDX) buildIndex();
+  if(!IDX||IDX.sp!==spoil24()) buildIndex();
   const q=(param&&param.q)||''; const qn=norm(q.trim()); $('#sq').value=q;
   const terms=qn.split(/\s+/).filter(Boolean);
   const hits=terms.length? IDX.filter(x=>terms.every(t=>x.n.includes(t))) : [];

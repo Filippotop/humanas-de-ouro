@@ -475,6 +475,30 @@ async function testDeepUI(browser) {
   await ctx.close();
 }
 
+/* O simulado de 2024 (1º dia) é o ensaio que libera o dia 2: o aprofundamento não pode entregar as respostas antes dele. */
+async function testSpoiler24(browser) {
+  const open = async (S, date = '2026-10-23T12:00:00-03:00') => {
+    const ctx = await browser.newContext({ viewport: VIEWPORTS['375'], serviceWorkers: 'block' });
+    await ctx.addInitScript(s => { if (!sessionStorage.getItem('seeded')) { localStorage.setItem('humanas-de-ouro-v1', s); sessionStorage.setItem('seeded', '1'); } }, JSON.stringify(S));
+    const page = await ctx.newPage(); await page.clock.setFixedTime(new Date(date));
+    await page.goto(URL_); await page.waitForTimeout(300);
+    await page.evaluate(() => go('mod', { id: 'G7', tab: 'teoria' })); await page.waitForTimeout(250);
+    const r = await page.evaluate(() => ({ c24: document.querySelectorAll('#prose a[data-ex="24d1"]').length, c25: document.querySelectorAll('#prose a[data-ex="25d1"]').length,
+      prose: document.querySelector('#prose').innerText, idx: (IDX = null, buildIndex(), IDX.some(x => x.txt.includes('dinamização dos fluxos'))) }));
+    await ctx.close(); return r; };
+  const run = extra => ({ v: 1, pv: { '24d1': { runs: [{ id: 'r', areas: 'LH', mode: 'prova', ans: {}, flag: {}, cut: {}, start: 1, limit: 1, done: true, cur: 0, end: 2, time: 1, ...extra }], notes: {} } }, updated: 1 });
+  { const r = await open({ v: 1, updated: 1 });
+    check(r.c24 === 0, `spoiler: antes do simulado de 1/11, G7 mostra ${r.c24} citações do 1º dia de 2024`);
+    check(!r.prose.includes('dinamização dos fluxos'), 'spoiler: a resposta da questão 70 de 2024 aparece no texto de G7');
+    check(!r.idx, 'spoiler: a busca indexa a resposta de uma questão de 2024');
+    check(r.c25 > 0, 'spoiler: as citações de 2025 sumiram junto');
+    check(/simulado/i.test(r.prose), 'spoiler: G7 não avisa que as questões de 2024 aparecem depois do simulado'); }
+  for (const [name, S] of [['modo estudo', run({ mode: 'estudo' })], ['não entregue', run({ done: false })]]) {
+    const r = await open(S); check(r.c24 === 0, `spoiler: ${name} não deveria revelar as questões de 2024`); }
+  { const r = await open(run({})); check(r.c24 > 0 && r.prose.includes('dinamização dos fluxos'), 'spoiler: depois do simulado entregue, as questões de 2024 não voltam'); }
+  { const r = await open({ v: 1, updated: 1 }, '2026-11-09T09:00:00-03:00'); check(r.c24 > 0, 'spoiler: com o dia 2 liberado pela data, as questões de 2024 continuam escondidas'); }
+}
+
 const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : {});
 try {
   testData();
@@ -491,6 +515,7 @@ try {
   await testHome(browser);
   await testLinguagensUI(browser);
   await testDeepUI(browser);
+  await testSpoiler24(browser);
   await testNav(browser);
   await testTabs(browser);
   await testAnswered(browser);
