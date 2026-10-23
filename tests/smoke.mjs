@@ -441,7 +441,7 @@ async function testLinguagensUI(browser) {
 }
 
 /* Aprofundamento de Humanas: três seções, 3 questões novas, todas as questões oficiais do tema citadas e tocáveis. */
-const DEEP_REQUIRED = ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7'];
+const DEEP_REQUIRED = ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'S1', 'S2', 'S3', 'S4', 'S5'];
 function testDeepContent() {
   if (!DATA_FILES.length) return;
   const D = loadData(), deep = D.deep || {}, map = D.enemMap || {};
