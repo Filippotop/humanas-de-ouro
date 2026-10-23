@@ -320,6 +320,43 @@ async function testDesign(browser) {
   await rm.close();
 }
 
+/* Leitura do módulo: sumário também no celular, metadados numa linha só e quadros didáticos legíveis nos dois temas. */
+const BOX_TYPES = ['conceito', 'exemplo', 'enem', 'pegadinha', 'conexao'];
+async function testReading(browser) {
+  for (const colorScheme of ['light', 'dark']) {
+    const ctx = await browser.newContext({ viewport: VIEWPORTS['375'], colorScheme, serviceWorkers: 'block' });
+    const page = await ctx.newPage(); await page.goto(URL_); await page.waitForTimeout(300);
+    await page.evaluate(() => go('mod', { id: 'F5', tab: 'teoria' })); await page.waitForTimeout(250);
+    if (colorScheme === 'light') {
+      const t = await page.evaluate(() => ({ h: document.querySelectorAll('#prose h4').length, links: document.querySelectorAll('details.toc-m a').length, vis: !!document.querySelector('details.toc-m') && getComputedStyle(document.querySelector('details.toc-m')).display !== 'none' }));
+      check(t.vis && t.links === t.h && t.h > 0, `leitura: sumário no celular com ${t.links} links para ${t.h} seções`);
+      for (const id of ['F5', 'H5', 'G3', 'S1']) { await page.evaluate(id => go('mod', { id, tab: 'teoria' }), id); await page.waitForTimeout(150);
+        const over = await page.evaluate(() => { const w = innerWidth; return [...document.querySelectorAll('#prose > *')].filter(e => !e.classList.contains('tw')).map(e => Math.round(e.getBoundingClientRect().right)).filter(r => r > w); });
+        check(!over.length, `leitura: em ${id} o texto passa da borda direita da tela (${over.slice(0, 3).join(', ')} px > 375)`); }
+      await page.evaluate(() => go('mod', { id: 'F5', tab: 'teoria' })); await page.waitForTimeout(150);
+      const hint = await page.evaluate(() => { const t = document.querySelector('#prose .tw'); return t && t.scrollWidth > t.clientWidth ? t.classList.contains('scrolls') && getComputedStyle(t, '::before').content.includes('deslize') : 'sem tabela larga'; });
+      check(hint === true, `leitura: tabela larga no celular sem o aviso "deslize" (${hint})`);
+      const tops = await page.evaluate(() => [...document.querySelectorAll('.mod-head .chip')].map(c => c.offsetTop));
+      check(new Set(tops).size === 1, `leitura: metadados do módulo quebram em ${new Set(tops).size} linhas no celular`);
+    }
+    const r = await page.evaluate(types => {
+      const prose = document.querySelector('#prose');
+      prose.insertAdjacentHTML('afterbegin', types.map(k => `<div class="box ${k}"><b class="box-t">Título ${k}</b><p>Texto de exemplo do quadro ${k}.</p></div>`).join(''));
+      const lum = c => { const [r, g, b] = c.match(/[\d.]+/g).slice(0, 3).map(x => { x /= 255; return x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+      const ratio = (a, b) => (Math.max(lum(a), lum(b)) + 0.05) / (Math.min(lum(a), lum(b)) + 0.05);
+      return types.map(k => { const box = prose.querySelector('.box.' + k), cs = getComputedStyle(box);
+        const bg = cs.backgroundColor === 'rgba(0, 0, 0, 0)' ? getComputedStyle(document.body).backgroundColor : cs.backgroundColor;
+        return { k, edge: cs.borderLeftColor, padded: parseFloat(cs.paddingLeft) >= 12, title: ratio(getComputedStyle(box.querySelector('.box-t')).color, bg), text: ratio(getComputedStyle(box.querySelector('p')).color, bg) }; });
+    }, BOX_TYPES);
+    for (const b of r) {
+      check(b.padded, `leitura/${colorScheme}: quadro .${b.k} sem estilo`);
+      check(b.title >= 4.5 && b.text >= 4.5, `leitura/${colorScheme}: quadro .${b.k} com contraste ${b.title.toFixed(2)} / ${b.text.toFixed(2)}`);
+    }
+    check(new Set(r.map(b => b.edge)).size === BOX_TYPES.length, `leitura/${colorScheme}: os 5 tipos de quadro não se distinguem pela cor`);
+    await ctx.close();
+  }
+}
+
 const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : {});
 try {
   testData();
@@ -330,6 +367,7 @@ try {
   await testDia1(browser);
   await testGistSync(browser);
   await testDesign(browser);
+  await testReading(browser);
   await testNav(browser);
   await testTabs(browser);
   await testAnswered(browser);
