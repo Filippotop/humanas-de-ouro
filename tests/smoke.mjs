@@ -95,7 +95,8 @@ async function testOfflineShell(browser) {
   const ctx = await browser.newContext({ viewport: VIEWPORTS['375'] });
   const page = await ctx.newPage(); await page.goto(URL_);
   await page.evaluate(() => navigator.serviceWorker.ready); await page.waitForTimeout(1500);
-  for (const f of DATA_FILES) check(await page.evaluate(f => caches.match(f).then(r => !!r), f), `offline: ${f} não está no cache`);
+  const scripts = [...fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8').matchAll(/<script src="([^":]+)"/g)].map(m => m[1]);
+  for (const f of scripts) check(await page.evaluate(f => caches.match(f).then(r => !!r), f), `offline: ${f} não está no cache`);
   await ctx.setOffline(true); await page.reload(); await page.waitForTimeout(800);
   check(await page.evaluate(() => document.querySelectorAll('#app .st').length) > 0, 'offline: o app abriu sem as estações');
   await ctx.close();
@@ -242,6 +243,53 @@ async function testDia1(browser) {
     check(via === 'manual', `dia 1: liberação manual não gravou S.dia2.via (${via})`); await ctx.close(); }
 }
 
+/* Sincronização por Gist: o que um aparelho faz aparece no outro; chave ruim avisa; a chave nunca vai no código de exportação. */
+async function testGistSync(browser) {
+  const TOKEN = 'tok_bom_teste_123', gists = {}; let seq = 0;
+  const api = async route => {
+    const req = route.request(), url = new URL(req.url()), auth = req.headers()['authorization'];
+    if (auth !== 'Bearer ' + TOKEN) return route.fulfill({ status: 401, contentType: 'application/json', body: '{"message":"Bad credentials"}' });
+    const json = o => route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(o) });
+    const m = url.pathname.match(/^\/gists\/(\w+)$/);
+    if (url.pathname === '/gists' && req.method() === 'GET') return json(Object.values(gists));
+    if (url.pathname === '/gists' && req.method() === 'POST') { const b = req.postDataJSON(), id = 'g' + (++seq); gists[id] = { id, description: b.description, public: b.public, files: { 'progresso.json': { content: b.files['progresso.json'].content, truncated: false } } }; return json(gists[id]); }
+    if (m && req.method() === 'GET') return gists[m[1]] ? json(gists[m[1]]) : route.fulfill({ status: 404, body: '{}' });
+    if (m && req.method() === 'PATCH') { gists[m[1]].files['progresso.json'].content = req.postDataJSON().files['progresso.json'].content; return json(gists[m[1]]); }
+    return route.fulfill({ status: 404, body: '{}' });
+  };
+  const device = async () => { const ctx = await browser.newContext({ viewport: VIEWPORTS['375'], serviceWorkers: 'block' }); await ctx.route('https://api.github.com/**', api);
+    const page = await ctx.newPage(); await page.goto(URL_); await page.waitForTimeout(500); return { ctx, page }; };
+
+  const A = await device();
+  check(await A.page.evaluate(() => typeof window.GistSync === 'object'), 'sync: GistSync não existe no app instalado');
+  if (await A.page.evaluate(() => typeof window.GistSync !== 'object')) { await A.ctx.close(); return; }
+  check(await A.page.evaluate(t => GistSync.connect(t), TOKEN) === 'ok', 'sync: não conectou com a chave boa');
+  const gist = Object.values(gists)[0];
+  check(gist && gist.description === 'humanas-de-ouro-progresso' && gist.public === false, 'sync: não criou o Gist secreto humanas-de-ouro-progresso');
+  await A.page.evaluate(() => { S.ans['FS-1'] = { first: 'A', ok: true, t: Date.now(), src: 'teste' }; save(); });
+  await A.page.waitForTimeout(4500);
+  check(gist && JSON.parse(gist.files['progresso.json'].content).ans['FS-1'], 'sync: a resposta não chegou ao Gist 3 s depois de salvar');
+  const leaked = await A.page.evaluate(async t => JSON.stringify(await unpackS(await packS())).includes(t) || location.hash.includes(t), TOKEN);
+  check(!leaked, 'sync: a chave apareceu no código de exportação');
+  check(/sincronizado/.test(await A.page.locator('#sync').textContent()), 'sync: o selo não mostra "sincronizado"');
+
+  const B = await device();
+  check(await B.page.evaluate(t => GistSync.connect(t), TOKEN) === 'ok', 'sync: o segundo aparelho não conectou');
+  check(Object.keys(gists).length === 1, `sync: o segundo aparelho criou outro Gist (${Object.keys(gists).length})`);
+  check(await B.page.evaluate(() => !!S.ans['FS-1']), 'sync: a resposta do aparelho A não apareceu no aparelho B');
+  check((await B.page.locator('.stats .stat .n').first().textContent()).trim().startsWith('1'), 'sync: a tela do aparelho B não foi atualizada');
+  await B.page.evaluate(() => { S.ans['FS-2'] = { first: 'B', ok: false, t: Date.now(), src: 'teste' }; save(); });
+  await B.page.waitForTimeout(4500);
+  await A.page.evaluate(() => GistSync.pull());
+  check(await A.page.evaluate(() => !!S.ans['FS-1'] && !!S.ans['FS-2']), 'sync: depois da volta, o aparelho A não tem as duas respostas');
+  await A.ctx.close(); await B.ctx.close();
+
+  const C = await device();
+  check(await C.page.evaluate(() => GistSync.connect('chave_ruim')) === 'auth', 'sync: chave ruim deveria responder "auth"');
+  check(/reconecte/.test(await C.page.locator('#sync').textContent()), 'sync: com chave ruim o selo deveria pedir para reconectar');
+  await C.ctx.close();
+}
+
 const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : {});
 try {
   testData();
@@ -250,6 +298,7 @@ try {
   await testDeep(browser);
   await testOfflineShell(browser);
   await testDia1(browser);
+  await testGistSync(browser);
   await testNav(browser);
   await testTabs(browser);
   await testAnswered(browser);

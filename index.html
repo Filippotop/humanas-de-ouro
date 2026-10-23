@@ -534,6 +534,7 @@ select{font:inherit;padding:8px 12px;border-radius:10px;border:1px solid var(--r
 <div class="toast" id="toast" hidden></div>
 
 <script src="data/base.js"></script>
+<script src="merge.js"></script>
 <script>
 const DATA = window.DATA;
 /* Aprofundamentos (data/aprofundamento-*.js): teoria extra no fim do módulo e questões novas na contagem. */
@@ -573,6 +574,7 @@ function save(){
   S.updated=Date.now();
   try{ localStorage.setItem(KEY,JSON.stringify(S)); }catch(e){}
   dirty=true; clearTimeout(saveTimer); saveTimer=setTimeout(flush,1200);
+  if(window.onSaved) window.onSaved();
 }
 async function flush(){
   if(!dbRef||saving||!dirty) return;
@@ -1411,7 +1413,7 @@ async function unpackS(txt){ txt=String(txt).trim(); const m=txt.match(/HDO1\.([
 function countRec(r){ return Object.keys(r.ans||{}).length+Object.values(r.pv||{}).reduce((a,p)=>a+(p.runs||[]).length,0); }
 function popSync(){
   const p=$('#pop'); const n=countRec(S); let code=null;
-  p.innerHTML=`<h3>Levar o progresso para outro lugar</h3>
+  p.innerHTML=`${window.__PWA?'<div id="gistBox"></div>':''}<h3>Levar o progresso para outro lugar</h3>
     <p class="muted" style="font-size:13px;margin:0">${window.__PWA?'Para mandar o progresso deste app para o app dentro do Claude: copie aqui e cole lá, no mesmo menu.':'O jeito mais rápido: o botão abaixo abre o app instalado já trazendo este progresso. Ou copie o código e cole no outro app, no mesmo menu.'} Importar substitui o progresso de onde você colar.</p>
     ${window.__PWA?'':`<a class="btn gold" id="spApp" href="${APP_URL}" target="_blank" rel="noopener" style="text-align:center;text-decoration:none">Abrir o app instalado com este progresso</a>`}
     <div class="row"><button class="btn ${window.__PWA?'gold':''}" id="spCopy" disabled>Copiar código do progresso</button>${window.__PWA?'<button class="btn" id="spFile">Salvar em arquivo</button>':''}</div>
@@ -1419,6 +1421,7 @@ function popSync(){
     <div class="row"><button class="btn" id="spImp">Importar o que colei</button>${window.__PWA?'<label class="btn" style="cursor:pointer">Abrir arquivo<input type="file" id="spIn" accept=".json,.txt,application/json,text/plain" hidden></label>':''}<button class="btn" id="pc">Fechar</button></div>
     <p class="muted" id="spSt" style="font-size:12.5px;margin:0" aria-live="polite">Preparando o código…</p>`;
   const st=$('#spSt');
+  if(window.GistSync&&$('#gistBox')) GistSync.mountUI($('#gistBox'));
   packS().then(c=>{ code=c; $('#spCopy').disabled=false; st.textContent=`${n} registros de questões e provas · código de ${Math.max(1,Math.round(c.length/1024))} KB`; const a=$('#spApp'); if(a) a.href=APP_URL+'#importar='+encodeURIComponent(c); });
   $('#spCopy').onclick=()=>{ if(!code) return; const fb=()=>{ const ta=$('#spTxt'); ta.value=code; ta.focus(); ta.select(); st.textContent='Não consegui copiar sozinho: o código está selecionado na caixa, copie manualmente.'; };
     try{ navigator.clipboard.writeText(code).then(()=>{ st.textContent='Código copiado. Agora cole no outro app, em Aa → Copiar ou importar progresso.'; },fb); }catch(e){ fb(); } };
@@ -2136,4 +2139,5 @@ render();
 .tutor-out.ext{white-space:normal}
 </style>
 <script src="pwa.js" defer></script>
+<script src="gist-sync.js" defer></script>
 </html>

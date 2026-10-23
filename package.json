@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/smoke.mjs"
+    "test": "node tests/merge.test.mjs && node tests/sw.test.mjs && node tests/smoke.mjs"
   },
   "devDependencies": {
     "axe-core": "4.10.2",
