@@ -68,6 +68,31 @@ const tests = {
     const a = base({ ans: { q: { t: 1 } }, notes: { n: 'a' }, updated: 3 });
     const r = mergeS(a, {}); assert.deepEqual(r.ans, a.ans); assert.deepEqual(r.notes, a.notes); assert.equal(r.updated, 3);
   },
+  /* Exclusões: S.del guarda a última operação por caminho (t>0 apagado em t; t<0 recriado em -t). */
+  'del: tentativa descartada não volta pela junção com o Gist': () => {
+    const run = { id: 'k1', done: false, ans: { 46: 'A' } };
+    const local = base({ pv: { '24d1': { runs: [], notes: {} } }, del: { '["pv","24d1","runs","k1"]': 50 }, updated: 50 });
+    const gist = base({ pv: { '24d1': { runs: [run], notes: {} } }, updated: 40 });
+    assert.deepEqual(mergeS(local, gist).pv['24d1'].runs, []); assert.deepEqual(mergeS(gist, local).pv['24d1'].runs, []);
+  },
+  'del: redação apagada, marca e anotação desfeitas não voltam': () => {
+    const local = base({ red: { drafts: [] }, del: { '["red","drafts","d1"]': 9, '["marks","q1"]': 9, '["snotes","F1"]': 9, '["pv","25d1","notes","50"]': 9 }, updated: 9 });
+    const gist = base({ red: { drafts: [{ id: 'd1', text: 'x' }] }, marks: { q1: 3 }, snotes: { F1: 'velha' }, pv: { '25d1': { runs: [], notes: { 50: 'n' } } }, updated: 5 });
+    const r = mergeS(gist, local);
+    assert.deepEqual(r.red.drafts, []); assert.equal(r.marks.q1, undefined); assert.equal(r.snotes.F1, undefined); assert.equal(r.pv['25d1'].notes['50'], undefined);
+  },
+  'del: marcar de novo depois de desmarcar vence a exclusão mais antiga': () => {
+    const a = base({ marks: {}, del: { '["marks","q1"]': 10 }, updated: 10 });
+    const b = base({ marks: { q1: 20 }, del: { '["marks","q1"]': -20 }, updated: 20 });
+    assert.equal(mergeS(a, b).marks.q1, 20); assert.equal(mergeS(b, a).marks.q1, 20); assert.equal(mergeS(a, b).del['["marks","q1"]'], -20);
+  },
+  'reset: "Zerar progresso" vence o Gist antigo, nos dois sentidos': () => {
+    const zerado = base({ reset: 100, updated: 100 });
+    const gist = base({ ans: { q1: { ok: true, t: 5 } }, pv: { '24d1': { runs: [{ id: 'x', done: true }], notes: {} } }, updated: 90 });
+    for (const r of [mergeS(zerado, gist), mergeS(gist, zerado)]) { assert.deepEqual(r.ans, {}); assert.equal(r.reset, 100); assert.ok(!r.pv['24d1'] || !r.pv['24d1'].runs.length); }
+    const depois = base({ reset: 100, ans: { q2: { ok: true, t: 150 } }, updated: 150 });
+    assert.ok(mergeS(zerado, depois).ans.q2, 'o que foi feito depois do reset continua');
+  },
 };
 
 let failed = 0;

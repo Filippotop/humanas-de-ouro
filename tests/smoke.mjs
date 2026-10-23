@@ -499,6 +499,25 @@ async function testSpoiler24(browser) {
   { const r = await open({ v: 1, updated: 1 }, '2026-11-09T09:00:00-03:00'); check(r.c24 > 0, 'spoiler: com o dia 2 liberado pela data, as questões de 2024 continuam escondidas'); }
 }
 
+/* Com a sincronização ligada, a junção com a cópia antiga do Gist não pode desfazer o que a pessoa apagou. */
+async function testDeletesSync(browser) {
+  const old = { v: 1, pv: { '24d1': { runs: [{ id: 'k1', areas: 'LH', mode: 'prova', ans: { 46: 'A' }, flag: {}, cut: {}, start: Date.now(), limit: 1e9, done: false, cur: 0 }], notes: {} } }, ans: { q1: { first: 'A', ok: true, t: 5 } }, updated: 10 };
+  const ctx = await browser.newContext({ viewport: VIEWPORTS['1280'], serviceWorkers: 'block' });
+  await ctx.addInitScript(s => { if (!sessionStorage.getItem('seeded')) { localStorage.setItem('humanas-de-ouro-v1', s); sessionStorage.setItem('seeded', '1'); } }, JSON.stringify(old));
+  const page = await ctx.newPage(); await page.goto(URL_); await page.waitForTimeout(300);
+  await page.click('#tabs button[data-v="provas"]'); await page.waitForTimeout(200);
+  const drop = page.locator('[data-drop="24d1"]');
+  check(await drop.count() === 1, 'exclusão: o teste não achou "Descartar" na prova em andamento');
+  if (await drop.count()) { await drop.click(); await drop.click(); await page.waitForTimeout(150); }
+  const runs = await page.evaluate(o => mergeS(S, o).pv['24d1'].runs.length, old);
+  check(runs === 0, 'exclusão: a tentativa descartada volta ao juntar com o Gist antigo');
+  await page.evaluate(() => go('painel')); await page.waitForTimeout(200);
+  await page.click('#reset'); await page.click('#reset'); await page.waitForTimeout(150);
+  const after = await page.evaluate(o => { const m = mergeS(S, o); return Object.keys(m.ans || {}).length + ((m.pv || {})['24d1'] ? m.pv['24d1'].runs.length : 0); }, old);
+  check(after === 0, 'exclusão: depois de "Zerar progresso", a junção com o Gist antigo traz tudo de volta');
+  await ctx.close();
+}
+
 const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : {});
 try {
   testData();
@@ -510,6 +529,7 @@ try {
   await testOfflineShell(browser);
   await testDia1(browser);
   await testGistSync(browser);
+  await testDeletesSync(browser);
   await testDesign(browser);
   await testReading(browser);
   await testHome(browser);
