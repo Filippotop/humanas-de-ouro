@@ -589,17 +589,18 @@ select{font:inherit;padding:8px 12px;border-radius:10px;border:1px solid var(--r
 <div class="toast" id="toast" hidden></div>
 
 <script src="data/base.js"></script>
+<script src="data/linguagens.js"></script>
 <script src="merge.js"></script>
 <script>
 const DATA = window.DATA;
 /* Aprofundamentos (data/aprofundamento-*.js): teoria extra no fim do módulo e questões novas na contagem. */
 function applyDeep(){ Object.entries(DATA.deep||{}).forEach(([id,d])=>{ const m=DATA.modules.find(x=>x.id===id); if(!m) return; if(d.html) m.html+=d.html; (d.questions||[]).forEach(q=>{ DATA.questions.push(q); m.qs.push(q.id); }); }); }
 applyDeep();
-const STUDY_LINES = ['F','S','H','G'];
+const STUDY_LINES = ['F','S','H','G','L'];
 const EXAM = new Date('2026-11-08T13:30:00-03:00');
-const LINES = {H:{name:'História',vol:'HG'},G:{name:'Geografia',vol:'HG'},F:{name:'Filosofia',vol:'FS'},S:{name:'Sociologia',vol:'FS'},R:{name:'Redação',vol:'RD'}};
-const ERRMOD = {G9:'46',G5:'67',H3:'69',H7:'83',H5:'90',F5:'50 e 76',F7:'66',F6:'79',S4:'81'};
-const DIAG = {HG:{ok:24,n:29,label:'História e Geografia'},FS:{ok:11,n:16,label:'Filosofia e Sociologia'}};
+const LINES = {L:{name:'Linguagens',vol:'LC'},H:{name:'História',vol:'HG'},G:{name:'Geografia',vol:'HG'},F:{name:'Filosofia',vol:'FS'},S:{name:'Sociologia',vol:'FS'},R:{name:'Redação',vol:'RD'}};
+const ERRMOD = {L2:'7',L4:'36',L5:'25',L6:'17 e 38',L11:'15 e 23',L14:'3',G9:'46',G5:'67',H3:'69',H7:'83',H5:'90',F5:'50 e 76',F7:'66',F6:'79',S4:'81'};
+const DIAG = {LC:{ok:37,n:45,label:'Linguagens'},HG:{ok:24,n:29,label:'História e Geografia'},FS:{ok:11,n:16,label:'Filosofia e Sociologia'}};
 const TRAPS = {
   oposto:{name:'Termo oposto',tip:'Essa alternativa diz o contrário do texto ou do comando. Troque-a pelo seu contrário: se o contrário combina mais com o texto, ela está errada.'},
   autor:{name:'Autor errado',tip:'A ideia existe, mas é de outro pensador. Volte à referência do texto: de quem é o trecho?'},

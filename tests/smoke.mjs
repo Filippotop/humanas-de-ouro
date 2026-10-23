@@ -393,11 +393,47 @@ async function testHome(browser) {
   }
 }
 
+/* Linguagens: cada módulo L cumpre os mínimos da especificação; os 8 erros de 2025 estão ligados; a linha aparece no mapa. */
+const L_MIN_MODULES = 1;
+function testLinguagensData() {
+  if (!DATA_FILES.length) return;
+  const D = loadData(), L = D.modules.filter(m => m.line === 'L');
+  check(L.length >= L_MIN_MODULES, `linguagens: ${L.length} módulos (mínimo ${L_MIN_MODULES})`);
+  for (const m of L) {
+    const h4 = (m.html.match(/<h4>/g) || []).length;
+    check(m.vol === 'LC', `linguagens ${m.id}: vol "${m.vol}"`);
+    check(h4 >= 4 && h4 <= 7, `linguagens ${m.id}: ${h4} seções (de 4 a 7)`);
+    check(/class="box enem"/.test(m.html) && /class="box pegadinha"/.test(m.html), `linguagens ${m.id}: falta quadro No Enem ou Pegadinha`);
+    check(m.resumo.length >= 6, `linguagens ${m.id}: resumo com ${m.resumo.length} pares (mínimo 6)`);
+    check(m.qs.length >= 5, `linguagens ${m.id}: ${m.qs.length} questões (mínimo 5)`);
+    check(/H\d+/.test(m.habs || ''), `linguagens ${m.id}: sem habilidades da matriz`);
+    check(D.cards.filter(c => c.id.startsWith(m.id + '-c')).length >= 6, `linguagens ${m.id}: menos de 6 cartões`);
+    check(D.vf.filter(v => v.mod === m.id).length >= 4, `linguagens ${m.id}: menos de 4 itens de V ou F`);
+    for (const id of m.qs) { const q = D.questions.find(x => x.id === id); if (q) check(q.vol === 'LC' && q.mod === m.id, `linguagens ${m.id}: questão ${id} com vol/mod errados`); }
+  }
+}
+async function testLinguagensUI(browser) {
+  for (const colorScheme of ['light', 'dark']) {
+    const ctx = await browser.newContext({ viewport: VIEWPORTS['375'], colorScheme, serviceWorkers: 'block' });
+    const page = await ctx.newPage(); await page.goto(URL_); await page.waitForTimeout(300);
+    const r = await page.evaluate(() => {
+      const lum = c => { const [r, g, b] = c.match(/[\d.]+/g).slice(0, 3).map(x => { x /= 255; return x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+      const b = document.querySelector('.line.lc-L .line-head .badge'); if (!b) return null; const cs = getComputedStyle(b), x = lum(cs.color), y = lum(cs.backgroundColor);
+      return { ratio: (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05), err: Object.values(ERRMOD).join(' ') };
+    });
+    check(r, `linguagens/${colorScheme}: a linha L não aparece no mapa`);
+    if (r) { check(r.ratio >= 4.5, `linguagens/${colorScheme}: selo da linha L com contraste ${r.ratio.toFixed(2)}`);
+      if (colorScheme === 'light') for (const n of [3, 7, 15, 17, 23, 25, 36, 38]) check(new RegExp(`\\b${n}\\b`).test(r.err), `linguagens: erro ${n} de 2025 não está em ERRMOD`); }
+    await ctx.close();
+  }
+}
+
 const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : {});
 try {
   testData();
   testIntegrity();
   testPlan();
+  testLinguagensData();
   await testDeep(browser);
   await testOfflineShell(browser);
   await testDia1(browser);
@@ -405,6 +441,7 @@ try {
   await testDesign(browser);
   await testReading(browser);
   await testHome(browser);
+  await testLinguagensUI(browser);
   await testNav(browser);
   await testTabs(browser);
   await testAnswered(browser);
