@@ -247,7 +247,7 @@ async function testDia1(browser) {
 
 /* Sincronização por Gist: o que um aparelho faz aparece no outro; chave ruim avisa; a chave nunca vai no código de exportação. */
 async function testGistSync(browser) {
-  const TOKEN = 'tok_bom_teste_123', gists = {}; let seq = 0;
+  const TOKEN = 'tok_bom_teste_123', gists = {}; let seq = 0, slow = false;
   const api = async route => {
     const req = route.request(), url = new URL(req.url()), auth = req.headers()['authorization'];
     if (auth !== 'Bearer ' + TOKEN) return route.fulfill({ status: 401, contentType: 'application/json', body: '{"message":"Bad credentials"}' });
@@ -256,6 +256,7 @@ async function testGistSync(browser) {
     if (url.pathname === '/gists' && req.method() === 'GET') return json(Object.values(gists));
     if (url.pathname === '/gists' && req.method() === 'POST') { const b = req.postDataJSON(), id = 'g' + (++seq); gists[id] = { id, description: b.description, public: b.public, files: { 'progresso.json': { content: b.files['progresso.json'].content, truncated: false } } }; return json(gists[id]); }
     if (m && req.method() === 'GET') return gists[m[1]] ? json(gists[m[1]]) : route.fulfill({ status: 404, body: '{}' });
+    if (m && req.method() === 'PATCH' && slow) await new Promise(r => setTimeout(r, 800));
     if (m && req.method() === 'PATCH') { gists[m[1]].files['progresso.json'].content = req.postDataJSON().files['progresso.json'].content; return json(gists[m[1]]); }
     return route.fulfill({ status: 404, body: '{}' });
   };
@@ -284,6 +285,22 @@ async function testGistSync(browser) {
   await B.page.waitForTimeout(4500);
   await A.page.evaluate(() => GistSync.pull());
   check(await A.page.evaluate(() => !!S.ans['FS-1'] && !!S.ans['FS-2']), 'sync: depois da volta, o aparelho A não tem as duas respostas');
+  const inGist = id => !!JSON.parse(gist.files['progresso.json'].content).ans[id];
+  const put = id => `S.ans['${id}'] = { first: 'C', ok: true, t: Date.now(), src: 'teste' };`;
+  /* B envia depois da última leitura de A; o envio rápido de A ao sair não pode apagar o que B mandou. */
+  await B.page.evaluate(new Function(put('FS-3') + ' return GistSync.push();'));
+  await A.page.evaluate(new Function(put('FS-4') + ' return GistSync.push({ quick: true });'));
+  check(inGist('FS-3') && inGist('FS-4'), `sync: o envio rápido ao sair apagou do Gist o trabalho do outro aparelho (FS-3 ${inGist('FS-3')}, FS-4 ${inGist('FS-4')})`);
+  /* Estudo feito sem internet: ao abrir de novo, a leitura do Gist também envia o que só existe aqui. */
+  await A.page.evaluate(new Function(put('FS-5') + " localStorage.setItem(KEY, JSON.stringify(S)); return GistSync.pull();"));
+  await A.page.waitForTimeout(600);
+  check(inGist('FS-5'), 'sync: o que foi feito sem internet não sobe ao abrir o app de novo');
+  /* Um envio pedido enquanto outro está em andamento não pode se perder. */
+  slow = true; const patching = A.page.waitForRequest(r => r.method() === 'PATCH');
+  await A.page.evaluate(new Function(put('FS-7') + ' window.__p = GistSync.push();')); await patching;
+  await A.page.evaluate(new Function(put('FS-6') + ' return GistSync.push().then(() => window.__p);'));
+  slow = false;
+  check(inGist('FS-6'), 'sync: o envio pedido durante outro envio se perdeu');
   await A.ctx.close(); await B.ctx.close();
 
   const C = await device();
