@@ -30,22 +30,28 @@
   --read:"Source Serif 4", Georgia, "Times New Roman", serif;
   --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --r:10px; --on-color:#fff;
+  --l:#B0306A;
+  --fs-1:12px; --fs-2:14px; --fs-3:16px; --fs-4:18px; --fs-5:22px; --fs-6:28px; --fs-7:36px;
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:20px; --sp-6:24px; --sp-7:32px; --sp-8:40px;
+  --r-sm:8px; --r-lg:14px; --shadow-1:0 1px 2px rgba(20,26,46,.06),0 2px 8px rgba(20,26,46,.05); --ease:cubic-bezier(.2,.7,.2,1);
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0E1120; --surface:#171B2D; --sunk:#1F2439; --ink:#E8EAF3; --muted:#9BA1BA; --rule:#2B3150;
   --gold:#E8B53E; --gold-soft:#3A2F12; --gold-ink:#F7E3B0;
   --h:#F2665E; --g:#3FBF85; --f:#7A93FF; --s:#C383EA; --rd:#3CC4CC;
-  --ok:#4CC787; --ok-soft:#163626; --bad:#FF7A70; --bad-soft:#3E1A1A; --warn:#F2A640; --warn-soft:#3A2A10; --on-color:#0E1120;
+  --ok:#4CC787; --ok-soft:#163626; --bad:#FF7A70; --bad-soft:#3E1A1A; --warn:#F2A640; --warn-soft:#3A2A10; --on-color:#0E1120; --l:#F27BB4;
+  --shadow-1:0 1px 2px rgba(0,0,0,.3),0 2px 10px rgba(0,0,0,.25);
   color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0E1120; --surface:#171B2D; --sunk:#1F2439; --ink:#E8EAF3; --muted:#9BA1BA; --rule:#2B3150;
   --gold:#E8B53E; --gold-soft:#3A2F12; --gold-ink:#F7E3B0;
   --h:#F2665E; --g:#3FBF85; --f:#7A93FF; --s:#C383EA; --rd:#3CC4CC;
-  --ok:#4CC787; --ok-soft:#163626; --bad:#FF7A70; --bad-soft:#3E1A1A; --warn:#F2A640; --warn-soft:#3A2A10; --on-color:#0E1120;
+  --ok:#4CC787; --ok-soft:#163626; --bad:#FF7A70; --bad-soft:#3E1A1A; --warn:#F2A640; --warn-soft:#3A2A10; --on-color:#0E1120; --l:#F27BB4;
+  --shadow-1:0 1px 2px rgba(0,0,0,.3),0 2px 10px rgba(0,0,0,.25);
   color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-body{background:var(--bg);color:var(--ink);font-family:var(--display);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--display);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
@@ -81,7 +87,7 @@ main{padding-block:22px 80px}
 .panel{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:18px}
 .chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:999px;background:var(--sunk);color:var(--muted)}
 .chip.A{background:var(--gold-soft);color:var(--gold-ink);font-weight:600}
-.lc-H{--lc:var(--h)} .lc-G{--lc:var(--g)} .lc-F{--lc:var(--f)} .lc-S{--lc:var(--s)} .lc-R{--lc:var(--rd)}
+.lc-L{--lc:var(--l)} .lc-H{--lc:var(--h)} .lc-G{--lc:var(--g)} .lc-F{--lc:var(--f)} .lc-S{--lc:var(--s)} .lc-R{--lc:var(--rd)}
 .sec-title{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:28px 0 12px;flex-wrap:wrap}
 .sec-title h2{font-size:22px;font-weight:800;letter-spacing:-.01em}
 
@@ -341,6 +347,10 @@ form.search input{width:100%;font:inherit;font-size:14px;padding:7px 12px;border
 .qtools button[aria-pressed="true"]{background:var(--gold-soft);color:var(--gold-ink);border-color:var(--gold)}
 .nextstep{margin-top:8px;border:2px solid var(--ok);background:var(--ok-soft);border-radius:var(--r);padding:16px;display:grid;gap:10px}
 .nextstep b{font-size:17px}
+input[type=text],input[type=password],input[type=number],input[type=email],input:not([type]),select{width:100%;font:inherit;font-size:var(--fs-3);padding:var(--sp-3) var(--sp-3);border:1px solid var(--rule);border-radius:var(--r-sm);background:var(--surface);color:var(--ink)}
+input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+.panel a:not(.btn),#pop a:not(.btn),.prose a:not(.btn),.lede a:not(.btn){color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 .dia2-lock{margin-top:18px;display:grid;gap:4px}
 .dia2-lock .dia2-t{font-size:17px}
 .dia2-lock summary{cursor:pointer;padding:6px 0}
@@ -356,10 +366,19 @@ form.search input{width:100%;font:inherit;font-size:14px;padding:7px 12px;border
   form.search.open{display:block}
   .sbtn{display:inline-block}
   .sync{display:none}
-  .bar{gap:8px}
-  .count{margin-left:0;order:8}
-  .tools{margin-left:auto}
+  .bar{gap:6px 8px;padding-block:8px}
+  .brand{font-size:16px;gap:8px}
+  .brand .dot{width:20px;height:20px}
+  .count{margin-left:auto;order:1;font-size:11px;padding:4px 9px}
+  .count .cl{display:none}
+  .tools{order:2;flex-basis:100%;margin-left:0;overflow-x:auto;scrollbar-width:none;justify-content:space-between}
+  .tools::-webkit-scrollbar{display:none}
+  .tool{padding:4px 10px}
   .pop{top:calc(56px + env(safe-area-inset-top,0px))}
+}
+@media (max-width:340px){
+  .brand{font-size:15px;gap:6px}
+  .count{padding:4px 7px}
 }
 @media (max-width:820px){
   .tlr{grid-template-columns:70px 14px 1fr}
@@ -651,7 +670,7 @@ function render(){
   document.body.dataset.view=view;
   if(view!=='game') clearInterval(gameTimer);
   $('#readbar').hidden=true; updateGoal();
-  const d=daysLeft(), dd=examTarget().toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'}); $('#count').textContent = d===1? `falta 1 dia · ${dd}` : `faltam ${d} dias · ${dd}`;
+  const d=daysLeft(), dd=examTarget().toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'}); $('#count').innerHTML = d===1? `<span class="cl">falta </span>1 dia · ${dd}` : `<span class="cl">faltam </span>${d} dias · ${dd}`;
   ({linhas:vLinhas,mod:vMod,arena:vArena,game:vGame,biblioteca:vBib,treino:vTreino,plano:vPlano,painel:vPainel,busca:vBusca,provas:vProvas,prova:vProva,provares:vProvaRes,papel:vPapel,redacao:vRedacao}[view])();
 }
 
@@ -1916,8 +1935,8 @@ function vProvas(){
       ${sc?`<div class="exscore">${Object.entries(sc.areas).map(([a,v])=>`<div><span class="big3">${v.ok}<small>/${v.n}</small></span><span class="lbl">${AREAS[a].name}</span></div>`).join('')}</div><p class="mono muted" style="font-size:12px;margin:0">${runLabel(last)}</p>`:''}
       ${e.status==='pendente'&&!sc?`<p class="note">Este é o diagnóstico que falta. Sem ele, ninguém sabe onde você está em Natureza e Matemática, nem você.</p>`:''}
       ${e.status==='guardada'&&!sc?`<p class="note">Faça uma vez só, inteira e cronometrada, como no dia. Depois de ver o gabarito, ela deixa de valer como simulado.</p>`:''}
-      <div class="exactions">${cur?`<button class="btn gold" data-cont="${id}">Continuar (${Object.keys(cur.ans).length}/${areaNums(cur.areas).length})</button><button class="btn ghost" data-drop="${id}">Descartar esta tentativa</button>`:startButtons(id)}
-      ${done.length?`<button class="btn" data-res="${id}">Ver correção</button>`:''}<button class="btn ghost" data-papel="${id}">Fiz no papel: lançar respostas</button></div>
+      <div class="exactions">${cur?`<button class="btn gold" data-cont="${id}">Continuar (${Object.keys(cur.ans).length}/${areaNums(cur.areas).length})</button><button class="btn ghost" data-drop="${id}">Descartar esta tentativa</button>`:startButtons(id,!(e.status==='feita'&&done.length))}
+      ${done.length?`<button class="btn ${e.status==='feita'?'gold':''}" data-res="${id}">Ver correção</button>`:''}<button class="btn ghost" data-papel="${id}">Fiz no papel: lançar respostas</button></div>
       <p class="fonte">${e.fonte}</p></article>`};
   app.innerHTML=`<div class="pagehead"><div><div class="eyebrow">provas oficiais do Inep · Caderno Azul</div><h1>Provas</h1><p class="lede">As provas de verdade, questão por questão, com cartão-resposta, cronômetro e correção pelo gabarito oficial. As imagens são recortes do caderno original.</p></div></div>
   <div class="exgrid">${(d2.open?['25d2','25d1','24d1','24d2']:['25d1','24d1']).map(card).join('')}</div>
@@ -1938,10 +1957,12 @@ function vProvas(){
   app.querySelectorAll('[data-drop]').forEach(b=>b.onclick=()=>{ if(!b.dataset.ok){ b.dataset.ok=1; b.textContent='Toque de novo para descartar'; return; } const st=pvState(b.dataset.drop); const ix=st.runs.findIndex(r=>!r.done); if(ix>=0){ st.runs.splice(ix,1); save(); toast('Tentativa descartada.'); } vProvas(); });
   const f2=$('#dia2Force'); if(f2) f2.onclick=()=>{ if(!f2.dataset.ok){ f2.dataset.ok=1; f2.textContent=`Tem certeza? Faltam ${daysLeft()} dias para o dia 1, e cada hora no dia 2 sai dele. Toque de novo.`; return; } unlockDia2(); toast('Dia 2 liberado.'); vProvas(); };
 }
-function startButtons(id){
+/* Um botão principal por cartão: diagnóstico pendente começa pela 1ª área; simulado guardado, pelo dia inteiro. */
+function startButtons(id,primary){
   const e=EX[id], full=examAreas(id);
   const opts= e.dia===2 ? [[`${id}|N|prova`,'Natureza · 2h30'],[`${id}|M|prova`,'Matemática · 2h30'],[`${id}|NM|prova`,'Dia inteiro · 5h']] : [[`${id}|L|prova`,'Linguagens · 2h30'],[`${id}|H|prova`,'Humanas · 2h30'],[`${id}|LH|prova`,'Dia inteiro · 5h30']];
-  return opts.map(([k,l],i)=>`<button class="btn ${i===0&&e.status==='pendente'?'gold':''}" data-start="${k}">${l}</button>`).join('')+`<button class="btn ghost" data-start="${id}|${full}|estudo">Modo estudo</button>`;
+  const gi=primary?(e.status==='pendente'?0:2):-1;
+  return opts.map(([k,l],i)=>`<button class="btn ${i===gi?'gold':''}" data-start="${k}">${l}</button>`).join('')+`<button class="btn ghost" data-start="${id}|${full}|estudo">Modo estudo</button>`;
 }
 function startRun(id,areas,mode){
   const st=pvState(id); st.runs.push({id:Date.now().toString(36),areas,mode,ans:{},flag:{},cut:{},start:Date.now(),limit:runLimit(areas)*60000,done:false,cur:0});

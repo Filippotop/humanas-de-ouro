@@ -290,6 +290,36 @@ async function testGistSync(browser) {
   await C.ctx.close();
 }
 
+/* Design: tokens, campos e links com estilo, cabeçalho compacto no celular, um botão principal por prova e movimento reduzido. */
+async function testDesign(browser) {
+  const ctx = await browser.newContext({ viewport: VIEWPORTS['375'], serviceWorkers: 'block' });
+  const page = await ctx.newPage(); await page.goto(URL_); await page.waitForTimeout(400);
+  const tok = await page.evaluate(() => { const cs = getComputedStyle(document.documentElement); const g = n => cs.getPropertyValue(n).trim();
+    return { fs: [1, 2, 3, 4, 5, 6, 7].map(i => g('--fs-' + i)), sp: [1, 2, 3, 4, 5, 6, 7, 8].map(i => g('--sp-' + i)), l: g('--l') }; });
+  check(tok.fs.join(' ') === '12px 14px 16px 18px 22px 28px 36px', `design: escala tipográfica --fs-1..7 = "${tok.fs.join(' ')}"`);
+  check(tok.sp.every(v => /^\d+px$/.test(v) && parseInt(v) % 4 === 0), `design: espaçamentos --sp-1..8 fora de múltiplos de 4 ("${tok.sp.join(' ')}")`);
+  check(!!tok.l, 'design: falta a cor --l da linha de Linguagens');
+  for (const w of [320, 375]) { await page.setViewportSize({ width: w, height: 700 }); await page.waitForTimeout(100);
+    const h = await page.evaluate(() => { const r = document.querySelector('header.top').getBoundingClientRect(); return { hh: r.height, left: r.left, width: r.width }; });
+    check(h.hh <= 84, `design: cabeçalho em ${w} px com ${Math.round(h.hh)} px de altura (máximo 84)`);
+    check(h.left === 0 && h.width === w, `design: cabeçalho em ${w} px não ocupa a largura toda (x=${h.left}, largura ${h.width})`); }
+  await page.setViewportSize(VIEWPORTS['375']);
+  await page.evaluate(() => openPop('sync')); await page.waitForTimeout(200);
+  const f = await page.evaluate(() => { const i = document.querySelector('#gsTok, #spTxt'); const a = document.querySelector('#pop a[href^="https://github.com"]'); const ci = getComputedStyle(i);
+    return { r: parseFloat(ci.borderRadius), pad: parseFloat(ci.paddingLeft), font: ci.fontFamily, link: a ? getComputedStyle(a).color : null }; });
+  check(f.r >= 8 && f.pad >= 10, `design: campo de texto sem estilo (raio ${f.r}, padding ${f.pad})`);
+  check(f.link && f.link !== 'rgb(0, 0, 238)', `design: link com o azul padrão do navegador (${f.link})`);
+  await page.evaluate(() => closePop()); await page.click('#tabs button[data-v="provas"]'); await page.waitForTimeout(200);
+  const prim = await page.evaluate(() => [...document.querySelectorAll('.excard')].map(c => [c.querySelector('h2').textContent, c.querySelectorAll('.exactions .btn.gold').length]));
+  for (const [t, n] of prim) check(n === 1, `design: o cartão "${t}" tem ${n} botões principais (deveria ter 1)`);
+  await ctx.close();
+  const rm = await browser.newContext({ viewport: VIEWPORTS['1280'], serviceWorkers: 'block', reducedMotion: 'reduce' });
+  const p2 = await rm.newPage(); await p2.goto(URL_); await p2.waitForTimeout(300);
+  const moving = await p2.evaluate(() => [...document.querySelectorAll('body *')].filter(e => { const cs = getComputedStyle(e); return cs.transitionDuration.split(',').some(d => parseFloat(d) > 0) || (cs.animationName !== 'none' && parseFloat(cs.animationDuration) > 0); }).slice(0, 3).map(e => e.className || e.tagName));
+  check(!moving.length, `design: com movimento reduzido ainda há animação (${moving.join(', ')})`);
+  await rm.close();
+}
+
 const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : {});
 try {
   testData();
@@ -299,6 +329,7 @@ try {
   await testOfflineShell(browser);
   await testDia1(browser);
   await testGistSync(browser);
+  await testDesign(browser);
   await testNav(browser);
   await testTabs(browser);
   await testAnswered(browser);
