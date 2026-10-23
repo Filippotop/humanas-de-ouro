@@ -357,6 +357,42 @@ async function testReading(browser) {
   }
 }
 
+/* Tela inicial: contagem, anéis por área, próximo passo em destaque, status do dia 2, ícones desenhados e estatísticas sem esticar. */
+async function testHome(browser) {
+  for (const vp of ['375', '1280']) {
+    const ctx = await browser.newContext({ viewport: VIEWPORTS[vp], serviceWorkers: 'block' });
+    const page = await ctx.newPage(); await page.goto(URL_); await page.waitForTimeout(400);
+    const h = await page.evaluate(() => ({
+      count: (document.querySelector('.hero .countdown') || {}).textContent || '', days: String(daysLeft()),
+      rings: [...document.querySelectorAll('.hero .rings [data-area]')].map(r => [r.dataset.area, r.getAttribute('aria-label') || '']),
+      next: ((document.querySelector('.hero .next b') || {}).textContent || '').trim(),
+      d2: (document.querySelector('.hero .dia2-status') || {}).textContent || '',
+      icons: [...document.querySelectorAll('.task .ic')].map(i => i.querySelector('svg') ? 'svg' : i.textContent.trim()),
+      statH: Math.max(0, ...[...document.querySelectorAll('.hero .stat')].map(s => s.getBoundingClientRect().height)),
+    }));
+    check(h.count.includes(h.days), `início/${vp}: contagem regressiva sem os ${h.days} dias ("${h.count.trim().slice(0, 60)}")`);
+    check(h.rings.map(r => r[0]).join(',') === 'LC,HUM,RD', `início/${vp}: anéis por área = "${h.rings.map(r => r[0]).join(',')}"`);
+    for (const [a, l] of h.rings) check(/\d+%/.test(l), `início/${vp}: anel ${a} sem porcentagem no aria-label ("${l}")`);
+    check(h.next.length > 0, `início/${vp}: falta o bloco "Próximo passo"`);
+    check(/72/.test(h.d2), `início/${vp}: falta o status do dia 2 com a meta 72 ("${h.d2.trim().slice(0, 60)}")`);
+    const bad = h.icons.filter(i => i !== 'svg' && !/^[A-Z]\d+$/.test(i));
+    check(!bad.length, `início/${vp}: ícones de tarefa que não são desenhos (${bad.join(' ')})`);
+    if (vp === '1280') check(h.statH <= 200, `início/${vp}: cartão de estatística esticado (${Math.round(h.statH)} px)`);
+    if (h.next) { await page.click('.hero .next'); await page.waitForTimeout(200);
+      check(await page.evaluate(() => view !== 'linhas' || !!document.querySelector('#pop:not([hidden])')), `início/${vp}: o "Próximo passo" não leva a lugar nenhum`); }
+    await ctx.close();
+  }
+  for (const [day, want] of [['2026-10-23T09:00:00-03:00', false], ['2026-11-01T09:00:00-03:00', true]]) {
+    const ctx = await browser.newContext({ viewport: VIEWPORTS['375'], serviceWorkers: 'block' });
+    const page = await ctx.newPage(); await page.clock.setFixedTime(new Date(day)); await page.goto(URL_); await page.waitForTimeout(300);
+    const nx = await page.locator('.hero .next b').textContent().catch(() => '');
+    check(/Simulado do dia 1/.test(nx) === want, `início: em ${day.slice(0, 10)} o próximo passo ${want ? 'deveria' : 'não deveria'} ser o simulado ("${nx}")`);
+    const dots = await page.evaluate(() => [...document.querySelectorAll('.aring')].filter(r => r.querySelectorAll('circle').length > 1 && r.getAttribute('aria-label').includes(' 0%')).length);
+    check(!dots, `início: ${dots} anel(is) em 0% desenham um arco (pontinho solto)`);
+    await ctx.close();
+  }
+}
+
 const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : {});
 try {
   testData();
@@ -368,6 +404,7 @@ try {
   await testGistSync(browser);
   await testDesign(browser);
   await testReading(browser);
+  await testHome(browser);
   await testNav(browser);
   await testTabs(browser);
   await testAnswered(browser);

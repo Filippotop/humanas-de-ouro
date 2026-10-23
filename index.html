@@ -92,7 +92,26 @@ main{padding-block:22px 80px}
 .sec-title h2{font-size:22px;font-weight:800;letter-spacing:-.01em}
 
 /* hero / mission */
-.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:16px}
+.hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:var(--sp-5);align-items:start}
+.side-home{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--sp-3)}
+.side-home .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.next{display:grid;gap:var(--sp-1);width:100%;text-align:left;cursor:pointer;border:0;border-radius:var(--r-lg);padding:var(--sp-5);margin:var(--sp-2) 0 var(--sp-4);background:var(--ink);color:var(--surface);box-shadow:var(--shadow-1)}
+.next .eyebrow{color:var(--gold-soft)}
+.next b{font-family:var(--display);font-size:var(--fs-5);font-weight:800;letter-spacing:-.01em;line-height:1.15}
+.next small{font-size:var(--fs-2);opacity:.85;line-height:1.4}
+.next .cta{display:inline-flex;align-items:center;gap:var(--sp-1);margin-top:var(--sp-2);font-weight:700;color:var(--gold-soft)}
+.task .ic svg{display:block}
+.task .go{display:flex;color:var(--muted)}
+.countdown{display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-4)}
+.countdown .big{font-family:var(--display);font-size:var(--fs-7);font-weight:800;line-height:1;color:var(--gold)}
+.countdown small{display:block;font-family:var(--mono);font-size:var(--fs-1);color:var(--muted)}
+.rings{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-2);padding:var(--sp-4);text-align:center}
+.aring{display:grid;justify-items:center;gap:2px;position:relative}
+.aring b{position:absolute;top:20px;font-family:var(--mono);font-size:var(--fs-2)}
+.aring span{font-size:var(--fs-1);color:var(--muted)}
+.aring[data-area="LC"]{--rg:var(--l)} .aring[data-area="HUM"]{--rg:var(--f)} .aring[data-area="RD"]{--rg:var(--rd)}
+.dia2-status{display:grid;gap:2px;padding:var(--sp-3) var(--sp-4)}
+.dia2-status small{color:var(--muted);font-size:var(--fs-1);font-family:var(--mono)}
 .hero>*{min-width:0}
 .mission h2{font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.08}
 .mission p.lead{font-family:var(--read);font-size:16px;color:var(--muted);max-width:56ch;margin:8px 0 14px}
@@ -692,6 +711,12 @@ function render(){
 }
 
 /* ---------- LINHAS ---------- */
+/* Ícones desenhados da tela inicial (caracteres de texto somem em alguns aparelhos). */
+const svgI=d=>`<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const ICON={go:svgI('<path d="M9 6l6 6-6 6"/>')};
+const TASK_IC={'!':svgI('<path d="M12 8v5M12 16.5v.5"/><circle cx="12" cy="12" r="9"/>'),'✎':svgI('<path d="M4 20h4L19 9l-4-4L4 16z"/>'),'★':svgI('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>'),'✍':svgI('<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/>'),'?':svgI('<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 4.6 1.3c0 1.7-2.1 2-2.1 3.4M12 17v.5"/>'),'▸':svgI('<path d="M8 5l11 7-11 7z"/>'),'▦':svgI('<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/>'),'◷':svgI('<rect x="3" y="6" width="14" height="12" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v10"/>'),'↺':svgI('<path d="M4 4v6h6"/><path d="M4.5 15a8 8 0 1 0 1.9-8.3L4 10"/>')};
+function ring(area,name,st){ const p=st.n?Math.round(100*st.done/st.n):0, r=26, c=2*Math.PI*r;
+  return `<div class="aring" data-area="${area}" role="img" aria-label="${name}: ${p}% das questões feitas"><svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"><circle cx="32" cy="32" r="${r}" fill="none" stroke="var(--sunk)" stroke-width="7"/>${p?`<circle cx="32" cy="32" r="${r}" fill="none" stroke="var(--rg)" stroke-width="7" stroke-linecap="round" stroke-dasharray="${(c*p/100).toFixed(1)} ${c.toFixed(1)}" transform="rotate(-90 32 32)"/>`:''}</svg><b>${st.n?p+'%':'—'}</b><span>${name}</span></div>`; }
 function vLinhas(){
   const nm=nextModules(2); const due=dueCards().length; const pday=planToday();
   const rc=DATA.recal.find(r=>!S.recal[r.vol+r.num]);
@@ -699,7 +724,7 @@ function vLinhas(){
   if(dia2Status().open) { const r25=allRuns('25d2'); const cur=pvState('25d2').runs.find(r=>!r.done); const doneAreas=r25.filter(runReal).map(r=>r.areas).join(''); const miss=['N','M'].filter(a=>!doneAreas.includes(a));
     if(miss.length) tasks.push({ic:'!',t:cur?'Continuar o ENEM 2025 · 2º dia':`Diagnóstico pendente: ENEM 2025 · ${miss.map(a=>AREAS[a].name).join(' e ')}`,s:cur?`${Object.keys(cur.ans).length} questões respondidas · o cronômetro continua correndo`:'A prova oficial está dentro do app, com cartão-resposta e correção. É a tarefa mais importante da semana.',act:()=> cur? go('prova',{id:'25d2',run:pvState('25d2').runs.indexOf(cur)}) : go('provas')});
     if(miss.length) tasks.push({ic:'✎',t:'Fez a prova no papel? Lance as respostas',s:'Marque as letras no cartão-resposta e o app corrige pelo gabarito oficial, como se você tivesse feito aqui.',act:()=>go('papel',{id:'25d2',areas:miss.join('')})}); }
-  else { const b=dia2Status().best; tasks.push({ic:'★',t:'Simulado do dia 1 de 2024 · dom 1/11, 13h30',s:b==null?`É a chave do dia 2: ${DIA2_META}/90, inteiro e cronometrado (5h30), libera. Até lá, não abra essa prova.`:`Seu melhor: ${b}/90. Meta para liberar o dia 2: ${DIA2_META}/90.`,act:()=>go('provas')}); }
+  else { const b=dia2Status().best; tasks.push({key:'sim24',ic:'★',t:'Simulado do dia 1 de 2024 · dom 1/11, 13h30',s:b==null?`É a chave do dia 2: ${DIA2_META}/90, inteiro e cronometrado (5h30), libera. Até lá, não abra essa prova.`:`Seu melhor: ${b}/90. Meta para liberar o dia 2: ${DIA2_META}/90.`,act:()=>go('provas')}); }
   { const w=Object.values(S.ans).filter(a=>!a.ok); const au=w.filter(a=>a.trap==='autor').length;
     { const rd=(S.red&&Array.isArray(S.red.drafts)?S.red.drafts:[]).filter(d=>d.done).map(d=>d.end||0); const last=rd.length?Math.max(...rd):0; const dd=last?Math.floor((Date.now()-last)/864e5):null;
       if(dd==null||dd>=4) tasks.push({ic:'✍',t:dd==null?'Redação: você ainda não escreveu nenhuma aqui':`Redação: ${dd} dias sem escrever`,s:'Até 1.000 pontos dependem de treino escrito. A Oficina tem projeto, cronômetro e correção por competência.',act:()=>go('redacao',{s:'oficina',novo:1})}); }
@@ -709,6 +734,8 @@ function vLinhas(){
   nm.forEach(m=>{const s=modStats(m.id); tasks.push({lc:m.line,ic:m.id,t:`${m.id} · ${m.title}`,s: s.read? `Teoria lida. Faltam ${s.n-s.done} de ${s.n} questões.` : `Faixa ${m.faixa}${ERRMOD[m.id]?` · ligado ao seu erro na questão ${ERRMOD[m.id]} de 2025`:''}`,act:()=>go('mod',{id:m.id,tab:s.read?'q':'teoria'})});});
   tasks.push({ic:'◷',t:`Revisar ${Math.min(15,due)} cartões de véspera`,s:due? `${due} cartões vencidos hoje. Leva uns 6 minutos.`:'Nenhum cartão vencido. Volte amanhã.',act:()=>go('game',{g:'cards'}),done:!due});
   if(rc) tasks.push({ic:'↺',t:`Refazer o seu erro na questão ${rc.num} de 2025`,s:`${rc.subj}: tente de novo e faça a questão de reforço.`,act:()=>go('treino',{s:'recal'})});
+  /* O simulado só abre a missão no próprio dia 1/11; antes disso fica no fim da lista. */
+  if(isoToday()!=='2026-11-01'){ const si=tasks.findIndex(t=>t.key==='sim24'); if(si>=0) tasks.push(tasks.splice(si,1)[0]); }
   const tot=DATA.questions.length, done=Object.keys(S.ans).length, ok=Object.values(S.ans).filter(a=>a.ok).length;
   const mastered=Object.values(S.cards).filter(c=>c.box>=3).length;
   const fs=volStats('FS'), hg=volStats('HG');
@@ -717,16 +744,22 @@ function vLinhas(){
     <div class="mission">
       <div class="eyebrow">Missão de hoje · ${new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'})}</div>
       <h2>${done===0?'Comece pela linha que mais derrubou você em 2025.':'Continue de onde parou. A ordem abaixo já considera seus erros.'}</h2>
-      <p class="lead">A missão escolhe os módulos pela incidência no ENEM, pelos seus erros no diagnóstico de 2025 e pelo que você errou aqui. Filosofia e Sociologia pesam mais porque foi lá que você mais perdeu pontos.</p>
-      <div class="tasks">${tasks.map((t,i)=>`<button class="task ${t.done?'done':''} ${t.lc?'lc-'+t.lc:''}" data-i="${i}"><span class="ic">${esc(t.ic)}</span><span><b>${esc(t.t)}</b><small>${esc(t.s)}</small></span><span class="go">abrir →</span></button>`).join('')}</div>
+      ${done===0?'<p class="lead">A missão escolhe os módulos pela incidência no ENEM, pelos seus erros no diagnóstico de 2025 e pelo que você errou aqui. Filosofia e Sociologia pesam mais porque foi lá que você mais perdeu pontos.</p>':''}
+      ${tasks.length?`<button class="next ${tasks[0].lc?'lc-'+tasks[0].lc:''}" data-i="0"><span class="eyebrow">Próximo passo</span><b>${esc(tasks[0].t)}</b><small>${esc(tasks[0].s)}</small><span class="cta">Começar ${ICON.go}</span></button>`:''}
+      <div class="tasks">${tasks.map((t,i)=>i===0?'':`<button class="task ${t.done?'done':''} ${t.lc?'lc-'+t.lc:''}" data-i="${i}"><span class="ic">${TASK_IC[t.ic]||esc(t.ic)}</span><span><b>${esc(t.t)}</b><small>${esc(t.s)}</small></span><span class="go" aria-hidden="true">${ICON.go}</span></button>`).join('')}</div>
     </div>
-    <div class="stats">
-      <div class="stat"><div class="n">${done}<span class="muted" style="font-size:16px">/${tot}</span></div><div class="l">questões feitas</div><div class="bar2"><i style="width:${pct(done,tot)}%"></i></div></div>
-      <div class="stat"><div class="n">${done?pct(ok,done)+'%':'—'}</div><div class="l">acerto na primeira tentativa</div></div>
-      <div class="stat"><div class="n">${fs.done?pct(fs.ok,fs.done)+'%':'—'}</div><div class="l">Filosofia + Sociologia<br>(diagnóstico 2025: 69%)</div></div>
-      <div class="stat"><div class="n">${hg.done?pct(hg.ok,hg.done)+'%':'—'}</div><div class="l">História + Geografia<br>(diagnóstico 2025: 83%)</div></div>
-      <div class="stat" style="grid-column:1/-1"><div class="n">${mastered}<span class="muted" style="font-size:16px">/${DATA.cards.length}</span></div><div class="l">cartões de véspera dominados (caixa 3 ou mais)</div><div class="bar2"><i style="width:${pct(mastered,DATA.cards.length)}%"></i></div></div>
-    </div>
+    <aside class="side-home">
+      <div class="countdown panel"><span class="big">${daysLeft()}</span><span>${daysLeft()===1?'dia':'dias'} para o ${examTarget()>EXAM?'dia 2':'dia 1'}<small>${examTarget().toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'2-digit'})}, 13h30</small></span></div>
+      <div class="rings panel">${[['LC','Linguagens',lineStats('L')],['HUM','Humanas',STUDY_LINES.filter(l=>l!=='L').map(lineStats).reduce((x,y)=>({done:x.done+y.done,n:x.n+y.n}),{done:0,n:0})],['RD','Redação',lineStats('R')]].map(([k,nm,st])=>ring(k,nm,st)).join('')}</div>
+      <div class="dia2-status panel">${(()=>{ const d2=dia2Status(); return d2.open?`<b>Dia 2 liberado</b><small>${d2.via==='criterio'?`você bateu a meta: ${d2.best}/90`:d2.via==='data'?'a semana do dia 2 começou':'liberado por você'}</small>`:`<b>Dia 2 guardado · meta ${DIA2_META}/90</b><small>${d2.best==null?'ensaio geral: dia 1 de 2024, dom 1/11 às 13h30':`seu melhor no dia 1 de 2024: ${d2.best}/90`}</small>`; })()}</div>
+      <div class="stats">
+        <div class="stat"><div class="n">${done}<span class="muted" style="font-size:var(--fs-3)">/${tot}</span></div><div class="l">questões feitas</div><div class="bar2"><i style="width:${pct(done,tot)}%"></i></div></div>
+        <div class="stat"><div class="n">${done?pct(ok,done)+'%':'—'}</div><div class="l">acerto de primeira</div></div>
+        <div class="stat"><div class="n">${fs.done?pct(fs.ok,fs.done)+'%':'—'}</div><div class="l">Filosofia + Sociologia · 2025: 69%</div></div>
+        <div class="stat"><div class="n">${hg.done?pct(hg.ok,hg.done)+'%':'—'}</div><div class="l">História + Geografia · 2025: 83%</div></div>
+        <div class="stat" style="grid-column:1/-1"><div class="n">${mastered}<span class="muted" style="font-size:var(--fs-3)">/${DATA.cards.length}</span></div><div class="l">cartões de véspera dominados</div><div class="bar2"><i style="width:${pct(mastered,DATA.cards.length)}%"></i></div></div>
+      </div>
+    </aside>
   </section>
   <div class="sec-title"><h2>O mapa das linhas</h2><span class="eyebrow">${DATA.modules.filter(m=>STUDY_LINES.includes(m.line)).length} estações · ${DATA.questions.length} questões · ${DATA.vf.length} afirmações V ou F</span></div>
   ${STUDY_LINES.map(L=>{const ls=lineStats(L); const mods=DATA.modules.filter(m=>m.line===L);
@@ -734,7 +767,7 @@ function vLinhas(){
       <div class="track"><div class="stations">${mods.map(m=>{const s=modStats(m.id); const cls=[s.done===s.n?'done':(s.done||s.read?'part':''), s.done===s.n?(s.ok/s.n<0.67?'weak':(s.ok===s.n?'strong':'')):''].join(' ');
         return `<button class="st ${cls}" data-m="${m.id}" title="${esc(m.title)}">${m.faixa==='A'?'<span class="fa">A</span>':''}<span class="c"></span><span class="code">${m.id}</span><span class="t">${esc(m.title.split(/[:(]/)[0])}</span></button>`}).join('')}</div></div></div>`}).join('')}
   <div class="legend"><span><i></i>não iniciado</span><span><i style="background:linear-gradient(90deg,var(--muted) 50%,transparent 50%)"></i>em andamento</span><span><i style="background:var(--muted)"></i>concluído</span><span><i style="box-shadow:0 0 0 2px var(--ok)"></i>3 de 3</span><span><i style="box-shadow:0 0 0 2px var(--bad)"></i>menos de 2 de 3</span><span><b class="chip A">A</b> cai todo ano</span></div>`;
-  app.querySelectorAll('.task').forEach(b=>b.onclick=()=>tasks[+b.dataset.i].act());
+  app.querySelectorAll('.task,.next').forEach(b=>b.onclick=()=>tasks[+b.dataset.i].act());
   app.querySelectorAll('.st').forEach(b=>b.onclick=()=>go('mod',{id:b.dataset.m,tab:'teoria'}));
 }
 
