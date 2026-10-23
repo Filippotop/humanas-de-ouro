@@ -589,17 +589,18 @@ select{font:inherit;padding:8px 12px;border-radius:10px;border:1px solid var(--r
 <div class="toast" id="toast" hidden></div>
 
 <script src="data/base.js"></script>
+<script src="data/linguagens.js"></script>
 <script src="merge.js"></script>
 <script>
 const DATA = window.DATA;
 /* Aprofundamentos (data/aprofundamento-*.js): teoria extra no fim do módulo e questões novas na contagem. */
 function applyDeep(){ Object.entries(DATA.deep||{}).forEach(([id,d])=>{ const m=DATA.modules.find(x=>x.id===id); if(!m) return; if(d.html) m.html+=d.html; (d.questions||[]).forEach(q=>{ DATA.questions.push(q); m.qs.push(q.id); }); }); }
 applyDeep();
-const STUDY_LINES = ['F','S','H','G'];
+const STUDY_LINES = ['F','S','H','G','L'];
 const EXAM = new Date('2026-11-08T13:30:00-03:00');
-const LINES = {H:{name:'História',vol:'HG'},G:{name:'Geografia',vol:'HG'},F:{name:'Filosofia',vol:'FS'},S:{name:'Sociologia',vol:'FS'},R:{name:'Redação',vol:'RD'}};
-const ERRMOD = {G9:'46',G5:'67',H3:'69',H7:'83',H5:'90',F5:'50 e 76',F7:'66',F6:'79',S4:'81'};
-const DIAG = {HG:{ok:24,n:29,label:'História e Geografia'},FS:{ok:11,n:16,label:'Filosofia e Sociologia'}};
+const LINES = {L:{name:'Linguagens',vol:'LC'},H:{name:'História',vol:'HG'},G:{name:'Geografia',vol:'HG'},F:{name:'Filosofia',vol:'FS'},S:{name:'Sociologia',vol:'FS'},R:{name:'Redação',vol:'RD'}};
+const ERRMOD = {L2:'7',L4:'36',L5:'25',L6:'17 e 38',L11:'15 e 23',L14:'3',G9:'46',G5:'67',H3:'69',H7:'83',H5:'90',F5:'50 e 76',F7:'66',F6:'79',S4:'81'};
+const DIAG = {LC:{ok:37,n:45,label:'Linguagens'},HG:{ok:24,n:29,label:'História e Geografia'},FS:{ok:11,n:16,label:'Filosofia e Sociologia'}};
 const TRAPS = {
   oposto:{name:'Termo oposto',tip:'Essa alternativa diz o contrário do texto ou do comando. Troque-a pelo seu contrário: se o contrário combina mais com o texto, ela está errada.'},
   autor:{name:'Autor errado',tip:'A ideia existe, mas é de outro pensador. Volte à referência do texto: de quem é o trecho?'},
@@ -658,6 +659,8 @@ let sample=null;
 function toast(t){ const el=$('#toast'); el.textContent=t; el.hidden=false; clearTimeout(toast.t); toast.t=setTimeout(()=>el.hidden=true,2200); }
 
 /* ---------- derived ---------- */
+/* Origem da questão: apostila (volumes 1 e 2), extra do app ou Linguagens. */
+function volLabel(q){ return q.kind==='extra'?'extra do app':q.vol==='LC'?'Linguagens':'volume '+(q.vol==='HG'?1:2); }
 function modStats(mid){
   const m=M[mid]; let done=0, ok=0;
   m.qs.forEach(id=>{ const a=S.ans[id]; if(a){done++; if(a.ok) ok++;} });
@@ -738,7 +741,7 @@ function vLinhas(){
   if(isoToday()!=='2026-11-01'){ const si=tasks.findIndex(t=>t.key==='sim24'); if(si>=0) tasks.push(tasks.splice(si,1)[0]); }
   const tot=DATA.questions.length, done=Object.keys(S.ans).length, ok=Object.values(S.ans).filter(a=>a.ok).length;
   const mastered=Object.values(S.cards).filter(c=>c.box>=3).length;
-  const fs=volStats('FS'), hg=volStats('HG');
+  const fs=volStats('FS'), hg=volStats('HG'), lc=volStats('LC');
   app.innerHTML=`
   <section class="hero">
     <div class="mission">
@@ -757,7 +760,8 @@ function vLinhas(){
         <div class="stat"><div class="n">${done?pct(ok,done)+'%':'—'}</div><div class="l">acerto de primeira</div></div>
         <div class="stat"><div class="n">${fs.done?pct(fs.ok,fs.done)+'%':'—'}</div><div class="l">Filosofia + Sociologia · 2025: 69%</div></div>
         <div class="stat"><div class="n">${hg.done?pct(hg.ok,hg.done)+'%':'—'}</div><div class="l">História + Geografia · 2025: 83%</div></div>
-        <div class="stat" style="grid-column:1/-1"><div class="n">${mastered}<span class="muted" style="font-size:var(--fs-3)">/${DATA.cards.length}</span></div><div class="l">cartões de véspera dominados</div><div class="bar2"><i style="width:${pct(mastered,DATA.cards.length)}%"></i></div></div>
+        <div class="stat"><div class="n">${lc.done?pct(lc.ok,lc.done)+'%':'—'}</div><div class="l">Linguagens · 2025: 82%</div></div>
+        <div class="stat"><div class="n">${mastered}<span class="muted" style="font-size:var(--fs-3)">/${DATA.cards.length}</span></div><div class="l">cartões dominados</div><div class="bar2"><i style="width:${pct(mastered,DATA.cards.length)}%"></i></div></div>
       </div>
     </aside>
   </section>
@@ -820,7 +824,7 @@ function vMod(){
     bindVF(body); $('#toQ2').onclick=()=>{param.tab='q'; vMod();};
   } else if(tab==='q'){
     body.innerHTML='';
-    body.innerHTML=`<p class="muted" style="font-family:var(--read);margin-top:0">As três primeiras são da apostila; as duas últimas são extras, escritas para o app.</p>`;
+    body.innerHTML=`<p class="muted" style="font-family:var(--read);margin-top:0">${m.vol==='HG'||m.vol==='FS'?'As três primeiras são da apostila; as demais são extras, escritas para o app.':'Questões inéditas no estilo do Enem, escritas para o app.'}</p>`;
     const ns=document.createElement('div');
     const showNext=()=>{ const s2=modStats(m.id); if(s2.done<s2.n){ ns.innerHTML=''; return; } const nx=nextModules(1)[0];
       ns.innerHTML=`<div class="nextstep"><b>Estação concluída: ${s2.ok} de ${s2.n} certas de primeira.</b><span style="font-family:var(--read)">${s2.ok/s2.n<0.6?'Abaixo de 60%: releia a teoria antes de seguir, e escreva no caderno de erros a regra de cada erro.':'Bom. Agora siga para a próxima estação da prioridade.'}</span><div class="row">${s2.ok/s2.n<0.6?'<button class="btn" id="nsT">Reler a teoria</button>':''}${nx&&nx.id!==m.id?`<button class="btn primary" id="nsN">Próxima: ${nx.id} · ${esc(nx.title)} →</button>`:''}<button class="btn" id="nsE">Caderno de erros</button></div></div>`;
@@ -854,7 +858,7 @@ function questionCard(el,q,opts={}){
   function paint(){
     const reveal=st.locked;
     el.innerHTML=`<div class="q lc-${q.mod?M[q.mod].line:(q.vol==='HG'?'H':'F')}">
-      <div class="qh"><span><b>Questão ${q.n}</b> <span class="muted">· ${q.kind==='extra'?'extra do app':'volume '+(q.vol==='HG'?'1':'2')}</span></span><span class="chip">${esc(q.tag)}</span></div>
+      <div class="qh"><span><b>Questão ${q.n}</b> <span class="muted">· ${volLabel(q)}</span></span><span class="chip">${esc(q.tag)}</span></div>
       ${q.base.length?`<blockquote>${q.base.map(p=>`<p>${p}</p>`).join('')}</blockquote>`:''}
       ${q.src?`<div class="qsrc">(${q.src})</div>`:''}
       <p class="cmd">${q.cmd}</p>
@@ -979,7 +983,7 @@ function gTraps(){
   const items=shuffle(pool).slice(0,10);
   runRounds({key:'traps',secs:0,rounds:items.map(it=>({it,missLine:`Questão ${it.q.n}${it.q.kind==='extra'?' (extra)':` (vol. ${it.q.vol==='HG'?1:2})`}, alternativa ${it.k}: <strong>${TRAPS[it.t].name}</strong>. ${it.q.ex[it.k]}`})),
     renderRound(el,r,finish){ const q=r.it.q;
-      el.innerHTML=`<div class="prompt" style="font-size:17px"><span class="k">questão ${q.n} · ${q.kind==='extra'?'extra do app':'volume '+(q.vol==='HG'?1:2)}</span>${q.base.length?`<details style="margin-bottom:10px"><summary class="muted" style="cursor:pointer;font-size:14px">ver o texto-base</summary><div style="margin-top:8px;font-size:15.5px">${q.base.join('<br>')}</div></details>`:''}<div style="font-weight:600;margin-bottom:10px">${q.cmd}</div><div style="background:var(--bad-soft);border-radius:8px;padding:10px 12px"><span class="mono" style="font-weight:600">${r.it.k})</span> ${q.alts['ABCDE'.indexOf(r.it.k)]}</div><div class="muted" style="font-size:14px;margin-top:10px">Essa alternativa está errada. Que armadilha ela usa?</div></div>
+      el.innerHTML=`<div class="prompt" style="font-size:17px"><span class="k">questão ${q.n} · ${volLabel(q)}</span>${q.base.length?`<details style="margin-bottom:10px"><summary class="muted" style="cursor:pointer;font-size:14px">ver o texto-base</summary><div style="margin-top:8px;font-size:15.5px">${q.base.join('<br>')}</div></details>`:''}<div style="font-weight:600;margin-bottom:10px">${q.cmd}</div><div style="background:var(--bad-soft);border-radius:8px;padding:10px 12px"><span class="mono" style="font-weight:600">${r.it.k})</span> ${q.alts['ABCDE'.indexOf(r.it.k)]}</div><div class="muted" style="font-size:14px;margin-top:10px">Essa alternativa está errada. Que armadilha ela usa?</div></div>
         ${optsHTML(Object.entries(TRAPS).map(([k,v])=>({label:v.name,ok:k===r.it.t})))}`;
       bindOpts(el,finish,r.missLine,()=>{ const p=document.createElement('div'); p.className='fb trap'; p.innerHTML=`<strong>${TRAPS[r.it.t].name}.</strong> ${q.ex[r.it.k]}`; el.appendChild(p); }); }});
 }
@@ -996,7 +1000,7 @@ function gCards(){
       return;
     }
     const c=queue[i]; const box=(S.cards[c.id]||{box:0}).box;
-    app.innerHTML=`<div class="stage"><button class="back" id="back">← Arena</button><div class="score"><span>cartão ${i+1}/${queue.length}</span><span>volume ${c.vol==='HG'?'1 · Hist. e Geo.':'2 · Filo. e Socio.'}</span><span>caixa ${box}</span></div><div style="height:12px"></div>
+    app.innerHTML=`<div class="stage"><button class="back" id="back">← Arena</button><div class="score"><span>cartão ${i+1}/${queue.length}</span><span>${c.vol==='LC'?'Linguagens':c.vol==='HG'?'volume 1 · Hist. e Geo.':'volume 2 · Filo. e Socio.'}</span><span>caixa ${box}</span></div><div style="height:12px"></div>
       <button class="prompt card3" id="cd" style="width:100%"><span class="k">responda em voz alta, depois toque</span><span style="font-size:22px;font-weight:600">${c.q}</span><span class="ans" id="ans" hidden>${c.a}</span></button>
       <div class="row" id="rate" hidden style="justify-content:center"><button class="btn" id="no">Não sabia</button><button class="btn primary" id="yes">Sabia</button></div></div>`;
     $('#back').onclick=()=>go('arena');
@@ -1375,7 +1379,7 @@ function vPlano(){
       ${p.tasks.map((t,i)=>`<div class="ptask ${taskDone(p,i)?'done':''}"><input type="checkbox" id="pt-${p.d}-${i}" data-k="${p.d}|${i}" ${taskDone(p,i)?'checked':''} ${(t.k==='mod'&&modStats(t.a).done===modStats(t.a).n)||(t.k==='prova'&&taskDone(p,i))?'disabled':''}><label for="pt-${p.d}-${i}"><span class="tx2">${taskLabel(t)}</span>${t.k==='out'?'<span class="out">fora do app</span>':''}</label>${taskGo(t)?`<button class="chipbtn" data-i="${p.d}|${i}">abrir</button>`:'<span></span>'}</div>`).join('')}</div></div>`};
   app.innerHTML=`<div class="sec-title"><h2>Plano até a prova</h2><span class="eyebrow">${done} de ${tot} tarefas · ${daysLeft()} dias</span></div>
     <div class="panel" style="margin-bottom:14px"><div class="stat" style="border:0;padding:0"><div class="bar2"><i style="width:${pct(done,tot)}%"></i></div></div>
-    <p style="font-family:var(--read);margin:10px 0 0;font-size:15.5px">Até 8/11, só o dia 1: Filosofia e Sociologia primeiro, depois os módulos ligados aos seus erros de 2025 e o resto de História e Geografia, com redação a cada três dias. O <b>domingo 1/11, às 13h30</b>, é o ensaio geral: o dia 1 de 2024 inteiro, no mesmo horário da prova, e é ele que libera o dia 2. A semana de 9 a 14/11 é do dia 2. As tarefas <span class="out mono" style="font-size:10px;background:var(--sunk);border-radius:4px;padding:1px 5px">fora do app</span> você marca à mão. Estações e provas se marcam sozinhas quando concluídas.</p></div>
+    <p style="font-family:var(--read);margin:10px 0 0;font-size:15.5px">Até 8/11, só o dia 1: Filosofia e Sociologia primeiro, depois os módulos ligados aos seus erros de 2025 e o resto de História e Geografia; um módulo de Linguagens por dia, começando por coesão e artes, onde estavam seus erros; redação a cada três dias. O <b>domingo 1/11, às 13h30</b>, é o ensaio geral: o dia 1 de 2024 inteiro, no mesmo horário da prova, e é ele que libera o dia 2. A semana de 9 a 14/11 é do dia 2. As tarefas <span class="out mono" style="font-size:10px;background:var(--sunk);border-radius:4px;padding:1px 5px">fora do app</span> você marca à mão. Estações e provas se marcam sozinhas quando concluídas.</p></div>
     <div>${DATA.plan.filter(p=>p.d<'2026-11-08').map(dayRow).join('')}<div class="day"><div class="dl">dom 08/11<small>prova</small></div><div><b style="font-size:16px">1º dia: Linguagens, Humanas e Redação · 13h30</b><p class="muted" style="font-family:var(--read);margin:4px 0 0">Comece pela redação ou por Linguagens, conforme o que você treinou. Em Humanas, conte 3 minutos por questão e pule a que travar.</p></div></div>${DATA.plan.filter(p=>p.d>'2026-11-08').map(dayRow).join('')}<div class="day"><div class="dl">dom 15/11<small>prova</small></div><div><b style="font-size:16px">2º dia: Ciências da Natureza e Matemática · 13h30</b><p class="muted" style="font-family:var(--read);margin:4px 0 0">Comece pelo que você domina melhor e marque no cartão a cada bloco de questões.</p></div></div>
     </div>`;
   app.querySelectorAll('.ptask input').forEach(c=>c.onchange=()=>{ S.plan[c.dataset.k]=c.checked; save(); vPlano(); });
