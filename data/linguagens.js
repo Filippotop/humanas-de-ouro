@@ -519,4 +519,214 @@
       ['Na antítese, as ideias opostas se fundem numa afirmação impossível.', false, 'Isso é paradoxo; na antítese, os opostos apenas aparecem lado a lado.']
     ]
   });
+
+  L({
+    module: {
+      id: 'L6', title: 'Coesão, coerência e argumentação', habs: 'H18, H21, H22, H23, H24', faixa: 'A',
+      note: 'Dois dos seus erros de 2025 estão aqui: na questão 38 (a que termo "sua trajetória" se refere) e na questão 17 (o papel da repetição de "antes de" na progressão do texto). É o módulo de Linguagens que mais rende pontos para você.',
+      html: `<h4>1. Coesão referencial: quem retoma quem</h4>
+<p>Coesão é a costura do texto: as palavras que ligam uma parte à outra. A <strong>coesão referencial</strong> retoma ou anuncia elementos para não repeti-los.</p>
+<ul>
+<li><strong>Anáfora:</strong> retoma algo que <strong>já apareceu</strong>. "O meteoro chegou sem aviso. <u>Ele</u> era pequeno demais."</li>
+<li><strong>Catáfora:</strong> anuncia algo que <strong>ainda vai aparecer</strong>. "O problema é <u>este</u>: ninguém viu o meteoro."</li>
+<li><strong>Recursos:</strong> pronomes (ele, isso, o qual, seu), sinônimos, hiperônimos ("o meteoro" → "o corpo celeste"), expressões nominais ("o invasor silencioso"), elipse (omissão: "Chegou sem aviso" = ele chegou).</li>
+</ul>
+<div class="box enem"><b class="box-t">No Enem</b><p>A pergunta típica: "com base na organização coesiva do texto, o termo X refere-se a...". Faça o caminho de volta: <strong>leia a frase do pronome e procure, antes dela, o termo que faz sentido no lugar do pronome</strong>. Teste a substituição: se a frase continuar fazendo sentido e coerente com o texto, achou.</p></div>
+<div class="box exemplo"><b class="box-t">Exemplo</b><p>"Qualquer detrito espacial que se aproximasse seria identificado, e <u>sua</u> trajetória calculada." <em>Trajetória de quem?</em> Do detrito (substitua: "a trajetória do detrito calculada"). O possessivo "sua" retoma o termo mais próximo que faça sentido, não o tema geral do texto.</p></div>
+<div class="box pegadinha"><b class="box-t">Pegadinha</b><p>Pronomes como <strong>isso</strong>, <strong>isto</strong> e <strong>o que</strong> costumam retomar <strong>uma ideia inteira</strong> já dita, e não uma palavra. "A desculpa é que era pequeno demais para chamar a atenção, e por <u>isso</u> os alarmes não funcionaram": "isso" retoma "era pequeno demais", que vem <strong>antes</strong>. Alternativas que dizem "remete ao segmento posterior" invertem a direção.</p></div>
+<h4>2. Coesão sequencial: os conectivos e as relações lógicas</h4>
+<div class="tw"><table><thead><tr><th>Relação</th><th>Conectivos</th></tr></thead><tbody>
+<tr><td>Adição</td><td>e, também, além disso, não só... mas também</td></tr>
+<tr><td>Oposição</td><td>mas, porém, contudo, entretanto, todavia, no entanto</td></tr>
+<tr><td>Concessão</td><td>embora, ainda que, mesmo que, apesar de</td></tr>
+<tr><td>Causa</td><td>porque, já que, visto que, uma vez que</td></tr>
+<tr><td>Consequência</td><td>de modo que, tanto que, de forma que</td></tr>
+<tr><td>Conclusão</td><td>portanto, logo, assim, por isso, então</td></tr>
+<tr><td>Finalidade</td><td>para que, a fim de que, com o objetivo de</td></tr>
+<tr><td>Condição</td><td>se, caso, desde que, contanto que</td></tr>
+<tr><td>Tempo</td><td>quando, enquanto, assim que, logo que</td></tr>
+<tr><td>Comparação</td><td>como, assim como, tal qual, mais... do que</td></tr>
+</tbody></table></div>
+<div class="box conceito"><b class="box-t">Conceito</b><p><strong>Oposição × concessão:</strong> "Estudei, <u>mas</u> não passei" (o "mas" introduz o argumento que prevalece). "<u>Embora</u> tenha estudado, não passei" (o "embora" introduz o fato que é admitido, mas não impede o resultado). As duas expressam contraste; a concessão reconhece um argumento contrário antes de superá-lo.</p></div>
+<h4>3. Progressão temática e repetição estratégica</h4>
+<p>Um texto progride quando cada frase <strong>acrescenta informação nova</strong> ao tema, sem perder o fio. A repetição, que na escola parece defeito, pode ser estratégia: a retomada insistente de uma expressão costura as partes do texto e constrói sentido.</p>
+<div class="box exemplo"><b class="box-t">Exemplo</b><p>"Ela tinha olhos brilhantes. Os mesmos de <u>antes</u>. <u>Antes</u> da fome. <u>Antes</u> das mudanças de cidade..." A repetição de "antes" opõe a avó de antes à avó de agora e faz o leitor <strong>reinterpretar o presente</strong> (o que a doença levou). Não é uma sequência de ações nem uma simples comparação: é o contraste entre passado e presente que move o texto.</p></div>
+<h4>4. Coerência</h4>
+<p>Coerência é o sentido global: as ideias não se contradizem, combinam com o conhecimento de mundo e com a situação. Um texto pode ser coeso (bem ligado) e incoerente ("Choveu muito, <u>portanto</u> o chão ficou seco"), ou ter poucos conectivos e ser coerente (uma lista de compras).</p>
+<h4>5. Argumentação: tese, argumentos e operadores</h4>
+<ul>
+<li><strong>Tese:</strong> o ponto de vista defendido.</li>
+<li><strong>Tipos de argumento:</strong> autoridade (citar especialista ou instituição), exemplificação, dados e estatísticas, causa e consequência, comparação ou analogia, e <strong>contra-argumentação</strong> (reconhecer a posição contrária e refutá-la).</li>
+<li><strong>Operadores argumentativos:</strong> palavras que orientam a conclusão. "<u>Até</u> o ministro concordou" (o mais forte da escala); "<u>Apenas</u> 10% votaram" (minimiza); "<u>Aliás</u>" (acrescenta um argumento decisivo); "<u>Afinal</u>" (apresenta a justificativa final).</li>
+</ul>
+<div class="box conexao"><b class="box-t">Conexão</b><p>A competência 4 da redação (coesão) e a competência 3 (argumentação) usam exatamente estas ferramentas. Treinar a leitura aqui melhora a sua escrita.</p></div>`,
+      resumo: [
+        ['Anáfora', 'Retoma algo que já apareceu'],
+        ['Catáfora', 'Anuncia algo que ainda vai aparecer'],
+        ['"Isso", "o que"', 'Costumam retomar uma ideia inteira, anterior'],
+        ['Teste do pronome', 'Substitua o pronome pelo termo candidato e veja se a frase faz sentido'],
+        ['Oposição × concessão', 'mas, porém × embora, ainda que'],
+        ['Conclusão × consequência', 'portanto, logo × de modo que, tanto que'],
+        ['Progressão temática', 'Cada frase acrescenta informação nova ao tema'],
+        ['Contra-argumentação', 'Reconhece a posição contrária e a refuta'],
+        ['Operador "até"', 'Marca o argumento mais forte da escala']
+      ]
+    },
+    questions: [
+      {
+        id: 'L6.1', base: ['(1) A cidade inaugurou uma ciclovia na avenida central. (2) A obra levou dois anos. (3) Comerciantes temiam perder clientes, mas <u>eles</u> agora registram aumento nas vendas. (4) <u>Isso</u> surpreendeu até a prefeitura.'],
+        src: 'Texto escrito para esta apostila.', cmd: 'Com base na organização coesiva do texto, o(a)',
+        alts: ['pronome "eles" (3) retoma "clientes", mencionado na mesma frase.', 'pronome "isso" (4) retoma o aumento nas vendas registrado pelos comerciantes.', 'pronome "isso" (4) anuncia uma informação que será apresentada depois.', 'pronome "eles" (3) retoma "dois anos", citado na frase anterior.', 'expressão "a obra" (2) introduz um elemento novo, sem relação com a frase 1.'],
+        ans: 'B', pos: 'C', hab: 'H18', dif: 'média',
+        ex: { B: '"isso" retoma a ideia anterior inteira: o aumento nas vendas, que contrariou o temor. É a informação que "surpreendeu".', A: '"eles" registram vendas: são os comerciantes, não os clientes. O termo mais próximo nem sempre é o referente.', C: 'não há nada depois de "isso" a ser anunciado; ele retoma (anáfora), não anuncia.', D: 'anos não registram vendas; a substituição não faz sentido.', E: '"a obra" retoma "ciclovia" da frase 1; não é elemento novo.' },
+        traps: { A: 'detalhe', C: 'oposto' }
+      },
+      {
+        id: 'L6.2', base: ['"<u>Embora</u> os aplicativos de transporte tenham ampliado o acesso à mobilidade, a renda dos motoristas caiu nos últimos anos."'],
+        src: 'Texto escrito para esta apostila.', cmd: 'O conectivo destacado estabelece entre as orações uma relação de',
+        alts: ['causa, pois a ampliação do acesso explica a queda da renda.', 'concessão, pois admite um fato que não impede a constatação principal.', 'finalidade, pois indica o objetivo dos aplicativos.', 'conclusão, pois encerra o raciocínio do autor.', 'condição, pois a renda depende do acesso ampliado.'],
+        ans: 'B', pos: 'E', hab: 'H18', dif: 'fácil',
+        ex: { B: '"embora" admite o ponto positivo (acesso ampliado), mas a ideia principal se impõe (renda caiu): concessão.', A: 'o texto não diz que uma coisa causou a outra.', C: 'não há objetivo indicado.', D: 'conclusão seria "portanto", "logo".', E: 'condição seria "se", "caso".' },
+        traps: { A: 'exagero' }
+      },
+      {
+        id: 'L6.3', base: ['"Choveu durante toda a madrugada; portanto, as ruas amanheceram completamente secas."'],
+        src: 'Texto escrito para esta apostila.', cmd: 'Esse enunciado apresenta problema de',
+        alts: ['coerência, pois o conectivo de conclusão liga ideias que se contradizem.', 'coesão referencial, pois falta um pronome para retomar "madrugada".', 'ortografia, pois "madrugada" está escrita de forma errada.', 'variação linguística, pois usa uma expressão regional.', 'pontuação, pois o ponto e vírgula é proibido antes de "portanto".'],
+        ans: 'A', hab: 'H18', dif: 'fácil',
+        ex: { A: 'chuva a noite inteira não leva a ruas secas; "portanto" anuncia uma conclusão que contradiz a premissa.', B: 'não há necessidade de retomada.', C: 'a palavra está correta.', D: 'não há expressão regional.', E: 'o ponto e vírgula antes de "portanto" é aceito.' }
+      },
+      {
+        id: 'L6.4', base: ['"Os defensores da semana de quatro dias dizem que a produtividade aumenta. É verdade que alguns estudos apontam esse resultado. Esses estudos, porém, foram feitos em empresas de escritório, e não se aplicam à indústria nem ao comércio."'],
+        src: 'Texto escrito para esta apostila.', cmd: 'A estratégia argumentativa do autor consiste em',
+        alts: ['citar uma autoridade para confirmar a tese dos defensores.', 'apresentar dados estatísticos que encerram a discussão.', 'reconhecer parcialmente o argumento contrário e, em seguida, limitar seu alcance.', 'narrar uma experiência pessoal numa empresa.', 'comparar o Brasil com outros países.'],
+        ans: 'C', pos: 'D', hab: 'H23', dif: 'média',
+        ex: { C: '"É verdade que..." admite o argumento; "porém" restringe sua validade a escritórios: contra-argumentação.', A: 'não há autoridade citada nominalmente, e o autor não confirma a tese.', B: 'não há números; e a discussão não é "encerrada".', D: 'não há relato pessoal.', E: 'não há comparação entre países.' },
+        traps: { A: 'oposto' }
+      },
+      {
+        id: 'L6.5', base: ['"Até os críticos mais duros do projeto reconheceram que ele reduziu as filas nos postos de saúde."'],
+        src: 'Texto escrito para esta apostila.', cmd: 'O uso de "até" reforça a argumentação porque',
+        alts: ['indica um limite de tempo para o reconhecimento.', 'apresenta o reconhecimento dos críticos como o argumento mais forte a favor do projeto.', 'introduz uma oposição entre críticos e defensores.', 'marca uma dúvida do autor sobre os resultados.', 'indica a finalidade do projeto.'],
+        ans: 'B', pos: 'A', hab: 'H24', dif: 'média',
+        ex: { B: 'se até quem é contra reconhece, o argumento ganha força máxima: "até" marca o ponto mais alto da escala.', A: '"até" aqui não é preposição de tempo.', C: 'não há oposição introduzida; os críticos concordam.', D: 'não há dúvida; o operador fortalece.', E: 'não indica finalidade.' },
+        traps: { A: 'detalhe', D: 'oposto' }
+      }
+    ],
+    cards: [
+      ['Anáfora × catáfora', 'Retoma o anterior × anuncia o posterior'],
+      ['"Isso" costuma retomar...', 'Uma ideia inteira já dita (anáfora)'],
+      ['Teste para achar o referente', 'Substituir o pronome pelo termo candidato'],
+      ['Embora, ainda que', 'Concessão'],
+      ['Portanto, logo', 'Conclusão'],
+      ['Contra-argumentação', 'Admite o argumento contrário e o refuta'],
+      ['Operador "até"', 'Argumento mais forte da escala']
+    ],
+    vf: [
+      ['O pronome sempre retoma o substantivo mais próximo dele no texto.', false, 'Retoma o termo que faz sentido no lugar dele; nem sempre é o mais próximo.'],
+      ['Um texto pode ter muitos conectivos e ainda assim ser incoerente.', true, 'Coesão é a ligação; coerência é o sentido global. Uma não garante a outra.'],
+      ['"Embora" e "mas" expressam ambos contraste, mas de maneiras diferentes.', true, '"Mas" introduz o argumento que prevalece; "embora" introduz o fato admitido.'],
+      ['A repetição de uma palavra é sempre um defeito de coesão.', false, 'Pode ser estratégia de progressão e de construção de sentido.']
+    ]
+  });
+
+  L({
+    module: {
+      id: 'L7', title: 'Gramática em uso: escolhas que produzem sentido', habs: 'H18, H25, H26, H27', faixa: 'B',
+      note: 'O Enem não pede classificação gramatical pela classificação: pergunta o que uma escolha (tempo verbal, voz passiva, pontuação, diminutivo) faz no texto.',
+      html: `<h4>1. Tempos e modos verbais com efeito de sentido</h4>
+<ul>
+<li><strong>Futuro do pretérito</strong> ("teria", "seria"): hipótese, polidez ou distanciamento. Em notícias, "o suspeito <u>teria</u> fugido" indica que o jornal não confirma a informação.</li>
+<li><strong>Subjuntivo</strong> ("se eu <u>fosse</u>", "que você <u>venha</u>"): hipótese, desejo, dúvida.</li>
+<li><strong>Imperativo</strong>: ordem, pedido, conselho; muito usado na propaganda e nas instruções.</li>
+<li><strong>Presente atemporal</strong> ("a água <u>ferve</u> a 100 °C"): verdades gerais, definições.</li>
+</ul>
+<div class="box exemplo"><b class="box-t">Exemplo</b><p>"O prefeito <u>teria recebido</u> propina, segundo a denúncia." O futuro do pretérito marca que a informação vem da denúncia e ainda não foi comprovada. Trocar por "recebeu" mudaria o grau de certeza e a responsabilidade do veículo.</p></div>
+<h4>2. Voz passiva e apagamento do agente</h4>
+<p>"<u>Foram cometidos erros</u>" omite quem errou. A voz passiva sem agente e o sujeito indeterminado ("<u>disseram</u> que...") servem para esconder, generalizar ou proteger responsáveis. Em textos institucionais, é um recurso de distanciamento.</p>
+<div class="box conceito"><b class="box-t">Conceito</b><p><strong>Modalizadores</strong> indicam o grau de certeza ou a avaliação do autor: "talvez", "provavelmente", "certamente", "é possível que", "infelizmente", "felizmente". Eles mostram a posição de quem escreve sem que ele precise dizer "eu acho".</p></div>
+<h4>3. Pronomes e pessoas do discurso</h4>
+<ul>
+<li><strong>"Nós" inclusivo</strong> ("<u>precisamos</u> cuidar da cidade"): aproxima o autor do leitor e cria responsabilidade compartilhada.</li>
+<li><strong>"A gente"</strong>: equivale a "nós" na fala e na escrita informal; concorda com o verbo na 3ª pessoa ("a gente <u>vai</u>").</li>
+<li><strong>"Você" genérico</strong> ("quando <u>você</u> estuda, aprende"): fala de qualquer pessoa, não só do leitor.</li>
+</ul>
+<h4>4. Pontuação e sinais que mudam o sentido</h4>
+<ul>
+<li><strong>Vírgula:</strong> "Não, quero" × "Não quero". E a vírgula do vocativo: "Vamos comer, crianças" × "Vamos comer crianças".</li>
+<li><strong>Aspas:</strong> citação, mas também <strong>ironia ou distanciamento</strong> ("o 'especialista' errou de novo").</li>
+<li><strong>Reticências:</strong> hesitação, suspense, insinuação.</li>
+<li><strong>Exclamação e interrogação retórica:</strong> ênfase e envolvimento do leitor.</li>
+</ul>
+<h4>5. Diminutivo, aumentativo e adjetivação</h4>
+<p>"Casinha" pode ser afeto ou desprezo, conforme o contexto; "um <u>cafezinho</u>" é cortesia; "aquele <u>sujeitinho</u>" é pejorativo. Adjetivos e advérbios avaliativos ("o <u>lamentável</u> episódio") revelam a opinião do autor.</p>
+<div class="box enem"><b class="box-t">No Enem</b><p>Pergunta típica: "o uso do futuro do pretérito em X indica...", "as aspas em 'especialista' sugerem...", "a forma diminutiva confere ao texto...". Responda pelo <strong>efeito no contexto</strong>, não pela nomenclatura.</p></div>
+<div class="box pegadinha"><b class="box-t">Pegadinha</b><p>Diminutivo não indica tamanho na maioria das questões: indica <strong>afeto, ironia ou desprezo</strong>. E aspas não marcam só citação: numa palavra isolada, costumam indicar ironia ou distanciamento do autor em relação ao termo.</p></div>`,
+      resumo: [
+        ['Futuro do pretérito', 'Hipótese, polidez ou informação não confirmada ("teria fugido")'],
+        ['Subjuntivo', 'Hipótese, desejo, dúvida'],
+        ['Voz passiva sem agente', 'Oculta ou protege o responsável'],
+        ['Modalizadores', 'Grau de certeza e avaliação do autor: talvez, certamente, infelizmente'],
+        ['"Nós" inclusivo', 'Aproxima autor e leitor numa responsabilidade comum'],
+        ['Aspas numa palavra', 'Ironia ou distanciamento'],
+        ['Diminutivo', 'Afeto, ironia ou desprezo, conforme o contexto']
+      ]
+    },
+    questions: [
+      {
+        id: 'L7.1', base: ['"Segundo a investigação, o empresário <u>teria transferido</u> os recursos para uma conta no exterior."'],
+        src: 'Texto escrito para esta apostila.', cmd: 'O uso do futuro do pretérito na forma destacada indica que o jornal',
+        alts: ['confirma que a transferência ocorreu.', 'apresenta a informação como não confirmada, atribuída à investigação.', 'deseja que a transferência aconteça.', 'ordena que o empresário devolva os recursos.', 'narra um fato que ocorrerá no futuro.'],
+        ans: 'B', hab: 'H25', dif: 'fácil',
+        ex: { B: '"teria transferido" e "segundo a investigação" mostram que o veículo relata sem confirmar.', A: 'o futuro do pretérito afasta a confirmação. Termo oposto.', C: 'não há desejo; isso seria subjuntivo em outra construção.', D: 'não há ordem.', E: 'o fato teria ocorrido no passado; a forma não indica futuro.' },
+        traps: { A: 'oposto' }
+      },
+      {
+        id: 'L7.2', base: ['<em>Nota oficial de uma empresa após um vazamento de dados:</em>', '"Falhas foram identificadas no sistema e providências estão sendo tomadas."'],
+        src: 'Texto escrito para esta apostila.', cmd: 'A construção das frases na voz passiva, sem indicação de quem agiu, produz o efeito de',
+        alts: ['identificar com precisão os responsáveis pela falha.', 'aproximar a empresa do leitor pelo uso da primeira pessoa.', 'ocultar os responsáveis pelas falhas e pelas providências.', 'expressar indignação da empresa com o ocorrido.', 'convencer o leitor a trocar de senha.'],
+        ans: 'C', hab: 'H26', dif: 'média',
+        ex: { C: 'sem agente, não se sabe quem falhou nem quem age: o texto se distancia da responsabilidade.', A: 'é o contrário: ninguém é identificado. Termo oposto.', B: 'não há primeira pessoa.', D: 'não há marca de indignação.', E: 'não há apelo ao leitor.' },
+        traps: { A: 'oposto' }
+      },
+      {
+        id: 'L7.3', base: ['"Mais uma vez, o \'especialista\' da televisão previu sol para o feriado. Choveu os três dias."'],
+        src: 'Texto escrito para esta apostila.', cmd: 'As aspas em "especialista" sugerem',
+        alts: ['uma citação literal de um documento oficial.', 'ironia, ao pôr em dúvida a competência de quem fez a previsão.', 'um termo estrangeiro ainda não incorporado à língua.', 'o título de um programa de televisão.', 'respeito do autor pelo profissional citado.'],
+        ans: 'B', pos: 'D', hab: 'H17', dif: 'fácil',
+        ex: { B: 'a previsão errada ("choveu os três dias") mostra que as aspas questionam o título de especialista: ironia.', A: 'não há documento citado.', C: '"especialista" é palavra do português.', D: 'não há indicação de título de programa.', E: 'é o contrário: há crítica. Termo oposto.' },
+        traps: { E: 'oposto' }
+      },
+      {
+        id: 'L7.4', base: ['<em>Cartaz de uma campanha de bairro:</em> "Se cada um de nós cuidar da sua calçada, a gente muda a cara da rua."'],
+        src: 'Texto escrito para esta apostila.', cmd: 'O uso de "nós" e de "a gente" no cartaz contribui para',
+        alts: ['afastar o autor da responsabilidade pela limpeza.', 'criar um sentido de responsabilidade compartilhada entre autor e leitores.', 'indicar que a campanha é dirigida a uma única pessoa.', 'expressar uma ordem da prefeitura aos moradores.', 'apresentar dados oficiais sobre limpeza urbana.'],
+        ans: 'B', pos: 'E', hab: 'H26', dif: 'fácil',
+        ex: { B: '"nós" e "a gente" incluem quem fala e quem lê na mesma tarefa: responsabilidade compartilhada.', A: 'o autor se inclui; não se afasta. Termo oposto.', C: '"nós" é coletivo.', D: 'não há ordem nem autoria da prefeitura.', E: 'não há dados.' },
+        traps: { A: 'oposto' }
+      },
+      {
+        id: 'L7.5', base: ['— Vem cá, meu <u>amorzinho</u>, que a vovó fez um <u>bolinho</u>.', '— De novo aquele <u>vereadorzinho</u> prometendo asfalto?'],
+        src: 'Falas escritas para esta apostila.', cmd: 'Nas duas falas, o diminutivo expressa, respectivamente,',
+        alts: ['tamanho pequeno e tamanho pequeno.', 'afeto e desprezo.', 'desprezo e afeto.', 'ironia e respeito.', 'dúvida e certeza.'],
+        ans: 'B', pos: 'A', hab: 'H25', dif: 'fácil',
+        ex: { B: 'na fala da avó, carinho; na segunda, depreciação do político que repete promessas.', A: 'o diminutivo não indica tamanho nesses contextos.', C: 'inverte a ordem dos efeitos.', D: 'na segunda fala não há respeito.', E: 'diminutivo não expressa grau de certeza.' },
+        traps: { C: 'oposto' }
+      }
+    ],
+    cards: [
+      ['"O suspeito teria fugido"', 'Futuro do pretérito: informação não confirmada'],
+      ['Voz passiva sem agente', 'Oculta o responsável'],
+      ['Modalizador', 'Indica grau de certeza ou avaliação: talvez, certamente'],
+      ['Aspas numa palavra isolada', 'Ironia ou distanciamento'],
+      ['"A gente vai"', '"A gente" = nós, verbo na 3ª pessoa do singular'],
+      ['Diminutivo no Enem', 'Afeto, ironia ou desprezo, mais do que tamanho']
+    ],
+    vf: [
+      ['O futuro do pretérito pode indicar que uma informação não foi confirmada.', true, 'Em notícias, "teria" atribui a informação a outra fonte.'],
+      ['A voz passiva sem agente sempre deixa claro quem praticou a ação.', false, 'É o contrário: ela omite o agente.'],
+      ['Aspas servem apenas para marcar citações literais.', false, 'Também indicam ironia, distanciamento ou termo estrangeiro.'],
+      ['"Precisamos cuidar do planeta" usa um "nós" inclusivo.', true, 'O autor se inclui com o leitor na responsabilidade.']
+    ]
+  });
 })(window.DATA);
