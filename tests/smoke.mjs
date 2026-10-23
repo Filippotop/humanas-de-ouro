@@ -188,6 +188,19 @@ async function testOfflineConsent(browser) {
   await ctx.close();
 }
 
+/* Plano: só dia 1 até a prova, simulado no domingo 1/11 e a semana do dia 2 reservada. */
+function testPlan() {
+  if (!DATA_FILES.length) return;
+  const D = loadData(), byDay = Object.fromEntries(D.plan.map(p => [p.d, p])), mods = new Set(D.modules.map(m => m.id));
+  const days = (a, b) => { const out = []; for (let d = new Date(a + 'T12:00:00Z'); d <= new Date(b + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + 1)) out.push(d.toISOString().slice(0, 10)); return out; };
+  for (const d of days('2026-10-23', '2026-11-07')) check(byDay[d], `plano: falta o dia ${d}`);
+  for (const p of D.plan.filter(p => p.d >= '2026-10-23' && p.d < '2026-11-08'))
+    for (const t of p.tasks) check(!/^(24d2|25d2)/.test(t.a || '') && !/:(N|M|NM)$/.test(t.a || ''), `plano: ${p.d} tem tarefa do dia 2 (${t.k}:${t.a})`);
+  check((byDay['2026-11-01'] || { tasks: [] }).tasks.some(t => t.k === 'prova' && t.a === '24d1:LH'), 'plano: o simulado 24d1:LH não está no domingo 1/11');
+  for (const p of D.plan) for (const t of p.tasks) if (t.k === 'mod') check(mods.has(t.a), `plano: ${p.d} aponta para o módulo inexistente ${t.a}`);
+  for (const d of days('2026-11-09', '2026-11-14')) check(byDay[d] && /^Dia 2/.test(byDay[d].foco), `plano: ${d} deveria ser da semana do dia 2`);
+}
+
 /* Modo Dia 1: o dia 2 fica guardado até 72/90 no dia 1 de 2024 cronometrado, até 9/11 ou até a liberação manual. */
 async function testDia1(browser) {
   if (!DATA_FILES.length) return;
@@ -233,6 +246,7 @@ const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: p
 try {
   testData();
   testIntegrity();
+  testPlan();
   await testDeep(browser);
   await testOfflineShell(browser);
   await testDia1(browser);
