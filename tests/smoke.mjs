@@ -199,6 +199,8 @@ function testPlan() {
     for (const t of p.tasks) check(!/^(24d2|25d2)/.test(t.a || '') && !/:(N|M|NM)$/.test(t.a || ''), `plano: ${p.d} tem tarefa do dia 2 (${t.k}:${t.a})`);
   check((byDay['2026-11-01'] || { tasks: [] }).tasks.some(t => t.k === 'prova' && t.a === '24d1:LH'), 'plano: o simulado 24d1:LH não está no domingo 1/11');
   for (const p of D.plan) for (const t of p.tasks) if (t.k === 'mod') check(mods.has(t.a), `plano: ${p.d} aponta para o módulo inexistente ${t.a}`);
+  for (const d of days('2026-10-24', '2026-11-06').filter(d => d !== '2026-11-01' && d !== '2026-11-02'))
+    check((byDay[d] || { tasks: [] }).tasks.some(t => t.k === 'mod' && /^L\d+$/.test(t.a)), `plano: ${d} sem bloco de Linguagens`);
   for (const d of days('2026-11-09', '2026-11-14')) check(byDay[d] && /^Dia 2/.test(byDay[d].foco), `plano: ${d} deveria ser da semana do dia 2`);
 }
 
@@ -374,6 +376,7 @@ async function testHome(browser) {
     check(h.rings.map(r => r[0]).join(',') === 'LC,HUM,RD', `início/${vp}: anéis por área = "${h.rings.map(r => r[0]).join(',')}"`);
     for (const [a, l] of h.rings) check(/\d+%/.test(l), `início/${vp}: anel ${a} sem porcentagem no aria-label ("${l}")`);
     check(h.next.length > 0, `início/${vp}: falta o bloco "Próximo passo"`);
+    check(await page.evaluate(() => [...document.querySelectorAll('.hero .stat .l')].some(l => /Linguagens · 2025: 82%/.test(l.textContent))), `início/${vp}: falta a estatística de Linguagens comparada a 2025`);
     check(/72/.test(h.d2), `início/${vp}: falta o status do dia 2 com a meta 72 ("${h.d2.trim().slice(0, 60)}")`);
     const bad = h.icons.filter(i => i !== 'svg' && !/^[A-Z]\d+$/.test(i));
     check(!bad.length, `início/${vp}: ícones de tarefa que não são desenhos (${bad.join(' ')})`);
@@ -394,7 +397,7 @@ async function testHome(browser) {
 }
 
 /* Linguagens: cada módulo L cumpre os mínimos da especificação; os 8 erros de 2025 estão ligados; a linha aparece no mapa. */
-const L_MIN_MODULES = 1;
+const L_MIN_MODULES = 14;
 function testLinguagensData() {
   if (!DATA_FILES.length) return;
   const D = loadData(), L = D.modules.filter(m => m.line === 'L');
@@ -426,6 +429,11 @@ async function testLinguagensUI(browser) {
       return { ratio: (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05), err: Object.values(ERRMOD).join(' ') };
     });
     check(r, `linguagens/${colorScheme}: a linha L não aparece no mapa`);
+    if (colorScheme === 'light') { await page.evaluate(() => go('mod', { id: 'L6', tab: 'q' })); await page.waitForTimeout(200);
+      const txt = await page.locator('#modbody').textContent();
+      check(!/volume \d/.test(txt), 'linguagens: questões de L aparecem como "volume" da apostila de Humanas');
+      check(!/são da apostila/.test(txt), 'linguagens: a aba de questões diz que as questões de L vêm da apostila');
+      await page.evaluate(() => go('linhas')); await page.waitForTimeout(150); }
     if (r) { check(r.ratio >= 4.5, `linguagens/${colorScheme}: selo da linha L com contraste ${r.ratio.toFixed(2)}`);
       if (colorScheme === 'light') for (const n of [3, 7, 15, 17, 23, 25, 36, 38]) check(new RegExp(`\\b${n}\\b`).test(r.err), `linguagens: erro ${n} de 2025 não está em ERRMOD`); }
     await ctx.close();

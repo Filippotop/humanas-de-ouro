@@ -1022,4 +1022,393 @@
       ['Ler textos afro-brasileiros como descrição de costumes exóticos é a leitura esperada no Enem.', false, 'O Enem cobra identidade, memória e protagonismo, não exotismo.']
     ]
   });
+
+  L({
+    module: {
+      id: 'L11', title: 'Artes: visuais, música, teatro, dança e patrimônio', habs: 'H12, H13, H14', faixa: 'A',
+      note: 'Dois dos seus erros de 2025 estão aqui: a questão 15 (os retratos de Dalton Paula como afirmação de identidade) e a questão 23 (as "suturas" de Adriana Varejão remetendo à violência colonial). Nas duas, a resposta estava no que a obra afirma ou denuncia, não no que ela mostra.',
+      html: `<h4>1. Como o Enem lê uma obra de arte</h4>
+<p>A prova quase nunca pede o nome de um movimento. Ela mostra uma obra (com legenda e, às vezes, um texto de curadoria) e pergunta <strong>o que a obra evidencia, critica ou propõe</strong>. Arte, para a matriz (competência 4), é saber cultural que constrói identidades e interpreta a história.</p>
+<div class="box enem"><b class="box-t">No Enem</b><p>Leia três camadas: (1) <strong>o que se vê</strong> (técnica, materiais, figuras); (2) <strong>o contexto</strong> (legenda, data, texto de apoio); (3) <strong>o que a escolha significa</strong>. A resposta está na terceira camada. Em 2025: Dalton Paula pinta pessoas negras com nome e dignidade, num gênero (o retrato) que por séculos as excluiu, e isso é <strong>afirmação de identidade</strong>; Adriana Varejão rasga azulejos portugueses e mostra "carne", e isso remete às <strong>violências do processo colonial</strong>.</p></div>
+<h4>2. Arte contemporânea: o que mudou</h4>
+<ul>
+<li><strong>Ready-made:</strong> objeto comum deslocado para o espaço da arte (Marcel Duchamp, <em>A fonte</em>, 1917). A pergunta deixa de ser "é bonito?" e passa a ser "o que é arte?".</li>
+<li><strong>Instalação:</strong> obra que ocupa um espaço e envolve o corpo do público.</li>
+<li><strong>Performance:</strong> o corpo do artista é a obra, no tempo presente.</li>
+<li><strong>Intervenção urbana e grafite:</strong> a cidade como suporte e como tema.</li>
+<li><strong>Apropriação e releitura:</strong> o artista retoma imagens da tradição (azulejos coloniais, retratos de elite, mapas) para questioná-las.</li>
+</ul>
+<div class="box conceito"><b class="box-t">Conceito</b><p><strong>Releitura crítica:</strong> quando um artista contemporâneo usa uma forma tradicional (o retrato a óleo, a azulejaria portuguesa), ele dialoga com a história dessa forma. Quem era retratado? Quem decorava as paredes com azulejos, e com o trabalho de quem? A obra responde a essas perguntas.</p></div>
+<h4>3. Vanguardas europeias e Modernismo brasileiro</h4>
+<div class="tw"><table><thead><tr><th>Vanguarda</th><th>Marca</th><th>Referência</th></tr></thead><tbody>
+<tr><td>Impressionismo</td><td>Luz e cor do instante; pinceladas soltas</td><td>Monet</td></tr>
+<tr><td>Expressionismo</td><td>Emoção, angústia, deformação</td><td>Munch, <em>O grito</em></td></tr>
+<tr><td>Cubismo</td><td>Fragmentação, vários pontos de vista ao mesmo tempo</td><td>Picasso, <em>Guernica</em> (1937), contra o bombardeio de uma cidade na Guerra Civil Espanhola</td></tr>
+<tr><td>Futurismo</td><td>Velocidade, máquina, cidade</td><td>Boccioni</td></tr>
+<tr><td>Dadaísmo</td><td>Acaso, nonsense, antiarte</td><td>Duchamp</td></tr>
+<tr><td>Surrealismo</td><td>Sonho, inconsciente</td><td>Dalí, Magritte</td></tr>
+</tbody></table></div>
+<p>No Brasil, o Modernismo nas artes visuais une as vanguardas a temas nacionais: Tarsila do Amaral (<em>Abaporu</em>, <em>Operários</em>), Di Cavalcanti, Candido Portinari (<em>Retirantes</em>, sobre os migrantes da seca).</p>
+<h4>4. Música, teatro e dança</h4>
+<ul>
+<li><strong>Música:</strong> elementos (melodia, ritmo, harmonia, timbre) e contexto. Samba (identidade afro-brasileira urbana), bossa nova (síntese de samba e jazz), <strong>Tropicália</strong> (fim dos anos 1960; mistura de guitarra elétrica e ritmos brasileiros, herdeira da antropofagia), canção de protesto e censura na ditadura, rap e funk como crônica das periferias.</li>
+<li><strong>Teatro:</strong> o Teatro do Oprimido, de Augusto Boal, transforma o espectador em participante ("espect-ator"); o teatro de rua leva a cena para o espaço público.</li>
+<li><strong>Dança:</strong> linguagem do corpo que expressa identidades culturais (frevo, jongo, danças indígenas, danças urbanas).</li>
+</ul>
+<h4>5. Patrimônio cultural</h4>
+<p>O patrimônio pode ser <strong>material</strong> (edifícios, centros históricos, objetos) ou <strong>imaterial</strong> (saberes, celebrações, formas de expressão, lugares). No Brasil, o Iphan registra bens imateriais como o samba de roda do Recôncavo Baiano, o ofício das baianas de acarajé, o frevo e a roda de capoeira.</p>
+<div class="box pegadinha"><b class="box-t">Pegadinha</b><p>Alternativas "neutras" ("a obra preserva memórias afetivas", "as personagens simbolizam a sociedade brasileira", "mantém a representação realista") costumam ser distratores quando a obra tem uma <strong>intenção crítica</strong> evidente no texto de apoio. Procure o verbo forte: a obra <strong>afirma, denuncia, questiona, ressignifica</strong>.</p></div>`,
+      resumo: [
+        ['Três camadas da leitura', 'O que se vê → contexto → o que a escolha significa'],
+        ['Ready-made', 'Objeto comum deslocado para a arte (Duchamp, 1917)'],
+        ['Releitura crítica', 'Forma tradicional retomada para questionar sua história'],
+        ['Cubismo', 'Fragmentação e múltiplos pontos de vista; Guernica (1937)'],
+        ['Expressionismo', 'Emoção e deformação; O grito'],
+        ['Tropicália', 'Fim dos anos 1960: guitarra elétrica + ritmos brasileiros; herdeira da antropofagia'],
+        ['Teatro do Oprimido', 'Augusto Boal: o espectador participa'],
+        ['Patrimônio imaterial', 'Saberes, celebrações e expressões (samba de roda, frevo, capoeira)']
+      ]
+    },
+    questions: [
+      {
+        id: 'L11.1', base: ['Na exposição, uma artista pintou, em tamanho real e com fundo dourado, retratos de mulheres trabalhadoras domésticas da sua família, cada uma identificada pelo nome completo na legenda. O texto de curadoria lembra que, durante séculos, o fundo dourado foi reservado a santos e reis.'],
+        src: 'Situação escrita para esta apostila.', cmd: 'Ao retratar essas mulheres com o fundo dourado e o nome completo, a artista',
+        alts: ['reafirma a hierarquia social presente na tradição do retrato.', 'confere dignidade e visibilidade a sujeitos historicamente excluídos da representação.', 'documenta com objetividade as técnicas do trabalho doméstico.', 'critica a religiosidade presente na arte medieval.', 'busca apenas a semelhança fotográfica com as retratadas.'],
+        ans: 'B', pos: 'D', hab: 'H13', dif: 'média',
+        ex: { B: 'usar o recurso reservado a santos e reis, com nome completo, dá às trabalhadoras o lugar de honra que a tradição lhes negou.', A: 'a obra subverte a hierarquia, não a reafirma. Termo oposto.', C: 'não há documentação de técnicas de trabalho.', D: 'o fundo dourado é apropriado, não criticado como religioso.', E: 'o ponto não é a semelhança, mas o lugar simbólico.' },
+        traps: { A: 'oposto', D: 'detalhe' }
+      },
+      {
+        id: 'L11.2', base: ['Uma instalação ocupa uma sala inteira com centenas de carteiras escolares viradas para a parede. Na legenda: "Obra sobre a evasão escolar no país."'],
+        src: 'Situação escrita para esta apostila.', cmd: 'Nessa instalação, o sentido crítico é construído principalmente',
+        alts: ['pela representação realista de uma sala de aula em funcionamento.', 'pela disposição dos objetos no espaço, que evoca ausência e exclusão.', 'pela técnica de pintura a óleo usada nas carteiras.', 'pela narrativa escrita que acompanha cada carteira.', 'pelo valor comercial das carteiras expostas.'],
+        ans: 'B', hab: 'H14', dif: 'fácil',
+        ex: { B: 'as carteiras vazias e viradas para a parede tornam visível a ausência de quem deixou a escola: o espaço é a linguagem da instalação.', A: 'a sala não está "em funcionamento"; está vazia.', C: 'não há pintura a óleo.', D: 'a legenda é única e curta.', E: 'o valor comercial não é questão da obra.' }
+      },
+      {
+        id: 'L11.3', base: ['<em>Guernica</em> (1937), de Pablo Picasso, foi pintada após o bombardeio da cidade basca durante a Guerra Civil Espanhola. A tela, em preto, branco e cinza, mostra corpos fragmentados, um cavalo agonizando e uma mãe com o filho morto nos braços.'],
+        src: 'Texto escrito para esta apostila.', cmd: 'A fragmentação das figuras, característica do Cubismo, contribui na obra para',
+        alts: ['celebrar a vitória militar sobre a cidade.', 'expressar o caos e o sofrimento provocados pela guerra.', 'representar com exatidão fotográfica o bombardeio.', 'decorar um espaço público com cores vibrantes.', 'retratar a paisagem rural espanhola.'],
+        ans: 'B', pos: 'E', hab: 'H13', dif: 'fácil',
+        ex: { B: 'corpos despedaçados e a ausência de cor traduzem o horror e a desordem do ataque.', A: 'a obra denuncia, não celebra. Termo oposto.', C: 'a fragmentação é o contrário da exatidão fotográfica.', D: 'a paleta é de preto, branco e cinza.', E: 'não há paisagem rural.' },
+        traps: { A: 'oposto' }
+      },
+      {
+        id: 'L11.4', base: ['A Tropicália, no fim dos anos 1960, misturou guitarras elétricas, ritmos brasileiros, referências da cultura de massa e da cultura popular, provocando a crítica de quem defendia uma música "pura" nacional.'],
+        src: 'Texto escrito para esta apostila.', cmd: 'Essa proposta dialoga com o Modernismo de 1922 por retomar a ideia de',
+        alts: ['antropofagia, ao absorver referências estrangeiras para criar algo brasileiro.', 'arte pela arte, ao buscar a perfeição formal.', 'idealização do indígena como herói nacional.', 'rejeição total de qualquer influência estrangeira.', 'retorno às formas fixas da tradição clássica.'],
+        ans: 'A', pos: 'C', hab: 'H14', dif: 'média',
+        ex: { A: 'misturar a guitarra elétrica (estrangeira) com ritmos brasileiros é "devorar" o de fora para criar o nacional: a antropofagia de Oswald.', B: 'arte pela arte é parnasiana.', C: 'a idealização do indígena é romântica.', D: 'é o oposto do que a Tropicália fez.', E: 'não há retorno a formas clássicas.' },
+        traps: { D: 'oposto' }
+      },
+      {
+        id: 'L11.5', base: ['O ofício das baianas de acarajé foi registrado como patrimônio cultural do Brasil pelo Iphan. O registro reconhece não só a comida, mas os saberes, os modos de fazer, a indumentária e o valor religioso associado à prática.'],
+        src: 'Texto escrito para esta apostila.', cmd: 'O registro descrito exemplifica a proteção do patrimônio',
+        alts: ['material, por se tratar de um edifício histórico.', 'imaterial, por valorizar saberes e práticas culturais transmitidos entre gerações.', 'natural, por proteger uma paisagem.', 'arqueológico, por preservar objetos antigos.', 'industrial, por proteger uma linha de produção.'],
+        ans: 'B', pos: 'A', hab: 'H14', dif: 'fácil',
+        ex: { B: 'saberes, modos de fazer e práticas religiosas são bens imateriais.', A: 'não se trata de edifício.', C: 'não há paisagem.', D: 'não há objetos arqueológicos.', E: 'não é produção industrial.' }
+      }
+    ],
+    cards: [
+      ['Leitura de obra no Enem', 'O que se vê → contexto → o que a escolha significa'],
+      ['Dalton Paula (Enem 2025)', 'Retratos de pessoas negras: afirmação de identidade'],
+      ['Adriana Varejão (Enem 2025)', 'Azulejos rasgados com "carne": violências coloniais'],
+      ['Ready-made', 'Duchamp, A fonte (1917)'],
+      ['Guernica', 'Picasso, 1937: denúncia da guerra'],
+      ['Patrimônio imaterial', 'Saberes, celebrações, formas de expressão']
+    ],
+    vf: [
+      ['Na arte contemporânea, o espaço e o corpo do público podem fazer parte da obra.', true, 'É o caso das instalações e performances.'],
+      ['Quando uma obra retoma uma forma tradicional, ela necessariamente a celebra.', false, 'A releitura pode questionar a história dessa forma.'],
+      ['O Teatro do Oprimido, de Augusto Boal, transforma o espectador em participante.', true, 'É o "espect-ator".'],
+      ['Patrimônio cultural se limita a edifícios antigos.', false, 'Inclui o imaterial: saberes, celebrações e expressões.']
+    ]
+  });
+
+  L({
+    module: {
+      id: 'L12', title: 'Corpo e práticas corporais (Educação Física no Enem)', habs: 'H9, H10, H11', faixa: 'B',
+      note: 'Questões de Educação Física são de leitura: pedem a relação entre corpo, saúde, cultura e mídia, não regras de modalidades.',
+      html: `<h4>1. Atividade física, exercício e saúde</h4>
+<ul>
+<li><strong>Atividade física:</strong> qualquer movimento corporal que gasta energia (andar, limpar a casa, pedalar até o trabalho).</li>
+<li><strong>Exercício físico:</strong> atividade <strong>planejada, estruturada e repetitiva</strong>, com objetivo (melhorar o condicionamento, por exemplo).</li>
+<li><strong>Aeróbico × anaeróbico:</strong> esforço moderado e prolongado, com oxigênio como fonte principal (corrida leve, natação longa) × esforço intenso e curto (tiro de velocidade, musculação pesada).</li>
+<li>A Organização Mundial da Saúde recomenda a adultos de <strong>150 a 300 minutos por semana</strong> de atividade moderada e, a crianças e adolescentes, uma média de <strong>60 minutos por dia</strong>.</li>
+</ul>
+<h4>2. Jogo, esporte e suas dimensões</h4>
+<div class="tw"><table><thead><tr><th></th><th>Jogo</th><th>Esporte</th></tr></thead><tbody>
+<tr><td>Regras</td><td>Flexíveis, combinadas pelos participantes</td><td>Institucionalizadas por federações</td></tr>
+<tr><td>Objetivo</td><td>Prazer, convivência</td><td>Rendimento, competição (no esporte de alto nível)</td></tr>
+</tbody></table></div>
+<p>O esporte tem dimensões diferentes: <strong>de rendimento</strong> (alto nível, competição), <strong>de participação</strong> (lazer, saúde) e <strong>educacional</strong> (na escola, com foco na formação e na inclusão).</p>
+<div class="box conceito"><b class="box-t">Conceito</b><p><strong>Espetacularização do esporte:</strong> a mídia transforma o esporte em produto (transmissões, patrocínios, ídolos). Isso popularizou modalidades, mas também gera pressão por resultados, doping, mercantilização e o modelo do corpo-atleta como padrão para todos.</p></div>
+<h4>3. Corpo, mídia e padrões de beleza</h4>
+<p>O Enem cobra a <strong>crítica aos padrões corporais</strong> impostos pela mídia e pelas redes (magreza, músculos, juventude), seus efeitos na saúde mental (transtornos alimentares, uso de anabolizantes) e a valorização da diversidade de corpos. Campanhas e textos de apoio costumam defender que a prática corporal sirva à saúde e ao prazer, não a um ideal estético único.</p>
+<h4>4. Lutas, danças e práticas corporais como cultura</h4>
+<ul>
+<li><strong>Capoeira:</strong> luta, dança, música e jogo, de origem afro-brasileira; a roda de capoeira é patrimônio cultural.</li>
+<li><strong>Danças</strong> populares e urbanas expressam identidades regionais e de grupos sociais.</li>
+<li><strong>Práticas corporais de aventura:</strong> skate, parkour, trilhas; o parkour ressignifica o espaço urbano.</li>
+<li><strong>Inclusão:</strong> esporte paralímpico, adaptação de regras, participação de mulheres e combate à discriminação.</li>
+</ul>
+<div class="box enem"><b class="box-t">No Enem</b><p>Comandos comuns: "o texto critica...", "a prática corporal descrita contribui para...", "a campanha propõe...". A resposta valoriza saúde, inclusão, cultura e senso crítico diante da mídia.</p></div>
+<div class="box pegadinha"><b class="box-t">Pegadinha</b><p>Alternativas que associam saúde a <strong>um tipo de corpo</strong> ("alcançar o corpo ideal") ou que reduzem a prática corporal a <strong>competição e rendimento</strong> costumam contrariar o texto de apoio. E jogo não é "esporte mal organizado": tem lógica própria, com regras combinadas.</p></div>`,
+      resumo: [
+        ['Atividade × exercício físico', 'Qualquer movimento × atividade planejada, estruturada e repetitiva'],
+        ['Aeróbico × anaeróbico', 'Moderado e longo × intenso e curto'],
+        ['Recomendação da OMS', 'Adultos: 150 a 300 min/semana moderados; jovens: 60 min/dia'],
+        ['Jogo × esporte', 'Regras combinadas × regras institucionalizadas'],
+        ['Espetacularização', 'Esporte como produto da mídia'],
+        ['Padrões de beleza', 'Crítica ao corpo ideal imposto pela mídia'],
+        ['Capoeira', 'Luta, dança, música e jogo; patrimônio cultural']
+      ]
+    },
+    questions: [
+      {
+        id: 'L12.1', base: ['<em>Campanha de uma unidade de saúde:</em> "Subir escadas, dançar na sala, ir a pé à padaria: tudo conta. Mexa-se do seu jeito."'],
+        src: 'Texto escrito para esta apostila.', cmd: 'A campanha valoriza a',
+        alts: ['prática de exercícios planejados em academias.', 'atividade física incorporada ao cotidiano, de forma acessível.', 'busca de um padrão corporal definido.', 'competição esportiva de alto rendimento.', 'substituição da alimentação saudável pelo exercício.'],
+        ans: 'B', pos: 'C', hab: 'H10', dif: 'fácil',
+        ex: { B: 'escadas, dança em casa e caminhada são atividades do dia a dia: "tudo conta", "do seu jeito".', A: 'a campanha não fala em academia nem em planejamento.', C: 'não há padrão corporal.', D: 'não há competição.', E: 'a alimentação não é mencionada.' }
+      },
+      {
+        id: 'L12.2', base: ['Na hora do recreio, as crianças jogam futebol com seis de cada lado, gol de chinelos e uma regra própria: quem fizer três gols vira goleiro.'],
+        src: 'Texto escrito para esta apostila.', cmd: 'A situação caracteriza o futebol como jogo, e não como esporte institucionalizado, porque',
+        alts: ['segue as regras oficiais da federação internacional.', 'tem regras combinadas e adaptadas pelos próprios participantes.', 'visa ao rendimento máximo dos atletas.', 'é transmitido pelos meios de comunicação.', 'conta com árbitros profissionais.'],
+        ans: 'B', pos: 'E', hab: 'H9', dif: 'fácil',
+        ex: { B: 'número de jogadores, gol de chinelos e a regra dos três gols foram combinados pelas crianças: é jogo.', A: 'não segue regras oficiais.', C: 'o objetivo é a brincadeira.', D: 'não há transmissão.', E: 'não há árbitro.' }
+      },
+      {
+        id: 'L12.3', base: ['"Antes do treino, eu postava. Depois, comparava. Em seis meses, o espelho virou inimigo." Depoimento de uma jovem sobre o uso de redes sociais e academias.'],
+        src: 'Depoimento escrito para esta apostila.', cmd: 'O depoimento evidencia',
+        alts: ['os benefícios das redes sociais para a autoestima.', 'o efeito negativo da comparação com padrões corporais divulgados nas redes.', 'a importância da musculação para a saúde.', 'a falta de academias nas cidades.', 'o sucesso de uma estratégia de treinamento.'],
+        ans: 'B', pos: 'A', hab: 'H11', dif: 'fácil',
+        ex: { B: '"comparava" e "o espelho virou inimigo" mostram o sofrimento causado pelos padrões das redes.', A: 'é o contrário. Termo oposto.', C: 'o depoimento não trata dos benefícios do treino.', D: 'não há falta de academias.', E: 'não há sucesso relatado.' },
+        traps: { A: 'oposto' }
+      },
+      {
+        id: 'L12.4', base: ['Na roda, o berimbau dita o ritmo, o coro responde ao canto e dois jogadores trocam movimentos de ataque e esquiva, sem a intenção de derrubar o outro com violência.'],
+        src: 'Texto escrito para esta apostila.', cmd: 'A descrição da roda de capoeira mostra que essa prática corporal',
+        alts: ['é apenas um esporte de competição com regras olímpicas.', 'integra luta, música, dança e jogo numa manifestação cultural.', 'tem origem europeia e chegou ao Brasil no século XX.', 'dispensa a participação coletiva.', 'é exclusivamente uma técnica de defesa pessoal.'],
+        ans: 'B', pos: 'D', hab: 'H9', dif: 'fácil',
+        ex: { B: 'berimbau (música), coro, movimentos de ataque e esquiva (luta e dança) e jogo sem violência: manifestação cultural integrada.', A: 'a descrição não fala de competição olímpica.', C: 'a capoeira tem origem afro-brasileira.', D: 'a roda é coletiva.', E: 'é mais que defesa pessoal.' }
+      },
+      {
+        id: 'L12.5', base: ['Transmissões ao vivo, contratos milionários e campeonatos com horários definidos pela televisão fazem parte do esporte de alto rendimento atual.'],
+        src: 'Texto escrito para esta apostila.', cmd: 'O texto descreve o fenômeno da',
+        alts: ['espetacularização do esporte, que o transforma em produto da mídia.', 'democratização do lazer nas periferias.', 'valorização do jogo com regras flexíveis.', 'educação física escolar inclusiva.', 'redução da influência econômica sobre o esporte.'],
+        ans: 'A', hab: 'H10', dif: 'fácil',
+        ex: { A: 'televisão, contratos e horários definidos pela mídia: o esporte vira espetáculo e mercadoria.', B: 'não se fala de lazer nas periferias.', C: 'o alto rendimento tem regras institucionalizadas.', D: 'não se fala de escola.', E: 'é o contrário: a influência econômica aumenta.' },
+        traps: { E: 'oposto' }
+      }
+    ],
+    cards: [
+      ['Exercício físico', 'Atividade planejada, estruturada e repetitiva'],
+      ['OMS para adultos', '150 a 300 minutos por semana de atividade moderada'],
+      ['Jogo × esporte', 'Regras combinadas × regras institucionalizadas'],
+      ['Espetacularização', 'Esporte como produto da mídia'],
+      ['Capoeira', 'Luta, dança, música e jogo afro-brasileiros'],
+      ['Crítica comum no Enem', 'Padrões corporais impostos pela mídia']
+    ],
+    vf: [
+      ['Toda atividade física é também exercício físico.', false, 'Exercício é a atividade planejada e estruturada; andar até a padaria é atividade física.'],
+      ['O jogo tem regras que podem ser combinadas pelos participantes.', true, 'É isso que o diferencia do esporte institucionalizado.'],
+      ['A espetacularização do esporte não tem relação com a mídia.', false, 'Ela é justamente a transformação do esporte em produto midiático.'],
+      ['O Enem costuma valorizar a diversidade de corpos e criticar padrões estéticos únicos.', true, 'É um tema recorrente nas questões de práticas corporais.']
+    ]
+  });
+
+  L({
+    module: {
+      id: 'L13', title: 'Tecnologias da informação e da comunicação', habs: 'H1, H2, H3, H4, H28, H29, H30', faixa: 'B',
+      note: 'As competências 1 e 9 tratam das tecnologias: as questões discutem desinformação, algoritmos, privacidade, inclusão digital e as novas formas de ler e escrever.',
+      html: `<h4>1. Hipertexto e novas formas de ler</h4>
+<p>O <strong>hipertexto</strong> é um texto com ligações (links) para outros textos, imagens e vídeos. A leitura deixa de ser linear: o leitor escolhe caminhos. Isso amplia o acesso, mas exige mais seleção e senso crítico.</p>
+<h4>2. Desinformação e checagem</h4>
+<ul>
+<li><strong>Desinformação</strong> (fake news): conteúdo falso ou enganoso produzido para parecer notícia, frequentemente com apelo emocional e títulos alarmistas.</li>
+<li><strong>Como checar:</strong> fonte identificável, data, autor, outros veículos confirmando, imagem fora de contexto, sites de checagem.</li>
+<li><strong>Deepfake:</strong> vídeo ou áudio manipulado por inteligência artificial para imitar uma pessoa real.</li>
+</ul>
+<div class="box conceito"><b class="box-t">Conceito</b><p><strong>Bolha de filtro:</strong> os algoritmos das plataformas mostram a cada usuário o conteúdo que ele tende a aprovar. Com o tempo, a pessoa vê cada vez menos opiniões diferentes, o que reforça crenças e polarização.</p></div>
+<h4>3. Dados pessoais e privacidade</h4>
+<p>Navegar deixa rastros: cliques, localização, buscas. Esses dados alimentam a publicidade direcionada e os algoritmos. No Brasil, a <strong>Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018)</strong> regula a coleta e o uso de dados pessoais e exige consentimento e finalidade clara.</p>
+<h4>4. Inclusão e exclusão digital</h4>
+<p>Ter um celular não é o mesmo que ter acesso pleno: conexão de qualidade, equipamento adequado e <strong>letramento digital</strong> (saber buscar, avaliar e produzir informação) são desiguais por renda, região e idade. A exclusão digital aprofunda outras desigualdades, como mostrou o ensino remoto.</p>
+<h4>5. Linguagem da internet</h4>
+<p>Abreviações, emojis, memes e áudios criaram registros próprios. O Enem não os trata como "erro", mas como <strong>adequados a certas situações</strong> (conversa informal) e inadequados a outras (documento oficial).</p>
+<div class="box enem"><b class="box-t">No Enem</b><p>Os textos costumam <strong>problematizar</strong> a tecnologia: nem euforia ("a internet resolve tudo"), nem rejeição ("a tecnologia destrói a leitura"). A resposta tende a reconhecer potencialidades e riscos, e a valorizar o uso crítico e consciente.</p></div>
+<div class="box pegadinha"><b class="box-t">Pegadinha</b><p>Alternativas absolutas ("a tecnologia elimina a desigualdade", "as redes impedem o pensamento crítico") costumam estar erradas. O Enem prefere a leitura matizada: a tecnologia <strong>pode</strong> ampliar ou restringir, dependendo do acesso e do uso.</p></div>`,
+      resumo: [
+        ['Hipertexto', 'Texto com links; leitura não linear'],
+        ['Desinformação', 'Conteúdo falso com aparência de notícia'],
+        ['Deepfake', 'Vídeo ou áudio manipulado por IA'],
+        ['Bolha de filtro', 'Algoritmo mostra o que o usuário tende a aprovar'],
+        ['LGPD', 'Lei 13.709/2018: proteção de dados pessoais'],
+        ['Letramento digital', 'Saber buscar, avaliar e produzir informação'],
+        ['Linguagem da internet', 'Adequada a certas situações, inadequada a outras']
+      ]
+    },
+    questions: [
+      {
+        id: 'L13.1', base: ['"URGENTE!!! Compartilhe antes que apaguem: cientistas confirmam que beber água gelada causa infarto." A mensagem não tem autor, data nem link para a pesquisa.'],
+        src: 'Texto escrito para esta apostila.', cmd: 'Os elementos que indicam que a mensagem é provavelmente desinformação são',
+        alts: ['a presença de dados detalhados e de fontes verificáveis.', 'o tom alarmista e a ausência de autor, data e fonte.', 'a linguagem técnica e impessoal.', 'a publicação em um site oficial de saúde.', 'a citação do nome dos cientistas e da universidade.'],
+        ans: 'B', pos: 'D', hab: 'H29', dif: 'fácil',
+        ex: { B: '"URGENTE!!!", "antes que apaguem" e a falta de autor, data e link são sinais clássicos de desinformação.', A: 'não há dados nem fontes. Termo oposto.', C: 'a linguagem é emocional, não técnica.', D: 'não há site oficial.', E: 'os cientistas não são nomeados.' },
+        traps: { A: 'oposto' }
+      },
+      {
+        id: 'L13.2', base: ['Depois de assistir a três vídeos sobre um tema político, um usuário passou a receber apenas recomendações que confirmavam a mesma opinião.'],
+        src: 'Texto escrito para esta apostila.', cmd: 'A situação ilustra o fenômeno da',
+        alts: ['inclusão digital', 'bolha de filtro', 'proteção de dados', 'leitura linear', 'neutralidade dos algoritmos'],
+        ans: 'B', pos: 'E', hab: 'H30', dif: 'fácil',
+        ex: { B: 'o algoritmo passou a mostrar só o que confirma a opinião do usuário: bolha de filtro.', A: 'não se trata de acesso à rede.', C: 'não se discute proteção de dados.', D: 'a leitura em plataformas não é linear.', E: 'a situação mostra justamente que o algoritmo não é neutro.' },
+        traps: { E: 'oposto' }
+      },
+      {
+        id: 'L13.3', base: ['Na pandemia, muitos estudantes tinham um único celular em casa, dividido entre irmãos, com pacote de dados limitado, para acompanhar as aulas remotas.'],
+        src: 'Texto escrito para esta apostila.', cmd: 'A situação evidencia que a inclusão digital depende',
+        alts: ['apenas da posse de um aparelho conectado.', 'de condições como equipamento adequado, conexão de qualidade e acesso individual.', 'exclusivamente da vontade do estudante.', 'da proibição do uso de celulares na escola.', 'do uso de redes sociais para fins de lazer.'],
+        ans: 'B', pos: 'A', hab: 'H28', dif: 'média',
+        ex: { B: 'ter um aparelho dividido e dados limitados não garante acesso pleno: equipamento, conexão e uso individual importam.', A: 'o texto mostra que ter o aparelho não basta. Termo oposto.', C: 'o problema é estrutural, não de vontade.', D: 'não há relação com proibição.', E: 'não se trata de lazer.' },
+        traps: { A: 'oposto', C: 'exagero' }
+      },
+      {
+        id: 'L13.4', base: ['Um aplicativo de lanterna pede acesso à localização, aos contatos e ao microfone do celular.'],
+        src: 'Situação escrita para esta apostila.', cmd: 'À luz da Lei Geral de Proteção de Dados, o pedido é questionável porque',
+        alts: ['a lei proíbe qualquer aplicativo de coletar dados.', 'os dados solicitados não têm relação com a finalidade do aplicativo.', 'lanternas não podem ser oferecidas como aplicativo.', 'a lei só vale para empresas públicas.', 'o usuário não tem direitos sobre os próprios dados.'],
+        ans: 'B', hab: 'H29', dif: 'média',
+        ex: { B: 'a LGPD exige finalidade clara: uma lanterna não precisa de localização, contatos nem microfone.', A: 'a lei regula, não proíbe toda coleta. Exagero.', C: 'não há proibição desse tipo.', D: 'vale para empresas públicas e privadas.', E: 'a lei garante direitos ao titular. Termo oposto.' },
+        traps: { A: 'exagero', E: 'oposto' }
+      },
+      {
+        id: 'L13.5', base: ['Numa reportagem digital, cada termo técnico tem um link para um verbete, os dados aparecem em gráficos interativos e há um vídeo com o depoimento de uma especialista.'],
+        src: 'Texto escrito para esta apostila.', cmd: 'Essa organização exemplifica',
+        alts: ['a leitura linear típica do texto impresso.', 'o hipertexto multimodal, que permite percursos de leitura variados.', 'a substituição do texto verbal por imagens.', 'a exclusão de leitores com pouca experiência.', 'a censura de informações técnicas.'],
+        ans: 'B', pos: 'C', hab: 'H1', dif: 'fácil',
+        ex: { B: 'links, gráficos interativos e vídeo: hipertexto multimodal, em que o leitor escolhe caminhos.', A: 'é o contrário da leitura linear.', C: 'o texto verbal continua; é combinado com outros recursos.', D: 'os links explicam termos técnicos; não há exclusão.', E: 'não há censura.' },
+        traps: { A: 'oposto' }
+      }
+    ],
+    cards: [
+      ['Hipertexto', 'Texto com links; leitura não linear'],
+      ['Sinais de desinformação', 'Alarmismo, sem autor, data ou fonte'],
+      ['Bolha de filtro', 'Algoritmo reforça o que o usuário já pensa'],
+      ['LGPD', 'Lei 13.709/2018, dados pessoais exigem finalidade e consentimento'],
+      ['Letramento digital', 'Buscar, avaliar e produzir informação'],
+      ['Enem e tecnologia', 'Leitura crítica: potencialidades e riscos']
+    ],
+    vf: [
+      ['Ter um celular garante acesso pleno à cultura digital.', false, 'Conexão, equipamento adequado e letramento digital também contam.'],
+      ['Algoritmos de recomendação são neutros e mostram a todos o mesmo conteúdo.', false, 'Eles personalizam o conteúdo, o que pode criar bolhas.'],
+      ['A LGPD exige que a coleta de dados tenha uma finalidade clara.', true, 'Finalidade e consentimento são princípios da lei.'],
+      ['Emojis e abreviações são sempre inadequados.', false, 'São adequados a situações informais.']
+    ]
+  });
+
+  L({
+    module: {
+      id: 'L14', title: 'Inglês no Enem: estratégias de leitura', habs: 'H5, H6, H7, H8', faixa: 'A',
+      note: 'Seu erro de 2025 está aqui: na questão 3, o poema falava da relação entre seres humanos e natureza ("we are earth"); você marcou "apego à terra natal". Earth, no poema, é a Terra e o solo, não a pátria.',
+      html: `<h4>1. Como são as 5 questões</h4>
+<p>As questões de inglês trazem textos autênticos (poemas, tirinhas, campanhas, notícias, letras de música, posts) e o <strong>comando e as alternativas em português</strong>. A prova mede compreensão global e de detalhes, não gramática isolada.</p>
+<h4>2. Estratégias</h4>
+<ol>
+<li><strong>Leia o comando e as alternativas primeiro</strong> (estão em português): eles dizem o que procurar no texto.</li>
+<li><strong>Skimming:</strong> leitura rápida para captar o tema geral (título, imagem, fonte, palavras repetidas).</li>
+<li><strong>Scanning:</strong> busca de uma informação específica (um número, um nome, uma data).</li>
+<li><strong>Cognatos:</strong> palavras parecidas com o português e com o mesmo sentido (<em>important</em>, <em>education</em>, <em>community</em>) ajudam a montar o sentido.</li>
+<li><strong>Não traduza palavra por palavra.</strong> Use o contexto para inferir as palavras desconhecidas.</li>
+</ol>
+<h4>3. Falsos cognatos que derrubam</h4>
+<div class="tw"><table><thead><tr><th>Palavra</th><th>Parece</th><th>Significa</th></tr></thead><tbody>
+<tr><td>actually</td><td>atualmente</td><td>na verdade</td></tr>
+<tr><td>pretend</td><td>pretender</td><td>fingir</td></tr>
+<tr><td>push</td><td>puxar</td><td>empurrar</td></tr>
+<tr><td>library</td><td>livraria</td><td>biblioteca</td></tr>
+<tr><td>parents</td><td>parentes</td><td>pais (pai e mãe)</td></tr>
+<tr><td>college</td><td>colégio</td><td>faculdade</td></tr>
+<tr><td>eventually</td><td>eventualmente</td><td>finalmente, por fim</td></tr>
+<tr><td>lunch</td><td>lanche</td><td>almoço</td></tr>
+</tbody></table></div>
+<div class="box exemplo"><b class="box-t">Exemplo</b><p>"Remember the earth whose skin you are: red earth, black earth, yellow earth, white earth, brown earth, we are earth." (Joy Harjo). A repetição de cores de "earth" (terra, solo) e "we are earth" afirmam a <strong>unidade entre os seres humanos e a natureza</strong>, e não o amor por um lugar de origem.</p></div>
+<h4>4. Gêneros e o que costumam pedir</h4>
+<ul>
+<li><strong>Poema:</strong> o que o eu lírico ressalta ou valoriza.</li>
+<li><strong>Tirinha e cartum:</strong> de onde vem o humor (quebra de expectativa, ironia).</li>
+<li><strong>Campanha:</strong> a finalidade (conscientizar, mobilizar).</li>
+<li><strong>Notícia e reportagem:</strong> a informação central.</li>
+</ul>
+<div class="box enem"><b class="box-t">No Enem</b><p>O texto em inglês costuma tratar de temas sociais: identidade, diversidade, meio ambiente, tecnologia, direitos. O tema do texto ajuda a eliminar alternativas que fogem dele.</p></div>
+<div class="box pegadinha"><b class="box-t">Pegadinha</b><p>Alternativas que pegam <strong>uma palavra do texto</strong> e a traduzem de forma literal ou com o sentido errado (earth → "terra natal"; actually → "atualmente") são o distrator favorito. Confira o sentido no <strong>contexto inteiro</strong>, especialmente no final do texto, onde costuma estar a síntese ("Remember you are this universe and this universe is you").</p></div>`,
+      resumo: [
+        ['Formato', '5 questões; comando e alternativas em português'],
+        ['Primeiro passo', 'Ler o comando e as alternativas antes do texto'],
+        ['Skimming × scanning', 'Ideia geral × informação específica'],
+        ['Cognatos', 'Parecidos e com o mesmo sentido: education, community'],
+        ['actually', 'Na verdade (não "atualmente")'],
+        ['pretend', 'Fingir (não "pretender")'],
+        ['library', 'Biblioteca (não "livraria")'],
+        ['earth (Enem 2025, q. 3)', 'Terra/solo; no poema, a unidade entre humanos e natureza']
+      ]
+    },
+    questions: [
+      {
+        id: 'L14.1', base: ['"I am the river and the river is me. / When you poison the water, / you poison my blood."'],
+        src: 'Poema escrito para esta apostila.', cmd: 'Nesses versos, o eu lírico ressalta',
+        alts: ['a saudade da cidade onde nasceu.', 'a identidade entre o ser humano e a natureza.', 'a beleza das paisagens fluviais para o turismo.', 'a importância da medicina tradicional.', 'o medo de atravessar rios.'],
+        ans: 'B', pos: 'D', hab: 'H6', dif: 'fácil',
+        ex: { B: '"I am the river and the river is me" e "poison the water... poison my blood": o eu lírico e o rio são um só.', A: 'não há referência a cidade natal; é a armadilha de 2025.', C: 'não há turismo.', D: '"blood" é imagem da unidade com o rio, não medicina.', E: 'não há medo.' },
+        traps: { A: 'detalhe', D: 'detalhe' }
+      },
+      {
+        id: 'L14.2', base: ['<em>Comic strip:</em> A boy tells his mother: "I actually finished my homework." She answers: "Actually? So you were planning not to?"'],
+        src: 'Tirinha escrita para esta apostila.', cmd: 'O humor da tirinha decorre do fato de a mãe',
+        alts: ['entender "actually" como "atualmente".', 'interpretar o "actually" (na verdade) como sinal de que o filho não pretendia fazer a tarefa.', 'não compreender a palavra "homework".', 'elogiar o filho por terminar a tarefa cedo.', 'corrigir a pronúncia do filho.'],
+        ans: 'B', pos: 'A', hab: 'H6', dif: 'média',
+        ex: { B: '"actually" (na verdade) sugere surpresa; a mãe deduz que o filho não planejava fazer a tarefa: o humor está nessa inferência.', A: 'a mãe entende a palavra corretamente; o falso cognato é armadilha para o leitor.', C: 'não há dificuldade com "homework".', D: 'ela desconfia, não elogia.', E: 'não há correção de pronúncia.' },
+        traps: { A: 'detalhe', D: 'oposto' }
+      },
+      {
+        id: 'L14.3', base: ['"Every plastic bottle you throw away will outlive you. Refill, reuse, rethink."', '<em>Environmental campaign.</em>'],
+        src: 'Campanha escrita para esta apostila.', cmd: 'A finalidade da campanha é',
+        alts: ['vender garrafas plásticas mais resistentes.', 'conscientizar sobre o tempo de decomposição do plástico e estimular a reutilização.', 'informar a data de validade de bebidas engarrafadas.', 'proibir o consumo de água engarrafada.', 'divulgar uma pesquisa sobre expectativa de vida humana.'],
+        ans: 'B', pos: 'E', hab: 'H7', dif: 'fácil',
+        ex: { B: '"will outlive you" (vai durar mais que você) e "refill, reuse, rethink" apontam para conscientização e reutilização.', A: 'a campanha não vende garrafas.', C: 'não há data de validade.', D: 'sugere reutilizar, não proíbe. Exagero.', E: '"outlive" compara a duração do plástico com a vida humana; não há pesquisa.' },
+        traps: { D: 'exagero', E: 'detalhe' }
+      },
+      {
+        id: 'L14.4', base: ['"The city library will extend its opening hours on weekends starting next month, the mayor announced on Monday."'],
+        src: 'Notícia escrita para esta apostila.', cmd: 'A notícia informa que',
+        alts: ['uma nova livraria será inaugurada na cidade.', 'a biblioteca municipal ampliará o horário de funcionamento nos fins de semana.', 'o prefeito fechará a biblioteca às segundas-feiras.', 'os livros da biblioteca serão vendidos.', 'a biblioteca funcionará apenas no próximo mês.'],
+        ans: 'B', pos: 'C', hab: 'H5', dif: 'fácil',
+        ex: { B: '"library" é biblioteca; "extend its opening hours on weekends" = ampliar o horário nos fins de semana.', A: '"library" não é livraria (falso cognato).', C: '"Monday" é o dia do anúncio, não de fechamento.', D: 'não há venda de livros.', E: '"starting next month" indica início, não período único.' },
+        traps: { A: 'detalhe', C: 'detalhe' }
+      },
+      {
+        id: 'L14.5', base: ['"My parents speak Spanish at home, I speak English at school, and my grandmother sings in Nahuatl. I don\'t have one language. I have a family of languages."'],
+        src: 'Depoimento escrito para esta apostila.', cmd: 'No depoimento, a autora',
+        alts: ['lamenta não falar bem nenhuma língua.', 'valoriza a convivência de várias línguas como parte da sua identidade.', 'critica os pais por não falarem inglês.', 'defende que se fale apenas inglês na escola.', 'descreve seus parentes distantes.'],
+        ans: 'B', pos: 'A', hab: 'H8', dif: 'fácil',
+        ex: { B: '"a family of languages": a diversidade linguística é vivida como riqueza e identidade.', A: 'não há lamento. Termo oposto.', C: 'não há crítica aos pais.', D: 'não há defesa de uma língua única.', E: '"parents" são os pais, não parentes distantes (falso cognato).' },
+        traps: { A: 'oposto', E: 'detalhe' }
+      }
+    ],
+    cards: [
+      ['actually', 'na verdade'],
+      ['pretend', 'fingir'],
+      ['library', 'biblioteca'],
+      ['parents', 'pais (pai e mãe)'],
+      ['eventually', 'finalmente, por fim'],
+      ['Skimming × scanning', 'Ideia geral × informação específica']
+    ],
+    vf: [
+      ['Nas questões de inglês do Enem, comando e alternativas vêm em português.', true, 'Por isso vale lê-los antes do texto.'],
+      ['"Actually" significa "atualmente".', false, 'Significa "na verdade"; "atualmente" é "currently" ou "nowadays".'],
+      ['Traduzir palavra por palavra é a melhor estratégia para o Enem.', false, 'O contexto e a ideia global são mais eficientes.'],
+      ['"We are earth", num poema, pode expressar a unidade entre humanos e natureza.', true, 'Foi o sentido cobrado na questão 3 de 2025.']
+    ]
+  });
 })(window.DATA);
