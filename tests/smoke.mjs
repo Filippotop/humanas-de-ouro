@@ -78,14 +78,14 @@ async function testDeep(browser) {
   if (!DATA_FILES.length) return check(false, 'aprofundamento: sem data/*.js');
   const ctx = await browser.newContext({ viewport: VIEWPORTS['1280'], serviceWorkers: 'block' });
   const page = await ctx.newPage();
-  const extra = { id: 'D-TESTE.1', vol: 'FS', mod: 'F1', tag: 'teste', base: ['Texto.'], src: 'Teste.', cmd: 'Comando de teste', alts: ['a', 'b', 'c', 'd', 'e'], ans: 'A', ex: { A: 'a', B: 'b', C: 'c', D: 'd', E: 'e' }, hab: 'H1', dif: 'fácil', traps: {}, kind: 'fixacao' };
-  await page.route('**/data/base.js', async r => { const res = await r.fetch(); r.fulfill({ response: res, body: (await res.text()) + `\nwindow.DATA.deep={F1:{html:'<h4>Aprofundamento de teste</h4>',questions:[${JSON.stringify(extra)}]}};` }); });
+  const extra = { id: 'D-TESTE.1', vol: 'FS', mod: 'R1', tag: 'teste', base: ['Texto.'], src: 'Teste.', cmd: 'Comando de teste', alts: ['a', 'b', 'c', 'd', 'e'], ans: 'A', ex: { A: 'a', B: 'b', C: 'c', D: 'd', E: 'e' }, hab: 'H1', dif: 'fácil', traps: {}, kind: 'fixacao' };
+  await page.route('**/data/base.js', async r => { const res = await r.fetch(); r.fulfill({ response: res, body: (await res.text()) + `\nwindow.DATA.deep=Object.assign(window.DATA.deep||{},{R1:{html:'<h4>Aprofundamento de teste</h4>',questions:[${JSON.stringify(extra)}]}});` }); });
   await page.goto(URL_); await page.waitForTimeout(300);
-  await page.evaluate(() => go('mod', { id: 'F1', tab: 'teoria' })); await page.waitForTimeout(250);
+  await page.evaluate(() => go('mod', { id: 'R1', tab: 'teoria' })); await page.waitForTimeout(250);
   check(await page.locator('#prose h4', { hasText: 'Aprofundamento de teste' }).count() === 1, 'aprofundamento: a teoria extra não apareceu no módulo');
   const qtab = await page.locator('.subtabs button[data-t="q"]').textContent();
   const n = Number((qtab.match(/\/(\d+)/) || [])[1]);
-  check(n === loadData().modules.find(m => m.id === 'F1').qs.length + 1, `aprofundamento: contagem de questões "${qtab}"`);
+  check(n === loadData().modules.find(m => m.id === 'R1').qs.length + 1, `aprofundamento: contagem de questões "${qtab}"`);
   await ctx.close();
 }
 
@@ -440,12 +440,48 @@ async function testLinguagensUI(browser) {
   }
 }
 
+/* Aprofundamento de Humanas: três seções, 3 questões novas, todas as questões oficiais do tema citadas e tocáveis. */
+const DEEP_REQUIRED = ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7'];
+function testDeepContent() {
+  if (!DATA_FILES.length) return;
+  const D = loadData(), deep = D.deep || {}, map = D.enemMap || {};
+  check(Object.keys(map).length === 2, 'aprofundamento: falta DATA.enemMap (2024 e 2025)');
+  const dist = {}; let nq = 0;
+  for (const id of DEEP_REQUIRED) {
+    const d = deep[id];
+    check(d, `aprofundamento ${id}: não existe`); if (!d) continue;
+    for (const h of ['Aprofundamento', 'Como o Enem cobra', 'Pegadinhas']) check(new RegExp(`<h4>[^<]*${h}`).test(d.html), `aprofundamento ${id}: falta a seção "${h}"`);
+    check((d.questions || []).length >= 3, `aprofundamento ${id}: ${(d.questions || []).length} questões novas (mínimo 3)`);
+    for (const q of d.questions || []) { check(q.id.startsWith('D-' + id + '.') && q.mod === id, `aprofundamento ${id}: questão ${q.id} com id/mod errados`); dist[q.ans] = (dist[q.ans] || 0) + 1; nq++; }
+    for (const [ex, nums] of Object.entries(map)) for (const [n, mod] of Object.entries(nums)) if (mod === id)
+      check(d.html.includes(`data-ex="${ex}" data-n="${n}"`), `aprofundamento ${id}: não cita a questão oficial ${n} de 20${ex.slice(0, 2)}`);
+  }
+  for (const k of 'ABCDE') { const share = (dist[k] || 0) / Math.max(1, nq); check(share >= 0.1 && share <= 0.32, `aprofundamento: gabarito desequilibrado, ${k} em ${Math.round(share * 100)}% (${JSON.stringify(dist)})`); }
+}
+async function testDeepUI(browser) {
+  const ctx = await browser.newContext({ viewport: VIEWPORTS['375'], serviceWorkers: 'block' });
+  const page = await ctx.newPage(); await page.goto(URL_); await page.waitForTimeout(300);
+  await page.evaluate(() => go('mod', { id: 'F2', tab: 'teoria' })); await page.waitForTimeout(250);
+  const a = page.locator('#prose a[data-ex]').first();
+  check(await a.count() === 1, 'aprofundamento: F2 sem citação tocável de questão oficial');
+  if (await a.count()) { const ex = await a.getAttribute('data-ex'), n = await a.getAttribute('data-n'); await a.click(); await page.waitForTimeout(300);
+    const src = await page.locator('.qview img').getAttribute('src').catch(() => null);
+    check(src && src.includes(`provas/${ex}/q${String(n).padStart(3, '0')}`), `aprofundamento: tocar na citação não abriu a imagem oficial (${src})`);
+    check(!(await page.locator('.qview').innerText()).includes('Gabarito oficial:'), 'aprofundamento: o gabarito oficial aparece antes de a pessoa pedir');
+    await page.locator('.qview summary').click().catch(() => {}); await page.waitForTimeout(100);
+    check((await page.locator('.qview').innerText()).includes('Gabarito oficial:'), 'aprofundamento: tocar em "ver o gabarito" não mostra a resposta');
+    await page.keyboard.press('Escape'); await page.waitForTimeout(150);
+    check(await page.locator('.qview').count() === 0, 'aprofundamento: Esc não fecha a questão oficial'); }
+  await ctx.close();
+}
+
 const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : {});
 try {
   testData();
   testIntegrity();
   testPlan();
   testLinguagensData();
+  testDeepContent();
   await testDeep(browser);
   await testOfflineShell(browser);
   await testDia1(browser);
@@ -454,6 +490,7 @@ try {
   await testReading(browser);
   await testHome(browser);
   await testLinguagensUI(browser);
+  await testDeepUI(browser);
   await testNav(browser);
   await testTabs(browser);
   await testAnswered(browser);

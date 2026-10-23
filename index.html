@@ -186,6 +186,10 @@ td{border-bottom:1px solid var(--rule);padding:8px 10px;vertical-align:top}
 .box.pegadinha{--bx:var(--bad);--bx-bg:var(--bad-soft);--bx-t:var(--bad)}
 .box.conexao{--bx:var(--s);--bx-bg:var(--sunk);--bx-t:var(--s)}
 .toc-m{display:none}
+.qview{position:fixed;inset:0;z-index:50;background:rgba(10,12,24,.72);display:grid;place-items:center;padding:var(--sp-4)}
+.qv-in{background:var(--surface);border-radius:var(--r-lg);padding:var(--sp-4);display:grid;gap:var(--sp-3);max-width:760px;width:100%;max-height:90vh;overflow:auto}
+.qv-in img{width:100%;height:auto;border-radius:var(--r-sm);background:#fff}
+.qv-in .muted{font-family:var(--mono)}
 .tw.scrolls::before{content:'deslize a tabela para o lado →';display:block;position:sticky;left:0;font-family:var(--mono);font-size:var(--fs-1);color:var(--muted);padding-bottom:var(--sp-1)}
 .toc-m summary{cursor:pointer;font-family:var(--display);font-size:var(--fs-2);font-weight:600;color:var(--muted);padding:var(--sp-2) 0}
 .toc-m .toc{padding:var(--sp-1) 0 var(--sp-3)}
@@ -590,6 +594,8 @@ select{font:inherit;padding:8px 12px;border-radius:10px;border:1px solid var(--r
 
 <script src="data/base.js"></script>
 <script src="data/linguagens.js"></script>
+<script src="data/enem-map.js"></script>
+<script src="data/aprofundamento-fs.js"></script>
 <script src="merge.js"></script>
 <script>
 const DATA = window.DATA;
@@ -659,6 +665,13 @@ let sample=null;
 function toast(t){ const el=$('#toast'); el.textContent=t; el.hidden=false; clearTimeout(toast.t); toast.t=setTimeout(()=>el.hidden=true,2200); }
 
 /* ---------- derived ---------- */
+/* Questão oficial citada no aprofundamento: abre a imagem do caderno ali mesmo; Esc ou o botão fecham. */
+function openQView(ex,n){ const e=EX[ex]; if(!e||!e.img[n]) return; closeQView();
+  const d=document.createElement('div'); d.className='qview'; d.setAttribute('role','dialog'); d.setAttribute('aria-modal','true'); d.setAttribute('aria-label',`Questão ${n} do ${e.title}`);
+  d.innerHTML=`<div class="qv-in"><div class="row" style="justify-content:space-between;align-items:center"><b>${e.title} · questão ${n}</b><button class="btn" id="qvClose">Fechar</button></div><img src="${imgUrl(ex,n)}" alt="Questão ${n} do ${e.title}" width="${e.img[n].w}" height="${e.img[n].h}"><details><summary class="muted" style="cursor:pointer">Resolva primeiro; depois toque para ver o gabarito</summary><p class="qv-key" style="margin:6px 0 0;font-family:var(--mono)">Gabarito oficial: <b>${e.key[n]||'anulada'}</b></p></details></div>`;
+  d.onclick=ev=>{ if(ev.target===d) closeQView(); }; document.body.appendChild(d); $('#qvClose').onclick=closeQView; $('#qvClose').focus(); }
+function closeQView(){ const d=document.querySelector('.qview'); if(d) d.remove(); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeQView(); });
 /* Origem da questão: apostila (volumes 1 e 2), extra do app ou Linguagens. */
 function volLabel(q){ return q.kind==='extra'?'extra do app':q.vol==='LC'?'Linguagens':'volume '+(q.vol==='HG'?1:2); }
 function modStats(mid){
@@ -806,6 +819,7 @@ function vMod(){
     $('#toc').innerHTML=tocHtml; $('#tocm').innerHTML=tocHtml; $('#tocm').previousElementSibling.textContent=`Nesta estação · ${hs.length} seções`;
     body.querySelectorAll('.toc a').forEach(a=>a.onclick=e=>{e.preventDefault(); const d=a.closest('details'); if(d) d.open=false; hs[+a.dataset.i].scrollIntoView({behavior:'smooth',block:'start'});});
     body.querySelectorAll('.prose .tw').forEach(t=>t.classList.toggle('scrolls',t.scrollWidth>t.clientWidth+2));
+    body.querySelectorAll('#prose a[data-ex]').forEach(a=>a.onclick=e=>{ e.preventDefault(); openQView(a.dataset.ex,a.dataset.n); });
     $('#readbar').hidden=false; readProgress();
     $('#toResumo').onclick=()=>{ if(!S.read[m.id]){S.read[m.id]=Date.now(); save();} param.tab='resumo'; vMod(); window.scrollTo({top:0}); };
   } else if(tab==='resumo'){
