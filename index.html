@@ -341,6 +341,9 @@ form.search input{width:100%;font:inherit;font-size:14px;padding:7px 12px;border
 .qtools button[aria-pressed="true"]{background:var(--gold-soft);color:var(--gold-ink);border-color:var(--gold)}
 .nextstep{margin-top:8px;border:2px solid var(--ok);background:var(--ok-soft);border-radius:var(--r);padding:16px;display:grid;gap:10px}
 .nextstep b{font-size:17px}
+.dia2-lock{margin-top:18px;display:grid;gap:4px}
+.dia2-lock .dia2-t{font-size:17px}
+.dia2-lock summary{cursor:pointer;padding:6px 0}
 .q.kbd-active{outline:2px dashed var(--gold);outline-offset:3px}
 @media (max-width:700px){
   nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--rule);padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px));justify-content:space-between;gap:2px;overflow:visible}
@@ -612,7 +615,17 @@ function volStats(vol){
   return {done,ok};
 }
 function dueCards(vol){ const t=today(); return DATA.cards.filter(c=>(!vol||c.vol===vol) && (!S.cards[c.id] || S.cards[c.id].due<=t)); }
-function daysLeft(){ const n=new Date(); const a=Date.UTC(n.getFullYear(),n.getMonth(),n.getDate()); const b=Date.UTC(2026,10,8); return Math.max(0,Math.round((b-a)/86400000)); }
+/* Modo Dia 1: o dia 2 fica guardado até 72/90 no dia 1 de 2024 (inteiro, cronometrado), até 9/11 ou até a liberação manual. */
+const DIA2_META=72, DIA2_DATA='2026-11-09';
+function dia2Best(){ const rs=pvState('24d1').runs.filter(r=>r.done&&r.mode==='prova'&&r.areas==='LH'); return rs.length?Math.max(...rs.map(r=>scoreRun('24d1',r).ok)):null; }
+function dia2Status(){ const best=dia2Best();
+  if(best!=null&&best>=DIA2_META) return {open:true,via:'criterio',best};
+  if(S.dia2&&S.dia2.via) return {open:true,via:'manual',best};
+  if(isoToday()>=DIA2_DATA) return {open:true,via:'data',best};
+  return {open:false,via:null,best}; }
+function unlockDia2(){ S.dia2={t:Date.now(),via:'manual'}; save(); }
+function examTarget(){ return Date.now()<Date.parse('2026-11-08T19:00:00-03:00') ? EXAM : new Date('2026-11-15T13:30:00-03:00'); }
+function daysLeft(){ const n=new Date(), t=examTarget(); const a=Date.UTC(n.getFullYear(),n.getMonth(),n.getDate()); const b=Date.UTC(t.getFullYear(),t.getMonth(),t.getDate()); return Math.max(0,Math.round((b-a)/86400000)); }
 function priority(m){
   if(m.line==='R') return -99;
   const s=modStats(m.id);
@@ -636,7 +649,7 @@ function render(){
   document.body.dataset.view=view;
   if(view!=='game') clearInterval(gameTimer);
   $('#readbar').hidden=true; updateGoal();
-  const d=daysLeft(); $('#count').textContent = d===1? 'falta 1 dia · 08/11' : `faltam ${d} dias · 08/11`;
+  const d=daysLeft(), dd=examTarget().toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'}); $('#count').textContent = d===1? `falta 1 dia · ${dd}` : `faltam ${d} dias · ${dd}`;
   ({linhas:vLinhas,mod:vMod,arena:vArena,game:vGame,biblioteca:vBib,treino:vTreino,plano:vPlano,painel:vPainel,busca:vBusca,provas:vProvas,prova:vProva,provares:vProvaRes,papel:vPapel,redacao:vRedacao}[view])();
 }
 
@@ -645,9 +658,10 @@ function vLinhas(){
   const nm=nextModules(2); const due=dueCards().length; const pday=planToday();
   const rc=DATA.recal.find(r=>!S.recal[r.vol+r.num]);
   const tasks=[];
-  { const r25=allRuns('25d2'); const cur=pvState('25d2').runs.find(r=>!r.done); const doneAreas=r25.filter(runReal).map(r=>r.areas).join(''); const miss=['N','M'].filter(a=>!doneAreas.includes(a));
+  if(dia2Status().open) { const r25=allRuns('25d2'); const cur=pvState('25d2').runs.find(r=>!r.done); const doneAreas=r25.filter(runReal).map(r=>r.areas).join(''); const miss=['N','M'].filter(a=>!doneAreas.includes(a));
     if(miss.length) tasks.push({ic:'!',t:cur?'Continuar o ENEM 2025 · 2º dia':`Diagnóstico pendente: ENEM 2025 · ${miss.map(a=>AREAS[a].name).join(' e ')}`,s:cur?`${Object.keys(cur.ans).length} questões respondidas · o cronômetro continua correndo`:'A prova oficial está dentro do app, com cartão-resposta e correção. É a tarefa mais importante da semana.',act:()=> cur? go('prova',{id:'25d2',run:pvState('25d2').runs.indexOf(cur)}) : go('provas')});
     if(miss.length) tasks.push({ic:'✎',t:'Fez a prova no papel? Lance as respostas',s:'Marque as letras no cartão-resposta e o app corrige pelo gabarito oficial, como se você tivesse feito aqui.',act:()=>go('papel',{id:'25d2',areas:miss.join('')})}); }
+  else { const b=dia2Status().best; tasks.push({ic:'★',t:'Simulado do dia 1 de 2024 · dom 1/11, 13h30',s:b==null?`É a chave do dia 2: ${DIA2_META}/90, inteiro e cronometrado (5h30), libera. Até lá, não abra essa prova.`:`Seu melhor: ${b}/90. Meta para liberar o dia 2: ${DIA2_META}/90.`,act:()=>go('provas')}); }
   { const w=Object.values(S.ans).filter(a=>!a.ok); const au=w.filter(a=>a.trap==='autor').length;
     { const rd=(S.red&&Array.isArray(S.red.drafts)?S.red.drafts:[]).filter(d=>d.done).map(d=>d.end||0); const last=rd.length?Math.max(...rd):0; const dd=last?Math.floor((Date.now()-last)/864e5):null;
       if(dd==null||dd>=4) tasks.push({ic:'✍',t:dd==null?'Redação: você ainda não escreveu nenhuma aqui':`Redação: ${dd} dias sem escrever`,s:'Até 1.000 pontos dependem de treino escrito. A Oficina tem projeto, cronômetro e correção por competência.',act:()=>go('redacao',{s:'oficina',novo:1})}); }
@@ -1888,9 +1902,8 @@ function runLabel(run){ if(run.id==='papel') return 'Diagnóstico no papel (set/
 
 /* ---------- lista ---------- */
 function vProvas(){
-  const order=['25d2','25d1','24d1','24d2'];
-  app.innerHTML=`<div class="pagehead"><div><div class="eyebrow">provas oficiais do Inep · Caderno Azul</div><h1>Provas</h1><p class="lede">As provas de verdade, questão por questão, com cartão-resposta, cronômetro e correção pelo gabarito oficial. As imagens são recortes do caderno original.</p></div></div>
-  <div class="exgrid">${order.map(id=>{ const e=EX[id]; const runs=allRuns(id); const st=pvState(id); const cur=st.runs.find(r=>!r.done);
+  const d2=dia2Status();
+  const card=id=>{ const e=EX[id]; const runs=allRuns(id); const st=pvState(id); const cur=st.runs.find(r=>!r.done);
     const done=runs.filter(r=>r.done); const real=done.filter(runReal); const last=real[real.length-1]||done[done.length-1]; const sc=last?scoreRun(id,last):null;
     const badge={pendente:['Diagnóstico pendente','warn'],feita:['Feita no papel','ok'],guardada:['Guardada para simulado','muted']}[e.status];
     return `<article class="excard ${e.status}">
@@ -1901,7 +1914,16 @@ function vProvas(){
       ${e.status==='guardada'&&!sc?`<p class="note">Faça uma vez só, inteira e cronometrada, como no dia. Depois de ver o gabarito, ela deixa de valer como simulado.</p>`:''}
       <div class="exactions">${cur?`<button class="btn gold" data-cont="${id}">Continuar (${Object.keys(cur.ans).length}/${areaNums(cur.areas).length})</button><button class="btn ghost" data-drop="${id}">Descartar esta tentativa</button>`:startButtons(id)}
       ${done.length?`<button class="btn" data-res="${id}">Ver correção</button>`:''}<button class="btn ghost" data-papel="${id}">Fiz no papel: lançar respostas</button></div>
-      <p class="fonte">${e.fonte}</p></article>`}).join('')}</div>
+      <p class="fonte">${e.fonte}</p></article>`};
+  app.innerHTML=`<div class="pagehead"><div><div class="eyebrow">provas oficiais do Inep · Caderno Azul</div><h1>Provas</h1><p class="lede">As provas de verdade, questão por questão, com cartão-resposta, cronômetro e correção pelo gabarito oficial. As imagens são recortes do caderno original.</p></div></div>
+  <div class="exgrid">${(d2.open?['25d2','25d1','24d1','24d2']:['25d1','24d1']).map(card).join('')}</div>
+  ${d2.open?'':`<section class="dia2-lock panel">
+    <div class="row" style="justify-content:space-between;align-items:baseline"><b class="dia2-t"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="vertical-align:-2px"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Dia 2 · guardado</b><span class="mono muted" style="font-size:12px">seu melhor no dia 1 de 2024: ${d2.best==null?'ainda não fez':d2.best+'/90'} · meta ${DIA2_META}/90</span></div>
+    <div class="bar2" role="img" aria-label="Progresso até a meta: ${d2.best||0} de ${DIA2_META}"><i style="width:${pct(Math.min(d2.best||0,DIA2_META),DIA2_META)}%"></i></div>
+    <p style="font-family:var(--read);margin:10px 0">Natureza e Matemática ficam aqui até você fazer o <b>dia 1 de 2024 inteiro, em modo prova (5h30)</b>, e acertar pelo menos ${DIA2_META}. Se a data chegar antes, o dia 2 libera sozinho em 9/11, depois da prova do dia 1.</p>
+    <div class="row"><button class="btn ghost" id="dia2Force">Liberar mesmo assim</button></div>
+    <details style="margin-top:12px"><summary class="muted">Ver as provas do dia 2</summary><div class="exgrid" style="margin-top:12px">${['25d2','24d2'].map(card).join('')}</div></details>
+  </section>`}
   <div class="panel" style="margin-top:18px"><b>Sobre a nota.</b> <span class="muted">O app conta acertos. A nota do ENEM usa a TRI e depende dos parâmetros de cada questão, então não dá para converter acertos em nota com segurança. O que a correção mostra de útil: quantas fáceis você perdeu, como você vai no fim da prova (cansaço) e quantas certezas estavam erradas.</span></div>`;
   app.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>{ const [id,areas,mode]=b.dataset.start.split('|');
     if(EX[id].status==='guardada' && mode==='estudo' && !b.dataset.ok){ b.dataset.ok=1; b.textContent='Tem certeza? Toque de novo'; toast('No modo estudo o gabarito aparece na hora: a prova deixa de servir como simulado.'); return; }
@@ -1910,6 +1932,7 @@ function vProvas(){
   app.querySelectorAll('[data-res]').forEach(b=>b.onclick=()=>go('provares',{id:b.dataset.res}));
   app.querySelectorAll('[data-papel]').forEach(b=>b.onclick=()=>go('papel',{id:b.dataset.papel}));
   app.querySelectorAll('[data-drop]').forEach(b=>b.onclick=()=>{ if(!b.dataset.ok){ b.dataset.ok=1; b.textContent='Toque de novo para descartar'; return; } const st=pvState(b.dataset.drop); const ix=st.runs.findIndex(r=>!r.done); if(ix>=0){ st.runs.splice(ix,1); save(); toast('Tentativa descartada.'); } vProvas(); });
+  const f2=$('#dia2Force'); if(f2) f2.onclick=()=>{ if(!f2.dataset.ok){ f2.dataset.ok=1; f2.textContent=`Tem certeza? Faltam ${daysLeft()} dias para o dia 1, e cada hora no dia 2 sai dele. Toque de novo.`; return; } unlockDia2(); toast('Dia 2 liberado.'); vProvas(); };
 }
 function startButtons(id){
   const e=EX[id], full=examAreas(id);
@@ -2017,7 +2040,7 @@ function cardGrid(id,run,nums){
     return `<button class="cell2 ${cls}" data-go-q="${i}" title="Questão ${n}${g?': '+g:''}"><span>${n}</span><b>${g||''}</b></button>`}).join('')}</div></div>`).join('')}
     <div class="legend" style="margin-top:10px"><span><i style="background:var(--ink);border-color:var(--ink)"></i>respondida</span><span><i style="border-color:var(--warn)"></i>dúvida</span></div>`;
 }
-function finishRun(id,ri){ clearInterval(pvTimer); const run=pvState(id).runs[ri]; run.done=true; run.end=Date.now(); run.time=Math.min(run.end-run.start,run.limit); bump(Object.keys(run.ans).length); save(); go('provares',{id,run:ri}); }
+function finishRun(id,ri){ clearInterval(pvTimer); const run=pvState(id).runs[ri]; const was=dia2Status().open; run.done=true; run.end=Date.now(); run.time=Math.min(run.end-run.start,run.limit); bump(Object.keys(run.ans).length); save(); go('provares',{id,run:ri}); if(!was&&dia2Status().via==='criterio') toast(`Meta batida: ${dia2Best()}/90. O dia 2 está liberado.`); }
 
 /* ---------- correção ---------- */
 function vProvaRes(){

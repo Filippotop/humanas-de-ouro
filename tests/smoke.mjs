@@ -188,12 +188,54 @@ async function testOfflineConsent(browser) {
   await ctx.close();
 }
 
+/* Modo Dia 1: o dia 2 fica guardado até 72/90 no dia 1 de 2024 cronometrado, até 9/11 ou até a liberação manual. */
+async function testDia1(browser) {
+  if (!DATA_FILES.length) return;
+  const key = loadData().exams['24d1'].key;
+  const run = (nOk, extra = {}) => { const ans = {}; let ok = 0;
+    for (let n = 1; n <= 90; n++) { const k = key[n]; if (!k) continue; ans[n] = ok < nOk ? k : (k === 'A' ? 'B' : 'A'); if (ans[n] === k) ok++; }
+    return { id: 'r' + nOk, areas: 'LH', mode: 'prova', ans, flag: {}, cut: {}, start: 1, limit: 1, done: true, cur: 0, end: 2, time: 1, ...extra }; };
+  const humanasOnly = () => { const r = run(90, { areas: 'H' }); for (let n = 1; n <= 45; n++) delete r.ans[n]; return r; };
+  const open = async (S, date = '2026-10-23T12:00:00-03:00') => {
+    const ctx = await browser.newContext({ viewport: VIEWPORTS['1280'], serviceWorkers: 'block' });
+    await ctx.addInitScript(s => { if (!sessionStorage.getItem('seeded')) { localStorage.setItem('humanas-de-ouro-v1', s); sessionStorage.setItem('seeded', '1'); } }, JSON.stringify(S));
+    const page = await ctx.newPage(); await page.clock.setFixedTime(new Date(date));
+    await page.goto(URL_); await page.waitForTimeout(300); return { ctx, page };
+  };
+  const lockText = async page => { await page.click('#tabs button[data-v="provas"]'); await page.waitForTimeout(200);
+    return (await page.locator('.dia2-lock').count()) ? await page.locator('.dia2-lock').textContent() : null; };
+  const withRuns = runs => ({ v: 1, pv: { '24d1': { runs, notes: {} } }, updated: 1 });
+
+  { const { ctx, page } = await open({ v: 1, updated: 1 });
+    const tasks = (await page.locator('.task').allTextContents()).filter(t => !t.includes('Plano de hoje'));
+    check(!tasks.some(t => /2º dia|Natureza|Matemática/.test(t)), `dia 1: a missão ainda sugere o dia 2 (${tasks.filter(t => /2º dia|Natureza|Matemática/.test(t)).join(' | ')})`);
+    const lt = await lockText(page);
+    check(lt && lt.includes('2025 · 2º dia') && lt.includes('2024 · 2º dia'), 'dia 1: as provas do dia 2 não estão guardadas em .dia2-lock');
+    await ctx.close(); }
+  { const { ctx, page } = await open(withRuns([run(72)]));
+    check(await lockText(page) === null, 'dia 1: 72/90 cronometrado não liberou o dia 2'); await ctx.close(); }
+  { const { ctx, page } = await open(withRuns([run(71)]));
+    const lt = await lockText(page); check(lt && lt.includes('71/90'), `dia 1: com 71/90 deveria continuar guardado e mostrar 71/90 (${lt && lt.slice(0, 80)})`); await ctx.close(); }
+  for (const [name, r] of [['modo estudo', run(90, { mode: 'estudo' })], ['só Humanas', humanasOnly()], ['não entregue', run(90, { done: false })]]) {
+    const { ctx, page } = await open(withRuns([r]));
+    check(await lockText(page) !== null, `dia 1: ${name} não deveria liberar o dia 2`); await ctx.close(); }
+  { const { ctx, page } = await open({ v: 1, updated: 1 }, '2026-11-09T09:00:00-03:00');
+    check(await lockText(page) === null, 'dia 1: em 9/11 o dia 2 deveria estar liberado'); await ctx.close(); }
+  { const { ctx, page } = await open({ v: 1, updated: 1 });
+    await lockText(page); const b = page.locator('#dia2Force');
+    if (await b.count()) { await b.click(); await b.click(); await page.waitForTimeout(200); }
+    check(await page.locator('.dia2-lock').count() === 0, 'dia 1: "Liberar mesmo assim" não liberou');
+    const via = await page.evaluate(() => (JSON.parse(localStorage.getItem('humanas-de-ouro-v1') || '{}').dia2 || {}).via);
+    check(via === 'manual', `dia 1: liberação manual não gravou S.dia2.via (${via})`); await ctx.close(); }
+}
+
 const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : {});
 try {
   testData();
   testIntegrity();
   await testDeep(browser);
   await testOfflineShell(browser);
+  await testDia1(browser);
   await testNav(browser);
   await testTabs(browser);
   await testAnswered(browser);
