@@ -399,6 +399,10 @@ function testLinguagensData() {
   if (!DATA_FILES.length) return;
   const D = loadData(), L = D.modules.filter(m => m.line === 'L');
   check(L.length >= L_MIN_MODULES, `linguagens: ${L.length} módulos (mínimo ${L_MIN_MODULES})`);
+  const qsL = D.questions.filter(q => q.vol === 'LC'), dist = {};
+  for (const q of qsL) dist[q.ans] = (dist[q.ans] || 0) + 1;
+  for (const k of 'ABCDE') { const share = (dist[k] || 0) / Math.max(1, qsL.length);
+    check(share >= 0.12 && share <= 0.30, `linguagens: gabarito desequilibrado, ${k} em ${Math.round(share * 100)}% das ${qsL.length} questões (${JSON.stringify(dist)})`); }
   for (const m of L) {
     const h4 = (m.html.match(/<h4>/g) || []).length;
     check(m.vol === 'LC', `linguagens ${m.id}: vol "${m.vol}"`);
