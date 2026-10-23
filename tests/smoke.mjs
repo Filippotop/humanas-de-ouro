@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
+import vm from 'node:vm';
 import { chromium } from 'playwright';
 
 const require = createRequire(import.meta.url);
@@ -28,16 +29,76 @@ const server = http.createServer((req, res) => {
 await new Promise(ok => server.listen(0, '127.0.0.1', ok));
 const URL_ = `http://127.0.0.1:${server.address().port}/`;
 
+/* Os dados vivem em data/*.js, na ordem em que o index.html os carrega. */
+const DATA_FILES = [...fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8').matchAll(/<script src="(data\/[^"]+\.js)"><\/script>/g)].map(m => m[1]);
+function loadData() {
+  const ctx = vm.createContext({ window: {} });
+  for (const f of DATA_FILES) vm.runInContext(fs.readFileSync(path.join(ROOT, f), 'utf8'), ctx, { filename: f });
+  return ctx.window.DATA;
+}
+
 /* Dados: gabaritos válidos e uma imagem para cada questão. */
 function testData() {
-  const line = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8').split('\n').find(l => l.startsWith('const DATA = '));
-  const DATA = JSON.parse(line.slice('const DATA = '.length).replace(/;\s*$/, ''));
+  check(DATA_FILES[0] === 'data/base.js', `dados: o index.html deveria carregar data/base.js primeiro (carrega: ${DATA_FILES.join(', ') || 'nada'})`);
+  if (!DATA_FILES.length) return;
+  const DATA = loadData();
   for (const [id, e] of Object.entries(DATA.exams)) {
     const nums = Object.keys(e.key).map(Number);
     check(nums.length === e.last - e.first + 1, `${id}: gabarito com ${nums.length} questões`);
     for (const [n, k] of Object.entries(e.key)) check(k === null || /^[A-E]$/.test(k), `${id} q${n}: gabarito inválido "${k}"`);
     for (const [n, { f }] of Object.entries({ ...e.img, ...e.shared })) check(fs.existsSync(path.join(ROOT, "provas", id, f)), `${id} q${n}: imagem ${f} não existe`);
   }
+}
+
+/* Integridade do conteúdo: ids únicos, toda questão completa e todo módulo apontando para questões que existem. */
+function testIntegrity() {
+  if (!DATA_FILES.length) return;
+  const DATA = loadData();
+  const deepQs = Object.values(DATA.deep || {}).flatMap(d => d.questions || []);
+  const qs = [...DATA.questions, ...deepQs];
+  const ids = new Set();
+  for (const q of qs) {
+    check(!ids.has(q.id), `questão ${q.id}: id repetido`); ids.add(q.id);
+    check(/^[A-E]$/.test(q.ans), `questão ${q.id}: gabarito "${q.ans}"`);
+    check(Array.isArray(q.alts) && q.alts.length === 5, `questão ${q.id}: precisa de 5 alternativas`);
+    check(Object.keys(q.ex || {}).sort().join('') === 'ABCDE', `questão ${q.id}: falta explicação para alguma alternativa`);
+  }
+  const mids = new Set();
+  for (const m of DATA.modules) {
+    check(!mids.has(m.id), `módulo ${m.id}: id repetido`); mids.add(m.id);
+    check(m.html && m.html.trim().length > 0, `módulo ${m.id}: sem teoria`);
+    check(Array.isArray(m.resumo) && m.resumo.length > 0, `módulo ${m.id}: sem resumo`);
+    for (const q of m.qs) check(ids.has(q), `módulo ${m.id}: questão ${q} não existe`);
+  }
+  for (const id of Object.keys(DATA.deep || {})) check(mids.has(id), `aprofundamento: módulo ${id} não existe`);
+}
+
+/* O aprofundamento (DATA.deep) entra no módulo: teoria no fim e questões novas na contagem. */
+async function testDeep(browser) {
+  if (!DATA_FILES.length) return check(false, 'aprofundamento: sem data/*.js');
+  const ctx = await browser.newContext({ viewport: VIEWPORTS['1280'], serviceWorkers: 'block' });
+  const page = await ctx.newPage();
+  const extra = { id: 'D-TESTE.1', vol: 'FS', mod: 'F1', tag: 'teste', base: ['Texto.'], src: 'Teste.', cmd: 'Comando de teste', alts: ['a', 'b', 'c', 'd', 'e'], ans: 'A', ex: { A: 'a', B: 'b', C: 'c', D: 'd', E: 'e' }, hab: 'H1', dif: 'fácil', traps: {}, kind: 'fixacao' };
+  await page.route('**/data/base.js', async r => { const res = await r.fetch(); r.fulfill({ response: res, body: (await res.text()) + `\nwindow.DATA.deep={F1:{html:'<h4>Aprofundamento de teste</h4>',questions:[${JSON.stringify(extra)}]}};` }); });
+  await page.goto(URL_); await page.waitForTimeout(300);
+  await page.evaluate(() => go('mod', { id: 'F1', tab: 'teoria' })); await page.waitForTimeout(250);
+  check(await page.locator('#prose h4', { hasText: 'Aprofundamento de teste' }).count() === 1, 'aprofundamento: a teoria extra não apareceu no módulo');
+  const qtab = await page.locator('.subtabs button[data-t="q"]').textContent();
+  const n = Number((qtab.match(/\/(\d+)/) || [])[1]);
+  check(n === loadData().modules.find(m => m.id === 'F1').qs.length + 1, `aprofundamento: contagem de questões "${qtab}"`);
+  await ctx.close();
+}
+
+/* Offline: os arquivos de dados ficam no cache do app, e ele abre sem internet. */
+async function testOfflineShell(browser) {
+  check(DATA_FILES.length > 0, 'offline: nenhum data/*.js para conferir no cache');
+  const ctx = await browser.newContext({ viewport: VIEWPORTS['375'] });
+  const page = await ctx.newPage(); await page.goto(URL_);
+  await page.evaluate(() => navigator.serviceWorker.ready); await page.waitForTimeout(1500);
+  for (const f of DATA_FILES) check(await page.evaluate(f => caches.match(f).then(r => !!r), f), `offline: ${f} não está no cache`);
+  await ctx.setOffline(true); await page.reload(); await page.waitForTimeout(800);
+  check(await page.evaluate(() => document.querySelectorAll('#app .st').length) > 0, 'offline: o app abriu sem as estações');
+  await ctx.close();
 }
 
 /* Cada aba, em cada tamanho e tema: sem erro de JS, sem rolagem lateral, sem falha séria de acessibilidade. */
@@ -130,6 +191,9 @@ async function testOfflineConsent(browser) {
 const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : {});
 try {
   testData();
+  testIntegrity();
+  await testDeep(browser);
+  await testOfflineShell(browser);
   await testNav(browser);
   await testTabs(browser);
   await testAnswered(browser);
