@@ -290,6 +290,109 @@ async function testGistSync(browser) {
   await C.ctx.close();
 }
 
+/* Design: tokens, campos e links com estilo, cabeçalho compacto no celular, um botão principal por prova e movimento reduzido. */
+async function testDesign(browser) {
+  const ctx = await browser.newContext({ viewport: VIEWPORTS['375'], serviceWorkers: 'block' });
+  const page = await ctx.newPage(); await page.goto(URL_); await page.waitForTimeout(400);
+  const tok = await page.evaluate(() => { const cs = getComputedStyle(document.documentElement); const g = n => cs.getPropertyValue(n).trim();
+    return { fs: [1, 2, 3, 4, 5, 6, 7].map(i => g('--fs-' + i)), sp: [1, 2, 3, 4, 5, 6, 7, 8].map(i => g('--sp-' + i)), l: g('--l') }; });
+  check(tok.fs.join(' ') === '12px 14px 16px 18px 22px 28px 36px', `design: escala tipográfica --fs-1..7 = "${tok.fs.join(' ')}"`);
+  check(tok.sp.every(v => /^\d+px$/.test(v) && parseInt(v) % 4 === 0), `design: espaçamentos --sp-1..8 fora de múltiplos de 4 ("${tok.sp.join(' ')}")`);
+  check(!!tok.l, 'design: falta a cor --l da linha de Linguagens');
+  for (const w of [320, 375]) { await page.setViewportSize({ width: w, height: 700 }); await page.waitForTimeout(100);
+    const h = await page.evaluate(() => { const r = document.querySelector('header.top').getBoundingClientRect(); return { hh: r.height, left: r.left, width: r.width }; });
+    check(h.hh <= 84, `design: cabeçalho em ${w} px com ${Math.round(h.hh)} px de altura (máximo 84)`);
+    check(h.left === 0 && h.width === w, `design: cabeçalho em ${w} px não ocupa a largura toda (x=${h.left}, largura ${h.width})`); }
+  await page.setViewportSize(VIEWPORTS['375']);
+  await page.evaluate(() => openPop('sync')); await page.waitForTimeout(200);
+  const f = await page.evaluate(() => { const i = document.querySelector('#gsTok, #spTxt'); const a = document.querySelector('#pop a[href^="https://github.com"]'); const ci = getComputedStyle(i);
+    return { r: parseFloat(ci.borderRadius), pad: parseFloat(ci.paddingLeft), font: ci.fontFamily, link: a ? getComputedStyle(a).color : null }; });
+  check(f.r >= 8 && f.pad >= 10, `design: campo de texto sem estilo (raio ${f.r}, padding ${f.pad})`);
+  check(f.link && f.link !== 'rgb(0, 0, 238)', `design: link com o azul padrão do navegador (${f.link})`);
+  await page.evaluate(() => closePop()); await page.click('#tabs button[data-v="provas"]'); await page.waitForTimeout(200);
+  const prim = await page.evaluate(() => [...document.querySelectorAll('.excard')].map(c => [c.querySelector('h2').textContent, c.querySelectorAll('.exactions .btn.gold').length]));
+  for (const [t, n] of prim) check(n === 1, `design: o cartão "${t}" tem ${n} botões principais (deveria ter 1)`);
+  await ctx.close();
+  const rm = await browser.newContext({ viewport: VIEWPORTS['1280'], serviceWorkers: 'block', reducedMotion: 'reduce' });
+  const p2 = await rm.newPage(); await p2.goto(URL_); await p2.waitForTimeout(300);
+  const moving = await p2.evaluate(() => [...document.querySelectorAll('body *')].filter(e => { const cs = getComputedStyle(e); return cs.transitionDuration.split(',').some(d => parseFloat(d) > 0) || (cs.animationName !== 'none' && parseFloat(cs.animationDuration) > 0); }).slice(0, 3).map(e => e.className || e.tagName));
+  check(!moving.length, `design: com movimento reduzido ainda há animação (${moving.join(', ')})`);
+  await rm.close();
+}
+
+/* Leitura do módulo: sumário também no celular, metadados numa linha só e quadros didáticos legíveis nos dois temas. */
+const BOX_TYPES = ['conceito', 'exemplo', 'enem', 'pegadinha', 'conexao'];
+async function testReading(browser) {
+  for (const colorScheme of ['light', 'dark']) {
+    const ctx = await browser.newContext({ viewport: VIEWPORTS['375'], colorScheme, serviceWorkers: 'block' });
+    const page = await ctx.newPage(); await page.goto(URL_); await page.waitForTimeout(300);
+    await page.evaluate(() => go('mod', { id: 'F5', tab: 'teoria' })); await page.waitForTimeout(250);
+    if (colorScheme === 'light') {
+      const t = await page.evaluate(() => ({ h: document.querySelectorAll('#prose h4').length, links: document.querySelectorAll('details.toc-m a').length, vis: !!document.querySelector('details.toc-m') && getComputedStyle(document.querySelector('details.toc-m')).display !== 'none' }));
+      check(t.vis && t.links === t.h && t.h > 0, `leitura: sumário no celular com ${t.links} links para ${t.h} seções`);
+      for (const id of ['F5', 'H5', 'G3', 'S1']) { await page.evaluate(id => go('mod', { id, tab: 'teoria' }), id); await page.waitForTimeout(150);
+        const over = await page.evaluate(() => { const w = innerWidth; return [...document.querySelectorAll('#prose > *')].filter(e => !e.classList.contains('tw')).map(e => Math.round(e.getBoundingClientRect().right)).filter(r => r > w); });
+        check(!over.length, `leitura: em ${id} o texto passa da borda direita da tela (${over.slice(0, 3).join(', ')} px > 375)`); }
+      await page.evaluate(() => go('mod', { id: 'F5', tab: 'teoria' })); await page.waitForTimeout(150);
+      const hint = await page.evaluate(() => { const t = document.querySelector('#prose .tw'); return t && t.scrollWidth > t.clientWidth ? t.classList.contains('scrolls') && getComputedStyle(t, '::before').content.includes('deslize') : 'sem tabela larga'; });
+      check(hint === true, `leitura: tabela larga no celular sem o aviso "deslize" (${hint})`);
+      const tops = await page.evaluate(() => [...document.querySelectorAll('.mod-head .chip')].map(c => c.offsetTop));
+      check(new Set(tops).size === 1, `leitura: metadados do módulo quebram em ${new Set(tops).size} linhas no celular`);
+    }
+    const r = await page.evaluate(types => {
+      const prose = document.querySelector('#prose');
+      prose.insertAdjacentHTML('afterbegin', types.map(k => `<div class="box ${k}"><b class="box-t">Título ${k}</b><p>Texto de exemplo do quadro ${k}.</p></div>`).join(''));
+      const lum = c => { const [r, g, b] = c.match(/[\d.]+/g).slice(0, 3).map(x => { x /= 255; return x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+      const ratio = (a, b) => (Math.max(lum(a), lum(b)) + 0.05) / (Math.min(lum(a), lum(b)) + 0.05);
+      return types.map(k => { const box = prose.querySelector('.box.' + k), cs = getComputedStyle(box);
+        const bg = cs.backgroundColor === 'rgba(0, 0, 0, 0)' ? getComputedStyle(document.body).backgroundColor : cs.backgroundColor;
+        return { k, edge: cs.borderLeftColor, padded: parseFloat(cs.paddingLeft) >= 12, title: ratio(getComputedStyle(box.querySelector('.box-t')).color, bg), text: ratio(getComputedStyle(box.querySelector('p')).color, bg) }; });
+    }, BOX_TYPES);
+    for (const b of r) {
+      check(b.padded, `leitura/${colorScheme}: quadro .${b.k} sem estilo`);
+      check(b.title >= 4.5 && b.text >= 4.5, `leitura/${colorScheme}: quadro .${b.k} com contraste ${b.title.toFixed(2)} / ${b.text.toFixed(2)}`);
+    }
+    check(new Set(r.map(b => b.edge)).size === BOX_TYPES.length, `leitura/${colorScheme}: os 5 tipos de quadro não se distinguem pela cor`);
+    await ctx.close();
+  }
+}
+
+/* Tela inicial: contagem, anéis por área, próximo passo em destaque, status do dia 2, ícones desenhados e estatísticas sem esticar. */
+async function testHome(browser) {
+  for (const vp of ['375', '1280']) {
+    const ctx = await browser.newContext({ viewport: VIEWPORTS[vp], serviceWorkers: 'block' });
+    const page = await ctx.newPage(); await page.goto(URL_); await page.waitForTimeout(400);
+    const h = await page.evaluate(() => ({
+      count: (document.querySelector('.hero .countdown') || {}).textContent || '', days: String(daysLeft()),
+      rings: [...document.querySelectorAll('.hero .rings [data-area]')].map(r => [r.dataset.area, r.getAttribute('aria-label') || '']),
+      next: ((document.querySelector('.hero .next b') || {}).textContent || '').trim(),
+      d2: (document.querySelector('.hero .dia2-status') || {}).textContent || '',
+      icons: [...document.querySelectorAll('.task .ic')].map(i => i.querySelector('svg') ? 'svg' : i.textContent.trim()),
+      statH: Math.max(0, ...[...document.querySelectorAll('.hero .stat')].map(s => s.getBoundingClientRect().height)),
+    }));
+    check(h.count.includes(h.days), `início/${vp}: contagem regressiva sem os ${h.days} dias ("${h.count.trim().slice(0, 60)}")`);
+    check(h.rings.map(r => r[0]).join(',') === 'LC,HUM,RD', `início/${vp}: anéis por área = "${h.rings.map(r => r[0]).join(',')}"`);
+    for (const [a, l] of h.rings) check(/\d+%/.test(l), `início/${vp}: anel ${a} sem porcentagem no aria-label ("${l}")`);
+    check(h.next.length > 0, `início/${vp}: falta o bloco "Próximo passo"`);
+    check(/72/.test(h.d2), `início/${vp}: falta o status do dia 2 com a meta 72 ("${h.d2.trim().slice(0, 60)}")`);
+    const bad = h.icons.filter(i => i !== 'svg' && !/^[A-Z]\d+$/.test(i));
+    check(!bad.length, `início/${vp}: ícones de tarefa que não são desenhos (${bad.join(' ')})`);
+    if (vp === '1280') check(h.statH <= 200, `início/${vp}: cartão de estatística esticado (${Math.round(h.statH)} px)`);
+    if (h.next) { await page.click('.hero .next'); await page.waitForTimeout(200);
+      check(await page.evaluate(() => view !== 'linhas' || !!document.querySelector('#pop:not([hidden])')), `início/${vp}: o "Próximo passo" não leva a lugar nenhum`); }
+    await ctx.close();
+  }
+  for (const [day, want] of [['2026-10-23T09:00:00-03:00', false], ['2026-11-01T09:00:00-03:00', true]]) {
+    const ctx = await browser.newContext({ viewport: VIEWPORTS['375'], serviceWorkers: 'block' });
+    const page = await ctx.newPage(); await page.clock.setFixedTime(new Date(day)); await page.goto(URL_); await page.waitForTimeout(300);
+    const nx = await page.locator('.hero .next b').textContent().catch(() => '');
+    check(/Simulado do dia 1/.test(nx) === want, `início: em ${day.slice(0, 10)} o próximo passo ${want ? 'deveria' : 'não deveria'} ser o simulado ("${nx}")`);
+    const dots = await page.evaluate(() => [...document.querySelectorAll('.aring')].filter(r => r.querySelectorAll('circle').length > 1 && r.getAttribute('aria-label').includes(' 0%')).length);
+    check(!dots, `início: ${dots} anel(is) em 0% desenham um arco (pontinho solto)`);
+    await ctx.close();
+  }
+}
+
 const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : {});
 try {
   testData();
@@ -299,6 +402,9 @@ try {
   await testOfflineShell(browser);
   await testDia1(browser);
   await testGistSync(browser);
+  await testDesign(browser);
+  await testReading(browser);
+  await testHome(browser);
   await testNav(browser);
   await testTabs(browser);
   await testAnswered(browser);
