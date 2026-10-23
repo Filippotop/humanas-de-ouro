@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
+import vm from 'node:vm';
 import { chromium } from 'playwright';
 
 const require = createRequire(import.meta.url);
@@ -28,16 +29,77 @@ const server = http.createServer((req, res) => {
 await new Promise(ok => server.listen(0, '127.0.0.1', ok));
 const URL_ = `http://127.0.0.1:${server.address().port}/`;
 
+/* Os dados vivem em data/*.js, na ordem em que o index.html os carrega. */
+const DATA_FILES = [...fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8').matchAll(/<script src="(data\/[^"]+\.js)"><\/script>/g)].map(m => m[1]);
+function loadData() {
+  const ctx = vm.createContext({ window: {} });
+  for (const f of DATA_FILES) vm.runInContext(fs.readFileSync(path.join(ROOT, f), 'utf8'), ctx, { filename: f });
+  return ctx.window.DATA;
+}
+
 /* Dados: gabaritos válidos e uma imagem para cada questão. */
 function testData() {
-  const line = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8').split('\n').find(l => l.startsWith('const DATA = '));
-  const DATA = JSON.parse(line.slice('const DATA = '.length).replace(/;\s*$/, ''));
+  check(DATA_FILES[0] === 'data/base.js', `dados: o index.html deveria carregar data/base.js primeiro (carrega: ${DATA_FILES.join(', ') || 'nada'})`);
+  if (!DATA_FILES.length) return;
+  const DATA = loadData();
   for (const [id, e] of Object.entries(DATA.exams)) {
     const nums = Object.keys(e.key).map(Number);
     check(nums.length === e.last - e.first + 1, `${id}: gabarito com ${nums.length} questões`);
     for (const [n, k] of Object.entries(e.key)) check(k === null || /^[A-E]$/.test(k), `${id} q${n}: gabarito inválido "${k}"`);
     for (const [n, { f }] of Object.entries({ ...e.img, ...e.shared })) check(fs.existsSync(path.join(ROOT, "provas", id, f)), `${id} q${n}: imagem ${f} não existe`);
   }
+}
+
+/* Integridade do conteúdo: ids únicos, toda questão completa e todo módulo apontando para questões que existem. */
+function testIntegrity() {
+  if (!DATA_FILES.length) return;
+  const DATA = loadData();
+  const deepQs = Object.values(DATA.deep || {}).flatMap(d => d.questions || []);
+  const qs = [...DATA.questions, ...deepQs];
+  const ids = new Set();
+  for (const q of qs) {
+    check(!ids.has(q.id), `questão ${q.id}: id repetido`); ids.add(q.id);
+    check(/^[A-E]$/.test(q.ans), `questão ${q.id}: gabarito "${q.ans}"`);
+    check(Array.isArray(q.alts) && q.alts.length === 5, `questão ${q.id}: precisa de 5 alternativas`);
+    check(Object.keys(q.ex || {}).sort().join('') === 'ABCDE', `questão ${q.id}: falta explicação para alguma alternativa`);
+  }
+  const mids = new Set();
+  for (const m of DATA.modules) {
+    check(!mids.has(m.id), `módulo ${m.id}: id repetido`); mids.add(m.id);
+    check(m.html && m.html.trim().length > 0, `módulo ${m.id}: sem teoria`);
+    check(Array.isArray(m.resumo) && m.resumo.length > 0, `módulo ${m.id}: sem resumo`);
+    for (const q of m.qs) check(ids.has(q), `módulo ${m.id}: questão ${q} não existe`);
+  }
+  for (const id of Object.keys(DATA.deep || {})) check(mids.has(id), `aprofundamento: módulo ${id} não existe`);
+}
+
+/* O aprofundamento (DATA.deep) entra no módulo: teoria no fim e questões novas na contagem. */
+async function testDeep(browser) {
+  if (!DATA_FILES.length) return check(false, 'aprofundamento: sem data/*.js');
+  const ctx = await browser.newContext({ viewport: VIEWPORTS['1280'], serviceWorkers: 'block' });
+  const page = await ctx.newPage();
+  const extra = { id: 'D-TESTE.1', vol: 'FS', mod: 'F1', tag: 'teste', base: ['Texto.'], src: 'Teste.', cmd: 'Comando de teste', alts: ['a', 'b', 'c', 'd', 'e'], ans: 'A', ex: { A: 'a', B: 'b', C: 'c', D: 'd', E: 'e' }, hab: 'H1', dif: 'fácil', traps: {}, kind: 'fixacao' };
+  await page.route('**/data/base.js', async r => { const res = await r.fetch(); r.fulfill({ response: res, body: (await res.text()) + `\nwindow.DATA.deep={F1:{html:'<h4>Aprofundamento de teste</h4>',questions:[${JSON.stringify(extra)}]}};` }); });
+  await page.goto(URL_); await page.waitForTimeout(300);
+  await page.evaluate(() => go('mod', { id: 'F1', tab: 'teoria' })); await page.waitForTimeout(250);
+  check(await page.locator('#prose h4', { hasText: 'Aprofundamento de teste' }).count() === 1, 'aprofundamento: a teoria extra não apareceu no módulo');
+  const qtab = await page.locator('.subtabs button[data-t="q"]').textContent();
+  const n = Number((qtab.match(/\/(\d+)/) || [])[1]);
+  check(n === loadData().modules.find(m => m.id === 'F1').qs.length + 1, `aprofundamento: contagem de questões "${qtab}"`);
+  await ctx.close();
+}
+
+/* Offline: os arquivos de dados ficam no cache do app, e ele abre sem internet. */
+async function testOfflineShell(browser) {
+  check(DATA_FILES.length > 0, 'offline: nenhum data/*.js para conferir no cache');
+  const ctx = await browser.newContext({ viewport: VIEWPORTS['375'] });
+  const page = await ctx.newPage(); await page.goto(URL_);
+  await page.evaluate(() => navigator.serviceWorker.ready); await page.waitForTimeout(1500);
+  const scripts = [...fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8').matchAll(/<script src="([^":]+)"/g)].map(m => m[1]);
+  for (const f of scripts) check(await page.evaluate(f => caches.match(f).then(r => !!r), f), `offline: ${f} não está no cache`);
+  await ctx.setOffline(true); await page.reload(); await page.waitForTimeout(800);
+  check(await page.evaluate(() => document.querySelectorAll('#app .st').length) > 0, 'offline: o app abriu sem as estações');
+  await ctx.close();
 }
 
 /* Cada aba, em cada tamanho e tema: sem erro de JS, sem rolagem lateral, sem falha séria de acessibilidade. */
@@ -127,9 +189,116 @@ async function testOfflineConsent(browser) {
   await ctx.close();
 }
 
+/* Plano: só dia 1 até a prova, simulado no domingo 1/11 e a semana do dia 2 reservada. */
+function testPlan() {
+  if (!DATA_FILES.length) return;
+  const D = loadData(), byDay = Object.fromEntries(D.plan.map(p => [p.d, p])), mods = new Set(D.modules.map(m => m.id));
+  const days = (a, b) => { const out = []; for (let d = new Date(a + 'T12:00:00Z'); d <= new Date(b + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + 1)) out.push(d.toISOString().slice(0, 10)); return out; };
+  for (const d of days('2026-10-23', '2026-11-07')) check(byDay[d], `plano: falta o dia ${d}`);
+  for (const p of D.plan.filter(p => p.d >= '2026-10-23' && p.d < '2026-11-08'))
+    for (const t of p.tasks) check(!/^(24d2|25d2)/.test(t.a || '') && !/:(N|M|NM)$/.test(t.a || ''), `plano: ${p.d} tem tarefa do dia 2 (${t.k}:${t.a})`);
+  check((byDay['2026-11-01'] || { tasks: [] }).tasks.some(t => t.k === 'prova' && t.a === '24d1:LH'), 'plano: o simulado 24d1:LH não está no domingo 1/11');
+  for (const p of D.plan) for (const t of p.tasks) if (t.k === 'mod') check(mods.has(t.a), `plano: ${p.d} aponta para o módulo inexistente ${t.a}`);
+  for (const d of days('2026-11-09', '2026-11-14')) check(byDay[d] && /^Dia 2/.test(byDay[d].foco), `plano: ${d} deveria ser da semana do dia 2`);
+}
+
+/* Modo Dia 1: o dia 2 fica guardado até 72/90 no dia 1 de 2024 cronometrado, até 9/11 ou até a liberação manual. */
+async function testDia1(browser) {
+  if (!DATA_FILES.length) return;
+  const key = loadData().exams['24d1'].key;
+  const run = (nOk, extra = {}) => { const ans = {}; let ok = 0;
+    for (let n = 1; n <= 90; n++) { const k = key[n]; if (!k) continue; ans[n] = ok < nOk ? k : (k === 'A' ? 'B' : 'A'); if (ans[n] === k) ok++; }
+    return { id: 'r' + nOk, areas: 'LH', mode: 'prova', ans, flag: {}, cut: {}, start: 1, limit: 1, done: true, cur: 0, end: 2, time: 1, ...extra }; };
+  const humanasOnly = () => { const r = run(90, { areas: 'H' }); for (let n = 1; n <= 45; n++) delete r.ans[n]; return r; };
+  const open = async (S, date = '2026-10-23T12:00:00-03:00') => {
+    const ctx = await browser.newContext({ viewport: VIEWPORTS['1280'], serviceWorkers: 'block' });
+    await ctx.addInitScript(s => { if (!sessionStorage.getItem('seeded')) { localStorage.setItem('humanas-de-ouro-v1', s); sessionStorage.setItem('seeded', '1'); } }, JSON.stringify(S));
+    const page = await ctx.newPage(); await page.clock.setFixedTime(new Date(date));
+    await page.goto(URL_); await page.waitForTimeout(300); return { ctx, page };
+  };
+  const lockText = async page => { await page.click('#tabs button[data-v="provas"]'); await page.waitForTimeout(200);
+    return (await page.locator('.dia2-lock').count()) ? await page.locator('.dia2-lock').textContent() : null; };
+  const withRuns = runs => ({ v: 1, pv: { '24d1': { runs, notes: {} } }, updated: 1 });
+
+  { const { ctx, page } = await open({ v: 1, updated: 1 });
+    const tasks = (await page.locator('.task').allTextContents()).filter(t => !t.includes('Plano de hoje'));
+    check(!tasks.some(t => /2º dia|Natureza|Matemática/.test(t)), `dia 1: a missão ainda sugere o dia 2 (${tasks.filter(t => /2º dia|Natureza|Matemática/.test(t)).join(' | ')})`);
+    const lt = await lockText(page);
+    check(lt && lt.includes('2025 · 2º dia') && lt.includes('2024 · 2º dia'), 'dia 1: as provas do dia 2 não estão guardadas em .dia2-lock');
+    await ctx.close(); }
+  { const { ctx, page } = await open(withRuns([run(72)]));
+    check(await lockText(page) === null, 'dia 1: 72/90 cronometrado não liberou o dia 2'); await ctx.close(); }
+  { const { ctx, page } = await open(withRuns([run(71)]));
+    const lt = await lockText(page); check(lt && lt.includes('71/90'), `dia 1: com 71/90 deveria continuar guardado e mostrar 71/90 (${lt && lt.slice(0, 80)})`); await ctx.close(); }
+  for (const [name, r] of [['modo estudo', run(90, { mode: 'estudo' })], ['só Humanas', humanasOnly()], ['não entregue', run(90, { done: false })]]) {
+    const { ctx, page } = await open(withRuns([r]));
+    check(await lockText(page) !== null, `dia 1: ${name} não deveria liberar o dia 2`); await ctx.close(); }
+  { const { ctx, page } = await open({ v: 1, updated: 1 }, '2026-11-09T09:00:00-03:00');
+    check(await lockText(page) === null, 'dia 1: em 9/11 o dia 2 deveria estar liberado'); await ctx.close(); }
+  { const { ctx, page } = await open({ v: 1, updated: 1 });
+    await lockText(page); const b = page.locator('#dia2Force');
+    if (await b.count()) { await b.click(); await b.click(); await page.waitForTimeout(200); }
+    check(await page.locator('.dia2-lock').count() === 0, 'dia 1: "Liberar mesmo assim" não liberou');
+    const via = await page.evaluate(() => (JSON.parse(localStorage.getItem('humanas-de-ouro-v1') || '{}').dia2 || {}).via);
+    check(via === 'manual', `dia 1: liberação manual não gravou S.dia2.via (${via})`); await ctx.close(); }
+}
+
+/* Sincronização por Gist: o que um aparelho faz aparece no outro; chave ruim avisa; a chave nunca vai no código de exportação. */
+async function testGistSync(browser) {
+  const TOKEN = 'tok_bom_teste_123', gists = {}; let seq = 0;
+  const api = async route => {
+    const req = route.request(), url = new URL(req.url()), auth = req.headers()['authorization'];
+    if (auth !== 'Bearer ' + TOKEN) return route.fulfill({ status: 401, contentType: 'application/json', body: '{"message":"Bad credentials"}' });
+    const json = o => route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(o) });
+    const m = url.pathname.match(/^\/gists\/(\w+)$/);
+    if (url.pathname === '/gists' && req.method() === 'GET') return json(Object.values(gists));
+    if (url.pathname === '/gists' && req.method() === 'POST') { const b = req.postDataJSON(), id = 'g' + (++seq); gists[id] = { id, description: b.description, public: b.public, files: { 'progresso.json': { content: b.files['progresso.json'].content, truncated: false } } }; return json(gists[id]); }
+    if (m && req.method() === 'GET') return gists[m[1]] ? json(gists[m[1]]) : route.fulfill({ status: 404, body: '{}' });
+    if (m && req.method() === 'PATCH') { gists[m[1]].files['progresso.json'].content = req.postDataJSON().files['progresso.json'].content; return json(gists[m[1]]); }
+    return route.fulfill({ status: 404, body: '{}' });
+  };
+  const device = async () => { const ctx = await browser.newContext({ viewport: VIEWPORTS['375'], serviceWorkers: 'block' }); await ctx.route('https://api.github.com/**', api);
+    const page = await ctx.newPage(); await page.goto(URL_); await page.waitForTimeout(500); return { ctx, page }; };
+
+  const A = await device();
+  check(await A.page.evaluate(() => typeof window.GistSync === 'object'), 'sync: GistSync não existe no app instalado');
+  if (await A.page.evaluate(() => typeof window.GistSync !== 'object')) { await A.ctx.close(); return; }
+  check(await A.page.evaluate(t => GistSync.connect(t), TOKEN) === 'ok', 'sync: não conectou com a chave boa');
+  const gist = Object.values(gists)[0];
+  check(gist && gist.description === 'humanas-de-ouro-progresso' && gist.public === false, 'sync: não criou o Gist secreto humanas-de-ouro-progresso');
+  await A.page.evaluate(() => { S.ans['FS-1'] = { first: 'A', ok: true, t: Date.now(), src: 'teste' }; save(); });
+  await A.page.waitForTimeout(4500);
+  check(gist && JSON.parse(gist.files['progresso.json'].content).ans['FS-1'], 'sync: a resposta não chegou ao Gist 3 s depois de salvar');
+  const leaked = await A.page.evaluate(async t => JSON.stringify(await unpackS(await packS())).includes(t) || location.hash.includes(t), TOKEN);
+  check(!leaked, 'sync: a chave apareceu no código de exportação');
+  check(/sincronizado/.test(await A.page.locator('#sync').textContent()), 'sync: o selo não mostra "sincronizado"');
+
+  const B = await device();
+  check(await B.page.evaluate(t => GistSync.connect(t), TOKEN) === 'ok', 'sync: o segundo aparelho não conectou');
+  check(Object.keys(gists).length === 1, `sync: o segundo aparelho criou outro Gist (${Object.keys(gists).length})`);
+  check(await B.page.evaluate(() => !!S.ans['FS-1']), 'sync: a resposta do aparelho A não apareceu no aparelho B');
+  check((await B.page.locator('.stats .stat .n').first().textContent()).trim().startsWith('1'), 'sync: a tela do aparelho B não foi atualizada');
+  await B.page.evaluate(() => { S.ans['FS-2'] = { first: 'B', ok: false, t: Date.now(), src: 'teste' }; save(); });
+  await B.page.waitForTimeout(4500);
+  await A.page.evaluate(() => GistSync.pull());
+  check(await A.page.evaluate(() => !!S.ans['FS-1'] && !!S.ans['FS-2']), 'sync: depois da volta, o aparelho A não tem as duas respostas');
+  await A.ctx.close(); await B.ctx.close();
+
+  const C = await device();
+  check(await C.page.evaluate(() => GistSync.connect('chave_ruim')) === 'auth', 'sync: chave ruim deveria responder "auth"');
+  check(/reconecte/.test(await C.page.locator('#sync').textContent()), 'sync: com chave ruim o selo deveria pedir para reconectar');
+  await C.ctx.close();
+}
+
 const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : {});
 try {
   testData();
+  testIntegrity();
+  testPlan();
+  await testDeep(browser);
+  await testOfflineShell(browser);
+  await testDia1(browser);
+  await testGistSync(browser);
   await testNav(browser);
   await testTabs(browser);
   await testAnswered(browser);
