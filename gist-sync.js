@@ -5,7 +5,7 @@
   if(!window.__PWA) return;
   const K='hdo-gist', DESC='humanas-de-ouro-progresso', FILE='progresso.json', API='https://api.github.com';
   let cfg=null; try{ cfg=JSON.parse(localStorage.getItem(K)||'null'); }catch(e){}
-  let state=cfg&&cfg.gistId?'ok':'off', at=null, busy=null, timer=null, lastRemote=null;
+  let state=cfg&&cfg.gistId?'ok':'off', at=null, busy=null, again=false, timer=null;
 
   const err=code=>Object.assign(new Error(code),{code});
   async function api(path,opt={}){
@@ -18,30 +18,38 @@
   async function readGist(){
     const g=await api('/gists/'+cfg.gistId); const f=g.files&&g.files[FILE]; if(!f) return null;
     let txt=f.content; if(f.truncated&&f.raw_url) txt=await (await fetch(f.raw_url,{cache:'no-store'})).text();
-    try{ lastRemote=JSON.parse(txt); }catch(e){ lastRemote=null; } return lastRemote;
+    try{ return JSON.parse(txt); }catch(e){ return null; }
   }
   /* Telas que guardam referências ao progresso em memória: trocar S no meio perderia o que é digitado. */
   const busyView=()=>view==='prova'||(view==='redacao'&&param&&param.s==='oficina');
-  const same=(x,y)=>JSON.stringify(x)===JSON.stringify(y);
+  /* Comparação sem depender da ordem das chaves (a junção remonta os objetos). */
+  const canon=x=>JSON.stringify(x,(k,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.keys(v).sort().reduce((o,kk)=>(o[kk]=v[kk],o),{}):v);
+  const same=(x,y)=>canon(x)===canon(y);
   function apply(m){ S=m; fix(); try{ localStorage.setItem(KEY,JSON.stringify(S)); }catch(e){} render(); }
   function fail(e){ state=e&&e.code==='auth'?'auth':'offline'; paint(); return state; }
 
   async function pull(){
     if(!cfg||!cfg.gistId||state==='auth'||busyView()) return false;
     try{ const remote=await readGist(); state='ok'; at=Date.now(); paint();
-      if(!remote) return false; const m=mergeS(S,remote); if(same(m,S)) return false; apply(m); return true; }
+      if(!remote) return false; const m=mergeS(S,remote);
+      /* O que só existe aqui (estudo sem internet, envio que falhou) sobe já, sem esperar outro save(). */
+      if(!same(m,remote)) push();
+      if(same(m,S)) return false; apply(m); return true; }
     catch(e){ fail(e); return false; }
   }
+  /* Sempre lê o Gist antes de escrever: outro aparelho pode ter enviado depois da última leitura.
+     Um envio pedido durante outro não se perde: roda de novo quando o primeiro termina. */
   function push(opts={}){
     if(!cfg||!cfg.gistId||state==='auth') return Promise.resolve();
-    if(busy) return busy;
+    if(busy){ again=true; return busy; }
     busy=(async()=>{ try{
-      const remote=opts.quick?lastRemote:await readGist();
+      const remote=await readGist();
       let out=S; if(remote){ const m=mergeS(S,remote); if(!busyView()&&!same(m,S)) apply(m); out=busyView()?m:S; }
-      const body=JSON.stringify({files:{[FILE]:{content:JSON.stringify(out)}}});
-      await api('/gists/'+cfg.gistId,{method:'PATCH',body,keepalive:!!opts.quick&&body.length<60000});
-      lastRemote=JSON.parse(JSON.stringify(out)); state='ok'; at=Date.now(); paint();
-    }catch(e){ fail(e); } finally{ busy=null; } })();
+      if(!remote||!same(out,remote)){
+        const body=JSON.stringify({files:{[FILE]:{content:JSON.stringify(out)}}});
+        await api('/gists/'+cfg.gistId,{method:'PATCH',body,keepalive:!!opts.quick&&body.length<60000}); }
+      state='ok'; at=Date.now(); paint();
+    }catch(e){ fail(e); } })().then(()=>{ busy=null; if(again){ again=false; return push(opts); } });
     return busy;
   }
   async function connect(token){
@@ -55,7 +63,7 @@
       await pull(); await push(); return state;
     }catch(e){ const s=fail(e); if(s==='auth'){ cfg=null; try{ localStorage.removeItem(K); }catch(x){} } return s; }
   }
-  function disconnect(){ cfg=null; state='off'; at=null; lastRemote=null; try{ localStorage.removeItem(K); }catch(e){} paint(); }
+  function disconnect(){ cfg=null; state='off'; at=null; try{ localStorage.removeItem(K); }catch(e){} paint(); }
   function status(){ return {state,at}; }
 
   function label(){
