@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/merge.test.mjs && node tests/sw.test.mjs && node tests/smoke.mjs"
+    "test": "node tests/merge.test.mjs && node tests/sw.test.mjs && node tests/smoke.mjs && npm run test:bancada",
+    "test:bancada": "node --test bancada/tests/engine.test.mjs bancada/tests/missions.test.mjs && node bancada/tests/smoke.mjs"
   },
   "devDependencies": {
     "axe-core": "4.10.2",

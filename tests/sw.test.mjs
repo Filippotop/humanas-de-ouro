@@ -14,6 +14,7 @@ const fails = [];
 const fire = url => { let responded = false; handlers.fetch({ request: { method: 'GET', url, mode: 'cors' }, respondWith() { responded = true; } }); return responded; };
 for (const url of ['https://api.github.com/gists?per_page=100', 'https://api.github.com/gists/abc123'])
   if (fire(url)) fails.push(`o service worker interceptou ${url}: a sincronização leria dados velhos do cache`);
+if (fire('https://filippotop.github.io/humanas-de-ouro/bancada/js/app.js')) fails.push('o service worker da raiz interceptou a Bancada, que tem service worker próprio');
 if (!fire('https://fonts.googleapis.com/css2?family=X')) fails.push('o service worker deixou de cuidar das fontes (teste de sanidade)');
 if (fails.length) { console.error('sw: FALHOU\n- ' + fails.join('\n- ')); process.exit(1); }
 console.log('sw: API do GitHub fora do cache');
