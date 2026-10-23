@@ -729,4 +729,297 @@
       ['"Precisamos cuidar do planeta" usa um "nós" inclusivo.', true, 'O autor se inclui com o leitor na responsabilidade.']
     ]
   });
+
+  L({
+    module: {
+      id: 'L8', title: 'Literatura I: do Quinhentismo ao Realismo e ao Parnasianismo', habs: 'H15, H16, H17', faixa: 'B',
+      note: 'O Enem raramente pede a escola pelo nome: pede que você reconheça no trecho as marcas de uma estética e a relação com o seu tempo.',
+      html: `<h4>1. Quinhentismo e Barroco</h4>
+<ul>
+<li><strong>Quinhentismo (século XVI):</strong> textos de informação sobre a terra (a <em>Carta</em> de Pero Vaz de Caminha, de 1500, com olhar europeu, deslumbrado e interessado na exploração) e de catequese (José de Anchieta).</li>
+<li><strong>Barroco (século XVII):</strong> conflito entre fé e prazer, céu e terra, efemeridade da vida. Linguagem rebuscada, cheia de <strong>antíteses, paradoxos e hipérboles</strong>. <strong>Gregório de Matos</strong>, o "Boca do Inferno", fez poesia lírica, religiosa e satírica sobre a Bahia; <strong>Padre Antônio Vieira</strong>, nos sermões, argumentou com engenho (conceptismo).</li>
+</ul>
+<div class="box exemplo"><b class="box-t">Exemplo</b><p>"Triste Bahia! Ó quão dessemelhante / Estás e estou do nosso antigo estado!" (Gregório de Matos). O eu lírico e a cidade decaem juntos: lamento e crítica à exploração comercial da colônia.</p></div>
+<h4>2. Arcadismo (século XVIII)</h4>
+<p>Reação ao exagero barroco: simplicidade, razão, natureza idealizada. Marcas: <strong>bucolismo</strong>, pastores fictícios, <strong>fugere urbem</strong> (fugir da cidade), <strong>carpe diem</strong> (aproveitar o dia), <strong>locus amoenus</strong> (lugar ameno). Autores ligados a Minas Gerais e à Inconfidência: Cláudio Manuel da Costa e <strong>Tomás Antônio Gonzaga</strong> (<em>Marília de Dirceu</em>). Épicos: <em>O Uraguai</em> (Basílio da Gama) e <em>Caramuru</em> (Santa Rita Durão).</p>
+<h4>3. Romantismo (século XIX)</h4>
+<div class="tw"><table><thead><tr><th>Geração / vertente</th><th>Marcas</th><th>Nomes</th></tr></thead><tbody>
+<tr><td>1ª geração: nacionalista e indianista</td><td>Exaltação da pátria e do indígena idealizado</td><td>Gonçalves Dias ("Canção do exílio", "I-Juca-Pirama")</td></tr>
+<tr><td>2ª geração: ultrarromântica ("mal do século")</td><td>Pessimismo, tédio, amor e morte</td><td>Álvares de Azevedo, Casimiro de Abreu</td></tr>
+<tr><td>3ª geração: condoreira</td><td>Poesia social, abolicionista, grandiloquente</td><td>Castro Alves ("O navio negreiro")</td></tr>
+<tr><td>Prosa</td><td>Romance indianista, urbano e regionalista</td><td>José de Alencar (<em>Iracema</em>, <em>O Guarani</em>, <em>Senhora</em>), Joaquim Manuel de Macedo, Maria Firmina dos Reis (<em>Úrsula</em>, 1859)</td></tr>
+</tbody></table></div>
+<div class="box conceito"><b class="box-t">Conceito</b><p>O Romantismo brasileiro ajudou a construir uma <strong>identidade nacional</strong> depois da Independência; o indígena virou herói idealizado, com valores de cavaleiro europeu. Maria Firmina dos Reis, com <em>Úrsula</em>, é considerada a primeira romancista negra do Brasil e deu voz a personagens escravizados.</p></div>
+<h4>4. Realismo, Naturalismo e Parnasianismo (fim do século XIX)</h4>
+<ul>
+<li><strong>Realismo:</strong> crítica à burguesia, análise psicológica, ironia, objetividade. <strong>Machado de Assis</strong> inaugura o Realismo com <em>Memórias póstumas de Brás Cubas</em> (1881), narradas por um defunto; em <em>Dom Casmurro</em>, o narrador Bentinho é suspeito, e a dúvida sobre Capitu é construída pelo próprio relato.</li>
+<li><strong>Naturalismo:</strong> o ser humano determinado pelo meio, pela herança e pelo momento (determinismo); personagens animalizadas (zoomorfização); temas sociais e sexuais. <em>O cortiço</em> (Aluísio Azevedo).</li>
+<li><strong>Parnasianismo:</strong> poesia da "arte pela arte": rigor formal, soneto, rima rica, vocabulário raro, objetividade. Olavo Bilac, Raimundo Correia, Alberto de Oliveira.</li>
+</ul>
+<div class="box enem"><b class="box-t">No Enem</b><p>Machado aparece muito, quase sempre para cobrar <strong>ironia</strong>, crítica social e o narrador que conversa com o leitor. Gregório, para cobrar sátira e antíteses. Castro Alves, para cobrar a denúncia da escravidão.</p></div>
+<div class="box pegadinha"><b class="box-t">Pegadinha</b><p>Romantismo × Realismo: idealização × crítica. Um amor perfeito e uma heroína pura apontam para o Romantismo; o casamento por interesse analisado com ironia aponta para o Realismo. E rigor formal com objetividade é Parnasianismo, não Romantismo.</p></div>`,
+      resumo: [
+        ['Quinhentismo', 'Informação (Carta de Caminha) e catequese (Anchieta)'],
+        ['Barroco', 'Conflito fé × prazer; antítese e paradoxo; Gregório de Matos, Vieira'],
+        ['Arcadismo', 'Bucolismo, fugere urbem, carpe diem; Gonzaga'],
+        ['Romantismo', 'Idealização, nacionalismo, indianismo; Gonçalves Dias, Álvares de Azevedo, Castro Alves, Alencar'],
+        ['Realismo', 'Ironia, análise psicológica, crítica à burguesia; Machado (1881)'],
+        ['Naturalismo', 'Determinismo, zoomorfização; O cortiço'],
+        ['Parnasianismo', 'Arte pela arte, soneto, rigor formal; Bilac']
+      ]
+    },
+    questions: [
+      {
+        id: 'L8.1', base: ['"Senhor Deus dos desgraçados! / Dizei-me vós, Senhor Deus! / Se é loucura... se é verdade / Tanto horror perante os céus?!"'],
+        src: 'ALVES, C. O navio negreiro. Domínio público.', cmd: 'Esses versos manifestam uma característica da terceira geração romântica, que é a',
+        alts: ['idealização do indígena como herói nacional.', 'denúncia social expressa em tom grandiloquente.', 'evasão para a morte e o tédio do "mal do século".', 'busca da forma perfeita e da arte pela arte.', 'descrição objetiva da natureza brasileira.'],
+        ans: 'B', pos: 'C', hab: 'H16', dif: 'fácil',
+        ex: { B: 'a interpelação a Deus diante do "horror" do tráfico negreiro, com exclamações, é a poesia social e condoreira de Castro Alves.', A: 'o indianismo é da primeira geração.', C: 'o "mal do século" é da segunda geração.', D: 'a arte pela arte é parnasiana.', E: 'não há descrição da natureza.' },
+        traps: { C: 'autor' }
+      },
+      {
+        id: 'L8.2', base: ['"Ao verme que primeiro roeu as frias carnes do meu cadáver dedico como saudosa lembrança estas memórias póstumas."'],
+        src: 'ASSIS, M. Memórias póstumas de Brás Cubas. Domínio público.', cmd: 'A dedicatória antecipa um traço central do romance, que é a',
+        alts: ['idealização romântica do amor e da morte.', 'ironia de um narrador que escreve depois de morto.', 'exaltação da natureza tropical.', 'descrição científica da decomposição do corpo.', 'linguagem rebuscada, cheia de antíteses barrocas.'],
+        ans: 'B', pos: 'E', hab: 'H17', dif: 'média',
+        ex: { B: 'dedicar o livro ao verme com "saudosa lembrança" é humor irônico; o narrador é um defunto-autor.', A: 'a morte é tratada com ironia, não idealizada. Termo oposto.', C: 'não há natureza.', D: 'a imagem do verme é irônica, não científica; o determinismo é naturalista.', E: 'não há antíteses barrocas.' },
+        traps: { A: 'oposto', D: 'detalhe' }
+      },
+      {
+        id: 'L8.3', base: ['"Triste Bahia! Ó quão dessemelhante / Estás e estou do nosso antigo estado!"'],
+        src: 'MATOS, G. Obra poética. Domínio público.', cmd: 'Nesses versos, o eu lírico',
+        alts: ['celebra a prosperidade alcançada pela cidade.', 'identifica a própria decadência com a decadência da Bahia.', 'descreve com objetividade a paisagem baiana.', 'convida o leitor a fugir da cidade para o campo.', 'exalta o indígena como símbolo da pátria.'],
+        ans: 'B', pos: 'A', hab: 'H16', dif: 'média',
+        ex: { B: '"Estás e estou" iguala cidade e eu lírico na mesma perda do "antigo estado".', A: 'há lamento, não celebração. Termo oposto.', C: 'não há descrição objetiva.', D: 'fugere urbem é traço árcade e não aparece aqui.', E: 'o indianismo é romântico.' },
+        traps: { A: 'oposto', D: 'autor' }
+      },
+      {
+        id: 'L8.4', base: ['"Última flor do Lácio, inculta e bela, / És, a um tempo, esplendor e sepultura"'],
+        src: 'BILAC, O. Poesias. Domínio público.', cmd: 'O soneto "Língua portuguesa", do qual vêm esses versos, é de Olavo Bilac, poeta do Parnasianismo. A escola é reconhecível nos versos pela',
+        alts: ['linguagem coloquial e o verso livre.', 'busca do rigor formal e o vocabulário elevado.', 'denúncia da escravidão.', 'fragmentação e a colagem de imagens urbanas.', 'religiosidade e o conflito entre fé e pecado.'],
+        ans: 'B', hab: 'H15', dif: 'média',
+        ex: { B: 'verso medido, imagem erudita ("flor do Lácio") e vocabulário elevado: marcas parnasianas.', A: 'coloquialismo e verso livre são modernistas.', C: 'a denúncia da escravidão é condoreira.', D: 'fragmentação urbana é modernista.', E: 'conflito fé × pecado é barroco.' },
+        traps: { A: 'autor' }
+      },
+      {
+        id: 'L8.5', base: ['<em>Trecho escrito para esta apostila, no estilo do Naturalismo:</em>', '"No cortiço acordado, a gente formigava entre as tinas, como bichos que o calor e a fome empurravam para fora das tocas; e cada um parecia feito do mesmo barro do lugar."'],
+        src: 'Texto escrito para esta apostila.', cmd: 'A visão de mundo naturalista se revela no trecho pela',
+        alts: ['idealização heroica das personagens pobres.', 'animalização das pessoas e pela ideia de que o meio as determina.', 'ironia de um narrador que conversa com o leitor.', 'fuga do eu lírico para a natureza amena.', 'busca da perfeição formal do soneto.'],
+        ans: 'B', pos: 'D', hab: 'H16', dif: 'média',
+        ex: { B: '"formigava", "como bichos" (zoomorfização) e "feito do mesmo barro do lugar" (determinismo do meio).', A: 'não há idealização; é o oposto.', C: 'o narrador-conversador é traço machadiano.', D: 'a natureza amena é árcade.', E: 'o texto é prosa.' },
+        traps: { C: 'autor' }
+      }
+    ],
+    cards: [
+      ['Barroco: marcas', 'Antítese, paradoxo, conflito fé × prazer'],
+      ['Arcadismo: expressões latinas', 'Fugere urbem, carpe diem, locus amoenus'],
+      ['3ª geração romântica', 'Condoreira, social, abolicionista: Castro Alves'],
+      ['Marco do Realismo no Brasil', 'Memórias póstumas de Brás Cubas (1881), Machado de Assis'],
+      ['Naturalismo', 'Determinismo e zoomorfização (O cortiço)'],
+      ['Parnasianismo', 'Arte pela arte, rigor formal, soneto (Bilac)'],
+      ['Maria Firmina dos Reis', 'Úrsula (1859), primeira romancista negra do Brasil']
+    ],
+    vf: [
+      ['O Arcadismo valoriza a vida simples no campo e a razão.', true, 'Bucolismo e equilíbrio, em reação ao exagero barroco.'],
+      ['Machado de Assis é o principal nome do Naturalismo brasileiro.', false, 'Machado é realista; o Naturalismo tem em Aluísio Azevedo seu nome central.'],
+      ['A segunda geração romântica é marcada pelo pessimismo e pelo tema da morte.', true, 'É o "mal do século" de Álvares de Azevedo.'],
+      ['O Parnasianismo defendia a linguagem coloquial e o verso livre.', false, 'Defendia o rigor formal; coloquialismo e verso livre são modernistas.']
+    ]
+  });
+
+  L({
+    module: {
+      id: 'L9', title: 'Literatura II: Simbolismo, Pré-Modernismo e Modernismo', habs: 'H15, H16, H17', faixa: 'A',
+      note: 'O Modernismo é o período literário mais cobrado no Enem: linguagem coloquial, verso livre, humor e crítica ao Brasil oficial.',
+      html: `<h4>1. Simbolismo (fim do século XIX)</h4>
+<p>Reação ao objetivismo parnasiano e realista: <strong>musicalidade</strong> (aliterações, assonâncias), <strong>sinestesia</strong>, espiritualidade, mistério, maiúsculas alegorizantes. <strong>Cruz e Sousa</strong> ("Ó Formas alvas, brancas, Formas claras") e Alphonsus de Guimaraens.</p>
+<h4>2. Pré-Modernismo (1902–1922)</h4>
+<p>Não é uma escola, mas um período de transição com <strong>denúncia da realidade brasileira</strong>:</p>
+<ul>
+<li><strong>Euclides da Cunha</strong>, <em>Os sertões</em> (1902): a Guerra de Canudos e o sertanejo ("o sertanejo é, antes de tudo, um forte").</li>
+<li><strong>Lima Barreto</strong>, <em>Triste fim de Policarpo Quaresma</em>: o nacionalismo ingênuo e a crítica à República; racismo e exclusão no Rio.</li>
+<li><strong>Monteiro Lobato</strong>, <em>Urupês</em>: o caipira Jeca Tatu.</li>
+<li><strong>Augusto dos Anjos</strong>, <em>Eu</em> (1912): vocabulário científico, pessimismo, morte ("Vês?! Ninguém assistiu ao formidável / Enterro de tua última quimera").</li>
+</ul>
+<h4>3. Modernismo: primeira fase (1922–1930)</h4>
+<p>A <strong>Semana de Arte Moderna</strong> (fevereiro de 1922, Theatro Municipal de São Paulo) marca a ruptura: <strong>verso livre</strong>, linguagem coloquial, <strong>humor e poema-piada</strong>, crítica ao academicismo e um nacionalismo crítico, que revê o passado colonial.</p>
+<ul>
+<li><strong>Oswald de Andrade:</strong> Manifesto da Poesia Pau-Brasil (1924) e <strong>Manifesto Antropófago</strong> (1928): "devorar" a cultura estrangeira para produzir algo brasileiro.</li>
+<li><strong>Mário de Andrade:</strong> <em>Pauliceia desvairada</em> (1922) e <em>Macunaíma</em> (1928), o "herói sem nenhum caráter".</li>
+<li><strong>Manuel Bandeira:</strong> "Os sapos", sátira aos parnasianos; poesia do cotidiano.</li>
+<li>Nas artes: Anita Malfatti e Tarsila do Amaral (<em>Abaporu</em>, 1928).</li>
+</ul>
+<div class="box exemplo"><b class="box-t">Exemplo</b><p>"Dê-me um cigarro / Diz a gramática / Do professor e do aluno / E do mulato sabido / Mas o bom negro e o bom branco / Da Nação Brasileira / Dizem todos os dias / Deixa disso camarada / Me dá um cigarro" (Oswald de Andrade, "Pronominais"). O poema valoriza o português falado no Brasil contra a regra lusitana de colocação pronominal.</p></div>
+<h4>4. Segunda fase (1930–1945)</h4>
+<ul>
+<li><strong>Poesia:</strong> Carlos Drummond de Andrade (inquietação existencial e social), Cecília Meireles (lirismo, transitoriedade), Vinicius de Moraes, Murilo Mendes.</li>
+<li><strong>Romance de 30 (regionalista e social):</strong> Rachel de Queiroz (<em>O quinze</em>, a seca de 1915), <strong>Graciliano Ramos</strong> (<em>Vidas secas</em>, 1938; <em>São Bernardo</em>), José Lins do Rego (<em>Menino de engenho</em>), Jorge Amado (<em>Capitães da areia</em>).</li>
+</ul>
+<div class="box conceito"><b class="box-t">Conceito</b><p>Em <em>Vidas secas</em>, a linguagem seca e econômica imita a aridez do sertão e a dificuldade de expressão das personagens. A forma reforça o tema: é uma das relações que o Enem mais cobra.</p></div>
+<h4>5. Terceira fase (pós-1945)</h4>
+<ul>
+<li><strong>Clarice Lispector:</strong> fluxo de consciência, epifania (momento de revelação), introspecção (<em>A hora da estrela</em>, com Macabéa).</li>
+<li><strong>Guimarães Rosa:</strong> invenção de palavras (neologismos), sertão como universo, oralidade recriada (<em>Grande sertão: veredas</em>, 1956).</li>
+<li><strong>João Cabral de Melo Neto:</strong> poesia construída, antilírica, "engenharia" do poema; <em>Morte e vida severina</em>.</li>
+</ul>
+<div class="box enem"><b class="box-t">No Enem</b><p>Os comandos pedem a <strong>ruptura</strong> modernista (verso livre, coloquialismo, humor contra o academicismo) e a relação entre <strong>forma e tema</strong> (a secura de Graciliano, a invenção de Rosa, a epifania de Clarice).</p></div>
+<div class="box pegadinha"><b class="box-t">Pegadinha</b><p>Nacionalismo romântico × nacionalismo modernista: o romântico <strong>idealiza</strong> o Brasil e o indígena; o modernista <strong>revê criticamente</strong> o passado, com humor e paródia (Oswald parodia a "Canção do exílio" e a Carta de Caminha).</p></div>`,
+      resumo: [
+        ['Simbolismo', 'Musicalidade, sinestesia, espiritualidade; Cruz e Sousa'],
+        ['Pré-Modernismo', 'Denúncia da realidade: Euclides, Lima Barreto, Lobato, Augusto dos Anjos'],
+        ['Semana de 1922', 'Ruptura: verso livre, coloquialismo, humor'],
+        ['Antropofagia', 'Oswald (1928): devorar o estrangeiro para criar o brasileiro'],
+        ['Macunaíma', 'Mário de Andrade (1928): "herói sem nenhum caráter"'],
+        ['Romance de 30', 'Regionalismo social: O quinze, Vidas secas'],
+        ['3ª fase', 'Clarice (epifania), Guimarães Rosa (neologismos), João Cabral (poesia construída)']
+      ]
+    },
+    questions: [
+      {
+        id: 'L9.1', base: ['"Dê-me um cigarro / Diz a gramática / Do professor e do aluno / E do mulato sabido / Mas o bom negro e o bom branco / Da Nação Brasileira / Dizem todos os dias / Deixa disso camarada / Me dá um cigarro"'],
+        src: 'ANDRADE, O. Pronominais. Domínio público.', cmd: 'O poema dialoga com uma proposta da primeira fase modernista ao',
+        alts: ['defender a colocação pronominal da norma lusitana.', 'valorizar a variedade do português falado no Brasil.', 'imitar a linguagem rebuscada dos parnasianos.', 'idealizar o indígena como herói nacional.', 'lamentar a decadência moral da sociedade.'],
+        ans: 'B', pos: 'D', hab: 'H16', dif: 'média',
+        ex: { B: 'opõe "Dê-me" (gramática) a "Me dá" (fala de todos os dias) e fica com a fala brasileira.', A: 'é o contrário: o poema ironiza a regra. Termo oposto.', C: 'o poema é coloquial e anti-parnasiano.', D: 'o indianismo idealizado é romântico.', E: 'não há lamento moral.' },
+        traps: { A: 'oposto', D: 'autor' }
+      },
+      {
+        id: 'L9.2', base: ['"Na planície avermelhada os juazeiros alargavam duas manchas verdes."'],
+        src: 'RAMOS, G. Vidas secas. Domínio público.', cmd: 'A frase de abertura do romance antecipa uma característica de Vidas secas, que é a',
+        alts: ['linguagem enxuta, que se ajusta à paisagem árida do sertão.', 'invenção de palavras e de sintaxe próprias do sertanejo.', 'idealização da natureza como lugar de felicidade.', 'narração em fluxo de consciência de uma personagem urbana.', 'musicalidade intensa obtida com sinestesias.'],
+        ans: 'A', pos: 'B', hab: 'H16', dif: 'média',
+        ex: { A: 'frase curta, poucos adjetivos e as manchas verdes raras na planície: forma seca para um mundo seco.', B: 'a invenção de palavras é marca de Guimarães Rosa.', C: 'o sertão não é idealizado.', D: 'o fluxo de consciência urbano lembra Clarice.', E: 'musicalidade e sinestesia são simbolistas.' },
+        traps: { B: 'autor', D: 'autor' }
+      },
+      {
+        id: 'L9.3', base: ['"Ó Formas alvas, brancas, Formas claras / De luares, de neves, de neblinas!"'],
+        src: 'SOUSA, C. Broquéis. Domínio público.', cmd: 'Os versos apresentam traços do Simbolismo, como',
+        alts: ['a linguagem coloquial e o humor.', 'a musicalidade e as imagens vagas, espiritualizadas.', 'a denúncia social e o tom panfletário.', 'o vocabulário científico e a visão materialista.', 'a narração objetiva de fatos históricos.'],
+        ans: 'B', hab: 'H15', dif: 'fácil',
+        ex: { B: 'repetição sonora (Formas... Formas), maiúscula alegórica e imagens brancas e difusas (luares, neves, neblinas).', A: 'coloquialismo e humor são modernistas.', C: 'não há denúncia.', D: 'o vocabulário científico lembra Augusto dos Anjos.', E: 'não há narração.' },
+        traps: { D: 'autor' }
+      },
+      {
+        id: 'L9.4', base: ['"No fundo do mato-virgem nasceu Macunaíma, herói de nossa gente."'],
+        src: 'ANDRADE, M. Macunaíma. Domínio público.', cmd: 'O romance de Mário de Andrade, que se abre com essa frase, propõe',
+        alts: ['um herói idealizado, de caráter nobre e cavalheiresco.', 'uma síntese crítica e bem-humorada das contradições da cultura brasileira.', 'uma descrição científica da Amazônia.', 'uma defesa da imitação dos modelos europeus.', 'um retrato ultrarromântico do amor e da morte.'],
+        ans: 'B', pos: 'A', hab: 'H17', dif: 'média',
+        ex: { B: 'Macunaíma, "herói sem nenhum caráter", mistura mitos, línguas e regiões com humor para pensar o Brasil.', A: 'o herói é anti-herói; a idealização é romântica.', C: 'não há descrição científica.', D: 'o modernismo critica a imitação.', E: 'não há ultrarromantismo.' },
+        traps: { A: 'oposto' }
+      },
+      {
+        id: 'L9.5', base: ['"Vês?! Ninguém assistiu ao formidável / Enterro de tua última quimera."'],
+        src: 'ANJOS, A. Versos íntimos. Domínio público.', cmd: 'Os versos de Augusto dos Anjos expressam',
+        alts: ['otimismo diante das conquistas da ciência.', 'pessimismo e solidão diante da perda das ilusões.', 'exaltação patriótica da natureza brasileira.', 'alegria pela vida simples no campo.', 'devoção religiosa e esperança na salvação.'],
+        ans: 'B', pos: 'E', hab: 'H16', dif: 'fácil',
+        ex: { B: 'o "enterro" da "última quimera" (ilusão), sem testemunhas, é imagem de desilusão e solidão.', A: 'não há otimismo.', C: 'não há exaltação da pátria.', D: 'a vida no campo é tema árcade.', E: 'não há esperança religiosa.' },
+        traps: { A: 'oposto' }
+      }
+    ],
+    cards: [
+      ['Simbolismo', 'Musicalidade, sinestesia, espiritualidade (Cruz e Sousa)'],
+      ['Os sertões (1902)', 'Euclides da Cunha: Guerra de Canudos'],
+      ['Semana de Arte Moderna', 'Fevereiro de 1922, Theatro Municipal de São Paulo'],
+      ['Manifesto Antropófago', 'Oswald, 1928: devorar o estrangeiro'],
+      ['Vidas secas', 'Graciliano Ramos, 1938: linguagem seca para o sertão seco'],
+      ['Guimarães Rosa', 'Neologismos e sertão universal'],
+      ['Clarice Lispector', 'Introspecção e epifania']
+    ],
+    vf: [
+      ['O Pré-Modernismo é uma escola literária com manifesto próprio.', false, 'É um período de transição, com autores de estilos diferentes unidos pela denúncia da realidade.'],
+      ['A primeira fase modernista usou o humor e o verso livre contra o academicismo.', true, 'Poema-piada, coloquialismo e ruptura formal.'],
+      ['O nacionalismo modernista repete a idealização romântica do indígena.', false, 'O modernismo revê o passado com crítica e paródia.'],
+      ['Em Vidas secas, a linguagem econômica reforça o tema da aridez.', true, 'Forma e tema caminham juntos.']
+    ]
+  });
+
+  L({
+    module: {
+      id: 'L10', title: 'Literatura III: contemporânea, afro-brasileira, indígena e periférica', habs: 'H15, H16, H17, H25, H27', faixa: 'A',
+      note: 'O Enem vem dando espaço crescente a autoras negras, indígenas e periféricas. As questões cobram identidade, memória, ancestralidade e denúncia social.',
+      html: `<h4>1. Vanguardas da segunda metade do século XX</h4>
+<ul>
+<li><strong>Concretismo</strong> (a partir de 1956): poema como objeto visual; o espaço da página, a forma das letras e a disposição das palavras produzem sentido. Augusto de Campos, Haroldo de Campos, Décio Pignatari.</li>
+<li><strong>Poesia marginal</strong> (anos 1970): livros mimeografados, linguagem coloquial e irreverente, cotidiano, humor; circulava fora do mercado editorial. Ana Cristina Cesar, Chacal, Paulo Leminski (próximo do grupo).</li>
+</ul>
+<h4>2. Literatura afro-brasileira</h4>
+<p>Produção que assume o ponto de vista de sujeitos negros, com temas de memória, ancestralidade, racismo e resistência.</p>
+<ul>
+<li><strong>Carolina Maria de Jesus</strong>, <em>Quarto de despejo</em> (1960): diário de uma catadora na favela do Canindé, em São Paulo.</li>
+<li><strong>Conceição Evaristo</strong>: criou o conceito de <strong>escrevivência</strong>, escrita que nasce da vivência, sobretudo das mulheres negras (<em>Ponciá Vicêncio</em>, <em>Olhos d'água</em>).</li>
+<li>Itamar Vieira Junior, <em>Torto arado</em> (2019): trabalhadores rurais negros no sertão da Bahia e a luta pela terra.</li>
+</ul>
+<div class="box conceito"><b class="box-t">Conceito</b><p><strong>Escrevivência</strong> (Conceição Evaristo): a experiência de quem escreve, marcada por raça, gênero e classe, torna-se matéria literária e memória coletiva. Não é autobiografia simples: é a vivência individual que fala por muitas.</p></div>
+<h4>3. Literatura indígena</h4>
+<p>Autores indígenas escrevendo sobre si mesmos, e não sendo apenas personagens idealizados por outros (como no Romantismo). Temas: <strong>ancestralidade, relação com a terra, oralidade, crítica ao modelo de desenvolvimento</strong>. Ailton Krenak (<em>Ideias para adiar o fim do mundo</em>), Daniel Munduruku, Eliane Potiguara.</p>
+<div class="box conexao"><b class="box-t">Conexão</b><p>A Lei 10.639/2003 tornou obrigatório o ensino de história e cultura afro-brasileira, e a Lei 11.645/2008 incluiu a indígena. Isso ajuda a explicar a presença crescente desses textos no Enem, e o tema conversa com Sociologia (identidade, racismo, movimentos sociais).</p></div>
+<h4>4. Literatura periférica, slam e rap</h4>
+<p>Escritores das periferias urbanas publicam por conta própria, em saraus e coletivos (como a Cooperifa, em São Paulo), com linguagem da rua e denúncia da violência e da desigualdade. Ferréz (<em>Capão pecado</em>), Sérgio Vaz. O <strong>slam</strong> (batalha de poesia falada) e o <strong>rap</strong> (Racionais MC's) entram no Enem como gêneros de crítica social e afirmação de identidade.</p>
+<div class="box enem"><b class="box-t">No Enem</b><p>Os comandos pedem o que o texto <strong>evidencia, denuncia ou valoriza</strong>: memória ancestral, identidade, protagonismo de sujeitos historicamente silenciados, crítica à desigualdade. A resposta quase sempre está na <strong>voz</strong> de quem fala.</p></div>
+<div class="box pegadinha"><b class="box-t">Pegadinha</b><p>Alternativas que leem esses textos como "exóticos", "folclóricos" ou como simples descrição de costumes costumam estar erradas. E a literatura indígena contemporânea não idealiza o indígena: ela o apresenta como sujeito que fala de si e critica a sociedade não indígena.</p></div>`,
+      resumo: [
+        ['Concretismo', 'Poema visual; espaço da página produz sentido (1956)'],
+        ['Poesia marginal', 'Anos 1970: mimeógrafo, coloquialismo, cotidiano'],
+        ['Carolina Maria de Jesus', 'Quarto de despejo (1960): diário da favela'],
+        ['Escrevivência', 'Conceição Evaristo: a vivência que vira memória coletiva'],
+        ['Literatura indígena', 'Autores indígenas falando de si: Krenak, Munduruku, Potiguara'],
+        ['Literatura periférica', 'Saraus, slam, rap; denúncia e identidade'],
+        ['Leis 10.639 e 11.645', 'Ensino de cultura afro-brasileira e indígena']
+      ]
+    },
+    questions: [
+      {
+        id: 'L10.1', base: ['A minha avó contava histórias enquanto debulhava o milho. Hoje eu escrevo com as mãos dela: cada palavra minha carrega a voz das mulheres que vieram antes, e que nunca puderam escrever.'],
+        src: 'Texto escrito para esta apostila.', cmd: 'O trecho se aproxima do conceito de escrevivência, formulado por Conceição Evaristo, porque',
+        alts: ['apresenta uma biografia objetiva da autora, com datas e locais.', 'transforma a experiência pessoal em memória coletiva de mulheres silenciadas.', 'descreve técnicas agrícolas tradicionais.', 'idealiza a vida no campo como lugar sem conflitos.', 'defende a separação entre literatura e vida.'],
+        ans: 'B', pos: 'C', hab: 'H16', dif: 'média',
+        ex: { B: 'a narradora escreve "com as mãos" da avó e fala pelas mulheres "que nunca puderam escrever": vivência individual que vira memória coletiva.', A: 'não há dados biográficos objetivos.', C: 'o milho é cenário, não tema técnico.', D: 'não há idealização; há a memória de quem foi silenciado.', E: 'é o contrário: literatura e vida se unem. Termo oposto.' },
+        traps: { E: 'oposto', C: 'detalhe' }
+      },
+      {
+        id: 'L10.2', base: ['<em>Poema visual:</em> a palavra "terra" é repetida dezenas de vezes formando o desenho de um mapa; no centro, onde deveria estar a palavra, há um espaço em branco com o formato de uma cerca.'],
+        src: 'Descrição de poema criado para esta apostila.', cmd: 'O poema se vincula ao Concretismo porque',
+        alts: ['usa a disposição gráfica das palavras para construir sentido.', 'narra uma história em versos rimados.', 'expressa sentimentos íntimos do eu lírico.', 'imita a linguagem dos sermões barrocos.', 'segue a forma fixa do soneto.'],
+        ans: 'A', pos: 'E', hab: 'H17', dif: 'fácil',
+        ex: { A: 'a forma visual (mapa, vazio em forma de cerca) é parte do sentido: crítica à concentração de terra.', B: 'não há narrativa rimada.', C: 'não há eu lírico confessional.', D: 'não há relação com sermões.', E: 'não há soneto.' }
+      },
+      {
+        id: 'L10.3', base: ['"Os brancos acham que a terra é uma coisa para usar. Para nós, a terra é parente: a gente não vende a avó."'],
+        src: 'Texto escrito para esta apostila, inspirado em temas da literatura indígena contemporânea.', cmd: 'A fala expressa uma perspectiva presente na literatura indígena contemporânea, que é a',
+        alts: ['valorização da terra como mercadoria.', 'relação de parentesco e pertencimento com a terra, em contraste com a lógica de exploração.', 'idealização romântica do indígena como herói europeu.', 'defesa da venda de terras para o desenvolvimento.', 'descrição folclórica de costumes exóticos.'],
+        ans: 'B', pos: 'D', hab: 'H16', dif: 'fácil',
+        ex: { B: '"a terra é parente" se opõe à terra como "coisa para usar": pertencimento × exploração.', A: 'é a visão criticada. Termo oposto.', C: 'o indígena fala de si; não é o herói romântico.', D: 'a fala rejeita a venda.', E: 'ler como "exótico" é a leitura que o texto contesta.' },
+        traps: { A: 'oposto', E: 'exagero' }
+      },
+      {
+        id: 'L10.4', base: ['<em>Trecho de um diário escrito para esta apostila, no estilo de Quarto de despejo:</em>', '"15 de maio. Hoje não teve janta. Juntei papel o dia todo e o dinheiro só deu para o pão. As crianças dormiram cedo, que é o jeito de não sentir fome."'],
+        src: 'Texto escrito para esta apostila.', cmd: 'Assim como em Quarto de despejo, de Carolina Maria de Jesus, o gênero diário permite',
+        alts: ['registrar o cotidiano da fome a partir da voz de quem a vive.', 'apresentar dados estatísticos sobre a pobreza urbana.', 'criar personagens fictícias de outra classe social.', 'idealizar a pobreza como modo de vida simples.', 'defender a ordem política vigente.'],
+        ans: 'A', hab: 'H17', dif: 'fácil',
+        ex: { A: 'datas, primeira pessoa e detalhes do dia a dia dão voz direta a quem vive a fome.', B: 'não há estatísticas.', C: 'a voz é de quem vive a situação, não de um observador de outra classe.', D: 'a fome não é idealizada.', E: 'não há defesa política.' }
+      },
+      {
+        id: 'L10.5', base: ['<em>Verso de um slam escrito para esta apostila:</em>', '"Me chamaram de periferia como se fosse defeito; / periferia é o centro de quem nasceu nela."'],
+        src: 'Texto escrito para esta apostila.', cmd: 'O verso promove',
+        alts: ['a ressignificação positiva da periferia como lugar de identidade.', 'a aceitação do estigma associado à periferia.', 'a descrição geográfica dos bairros afastados.', 'a defesa da mudança para o centro da cidade.', 'o uso da linguagem formal acadêmica.'],
+        ans: 'A', pos: 'B', hab: 'H27', dif: 'fácil',
+        ex: { A: 'o verso inverte o estigma ("defeito") e faz da periferia o "centro" de quem nasceu nela.', B: 'o verso recusa o estigma. Termo oposto.', C: 'não há descrição geográfica.', D: 'não há defesa da mudança.', E: 'a linguagem é oral e direta.' },
+        traps: { B: 'oposto' }
+      }
+    ],
+    cards: [
+      ['Concretismo', 'Poema visual, a partir de 1956'],
+      ['Poesia marginal', 'Anos 1970, mimeógrafo, coloquialismo'],
+      ['Quarto de despejo', 'Carolina Maria de Jesus, 1960'],
+      ['Escrevivência', 'Conceição Evaristo: vivência individual como memória coletiva'],
+      ['Ailton Krenak', 'Ideias para adiar o fim do mundo: crítica ao modelo de desenvolvimento'],
+      ['Slam', 'Batalha de poesia falada; crítica social e identidade']
+    ],
+    vf: [
+      ['A literatura indígena contemporânea repete a idealização romântica do indígena.', false, 'Nela, o indígena é sujeito que fala de si e critica a sociedade não indígena.'],
+      ['No Concretismo, a disposição visual das palavras faz parte do sentido do poema.', true, 'O espaço da página é linguagem.'],
+      ['Quarto de despejo é um diário escrito por uma catadora da favela do Canindé.', true, 'Carolina Maria de Jesus, publicado em 1960.'],
+      ['Ler textos afro-brasileiros como descrição de costumes exóticos é a leitura esperada no Enem.', false, 'O Enem cobra identidade, memória e protagonismo, não exotismo.']
+    ]
+  });
 })(window.DATA);
