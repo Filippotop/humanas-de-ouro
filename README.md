@@ -8,7 +8,7 @@ Conteúdo das estações: apostilas no método "Apostila de Ouro em Camadas", cr
 
 ## Bancada Virtual de Manutenção
 
-O app de diagnóstico elétrico para o Processo Seletivo Transpetro 2026 (Ênfase 8) fica em [`bancada/`](bancada/) e é publicado em `/bancada/`. Ele é independente: tem manifesto, ícones e service worker próprios. Veja [`bancada/README.md`](bancada/README.md).
+A Bancada Virtual de Manutenção (simulador e apostila de Manutenção Elétrica para o Processo Seletivo Transpetro 2026, Ênfase 8) agora vive em repositório próprio: [github.com/Filippotop/transpetro-](https://github.com/Filippotop/transpetro-). Use em [filippotop.github.io/transpetro-](https://filippotop.github.io/transpetro-/).
 
 ## Teste antes de publicar
 
