@@ -30,7 +30,7 @@
   --read:"Source Serif 4", Georgia, "Times New Roman", serif;
   --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --r:10px; --on-color:#fff;
-  --l:#B0306A;
+  --l:#B0306A; --n:#4D7A00; --m:#B3541E;
   --fs-1:12px; --fs-2:14px; --fs-3:16px; --fs-4:18px; --fs-5:22px; --fs-6:28px; --fs-7:36px;
   --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:20px; --sp-6:24px; --sp-7:32px; --sp-8:40px;
   --r-sm:8px; --r-lg:14px; --shadow-1:0 1px 2px rgba(20,26,46,.06),0 2px 8px rgba(20,26,46,.05); --ease:cubic-bezier(.2,.7,.2,1);
@@ -39,14 +39,14 @@
   --bg:#0E1120; --surface:#171B2D; --sunk:#1F2439; --ink:#E8EAF3; --muted:#9BA1BA; --rule:#2B3150;
   --gold:#E8B53E; --gold-soft:#3A2F12; --gold-ink:#F7E3B0;
   --h:#F2665E; --g:#3FBF85; --f:#7A93FF; --s:#C383EA; --rd:#3CC4CC;
-  --ok:#4CC787; --ok-soft:#163626; --bad:#FF7A70; --bad-soft:#3E1A1A; --warn:#F2A640; --warn-soft:#3A2A10; --on-color:#0E1120; --l:#F27BB4;
+  --ok:#4CC787; --ok-soft:#163626; --bad:#FF7A70; --bad-soft:#3E1A1A; --warn:#F2A640; --warn-soft:#3A2A10; --on-color:#0E1120; --l:#F27BB4; --n:#B8D64A; --m:#FF9A62;
   --shadow-1:0 1px 2px rgba(0,0,0,.3),0 2px 10px rgba(0,0,0,.25);
   color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0E1120; --surface:#171B2D; --sunk:#1F2439; --ink:#E8EAF3; --muted:#9BA1BA; --rule:#2B3150;
   --gold:#E8B53E; --gold-soft:#3A2F12; --gold-ink:#F7E3B0;
   --h:#F2665E; --g:#3FBF85; --f:#7A93FF; --s:#C383EA; --rd:#3CC4CC;
-  --ok:#4CC787; --ok-soft:#163626; --bad:#FF7A70; --bad-soft:#3E1A1A; --warn:#F2A640; --warn-soft:#3A2A10; --on-color:#0E1120; --l:#F27BB4;
+  --ok:#4CC787; --ok-soft:#163626; --bad:#FF7A70; --bad-soft:#3E1A1A; --warn:#F2A640; --warn-soft:#3A2A10; --on-color:#0E1120; --l:#F27BB4; --n:#B8D64A; --m:#FF9A62;
   --shadow-1:0 1px 2px rgba(0,0,0,.3),0 2px 10px rgba(0,0,0,.25);
   color-scheme:dark}
 *{box-sizing:border-box}
@@ -87,7 +87,7 @@ main{padding-block:22px 80px}
 .panel{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:18px}
 .chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:999px;background:var(--sunk);color:var(--muted)}
 .chip.A{background:var(--gold-soft);color:var(--gold-ink);font-weight:600}
-.lc-L{--lc:var(--l)} .lc-H{--lc:var(--h)} .lc-G{--lc:var(--g)} .lc-F{--lc:var(--f)} .lc-S{--lc:var(--s)} .lc-R{--lc:var(--rd)}
+.lc-L{--lc:var(--l)} .lc-H{--lc:var(--h)} .lc-G{--lc:var(--g)} .lc-F{--lc:var(--f)} .lc-S{--lc:var(--s)} .lc-R{--lc:var(--rd)} .lc-N{--lc:var(--n)} .lc-M{--lc:var(--m)}
 .sec-title{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:28px 0 12px;flex-wrap:wrap}
 .sec-title h2{font-size:22px;font-weight:800;letter-spacing:-.01em}
 
@@ -109,7 +109,7 @@ main{padding-block:22px 80px}
 .aring{display:grid;justify-items:center;gap:2px;position:relative}
 .aring b{position:absolute;top:20px;font-family:var(--mono);font-size:var(--fs-2)}
 .aring span{font-size:var(--fs-1);color:var(--muted)}
-.aring[data-area="LC"]{--rg:var(--l)} .aring[data-area="HUM"]{--rg:var(--f)} .aring[data-area="RD"]{--rg:var(--rd)}
+.aring[data-area="LC"]{--rg:var(--l)} .aring[data-area="HUM"]{--rg:var(--f)} .aring[data-area="RD"]{--rg:var(--rd)} .aring[data-area="CN"]{--rg:var(--n)} .aring[data-area="MT"]{--rg:var(--m)}
 .dia2-status{display:grid;gap:2px;padding:var(--sp-3) var(--sp-4)}
 .dia2-status small{color:var(--muted);font-size:var(--fs-1);font-family:var(--mono)}
 .hero>*{min-width:0}
@@ -594,6 +594,7 @@ select{font:inherit;padding:8px 12px;border-radius:10px;border:1px solid var(--r
 
 <script src="data/base.js"></script>
 <script src="data/linguagens.js"></script>
+<script src="data/dia2.js"></script>
 <script src="data/enem-map.js"></script>
 <script src="data/aprofundamento-fs.js"></script>
 <script src="data/aprofundamento-hg.js"></script>
@@ -603,9 +604,15 @@ const DATA = window.DATA;
 /* Aprofundamentos (data/aprofundamento-*.js): teoria extra no fim do módulo e questões novas na contagem. */
 function applyDeep(){ Object.entries(DATA.deep||{}).forEach(([id,d])=>{ const m=DATA.modules.find(x=>x.id===id); if(!m) return; if(d.html) m.html+=d.html; (d.questions||[]).forEach(q=>{ DATA.questions.push(q); m.qs.push(q.id); }); }); }
 applyDeep();
-const STUDY_LINES = ['F','S','H','G','L'];
+const STUDY_LINES_BASE = ['F','S','H','G','L'];
+/* Natureza e Matemática (data/dia2.js) só entram no app depois que o dia 2 é liberado: até lá nada delas aparece em mapa, treino, cartões ou relatório. */
+function studyLines(){ return dia2Status().open ? STUDY_LINES_BASE.concat(['N','M']) : STUDY_LINES_BASE; }
+function applyDia2(){ const x=DATA.dia2; if(!x||x.applied||!dia2Status().open) return; x.applied=true;
+  x.modules.forEach(m=>{ DATA.modules.push(m); M[m.id]=m; });
+  x.questions.forEach(q=>{ DATA.questions.push(q); Q[q.id]=q; });
+  x.cards.forEach(c=>DATA.cards.push(c)); x.vf.forEach(v=>DATA.vf.push(v)); }
 const EXAM = new Date('2026-11-08T13:30:00-03:00');
-const LINES = {L:{name:'Linguagens',vol:'LC'},H:{name:'História',vol:'HG'},G:{name:'Geografia',vol:'HG'},F:{name:'Filosofia',vol:'FS'},S:{name:'Sociologia',vol:'FS'},R:{name:'Redação',vol:'RD'}};
+const LINES = {N:{name:'Natureza',vol:'CN'},M:{name:'Matemática',vol:'MT'},L:{name:'Linguagens',vol:'LC'},H:{name:'História',vol:'HG'},G:{name:'Geografia',vol:'HG'},F:{name:'Filosofia',vol:'FS'},S:{name:'Sociologia',vol:'FS'},R:{name:'Redação',vol:'RD'}};
 const ERRMOD = {L2:'7',L4:'36',L5:'25',L6:'17 e 38',L11:'15 e 23',L14:'3',G9:'46',G5:'67',H3:'69',H7:'83',H5:'90',F5:'50 e 76',F7:'66',F6:'79',S4:'81'};
 const DIAG = {LC:{ok:37,n:45,label:'Linguagens'},HG:{ok:24,n:29,label:'História e Geografia'},FS:{ok:11,n:16,label:'Filosofia e Sociologia'}};
 const TRAPS = {
@@ -676,7 +683,7 @@ function openQView(ex,n){ const e=EX[ex]; if(!e||!e.img[n]) return; closeQView()
 function closeQView(){ const d=document.querySelector('.qview'); if(d) d.remove(); }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeQView(); });
 /* Origem da questão: apostila (volumes 1 e 2), extra do app ou Linguagens. */
-function volLabel(q){ return q.kind==='extra'?'extra do app':q.vol==='LC'?'Linguagens':'volume '+(q.vol==='HG'?1:2); }
+function volLabel(q){ return q.kind==='extra'?'extra do app':q.vol==='LC'?'Linguagens':q.vol==='CN'?'Natureza':q.vol==='MT'?'Matemática':'volume '+(q.vol==='HG'?1:2); }
 function modStats(mid){
   const m=M[mid]; let done=0, ok=0;
   m.qs.forEach(id=>{ const a=S.ans[id]; if(a){done++; if(a.ok) ok++;} });
@@ -717,6 +724,7 @@ function priority(m){
   let p={A:3,B:2,C:1}[m.faixa];
   if(ERRMOD[m.id]) p+=2;
   if(m.vol==='FS') p+=1.5;
+  if((m.line==='N'||m.line==='M')&&Date.now()<EXAM.getTime()) p-=2; /* dia 2 liberado cedo (72/90): o dia 1 ainda vem primeiro */
   if(s.done===s.n){ if(s.ok/s.n<0.67) p+=2.5; else p-=10; }
   if(s.read && s.done<s.n) p+=1;
   return p;
@@ -729,6 +737,7 @@ function go(v,p){ view=v; param=p||null; if(v==='mod'&&param){ lsSet('humanas-la
 $('#tabs').addEventListener('click',e=>{const b=e.target.closest('button'); if(b) go(b.dataset.v);});
 $('#brand').addEventListener('click',()=>go('linhas'));
 function render(){
+  applyDia2();
   document.querySelectorAll('#tabs button').forEach(b=>b.setAttribute('aria-current', String(b.dataset.v===view || (view==='mod'&&b.dataset.v===((M[param&&param.id]||{}).line==='R'?'redacao':'linhas')) || (view==='game'&&b.dataset.v==='arena') || ((view==='prova'||view==='provares'||view==='papel')&&b.dataset.v==='provas'))));
   if(view!=='prova' && typeof pvTimer!=='undefined') clearInterval(pvTimer);
   document.body.dataset.view=view;
@@ -778,7 +787,7 @@ function vLinhas(){
     </div>
     <aside class="side-home">
       <div class="countdown panel"><span class="big">${daysLeft()}</span><span>${daysLeft()===1?'dia':'dias'} para o ${examTarget()>EXAM?'dia 2':'dia 1'}<small>${examTarget().toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'2-digit'})}, 13h30</small></span></div>
-      <div class="rings panel">${[['LC','Linguagens',lineStats('L')],['HUM','Humanas',STUDY_LINES.filter(l=>l!=='L').map(lineStats).reduce((x,y)=>({done:x.done+y.done,n:x.n+y.n}),{done:0,n:0})],['RD','Redação',lineStats('R')]].map(([k,nm,st])=>ring(k,nm,st)).join('')}</div>
+      <div class="rings panel">${[['LC','Linguagens',lineStats('L')],['HUM','Humanas',['F','S','H','G'].map(lineStats).reduce((x,y)=>({done:x.done+y.done,n:x.n+y.n}),{done:0,n:0})],['RD','Redação',lineStats('R')]].concat(dia2Status().open?[['CN','Natureza',lineStats('N')],['MT','Matemática',lineStats('M')]]:[]).map(([k,nm,st])=>ring(k,nm,st)).join('')}</div>
       <div class="dia2-status panel">${(()=>{ const d2=dia2Status(); return d2.open?`<b>Dia 2 liberado</b><small>${d2.via==='criterio'?`você bateu a meta: ${d2.best}/90`:d2.via==='data'?'a semana do dia 2 começou':'liberado por você'}</small>`:`<b>Dia 2 guardado · meta ${DIA2_META}/90</b><small>${d2.best==null?'ensaio geral: dia 1 de 2024, dom 1/11 às 13h30':`seu melhor no dia 1 de 2024: ${d2.best}/90`}</small>`; })()}</div>
       <div class="stats">
         <div class="stat"><div class="n">${done}<span class="muted" style="font-size:var(--fs-3)">/${tot}</span></div><div class="l">questões feitas</div><div class="bar2"><i style="width:${pct(done,tot)}%"></i></div></div>
@@ -790,8 +799,8 @@ function vLinhas(){
       </div>
     </aside>
   </section>
-  <div class="sec-title"><h2>O mapa das linhas</h2><span class="eyebrow">${DATA.modules.filter(m=>STUDY_LINES.includes(m.line)).length} estações · ${DATA.questions.length} questões · ${DATA.vf.length} afirmações V ou F</span></div>
-  ${STUDY_LINES.map(L=>{const ls=lineStats(L); const mods=DATA.modules.filter(m=>m.line===L);
+  <div class="sec-title"><h2>O mapa das linhas</h2><span class="eyebrow">${DATA.modules.filter(m=>studyLines().includes(m.line)).length} estações · ${DATA.questions.length} questões · ${DATA.vf.length} afirmações V ou F</span></div>
+  ${studyLines().map(L=>{const ls=lineStats(L); const mods=DATA.modules.filter(m=>m.line===L);
     return `<div class="line lc-${L}"><div class="line-head"><span class="badge">${L}</span><h3>${LINES[L].name}</h3><span class="pct">${ls.done}/${ls.n} questões · ${ls.done?pct(ls.ok,ls.done)+'% de acerto':'sem respostas ainda'}</span></div>
       <div class="track"><div class="stations">${mods.map(m=>{const s=modStats(m.id); const cls=[s.done===s.n?'done':(s.done||s.read?'part':''), s.done===s.n?(s.ok/s.n<0.67?'weak':(s.ok===s.n?'strong':'')):''].join(' ');
         return `<button class="st ${cls}" data-m="${m.id}" title="${esc(m.title)}">${m.faixa==='A'?'<span class="fa">A</span>':''}<span class="c"></span><span class="code">${m.id}</span><span class="t">${esc(m.title.split(/[:(]/)[0])}</span></button>`}).join('')}</div></div></div>`}).join('')}
@@ -1026,7 +1035,7 @@ function gCards(){
       return;
     }
     const c=queue[i]; const box=(S.cards[c.id]||{box:0}).box;
-    app.innerHTML=`<div class="stage"><button class="back" id="back">← Arena</button><div class="score"><span>cartão ${i+1}/${queue.length}</span><span>${c.vol==='LC'?'Linguagens':c.vol==='HG'?'volume 1 · Hist. e Geo.':'volume 2 · Filo. e Socio.'}</span><span>caixa ${box}</span></div><div style="height:12px"></div>
+    app.innerHTML=`<div class="stage"><button class="back" id="back">← Arena</button><div class="score"><span>cartão ${i+1}/${queue.length}</span><span>${c.vol==='LC'?'Linguagens':c.vol==='CN'?'Natureza':c.vol==='MT'?'Matemática':c.vol==='HG'?'volume 1 · Hist. e Geo.':'volume 2 · Filo. e Socio.'}</span><span>caixa ${box}</span></div><div style="height:12px"></div>
       <button class="prompt card3" id="cd" style="width:100%"><span class="k">responda em voz alta, depois toque</span><span style="font-size:22px;font-weight:600">${c.q}</span><span class="ans" id="ans" hidden>${c.a}</span></button>
       <div class="row" id="rate" hidden style="justify-content:center"><button class="btn" id="no">Não sabia</button><button class="btn primary" id="yes">Sabia</button></div></div>`;
     $('#back').onclick=()=>go('arena');
@@ -1165,7 +1174,7 @@ function vPainel(){
     <div class="panel"><div class="eyebrow">antes e agora</div><p class="muted" style="font-family:var(--read);font-size:14px">A linha preta marca o seu acerto no diagnóstico de 2025. A barra é o acerto de primeira aqui.</p>
       <div class="bars">${[['FS',fs,'f'],['HG',hg,'h']].map(([v,st,c])=>`<div class="brow lc-${c==='f'?'F':'H'}"><span>${DIAG[v].label}</span><span class="track2"><i style="width:${st.done?pct(st.ok,st.done):0}%"></i><b style="left:${pct(DIAG[v].ok,DIAG[v].n)}%"></b></span><span class="mono">${st.done?pct(st.ok,st.done)+'%':'—'}</span></div>`).join('')}</div>
       <div class="eyebrow" style="margin-top:18px">por linha</div>
-      <div class="bars" style="margin-top:8px">${STUDY_LINES.map(L=>{const s=lineStats(L); return `<div class="brow lc-${L}"><span>${LINES[L].name}</span><span class="track2"><i style="width:${s.done?pct(s.ok,s.done):0}%"></i></span><span class="mono">${s.done?pct(s.ok,s.done)+'%':'—'}</span></div>`}).join('')}</div></div>
+      <div class="bars" style="margin-top:8px">${studyLines().map(L=>{const s=lineStats(L); return `<div class="brow lc-${L}"><span>${LINES[L].name}</span><span class="track2"><i style="width:${s.done?pct(s.ok,s.done):0}%"></i></span><span class="mono">${s.done?pct(s.ok,s.done)+'%':'—'}</span></div>`}).join('')}</div></div>
     <div class="panel"><div class="eyebrow">o que te derruba</div>
       ${wrong.length?`<div class="bars" style="margin-top:10px">${Object.entries(traps).sort((a,b)=>b[1]-a[1]).map(([t,n])=>`<div class="brow"><span>${t==='conteudo'?'Conteúdo ou leitura':TRAPS[t].name}</span><span class="track2"><i style="width:${pct(n,wrong.length)}%"></i></span><span class="mono">${n}</span></div>`).join('')}</div>
       <p style="font-family:var(--read);font-size:15px">${(()=>{const top=Object.entries(traps).sort((a,b)=>b[1]-a[1])[0]; return top[0]==='conteudo'?'A maior parte dos seus erros não caiu em armadilha conhecida: é conceito que ainda falta. Volte à teoria das estações em vermelho.':`Sua armadilha mais frequente é <strong>${TRAPS[top[0]].name}</strong>. ${TRAPS[top[0]].tip}`})()}</p>`
@@ -1174,7 +1183,7 @@ function vPainel(){
       <div class="row" style="margin-top:8px;gap:6px">${boxes.map((n,b)=>`<span class="chip">caixa ${b}: ${n}</span>`).join('')}<span class="chip">não vistos: ${unseen}</span></div></div>
   </div>
   <div class="sec-title"><h2>Mapa de calor das estações</h2><span class="eyebrow">toque numa estação para abrir</span></div>
-  <div class="panel heat">${STUDY_LINES.map(L=>`<div class="hl"><span class="mono" style="font-size:13px">${LINES[L].name}</span><div class="cells">${DATA.modules.filter(m=>m.line===L).map(m=>{const s=modStats(m.id); const c=s.done? (s.ok/s.done<0.5?'p0':s.ok/s.done<0.99?'p1':'p2') : ''; return `<button class="cell ${c}" data-m="${m.id}" title="${esc(m.title)}: ${s.ok}/${s.done}">${m.id}</button>`}).join('')}</div></div>`).join('')}
+  <div class="panel heat">${studyLines().map(L=>`<div class="hl"><span class="mono" style="font-size:13px">${LINES[L].name}</span><div class="cells">${DATA.modules.filter(m=>m.line===L).map(m=>{const s=modStats(m.id); const c=s.done? (s.ok/s.done<0.5?'p0':s.ok/s.done<0.99?'p1':'p2') : ''; return `<button class="cell ${c}" data-m="${m.id}" title="${esc(m.title)}: ${s.ok}/${s.done}">${m.id}</button>`}).join('')}</div></div>`).join('')}
     <div class="legend"><span><i style="background:var(--sunk);border-color:var(--sunk)"></i>não feito</span><span><i style="background:var(--bad);border-color:var(--bad)"></i>menos de 50%</span><span><i style="background:var(--warn);border-color:var(--warn)"></i>parcial</span><span><i style="background:var(--ok);border-color:var(--ok)"></i>tudo certo</span></div></div>
   ${worst.length?`<div class="sec-title"><h2>Reabra primeiro</h2></div><div class="tasks">${worst.map(x=>`<button class="task lc-${x.m.line}" data-m="${x.m.id}"><span class="ic">${x.m.id}</span><span><b>${esc(x.m.title)}</b><small>${x.s.ok} de ${x.s.done} certas na primeira tentativa</small></span><span class="go">teoria →</span></button>`).join('')}</div>`:''}
   <div class="sec-title"><h2>Ritmo</h2><span class="eyebrow">últimos 14 dias</span></div>
@@ -1638,7 +1647,7 @@ function buildReport(){
   L.push(`Filosofia+Sociologia: ${fs.ok}/${fs.done} (diagnóstico 2025: 69%) · História+Geografia: ${hg.ok}/${hg.done} (diagnóstico 2025: 83%)`);
   L.push(''); L.push('POR ESTAÇÃO (certas de primeira / feitas / total):');
   { const rd=(S.red&&Array.isArray(S.red.drafts)?S.red.drafts:[]).filter(d=>d.done); L.push('REDAÇÃO: '+(rd.length?rd.map(d=>{ const tt=(temaById(d.tema)||{}).t||d.temaTxt||'livre'; const tot=draftTotal(d); return `${tt.slice(0,40)}: ${tot!=null?tot+' ('+[1,2,3,4,5].map(i=>'C'+i+' '+d.notas['c'+i]).join(', ')+')':'sem nota'}`; }).join(' | '):'nenhuma redação registrada')); }
-  STUDY_LINES.forEach(Ln=>{ L.push(`${LINES[Ln].name}: `+DATA.modules.filter(m=>m.line===Ln).map(m=>{const s=modStats(m.id); return `${m.id} ${s.ok}/${s.done}/${s.n}`}).join(' · ')); });
+  studyLines().forEach(Ln=>{ L.push(`${LINES[Ln].name}: `+DATA.modules.filter(m=>m.line===Ln).map(m=>{const s=modStats(m.id); return `${m.id} ${s.ok}/${s.done}/${s.n}`}).join(' · ')); });
   const tr={}; errList().forEach(([,a])=>{const k=a.trap||'conteudo'; tr[k]=(tr[k]||0)+1;});
   L.push(''); L.push('TIPOS DE ERRO: '+(Object.entries(tr).map(([k,n])=>`${k==='conteudo'?'conteúdo/leitura':k==='chute'?'chute certo':TRAPS[k].name}: ${n}`).join(' · ')||'nenhum'));
   const vfAll=Object.values(S.vf); L.push(`V ou F: ${vfAll.filter(v=>v.ok).length}/${vfAll.length} certas`);
