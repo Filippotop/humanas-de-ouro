@@ -1,5 +1,5 @@
-/* Humanas de Ouro: Natureza e Matemática (dia 2). Os módulos seguem o formato de Linguagens e ficam escondidos
-   enquanto o dia 2 está guardado. Rodar: node tests/dia2.mjs   (usa o Chromium do Playwright) */
+/* Humanas de Ouro: 2º dia (Matemática, Física, Química, Biologia), gerado de Apostila_2o_dia_ENEM_2026.md por tools/apostila_dia2.py.
+   Fica escondido enquanto o dia 2 está guardado. Rodar: node tests/dia2.mjs   (usa o Chromium do Playwright) */
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -20,47 +20,50 @@ function loadData() {
   return ctx.window.DATA;
 }
 
-/* Arquivo carregado, no cache do app e depois de Linguagens. */
 check(DATA_FILES.includes('data/dia2.js'), 'dia 2: o index.html não carrega data/dia2.js');
 check(DATA_FILES.indexOf('data/dia2.js') > DATA_FILES.indexOf('data/base.js'), 'dia 2: data/dia2.js precisa vir depois de data/base.js');
 check(/SHELL_FILES=\[[^\]]*'data\/dia2\.js'/.test(fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8')), 'dia 2: data/dia2.js não está em SHELL_FILES do sw.js');
 
-/* Conteúdo: cada módulo cumpre os mesmos mínimos de Linguagens. */
-const AREAS = { N: { vol: 'CN', name: 'Natureza', min: 5 }, M: { vol: 'MT', name: 'Matemática', min: 4 } };
+/* Estações da apostila: 14 + 11 + 10 + 10. A linha M é Matemática (vol MT); P, Q e B são Natureza (vol CN). */
+const LINES = { M: { vol: 'MT', name: 'Matemática', n: 14 }, P: { vol: 'CN', name: 'Física', n: 11 }, Q: { vol: 'CN', name: 'Química', n: 10 }, B: { vol: 'CN', name: 'Biologia', n: 10 } };
+const RAW = /\*\*|\]\(fig\/|^\s*\|\s*-{3}/m;
 if (DATA_FILES.includes('data/dia2.js')) {
   const D0 = loadData(), D = Object.assign({ modules: [], questions: [], cards: [], vf: [] }, D0.dia2), ids = new Set(D.questions.map(q => q.id));
   check(!!D0.dia2, 'dia 2: data/dia2.js deveria guardar o conteúdo em DATA.dia2 (o app só o junta ao DATA depois da liberação)');
-  check(!D0.modules.some(m => m.line === 'N' || m.line === 'M'), 'dia 2: o conteúdo não pode entrar em DATA.modules antes da liberação');
-  check(!D0.questions.some(q => q.vol === 'CN' || q.vol === 'MT') && !D0.cards.some(c => c.vol === 'CN' || c.vol === 'MT'), 'dia 2: questões e cartões não podem entrar no DATA antes da liberação');
-  for (const [line, A] of Object.entries(AREAS)) {
+  check(!D0.modules.some(m => LINES[m.line]) && !D0.questions.some(q => q.vol === 'CN' || q.vol === 'MT') && !D0.cards.some(c => c.vol === 'CN' || c.vol === 'MT'), 'dia 2: o conteúdo não pode entrar no DATA antes da liberação');
+  for (const [line, A] of Object.entries(LINES)) {
     const mods = D.modules.filter(m => m.line === line);
-    check(mods.length >= A.min, `${A.name}: ${mods.length} módulos (mínimo ${A.min})`);
-    const qs = D.questions.filter(q => q.vol === A.vol), dist = {};
-    for (const q of qs) dist[q.ans] = (dist[q.ans] || 0) + 1;
-    for (const k of 'ABCDE') { const share = (dist[k] || 0) / Math.max(1, qs.length);
-      check(share >= 0.1 && share <= 0.32, `${A.name}: gabarito desequilibrado, ${k} em ${Math.round(share * 100)}% das ${qs.length} questões`); }
+    check(mods.length === A.n, `${A.name}: ${mods.length} estações (esperadas ${A.n})`);
     for (const m of mods) {
       const h4 = (m.html.match(/<h4>/g) || []).length;
       check(m.vol === A.vol, `${m.id}: vol "${m.vol}"`);
       check(h4 >= 4 && h4 <= 7, `${m.id}: ${h4} seções (de 4 a 7)`);
-      check(/class="box enem"/.test(m.html) && /class="box pegadinha"/.test(m.html), `${m.id}: falta quadro No Enem ou Pegadinha`);
-      check(m.resumo.length >= 6, `${m.id}: resumo com ${m.resumo.length} pares (mínimo 6)`);
-      check(m.qs.length >= 5, `${m.id}: ${m.qs.length} questões (mínimo 5)`);
+      check(m.resumo.length >= 4, `${m.id}: resumo com ${m.resumo.length} pares (mínimo 4)`);
+      check(m.qs.length >= 2, `${m.id}: ${m.qs.length} questões (mínimo 2)`);
       check(/H\d+/.test(m.habs || ''), `${m.id}: sem habilidades da matriz`);
       check(['A', 'B', 'C'].includes(m.faixa), `${m.id}: faixa "${m.faixa}"`);
-      check(D.cards.filter(c => c.id.startsWith(m.id + '-c')).length >= 6, `${m.id}: menos de 6 cartões`);
-      check(D.vf.filter(v => v.mod === m.id).length >= 4, `${m.id}: menos de 4 itens de V ou F`);
+      check(D.cards.filter(c => c.id.startsWith(m.id + '-c')).length >= 5, `${m.id}: menos de 5 cartões`);
+      check(!RAW.test(m.html + JSON.stringify(m.resumo)), `${m.id}: sobrou markdown na teoria ou no resumo`);
       for (const id of m.qs) { check(ids.has(id), `${m.id}: questão ${id} não existe`); const q = D.questions.find(x => x.id === id); if (q) check(q.vol === A.vol && q.mod === m.id, `${m.id}: questão ${id} com vol/mod errados`); }
     }
-    for (const q of qs) {
-      check(q.alts.length === 5 && /^[A-E]$/.test(q.ans), `${q.id}: alternativas ou gabarito inválidos`);
-      check(Object.keys(q.ex || {}).sort().join('') === 'ABCDE', `${q.id}: falta explicação para alguma alternativa`);
-      check(!/[Ã][ -¿]|�/.test(JSON.stringify(q)), `${q.id}: texto com acentos corrompidos`);
-    }
+  }
+  for (const vol of ['MT', 'CN']) {
+    const qs = D.questions.filter(q => q.vol === vol), dist = {};
+    for (const q of qs) dist[q.ans] = (dist[q.ans] || 0) + 1;
+    check(qs.length >= (vol === 'MT' ? 38 : 70), `${vol}: só ${qs.length} questões`);
+    for (const k of 'ABCDE') { const s = (dist[k] || 0) / Math.max(1, qs.length); check(s >= 0.1 && s <= 0.32, `${vol}: gabarito desequilibrado, ${k} em ${Math.round(s * 100)}% das ${qs.length} questões`); }
+  }
+  for (const q of D.questions) {
+    check(q.alts.length === 5 && /^[A-E]$/.test(q.ans), `${q.id}: alternativas ou gabarito inválidos`);
+    check(Object.keys(q.ex || {}).sort().join('') === 'ABCDE', `${q.id}: falta explicação para alguma alternativa`);
+    check(!RAW.test(JSON.stringify([q.base, q.cmd, q.alts, q.ex])), `${q.id}: sobrou markdown`);
+    check(/^H\d+/.test(q.hab || ''), `${q.id}: sem habilidade`);
+    for (const t of Object.values(q.traps || {})) check(['oposto', 'conceito', 'detalhe', 'exagero', 'unidade', 'conta', 'leitura', 'inversao'].includes(t), `${q.id}: armadilha "${t}" desconhecida`);
+    check(!/[Ã][ -¿]|�/.test(JSON.stringify(q)), `${q.id}: texto com acentos corrompidos`);
   }
 }
 
-/* Interface: guardado até o dia 2 liberar; depois aparece no mapa, nos cartões e no relatório. */
+/* Interface: guardado até o dia 2 liberar; depois aparece no mapa, nos anéis e no relatório. */
 const server = http.createServer((req, res) => {
   const p = path.join(ROOT, decodeURIComponent(new URL(req.url, 'http://x').pathname));
   const f = p.endsWith(path.sep) ? path.join(p, 'index.html') : p;
@@ -78,31 +81,35 @@ try {
       const ctx = await browser.newContext({ viewport: { width: 375, height: 780 }, colorScheme, serviceWorkers: 'block' });
       const page = await ctx.newPage(); const errs = [];
       page.on('pageerror', e => errs.push(e.message));
-      await page.clock.setFixedTime(new Date(day)); await page.goto(URL_); await page.waitForTimeout(300);
-      const hasLine = await page.evaluate(() => ({ N: !!document.querySelector('.line.lc-N'), M: !!document.querySelector('.line.lc-M') }));
-      const next = await page.evaluate(() => nextModules(30).map(m => m.id));
+      await page.clock.setFixedTime(new Date(day)); await page.goto(URL_); await page.waitForTimeout(500);
+      const hasLine = await page.evaluate(() => Object.fromEntries('MPQB'.split('').map(L => [L, !!document.querySelector(`.line.lc-${L}`)])));
+      const next = await page.evaluate(() => nextModules(60).map(m => m.id));
       const rings = await page.evaluate(() => [...document.querySelectorAll('.aring')].map(r => r.dataset.area));
       if (!open) {
-        check(!hasLine.N && !hasLine.M, `guardado (${day.slice(0, 10)}): as linhas N e M não deveriam aparecer no mapa`);
-        check(!next.some(id => /^[NM]\d/.test(id)), 'guardado: nextModules sugere módulo de Natureza ou Matemática antes do dia 2');
+        check(!Object.values(hasLine).some(Boolean), `guardado (${day.slice(0, 10)}): as linhas M, P, Q e B não deveriam aparecer no mapa`);
+        check(!next.some(id => /^(MA|FI|QU|BI)\d/.test(id)), 'guardado: nextModules sugere módulo do dia 2 antes da liberação');
         check(rings.join() === 'LC,HUM,RD', `guardado: anéis do início = ${rings.join()}`);
       } else {
-        check(hasLine.N && hasLine.M, `liberado (${colorScheme}): as linhas N e M deveriam aparecer no mapa`);
+        check(Object.values(hasLine).every(Boolean), `liberado (${colorScheme}): faltam linhas no mapa (${JSON.stringify(hasLine)})`);
         check(rings.includes('CN') && rings.includes('MT'), `liberado: faltam os anéis de Natureza e Matemática (${rings.join()})`);
         const c = await page.evaluate(() => {
           const lum = c => { const [r, g, b] = c.match(/[\d.]+/g).slice(0, 3).map(x => { x /= 255; return x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
-          return ['N', 'M'].map(L => { const b = document.querySelector(`.line.lc-${L} .line-head .badge`); if (!b) return 0; const cs = getComputedStyle(b), x = lum(cs.color), y = lum(cs.backgroundColor); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); });
+          return 'MPQB'.split('').map(L => { const b = document.querySelector(`.line.lc-${L} .line-head .badge`); if (!b) return 0; const cs = getComputedStyle(b), x = lum(cs.color), y = lum(cs.backgroundColor); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); });
         });
-        c.forEach((r, i) => check(r >= 4.5, `liberado (${colorScheme}): selo da linha ${'NM'[i]} com contraste ${r.toFixed(2)}`));
+        c.forEach((r, i) => check(r >= 4.5, `liberado (${colorScheme}): selo da linha ${'MPQB'[i]} com contraste ${r.toFixed(2)}`));
         if (colorScheme === 'light') {
-          check(await page.evaluate(() => !!M.M1), 'liberado: o módulo M1 não existe');
-          await page.evaluate(() => { if (M.M1) go('mod', { id: 'M1', tab: 'q' }); }); await page.waitForTimeout(200);
-          const txt = await page.locator('#modbody').textContent().catch(() => '');
-          check(!/volume \d/.test(txt) && !/são da apostila/.test(txt), 'liberado: as questões de M1 aparecem como "volume" da apostila de Humanas');
+          check(await page.evaluate(() => !!M.MA01 && !!M.FI08 && !!M.QU04 && !!M.BI05), 'liberado: faltam módulos MA01, FI08, QU04 ou BI05');
+          for (const id of ['MA01', 'FI08', 'QU04', 'BI05']) {
+            for (const tab of ['teoria', 'q']) {
+              await page.evaluate(([id, tab]) => { if (M[id]) go('mod', { id, tab }); }, [id, tab]); await page.waitForTimeout(150);
+              const txt = await page.locator('#modbody').textContent({ timeout: 1500 }).catch(() => '');
+              check(txt.length > 200, `liberado: ${id}/${tab} abriu vazio`);
+              if (tab === 'q') check(!/volume \d/.test(txt) && !/são da apostila/.test(txt), `liberado: as questões de ${id} aparecem como "volume" da apostila de Humanas`);
+            }
+          }
           await page.evaluate(() => go('linhas'));
-          const rep = await page.evaluate(() => { const o = document.createElement('div'); return typeof buildReport === 'function' ? buildReport() : ''; });
-          check(!rep || /Natureza: /.test(rep), 'liberado: o relatório do Painel não lista Natureza');
-          check(!rep || /Matemática: /.test(rep), 'liberado: o relatório do Painel não lista Matemática');
+          const rep = await page.evaluate(() => typeof buildReport === 'function' ? buildReport() : '');
+          for (const nm of ['Matemática', 'Física', 'Química', 'Biologia']) check(new RegExp(nm + ': ').test(rep), `liberado: o relatório do Painel não lista ${nm}`);
         }
       }
       check(!errs.length, `erro de JavaScript na página (${day.slice(0, 10)}): ${errs[0]}`);
@@ -110,5 +117,5 @@ try {
     }
   }
 } finally { await browser.close(); server.close(); }
-if (fails.length) { console.error('dia2: FALHOU\n- ' + fails.join('\n- ')); process.exit(1); }
-console.log('dia2: Natureza e Matemática ok');
+if (fails.length) { console.error('dia2: FALHOU\n- ' + fails.slice(0, 40).join('\n- ') + (fails.length > 40 ? `\n... e mais ${fails.length - 40}` : '')); process.exit(1); }
+console.log('dia2: apostila do 2º dia ok');

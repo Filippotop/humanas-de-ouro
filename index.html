@@ -30,7 +30,7 @@
   --read:"Source Serif 4", Georgia, "Times New Roman", serif;
   --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --r:10px; --on-color:#fff;
-  --l:#B0306A; --n:#4D7A00; --m:#B3541E;
+  --l:#B0306A; --m:#B3541E; --p:#2F6F9F; --q:#8A5A00; --b:#4D7A00;
   --fs-1:12px; --fs-2:14px; --fs-3:16px; --fs-4:18px; --fs-5:22px; --fs-6:28px; --fs-7:36px;
   --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:20px; --sp-6:24px; --sp-7:32px; --sp-8:40px;
   --r-sm:8px; --r-lg:14px; --shadow-1:0 1px 2px rgba(20,26,46,.06),0 2px 8px rgba(20,26,46,.05); --ease:cubic-bezier(.2,.7,.2,1);
@@ -39,14 +39,14 @@
   --bg:#0E1120; --surface:#171B2D; --sunk:#1F2439; --ink:#E8EAF3; --muted:#9BA1BA; --rule:#2B3150;
   --gold:#E8B53E; --gold-soft:#3A2F12; --gold-ink:#F7E3B0;
   --h:#F2665E; --g:#3FBF85; --f:#7A93FF; --s:#C383EA; --rd:#3CC4CC;
-  --ok:#4CC787; --ok-soft:#163626; --bad:#FF7A70; --bad-soft:#3E1A1A; --warn:#F2A640; --warn-soft:#3A2A10; --on-color:#0E1120; --l:#F27BB4; --n:#B8D64A; --m:#FF9A62;
+  --ok:#4CC787; --ok-soft:#163626; --bad:#FF7A70; --bad-soft:#3E1A1A; --warn:#F2A640; --warn-soft:#3A2A10; --on-color:#0E1120; --l:#F27BB4; --m:#FF9A62; --p:#7DB8E8; --q:#E0B04A; --b:#B8D64A;
   --shadow-1:0 1px 2px rgba(0,0,0,.3),0 2px 10px rgba(0,0,0,.25);
   color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0E1120; --surface:#171B2D; --sunk:#1F2439; --ink:#E8EAF3; --muted:#9BA1BA; --rule:#2B3150;
   --gold:#E8B53E; --gold-soft:#3A2F12; --gold-ink:#F7E3B0;
   --h:#F2665E; --g:#3FBF85; --f:#7A93FF; --s:#C383EA; --rd:#3CC4CC;
-  --ok:#4CC787; --ok-soft:#163626; --bad:#FF7A70; --bad-soft:#3E1A1A; --warn:#F2A640; --warn-soft:#3A2A10; --on-color:#0E1120; --l:#F27BB4; --n:#B8D64A; --m:#FF9A62;
+  --ok:#4CC787; --ok-soft:#163626; --bad:#FF7A70; --bad-soft:#3E1A1A; --warn:#F2A640; --warn-soft:#3A2A10; --on-color:#0E1120; --l:#F27BB4; --m:#FF9A62; --p:#7DB8E8; --q:#E0B04A; --b:#B8D64A;
   --shadow-1:0 1px 2px rgba(0,0,0,.3),0 2px 10px rgba(0,0,0,.25);
   color-scheme:dark}
 *{box-sizing:border-box}
@@ -87,7 +87,7 @@ main{padding-block:22px 80px}
 .panel{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:18px}
 .chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:999px;background:var(--sunk);color:var(--muted)}
 .chip.A{background:var(--gold-soft);color:var(--gold-ink);font-weight:600}
-.lc-L{--lc:var(--l)} .lc-H{--lc:var(--h)} .lc-G{--lc:var(--g)} .lc-F{--lc:var(--f)} .lc-S{--lc:var(--s)} .lc-R{--lc:var(--rd)} .lc-N{--lc:var(--n)} .lc-M{--lc:var(--m)}
+.lc-L{--lc:var(--l)} .lc-H{--lc:var(--h)} .lc-G{--lc:var(--g)} .lc-F{--lc:var(--f)} .lc-S{--lc:var(--s)} .lc-R{--lc:var(--rd)} .lc-M{--lc:var(--m)} .lc-P{--lc:var(--p)} .lc-Q{--lc:var(--q)} .lc-B{--lc:var(--b)}
 .sec-title{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:28px 0 12px;flex-wrap:wrap}
 .sec-title h2{font-size:22px;font-weight:800;letter-spacing:-.01em}
 
@@ -109,7 +109,7 @@ main{padding-block:22px 80px}
 .aring{display:grid;justify-items:center;gap:2px;position:relative}
 .aring b{position:absolute;top:20px;font-family:var(--mono);font-size:var(--fs-2)}
 .aring span{font-size:var(--fs-1);color:var(--muted)}
-.aring[data-area="LC"]{--rg:var(--l)} .aring[data-area="HUM"]{--rg:var(--f)} .aring[data-area="RD"]{--rg:var(--rd)} .aring[data-area="CN"]{--rg:var(--n)} .aring[data-area="MT"]{--rg:var(--m)}
+.aring[data-area="LC"]{--rg:var(--l)} .aring[data-area="HUM"]{--rg:var(--f)} .aring[data-area="RD"]{--rg:var(--rd)} .aring[data-area="CN"]{--rg:var(--p)} .aring[data-area="MT"]{--rg:var(--m)}
 .dia2-status{display:grid;gap:2px;padding:var(--sp-3) var(--sp-4)}
 .dia2-status small{color:var(--muted);font-size:var(--fs-1);font-family:var(--mono)}
 .hero>*{min-width:0}
@@ -162,6 +162,7 @@ main{padding-block:22px 80px}
 .subtabs button{background:none;border:0;border-bottom:3px solid transparent;padding:10px 12px;font-weight:600;color:var(--muted);cursor:pointer;white-space:nowrap}
 .subtabs button[aria-current="true"]{color:var(--ink);border-color:var(--lc,var(--gold))}
 .prose{font-family:var(--read);font-size:calc(17px*var(--scale));line-height:1.62;max-width:70ch}
+.prose h5{font-family:var(--display);font-size:16px;font-weight:700;margin:20px 0 6px} .prose .figcap{color:var(--muted);font-size:13px}
 .prose h4{font-family:var(--display);font-size:19px;font-weight:800;margin:28px 0 8px;letter-spacing:-.01em}
 .prose p{margin:0 0 12px}
 .prose ul,.prose ol{padding-left:22px;margin:0 0 14px}
@@ -185,6 +186,9 @@ td{border-bottom:1px solid var(--rule);padding:8px 10px;vertical-align:top}
 .box.enem{--bx:var(--gold);--bx-bg:var(--gold-soft);--bx-t:var(--gold-ink)}
 .box.pegadinha{--bx:var(--bad);--bx-bg:var(--bad-soft);--bx-t:var(--bad)}
 .box.conexao{--bx:var(--s);--bx-bg:var(--sunk);--bx-t:var(--s)}
+.box.formula{--bx:var(--gold);--bx-bg:var(--sunk);--bx-t:var(--gold-ink)} .box.formula p{font-family:var(--mono);font-size:var(--fs-4);overflow-x:auto;margin:0}
+.prose table.sym{font-size:13px} .prose table.sym td:first-child{font-family:var(--mono);white-space:nowrap}
+.prose .figcap{border-left:3px solid var(--rule);padding-left:var(--sp-3)}
 .toc-m{display:none}
 .qview{position:fixed;inset:0;z-index:50;background:rgba(10,12,24,.72);display:grid;place-items:center;padding:var(--sp-4)}
 .qv-in{background:var(--surface);border-radius:var(--r-lg);padding:var(--sp-4);display:grid;gap:var(--sp-3);max-width:760px;width:100%;max-height:90vh;overflow:auto}
@@ -606,13 +610,13 @@ function applyDeep(){ Object.entries(DATA.deep||{}).forEach(([id,d])=>{ const m=
 applyDeep();
 const STUDY_LINES_BASE = ['F','S','H','G','L'];
 /* Natureza e Matemática (data/dia2.js) só entram no app depois que o dia 2 é liberado: até lá nada delas aparece em mapa, treino, cartões ou relatório. */
-function studyLines(){ return dia2Status().open ? STUDY_LINES_BASE.concat(['N','M']) : STUDY_LINES_BASE; }
+function studyLines(){ return dia2Status().open ? STUDY_LINES_BASE.concat(['P','Q','B','M']) : STUDY_LINES_BASE; }
 function applyDia2(){ const x=DATA.dia2; if(!x||x.applied||!dia2Status().open) return; x.applied=true;
   x.modules.forEach(m=>{ DATA.modules.push(m); M[m.id]=m; });
   x.questions.forEach(q=>{ DATA.questions.push(q); Q[q.id]=q; });
   x.cards.forEach(c=>DATA.cards.push(c)); x.vf.forEach(v=>DATA.vf.push(v)); }
 const EXAM = new Date('2026-11-08T13:30:00-03:00');
-const LINES = {N:{name:'Natureza',vol:'CN'},M:{name:'Matemática',vol:'MT'},L:{name:'Linguagens',vol:'LC'},H:{name:'História',vol:'HG'},G:{name:'Geografia',vol:'HG'},F:{name:'Filosofia',vol:'FS'},S:{name:'Sociologia',vol:'FS'},R:{name:'Redação',vol:'RD'}};
+const LINES = {M:{name:'Matemática',vol:'MT'},P:{name:'Física',vol:'CN'},Q:{name:'Química',vol:'CN'},B:{name:'Biologia',vol:'CN'},L:{name:'Linguagens',vol:'LC'},H:{name:'História',vol:'HG'},G:{name:'Geografia',vol:'HG'},F:{name:'Filosofia',vol:'FS'},S:{name:'Sociologia',vol:'FS'},R:{name:'Redação',vol:'RD'}};
 const ERRMOD = {L2:'7',L4:'36',L5:'25',L6:'17 e 38',L11:'15 e 23',L14:'3',G9:'46',G5:'67',H3:'69',H7:'83',H5:'90',F5:'50 e 76',F7:'66',F6:'79',S4:'81'};
 const DIAG = {LC:{ok:37,n:45,label:'Linguagens'},HG:{ok:24,n:29,label:'História e Geografia'},FS:{ok:11,n:16,label:'Filosofia e Sociologia'}};
 const TRAPS = {
@@ -620,6 +624,11 @@ const TRAPS = {
   autor:{name:'Autor errado',tip:'A ideia existe, mas é de outro pensador. Volte à referência do texto: de quem é o trecho?'},
   anacronismo:{name:'Anacronismo',tip:'Aplica ao passado ideias, técnicas ou intenções de outra época.'},
   detalhe:{name:'Detalhe verdadeiro',tip:'É verdade sobre o tema, mas não responde ao que o comando pergunta.'},
+  conceito:{name:'Conceito errado',tip:'A alternativa aplica uma regra ou ideia que não vale para a situação. Releia o que o enunciado garante antes de escolher a fórmula.'},
+  unidade:{name:'Unidade errada',tip:'A conta pode estar certa, mas a unidade ou a conversão não bate com o que foi pedido. Escreva a unidade em cada passo.'},
+  conta:{name:'Conta incompleta',tip:'Parou no meio do caminho ou esqueceu uma grandeza. Liste todos os dados e confira se o resultado responde ao comando.'},
+  leitura:{name:'Leitura apressada',tip:'Um dado, uma condição ou o comando foi lido pela metade. Sublinhe o que é pedido e as restrições antes de calcular.'},
+  inversao:{name:'Inversão de proporção',tip:'Tratou como direta uma relação inversa (ou o contrário). Pergunte: se uma grandeza aumenta, a outra aumenta ou diminui?'},
   exagero:{name:'Exagero',tip:'Vai além do que o texto autoriza (uma medida pontual não resolve tudo).'}
 };
 const Q = Object.fromEntries(DATA.questions.map(q=>[q.id,q]));
@@ -724,7 +733,7 @@ function priority(m){
   let p={A:3,B:2,C:1}[m.faixa];
   if(ERRMOD[m.id]) p+=2;
   if(m.vol==='FS') p+=1.5;
-  if((m.line==='N'||m.line==='M')&&Date.now()<EXAM.getTime()) p-=2; /* dia 2 liberado cedo (72/90): o dia 1 ainda vem primeiro */
+  if('MPQB'.includes(m.line)&&Date.now()<EXAM.getTime()) p-=2; /* dia 2 liberado cedo (72/90): o dia 1 ainda vem primeiro */
   if(s.done===s.n){ if(s.ok/s.n<0.67) p+=2.5; else p-=10; }
   if(s.read && s.done<s.n) p+=1;
   return p;
@@ -787,7 +796,7 @@ function vLinhas(){
     </div>
     <aside class="side-home">
       <div class="countdown panel"><span class="big">${daysLeft()}</span><span>${daysLeft()===1?'dia':'dias'} para o ${examTarget()>EXAM?'dia 2':'dia 1'}<small>${examTarget().toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'2-digit'})}, 13h30</small></span></div>
-      <div class="rings panel">${[['LC','Linguagens',lineStats('L')],['HUM','Humanas',['F','S','H','G'].map(lineStats).reduce((x,y)=>({done:x.done+y.done,n:x.n+y.n}),{done:0,n:0})],['RD','Redação',lineStats('R')]].concat(dia2Status().open?[['CN','Natureza',lineStats('N')],['MT','Matemática',lineStats('M')]]:[]).map(([k,nm,st])=>ring(k,nm,st)).join('')}</div>
+      <div class="rings panel">${[['LC','Linguagens',lineStats('L')],['HUM','Humanas',['F','S','H','G'].map(lineStats).reduce((x,y)=>({done:x.done+y.done,n:x.n+y.n}),{done:0,n:0})],['RD','Redação',lineStats('R')]].concat(dia2Status().open?[['CN','Natureza',['P','Q','B'].map(lineStats).reduce((x,y)=>({done:x.done+y.done,n:x.n+y.n}),{done:0,n:0})],['MT','Matemática',lineStats('M')]]:[]).map(([k,nm,st])=>ring(k,nm,st)).join('')}</div>
       <div class="dia2-status panel">${(()=>{ const d2=dia2Status(); return d2.open?`<b>Dia 2 liberado</b><small>${d2.via==='criterio'?`você bateu a meta: ${d2.best}/90`:d2.via==='data'?'a semana do dia 2 começou':'liberado por você'}</small>`:`<b>Dia 2 guardado · meta ${DIA2_META}/90</b><small>${d2.best==null?'ensaio geral: dia 1 de 2024, dom 1/11 às 13h30':`seu melhor no dia 1 de 2024: ${d2.best}/90`}</small>`; })()}</div>
       <div class="stats">
         <div class="stat"><div class="n">${done}<span class="muted" style="font-size:var(--fs-3)">/${tot}</span></div><div class="l">questões feitas</div><div class="bar2"><i style="width:${pct(done,tot)}%"></i></div></div>
@@ -1016,7 +1025,7 @@ function gOpostos(){
 function gTraps(){
   const pool=[]; DATA.questions.filter(q=>q.vol!=='RD').forEach(q=>Object.entries(q.traps).forEach(([k,t])=>pool.push({q,k,t})));
   const items=shuffle(pool).slice(0,10);
-  runRounds({key:'traps',secs:0,rounds:items.map(it=>({it,missLine:`Questão ${it.q.n}${it.q.kind==='extra'?' (extra)':` (vol. ${it.q.vol==='HG'?1:2})`}, alternativa ${it.k}: <strong>${TRAPS[it.t].name}</strong>. ${it.q.ex[it.k]}`})),
+  runRounds({key:'traps',secs:0,rounds:items.map(it=>({it,missLine:`Questão ${it.q.n}${it.q.kind==='extra'?' (extra)':` (${volLabel(it.q)})`}, alternativa ${it.k}: <strong>${TRAPS[it.t].name}</strong>. ${it.q.ex[it.k]}`})),
     renderRound(el,r,finish){ const q=r.it.q;
       el.innerHTML=`<div class="prompt" style="font-size:17px"><span class="k">questão ${q.n} · ${volLabel(q)}</span>${q.base.length?`<details style="margin-bottom:10px"><summary class="muted" style="cursor:pointer;font-size:14px">ver o texto-base</summary><div style="margin-top:8px;font-size:15.5px">${q.base.join('<br>')}</div></details>`:''}<div style="font-weight:600;margin-bottom:10px">${q.cmd}</div><div style="background:var(--bad-soft);border-radius:8px;padding:10px 12px"><span class="mono" style="font-weight:600">${r.it.k})</span> ${q.alts['ABCDE'.indexOf(r.it.k)]}</div><div class="muted" style="font-size:14px;margin-top:10px">Essa alternativa está errada. Que armadilha ela usa?</div></div>
         ${optsHTML(Object.entries(TRAPS).map(([k,v])=>({label:v.name,ok:k===r.it.t})))}`;
