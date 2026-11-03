@@ -25,7 +25,7 @@ check(DATA_FILES.indexOf('data/dia2.js') > DATA_FILES.indexOf('data/base.js'), '
 check(/SHELL_FILES=\[[^\]]*'data\/dia2\.js'/.test(fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8')), 'dia 2: data/dia2.js não está em SHELL_FILES do sw.js');
 
 /* Estações da apostila: 14 + 11 + 10 + 10. A linha M é Matemática (vol MT); P, Q e B são Natureza (vol CN). */
-const LINES = { M: { vol: 'MT', name: 'Matemática', n: 14 }, P: { vol: 'CN', name: 'Física', n: 11 }, Q: { vol: 'CN', name: 'Química', n: 10 }, B: { vol: 'CN', name: 'Biologia', n: 10 } };
+const LINES = { D: { vol: 'GD', name: 'Guia do dia 2', n: 3, guide: true }, M: { vol: 'MT', name: 'Matemática', n: 14 }, P: { vol: 'CN', name: 'Física', n: 11 }, Q: { vol: 'CN', name: 'Química', n: 10 }, B: { vol: 'CN', name: 'Biologia', n: 10 } };
 const RAW = /\*\*|\]\(fig\/|^\s*\|\s*-{3}/m;
 if (DATA_FILES.includes('data/dia2.js')) {
   const D0 = loadData(), D = Object.assign({ modules: [], questions: [], cards: [], vf: [] }, D0.dia2), ids = new Set(D.questions.map(q => q.id));
@@ -35,6 +35,13 @@ if (DATA_FILES.includes('data/dia2.js')) {
     const mods = D.modules.filter(m => m.line === line);
     check(mods.length === A.n, `${A.name}: ${mods.length} estações (esperadas ${A.n})`);
     for (const m of mods) {
+      if (A.guide) { /* Guia: Parte 0, visões gerais e formulário; sem questões nem cartões */
+        check(m.vol === 'GD' && (m.html.match(/<h4>/g) || []).length >= 3, `${m.id}: guia com menos de 3 seções`);
+        check(!RAW.test(m.html), `${m.id}: sobrou markdown`);
+        check(m.qs.length === 0, `${m.id}: o guia não tem questões`);
+        continue;
+      }
+      check(m.mins > 0 && /Pré-requisitos:/.test(m.note), `${m.id}: faltam o tempo sugerido e os pré-requisitos da ficha`);
       const h4 = (m.html.match(/<h4>/g) || []).length;
       check(m.vol === A.vol, `${m.id}: vol "${m.vol}"`);
       check(h4 >= 4 && h4 <= 7, `${m.id}: ${h4} seções (de 4 a 7)`);
@@ -59,7 +66,7 @@ if (DATA_FILES.includes('data/dia2.js')) {
   /* Figuras da apostila: toda imagem citada existe em fig/ e está no cache do app. */
   const swSrc = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
   const figs = [...new Set([...D.modules.map(m => m.html), ...D.questions.map(q => q.base.join(' '))].flatMap(h => [...h.matchAll(/src="(fig\/[^"]+)"/g)].map(x => x[1])))];
-  check(figs.length === 55, `figuras: ${figs.length} citadas (esperadas 55)`);
+  check(figs.length === 56, `figuras: ${figs.length} citadas (esperadas 56)`);
   for (const f of figs) { check(fs.existsSync(path.join(ROOT, f)), `figura ${f} não existe`); check(swSrc.includes(`'${f}'`), `figura ${f} não está em FIGS do sw.js`); }
   for (const q of D.questions) {
     check(q.alts.length === 5 && /^[A-E]$/.test(q.ans), `${q.id}: alternativas ou gabarito inválidos`);
@@ -90,28 +97,28 @@ try {
       const page = await ctx.newPage(); const errs = [];
       page.on('pageerror', e => errs.push(e.message));
       await page.clock.setFixedTime(new Date(day)); await page.goto(URL_); await page.waitForTimeout(500);
-      const hasLine = await page.evaluate(() => Object.fromEntries('MPQB'.split('').map(L => [L, !!document.querySelector(`.line.lc-${L}`)])));
+      const hasLine = await page.evaluate(() => Object.fromEntries('DMPQB'.split('').map(L => [L, !!document.querySelector(`.line.lc-${L}`)])));
       const next = await page.evaluate(() => nextModules(60).map(m => m.id));
       const rings = await page.evaluate(() => [...document.querySelectorAll('.aring')].map(r => r.dataset.area));
       if (!open) {
         check(!Object.values(hasLine).some(Boolean), `guardado (${day.slice(0, 10)}): as linhas M, P, Q e B não deveriam aparecer no mapa`);
-        check(!next.some(id => /^(MA|FI|QU|BI)\d/.test(id)), 'guardado: nextModules sugere módulo do dia 2 antes da liberação');
+        check(!next.some(id => /^(GD|MA|FI|QU|BI)\d/.test(id)), 'guardado: nextModules sugere módulo do dia 2 antes da liberação');
         check(rings.join() === 'LC,HUM,RD', `guardado: anéis do início = ${rings.join()}`);
       } else {
         check(Object.values(hasLine).every(Boolean), `liberado (${colorScheme}): faltam linhas no mapa (${JSON.stringify(hasLine)})`);
         check(rings.includes('CN') && rings.includes('MT'), `liberado: faltam os anéis de Natureza e Matemática (${rings.join()})`);
         const c = await page.evaluate(() => {
           const lum = c => { const [r, g, b] = c.match(/[\d.]+/g).slice(0, 3).map(x => { x /= 255; return x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
-          return 'MPQB'.split('').map(L => { const b = document.querySelector(`.line.lc-${L} .line-head .badge`); if (!b) return 0; const cs = getComputedStyle(b), x = lum(cs.color), y = lum(cs.backgroundColor); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); });
+          return 'DMPQB'.split('').map(L => { const b = document.querySelector(`.line.lc-${L} .line-head .badge`); if (!b) return 0; const cs = getComputedStyle(b), x = lum(cs.color), y = lum(cs.backgroundColor); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); });
         });
-        c.forEach((r, i) => check(r >= 4.5, `liberado (${colorScheme}): selo da linha ${'MPQB'[i]} com contraste ${r.toFixed(2)}`));
+        c.forEach((r, i) => check(r >= 4.5, `liberado (${colorScheme}): selo da linha ${'DMPQB'[i]} com contraste ${r.toFixed(2)}`));
         if (colorScheme === 'light') {
-          check(await page.evaluate(() => !!M.MA01 && !!M.FI08 && !!M.QU04 && !!M.BI05), 'liberado: faltam módulos MA01, FI08, QU04 ou BI05');
-          for (const id of ['MA01', 'FI08', 'QU04', 'BI05']) {
-            for (const tab of ['teoria', 'q']) {
+          check(await page.evaluate(() => !!M.MA01 && !!M.FI08 && !!M.QU04 && !!M.BI05 && !!M.GD1 && !!M.GD3), 'liberado: faltam módulos MA01, FI08, QU04, BI05, GD1 ou GD3');
+          for (const id of ['MA01', 'FI08', 'QU04', 'BI05', 'GD1', 'GD2', 'GD3']) {
+            for (const tab of ['teoria', 'q', 'resumo', 'vf']) {
               await page.evaluate(([id, tab]) => { if (M[id]) go('mod', { id, tab }); }, [id, tab]); await page.waitForTimeout(150);
               const txt = await page.locator('#modbody').textContent({ timeout: 1500 }).catch(() => '');
-              check(txt.length > 200, `liberado: ${id}/${tab} abriu vazio`);
+              check(txt.length > (tab === 'teoria' ? 200 : 20), `liberado: ${id}/${tab} abriu vazio`);
               if (tab === 'q') check(!/volume \d/.test(txt) && !/são da apostila/.test(txt), `liberado: as questões de ${id} aparecem como "volume" da apostila de Humanas`);
             }
           }

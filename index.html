@@ -87,7 +87,7 @@ main{padding-block:22px 80px}
 .panel{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:18px}
 .chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:999px;background:var(--sunk);color:var(--muted)}
 .chip.A{background:var(--gold-soft);color:var(--gold-ink);font-weight:600}
-.lc-L{--lc:var(--l)} .lc-H{--lc:var(--h)} .lc-G{--lc:var(--g)} .lc-F{--lc:var(--f)} .lc-S{--lc:var(--s)} .lc-R{--lc:var(--rd)} .lc-M{--lc:var(--m)} .lc-P{--lc:var(--p)} .lc-Q{--lc:var(--q)} .lc-B{--lc:var(--b)}
+.lc-L{--lc:var(--l)} .lc-H{--lc:var(--h)} .lc-G{--lc:var(--g)} .lc-F{--lc:var(--f)} .lc-S{--lc:var(--s)} .lc-R{--lc:var(--rd)} .lc-D{--lc:var(--gold)} .lc-M{--lc:var(--m)} .lc-P{--lc:var(--p)} .lc-Q{--lc:var(--q)} .lc-B{--lc:var(--b)}
 .sec-title{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:28px 0 12px;flex-wrap:wrap}
 .sec-title h2{font-size:22px;font-weight:800;letter-spacing:-.01em}
 
@@ -612,13 +612,13 @@ function applyDeep(){ Object.entries(DATA.deep||{}).forEach(([id,d])=>{ const m=
 applyDeep();
 const STUDY_LINES_BASE = ['F','S','H','G','L'];
 /* Natureza e Matemática (data/dia2.js) só entram no app depois que o dia 2 é liberado: até lá nada delas aparece em mapa, treino, cartões ou relatório. */
-function studyLines(){ return dia2Status().open ? STUDY_LINES_BASE.concat(['P','Q','B','M']) : STUDY_LINES_BASE; }
+function studyLines(){ return dia2Status().open ? STUDY_LINES_BASE.concat(['D','P','Q','B','M']) : STUDY_LINES_BASE; }
 function applyDia2(){ const x=DATA.dia2; if(!x||x.applied||!dia2Status().open) return; x.applied=true;
   x.modules.forEach(m=>{ DATA.modules.push(m); M[m.id]=m; });
   x.questions.forEach(q=>{ DATA.questions.push(q); Q[q.id]=q; });
   x.cards.forEach(c=>DATA.cards.push(c)); x.vf.forEach(v=>DATA.vf.push(v)); }
 const EXAM = new Date('2026-11-08T13:30:00-03:00');
-const LINES = {M:{name:'Matemática',vol:'MT'},P:{name:'Física',vol:'CN'},Q:{name:'Química',vol:'CN'},B:{name:'Biologia',vol:'CN'},L:{name:'Linguagens',vol:'LC'},H:{name:'História',vol:'HG'},G:{name:'Geografia',vol:'HG'},F:{name:'Filosofia',vol:'FS'},S:{name:'Sociologia',vol:'FS'},R:{name:'Redação',vol:'RD'}};
+const LINES = {D:{name:'Guia do dia 2',vol:'GD'},M:{name:'Matemática',vol:'MT'},P:{name:'Física',vol:'CN'},Q:{name:'Química',vol:'CN'},B:{name:'Biologia',vol:'CN'},L:{name:'Linguagens',vol:'LC'},H:{name:'História',vol:'HG'},G:{name:'Geografia',vol:'HG'},F:{name:'Filosofia',vol:'FS'},S:{name:'Sociologia',vol:'FS'},R:{name:'Redação',vol:'RD'}};
 const ERRMOD = {L2:'7',L4:'36',L5:'25',L6:'17 e 38',L11:'15 e 23',L14:'3',G9:'46',G5:'67',H3:'69',H7:'83',H5:'90',F5:'50 e 76',F7:'66',F6:'79',S4:'81'};
 const DIAG = {LC:{ok:37,n:45,label:'Linguagens'},HG:{ok:24,n:29,label:'História e Geografia'},FS:{ok:11,n:16,label:'Filosofia e Sociologia'}};
 const TRAPS = {
@@ -826,7 +826,7 @@ function vMod(){
   const lineMods=DATA.modules.filter(x=>x.line===m.line); const idx=lineMods.indexOf(m);
   app.innerHTML=`<div class="lc-${m.line}">
     <button class="back" id="back">← ${m.line==='R'?'Redação':'mapa das linhas'}</button>
-    <div class="mod-head"><div class="row"><span class="eyebrow">Linha ${LINES[m.line].name} · estação ${idx+1} de ${lineMods.length}</span><span class="chip ${m.faixa}">Faixa ${m.faixa}</span><span class="chip">${esc(m.habs)}</span><span class="chip">leitura ~${Math.max(3,Math.round(strip(m.html).split(/\s+/).length/180))} min</span>${ERRMOD[m.id]?`<span class="chip" style="background:var(--bad-soft);color:var(--bad)">seu erro 2025: q. ${ERRMOD[m.id]}</span>`:''}</div>
+    <div class="mod-head"><div class="row"><span class="eyebrow">Linha ${LINES[m.line].name} · estação ${idx+1} de ${lineMods.length}</span>${m.faixa?`<span class="chip ${m.faixa}">Faixa ${m.faixa}</span>`:''}<span class="chip">${esc(m.habs)}</span>${m.mins?`<span class="chip">estudo sugerido ~${m.mins} min</span>`:''}<span class="chip">leitura ~${Math.max(3,Math.round(strip(m.html).split(/\s+/).length/180))} min</span>${ERRMOD[m.id]?`<span class="chip" style="background:var(--bad-soft);color:var(--bad)">seu erro 2025: q. ${ERRMOD[m.id]}</span>`:''}</div>
       <h1>${m.id} · ${esc(m.title)}</h1>${m.note?`<p class="note">${m.note}</p>`:''}</div>
     <div class="subtabs">
       ${[['teoria','Teoria'],['resumo','Cartões-resumo'],['vf','V ou F'],['q',`Questões ${s.done}/${s.n}`],['notas',S.snotes[m.id]?'Anotações ●':'Anotações'],['tutor','Pergunte ao tutor']].map(([k,l])=>`<button data-t="${k}" aria-current="${k===tab}" class="${k==='tutor'?'tutor-only':''}">${l}</button>`).join('')}

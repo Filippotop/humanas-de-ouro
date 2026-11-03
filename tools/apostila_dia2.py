@@ -49,6 +49,7 @@ def block_html(b):
         alt = re.sub(r'[*`"&<>]', '', cap)
         return f'<figure class="fig"><img src="fig/{name}.webp" alt="{alt}" loading="lazy"><figcaption>{inline(cap)}</figcaption></figure>'
     if first.startswith('#### '): return f'<h5>{inline(first[5:])}</h5>'
+    if first.startswith('### '): return f'<h5>{inline(first[4:])}</h5>'
     if first.startswith('> '):
         txt = ' '.join(x[1:].strip() for x in b)
         m = re.match(r'\*\*([^*]+?)\*\*\s*(.*)', txt)
@@ -58,11 +59,13 @@ def block_html(b):
         return f'<div class="box {kind}"><b class="box-t">{inline(title)}</b><p>{inline(body)}</p></div>'
     if re.match(r'^(- |\d+\. )', first):
         tag = 'ul' if first.startswith('- ') else 'ol'
-        items = []
+        items = []  # [texto, [subitens]]
         for ln in b:
-            if re.match(r'^(- |\d+\. )', ln): items.append(re.sub(r'^(- |\d+\. )', '', ln))
-            else: items[-1] += ' ' + ln.strip()
-        return f'<{tag}>' + ''.join(f'<li>{inline(i)}</li>' for i in items) + f'</{tag}>'
+            if re.match(r'^(- |\d+\. )', ln): items.append([re.sub(r'^(- |\d+\. )', '', ln), []])
+            elif re.match(r'^\s+- ', ln): items[-1][1].append(re.sub(r'^\s+- ', '', ln))
+            else: items[-1][0] += ' ' + ln.strip()
+        sub = lambda xs: '<ul>' + ''.join(f'<li>{inline(x)}</li>' for x in xs) + '</ul>' if xs else ''
+        return f'<{tag}>' + ''.join(f'<li>{inline(t)}{sub(xs)}</li>' for t, xs in items) + f'</{tag}>'
     return '<p>' + inline(' '.join(x.strip() for x in b)) + '</p>'
 
 
@@ -108,6 +111,38 @@ def gabaritos(text):
     return out
 
 
+NL = chr(10)
+
+
+def partes(md, ini, fim):
+    """Texto entre dois títulos de nível 1 (ini inclusive pelo corpo, fim exclusive)."""
+    i = md.index(ini); j = md.index(fim, i + 1)
+    return md[i:j]
+
+
+def secoes_h2(texto):
+    """Quebra um trecho em [(título, corpo)] pelos '## ' e devolve também o texto antes do primeiro."""
+    partes_ = re.split(r'^## (.+)$', texto, flags=re.M)
+    return partes_[0], [(partes_[i].strip(), partes_[i + 1].strip()) for i in range(1, len(partes_), 2)]
+
+
+def guia(md):
+    """Linha D: Parte 0 (como usar, matriz, TRI, estratégia), visões gerais das áreas e formulário-mestre."""
+    p0 = partes(md, '# Parte 0', '# Sumário')
+    _, s0 = secoes_h2(p0)
+    gerais = [(re.sub(r' do ENEM$', '', t), c) for t, c in
+              (x for part in re.findall(r'^## Visão geral.*?(?=^## )', md, flags=re.M | re.S) for x in [secoes_h2(part)[1][0]])]
+    p5 = partes(md, '# Parte 5', '# Parte 6')
+    intro5, s5 = secoes_h2(p5)
+    intro5 = re.sub(r'^# .*$', '', intro5, flags=re.M).strip()
+    def mod(i, title, note, secs, intro=''):
+        html = (to_html(intro) + NL if intro else '') + NL.join(f'<h4>{inline(t)}</h4>{NL}{to_html(c)}' for t, c in secs)
+        return dict(id=f'GD{i}', title=title, habs='Guia', faixa='', note=inline(note), html=html, resumo=[], qs=[], vol='GD', line='D')
+    return [mod(1, 'Antes de começar: prova, nota e estratégia', 'Como esta apostila funciona, o que mais caiu, a Matriz de Referência, a TRI e a estratégia para os 300 minutos.', s0),
+            mod(2, 'Visão geral das quatro áreas', 'Como a prova de cada área pensa e como estudar Matemática, Física, Química e Biologia.', gerais),
+            mod(3, 'Formulário-mestre do 2º dia', 'Todas as fórmulas num só lugar, com o significado de cada símbolo. As marcadas com ★ precisam ser sabidas de cor.', s5, intro5)]
+
+
 def main(path):
     text = pathlib.Path(path).read_text(encoding='utf8')
     gab = gabaritos(text)
@@ -115,7 +150,7 @@ def main(path):
     for code, num, title, body in re.findall(r'^## ((?:MAT|FIS|QUI|BIO))-(\d\d) — (.+?)\n(.*?)(?=^## |^# |\Z)', text, flags=re.M | re.S):
         pre, line, vol = AREA[code]
         mid = f'{pre}{num}'
-        ficha = re.search(r'\*\*Ficha\*\* · Prioridade \*\*([ABC])\*\* · Matriz: (.*?) · Tempo.*?Objetivo: (.*)', body)
+        ficha = re.search(r'\*\*Ficha\*\* · Prioridade \*\*([ABC])\*\* · Matriz: (.*?) · Tempo de estudo sugerido: (\d+) min · Pré-requisitos: (.*?) · Objetivo: (.*)', body)
         sec = sections(body)
         html = '\n'.join(f'<h4>{inline(sec[i][0])}</h4>\n{to_html(sec[i][1])}' for i in range(1, 6))
         rows = [r for r in sec[6][1].split('\n') if r.startswith('|') and not re.match(r'^\|[\s:|-]+\|$', r)][1:]
@@ -128,10 +163,12 @@ def main(path):
             qs.append(dict(id=f'{mid}.{i}', vol=vol, mod=mid, n=i, kind='fixacao', tag='Inédita, estilo ENEM', base=base,
                            src='Apostila do 2º dia (questão inédita).', cmd=cmd, alts=alts, **g))
             mod_qs.append(f'{mid}.{i}')
-        mods.append(dict(id=mid, title=title.strip(), habs=ficha.group(2), faixa=ficha.group(1), note=inline(ficha.group(3)),
+        mods.append(dict(id=mid, title=title.strip(), habs=ficha.group(2), faixa=ficha.group(1), note=inline(ficha.group(5).rstrip('.') + '. Pré-requisitos: ' + ficha.group(4).rstrip('.') + '.'), mins=int(ficha.group(3)),
                          html=html, resumo=resumo, qs=mod_qs, vol=vol, line=line))
         cards += [dict(id=f'{mid}-c{i}', vol=vol, q=inline(q), a=inline(a)) for i, (q, a) in enumerate(mod_cards)]
     assert len(mods) == 45 and len(qs) == 119, (len(mods), len(qs))
+    guide = guia(text)
+    mods = guide + mods
     vf_file = pathlib.Path(__file__).resolve().parent / 'dia2_vf.json'  # V ou F: 4 por estação, escritos à parte (a apostila não os traz)
     vf = []
     if vf_file.exists():
