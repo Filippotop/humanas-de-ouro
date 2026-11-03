@@ -5,7 +5,7 @@ Uso: python tools/apostila_dia2.py CAMINHO/Apostila_2o_dia_ENEM_2026.md
 
 O arquivo gerado guarda tudo em DATA.dia2; o app só junta isso ao DATA depois que o dia 2 é liberado
 (applyDia2, no index.html). Estações MAT-xx viram módulos MAxx (linha M); FIS, QUI e BIO viram FIxx, QUxx e BIxx
-(linhas P, Q e B). As figuras (fig/*.png) não vêm junto: ficam só as legendas.
+(linhas P, Q e B). As figuras vêm do PDF da apostila (fig/*.webp, extraídas à parte) e entram como <figure>.
 """
 import json, re, sys, pathlib
 
@@ -45,8 +45,9 @@ def block_html(b):
     first = b[0]
     if first.startswith('|'): return table(b)
     if first.startswith('!['):
-        cap = re.match(r'!\[(.*?)\]', first).group(1)
-        return f'<p class="figcap"><em>{inline(cap)}</em></p>'
+        cap, name = re.match(r'!\[(.*?)\]\(fig/(.+?)\.png\)', first).groups()
+        alt = re.sub(r'[*`"&<>]', '', cap)
+        return f'<figure class="fig"><img src="fig/{name}.webp" alt="{alt}" loading="lazy"><figcaption>{inline(cap)}</figcaption></figure>'
     if first.startswith('#### '): return f'<h5>{inline(first[5:])}</h5>'
     if first.startswith('> '):
         txt = ' '.join(x[1:].strip() for x in b)
@@ -131,10 +132,17 @@ def main(path):
                          html=html, resumo=resumo, qs=mod_qs, vol=vol, line=line))
         cards += [dict(id=f'{mid}-c{i}', vol=vol, q=inline(q), a=inline(a)) for i, (q, a) in enumerate(mod_cards)]
     assert len(mods) == 45 and len(qs) == 119, (len(mods), len(qs))
-    data = dict(modules=mods, questions=qs, cards=cards, vf=[], applied=False)
+    vf_file = pathlib.Path(__file__).resolve().parent / 'dia2_vf.json'  # V ou F: 4 por estação, escritos à parte (a apostila não os traz)
+    vf = []
+    if vf_file.exists():
+        seen = {}
+        for it in json.loads(vf_file.read_text(encoding='utf8')):
+            i = seen[it['mod']] = seen.get(it['mod'], -1) + 1
+            vf.append(dict(id=f"vf-{it['mod']}-{i}", mod=it['mod'], s=it['s'], v=it['v'], why=it['why']))
+    data = dict(modules=mods, questions=qs, cards=cards, vf=vf, applied=False)
     head = ('/* GERADO por tools/apostila_dia2.py a partir de Apostila_2o_dia_ENEM_2026.md. Não edite à mão.\n'
             '   2º dia do Enem: Matemática (M), Física (P), Química (Q) e Biologia (B). O conteúdo fica em DATA.dia2 e só entra\n'
-            '   no app depois que o dia 2 é liberado (applyDia2, no index.html). Figuras não incluídas. */\n')
+            '   no app depois que o dia 2 é liberado (applyDia2, no index.html). Figuras em fig/. */\n')
     out = pathlib.Path(__file__).resolve().parent.parent / 'data' / 'dia2.js'
     out.write_text(head + '(function (D) { D.dia2 = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '; })(window.DATA);\n', encoding='utf8')
     print(f'{len(mods)} estações, {len(qs)} questões, {len(cards)} cartões -> {out} ({out.stat().st_size // 1024} KB)')

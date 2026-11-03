@@ -30,7 +30,7 @@ const RAW = /\*\*|\]\(fig\/|^\s*\|\s*-{3}/m;
 if (DATA_FILES.includes('data/dia2.js')) {
   const D0 = loadData(), D = Object.assign({ modules: [], questions: [], cards: [], vf: [] }, D0.dia2), ids = new Set(D.questions.map(q => q.id));
   check(!!D0.dia2, 'dia 2: data/dia2.js deveria guardar o conteúdo em DATA.dia2 (o app só o junta ao DATA depois da liberação)');
-  check(!D0.modules.some(m => LINES[m.line]) && !D0.questions.some(q => q.vol === 'CN' || q.vol === 'MT') && !D0.cards.some(c => c.vol === 'CN' || c.vol === 'MT'), 'dia 2: o conteúdo não pode entrar no DATA antes da liberação');
+  check(!D0.modules.some(m => LINES[m.line]) && !D0.questions.some(q => q.vol === 'CN' || q.vol === 'MT') && !D0.cards.some(c => c.vol === 'CN' || c.vol === 'MT') && !D0.vf.some(v => /^(MA|FI|QU|BI)\d/.test(v.mod)), 'dia 2: o conteúdo não pode entrar no DATA antes da liberação');
   for (const [line, A] of Object.entries(LINES)) {
     const mods = D.modules.filter(m => m.line === line);
     check(mods.length === A.n, `${A.name}: ${mods.length} estações (esperadas ${A.n})`);
@@ -43,6 +43,9 @@ if (DATA_FILES.includes('data/dia2.js')) {
       check(/H\d+/.test(m.habs || ''), `${m.id}: sem habilidades da matriz`);
       check(['A', 'B', 'C'].includes(m.faixa), `${m.id}: faixa "${m.faixa}"`);
       check(D.cards.filter(c => c.id.startsWith(m.id + '-c')).length >= 5, `${m.id}: menos de 5 cartões`);
+      const vf = D.vf.filter(v => v.mod === m.id);
+      check(vf.length === 4 && vf.filter(v => v.v).length === 2, `${m.id}: V ou F precisa de 4 itens, 2 verdadeiros (tem ${vf.length}, ${vf.filter(v => v.v).length} verdadeiros)`);
+      for (const v of vf) check(typeof v.v === 'boolean' && v.s && v.why && !RAW.test(v.s + v.why) && !/ENEM 20\d\d|Q\d{3}/i.test(v.s + v.why), `${m.id}: item de V ou F inválido ("${(v.s || '').slice(0, 40)}")`);
       check(!RAW.test(m.html + JSON.stringify(m.resumo)), `${m.id}: sobrou markdown na teoria ou no resumo`);
       for (const id of m.qs) { check(ids.has(id), `${m.id}: questão ${id} não existe`); const q = D.questions.find(x => x.id === id); if (q) check(q.vol === A.vol && q.mod === m.id, `${m.id}: questão ${id} com vol/mod errados`); }
     }
@@ -53,6 +56,11 @@ if (DATA_FILES.includes('data/dia2.js')) {
     check(qs.length >= (vol === 'MT' ? 38 : 70), `${vol}: só ${qs.length} questões`);
     for (const k of 'ABCDE') { const s = (dist[k] || 0) / Math.max(1, qs.length); check(s >= 0.1 && s <= 0.32, `${vol}: gabarito desequilibrado, ${k} em ${Math.round(s * 100)}% das ${qs.length} questões`); }
   }
+  /* Figuras da apostila: toda imagem citada existe em fig/ e está no cache do app. */
+  const swSrc = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
+  const figs = [...new Set([...D.modules.map(m => m.html), ...D.questions.map(q => q.base.join(' '))].flatMap(h => [...h.matchAll(/src="(fig\/[^"]+)"/g)].map(x => x[1])))];
+  check(figs.length === 55, `figuras: ${figs.length} citadas (esperadas 55)`);
+  for (const f of figs) { check(fs.existsSync(path.join(ROOT, f)), `figura ${f} não existe`); check(swSrc.includes(`'${f}'`), `figura ${f} não está em FIGS do sw.js`); }
   for (const q of D.questions) {
     check(q.alts.length === 5 && /^[A-E]$/.test(q.ans), `${q.id}: alternativas ou gabarito inválidos`);
     check(Object.keys(q.ex || {}).sort().join('') === 'ABCDE', `${q.id}: falta explicação para alguma alternativa`);
