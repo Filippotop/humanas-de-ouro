@@ -14,3 +14,15 @@ html[data-fx]:not([data-fx="off"]) .tabs button[aria-current="true"] .ni{animati
   html[data-fx]:not([data-fx="off"]) :is(.panel,.task,.stat,.line):hover{background-image:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--gold) 14%,transparent),transparent 70%)}
 }
 @media (prefers-reduced-motion:reduce){.hdo-fx{display:none}}
+.hdo-aurora{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;opacity:.16}
+.hdo-aurora i{position:absolute;width:55vmax;height:55vmax;border-radius:50%;background:radial-gradient(circle,var(--c) 0,transparent 65%)}
+.hdo-aurora i:nth-child(1){left:-15vmax;top:-15vmax}.hdo-aurora i:nth-child(2){right:-15vmax;top:5vh}
+.hdo-aurora i:nth-child(3){left:10vw;bottom:-25vmax}.hdo-aurora i:nth-child(4){right:-10vmax;bottom:-20vmax}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hdo-aurora{opacity:.22}}
+:root[data-theme="dark"] .hdo-aurora{opacity:.22}
+.hdo-glow{position:fixed;left:-110px;top:-110px;width:220px;height:220px;border-radius:50%;pointer-events:none;z-index:60;background:radial-gradient(circle,color-mix(in srgb,var(--gold) 16%,transparent),transparent 70%)}
+.hdo-spark{position:fixed;left:0;top:0;width:10px;height:2px;margin:-1px 0 0 -5px;border-radius:2px;background:var(--gold);pointer-events:none;z-index:9999}
+html[data-fx="off"] :is(.hdo-aurora,.hdo-glow,.hdo-spark){display:none}
+.hdo-gl{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+html[data-fx="off"] .hdo-gl{display:none}
+@media (prefers-reduced-motion:reduce){.hdo-gl{display:none}}
