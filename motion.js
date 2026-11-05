@@ -46,13 +46,6 @@
     io=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; io.unobserve(e.target); gsap.to(e.target,{opacity:1,y:0,duration:.5,ease:'power3.out',clearProps:'opacity,transform'}); }),{rootMargin:'0px 0px -6% 0px'});
     undo.push(()=>{ io.disconnect(); io=null; app.querySelectorAll(SEL).forEach(e=>gsap.set(e,{clearProps:'opacity,transform'})); });
 
-    // Lenis: rolagem suave. Popups, texto e o mapa de linhas rolam do jeito normal.
-    if(window.Lenis&&fine.matches){
-      const lenis=new Lenis({lerp:.12,prevent:n=>!!n.closest('#pop,textarea,select,.stations,[data-lenis-prevent]')});
-      const tick=t=>lenis.raf(t*1000); gsap.ticker.add(tick); gsap.ticker.lagSmoothing(0);
-      undo.push(()=>{ gsap.ticker.remove(tick); lenis.destroy(); });
-    }
-
     // Partículas douradas ao fundo (poucas, paradas com a aba oculta).
     const cv=document.createElement('canvas'); cv.setAttribute('aria-hidden','true'); cv.className='hdo-fx';
     document.body.prepend(cv); const g=cv.getContext('2d'); let W=0,H=0,raf=0;
@@ -100,6 +93,17 @@
   }
 
 
+  // Rolagem suave (Lenis) é opção separada: sequestra a roda do mouse e pode travar a rolagem em alguns aparelhos.
+  let smUndo=null;
+  function smoothSync(){
+    const want=root.dataset.smooth==='on'&&cur&&cur!=='off'&&fine.matches&&window.Lenis;
+    if(!want){ if(smUndo){ smUndo(); smUndo=null; } return; }
+    if(smUndo) return;
+    const lenis=new Lenis({lerp:.12,prevent:n=>!!n.closest('#pop,textarea,select,input,.stations,[data-lenis-prevent]')});
+    const tick=t=>lenis.raf(t*1000); gsap.ticker.add(tick);
+    smUndo=()=>{ gsap.ticker.remove(tick); lenis.destroy(); };
+  }
+
   // Fundo 3D (opção separada, "Aa → fundo 3D"): shader de fluido iridescente em WebGL puro, a meia resolução e 30 quadros/s.
   let glUndo=null;
   function bgSync(){
@@ -141,16 +145,16 @@
   }
 
   function apply(){
-    const m=mode(); if(m===cur){ bgSync(); return; }
+    const m=mode(); if(m===cur){ bgSync(); smoothSync(); return; }
     undo.forEach(f=>f()); undo=[]; cur=m; root.dataset.fx=m; lastKey=null;
-    bgSync();
+    bgSync(); smoothSync();
     if(m==='off') return;
     if(m==='full') startFull();
     enter();
   }
 
   new MutationObserver(()=>requestAnimationFrame(enter)).observe(app,{childList:true});
-  new MutationObserver(apply).observe(root,{attributes:true,attributeFilter:['data-motion','data-bg']});
+  new MutationObserver(apply).observe(root,{attributes:true,attributeFilter:['data-motion','data-bg','data-smooth']});
   RM.addEventListener&&RM.addEventListener('change',apply);
 
   const dot=document.querySelector('.brand .dot'); if(dot) gsap.to(dot,{rotation:360,duration:24,repeat:-1,ease:'none'});
