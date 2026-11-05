@@ -1,0 +1,13 @@
+/* Movimento: ver motion.js. Tudo desligado com "reduzir movimento". */
+@media (prefers-reduced-motion:no-preference){
+  .brand em{background:linear-gradient(110deg,var(--gold) 35%,#fff6d6 50%,var(--gold) 65%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:hdo-shine 5s ease-in-out infinite}
+  @keyframes hdo-shine{0%,60%{background-position:120% 0}100%{background-position:-120% 0}}
+  .btn,.task,.panel,.stat,.tabs button{transition:transform .2s var(--ease),box-shadow .2s var(--ease),background-color .2s}
+  .btn:active,.tabs button:active{transform:scale(.96)}
+  .task:hover,.stat:hover{transform:translateY(-2px)}
+  .tabs button[aria-current="true"] .ni{animation:hdo-pop .35s var(--ease)}
+  @keyframes hdo-pop{0%{transform:scale(.8)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .panel:hover,.task:hover,.stat:hover,.line:hover{background-image:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--gold) 14%,transparent),transparent 70%)}
+}

@@ -105,7 +105,7 @@ async function testOfflineShell(browser) {
 /* Cada aba, em cada tamanho e tema: sem erro de JS, sem rolagem lateral, sem falha séria de acessibilidade. */
 async function testTabs(browser) {
   for (const [vpName, viewport] of Object.entries(VIEWPORTS)) for (const colorScheme of ['light', 'dark']) {
-    const ctx = await browser.newContext({ viewport, colorScheme, serviceWorkers: 'block' });
+    const ctx = await browser.newContext({ viewport, colorScheme, serviceWorkers: 'block', reducedMotion: 'reduce' });
     const page = await ctx.newPage(); const errs = [];
     page.on('pageerror', e => errs.push(e.message));
     page.on('console', m => { if (m.type() === 'error') errs.push(m.text()); });
