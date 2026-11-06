@@ -68,18 +68,6 @@
     undo.push(()=>{ bl.forEach(t=>t.kill()); au.remove(); });
 
     if(fine.matches){
-      // Brilho que segue o cursor + faíscas ao clicar (React Bits: Splash Cursor / Click Spark).
-      const gl=document.createElement('div'); gl.className='hdo-glow'; gl.setAttribute('aria-hidden','true'); document.body.append(gl);
-      const gx=gsap.quickTo(gl,'x',{duration:.5,ease:'power3'}), gy=gsap.quickTo(gl,'y',{duration:.5,ease:'power3'});
-      const pm=e=>{ gx(e.clientX); gy(e.clientY); }, pd=e=>{
-        for(let i=0;i<8;i++){ const k=document.createElement('i'); k.className='hdo-spark'; document.body.append(k);
-          const a=i/8*6.283+Math.random()*.4, d=gsap.utils.random(18,34);
-          gsap.fromTo(k,{x:e.clientX,y:e.clientY,rotation:a+'rad',opacity:1,scaleX:1},{x:e.clientX+Math.cos(a)*d,y:e.clientY+Math.sin(a)*d,opacity:0,scaleX:.2,duration:.45,ease:'power2.out',onComplete:()=>k.remove()}); } };
-      document.addEventListener('pointermove',pm,{passive:true}); document.addEventListener('pointerdown',pd,{passive:true});
-      undo.push(()=>{ document.removeEventListener('pointermove',pm); document.removeEventListener('pointerdown',pd); gl.remove(); document.querySelectorAll('.hdo-spark').forEach(k=>k.remove()); });
-    }
-
-    if(fine.matches){
       // Inclinação 3D nas estatísticas e botões que "puxam" o ponteiro.
       const mv=e=>{
         const s=e.target.closest&&e.target.closest('.stat'); if(s){ const r=s.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;

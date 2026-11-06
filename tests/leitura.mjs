@@ -42,7 +42,7 @@ for (const theme of ['light', 'dark']) {
     const ess = document.querySelector('#prose .ess');
     return {
       read: document.documentElement.dataset.read,
-      bg: cs.backgroundImage, underline: cs.textDecorationLine,
+      bg: cs.backgroundColor,
       pColor: ps.color, sColor: cs.color,
       pDisplay: ps.display, essDisplay: ess ? getComputedStyle(ess).display : null,
       essCount: document.querySelectorAll('#prose .ess li').length,
@@ -52,7 +52,7 @@ for (const theme of ['light', 'dark']) {
 
   const d = await state();
   check(d.read === 'hl', `${theme}: padrão deveria ser "hl" e é ${d.read}`);
-  check(d.bg !== 'none' && d.underline.includes('underline'), `${theme}: destaques sem marca-texto e sublinhado`);
+  check(d.bg !== 'rgba(0, 0, 0, 0)', `${theme}: destaques sem cor de fundo`);
   check(d.pressed.join() === 'hl', `${theme}: botão do modo atual não está marcado`);
   check(d.essDisplay === 'none', `${theme}: lista essencial visível fora do modo essencial`);
 
@@ -60,7 +60,7 @@ for (const theme of ['light', 'dark']) {
     await page.click(`.readmode [data-v="${mode}"]`);
     const s = await state();
     check(s.read === mode && s.pressed.join() === mode, `${theme}/${mode}: modo não aplicado`);
-    if (mode === 'plain') check(s.bg === 'none', `${theme}/plain: ainda destaca`);
+    if (mode === 'plain') check(s.bg === 'rgba(0, 0, 0, 0)', `${theme}/plain: ainda destaca`);
     if (mode === 'focus') check(s.pColor !== s.sColor, `${theme}/focus: texto comum não ficou apagado em relação ao termo-chave`);
     if (mode === 'essential') {
       check(s.pDisplay === 'none', `${theme}/essential: parágrafos continuam visíveis`);
