@@ -6,7 +6,7 @@ Objetivo dos dois agentes: ajudar o estudante a **focar e estudar**, não mexer 
 ## Regras (valem para os dois agentes)
 
 1. **Mudança pequena e só na própria área.** Sem refatoração e sem trocar dependência. O app funciona; o que importa agora é estudar com ele. Divisão definida pelo estudante em 2026-11-06: **Claude = animação e design; Hermes = todo o resto** (conteúdo, questões, plano, estudo, redação, dados).
-2. **Só entra no app o que corrige erro.** Erro de conteúdo (gabarito, texto, data) ou bug que atrapalha o estudo. Mudança mínima, um assunto por commit.
+2. **Só entra no app o que ajuda o estudo.** Hermes: correção de conteúdo ou bug. Claude: ajuste de design ou animação que ajude a focar (ver "Limite do design"). Mudança mínima, um assunto por commit.
 3. **Antes de qualquer commit no app:** `npm test` precisa passar. Se falhar, não publica.
 4. **Branch separada.** Nunca editar a `main` direto. Hermes usa `hermes/...`, Claude usa `claude/...`. Quem terminou avisa aqui; quem for juntar confere `git diff main` antes.
 5. **Não editar o mesmo arquivo ao mesmo tempo.** `index.html`, `sw.js` e `data/*.js` são sensíveis. Se precisar, escreva em "Recados" e espere o outro responder.
