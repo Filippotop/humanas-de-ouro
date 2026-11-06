@@ -71,6 +71,12 @@ for (const theme of ['light', 'dark']) {
     if (SHOTS) { fs.mkdirSync(SHOTS, { recursive: true }); await page.screenshot({ path: path.join(SHOTS, `${theme}-${mode}.png`) }); }
   }
 
+  // trocar pelo painel Aa também atualiza os botões da página
+  await page.click('#prefsBtn');
+  await page.click('#pop [data-v="essential"]');
+  check((await page.evaluate(() => [...document.querySelectorAll('.readmode button')].filter(b => b.getAttribute('aria-pressed') === 'true').map(b => b.dataset.v).join())) === 'essential', `${theme}: botões da página não acompanham o painel Aa`);
+  await page.keyboard.press('Escape');
+
   // a escolha persiste ao recarregar
   await page.click('.readmode [data-v="focus"]');
   await page.reload();

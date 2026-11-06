@@ -869,7 +869,7 @@ function vMod(){
     hs.forEach(h=>{ const terms=[]; let n=h.nextElementSibling; while(n&&n.tagName!=='H4'&&!n.classList.contains('endcall')){ n.querySelectorAll('strong').forEach(s=>{ const x=s.textContent.trim().replace(/[:;,.\s]+$/,''); if(x.length>1&&!terms.includes(x)) terms.push(x); }); n=n.nextElementSibling; }
       if(terms.length){ const d=document.createElement('div'); d.className='ess'; d.innerHTML='<ul>'+terms.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'; h.after(d); } });
     pr0.insertAdjacentHTML('afterbegin','<div class="readmode" role="group" aria-label="Modo de leitura"><span class="eyebrow">leitura</span>'+seg('read',[['plain','Normal'],['hl','Destaques'],['focus','Foco'],['essential','Essencial']],prefs.read)+'</div>');
-    pr0.querySelectorAll('.readmode [data-seg] button').forEach(b=>b.onclick=()=>{ prefs.read=b.dataset.v; savePrefs(); pr0.querySelectorAll('.readmode button').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.v===prefs.read))); });
+    pr0.querySelectorAll('.readmode [data-seg] button').forEach(b=>b.onclick=()=>{ prefs.read=b.dataset.v; savePrefs(); });
     body.querySelectorAll('.toc a').forEach(a=>a.onclick=e=>{e.preventDefault(); const d=a.closest('details'); if(d) d.open=false; hs[+a.dataset.i].scrollIntoView({behavior:'smooth',block:'start'});});
     body.querySelectorAll('.prose .tw').forEach(t=>t.classList.toggle('scrolls',t.scrollWidth>t.clientWidth+2));
     body.querySelectorAll('#prose a[data-ex]').forEach(a=>a.onclick=e=>{ e.preventDefault(); openQView(a.dataset.ex,a.dataset.n); });
@@ -1503,6 +1503,7 @@ function errList(){
 let prefs=Object.assign({scale:1,theme:'system',goal:20,sound:true,motion:'auto',bg:'off',smooth:'off',read:'hl'},lsGet('humanas-prefs')||{});
 const hostTheme=document.documentElement.getAttribute('data-theme');
 function applyPrefs(){
+  document.querySelectorAll('.readmode button').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.v===prefs.read)));
   document.documentElement.style.setProperty('--scale',prefs.scale); document.documentElement.dataset.motion=prefs.motion; document.documentElement.dataset.bg=prefs.bg; document.documentElement.dataset.smooth=prefs.smooth; document.documentElement.dataset.read=prefs.read;
   if(prefs.theme==='system'){ if(hostTheme) document.documentElement.setAttribute('data-theme',hostTheme); else document.documentElement.removeAttribute('data-theme'); }
   else document.documentElement.setAttribute('data-theme',prefs.theme);
