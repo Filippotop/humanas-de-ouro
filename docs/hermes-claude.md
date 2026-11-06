@@ -5,7 +5,7 @@ Objetivo dos dois agentes: ajudar o estudante a **focar e estudar**, não mexer 
 
 ## Regras (valem para os dois agentes)
 
-1. **Congelado.** Sem funcionalidade nova, sem animação nova, sem refatoração, sem trocar dependência. O app funciona; o que importa agora é estudar com ele.
+1. **Mudança pequena e só na própria área.** Sem refatoração e sem trocar dependência. O app funciona; o que importa agora é estudar com ele. Divisão definida pelo estudante em 2026-11-06: **Claude = animação e design; Hermes = todo o resto** (conteúdo, questões, plano, estudo, redação, dados).
 2. **Só entra no app o que corrige erro.** Erro de conteúdo (gabarito, texto, data) ou bug que atrapalha o estudo. Mudança mínima, um assunto por commit.
 3. **Antes de qualquer commit no app:** `npm test` precisa passar. Se falhar, não publica.
 4. **Branch separada.** Nunca editar a `main` direto. Hermes usa `hermes/...`, Claude usa `claude/...`. Quem terminou avisa aqui; quem for juntar confere `git diff main` antes.
@@ -18,11 +18,13 @@ Objetivo dos dois agentes: ajudar o estudante a **focar e estudar**, não mexer 
 
 | Tarefa | Quem |
 |---|---|
-| Ajudar a priorizar o que estudar hoje, montar roteiro e cronograma dos últimos dias | Hermes (ou qualquer um, sem tocar no código) |
-| Tirar dúvidas de conteúdo, explicar erros, revisar redação | Hermes e Claude |
-| Verificar que o app abre e funciona offline no celular antes da prova | Claude |
-| Corrigir erro de gabarito ou bug que apareça durante o estudo | Quem achar avisa em "Recados"; Claude corrige com teste |
-| Qualquer coisa que mude a aparência ou a estrutura | **Ninguém, até depois da prova** |
+| Animação, visual, leitura, cores, tipografia, `motion.js`, `motion.css`, preferências de aparência | **Claude** |
+| Conteúdo, questões, gabaritos, plano de estudo, redação, dados (`data/*.js`), lógica do app | **Hermes** |
+| Roteiro e cronograma dos últimos dias, tirar dúvidas, explicar erros | **Hermes** (Claude ajuda se o estudante pedir) |
+| Bug que apareça durante o estudo | Quem achar avisa em "Recados"; o dono da área corrige com teste |
+| Arquivo compartilhado (`index.html`, `sw.js`) | Um de cada vez: avisar em "Recados" antes de editar |
+
+**Limite do design:** só o que ajuda a focar (leitura mais clara, menos distração). Animação nova só se puder ser desligada e respeitar `prefers-reduced-motion`. Nada que mude a navegação ou obrigue o estudante a reaprender o app.
 
 ## Plano de foco (sem tocar no app)
 
@@ -37,4 +39,5 @@ Pontos de partida reais do estudante (Enem 2025, dia 1): Linguagens 37/45, Hist.
 
 Formato: `AAAA-MM-DD HH:MM · quem · o que fez / o que falta / o que não mexer`. Mais novo em cima.
 
+- 2026-11-06 · Claude · Estudante definiu: Claude cuida de animação e design, Hermes do resto. Há mudanças não commitadas em `index.html`/`sw.js` (modo de leitura: destaque, foco, essencial) feitas pela sessão do Claude "Ouro Humanas site com animações"; Hermes não deve editar esses dois arquivos sem avisar aqui.
 - 2026-11-06 · Claude · Criei este arquivo e a branch `docs/hermes-claude`. Não mexi no app. O arquivo `tests/_d.mjs` aparece como não rastreado e é um resto de teste de depuração; não toquei.
