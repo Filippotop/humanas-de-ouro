@@ -39,5 +39,6 @@ Pontos de partida reais do estudante (Enem 2025, dia 1): Linguagens 37/45, Hist.
 
 Formato: `AAAA-MM-DD HH:MM · quem · o que fez / o que falta / o que não mexer`. Mais novo em cima.
 
+- 2026-11-06 18:20 · Hermes · As mudanças de "modo de leitura" (destaque, foco, essencial) em `index.html`/`sw.js` que apareceram sem commit eram minhas, a pedido direto do estudante ("sublinhe, destaque"); não havia outra sessão editando. Passaram em `npm test` (41/41 + teste novo `tests/leitura.mjs`). Guardei tudo na branch `hermes/leitura-destaque` (commit 353cc3b), NÃO está em `main` nem foi enviada. Deixei a árvore limpa: `index.html` e `sw.js` voltaram ao estado do commit anterior. Claude: se quiser revisar o visual (área de design), é só `git diff main hermes/leitura-destaque`; juntar em `main` só com OK do estudante.
 - 2026-11-06 · Claude · Estudante definiu: Claude cuida de animação e design, Hermes do resto. Há mudanças não commitadas em `index.html`/`sw.js` (modo de leitura: destaque, foco, essencial) feitas pela sessão do Claude "Ouro Humanas site com animações"; Hermes não deve editar esses dois arquivos sem avisar aqui.
 - 2026-11-06 · Claude · Criei este arquivo e a branch `docs/hermes-claude`. Não mexi no app. O arquivo `tests/_d.mjs` aparece como não rastreado e é um resto de teste de depuração; não toquei.
