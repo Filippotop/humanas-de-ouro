@@ -1,0 +1,603 @@
+[
+ {
+  "mod": "BI01",
+  "base": [
+   "Produtores de soja e milho do Sul do pa\u00eds costumam alternar as duas culturas na mesma \u00e1rea (rota\u00e7\u00e3o de culturas). Eles observam que o milho plantado depois da soja precisa de menos adubo nitrogenado. Nas ra\u00edzes da soja, que \u00e9 uma leguminosa, existem pequenos n\u00f3dulos habitados por bact\u00e9rias."
+  ],
+  "cmd": "A redu\u00e7\u00e3o da necessidade de adubo nitrogenado ocorre porque essas bact\u00e9rias",
+  "alts": [
+   "transformam nitratos do solo em nitrog\u00eanio gasoso, devolvendo-o \u00e0 atmosfera e adubando o terreno.",
+   "fazem fotoss\u00edntese nos n\u00f3dulos e fornecem glicose ao milho, que cresce mais.",
+   "fixam o nitrog\u00eanio gasoso do ar, transformando-o em compostos nitrogenados que enriquecem o solo e podem ser aproveitados pelas plantas.",
+   "convertem o nitrog\u00eanio do solo em g\u00e1s carb\u00f4nico, que o milho absorve nas folhas.",
+   "permitem que a soja absorva N2 pelos est\u00f4matos e o libere pelas ra\u00edzes diretamente para o milho."
+  ],
+  "ans": "C",
+  "dif": "m\u00e9dia",
+  "hab": "H28",
+  "ex": {
+   "A": "Descreve a desnitrifica\u00e7\u00e3o, que EMPOBRECE o solo de nitrog\u00eanio aproveit\u00e1vel; faz o processo oposto ao da fixa\u00e7\u00e3o.",
+   "B": "Bact\u00e9rias de n\u00f3dulos n\u00e3o fazem fotoss\u00edntese nem alimentam o milho com a\u00e7\u00facar; o benef\u00edcio \u00e9 o nitrog\u00eanio fixado.",
+   "C": "As bact\u00e9rias dos n\u00f3dulos fazem fixa\u00e7\u00e3o biol\u00f3gica do N2 atmosf\u00e9rico (que as plantas n\u00e3o conseguem usar diretamente) em am\u00f4nia/compostos assimil\u00e1veis; parte desse nitrog\u00eanio fica no solo e beneficia o milho seguinte, reduzindo o adubo. **Li\u00e7\u00e3o:** nitrog\u00eanio do ar s\u00f3 entra na cadeia alimentar via bact\u00e9rias fixadoras (ou processos industriais/raios).",
+   "D": "O g\u00e1s carb\u00f4nico \u00e9 fonte de carbono, n\u00e3o de nitrog\u00eanio; a aduba\u00e7\u00e3o nitrogenada trata de compostos com N.",
+   "E": "As plantas n\u00e3o assimilam N2 diretamente; dependem das bact\u00e9rias e a libera\u00e7\u00e3o n\u00e3o ocorre assim."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "conceito",
+   "D": "conceito",
+   "E": "detalhe"
+  }
+ },
+ {
+  "mod": "BI01",
+  "base": [
+   "Em uma grande reserva florestal, a ca\u00e7a ilegal reduziu drasticamente a popula\u00e7\u00e3o de on\u00e7as-pintadas e pumas. Alguns anos depois, pesquisadores notaram aumento do n\u00famero de pequenos mam\u00edferos que comem sementes e pl\u00e2ntulas (como cutias e pacas) e queda na quantidade de mudas de \u00e1rvores nascendo no sub-bosque."
+  ],
+  "cmd": "A rela\u00e7\u00e3o entre o desaparecimento dos grandes felinos e a queda de mudas de \u00e1rvores \u00e9 explicada por",
+  "alts": [
+   "menor controle populacional dos herb\u00edvoros e consumidores de sementes, que passaram a destruir mais sementes e pl\u00e2ntulas.",
+   "aumento da competi\u00e7\u00e3o entre os herb\u00edvoros, que passaram a diminuir de n\u00famero e a consumir menos plantas.",
+   "aumento dos decompositores, que passaram a degradar as sementes antes de germinarem.",
+   "diminui\u00e7\u00e3o de fezes dos felinos, que deixou o solo pobre em nutrientes para as mudas.",
+   "redu\u00e7\u00e3o da poliniza\u00e7\u00e3o das \u00e1rvores, j\u00e1 que os felinos transportavam o p\u00f3len entre as flores."
+  ],
+  "ans": "A",
+  "dif": "m\u00e9dia",
+  "hab": "H28",
+  "ex": {
+   "A": "Sem predadores de topo, as popula\u00e7\u00f5es de presas crescem (menos mortalidade por preda\u00e7\u00e3o) e consomem mais sementes e pl\u00e2ntulas, reduzindo a regenera\u00e7\u00e3o da floresta: efeito em cascata. **Li\u00e7\u00e3o:** predadores de topo regulam n\u00edveis inferiores; sua retirada desequilibra toda a teia.",
+   "B": "Inverte o efeito: sem predadores, os herb\u00edvoros AUMENTARAM (como diz o texto).",
+   "C": "Decompositores n\u00e3o s\u00e3o afetados diretamente pela perda de predadores e o texto aponta aumento de herb\u00edvoros.",
+   "D": "Fezes de felinos s\u00e3o fra\u00e7\u00e3o m\u00ednima da ciclagem de nutrientes; n\u00e3o explicam a queda observada.",
+   "E": "Felinos n\u00e3o s\u00e3o polinizadores."
+  },
+  "traps": {
+   "B": "inversao",
+   "C": "conceito",
+   "D": "detalhe",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "BI02",
+  "base": [
+   "Na Mata Atl\u00e2ntica, que hoje conserva apenas uma pequena parte de sua cobertura original, a vegeta\u00e7\u00e3o ficou dividida em fragmentos pequenos e isolados por pastos e planta\u00e7\u00f5es. Uma proposta de conserva\u00e7\u00e3o \u00e9 plantar faixas de mata nativa, chamadas corredores ecol\u00f3gicos, ligando esses fragmentos."
+  ],
+  "cmd": "Essa medida contribui para a conserva\u00e7\u00e3o da biodiversidade porque",
+  "alts": [
+   "substitui a mata por uma \u00fanica esp\u00e9cie arb\u00f3rea de crescimento r\u00e1pido, que garante abrigo a todos os animais.",
+   "elimina o efeito de borda, pois aumenta a \u00e1rea de contato entre a mata e as \u00e1reas de pasto.",
+   "dispensa a prote\u00e7\u00e3o dos fragmentos, j\u00e1 que a faixa plantada substitui a mata original.",
+   "isola as popula\u00e7\u00f5es, evitando doen\u00e7as e preservando a pureza gen\u00e9tica de cada fragmento.",
+   "permite o deslocamento de animais e a dispers\u00e3o de sementes entre fragmentos, favorecendo o fluxo g\u00eanico e reduzindo o risco de extin\u00e7\u00e3o local."
+  ],
+  "ans": "E",
+  "dif": "f\u00e1cil",
+  "hab": "H30",
+  "ex": {
+   "A": "Corredores usam vegeta\u00e7\u00e3o nativa e diversa; monocultura n\u00e3o sustenta a fauna original.",
+   "B": "Faixas estreitas aumentam a borda em vez de elimin\u00e1-la; o benef\u00edcio est\u00e1 na conex\u00e3o.",
+   "C": "Corredores complementam, n\u00e3o substituem, a prote\u00e7\u00e3o dos remanescentes.",
+   "D": "O isolamento \u00e9 o problema; a conex\u00e3o aumenta a diversidade gen\u00e9tica.",
+   "E": "Popula\u00e7\u00f5es isoladas e pequenas perdem variabilidade gen\u00e9tica e ficam vulner\u00e1veis; os corredores conectam fragmentos e permitem trocas de indiv\u00edduos, sementes e genes. **Li\u00e7\u00e3o:** a fragmenta\u00e7\u00e3o \u00e9 amea\u00e7a central; conectar habitats mitiga seus efeitos."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "inversao",
+   "C": "exagero",
+   "D": "oposto"
+  }
+ },
+ {
+  "mod": "BI02",
+  "base": [
+   "O mexilh\u00e3o-dourado, molusco origin\u00e1rio da \u00c1sia, chegou \u00e0 Am\u00e9rica do Sul provavelmente na \u00e1gua de lastro de navios e, nas \u00faltimas d\u00e9cadas, espalhou-se por rios e reservat\u00f3rios brasileiros. Forma densas col\u00f4nias que entopem tubula\u00e7\u00f5es de usinas hidrel\u00e9tricas e de capta\u00e7\u00e3o de \u00e1gua."
+  ],
+  "cmd": "O fator ecol\u00f3gico que mais favoreceu sua expans\u00e3o nas novas bacias hidrogr\u00e1ficas foi",
+  "alts": [
+   "muta\u00e7\u00f5es provocadas pelo novo ambiente, que tornaram cada indiv\u00edduo adaptado aos rios sul-americanos.",
+   "a aus\u00eancia de predadores, parasitas e competidores naturais que controlem sua popula\u00e7\u00e3o, somada \u00e0 alta capacidade reprodutiva.",
+   "sua origem na pr\u00f3pria bacia, onde evoluiu junto aos predadores que a controlam.",
+   "a prefer\u00eancia dos predadores nativos por essa esp\u00e9cie, que aumentou sua taxa de reprodu\u00e7\u00e3o.",
+   "a polui\u00e7\u00e3o dos cascos dos navios, que forneceu nutrientes essenciais ao molusco."
+  ],
+  "ans": "B",
+  "dif": "m\u00e9dia",
+  "hab": "H30",
+  "ex": {
+   "A": "O ambiente n\u00e3o induz muta\u00e7\u00f5es dirigidas (ideia lamarckista); a sele\u00e7\u00e3o atua sobre varia\u00e7\u00e3o preexistente.",
+   "B": "Fora de seu ambiente de origem, a esp\u00e9cie escapou dos inimigos naturais que limitam sua popula\u00e7\u00e3o, e se reproduz muito: t\u00edpico de esp\u00e9cie invasora. **Li\u00e7\u00e3o:** esp\u00e9cies ex\u00f3ticas invasoras prosperam quando faltam controles biol\u00f3gicos.",
+   "C": "O texto diz que a esp\u00e9cie \u00e9 origin\u00e1ria da \u00c1sia.",
+   "D": "Preda\u00e7\u00e3o intensa reduziria a popula\u00e7\u00e3o, n\u00e3o favoreceria a expans\u00e3o.",
+   "E": "O texto cita a \u00e1gua de lastro como forma de transporte, n\u00e3o como fonte de nutrientes."
+  },
+  "traps": {
+   "A": "conceito",
+   "C": "leitura",
+   "D": "oposto",
+   "E": "detalhe"
+  }
+ },
+ {
+  "mod": "BI03",
+  "base": [
+   "Pesquisadores colocaram ra\u00edzes de plantas em uma solu\u00e7\u00e3o com nitrato em concentra\u00e7\u00e3o baixa. As c\u00e9lulas das ra\u00edzes absorveram o nitrato e o acumularam em concentra\u00e7\u00e3o bem maior que a da solu\u00e7\u00e3o externa. Ao adicionar cianeto, subst\u00e2ncia que bloqueia a produ\u00e7\u00e3o de ATP na respira\u00e7\u00e3o celular, a absor\u00e7\u00e3o de nitrato diminuiu muito."
+  ],
+  "cmd": "O resultado do experimento indica que a absor\u00e7\u00e3o de nitrato pelas ra\u00edzes ocorre por",
+  "alts": [
+   "difus\u00e3o simples, a favor do gradiente de concentra\u00e7\u00e3o, sem gasto de energia.",
+   "osmose, em que o nitrato atravessa a membrana junto com a \u00e1gua.",
+   "difus\u00e3o facilitada, em que prote\u00ednas carregam o \u00edon a favor do gradiente, sem usar ATP.",
+   "transporte ativo, que movimenta \u00edons contra o gradiente de concentra\u00e7\u00e3o com gasto de ATP.",
+   "fagocitose, em que a c\u00e9lula engloba as mol\u00e9culas de nitrato com pseud\u00f3podes."
+  ],
+  "ans": "D",
+  "dif": "m\u00e9dia",
+  "hab": "H15",
+  "ex": {
+   "A": "O \u00edon vai do meio menos concentrado para o mais concentrado, contra o gradiente.",
+   "B": "Osmose \u00e9 a passagem de \u00e1gua; n\u00e3o explica ac\u00famulo de soluto nem depend\u00eancia de ATP.",
+   "C": "Existe difus\u00e3o facilitada, mas \u00e9 passiva; o experimento mostra depend\u00eancia de ATP.",
+   "D": "O ac\u00famulo em concentra\u00e7\u00e3o maior que a externa \u00e9 contra o gradiente, e a queda com o bloqueio do ATP mostra gasto de energia: transporte ativo. **Li\u00e7\u00e3o:** movimento contra o gradiente + depend\u00eancia de ATP = transporte ativo.",
+   "E": "C\u00e9lulas vegetais com parede n\u00e3o fagocitam e o nitrato \u00e9 \u00edon dissolvido."
+  },
+  "traps": {
+   "A": "inversao",
+   "B": "conceito",
+   "C": "detalhe",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "BI03",
+  "base": [
+   "Muitos adultos perdem, ao longo da vida, a capacidade de produzir a enzima lactase no intestino delgado. Nessas pessoas, a lactose do leite chega ao intestino grosso, onde \u00e9 fermentada por bact\u00e9rias, causando gases e diarreia. Hoje existem leites \"sem lactose\", nos quais a lactase \u00e9 adicionada durante a produ\u00e7\u00e3o."
+  ],
+  "cmd": "Esse leite pode ser consumido por pessoas com a intoler\u00e2ncia descrita porque nele a lactose foi",
+  "alts": [
+   "convertida em lip\u00eddios, que s\u00e3o absorvidos sem necessidade de enzimas digestivas.",
+   "neutralizada por um anti\u00e1cido, que impede as bact\u00e9rias intestinais de ferment\u00e1-la.",
+   "previamente quebrada em glicose e galactose, a\u00e7\u00facares simples que podem ser absorvidos no intestino delgado.",
+   "destru\u00edda pela pasteuriza\u00e7\u00e3o, pois a lactose \u00e9 uma prote\u00edna sens\u00edvel ao calor.",
+   "transformada em amido, que \u00e9 digerido lentamente e n\u00e3o gera gases."
+  ],
+  "ans": "C",
+  "dif": "f\u00e1cil",
+  "hab": "H14",
+  "ex": {
+   "A": "A lactase quebra a lactose; ela n\u00e3o \u00e9 convertida em lip\u00eddios.",
+   "B": "O problema \u00e9 enzim\u00e1tico, n\u00e3o de acidez.",
+   "C": "A lactase hidrolisa o dissacar\u00eddeo lactose em dois monossacar\u00eddeos (glicose e galactose), absorv\u00edveis sem necessidade da enzima do pr\u00f3prio indiv\u00edduo. **Li\u00e7\u00e3o:** enzimas catalisam a quebra do substrato; fornec\u00ea-las ao alimento substitui a falta no organismo.",
+   "D": "Lactose \u00e9 carboidrato (dissacar\u00eddeo), n\u00e3o prote\u00edna.",
+   "E": "A lactase n\u00e3o polimeriza a\u00e7\u00facares; ela os quebra."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "conceito",
+   "D": "conceito",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "BI04",
+  "base": [
+   "Em uma aula pr\u00e1tica, um grupo colocou ramos de uma planta aqu\u00e1tica em tr\u00eas tubos transparentes com \u00e1gua e bicarbonato, iluminados com a mesma intensidade, mas por filtros de cores diferentes. Ap\u00f3s uma hora, contaram as bolhas de g\u00e1s que sa\u00edam das folhas.",
+   "**Tubo com luz vermelha:** muitas bolhas. **Tubo com luz azul:** muitas bolhas. **Tubo com luz verde:** poucas bolhas."
+  ],
+  "cmd": "Considerando que as bolhas s\u00e3o de g\u00e1s oxig\u00eanio, o resultado indica que a clorofila",
+  "alts": [
+   "absorve principalmente a luz verde, por isso as folhas t\u00eam essa cor.",
+   "absorve com mais efici\u00eancia as luzes vermelha e azul, utilizadas na fotoss\u00edntese, e reflete grande parte da luz verde.",
+   "n\u00e3o depende de luz para produzir oxig\u00eanio, pois as bolhas surgiram nos tr\u00eas tubos.",
+   "produz g\u00e1s oxig\u00eanio apenas na fase escura, independentemente da cor da luz.",
+   "transforma a luz verde em calor, que acelera a libera\u00e7\u00e3o de g\u00e1s nos outros tubos."
+  ],
+  "ans": "B",
+  "dif": "f\u00e1cil",
+  "hab": "H15",
+  "ex": {
+   "A": "Inverte: a cor verde \u00e9 a refletida; o tubo verde teve menos fotoss\u00edntese.",
+   "B": "Mais bolhas de O2 = mais fotoss\u00edntese; ocorre onde h\u00e1 mais absor\u00e7\u00e3o (vermelho e azul). A luz verde \u00e9 refletida, por isso as folhas parecem verdes. **Li\u00e7\u00e3o:** a cor percebida \u00e9 a luz refletida, n\u00e3o a absorvida.",
+   "C": "H\u00e1 bolhas nos tr\u00eas tubos, mas em quantidades muito diferentes, e a fotoss\u00edntese depende de luz.",
+   "D": "O oxig\u00eanio vem da fot\u00f3lise da \u00e1gua, na fase clara, que depende de luz.",
+   "E": "N\u00e3o h\u00e1 evid\u00eancia disso; as diferen\u00e7as decorrem da absor\u00e7\u00e3o diferencial."
+  },
+  "traps": {
+   "A": "inversao",
+   "C": "leitura",
+   "D": "conceito",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "BI04",
+  "base": [
+   "Numa corrida de 100 metros, os m\u00fasculos do atleta recorrem a fermenta\u00e7\u00e3o l\u00e1ctica, que produz rapidamente 2 ATP por mol\u00e9cula de glicose, mas acumula \u00e1cido l\u00e1tico e causa fadiga. Em uma maratona, o atleta mant\u00e9m o esfor\u00e7o por horas, e o ATP \u00e9 obtido principalmente por respira\u00e7\u00e3o aer\u00f3bia, que rende cerca de 30 ATP por glicose."
+  ],
+  "cmd": "A respira\u00e7\u00e3o aer\u00f3bia permite esfor\u00e7o prolongado porque",
+  "alts": [
+   "ocorre inteiramente no citoplasma e produz mais ATP por n\u00e3o precisar de oxig\u00eanio.",
+   "rende menos ATP que a fermenta\u00e7\u00e3o, mas n\u00e3o produz \u00e1cido l\u00e1tico.",
+   "produz o mesmo ATP que a fermenta\u00e7\u00e3o, mas libera o \u00e1cido l\u00e1tico no sangue com mais rapidez.",
+   "transforma o \u00e1cido l\u00e1tico em glicose nas mitoc\u00f4ndrias, repondo o combust\u00edvel do m\u00fasculo.",
+   "oxida a glicose completamente nas mitoc\u00f4ndrias, com g\u00e1s oxig\u00eanio como aceptor final de el\u00e9trons, rendendo cerca de 15 vezes mais ATP que a fermenta\u00e7\u00e3o."
+  ],
+  "ans": "E",
+  "dif": "m\u00e9dia",
+  "hab": "H14",
+  "ex": {
+   "A": "Etapas finais ocorrem na mitoc\u00f4ndria e dependem de O2.",
+   "B": "Rende MAIS ATP (cerca de 30 contra 2).",
+   "C": "O rendimento \u00e9 bem diferente e a respira\u00e7\u00e3o n\u00e3o produz \u00e1cido l\u00e1tico.",
+   "D": "A reconvers\u00e3o ocorre no f\u00edgado, e n\u00e3o explica o maior rendimento.",
+   "E": "30 \u00f7 2 = 15: a oxida\u00e7\u00e3o completa at\u00e9 CO2 e H2O, com cadeia respirat\u00f3ria, extrai muito mais energia por glicose e n\u00e3o acumula \u00e1cido l\u00e1tico. **Li\u00e7\u00e3o:** o rendimento energ\u00e9tico da respira\u00e7\u00e3o aer\u00f3bia \u00e9 muito maior que o da fermenta\u00e7\u00e3o."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "inversao",
+   "C": "conceito",
+   "D": "detalhe"
+  }
+ },
+ {
+  "mod": "BI05",
+  "base": [
+   "O albinismo oculocut\u00e2neo \u00e9 uma condi\u00e7\u00e3o determinada por um alelo recessivo de um gene autoss\u00f4mico, que impede a produ\u00e7\u00e3o normal de melanina. Um casal com pigmenta\u00e7\u00e3o normal teve um primeiro filho albino e deseja ter outra crian\u00e7a."
+  ],
+  "cmd": "A probabilidade de que a pr\u00f3xima crian\u00e7a seja uma menina com pigmenta\u00e7\u00e3o normal \u00e9 de",
+  "alts": [
+   "3/8.",
+   "1/4.",
+   "1/2.",
+   "3/4.",
+   "1/8."
+  ],
+  "ans": "A",
+  "dif": "m\u00e9dia",
+  "hab": "H13",
+  "ex": {
+   "A": "O casal \u00e9 Aa \u00d7 Aa (teve filho aa). P(normal) = 3/4; P(menina) = 1/2; 3/4 \u00d7 1/2 = 3/8. **Li\u00e7\u00e3o:** eventos independentes se multiplicam; um filho afetado revela que os pais s\u00e3o heterozigotos.",
+   "B": "\u00c9 a probabilidade de ser albino; n\u00e3o \u00e9 o que se pede.",
+   "C": "Considera s\u00f3 o sexo, ignorando a pigmenta\u00e7\u00e3o.",
+   "D": "Considera s\u00f3 a pigmenta\u00e7\u00e3o, esquecendo ser menina.",
+   "E": "\u00c9 a probabilidade de menina albina (1/4 \u00d7 1/2); faltou considerar o fen\u00f3tipo normal."
+  },
+  "traps": {
+   "B": "conta",
+   "C": "conta",
+   "D": "leitura",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "BI05",
+  "base": [
+   "O sistema ABO \u00e9 determinado por tr\u00eas alelos (I^A, I^B e i); I^A e I^B s\u00e3o codominantes e i \u00e9 recessivo. Uma mulher do grupo A, cujo pai era do grupo O, e um homem do grupo B, cuja m\u00e3e era do grupo O, esperam um beb\u00ea."
+  ],
+  "cmd": "A probabilidade de que seja um menino do grupo AB \u00e9 de",
+  "alts": [
+   "1/2.",
+   "1/4.",
+   "1/16.",
+   "1/8.",
+   "3/4."
+  ],
+  "ans": "D",
+  "dif": "m\u00e9dia",
+  "hab": "H13",
+  "ex": {
+   "A": "Considera s\u00f3 o sexo.",
+   "B": "Considera s\u00f3 o grupo AB, ignorando o sexo.",
+   "C": "Multiplicou 1/4 \u00d7 1/4, considerando errada a probabilidade do sexo.",
+   "D": "Pai da mulher \u00e9 ii, logo ela \u00e9 I^A i; a m\u00e3e do homem \u00e9 ii, logo ele \u00e9 I^B i. P(AB) = 1/4 e P(menino) = 1/2, ent\u00e3o 1/4 \u00d7 1/2 = 1/8. **Li\u00e7\u00e3o:** deduza os gen\u00f3tipos pela ascend\u00eancia antes de calcular.",
+   "E": "\u00c9 a probabilidade de a crian\u00e7a N\u00c3O ser do grupo O, sem considerar o sexo."
+  },
+  "traps": {
+   "A": "conta",
+   "B": "conta",
+   "C": "conta",
+   "E": "leitura"
+  }
+ },
+ {
+  "mod": "BI06",
+  "base": [
+   "A t\u00e9cnica de PCR (rea\u00e7\u00e3o em cadeia da polimerase) \u00e9 usada para amplificar fragmentos de DNA em testes diagn\u00f3sticos. Em cada ciclo, o n\u00famero de c\u00f3pias do fragmento-alvo dobra. Uma amostra tinha 50 mol\u00e9culas do fragmento de um v\u00edrus, e o equipamento realizou 10 ciclos com efici\u00eancia de 100%."
+  ],
+  "cmd": "Ao final do procedimento, o n\u00famero de c\u00f3pias do fragmento \u00e9 de",
+  "alts": [
+   "500.",
+   "1 024.",
+   "51 200.",
+   "25 600.",
+   "512 000."
+  ],
+  "ans": "C",
+  "dif": "m\u00e9dia",
+  "hab": "H29",
+  "ex": {
+   "A": "Somou 10 vezes 50 (crescimento linear).",
+   "B": "Calculou 2^10 e esqueceu de multiplicar pelas 50 mol\u00e9culas iniciais.",
+   "C": "Cada ciclo dobra: 50 \u00d7 2^10 = 50 \u00d7 1 024 = 51 200. **Li\u00e7\u00e3o:** a amplifica\u00e7\u00e3o \u00e9 exponencial (2^n), n\u00e3o linear.",
+   "D": "Usou 9 ciclos (50 \u00d7 2^9).",
+   "E": "Multiplicou 51 200 por 10 novamente."
+  },
+  "traps": {
+   "A": "conta",
+   "B": "conta",
+   "D": "conta",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "BI06",
+  "base": [
+   "A insulina humana usada no tratamento do diabetes \u00e9 hoje produzida por bact\u00e9rias geneticamente modificadas. O gene humano da insulina \u00e9 cortado com uma enzima de restri\u00e7\u00e3o e inserido em um plasm\u00eddeo, que \u00e9 introduzido nas bact\u00e9rias. Elas s\u00e3o cultivadas em grandes tanques."
+  ],
+  "cmd": "Nesse processo, a enzima de restri\u00e7\u00e3o e as bact\u00e9rias t\u00eam, respectivamente, o papel de",
+  "alts": [
+   "sintetizar a insulina a partir dos amino\u00e1cidos, e armazenar a prote\u00edna no citoplasma.",
+   "cortar o DNA em s\u00edtios espec\u00edficos para permitir a inser\u00e7\u00e3o do gene, e produzir a insulina ao se multiplicarem com o gene recebido.",
+   "unir os fragmentos de DNA ao plasm\u00eddeo, e infectar as c\u00e9lulas do p\u00e2ncreas do paciente.",
+   "multiplicar o gene humano nas c\u00e9lulas do paciente, e eliminar os v\u00edrus do tanque.",
+   "alterar o gene humano para que a bact\u00e9ria o leia, pois o c\u00f3digo gen\u00e9tico difere entre as esp\u00e9cies."
+  ],
+  "ans": "B",
+  "dif": "m\u00e9dia",
+  "hab": "H29",
+  "ex": {
+   "A": "A enzima de restri\u00e7\u00e3o n\u00e3o sintetiza prote\u00ednas; ela corta DNA.",
+   "B": "Enzimas de restri\u00e7\u00e3o reconhecem sequ\u00eancias espec\u00edficas e cortam o DNA; ao receber o plasm\u00eddeo recombinante, a bact\u00e9ria expressa o gene e sintetiza insulina, pois o c\u00f3digo gen\u00e9tico \u00e9 praticamente universal. **Li\u00e7\u00e3o:** DNA recombinante = cortar, colar e expressar.",
+   "C": "Quem une fragmentos \u00e9 a ligase, e as bact\u00e9rias n\u00e3o infectam o paciente no processo industrial.",
+   "D": "O processo ocorre em tanques com bact\u00e9rias, n\u00e3o no paciente.",
+   "E": "O c\u00f3digo gen\u00e9tico \u00e9 praticamente universal; bact\u00e9rias leem o gene humano (cDNA)."
+  },
+  "traps": {
+   "A": "conceito",
+   "C": "conceito",
+   "D": "conceito",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "BI07",
+  "base": [
+   "Durante a esta\u00e7\u00e3o chuvosa, um munic\u00edpio registrou aumento de casos de dengue. Fiscais da vigil\u00e2ncia sanit\u00e1ria encontraram, em muitas casas, pneus velhos a c\u00e9u aberto, pratos de vasos de plantas com \u00e1gua e caixas-d'\u00e1gua destampadas."
+  ],
+  "cmd": "A medida de preven\u00e7\u00e3o mais adequada e sua justificativa s\u00e3o",
+  "alts": [
+   "administrar antibi\u00f3ticos aos doentes, pois a dengue \u00e9 causada por bact\u00e9rias.",
+   "evitar o contato com pessoas doentes, pois a transmiss\u00e3o ocorre por got\u00edculas do espirro.",
+   "ferver a \u00e1gua de beber, pois o v\u00edrus \u00e9 transmitido pela ingest\u00e3o de \u00e1gua contaminada.",
+   "eliminar ou vedar os recipientes com \u00e1gua parada, pois neles a f\u00eamea do Aedes aegypti deposita ovos e as larvas se desenvolvem.",
+   "controlar roedores, que s\u00e3o os hospedeiros definitivos do v\u00edrus."
+  ],
+  "ans": "D",
+  "dif": "f\u00e1cil",
+  "hab": "H14",
+  "ex": {
+   "A": "A dengue \u00e9 viral; antibi\u00f3ticos n\u00e3o agem em v\u00edrus.",
+   "B": "A transmiss\u00e3o ocorre pela picada do mosquito.",
+   "C": "N\u00e3o \u00e9 transmitida por ingest\u00e3o de \u00e1gua.",
+   "D": "A dengue \u00e9 causada por v\u00edrus transmitido pela picada do Aedes aegypti, cujo ciclo larval \u00e9 aqu\u00e1tico; eliminar criadouros interrompe o ciclo do vetor. **Li\u00e7\u00e3o:** nas doen\u00e7as de vetor, controla-se o vetor e seus criadouros.",
+   "E": "Roedores relacionam-se \u00e0 leptospirose, n\u00e3o \u00e0 dengue."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "conceito",
+   "C": "conceito",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "BI07",
+  "base": [
+   "Para que a transmiss\u00e3o de um v\u00edrus se interrompa em uma popula\u00e7\u00e3o, n\u00e3o \u00e9 necess\u00e1rio vacinar todos: se parcela suficiente estiver imune, os casos isolados n\u00e3o encontram suscet\u00edveis para infectar (imunidade de rebanho). A fra\u00e7\u00e3o m\u00ednima de imunes necess\u00e1ria \u00e9 calculada por 1 \u2212 1/R0, em que R0 \u00e9 o n\u00famero m\u00e9dio de pessoas infectadas por um doente em popula\u00e7\u00e3o totalmente suscet\u00edvel. Para certa doen\u00e7a, R0 = 4."
+  ],
+  "cmd": "A cobertura vacinal m\u00ednima necess\u00e1ria para interromper a transmiss\u00e3o \u00e9 de",
+  "alts": [
+   "75%.",
+   "25%.",
+   "50%.",
+   "90%.",
+   "100%."
+  ],
+  "ans": "A",
+  "dif": "m\u00e9dia",
+  "hab": "H17",
+  "ex": {
+   "A": "1 \u2212 1/4 = 1 \u2212 0,25 = 0,75, ou seja, 75%. **Li\u00e7\u00e3o:** quanto maior o R0, maior a cobertura necess\u00e1ria.",
+   "B": "\u00c9 1/R0, o inverso, n\u00e3o o complementar.",
+   "C": "Valor que seria necess\u00e1rio para R0 = 2.",
+   "D": "Valor t\u00edpico de doen\u00e7as com R0 maior (sarampo); n\u00e3o resulta da f\u00f3rmula.",
+   "E": "Imunidade de rebanho dispensa vacinar todos."
+  },
+  "traps": {
+   "B": "inversao",
+   "C": "conta",
+   "D": "detalhe",
+   "E": "exagero"
+  }
+ },
+ {
+  "mod": "BI08",
+  "base": [
+   "Os ossos do bra\u00e7o humano, da asa do morcego e da nadadeira da baleia t\u00eam a mesma organiza\u00e7\u00e3o b\u00e1sica (\u00famero, r\u00e1dio, ulna, ossos do carpo e falanges), embora usados para fun\u00e7\u00f5es diferentes: segurar objetos, voar e nadar. J\u00e1 a asa de um inseto e a asa de uma ave servem ao voo, mas t\u00eam estruturas internas muito diferentes."
+  ],
+  "cmd": "A semelhan\u00e7a de organiza\u00e7\u00e3o \u00f3ssea entre bra\u00e7o, asa de morcego e nadadeira indica que esses animais",
+  "alts": [
+   "sofreram evolu\u00e7\u00e3o convergente, pois suas estruturas desempenham a mesma fun\u00e7\u00e3o.",
+   "desenvolveram os membros por uso e desuso e transmitiram o resultado aos descendentes.",
+   "possuem estruturas an\u00e1logas, que surgiram de forma independente nos tr\u00eas grupos.",
+   "passaram a ter ossos iguais porque vivem no mesmo ambiente.",
+   "herdaram a estrutura de um ancestral comum, que sofreu modifica\u00e7\u00f5es ao longo do tempo, adaptando-se a fun\u00e7\u00f5es distintas."
+  ],
+  "ans": "E",
+  "dif": "m\u00e9dia",
+  "hab": "H16",
+  "ex": {
+   "A": "Converg\u00eancia produz estruturas an\u00e1logas (como as asas de inseto e ave); aqui as fun\u00e7\u00f5es s\u00e3o diferentes.",
+   "B": "\u00c9 a ideia lamarckista, n\u00e3o aceita.",
+   "C": "Estruturas an\u00e1logas teriam origem diferente.",
+   "D": "Vivem em ambientes diferentes; a semelhan\u00e7a vem da ancestralidade.",
+   "E": "S\u00e3o estruturas hom\u00f3logas: mesma origem evolutiva, fun\u00e7\u00f5es diferentes (diverg\u00eancia adaptativa). **Li\u00e7\u00e3o:** homologia = origem comum; analogia = fun\u00e7\u00e3o semelhante com origem distinta."
+  },
+  "traps": {
+   "A": "inversao",
+   "B": "conceito",
+   "C": "conceito",
+   "D": "conceito"
+  }
+ },
+ {
+  "mod": "BI08",
+  "base": [
+   "No arquip\u00e9lago de Gal\u00e1pagos, pesquisadores acompanharam por d\u00e9cadas uma popula\u00e7\u00e3o de tentilh\u00f5es. Durante uma longa seca, as sementes pequenas e macias acabaram, restando principalmente sementes grandes e duras. Muitas aves morreram, e as sobreviventes tinham, em m\u00e9dia, bicos maiores. Os filhotes da gera\u00e7\u00e3o seguinte tamb\u00e9m apresentaram, em m\u00e9dia, bicos maiores."
+  ],
+  "cmd": "Do ponto de vista da teoria da sele\u00e7\u00e3o natural, o aumento do tamanho m\u00e9dio dos bicos ocorreu porque",
+  "alts": [
+   "cada ave esfor\u00e7ou-se para abrir sementes duras, e o bico cresceu e foi transmitido aos filhotes.",
+   "a seca provocou muta\u00e7\u00f5es nas aves, que passaram a produzir bicos maiores para sobreviver.",
+   "as aves de bico maior, que j\u00e1 existiam na popula\u00e7\u00e3o, conseguiram abrir as sementes duras, sobreviveram mais e deixaram mais descendentes.",
+   "todas as aves da popula\u00e7\u00e3o se adaptaram \u00e0 seca, mantendo o bico, que apenas ficou mais forte.",
+   "as aves de bico pequeno migraram para outras ilhas, deixando apenas as de bico grande."
+  ],
+  "ans": "C",
+  "dif": "m\u00e9dia",
+  "hab": "H16",
+  "ex": {
+   "A": "\u00c9 a l\u00f3gica lamarckista; o uso n\u00e3o altera o que \u00e9 herdado.",
+   "B": "O ambiente n\u00e3o induz muta\u00e7\u00f5es direcionadas.",
+   "C": "H\u00e1 varia\u00e7\u00e3o heredit\u00e1ria; o fator ambiental (seca) selecionou os indiv\u00edduos mais aptos, cuja caracter\u00edstica aumentou de frequ\u00eancia. **Li\u00e7\u00e3o:** a sele\u00e7\u00e3o natural age sobre varia\u00e7\u00e3o preexistente e heredit\u00e1ria.",
+   "D": "Houve mortalidade seletiva; as aves n\u00e3o mudaram individualmente.",
+   "E": "O texto fala de morte dos menos aptos, n\u00e3o de migra\u00e7\u00e3o."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "conceito",
+   "D": "leitura",
+   "E": "detalhe"
+  }
+ },
+ {
+  "mod": "BI09",
+  "base": [
+   "Um menino de 9 anos passou a sentir muita sede, urinar em grande quantidade e perder peso. Exames mostraram glicemia muito elevada, e o diagn\u00f3stico foi diabetes tipo 1, doen\u00e7a autoimune em que as defesas do corpo destroem as c\u00e9lulas beta das ilhotas do p\u00e2ncreas. O tratamento inclui inje\u00e7\u00f5es di\u00e1rias de insulina, que \u00e9 um horm\u00f4nio de natureza proteica."
+  ],
+  "cmd": "A necessidade da insulina e o motivo de ela ser injetada, e n\u00e3o ingerida, s\u00e3o, respectivamente:",
+  "alts": [
+   "o p\u00e2ncreas produz glucagon em excesso; a insulina ingerida seria destru\u00edda pelas c\u00e9lulas beta.",
+   "sem as c\u00e9lulas beta falta o horm\u00f4nio que promove a entrada de glicose nas c\u00e9lulas; se ingerida, seria digerida como qualquer prote\u00edna.",
+   "a insulina aumenta a glicemia; \u00e9 injetada porque lip\u00eddios s\u00e3o pouco absorvidos no intestino.",
+   "a insulina estimula a produ\u00e7\u00e3o de urina; \u00e9 injetada porque o f\u00edgado a eliminaria.",
+   "a insulina \u00e9 produzida nos rins; \u00e9 injetada para compensar a perda de \u00e1gua."
+  ],
+  "ans": "B",
+  "dif": "m\u00e9dia",
+  "hab": "H14",
+  "ex": {
+   "A": "O problema \u00e9 a falta de insulina; c\u00e9lulas beta n\u00e3o destroem insulina ingerida.",
+   "B": "Sem insulina, a glicose permanece no sangue e \u00e9 eliminada na urina, arrastando \u00e1gua (sede e poli\u00faria). Como prote\u00edna, a insulina seria digerida no tubo digestivo e perderia a fun\u00e7\u00e3o. **Li\u00e7\u00e3o:** horm\u00f4nios proteicos precisam ser injetados.",
+   "C": "A insulina REDUZ a glicemia e \u00e9 prote\u00edna, n\u00e3o lip\u00eddio.",
+   "D": "A insulina n\u00e3o estimula diretamente a diurese; a poli\u00faria vem do excesso de glicose.",
+   "E": "A insulina \u00e9 produzida no p\u00e2ncreas."
+  },
+  "traps": {
+   "A": "conceito",
+   "C": "inversao",
+   "D": "conceito",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "BI09",
+  "base": [
+   "Atletas e alpinistas que treinam por semanas em locais de grande altitude, onde a press\u00e3o parcial de g\u00e1s oxig\u00eanio \u00e9 menor, costumam apresentar, ao voltar ao n\u00edvel do mar, melhor desempenho em provas de resist\u00eancia. Eles apresentam maior quantidade de hem\u00e1cias no sangue, em resposta ao aumento de um horm\u00f4nio produzido principalmente pelos rins (eritropoetina)."
+  ],
+  "cmd": "O aumento do n\u00famero de hem\u00e1cias melhora o desempenho porque",
+  "alts": [
+   "aumenta a concentra\u00e7\u00e3o de g\u00e1s oxig\u00eanio no ar inspirado.",
+   "faz os pulm\u00f5es dobrarem de tamanho, aumentando a superf\u00edcie de trocas gasosas.",
+   "faz a hemoglobina transportar g\u00e1s carb\u00f4nico no lugar do g\u00e1s oxig\u00eanio.",
+   "amplia a capacidade de transporte de g\u00e1s oxig\u00eanio pelo sangue at\u00e9 os tecidos, favorecendo a respira\u00e7\u00e3o aer\u00f3bia nos m\u00fasculos.",
+   "elimina a necessidade de respira\u00e7\u00e3o aer\u00f3bia, pois as hem\u00e1cias fermentam a glicose."
+  ],
+  "ans": "D",
+  "dif": "m\u00e9dia",
+  "hab": "H14",
+  "ex": {
+   "A": "A composi\u00e7\u00e3o do ar n\u00e3o muda com o n\u00famero de hem\u00e1cias.",
+   "B": "N\u00e3o \u00e9 o mecanismo descrito; o texto fala de hem\u00e1cias.",
+   "C": "Inverte a fun\u00e7\u00e3o principal da hemoglobina nesse contexto.",
+   "D": "As hem\u00e1cias cont\u00eam hemoglobina, que transporta O2; com mais hem\u00e1cias, mais oxig\u00eanio chega aos m\u00fasculos, sustentando a respira\u00e7\u00e3o aer\u00f3bia. **Li\u00e7\u00e3o:** a adapta\u00e7\u00e3o fisiol\u00f3gica compensa a menor disponibilidade de O2.",
+   "E": "Os m\u00fasculos continuam dependentes de respira\u00e7\u00e3o aer\u00f3bia; hem\u00e1cias n\u00e3o s\u00e3o a fonte de energia dos m\u00fasculos."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "detalhe",
+   "C": "inversao",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "BI10",
+  "base": [
+   "Um zool\u00f3gico cataloga seus felinos e can\u00eddeos pelos nomes cient\u00edficos: **Panthera onca** (on\u00e7a-pintada), **Panthera leo** (le\u00e3o), **Puma concolor** (su\u00e7uarana) e **Canis lupus** (lobo-cinzento)."
+  ],
+  "cmd": "Considerando apenas os nomes cient\u00edficos, a esp\u00e9cie com rela\u00e7\u00e3o de parentesco mais pr\u00f3xima da on\u00e7a-pintada \u00e9",
+  "alts": [
+   "Panthera leo, porque pertence ao mesmo g\u00eanero.",
+   "Puma concolor, porque tamb\u00e9m \u00e9 chamada de on\u00e7a.",
+   "Canis lupus, porque todos os carn\u00edvoros formam uma s\u00f3 esp\u00e9cie.",
+   "todas igualmente, pois s\u00e3o da ordem Carnivora.",
+   "nenhuma, pois cada esp\u00e9cie possui um nome cient\u00edfico diferente."
+  ],
+  "ans": "A",
+  "dif": "f\u00e1cil",
+  "hab": "H16",
+  "ex": {
+   "A": "Pelo sistema binomial, o primeiro nome \u00e9 o g\u00eanero; esp\u00e9cies do mesmo g\u00eanero s\u00e3o agrupadas por maior semelhan\u00e7a e proximidade evolutiva. **Li\u00e7\u00e3o:** quanto mais baixo o n\u00edvel taxon\u00f4mico compartilhado, maior o parentesco.",
+   "B": "Nome popular n\u00e3o indica parentesco; g\u00eaneros diferentes.",
+   "C": "Carn\u00edvoros formam uma ordem com muitas esp\u00e9cies.",
+   "D": "Pertencer \u00e0 mesma ordem \u00e9 verdade, mas h\u00e1 agrupamentos mais restritos.",
+   "E": "O nome diferente refere-se \u00e0 esp\u00e9cie; o g\u00eanero indica proximidade."
+  },
+  "traps": {
+   "B": "conceito",
+   "C": "exagero",
+   "D": "detalhe",
+   "E": "leitura"
+  }
+ },
+ {
+  "mod": "BI10",
+  "base": [
+   "Samambaias possuem vasos condutores de seiva e podem atingir mais de um metro de altura, mas s\u00e3o encontradas, em geral, em locais sombreados e \u00famidos, como beira de rios e interior de matas. Elas n\u00e3o produzem flores nem sementes."
+  ],
+  "cmd": "A depend\u00eancia de ambientes \u00famidos est\u00e1 relacionada ao fato de que nas samambaias",
+  "alts": [
+   "n\u00e3o existem vasos condutores, e a \u00e1gua se move por difus\u00e3o c\u00e9lula a c\u00e9lula.",
+   "as sementes precisam de \u00e1gua para germinar, pois n\u00e3o t\u00eam reservas.",
+   "as flores precisam da \u00e1gua para atrair polinizadores aqu\u00e1ticos.",
+   "as ra\u00edzes ausentes impedem a absor\u00e7\u00e3o de \u00e1gua, sendo necess\u00e1rio viver sobre rios.",
+   "os gametas masculinos t\u00eam flagelos e precisam de uma pel\u00edcula de \u00e1gua para nadar at\u00e9 a oosfera."
+  ],
+  "ans": "E",
+  "dif": "m\u00e9dia",
+  "hab": "H28",
+  "ex": {
+   "A": "O texto afirma que possuem vasos condutores.",
+   "B": "Samambaias n\u00e3o produzem sementes; usam esporos.",
+   "C": "N\u00e3o possuem flores.",
+   "D": "Samambaias t\u00eam ra\u00edzes.",
+   "E": "Nas pterid\u00f3fitas, os anterozoides flagelados dependem de \u00e1gua para a fecunda\u00e7\u00e3o, mesmo que a planta possua vasos condutores. **Li\u00e7\u00e3o:** s\u00f3 sementes e gr\u00e3os de p\u00f3len libertam a fecunda\u00e7\u00e3o da \u00e1gua."
+  },
+  "traps": {
+   "A": "leitura",
+   "B": "detalhe",
+   "C": "conceito",
+   "D": "conceito"
+  }
+ }
+]

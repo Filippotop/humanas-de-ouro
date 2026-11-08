@@ -1,0 +1,844 @@
+[
+ {
+  "mod": "MA01",
+  "base": [
+   "Em uma granja, duas bombas abastecem o mesmo reservat\u00f3rio de \u00e1gua. Sozinha, a bomba A enche o reservat\u00f3rio vazio em 6 horas; sozinha, a bomba B o enche em 12 horas. Em certo dia, com o reservat\u00f3rio vazio, s\u00f3 a bomba A foi ligada. Duas horas depois, a bomba B tamb\u00e9m foi ligada, e as duas passaram a trabalhar juntas, com as vaz\u00f5es constantes, at\u00e9 o reservat\u00f3rio ficar cheio."
+  ],
+  "cmd": "O tempo total, contado desde o momento em que a bomba A foi ligada, at\u00e9 o reservat\u00f3rio ficar cheio foi de",
+  "alts": [
+   "4 h.",
+   "6 h.",
+   "4 h 40 min.",
+   "5 h 7 min.",
+   "3 h 20 min."
+  ],
+  "ans": "C",
+  "dif": "m\u00e9dia",
+  "hab": "H16",
+  "ex": {
+   "C": "Em 2 h, a bomba A enche 2/6 = 1/3 do reservat\u00f3rio; faltam 2/3. Juntas, as bombas enchem 1/6 + 1/12 = 3/12 = 1/4 do reservat\u00f3rio por hora (4 h para encher tudo). Para 2/3 do reservat\u00f3rio: (2/3) \u00f7 (1/4) = 8/3 h = 2 h 40 min. Total: 2 h + 2 h 40 min = 4 h 40 min. **Li\u00e7\u00e3o:** em problemas de torneiras/bombas, some as taxas (parte do trabalho por hora) e trabalhe com a fra\u00e7\u00e3o que falta.",
+   "A": "Calculou apenas o tempo das duas bombas juntas (4 h para o reservat\u00f3rio inteiro) e esqueceu a fra\u00e7\u00e3o j\u00e1 enchida pela bomba A antes da B ser ligada.",
+   "B": "Somou as 2 h iniciais com as 4 h de trabalho conjunto para o reservat\u00f3rio inteiro, sem descontar o 1/3 j\u00e1 enchido pela bomba A (ou considerou que s\u00f3 A enche tudo).",
+   "D": "Achou 2 + 8/3 = 4,67 h, mas leu o 0,67 como 67 minutos em vez de 0,67 \u00d7 60 \u2248 40 minutos.",
+   "E": "Errou a fra\u00e7\u00e3o restante: usou 1/3 (em vez de 2/3) e obteve 2 h + 4 h \u00d7 1/3 = 3 h 20 min."
+  },
+  "traps": {
+   "A": "detalhe",
+   "B": "conceito",
+   "D": "unidade",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "MA01",
+  "base": [
+   "Um latic\u00ednio padroniza o leite misturando leite integral, com 3,5% de gordura, e leite desnatado, com 0,5% de gordura. Para atender a um pedido, o latic\u00ednio precisa preparar 1 000 litros de leite com exatamente 2,3% de gordura."
+  ],
+  "cmd": "O volume de leite desnatado, em litro, que deve entrar nessa mistura \u00e9",
+  "alts": [
+   "400.",
+   "600.",
+   "500.",
+   "230.",
+   "120."
+  ],
+  "ans": "A",
+  "dif": "m\u00e9dia",
+  "hab": "H16",
+  "ex": {
+   "A": "Seja x o volume de integral (L); o de desnatado \u00e9 1 000 \u2212 x. Gordura total: 3,5x + 0,5(1 000 \u2212 x) = 2,3 \u00b7 1 000 \u2192 3x + 500 = 2 300 \u2192 x = 600. Logo, o desnatado \u00e9 1 000 \u2212 600 = 400 L. Confer\u00eancia: 0,035\u00b7600 + 0,005\u00b7400 = 21 + 2 = 23 L de gordura = 2,3% de 1 000 L. **Li\u00e7\u00e3o:** em misturas, a quantidade total do componente (aqui, gordura) \u00e9 a soma das quantidades das partes; a concentra\u00e7\u00e3o da mistura fica entre as dos ingredientes.",
+   "B": "Encontrou corretamente 600 L, mas \u00e9 o volume de leite INTEGRAL; a pergunta pedia o desnatado (1 000 \u2212 600).",
+   "C": "Tirou a m\u00e9dia simples dos teores, achando que 2,3% fica no meio, e dividiu o volume pela metade; como 2,3% n\u00e3o \u00e9 o ponto m\u00e9dio de 0,5% e 3,5% (que seria 2,0%), as partes n\u00e3o s\u00e3o iguais.",
+   "D": "Converteu 2,3% em 0,23 (erro de v\u00edrgula) e calculou 23% de 1 000 como se fosse o volume de desnatado.",
+   "E": "Achou a diferen\u00e7a 3,5 \u2212 2,3 = 1,2 e multiplicou por 100, esquecendo de dividir pela diferen\u00e7a entre os teores extremos (3,0): 1,2/3,0 \u00d7 1 000 = 400."
+  },
+  "traps": {
+   "B": "leitura",
+   "C": "conceito",
+   "D": "conceito",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "MA02",
+  "base": [
+   "Um criador pegou emprestado R$ 10 000,00 para reformar um galp\u00e3o, a juros compostos de 2% ao m\u00eas. Ao final do primeiro m\u00eas, ele pagou R$ 4 000,00 e, ao final do segundo m\u00eas, quitou toda a d\u00edvida com um \u00fanico pagamento."
+  ],
+  "cmd": "O valor desse \u00faltimo pagamento, em real, foi",
+  "alts": [
+   "6 120,00.",
+   "6 200,00.",
+   "6 404,00.",
+   "6 324,00.",
+   "6 240,00."
+  ],
+  "ans": "D",
+  "dif": "m\u00e9dia",
+  "hab": "H18",
+  "ex": {
+   "D": "Fim do 1\u00ba m\u00eas: 10 000 \u00b7 1,02 = 10 200. Ap\u00f3s o pagamento de 4 000, o saldo \u00e9 6 200. Fim do 2\u00ba m\u00eas: 6 200 \u00b7 1,02 = 6 324. **Li\u00e7\u00e3o:** nos juros compostos, a taxa incide sobre o saldo devedor do m\u00eas; o pagamento \u00e9 descontado depois que os juros do per\u00edodo j\u00e1 foram acrescentados.",
+   "A": "Descontou os R$ 4 000,00 antes de aplicar os juros do 1\u00ba m\u00eas: (10 000 \u2212 4 000) \u00b7 1,02.",
+   "B": "Parou no saldo do fim do 1\u00ba m\u00eas e esqueceu os juros do 2\u00ba m\u00eas.",
+   "C": "Aplicou 2% duas vezes ao valor inicial (10 000 \u00b7 1,02\u00b2) e s\u00f3 depois subtraiu os 4 000, sem deixar o pagamento reduzir o saldo que rende juros.",
+   "E": "Abateu 4 000 do capital e aplicou 4% (2% + 2%) sobre 6 000, tratando os dois meses como juros simples sobre o valor errado."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "detalhe",
+   "C": "conceito",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "MA02",
+  "base": [
+   "Uma loja de equipamentos agropecu\u00e1rios anunciou um ordenhador por R$ 2 508,00 na promo\u00e7\u00e3o. Esse valor foi obtido a partir do pre\u00e7o de tabela depois de dois descontos sucessivos: primeiro, 12% sobre o pre\u00e7o de tabela e, em seguida, mais 5% (cupom de fidelidade) sobre o pre\u00e7o j\u00e1 com o primeiro desconto."
+  ],
+  "cmd": "O pre\u00e7o de tabela desse ordenhador, em real, \u00e9",
+  "alts": [
+   "2 640,00.",
+   "3 000,00.",
+   "2 850,00.",
+   "2 934,36.",
+   "3 021,69."
+  ],
+  "ans": "B",
+  "dif": "m\u00e9dia",
+  "hab": "H17",
+  "ex": {
+   "B": "Cada desconto multiplica o pre\u00e7o: P \u00b7 0,88 \u00b7 0,95 = 2 508 \u2192 P \u00b7 0,836 = 2 508 \u2192 P = 3 000. **Li\u00e7\u00e3o:** descontos sucessivos N\u00c3O se somam; multiplicam-se os fatores (0,88 \u00b7 0,95 = 0,836, desconto total de 16,4%, e n\u00e3o 17%).",
+   "A": "Desfez s\u00f3 o desconto de 5% (2 508 \u00f7 0,95), esquecendo o de 12%.",
+   "C": "Desfez s\u00f3 o desconto de 12% (2 508 \u00f7 0,88), esquecendo o de 5%.",
+   "D": "Somou os descontos (17%) e AUMENTOU o pre\u00e7o final em 17%: 2 508 \u00b7 1,17.",
+   "E": "Somou os descontos (12% + 5% = 17%) e dividiu por 0,83; os descontos sucessivos incidem em bases diferentes e devem ser multiplicados."
+  },
+  "traps": {
+   "A": "detalhe",
+   "C": "detalhe",
+   "D": "inversao",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "MA03",
+  "base": [
+   "Em um mapa de uma propriedade rural na escala 1 : 2 000, um terreno retangular aparece com 6 cm de largura e 4 cm de comprimento. O propriet\u00e1rio quer saber a \u00e1rea real desse terreno."
+  ],
+  "cmd": "A \u00e1rea real do terreno, em metro quadrado, \u00e9",
+  "alts": [
+   "4,8.",
+   "400.",
+   "96 000.",
+   "960 000.",
+   "9 600."
+  ],
+  "ans": "E",
+  "dif": "m\u00e9dia",
+  "hab": "H11",
+  "ex": {
+   "E": "Dimens\u00f5es reais: 6 cm \u00b7 2 000 = 12 000 cm = 120 m e 4 cm \u00b7 2 000 = 8 000 cm = 80 m. \u00c1rea: 120 \u00b7 80 = 9 600 m\u00b2. **Li\u00e7\u00e3o:** a escala vale para medidas lineares; a \u00e1rea da maquete/mapa fica multiplicada pelo QUADRADO da escala (aqui, 24 cm\u00b2 \u00b7 4 000 000 = 96 000 000 cm\u00b2 = 9 600 m\u00b2).",
+   "A": "Multiplicou a \u00e1rea do mapa (24 cm\u00b2) s\u00f3 por 2 000 e converteu como se fosse medida linear: 48 000 cm\u00b2 \u2248 4,8 m\u00b2.",
+   "B": "Calculou o per\u00edmetro real (2 \u00b7 (120 + 80)) em vez da \u00e1rea.",
+   "C": "Errou a convers\u00e3o de cm\u00b2 para m\u00b2, dividindo por 1 000 em vez de 10 000 (1 m\u00b2 = 10 000 cm\u00b2).",
+   "D": "Errou a convers\u00e3o de cm\u00b2 para m\u00b2, dividindo por 100 em vez de 10 000."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "leitura",
+   "C": "unidade",
+   "D": "unidade"
+  }
+ },
+ {
+  "mod": "MA03",
+  "base": [
+   "Em m\u00e9dia, 1 mililitro de sangue de um bovino adulto cont\u00e9m 5 \u00d7 10\u2079 hem\u00e1cias. Considere que um animal desse tipo tem 4,5 litros de sangue de volume total (valor ilustrativo para o c\u00e1lculo) e que 1 litro corresponde a 1 000 mililitros."
+  ],
+  "cmd": "O n\u00famero aproximado de hem\u00e1cias no sangue desse animal \u00e9",
+  "alts": [
+   "2,25 \u00d7 10\u00b9\u00b2.",
+   "2,25 \u00d7 10\u00b9\u2076.",
+   "2,25 \u00d7 10\u00b9\u00b3.",
+   "2,25 \u00d7 10\u00b9\u2070.",
+   "9,5 \u00d7 10\u2079."
+  ],
+  "ans": "C",
+  "dif": "m\u00e9dia",
+  "hab": "H12",
+  "ex": {
+   "C": "4,5 L = 4 500 mL = 4,5 \u00d7 10\u00b3 mL. Total: 4,5 \u00d7 10\u00b3 \u00b7 5 \u00d7 10\u2079 = 22,5 \u00d7 10\u00b9\u00b2 = 2,25 \u00d7 10\u00b9\u00b3. **Li\u00e7\u00e3o:** em nota\u00e7\u00e3o cient\u00edfica, multiplique os coeficientes e some os expoentes; depois ajuste para que o coeficiente fique entre 1 e 10.",
+   "A": "Multiplicou 4,5 \u00b7 5 = 22,5 e somou os expoentes 3 + 9 = 12, mas n\u00e3o normalizou 22,5 \u00d7 10\u00b9\u00b2 para 2,25 \u00d7 10\u00b9\u00b3.",
+   "B": "Converteu litro para mililitro com 10\u2076 em vez de 10\u00b3.",
+   "D": "Usou 4,5 mL em vez de 4,5 L: esqueceu a convers\u00e3o de litro para mililitro.",
+   "E": "Somou 4,5 + 5 em vez de multiplicar o volume pela concentra\u00e7\u00e3o."
+  },
+  "traps": {
+   "A": "conta",
+   "B": "unidade",
+   "D": "unidade",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "MA04",
+  "base": [
+   "Uma criadora registrou o n\u00famero de filhotes de 20 ninhadas de uma ra\u00e7a de c\u00e3es:",
+   "3 ninhadas com 4 filhotes; 6 ninhadas com 5 filhotes; 8 ninhadas com 6 filhotes; 2 ninhadas com 7 filhotes; 1 ninhada com 8 filhotes."
+  ],
+  "cmd": "A m\u00e9dia de filhotes por ninhada \u00e9",
+  "alts": [
+   "6,0.",
+   "5,6.",
+   "22,4.",
+   "4,0.",
+   "112."
+  ],
+  "ans": "B",
+  "dif": "m\u00e9dia",
+  "hab": "H27",
+  "ex": {
+   "B": "Soma ponderada: 3\u00b74 + 6\u00b75 + 8\u00b76 + 2\u00b77 + 1\u00b78 = 12 + 30 + 48 + 14 + 8 = 112 filhotes em 20 ninhadas: 112 \u00f7 20 = 5,6. **Li\u00e7\u00e3o:** quando os dados v\u00eam com frequ\u00eancias, a m\u00e9dia \u00e9 ponderada: multiplique cada valor pela sua frequ\u00eancia, some e divida pelo total de ocorr\u00eancias (aqui, 20), e n\u00e3o pelo n\u00famero de valores distintos.",
+   "A": "Fez a m\u00e9dia simples dos valores distintos (4 + 5 + 6 + 7 + 8) \u00f7 5, ignorando as frequ\u00eancias.",
+   "C": "Somou os 112 filhotes e dividiu por 5 (n\u00famero de categorias) em vez de 20 ninhadas.",
+   "D": "Calculou a frequ\u00eancia m\u00e9dia por categoria (20 \u00f7 5), uma medida que n\u00e3o \u00e9 a pedida.",
+   "E": "Parou na soma ponderada, sem dividir pelo n\u00famero de ninhadas."
+  },
+  "traps": {
+   "A": "conceito",
+   "C": "conta",
+   "D": "leitura",
+   "E": "detalhe"
+  }
+ },
+ {
+  "mod": "MA04",
+  "base": [
+   "Um veterin\u00e1rio mediu o tempo, em dias, que 8 animais levaram para cicatrizar uma ferida cir\u00fargica depois de usar certa pomada. Os tempos foram: 2, 4, 4, 4, 5, 5, 7 e 9 dias. Considere esses 8 animais como o conjunto completo a ser analisado (popula\u00e7\u00e3o), e lembre-se de que o desvio padr\u00e3o \u00e9 a raiz quadrada da vari\u00e2ncia, que por sua vez \u00e9 a m\u00e9dia dos quadrados dos desvios em rela\u00e7\u00e3o \u00e0 m\u00e9dia."
+  ],
+  "cmd": "O desvio padr\u00e3o desse conjunto de tempos, em dia, \u00e9",
+  "alts": [
+   "2.",
+   "4.",
+   "5.",
+   "1,5.",
+   "32."
+  ],
+  "ans": "A",
+  "dif": "dif\u00edcil",
+  "hab": "H28",
+  "ex": {
+   "A": "M\u00e9dia: (2+4+4+4+5+5+7+9) \u00f7 8 = 40 \u00f7 8 = 5. Desvios ao quadrado: 9, 1, 1, 1, 0, 0, 4, 16, que somam 32. Vari\u00e2ncia: 32 \u00f7 8 = 4. Desvio padr\u00e3o: \u221a4 = 2 dias. **Li\u00e7\u00e3o:** o desvio padr\u00e3o tem a mesma unidade dos dados (dia); a vari\u00e2ncia fica em dia\u00b2, por isso \u00e9 preciso extrair a raiz.",
+   "B": "Parou na vari\u00e2ncia (32 \u00f7 8 = 4) e n\u00e3o extraiu a raiz quadrada.",
+   "C": "Respondeu com a m\u00e9dia dos tempos, confundindo tend\u00eancia central com dispers\u00e3o.",
+   "D": "Calculou o desvio absoluto m\u00e9dio (12 \u00f7 8), que n\u00e3o \u00e9 o desvio padr\u00e3o, pois n\u00e3o eleva os desvios ao quadrado.",
+   "E": "Respondeu com a soma dos quadrados dos desvios, sem dividir por 8 nem extrair a raiz."
+  },
+  "traps": {
+   "B": "detalhe",
+   "C": "conceito",
+   "D": "conceito",
+   "E": "detalhe"
+  }
+ },
+ {
+  "mod": "MA05",
+  "base": [
+   "Uma secretaria de agricultura divulgou a tabela abaixo sobre a ado\u00e7\u00e3o de um programa de vacina\u00e7\u00e3o em tr\u00eas regi\u00f5es:",
+   "Regi\u00e3o Norte: 120 propriedades, 60% delas aderiram. Regi\u00e3o Centro: 200 propriedades, 45% aderiram. Regi\u00e3o Sul: 80 propriedades, 90% aderiram."
+  ],
+  "cmd": "Considerando as tr\u00eas regi\u00f5es em conjunto, o percentual de propriedades que aderiram ao programa foi de",
+  "alts": [
+   "65,0%.",
+   "58,5%.",
+   "67,5%.",
+   "234%.",
+   "90%."
+  ],
+  "ans": "B",
+  "dif": "m\u00e9dia",
+  "hab": "H25",
+  "ex": {
+   "B": "Aderentes: 0,60 \u00b7 120 = 72; 0,45 \u00b7 200 = 90; 0,90 \u00b7 80 = 72. Total: 234 propriedades, de 120 + 200 + 80 = 400. Percentual: 234 \u00f7 400 = 0,585 = 58,5%. **Li\u00e7\u00e3o:** o percentual global \u00e9 uma m\u00e9dia PONDERADA pelo tamanho de cada grupo; a m\u00e9dia simples das taxas s\u00f3 vale se os grupos tiverem o mesmo tamanho.",
+   "A": "Fez a m\u00e9dia simples dos percentuais ((60 + 45 + 90) \u00f7 3), ignorando que as regi\u00f5es t\u00eam n\u00fameros diferentes de propriedades.",
+   "C": "Tomou o ponto m\u00e9dio entre o menor e o maior percentual ((45 + 90) \u00f7 2).",
+   "D": "Encontrou corretamente 234 propriedades aderentes, mas n\u00e3o dividiu por 400 para obter o percentual.",
+   "E": "Escolheu a maior taxa (Regi\u00e3o Sul), que \u00e9 s\u00f3 uma parte do conjunto e a menor delas em n\u00famero de propriedades."
+  },
+  "traps": {
+   "A": "conceito",
+   "C": "conceito",
+   "D": "detalhe",
+   "E": "leitura"
+  }
+ },
+ {
+  "mod": "MA05",
+  "base": [
+   "O gr\u00e1fico de linha poligonal abaixo, descrito em palavras, mostra o volume de \u00e1gua (em m\u00b3) de um reservat\u00f3rio de uma fazenda ao longo de uma manh\u00e3: \u00e0s 10 h o volume \u00e9 50 m\u00b3 (valor m\u00e1ximo); a partir da\u00ed o volume diminui de forma linear, devido \u00e0 irriga\u00e7\u00e3o, e \u00e0s 14 h est\u00e1 em 20 m\u00b3."
+  ],
+  "cmd": "Considerando a diminui\u00e7\u00e3o constante entre 10 h e 14 h, o instante em que o volume atingiu 40 m\u00b3 foi",
+  "alts": [
+   "10 h 20 min.",
+   "11 h 33 min.",
+   "12 h.",
+   "12 h 40 min.",
+   "11 h 20 min."
+  ],
+  "ans": "E",
+  "dif": "dif\u00edcil",
+  "hab": "H20",
+  "ex": {
+   "E": "Entre 10 h e 14 h o volume cai 30 m\u00b3 em 4 h, ou seja, 7,5 m\u00b3/h. Para cair de 50 para 40 m\u00b3 s\u00e3o 10 m\u00b3: 10 \u00f7 7,5 = 4/3 h = 1 h 20 min. Logo, 10 h + 1 h 20 min = 11 h 20 min. **Li\u00e7\u00e3o:** em trechos retil\u00edneos de gr\u00e1fico a varia\u00e7\u00e3o \u00e9 proporcional ao tempo: 10/30 do intervalo corresponde a 10/30 de 4 h.",
+   "A": "Entendeu a fra\u00e7\u00e3o 1/3 como 1/3 de hora (20 min), e n\u00e3o 1/3 do intervalo de 4 horas.",
+   "B": "Obteve 1,33 h, mas converteu 0,33 h como 33 minutos, e n\u00e3o como 0,33 \u00b7 60 \u2248 20 minutos.",
+   "C": "Usou o ponto m\u00e9dio do intervalo (12 h), sem verificar que nesse instante o volume \u00e9 35 m\u00b3, e n\u00e3o 40.",
+   "D": "Tomou 20 m\u00b3 como a queda (2/3 do total) em vez de 10 m\u00b3, indo longe demais no intervalo."
+  },
+  "traps": {
+   "A": "conta",
+   "B": "unidade",
+   "C": "leitura",
+   "D": "inversao"
+  }
+ },
+ {
+  "mod": "MA06",
+  "base": [
+   "Uma vacina experimental provoca rea\u00e7\u00e3o adversa leve em 10% dos animais, de forma independente de um animal para outro. Um veterin\u00e1rio aplica a vacina em 4 animais escolhidos ao acaso."
+  ],
+  "cmd": "A probabilidade de exatamente um desses 4 animais apresentar rea\u00e7\u00e3o \u00e9 de, aproximadamente,",
+  "alts": [
+   "34,39%.",
+   "7,29%.",
+   "40%.",
+   "29,16%.",
+   "65,61%."
+  ],
+  "ans": "D",
+  "dif": "dif\u00edcil",
+  "hab": "H28",
+  "ex": {
+   "D": "H\u00e1 4 posi\u00e7\u00f5es poss\u00edveis para o animal que reage, e cada caso tem probabilidade 0,1 \u00b7 0,9\u00b3 = 0,0729. Logo P = 4 \u00b7 0,0729 = 0,2916 = 29,16%. **Li\u00e7\u00e3o:** em repeti\u00e7\u00f5es independentes com dois resultados, multiplique pelas formas de escolher quais eventos ocorrem (an\u00e1lise combinat\u00f3ria) e pelas probabilidades de cada resultado.",
+   "A": "Calculou a probabilidade de pelo menos um reagir (1 \u2212 0,9\u2074), e n\u00e3o de exatamente um.",
+   "B": "Calculou a probabilidade de uma sequ\u00eancia espec\u00edfica (0,1 \u00b7 0,9\u00b3), esquecendo que o animal que reage pode ser qualquer um dos 4.",
+   "C": "Somou 10% quatro vezes, desconsiderando que os casos de mais de um animal reagindo se sobrep\u00f5em.",
+   "E": "Calculou a probabilidade de NENHUM reagir (0,9\u2074)."
+  },
+  "traps": {
+   "A": "leitura",
+   "B": "detalhe",
+   "C": "conceito",
+   "E": "leitura"
+  }
+ },
+ {
+  "mod": "MA06",
+  "base": [
+   "Em um canil h\u00e1 12 c\u00e3es, dos quais 5 possuem microchip de identifica\u00e7\u00e3o. Um fiscal escolhe, ao acaso e de uma s\u00f3 vez (ou seja, sem reposi\u00e7\u00e3o), 3 c\u00e3es para verifica\u00e7\u00e3o."
+  ],
+  "cmd": "A probabilidade de que pelo menos um dos c\u00e3es escolhidos tenha microchip \u00e9, aproximadamente,",
+  "alts": [
+   "84,1%.",
+   "80,1%.",
+   "15,9%.",
+   "41,7%.",
+   "100%."
+  ],
+  "ans": "A",
+  "dif": "m\u00e9dia",
+  "hab": "H28",
+  "ex": {
+   "A": "Complementar: nenhum com microchip. N\u00famero de grupos de 3 sem microchip: C(7,3) = 35; total de grupos: C(12,3) = 220. P(nenhum) = 35/220 \u2248 15,9%. Logo P(pelo menos um) = 1 \u2212 35/220 = 185/220 \u2248 84,1%. **Li\u00e7\u00e3o:** em \"pelo menos um\", use o evento complementar; e, sem reposi\u00e7\u00e3o, use combina\u00e7\u00f5es (ou produtos de probabilidades que mudam a cada retirada).",
+   "B": "Tratou o sorteio como se houvesse reposi\u00e7\u00e3o: 1 \u2212 (7/12)\u00b3 \u2248 0,80.",
+   "C": "Calculou a probabilidade de nenhum c\u00e3o ter microchip (35/220), esquecendo de tomar o complementar.",
+   "D": "Usou apenas a probabilidade de o primeiro c\u00e3o ter microchip (5/12), desprezando os outros dois.",
+   "E": "Concluiu que sempre haver\u00e1 algum com microchip por \"serem muitos\"; como h\u00e1 7 sem chip, \u00e9 poss\u00edvel (35 grupos) escolher 3 sem chip."
+  },
+  "traps": {
+   "B": "conceito",
+   "C": "leitura",
+   "D": "detalhe",
+   "E": "exagero"
+  }
+ },
+ {
+  "mod": "MA07",
+  "base": [
+   "Uma loja de ra\u00e7\u00f5es de uma cidade do interior quer batizar seus pacotes especiais com c\u00f3digos formados pelos anagramas (rearranjos de todas as letras) da palavra BOVINOS. Por quest\u00e3o de legibilidade, os dois O n\u00e3o podem aparecer lado a lado."
+  ],
+  "cmd": "O n\u00famero de c\u00f3digos diferentes que satisfazem essa condi\u00e7\u00e3o \u00e9",
+  "alts": [
+   "2 520.",
+   "1 800.",
+   "720.",
+   "5 040.",
+   "4 320."
+  ],
+  "ans": "B",
+  "dif": "dif\u00edcil",
+  "hab": "H28",
+  "ex": {
+   "B": "A palavra tem 7 letras, com O repetido: total de anagramas = 7!/2! = 2 520. Anagramas com os dois O juntos: tratando \"OO\" como um bloco, restam 6 elementos distintos: 6! = 720. Sem os O juntos: 2 520 \u2212 720 = 1 800. **Li\u00e7\u00e3o:** para restri\u00e7\u00f5es do tipo \"n\u00e3o podem ficar juntos\", conte o total e subtraia os casos em que ficam juntos (bloco).",
+   "A": "Contou todos os anagramas, ignorando a restri\u00e7\u00e3o.",
+   "C": "Contou os anagramas em que os dois O ficam juntos (o contr\u00e1rio do pedido).",
+   "D": "Usou 7! sem dividir por 2!, esquecendo que a troca dos dois O gera o mesmo c\u00f3digo.",
+   "E": "Tratou as letras como todas distintas (7! = 5 040) e subtraiu 720 (os com O juntos), repetindo o erro da repeti\u00e7\u00e3o."
+  },
+  "traps": {
+   "A": "detalhe",
+   "C": "inversao",
+   "D": "conceito",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "MA07",
+  "base": [
+   "Um abrigo vai alojar 6 c\u00e3es em 3 gaiolas numeradas (1, 2 e 3), com exatamente 2 c\u00e3es em cada gaiola. Dois desses c\u00e3es, Rex e Thor, brigam entre si e n\u00e3o podem ficar na mesma gaiola."
+  ],
+  "cmd": "O n\u00famero de maneiras diferentes de distribuir os 6 c\u00e3es nas gaiolas, respeitando essas condi\u00e7\u00f5es, \u00e9",
+  "alts": [
+   "90.",
+   "18.",
+   "72.",
+   "15.",
+   "84."
+  ],
+  "ans": "C",
+  "dif": "dif\u00edcil",
+  "hab": "H28",
+  "ex": {
+   "C": "Sem restri\u00e7\u00e3o: C(6,2) \u00b7 C(4,2) \u00b7 C(2,2) = 15 \u00b7 6 \u00b7 1 = 90. Com Rex e Thor juntos: escolhe-se a gaiola deles (3 maneiras) e distribuem-se os outros 4 c\u00e3es nas 2 gaiolas restantes: C(4,2) = 6 maneiras; 3 \u00b7 6 = 18. Logo 90 \u2212 18 = 72. **Li\u00e7\u00e3o:** com restri\u00e7\u00e3o do tipo \"n\u00e3o podem ficar juntos\", subtraia do total o n\u00famero de casos em que ficam juntos.",
+   "A": "Contou todas as distribui\u00e7\u00f5es, ignorando a restri\u00e7\u00e3o dos dois c\u00e3es.",
+   "B": "Contou s\u00f3 as distribui\u00e7\u00f5es em que Rex e Thor ficam juntos.",
+   "D": "Tratou as gaiolas como id\u00eanticas (sem numera\u00e7\u00e3o), dividindo 90 por 3!.",
+   "E": "Subtraiu apenas 6 do total, esquecendo que a dupla proibida pode estar em qualquer uma das 3 gaiolas (3 \u00b7 6 = 18)."
+  },
+  "traps": {
+   "A": "detalhe",
+   "B": "inversao",
+   "D": "conceito",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "MA08",
+  "base": [
+   "Um terreno triangular tem lados medindo 13 m, 14 m e 15 m, e \u00e1rea de 84 m\u00b2. Para organizar a irriga\u00e7\u00e3o, o propriet\u00e1rio vai abrir um corredor reto, perpendicular ao MAIOR lado, que parte do v\u00e9rtice oposto a ele e chega a esse lado."
+  ],
+  "cmd": "O comprimento desse corredor, em metro, \u00e9",
+  "alts": [
+   "12,0.",
+   "11,2.",
+   "14,0.",
+   "12,9.",
+   "5,6."
+  ],
+  "ans": "B",
+  "dif": "m\u00e9dia",
+  "hab": "H9",
+  "ex": {
+   "B": "A \u00e1rea do tri\u00e2ngulo \u00e9 (base \u00b7 altura)/2. Com base 15 m (maior lado): 84 = 15 \u00b7 h / 2 \u2192 h = 168 \u00f7 15 = 11,2 m. O corredor \u00e9 a altura relativa ao maior lado. **Li\u00e7\u00e3o:** a altura relativa a um lado \u00e9 obtida pela \u00e1rea: h = 2A \u00f7 lado; quanto maior o lado, menor a altura.",
+   "A": "Calculou a altura relativa ao lado de 14 m (168 \u00f7 14), e n\u00e3o ao de 15 m.",
+   "C": "Respondeu com o lado intermedi\u00e1rio do tri\u00e2ngulo, confundindo altura com lado.",
+   "D": "Calculou a altura relativa ao MENOR lado (168 \u00f7 13), trocando o lado pedido.",
+   "E": "Esqueceu de multiplicar a \u00e1rea por 2: 84 \u00f7 15."
+  },
+  "traps": {
+   "A": "leitura",
+   "C": "conceito",
+   "D": "inversao",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "MA08",
+  "base": [
+   "Um canteiro de flores tem a forma de um hex\u00e1gono regular de lado 4 m. O jardineiro precisa saber a \u00e1rea para comprar adubo. Lembre-se de que um hex\u00e1gono regular pode ser dividido em 6 tri\u00e2ngulos equil\u00e1teros iguais, cada um de lado igual ao do hex\u00e1gono, e que a \u00e1rea de um tri\u00e2ngulo equil\u00e1tero de lado \u2113 \u00e9 \u2113\u00b2\u221a3/4. Use \u221a3 \u2248 1,73."
+  ],
+  "cmd": "A \u00e1rea do canteiro, em metro quadrado, \u00e9 aproximadamente",
+  "alts": [
+   "83,04.",
+   "96,00.",
+   "24,00.",
+   "41,52.",
+   "27,68."
+  ],
+  "ans": "D",
+  "dif": "m\u00e9dia",
+  "hab": "H9",
+  "ex": {
+   "D": "Tri\u00e2ngulo equil\u00e1tero de lado 4: 16 \u00b7 1,73 / 4 = 6,92 m\u00b2. Seis tri\u00e2ngulos: 6 \u00b7 6,92 = 41,52 m\u00b2. **Li\u00e7\u00e3o:** decomponha pol\u00edgonos regulares em tri\u00e2ngulos congruentes e use a f\u00f3rmula de \u00e1rea do tri\u00e2ngulo equil\u00e1tero.",
+   "A": "Usou \u2113\u00b2\u221a3/2 como \u00e1rea do tri\u00e2ngulo (esqueceu que \u00e9 /4), dobrando o resultado.",
+   "B": "Calculou 6 \u00b7 \u2113\u00b2 = 6 \u00b7 16, tratando cada tri\u00e2ngulo como um quadrado de lado 4.",
+   "C": "Esqueceu o fator \u221a3, usando 6 \u00b7 16/4.",
+   "E": "Usou apenas 4 tri\u00e2ngulos (16\u221a3), em vez dos 6 que comp\u00f5em o hex\u00e1gono."
+  },
+  "traps": {
+   "A": "conta",
+   "B": "conceito",
+   "C": "detalhe",
+   "E": "detalhe"
+  }
+ },
+ {
+  "mod": "MA09",
+  "base": [
+   "Um silo para gr\u00e3os tem a forma de um cilindro circular reto de 6 m de di\u00e2metro e 10 m de altura, coberto por um cone circular reto de mesma base e 3 m de altura (o cone tamb\u00e9m \u00e9 preenchido pelos gr\u00e3os). A densidade do gr\u00e3o armazenado \u00e9 0,75 t/m\u00b3. Use \u03c0 = 3,14."
+  ],
+  "cmd": "A massa m\u00e1xima de gr\u00e3os que o silo comporta, em tonelada, \u00e9 aproximadamente",
+  "alts": [
+   "212,0.",
+   "275,5.",
+   "310,9.",
+   "932,6.",
+   "233,1."
+  ],
+  "ans": "E",
+  "dif": "m\u00e9dia",
+  "hab": "H8",
+  "ex": {
+   "E": "Raio = 3 m. Volume do cilindro: \u03c0 \u00b7 3\u00b2 \u00b7 10 = 90\u03c0. Volume do cone: (1/3) \u00b7 \u03c0 \u00b7 3\u00b2 \u00b7 3 = 9\u03c0. Total: 99\u03c0 = 99 \u00b7 3,14 = 310,86 m\u00b3. Massa: 310,86 \u00b7 0,75 = 233,145 \u2248 233,1 t. **Li\u00e7\u00e3o:** some os volumes dos s\u00f3lidos que comp\u00f5em o objeto e use o RAIO (metade do di\u00e2metro); a massa \u00e9 densidade \u00d7 volume.",
+   "A": "Considerou s\u00f3 o volume do cilindro (90\u03c0 \u00b7 0,75), esquecendo o cone.",
+   "B": "Errou o volume do cone: usou 9 m no lugar da altura de 3 m (volume 27\u03c0 em vez de 9\u03c0).",
+   "C": "Encontrou o volume em m\u00b3 (310,86) e n\u00e3o multiplicou pela densidade para obter a massa.",
+   "D": "Usou o di\u00e2metro (6 m) como raio nas f\u00f3rmulas, quadruplicando as \u00e1reas das bases."
+  },
+  "traps": {
+   "A": "detalhe",
+   "B": "conta",
+   "C": "leitura",
+   "D": "conceito"
+  }
+ },
+ {
+  "mod": "MA09",
+  "base": [
+   "Um aqu\u00e1rio em forma de paralelep\u00edpedo ret\u00e2ngulo tem base de 50 cm por 40 cm e cont\u00e9m \u00e1gua. Ao mergulhar totalmente nele uma pedra decorativa esf\u00e9rica e maci\u00e7a, o n\u00edvel da \u00e1gua sobe 2 cm, sem transbordar. Use \u03c0 = 3 e lembre-se de que o volume da esfera de raio r \u00e9 (4/3)\u03c0r\u00b3."
+  ],
+  "cmd": "O di\u00e2metro dessa pedra, em cent\u00edmetro, \u00e9",
+  "alts": [
+   "10.",
+   "22.",
+   "20.",
+   "24.",
+   "36."
+  ],
+  "ans": "C",
+  "dif": "dif\u00edcil",
+  "hab": "H8",
+  "ex": {
+   "C": "O volume da pedra \u00e9 igual ao da \u00e1gua deslocada: 50 \u00b7 40 \u00b7 2 = 4 000 cm\u00b3. Ent\u00e3o (4/3) \u00b7 3 \u00b7 r\u00b3 = 4r\u00b3 = 4 000 \u2192 r\u00b3 = 1 000 \u2192 r = 10 cm. O di\u00e2metro \u00e9 2r = 20 cm. **Li\u00e7\u00e3o:** o volume de um s\u00f3lido submerso \u00e9 o volume de l\u00edquido deslocado (\u00e1rea da base \u00d7 varia\u00e7\u00e3o do n\u00edvel), e a pergunta pedia o DI\u00c2METRO, n\u00e3o o raio.",
+   "A": "Calculou corretamente o raio (10 cm), mas a pergunta pedia o di\u00e2metro.",
+   "B": "Usou o volume da esfera como \u03c0r\u00b3, esquecendo o fator 4/3 (r \u2248 11 cm, di\u00e2metro \u2248 22 cm).",
+   "D": "Usou o fator 3/4 no lugar de 4/3 (invers\u00e3o da fra\u00e7\u00e3o), obtendo r \u2248 12,1 e di\u00e2metro \u2248 24 cm.",
+   "E": "Confundiu o volume com a \u00e1rea da superf\u00edcie esf\u00e9rica (4\u03c0r\u00b2), obtendo r \u2248 18 cm e di\u00e2metro \u2248 36 cm."
+  },
+  "traps": {
+   "A": "leitura",
+   "B": "conceito",
+   "D": "inversao",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "MA10",
+  "base": [
+   "Uma cooperativa vende ovos por d\u00fazia. A demanda semanal q (em d\u00fazias) varia com o pre\u00e7o p (em real por d\u00fazia) segundo a fun\u00e7\u00e3o q = 600 \u2212 40p, para 0 \u2264 p \u2264 15. O custo de cada d\u00fazia para a cooperativa \u00e9 de R$ 3,00, e o lucro \u00e9 a receita (p \u00b7 q) menos o custo total (3 \u00b7 q)."
+  ],
+  "cmd": "O pre\u00e7o de venda por d\u00fazia, em real, que maximiza o lucro semanal \u00e9",
+  "alts": [
+   "7,50.",
+   "15,00.",
+   "1 440,00.",
+   "9,00.",
+   "10,50."
+  ],
+  "ans": "D",
+  "dif": "dif\u00edcil",
+  "hab": "H21",
+  "ex": {
+   "D": "Lucro L(p) = (p \u2212 3)(600 \u2212 40p), fun\u00e7\u00e3o quadr\u00e1tica com concavidade para baixo e ra\u00edzes p = 3 e p = 15. O m\u00e1ximo ocorre no v\u00e9rtice, no ponto m\u00e9dio das ra\u00edzes: p = (3 + 15)/2 = 9. O lucro m\u00e1ximo \u00e9 L(9) = 6 \u00b7 240 = R$ 1 440,00 por semana. **Li\u00e7\u00e3o:** no problema de m\u00e1ximo de uma quadr\u00e1tica, o v\u00e9rtice est\u00e1 no ponto m\u00e9dio das ra\u00edzes; \u00e9 preciso incluir o custo na fun\u00e7\u00e3o de lucro.",
+   "A": "Maximizou a RECEITA p(600 \u2212 40p), cujas ra\u00edzes s\u00e3o 0 e 15, ignorando o custo de R$ 3,00 por d\u00fazia.",
+   "B": "Tomou o pre\u00e7o em que a demanda zera (q = 0), que d\u00e1 lucro nulo, e n\u00e3o o m\u00e1ximo.",
+   "C": "Calculou o lucro m\u00e1ximo, e n\u00e3o o pre\u00e7o que o produz.",
+   "E": "Somou o custo ao pre\u00e7o de receita m\u00e1xima (7,50 + 3,00), sem montar a fun\u00e7\u00e3o lucro; esse pre\u00e7o d\u00e1 lucro de R$ 1 350,00, menor que o m\u00e1ximo."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "leitura",
+   "C": "leitura",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "MA10",
+  "base": [
+   "Um jato de \u00e1gua de um canh\u00e3o de irriga\u00e7\u00e3o sai de um ponto a 0,45 m acima do solo. Em um sistema de coordenadas em que x \u00e9 a dist\u00e2ncia horizontal (em metro) a partir do canh\u00e3o e y a altura (em metro) do jato em rela\u00e7\u00e3o ao solo, a trajet\u00f3ria \u00e9 dada por y = \u22120,05x\u00b2 + 0,4x + 0,45."
+  ],
+  "cmd": "A dist\u00e2ncia horizontal, medida a partir do canh\u00e3o, em que o jato atinge o solo \u00e9",
+  "alts": [
+   "9 m.",
+   "8 m.",
+   "4 m.",
+   "1,25 m.",
+   "4,5 m."
+  ],
+  "ans": "A",
+  "dif": "m\u00e9dia",
+  "hab": "H21",
+  "ex": {
+   "A": "O jato atinge o solo quando y = 0: \u22120,05x\u00b2 + 0,4x + 0,45 = 0, ou x\u00b2 \u2212 8x \u2212 9 = 0, cujas ra\u00edzes s\u00e3o x = 9 e x = \u22121. S\u00f3 vale a positiva: 9 m (verifica-se: \u22120,05\u00b781 + 3,6 + 0,45 = 0). **Li\u00e7\u00e3o:** o ponto em que o gr\u00e1fico encontra o solo corresponde a y = 0, e ra\u00edzes negativas n\u00e3o t\u00eam sentido f\u00edsico na situa\u00e7\u00e3o.",
+   "B": "Desprezou a altura inicial de 0,45 m (usou as ra\u00edzes de \u22120,05x\u00b2 + 0,4x, 0 e 8).",
+   "C": "Tomou a abscissa do v\u00e9rtice, ponto em que o jato atinge a altura m\u00e1xima, e n\u00e3o o solo.",
+   "D": "Respondeu com a altura m\u00e1xima do jato (ordenada do v\u00e9rtice), trocando altura por dist\u00e2ncia.",
+   "E": "Dividiu a raiz positiva por 2, achando que o alcance era o meio do trajeto."
+  },
+  "traps": {
+   "B": "detalhe",
+   "C": "conceito",
+   "D": "leitura",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "MA11",
+  "base": [
+   "O pH de uma solu\u00e7\u00e3o \u00e9 definido por pH = \u2212log[H\u207a], em que [H\u207a] \u00e9 a concentra\u00e7\u00e3o de \u00edons hidrog\u00eanio, em mol/L. A \u00e1gua de um tanque de piscicultura tinha pH 6,0 e, ap\u00f3s a adi\u00e7\u00e3o de calc\u00e1rio, passou a ter pH 8,5. Use 10^0,5 \u2248 3,16."
+  ],
+  "cmd": "Em rela\u00e7\u00e3o \u00e0 concentra\u00e7\u00e3o inicial, a concentra\u00e7\u00e3o de H\u207a ficou aproximadamente",
+  "alts": [
+   "2,5 vezes menor.",
+   "25 vezes menor.",
+   "1,4 vez menor.",
+   "100 vezes menor.",
+   "316 vezes menor."
+  ],
+  "ans": "E",
+  "dif": "dif\u00edcil",
+  "hab": "H21",
+  "ex": {
+   "E": "[H\u207a] = 10^(\u2212pH). Inicial: 10^\u22126; final: 10^\u22128,5. Raz\u00e3o: 10^\u22126 \u00f7 10^\u22128,5 = 10^2,5 = 10\u00b2 \u00b7 10^0,5 \u2248 100 \u00b7 3,16 = 316. A concentra\u00e7\u00e3o final \u00e9 cerca de 316 vezes menor. **Li\u00e7\u00e3o:** na escala logar\u00edtmica, cada unidade de pH muda a concentra\u00e7\u00e3o por um fator 10; uma diferen\u00e7a de 2,5 unidades corresponde a 10^2,5.",
+   "A": "Confundiu a diferen\u00e7a de pH (2,5 unidades) com a raz\u00e3o entre concentra\u00e7\u00f5es, tratando a escala logar\u00edtmica como linear.",
+   "B": "Multiplicou a diferen\u00e7a de pH por 10 (2,5 \u00b7 10) em vez de elevar 10 a 2,5.",
+   "C": "Dividiu os pHs (8,5 \u00f7 6), sem considerar que o pH \u00e9 um logaritmo.",
+   "D": "Considerou s\u00f3 a parte inteira da diferen\u00e7a (10\u00b2), desprezando o 10^0,5 do 0,5 restante."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "conta",
+   "C": "conceito",
+   "D": "detalhe"
+  }
+ },
+ {
+  "mod": "MA11",
+  "base": [
+   "O rebanho de uma fazenda cresce 8% ao ano, de forma composta, ou seja, o n\u00famero de animais em cada ano \u00e9 1,08 vez o do ano anterior. O fazendeiro quer saber em quanto tempo o rebanho vai triplicar. Use log 3 = 0,48 e log 1,08 = 0,033."
+  ],
+  "cmd": "O tempo necess\u00e1rio para o rebanho triplicar \u00e9, em ano, de aproximadamente",
+  "alts": [
+   "25,0.",
+   "12,5.",
+   "14,5.",
+   "37,5.",
+   "29,0."
+  ],
+  "ans": "C",
+  "dif": "dif\u00edcil",
+  "hab": "H21",
+  "ex": {
+   "C": "Queremos 1,08^t = 3. Aplicando log: t \u00b7 log 1,08 = log 3 \u2192 t = 0,48 \u00f7 0,033 \u2248 14,5 anos. **Li\u00e7\u00e3o:** o tempo \u00e9 expoente; para isol\u00e1-lo, use logaritmo dos dois lados e a propriedade log(a\u1d57) = t \u00b7 log a.",
+   "A": "Tratou o crescimento como linear: triplicar exige +200%, e 200 \u00f7 8 = 25 anos (juros simples).",
+   "B": "Fez 100 \u00f7 8, que seria o tempo para DOBRAR em regime linear, e n\u00e3o para triplicar em regime composto.",
+   "D": "Fez 3 \u00f7 0,08, tratando o fator 3 como se fosse 300% de acr\u00e9scimo linear.",
+   "E": "Resolveu 1,08^t = 9 (log 9 = 0,96), elevando o fator 3 ao quadrado por engano."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "conceito",
+   "D": "conta",
+   "E": "leitura"
+  }
+ },
+ {
+  "mod": "MA12",
+  "base": [
+   "Para saber a dist\u00e2ncia entre dois pontos A e B das margens opostas de uma lagoa, um t\u00e9cnico escolheu um ponto C em terra firme e mediu AC = 80 m, BC = 50 m e o \u00e2ngulo ACB = 60\u00b0. Lembre-se de que cos 60\u00b0 = 1/2 e de que, em um tri\u00e2ngulo qualquer, a lei dos cossenos diz que AB\u00b2 = AC\u00b2 + BC\u00b2 \u2212 2 \u00b7 AC \u00b7 BC \u00b7 cos(ACB)."
+  ],
+  "cmd": "A dist\u00e2ncia AB, em metro, \u00e9",
+  "alts": [
+   "94,3.",
+   "113,6.",
+   "30.",
+   "70.",
+   "130."
+  ],
+  "ans": "D",
+  "dif": "m\u00e9dia",
+  "hab": "H10",
+  "ex": {
+   "D": "AB\u00b2 = 80\u00b2 + 50\u00b2 \u2212 2 \u00b7 80 \u00b7 50 \u00b7 (1/2) = 6 400 + 2 500 \u2212 4 000 = 4 900, ent\u00e3o AB = 70 m. **Li\u00e7\u00e3o:** a lei dos cossenos generaliza o Teorema de Pit\u00e1goras para qualquer tri\u00e2ngulo; o termo com o cosseno corrige o \"\u00e2ngulo reto\".",
+   "A": "Aplicou o Teorema de Pit\u00e1goras (\u221a(80\u00b2 + 50\u00b2)), que s\u00f3 vale com \u00e2ngulo reto em C.",
+   "B": "Errou o sinal do termo do cosseno, somando 4 000 em vez de subtrair.",
+   "C": "Subtraiu os lados (80 \u2212 50), que seria o caso de pontos alinhados.",
+   "E": "Somou os lados (80 + 50), a situa\u00e7\u00e3o de A, C e B alinhados com C no meio."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "conta",
+   "C": "conceito",
+   "E": "exagero"
+  }
+ },
+ {
+  "mod": "MA12",
+  "base": [
+   "A press\u00e3o arterial de um cavalo em repouso, em mmHg, pode ser modelada por P(t) = 100 + 20 \u00b7 sen(2,5\u03c0t), em que t \u00e9 o tempo em segundo. Cada ciclo completo da fun\u00e7\u00e3o corresponde a um batimento card\u00edaco."
+  ],
+  "cmd": "A frequ\u00eancia card\u00edaca desse cavalo, em batimento por minuto, \u00e9",
+  "alts": [
+   "75.",
+   "150.",
+   "48.",
+   "1,25.",
+   "120."
+  ],
+  "ans": "A",
+  "dif": "m\u00e9dia",
+  "hab": "H21",
+  "ex": {
+   "A": "O per\u00edodo \u00e9 2\u03c0 \u00f7 (2,5\u03c0) = 0,8 s por batimento. Em 60 s h\u00e1 60 \u00f7 0,8 = 75 batimentos. **Li\u00e7\u00e3o:** em f(t) = a + b \u00b7 sen(\u03c9t), o per\u00edodo \u00e9 2\u03c0/\u03c9; a frequ\u00eancia \u00e9 o inverso do per\u00edodo e depois \u00e9 convertida para a unidade pedida.",
+   "B": "Tomou o coeficiente 2,5 como frequ\u00eancia por segundo e multiplicou por 60, esquecendo que \u03c9 = 2\u03c0 \u00b7 f (f = 1,25 Hz).",
+   "C": "Multiplicou o per\u00edodo (0,8 s) por 60, invertendo o racioc\u00ednio da frequ\u00eancia.",
+   "D": "Calculou a frequ\u00eancia em hertz (ciclos por segundo), sem converter para batimentos por minuto.",
+   "E": "Usou o valor m\u00e1ximo da press\u00e3o (100 + 20 = 120 mmHg) como se fosse a frequ\u00eancia."
+  },
+  "traps": {
+   "B": "conceito",
+   "C": "inversao",
+   "D": "unidade",
+   "E": "leitura"
+  }
+ },
+ {
+  "mod": "MA13",
+  "base": [
+   "Em uma campanha de vacina\u00e7\u00e3o, uma volunt\u00e1ria (rodada 0) convence 3 pessoas a participar; cada uma dessas convence outras 3 pessoas ainda n\u00e3o envolvidas, e assim por diante, em cada rodada, at\u00e9 a rodada 5."
+  ],
+  "cmd": "Contando a volunt\u00e1ria inicial, o n\u00famero total de pessoas envolvidas na campanha ao final da rodada 5 \u00e9",
+  "alts": [
+   "243.",
+   "364.",
+   "363.",
+   "729.",
+   "1 093."
+  ],
+  "ans": "B",
+  "dif": "m\u00e9dia",
+  "hab": "H2",
+  "ex": {
+   "B": "O n\u00famero de pessoas em cada rodada forma uma PG de raz\u00e3o 3: 1, 3, 9, 27, 81, 243 (rodadas 0 a 5, ou seja, 6 termos). Soma: (3\u2076 \u2212 1) \u00f7 (3 \u2212 1) = 728 \u00f7 2 = 364. **Li\u00e7\u00e3o:** a soma dos n primeiros termos de uma PG \u00e9 a\u2081 \u00b7 (q\u207f \u2212 1)/(q \u2212 1); cuidado para contar corretamente o n\u00famero de termos (rodadas 0 a 5 s\u00e3o 6 termos).",
+   "A": "Contou s\u00f3 as pessoas que entraram na \u00faltima rodada (3\u2075), sem somar as anteriores.",
+   "C": "Somou apenas as rodadas 1 a 5, esquecendo a volunt\u00e1ria inicial (que o enunciado manda contar).",
+   "D": "Calculou 3\u2076, a pot\u00eancia, em vez da soma da progress\u00e3o.",
+   "E": "Somou 7 termos (rodadas 0 a 6), errando o n\u00famero de termos da PG."
+  },
+  "traps": {
+   "A": "leitura",
+   "C": "detalhe",
+   "D": "conta",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "MA13",
+  "base": [
+   "Uma escada de madeira para carregar caminh\u00f5es de gado tem 12 degraus, feitos de t\u00e1buas cujos comprimentos formam uma progress\u00e3o aritm\u00e9tica decrescente: a t\u00e1bua do primeiro degrau (a maior) mede 90 cm e a do \u00faltimo (a menor) mede 35 cm."
+  ],
+  "cmd": "O comprimento total de t\u00e1buas necess\u00e1rio para os 12 degraus, em metro, \u00e9",
+  "alts": [
+   "15.",
+   "6,875.",
+   "750.",
+   "8,125.",
+   "7,5."
+  ],
+  "ans": "E",
+  "dif": "m\u00e9dia",
+  "hab": "H2",
+  "ex": {
+   "E": "A soma de uma PA \u00e9 S = n \u00b7 (a\u2081 + a\u2099)/2 = 12 \u00b7 (90 + 35)/2 = 12 \u00b7 62,5 = 750 cm = 7,5 m. (A raz\u00e3o \u00e9 (35 \u2212 90)/11 = \u22125 cm por degrau.) **Li\u00e7\u00e3o:** a soma dos termos de uma PA \u00e9 o n\u00famero de termos vezes a m\u00e9dia do primeiro e do \u00faltimo; e aten\u00e7\u00e3o \u00e0 unidade: o resultado em cm precisa ser convertido para m.",
+   "A": "Esqueceu de dividir por 2 na f\u00f3rmula da soma: 12 \u00b7 125 = 1 500 cm = 15 m.",
+   "B": "Usou 11 termos (a quantidade de passos) em vez dos 12 degraus: 11 \u00b7 125/2 = 687,5 cm.",
+   "C": "Calculou corretamente a soma (750), mas em cent\u00edmetro; a pergunta pediu metro.",
+   "D": "Usou 13 termos (n + 1) por contar passos a mais, obtendo 13 \u00b7 125/2 = 812,5 cm."
+  },
+  "traps": {
+   "A": "conta",
+   "B": "detalhe",
+   "C": "unidade",
+   "D": "detalhe"
+  }
+ },
+ {
+  "mod": "MA14",
+  "base": [
+   "O piso de um galp\u00e3o retangular de 4,2 m por 3,0 m ser\u00e1 revestido com placas quadradas de cer\u00e2mica, todas iguais, sem cortes, sem sobras e sem folgas. Para economizar nas juntas, o dono quer o MENOR n\u00famero poss\u00edvel de placas."
+  ],
+  "cmd": "O n\u00famero de placas necess\u00e1rias \u00e9",
+  "alts": [
+   "60.",
+   "2 100.",
+   "24.",
+   "35.",
+   "12."
+  ],
+  "ans": "D",
+  "dif": "m\u00e9dia",
+  "hab": "H3",
+  "ex": {
+   "D": "O lado das placas deve dividir 420 cm e 300 cm; para o menor n\u00famero de placas, o lado \u00e9 o maior poss\u00edvel: MDC(420, 300) = 60 cm. Placas: 420 \u00f7 60 = 7 no comprimento e 300 \u00f7 60 = 5 na largura, ou 7 \u00b7 5 = 35 placas. **Li\u00e7\u00e3o:** o MDC fornece o maior lado comum poss\u00edvel para dividir um ret\u00e2ngulo em quadrados iguais.",
+   "A": "Respondeu com o MDC (60 cm), que \u00e9 o lado da placa, e n\u00e3o o n\u00famero de placas.",
+   "B": "Usou o MMC (2 100) no lugar do MDC.",
+   "C": "Calculou o per\u00edmetro em placas (2 \u00b7 (7 + 5)), e n\u00e3o a quantidade que cobre a \u00e1rea.",
+   "E": "Somou 7 + 5 (placas ao longo de dois lados), em vez de multiplicar para cobrir toda a \u00e1rea."
+  },
+  "traps": {
+   "A": "leitura",
+   "B": "conceito",
+   "C": "conceito",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "MA14",
+  "base": [
+   "Um produtor vendeu 2/5 de sua colheita de milho para um comprador A. Do restante, vendeu 1/3 para um comprador B. Depois dessas vendas, ainda restaram 1 800 kg de milho sem vender."
+  ],
+  "cmd": "A colheita total, em quilograma, era de",
+  "alts": [
+   "4 500.",
+   "6 750.",
+   "5 400.",
+   "3 000.",
+   "9 000."
+  ],
+  "ans": "A",
+  "dif": "dif\u00edcil",
+  "hab": "H3",
+  "ex": {
+   "A": "Ap\u00f3s A, restam 1 \u2212 2/5 = 3/5 da colheita. B compra 1/3 desse restante: (1/3)(3/5) = 1/5 da colheita. Sobra 3/5 \u2212 1/5 = 2/5, ou 1 800 kg. Total: 1 800 \u00f7 (2/5) = 4 500 kg. **Li\u00e7\u00e3o:** \"1/3 do restante\" \u00e9 fra\u00e7\u00e3o do que sobrou, e n\u00e3o do todo; use sempre a mesma base (o total) para comparar.",
+   "B": "Tratou 1/3 como fra\u00e7\u00e3o do total: sobra 1 \u2212 2/5 \u2212 1/3 = 4/15, e 1 800 \u00f7 (4/15) = 6 750.",
+   "C": "Considerou que o que sobrou era 1/3 da colheita (esqueceu de calcular a sobra ap\u00f3s as duas vendas).",
+   "D": "Considerou que os 1 800 kg eram o restante ap\u00f3s A (3/5 do total), esquecendo a venda para B.",
+   "E": "Interpretou os 1 800 kg como 1/5 da colheita (a parte vendida a B)."
+  },
+  "traps": {
+   "B": "conceito",
+   "C": "leitura",
+   "D": "detalhe",
+   "E": "leitura"
+  }
+ }
+]

@@ -1,0 +1,662 @@
+[
+ {
+  "mod": "FI01",
+  "base": [
+   "Em uma rodovia de pista simples, um carro a 90 km/h segue atrás de um caminhão de 16 m de comprimento, que viaja a 72 km/h. O motorista do carro, de 4 m de comprimento, decide ultrapassar. A ultrapassagem começa quando a frente do carro está 10 m atrás da traseira do caminhão e termina quando a traseira do carro está 10 m à frente da frente do caminhão. Considere as velocidades constantes."
+  ],
+  "cmd": "A distância percorrida pelo carro durante a ultrapassagem, em metros, é de",
+  "alts": [
+   "55.",
+   "160.",
+   "200.",
+   "40.",
+   "22."
+  ],
+  "ans": "C",
+  "dif": "média",
+  "hab": "H20",
+  "ex": {
+   "A": "Converteu só uma velocidade e dividiu 40 m por 18 (km/h) como se fosse m/s, obtendo 2,2 s e 55 m. Não deu para usar unidades misturadas.",
+   "B": "Calculou o tempo certo (8 s), mas multiplicou pela velocidade do caminhão (20 m/s), não pela do carro.",
+   "C": "Velocidades: carro = 90/3,6 = 25 m/s; caminhão = 72/3,6 = 20 m/s; velocidade relativa = 5 m/s. O carro precisa ganhar 10 + 16 + 4 + 10 = 40 m em relação ao caminhão: t = 40/5 = 8 s. Distância do carro no solo = 25 × 8 = 200 m. **Lição:** em ultrapassagem, use velocidade relativa para o tempo e depois a velocidade no solo para a distância; converta km/h em m/s antes.",
+   "D": "Parou na distância relativa que o carro precisa ganhar (10 + 16 + 4 + 10 = 40 m) e a tomou como distância percorrida no solo.",
+   "E": "Somou as velocidades (45 m/s) como se os veículos fossem em sentidos opostos; na mesma direção e sentido, subtrai-se."
+  },
+  "traps": {
+   "A": "unidade",
+   "B": "conceito",
+   "D": "leitura",
+   "E": "inversao"
+  }
+ },
+ {
+  "mod": "FI01",
+  "base": [
+   "Em um treino de futebol, um jogador chuta uma bola que sai do gramado com velocidade de 20 m/s, formando 30° com a horizontal. Despreze a resistência do ar e use g = 10 m/s², sen 30° = 0,5 e cos 30° ≈ 0,865 (isto é, √3/2 com √3 ≈ 1,73)."
+  ],
+  "cmd": "O alcance horizontal da bola, ao voltar ao nível do gramado, é de aproximadamente",
+  "alts": [
+   "34,6 m.",
+   "20,0 m.",
+   "40,0 m.",
+   "69,2 m.",
+   "17,3 m."
+  ],
+  "ans": "A",
+  "dif": "média",
+  "hab": "H20",
+  "ex": {
+   "A": "Componentes: vx = 20 × 0,865 = 17,3 m/s; vy = 20 × 0,5 = 10 m/s. Tempo de voo = 2·vy/g = 2 s. Alcance = 17,3 × 2 = 34,6 m. **Lição:** no lançamento oblíquo, o tempo vem da vertical (sobe e desce) e o alcance da horizontal (velocidade constante).",
+   "B": "Trocou seno por cosseno na componente horizontal (usou 20 × 0,5 × 2); a componente horizontal é v·cos θ.",
+   "C": "Ignorou o ângulo e usou a velocidade total (20 m/s) na horizontal durante os 2 s de voo.",
+   "D": "Usou tempo de voo de 4 s (2v/g), esquecendo o sen θ na componente vertical.",
+   "E": "Usou apenas o tempo de subida (1 s), e não o voo completo (subida + descida)."
+  },
+  "traps": {
+   "B": "conta",
+   "C": "conceito",
+   "D": "conta",
+   "E": "leitura"
+  }
+ },
+ {
+  "mod": "FI02",
+  "base": [
+   "Uma curva plana e horizontal de uma pista de teste tem raio de 100 m. O coeficiente de atrito estático entre os pneus e o asfalto seco é 0,4. O engenheiro quer informar a velocidade máxima com que um carro faz a curva sem derrapar, considerando que a força de atrito é a única força horizontal que fornece a força centrípeta (g = 10 m/s²)."
+  ],
+  "cmd": "A velocidade máxima, em km/h, é",
+  "alts": [
+   "20.",
+   "102.",
+   "144.",
+   "1 440.",
+   "72."
+  ],
+  "ans": "E",
+  "dif": "média",
+  "hab": "H20",
+  "ex": {
+   "A": "Calculou corretamente 20 m/s, mas não converteu para km/h (multiplicar por 3,6).",
+   "B": "Usou 200 m (diâmetro) no lugar do raio de 100 m.",
+   "C": "Dobrou o resultado correto, como se v fosse proporcional ao produto μ·g·R em vez de à sua raiz.",
+   "D": "Esqueceu a raiz quadrada: v² = 400 foi tomado como 400 m/s e convertido para km/h.",
+   "E": "Atrito = força centrípeta: μ·m·g = m·v²/R, logo v = √(μ·g·R) = √(0,4 × 10 × 100) = 20 m/s = 72 km/h. **Lição:** a massa se cancela e a velocidade limite depende da raiz de μ·g·R; converta m/s em km/h multiplicando por 3,6."
+  },
+  "traps": {
+   "A": "unidade",
+   "B": "leitura",
+   "C": "exagero",
+   "D": "conta"
+  }
+ },
+ {
+  "mod": "FI02",
+  "base": [
+   "Um paraquedista de 80 kg (incluindo equipamento) cai em velocidade constante de 200 km/h com o paraquedas ainda fechado. Ao abri-lo, a força de resistência do ar sobre o conjunto sobe, nesse instante, para 2 400 N. Use g = 10 m/s²."
+  ],
+  "cmd": "Imediatamente após a abertura, o conjunto tem aceleração de módulo",
+  "alts": [
+   "30 m/s², apontando para cima, pois a resistência de 2 400 N dividida por 80 kg dá 30.",
+   "20 m/s², apontando para cima, de modo que ele passa a frear.",
+   "10 m/s², apontando para baixo, pois o conjunto continua em queda sob ação da gravidade.",
+   "zero, pois ele já estava em velocidade constante e a inércia mantém esse estado.",
+   "20 m/s², apontando para baixo, pois a velocidade é para baixo."
+  ],
+  "ans": "B",
+  "dif": "média",
+  "hab": "H20",
+  "ex": {
+   "A": "Dividiu apenas a resistência pela massa, esquecendo que o peso (800 N) atua para baixo e deve ser subtraído.",
+   "B": "Antes: resistência = peso = 800 N. Depois: Fres = 2 400 − 800 = 1 600 N para cima; a = 1 600/80 = 20 m/s² para cima. Como a velocidade é para baixo, ele desacelera. **Lição:** aceleração segue a força resultante, não a velocidade; força resultante nula só ocorre com forças equilibradas.",
+   "C": "Ignorou a força de resistência do ar, considerando apenas a gravidade.",
+   "D": "Esqueceu que a força resultante deixou de ser nula quando a resistência aumentou; só há aceleração nula se as forças se equilibrarem.",
+   "E": "Confundiu o sentido da aceleração com o da velocidade; a força resultante aponta para cima."
+  },
+  "traps": {
+   "A": "conta",
+   "C": "conceito",
+   "D": "conceito",
+   "E": "oposto"
+  }
+ },
+ {
+  "mod": "FI03",
+  "base": [
+   "Em testes de segurança veicular, um boneco de 80 kg viaja a 72 km/h e é freado até parar pelo airbag e pelo cinto de segurança em 0,20 s. Sem airbag, a parada ocorreria em apenas 0,04 s. Considere a força média constante durante a frenagem."
+  ],
+  "cmd": "A força média sobre o boneco com o airbag, em newtons, é de",
+  "alts": [
+   "1 600.",
+   "28 800.",
+   "320.",
+   "8 000.",
+   "40 000."
+  ],
+  "ans": "D",
+  "dif": "média",
+  "hab": "H23",
+  "ex": {
+   "A": "Calculou o impulso (80 × 20 = 1 600 N·s) e esqueceu de dividir pelo tempo de frenagem.",
+   "B": "Usou a velocidade em km/h (72) em vez de m/s.",
+   "C": "Multiplicou a quantidade de movimento pelo tempo em vez de dividir (F = Δp·Δt).",
+   "D": "Δp = m·v = 80 × 20 = 1 600 kg·m/s (72 km/h = 20 m/s). Pelo teorema do impulso, F·Δt = Δp, logo F = 1 600/0,20 = 8 000 N. Sem airbag seria 40 000 N, cinco vezes maior. **Lição:** aumentar o tempo de parada reduz a força média para o mesmo impulso.",
+   "E": "Usou o tempo da situação sem airbag (0,04 s), que não é a pedida."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "unidade",
+   "C": "inversao",
+   "E": "leitura"
+  }
+ },
+ {
+  "mod": "FI03",
+  "base": [
+   "Em um prédio comercial, um elevador de carga, com massa total (cabine + carga) de 800 kg, sobe 30 m em 20 s com velocidade constante. O motor que o aciona tem rendimento de 80%. Use g = 10 m/s²."
+  ],
+  "cmd": "A potência elétrica consumida pelo motor durante a subida é de",
+  "alts": [
+   "12 kW.",
+   "15 kW.",
+   "9,6 kW.",
+   "240 kW.",
+   "1,5 kW."
+  ],
+  "ans": "B",
+  "dif": "média",
+  "hab": "H23",
+  "ex": {
+   "A": "Calculou a potência útil e não considerou o rendimento do motor.",
+   "B": "Potência útil = m·g·h/t = 800 × 10 × 30 / 20 = 12 000 W. Rendimento 80%: P_elétrica = 12 000/0,8 = 15 000 W = 15 kW. **Lição:** a potência consumida é a útil dividida pelo rendimento.",
+   "C": "Multiplicou a potência útil por 0,8; como o motor perde energia, a potência consumida é maior que a útil.",
+   "D": "Usou a energia (240 kJ) como se fosse potência, sem dividir pelo tempo.",
+   "E": "Errou uma potência de dez ao converter 15 000 W em quilowatts."
+  },
+  "traps": {
+   "A": "conceito",
+   "C": "inversao",
+   "D": "conta",
+   "E": "unidade"
+  }
+ },
+ {
+  "mod": "FI04",
+  "base": [
+   "Um mergulhador de cilindro desce a 30 m de profundidade no mar. Considere a densidade da água do mar de 1 000 kg/m³, g = 10 m/s², pressão atmosférica de 1 × 10⁵ Pa (1 atm = 1 × 10⁵ Pa) e que a pressão aumenta com a profundidade pela relação p = p_atm + ρ·g·h."
+  ],
+  "cmd": "A pressão total sobre o mergulhador a essa profundidade, em atm, é",
+  "alts": [
+   "4.",
+   "3.",
+   "5.",
+   "31.",
+   "400."
+  ],
+  "ans": "A",
+  "dif": "fácil",
+  "hab": "H21",
+  "ex": {
+   "A": "Pressão da coluna: ρ·g·h = 1 000 × 10 × 30 = 3 × 10⁵ Pa = 3 atm. Somando a atmosférica: 1 + 3 = 4 atm. **Lição:** a pressão absoluta na água é a atmosférica mais a hidrostática; cada 10 m de água acrescentam aproximadamente 1 atm.",
+   "B": "Considerou apenas a pressão da coluna d'água (3 atm) e esqueceu a pressão atmosférica sobre a superfície.",
+   "C": "Somou a pressão atmosférica duas vezes (4 atm da fórmula + 1 atm extra).",
+   "D": "Tratou 30 m como 30 atm, sem converter a pressão da coluna (ρ·g·h = 3 × 10⁵ Pa) para atm.",
+   "E": "Confundiu pascal com atmosfera: 4 × 10⁵ Pa não é 400 atm."
+  },
+  "traps": {
+   "B": "conceito",
+   "C": "detalhe",
+   "D": "unidade",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "FI04",
+  "base": [
+   "Um iceberg flutua em equilíbrio no mar. Considere a densidade do gelo de 920 kg/m³ e a da água do mar de 1 025 kg/m³. Um estudante quer estimar que parte do volume do iceberg fica visível acima da superfície."
+  ],
+  "cmd": "A porcentagem do volume do iceberg que fica emersa é, aproximadamente,",
+  "alts": [
+   "90%.",
+   "8%.",
+   "50%.",
+   "10%.",
+   "0,9%."
+  ],
+  "ans": "D",
+  "dif": "média",
+  "hab": "H21",
+  "ex": {
+   "A": "Calculou a fração submersa (≈ 90%) e a apresentou como a emersa.",
+   "B": "Usou a densidade da água doce (1 000 kg/m³) no lugar da água do mar.",
+   "C": "Supôs que flutuar significa ficar metade fora da água, sem usar as densidades.",
+   "D": "No equilíbrio, empuxo = peso: ρ_água · V_sub = ρ_gelo · V_total, logo V_sub/V = 920/1 025 ≈ 0,898 (≈ 90%). A parte emersa é 1 − 0,898 ≈ 0,10, ou seja, cerca de 10%. **Lição:** a fração submersa é a razão entre as densidades; a emersa é o complemento.",
+   "E": "Confundiu a razão 0,9 (fração submersa) com porcentagem."
+  },
+  "traps": {
+   "A": "leitura",
+   "B": "detalhe",
+   "C": "conceito",
+   "E": "unidade"
+  }
+ },
+ {
+  "mod": "FI05",
+  "base": [
+   "Em um churrasco, uma pessoa quer resfriar 1 kg de suco de 25 °C para 5 °C usando gelo a 0 °C. Considere o suco com as propriedades da água (calor específico 1 cal/g·°C), calor latente de fusão do gelo 80 cal/g, e que a troca ocorra só entre o gelo e o suco, que o gelo derreta totalmente e que a água resultante também chegue a 5 °C."
+  ],
+  "cmd": "A massa mínima de gelo necessária é de aproximadamente",
+  "alts": [
+   "250 g.",
+   "267 g.",
+   "235 g.",
+   "800 g.",
+   "4 000 g."
+  ],
+  "ans": "C",
+  "dif": "difícil",
+  "hab": "H21",
+  "ex": {
+   "A": "Contou só o calor de fusão (20 000/80) e esqueceu de aquecer a água do gelo derretido de 0 °C a 5 °C.",
+   "B": "Subtraiu em vez de somar 5 °C ao latente (80 − 5 = 75).",
+   "C": "Calor cedido pelo suco: 1 000 × 1 × 20 = 20 000 cal. Calor recebido pelo gelo: m·80 (fusão) + m·1·5 (aquecimento da água derretida) = 85·m. Igualando: m = 20 000/85 ≈ 235 g. **Lição:** na mistura com gelo, some fusão e aquecimento da água resultante.",
+   "D": "Dividiu o calor cedido pelo suco por 25 (ΔT errado), em vez de usar 80 + 5.",
+   "E": "Usou apenas o aquecimento da água do gelo (m × 1 × 5), ignorando a fusão."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "conta",
+   "D": "leitura",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "FI05",
+  "base": [
+   "Uma máquina térmica funciona em ciclos. Em cada ciclo, ela recebe 5 000 J de calor da fonte quente e rejeita 3 500 J para a fonte fria. A máquina realiza 10 ciclos por segundo."
+  ],
+  "cmd": "A potência útil dessa máquina, em quilowatts, é de",
+  "alts": [
+   "50.",
+   "35.",
+   "1,5.",
+   "30.",
+   "15."
+  ],
+  "ans": "E",
+  "dif": "média",
+  "hab": "H21",
+  "ex": {
+   "A": "Calculou a potência do calor recebido (5 000 × 10), não a do trabalho útil.",
+   "B": "Calculou a potência do calor rejeitado à fonte fria (3 500 × 10).",
+   "C": "Considerou 1 ciclo por segundo (1 500 J/s) e errou a potência de dez.",
+   "D": "Confundiu o rendimento (30%) com o valor da potência.",
+   "E": "Trabalho por ciclo = Q_quente − Q_fria = 5 000 − 3 500 = 1 500 J (rendimento de 30%). Potência = 1 500 × 10 = 15 000 W = 15 kW. **Lição:** o trabalho útil é a diferença entre calor recebido e rejeitado; potência é trabalho por tempo."
+  },
+  "traps": {
+   "A": "leitura",
+   "B": "detalhe",
+   "C": "unidade",
+   "D": "conceito"
+  }
+ },
+ {
+  "mod": "FI06",
+  "base": [
+   "Uma ambulância com a sirene ligada emite um som de frequência 700 Hz e se aproxima, em linha reta, de um pedestre parado, com velocidade de 72 km/h. A velocidade do som no ar é 340 m/s."
+  ],
+  "cmd": "A frequência percebida pelo pedestre enquanto a ambulância se aproxima é de aproximadamente",
+  "alts": [
+   "744 Hz.",
+   "661 Hz.",
+   "700 Hz.",
+   "888 Hz.",
+   "720 Hz."
+  ],
+  "ans": "A",
+  "dif": "média",
+  "hab": "H20",
+  "ex": {
+   "A": "v_fonte = 72/3,6 = 20 m/s. Efeito Doppler (fonte se aproximando): f' = f · v/(v − v_f) = 700 × 340/320 ≈ 744 Hz. **Lição:** fonte se aproximando comprime as frentes de onda, e a frequência percebida aumenta; converta km/h em m/s.",
+   "B": "Usou a fórmula para fonte se afastando (340 + 20 no denominador).",
+   "C": "Achou que a frequência não muda, pois a sirene emite sempre a mesma; o que muda é a percebida.",
+   "D": "Usou 72 sem converter km/h em m/s: 700 × 340/(340 − 72).",
+   "E": "Somou 20 ao 700 como se velocidade (m/s) fosse frequência (Hz)."
+  },
+  "traps": {
+   "B": "oposto",
+   "C": "conceito",
+   "D": "unidade",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "FI06",
+  "base": [
+   "Um barco de pesquisa emite um pulso de sonar na vertical. O pulso reflete no fundo do mar e o eco é captado de volta 0,80 s depois. A velocidade do som na água é de 1 500 m/s."
+  ],
+  "cmd": "A profundidade do local é de",
+  "alts": [
+   "1 200 m.",
+   "2 400 m.",
+   "300 m.",
+   "600 m.",
+   "1 875 m."
+  ],
+  "ans": "D",
+  "dif": "fácil",
+  "hab": "H20",
+  "ex": {
+   "A": "Considerou só a ida, esquecendo que o tempo medido inclui ida e volta do pulso.",
+   "B": "Multiplicou por 2 em vez de dividir: o tempo já é de ida e volta.",
+   "C": "Dividiu por 2 duas vezes.",
+   "D": "Distância total do pulso = v·t = 1 500 × 0,80 = 1 200 m (ida e volta). Profundidade = 1 200/2 = 600 m. **Lição:** em eco, a distância ao obstáculo é metade do trajeto do som.",
+   "E": "Dividiu a velocidade pelo tempo (1 500/0,8) em vez de multiplicá-las."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "inversao",
+   "C": "conta",
+   "E": "inversao"
+  }
+ },
+ {
+  "mod": "FI07",
+  "base": [
+   "Em um projetor simples, um slide é colocado a 15 cm de uma lente convergente de distância focal 10 cm, e a imagem é projetada em uma parede. Use a equação 1/f = 1/p + 1/p'."
+  ],
+  "cmd": "A imagem projetada na parede é",
+  "alts": [
+   "virtual, direita e ampliada, a 30 cm da lente.",
+   "real, invertida e ampliada 2 vezes, a 30 cm da lente.",
+   "real, invertida e reduzida, a 6 cm da lente.",
+   "real, invertida e do mesmo tamanho, a 20 cm da lente.",
+   "real, invertida e ampliada, a 25 cm da lente."
+  ],
+  "ans": "B",
+  "dif": "média",
+  "hab": "H17",
+  "ex": {
+   "A": "Descreveu o comportamento de uma lupa; imagem virtual exige objeto entre o foco e a lente (p < f), e aqui p > f.",
+   "B": "1/p' = 1/f − 1/p = 1/10 − 1/15 = 1/30, então p' = 30 cm (positivo: imagem real, que pode ser projetada). Aumento A = −p'/p = −2: invertida e 2 vezes maior. **Lição:** objeto entre f e 2f em lente convergente dá imagem real, invertida e ampliada.",
+   "C": "Errou o sinal na equação, 1/p' = 1/10 + 1/15.",
+   "D": "Aplicou a condição p = 2f, mas aqui p = 1,5f.",
+   "E": "Somou p + f em vez de usar a equação das lentes."
+  },
+  "traps": {
+   "A": "conceito",
+   "C": "conta",
+   "D": "conceito",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "FI07",
+  "base": [
+   "Uma pessoa está diante de um espelho plano grande, fixo na parede, e se afasta dele andando em linha reta, na direção perpendicular ao espelho, com velocidade de 1,5 m/s em relação ao espelho."
+  ],
+  "cmd": "A velocidade com que a imagem da pessoa se afasta dela é de",
+  "alts": [
+   "0,75 m/s.",
+   "1,5 m/s.",
+   "3,0 m/s.",
+   "0 m/s.",
+   "4,5 m/s."
+  ],
+  "ans": "C",
+  "dif": "média",
+  "hab": "H17",
+  "ex": {
+   "A": "Dividiu a velocidade por 2, achando que a imagem fica no meio do caminho.",
+   "B": "Considerou que a imagem acompanha a pessoa; essa é a velocidade da imagem em relação ao espelho, não à pessoa.",
+   "C": "No espelho plano, imagem e objeto são simétricos em relação ao espelho. Se a pessoa se afasta com 1,5 m/s, a imagem se afasta do espelho, no sentido oposto, também com 1,5 m/s. A velocidade relativa entre pessoa e imagem é 1,5 + 1,5 = 3,0 m/s. **Lição:** a distância pessoa–imagem é o dobro da distância ao espelho, e a velocidade relativa também.",
+   "D": "Achou que a imagem fica parada porque o espelho está fixo.",
+   "E": "Somou três vezes a velocidade, sem aplicar a simetria entre objeto e imagem."
+  },
+  "traps": {
+   "A": "conta",
+   "B": "detalhe",
+   "D": "conceito",
+   "E": "exagero"
+  }
+ },
+ {
+  "mod": "FI08",
+  "base": [
+   "Em uma cozinha de 127 V, o circuito das tomadas é protegido por um disjuntor de 20 A. Estão ligados um ferro de passar (1 100 W), um micro-ondas (1 000 W) e um liquidificador (300 W). Uma pessoa liga também um secador de cabelo de 1 000 W, na mesma linha, e todos funcionam simultaneamente."
+  ],
+  "cmd": "A corrente total e o efeito sobre o disjuntor são",
+  "alts": [
+   "18,9 A, e o disjuntor não desarma.",
+   "26,8 A, e o disjuntor não desarma.",
+   "0,037 A, e o disjuntor não desarma.",
+   "431 800 A, e o disjuntor desarma.",
+   "26,8 A, e o disjuntor desarma."
+  ],
+  "ans": "E",
+  "dif": "média",
+  "hab": "H21",
+  "ex": {
+   "A": "Não incluiu o secador e usou só 2 400 W.",
+   "B": "Calculou a corrente correta, mas concluiu errado: 26,8 A é maior que o limite de 20 A.",
+   "C": "Inverteu a relação, dividindo a tensão pela potência (127/3 400).",
+   "D": "Multiplicou potência por tensão em vez de dividir.",
+   "E": "Potência total = 1 100 + 1 000 + 300 + 1 000 = 3 400 W. Corrente I = P/V = 3 400/127 ≈ 26,8 A, maior que 20 A: o disjuntor desarma. Sem o secador seriam 2 400/127 ≈ 18,9 A (seguro). **Lição:** em ligação em paralelo, as potências somam; compare I = P/V com o limite do disjuntor."
+  },
+  "traps": {
+   "A": "leitura",
+   "B": "conceito",
+   "C": "inversao",
+   "D": "conta"
+  }
+ },
+ {
+  "mod": "FI08",
+  "base": [
+   "Uma família troca 10 lâmpadas incandescentes de 60 W por lâmpadas de LED de 9 W. As lâmpadas ficam acesas, em média, 5 horas por dia, durante 30 dias do mês. A tarifa de energia é R$ 0,80 por kWh."
+  ],
+  "cmd": "A economia mensal na conta de energia, em reais, é de",
+  "alts": [
+   "61,20.",
+   "6,12.",
+   "2,04.",
+   "72,00.",
+   "76,50."
+  ],
+  "ans": "A",
+  "dif": "média",
+  "hab": "H23",
+  "ex": {
+   "A": "Redução de potência: 10 × (60 − 9) = 510 W = 0,51 kW. Tempo: 5 × 30 = 150 h. Energia economizada: 0,51 × 150 = 76,5 kWh. Economia: 76,5 × 0,80 = R$ 61,20. **Lição:** E = P·t em kWh; depois aplique a tarifa. Confira se a pergunta pede gasto ou economia.",
+   "B": "Considerou a economia de apenas uma lâmpada.",
+   "C": "Calculou a economia de um único dia, esquecendo os 30 dias.",
+   "D": "Calculou o gasto das lâmpadas antigas, não a economia.",
+   "E": "Calculou a economia de energia em kWh e não a multiplicou pela tarifa."
+  },
+  "traps": {
+   "B": "detalhe",
+   "C": "leitura",
+   "D": "conceito",
+   "E": "unidade"
+  }
+ },
+ {
+  "mod": "FI09",
+  "base": [
+   "Uma usina gera 2 MW de potência e a envia por uma linha de transmissão de resistência total 5 Ω. A 10 kV, a corrente na linha é de 200 A e a perda por aquecimento é de 200 kW. A empresa planeja elevar a tensão de transmissão para 100 kV com transformadores, mantendo a mesma potência transmitida. A perda por efeito Joule é P = R·I²."
+  ],
+  "cmd": "Após a mudança, a perda na linha, em kW, será de",
+  "alts": [
+   "20.",
+   "200.",
+   "0,2.",
+   "2.",
+   "2 000."
+  ],
+  "ans": "D",
+  "dif": "média",
+  "hab": "H21",
+  "ex": {
+   "A": "Considerou a perda proporcional à corrente, e não ao quadrado dela.",
+   "B": "Repetiu o valor da situação original, sem recalcular com a nova corrente.",
+   "C": "Dividiu por 1 000 em vez de 100: a corrente cai 10 vezes e a perda 100 vezes.",
+   "D": "Nova corrente: I = P/V = 2 × 10⁶/10⁵ = 20 A. Perda = R·I² = 5 × 20² = 2 000 W = 2 kW. A tensão cresceu 10 vezes, a corrente caiu 10 vezes e a perda caiu 100 vezes. **Lição:** transmitir em alta tensão reduz a corrente e, por I², as perdas.",
+   "E": "Inverteu a relação, achando que aumentar a tensão aumenta a perda."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "leitura",
+   "C": "conta",
+   "E": "inversao"
+  }
+ },
+ {
+  "mod": "FI09",
+  "base": [
+   "Uma bobina de 200 espiras é colocada em um gerador experimental. Por causa do movimento de um ímã, o fluxo magnético que atravessa cada espira varia de 5 × 10⁻³ Wb para 1 × 10⁻³ Wb em 0,02 s. Segundo a lei de Faraday, a força eletromotriz média induzida é ε = N·|ΔΦ|/Δt."
+  ],
+  "cmd": "A força eletromotriz média induzida na bobina, em volts, é de",
+  "alts": [
+   "0,2.",
+   "10.",
+   "50.",
+   "60.",
+   "40."
+  ],
+  "ans": "E",
+  "dif": "média",
+  "hab": "H21",
+  "ex": {
+   "A": "Esqueceu de multiplicar pelo número de espiras (4 × 10⁻³/0,02).",
+   "B": "Usou o fluxo final (1 × 10⁻³ Wb) em vez da variação de fluxo.",
+   "C": "Usou o fluxo inicial (5 × 10⁻³ Wb) em vez da variação de fluxo.",
+   "D": "Somou os fluxos (6 × 10⁻³ Wb) em vez de subtraí-los.",
+   "E": "ΔΦ = 1 × 10⁻³ − 5 × 10⁻³ = −4 × 10⁻³ Wb. ε = 200 × 4 × 10⁻³ / 0,02 = 40 V. **Lição:** a fem depende da variação do fluxo (não do fluxo em si), do número de espiras e do intervalo de tempo."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "leitura",
+   "C": "leitura",
+   "D": "conta"
+  }
+ },
+ {
+  "mod": "FI10",
+  "base": [
+   "Em um precipitador eletrostático de uma indústria, uma partícula de poeira de carga 2 × 10⁻⁶ C passa por uma região de campo elétrico uniforme de 5 × 10³ N/C, cuja função é desviá-la para uma placa coletora."
+  ],
+  "cmd": "A intensidade da força elétrica sobre a partícula é de",
+  "alts": [
+   "1 × 10⁻⁵ N.",
+   "1 × 10⁻² N.",
+   "2,5 × 10⁹ N.",
+   "1 × 10¹ N.",
+   "2 × 10⁻⁶ N."
+  ],
+  "ans": "B",
+  "dif": "fácil",
+  "hab": "H21",
+  "ex": {
+   "A": "Errou o expoente da carga (considerou nC em vez de µC).",
+   "B": "F = q·E = 2 × 10⁻⁶ × 5 × 10³ = 1 × 10⁻² N. **Lição:** a força sobre uma carga em um campo é F = q·E; atenção aos prefixos (µ = 10⁻⁶).",
+   "C": "Dividiu o campo pela carga (E/q) em vez de multiplicar.",
+   "D": "Tomou a carga como 2 × 10⁻³ C (mC), errando o prefixo.",
+   "E": "Usou só o valor da carga e ignorou o campo."
+  },
+  "traps": {
+   "A": "unidade",
+   "C": "inversao",
+   "D": "unidade",
+   "E": "leitura"
+  }
+ },
+ {
+  "mod": "FI10",
+  "base": [
+   "Durante uma tempestade, um carro de carroceria metálica fechada é atingido por um raio. Os ocupantes, sentados no interior sem tocar nas partes metálicas externas, não sofrem ferimentos. A explicação apresentada em uma reportagem foi a de que o carro funciona como uma \"gaiola de Faraday\"."
+  ],
+  "cmd": "Do ponto de vista da Física, a explicação está correta porque",
+  "alts": [
+   "os pneus de borracha isolam o carro do solo e impedem a passagem da corrente.",
+   "raios nunca atingem veículos em movimento ou parados em ambiente urbano.",
+   "as cargas do raio se distribuem na superfície externa do condutor e o campo elétrico no interior da carroceria é praticamente nulo.",
+   "as cargas se distribuem de maneira uniforme por todo o volume do metal, inclusive no interior do carro.",
+   "o campo elétrico no interior é muito maior, o que afasta as cargas dos ocupantes."
+  ],
+  "ans": "C",
+  "dif": "média",
+  "hab": "H21",
+  "ex": {
+   "A": "A isolação dos pneus não é o fator de proteção; o raio atravessa metros de ar e a proteção vem da blindagem eletrostática.",
+   "B": "Afirmação falsa: veículos podem ser atingidos, e a proteção está no condutor fechado.",
+   "C": "Em um condutor em equilíbrio eletrostático, o excesso de carga se distribui na superfície externa e o campo elétrico no interior é nulo; por isso a carroceria metálica fechada atua como blindagem. **Lição:** gaiola de Faraday = campo nulo no interior de condutor oco; é a base da proteção em carros, aviões e cabos coaxiais.",
+   "D": "Em condutores em equilíbrio, as cargas ficam na superfície, não no volume.",
+   "E": "Inverteu o resultado: no interior de um condutor oco o campo é nulo."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "detalhe",
+   "D": "oposto",
+   "E": "inversao"
+  }
+ },
+ {
+  "mod": "FI11",
+  "base": [
+   "Um astronauta de 70 kg pousa em um planeta que tem 8 vezes a massa da Terra e 2 vezes o raio terrestre. Considere g = 10 m/s² na superfície da Terra e que a aceleração da gravidade é g = G·M/R²."
+  ],
+  "cmd": "O peso desse astronauta na superfície do planeta é de",
+  "alts": [
+   "1 400 N.",
+   "700 N.",
+   "350 N.",
+   "2 800 N.",
+   "5 600 N."
+  ],
+  "ans": "A",
+  "dif": "média",
+  "hab": "H20",
+  "ex": {
+   "A": "g_planeta/g_Terra = (M/M_T)/(R/R_T)² = 8/4 = 2, logo g = 20 m/s². Peso = 70 × 20 = 1 400 N. **Lição:** a gravidade é proporcional à massa e inversamente proporcional ao quadrado do raio; a massa do astronauta não muda, o peso sim.",
+   "B": "Supôs que a gravidade é igual à da Terra, esquecendo-se de ajustar a massa e o raio.",
+   "C": "Inverteu a relação, usando R²/M (4/8 = 0,5).",
+   "D": "Usou M/R (8/2 = 4) em vez de M/R²: o raio entra ao quadrado.",
+   "E": "Considerou só a massa 8 vezes maior, ignorando o raio."
+  },
+  "traps": {
+   "B": "conceito",
+   "C": "inversao",
+   "D": "conta",
+   "E": "leitura"
+  }
+ },
+ {
+  "mod": "FI11",
+  "base": [
+   "Em exames de medicina nuclear, é usado um radioisótopo cuja meia-vida é de 6 horas. Uma amostra de 80 mg desse radioisótopo é preparada às 8 h de um dia, e o paciente só será liberado quando a quantidade restante for reduzida a uma pequena fração. O decaimento é exponencial."
+  ],
+  "cmd": "A massa do radioisótopo restante na amostra às 8 h do dia seguinte é de",
+  "alts": [
+   "10 mg.",
+   "5 mg.",
+   "20 mg.",
+   "40 mg.",
+   "0 mg."
+  ],
+  "ans": "B",
+  "dif": "média",
+  "hab": "H22",
+  "ex": {
+   "A": "Contou apenas 3 meias-vidas (18 h) em vez de 4 (24 h).",
+   "B": "De 8 h a 8 h do dia seguinte passam 24 h = 4 meias-vidas. m = 80/2⁴ = 80/16 = 5 mg. **Lição:** a cada meia-vida a quantidade cai pela metade; após n meias-vidas, m = m₀/2ⁿ.",
+   "C": "Dividiu a massa inicial por 4, em vez de por 2⁴ = 16.",
+   "D": "Considerou que a massa cai pela metade e fica assim, sem repetir a meia-vida.",
+   "E": "Supôs que, depois de um dia, tudo teria decaído; o decaimento exponencial não zera a massa."
+  },
+  "traps": {
+   "A": "detalhe",
+   "C": "conta",
+   "D": "conceito",
+   "E": "exagero"
+  }
+ }
+]

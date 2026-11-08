@@ -143,6 +143,24 @@ def guia(md):
             mod(3, 'Formulário-mestre do 2º dia', 'Todas as fórmulas num só lugar, com o significado de cada símbolo. As marcadas com ★ precisam ser sabidas de cor.', s5, intro5)]
 
 
+def extras(mods):
+    """Questões extras (tools/extra/*.json, formato em SPEC.md). Entram depois das da apostila, com o mesmo id (MA01.4...)."""
+    byid = {m['id']: m for m in mods}
+    out = []
+    for f in sorted((pathlib.Path(__file__).resolve().parent / 'extra').glob('*.json')):
+        for it in json.loads(f.read_text(encoding='utf8')):
+            m = byid[it['mod']]
+            n = len(m['qs']) + 1
+            assert len(it['alts']) == 5 and it['ans'] in 'ABCDE' and sorted(it['ex']) == list('ABCDE'), (f.name, it['mod'], n)
+            assert sorted(it['traps']) == [k for k in 'ABCDE' if k != it['ans']], (f.name, it['mod'], n)
+            out.append(dict(id=f"{it['mod']}.{n}", vol=m['vol'], mod=it['mod'], n=n, kind='fixacao', tag='Inédita, estilo ENEM',
+                            base=[inline(b) for b in it['base']], src='Apostila do 2º dia (questão inédita, aprofundamento).', cmd=inline(it['cmd']),
+                            alts=[inline(a) for a in it['alts']], ans=it['ans'], dif=it['dif'], hab=it['hab'],
+                            ex={k: inline(v) for k, v in it['ex'].items()}, traps=it['traps']))
+            m['qs'].append(out[-1]['id'])
+    return out
+
+
 def main(path):
     text = pathlib.Path(path).read_text(encoding='utf8')
     gab = gabaritos(text)
@@ -167,6 +185,9 @@ def main(path):
                          html=html, resumo=resumo, qs=mod_qs, vol=vol, line=line))
         cards += [dict(id=f'{mid}-c{i}', vol=vol, q=inline(q), a=inline(a)) for i, (q, a) in enumerate(mod_cards)]
     assert len(mods) == 45 and len(qs) == 119, (len(mods), len(qs))
+    n_base = len(qs)
+    qs += extras(mods)  # questões extras de tools/extra/*.json (aprofundamento da semana de 09 a 15/11)
+    print(f'{len(qs) - n_base} questões extras')
     guide = guia(text)
     mods = guide + mods
     vf_file = pathlib.Path(__file__).resolve().parent / 'dia2_vf.json'  # V ou F: 4 por estação, escritos à parte (a apostila não os traz)

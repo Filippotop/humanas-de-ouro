@@ -1,0 +1,618 @@
+[
+ {
+  "mod": "QU01",
+  "base": [
+   "Uma cooperativa de reciclagem recebeu um resíduo sólido formado por uma mistura de sal de cozinha (NaCl), limalha de ferro e areia. Deseja-se recuperar os três componentes separados, usando apenas ímã, água, filtro e uma fonte de calor.",
+   "Considere que a areia e o ferro não se dissolvem em água e que o sal é muito solúvel."
+  ],
+  "cmd": "A sequência de procedimentos que permite recuperar os três componentes é",
+  "alts": [
+   "filtrar a mistura seca para reter a areia, aquecer o filtrado até evaporar a água e, por fim, passar o ímã para retirar o ferro.",
+   "aquecer a mistura sólida até a ebulição do sal, para separá-lo, e depois usar o ímã para retirar o ferro da areia.",
+   "passar o ímã para retirar o ferro, dissolver o restante em água, filtrar para reter a areia e evaporar a água do filtrado para recuperar o sal.",
+   "dissolver tudo em água, evaporar a água para recuperar o sal e, no resíduo, usar o ímã para separar o ferro da areia.",
+   "decantar a mistura seca para separar a areia, dissolver o restante em água e usar o ímã para recuperar o sal."
+  ],
+  "ans": "C",
+  "dif": "fácil",
+  "hab": "H25",
+  "ex": {
+   "C": "Primeiro o ímã atrai o ferro (propriedade magnética), sobrando sal e areia. Ao adicionar água, só o sal se dissolve; a filtração retém a areia no filtro. O filtrado é solução de sal em água, e a evaporação da água deixa o sal sólido. Os três componentes são recuperados. **Lição:** em misturas sólidas, comece pelo método que explora uma propriedade física exclusiva (magnetismo) e só depois use dissolução seletiva, filtração e evaporação.",
+   "A": "Filtrar uma mistura seca não separa nada: não há líquido para atravessar o filtro. A filtração só funciona depois de dissolver o sal em água.",
+   "B": "O NaCl só ferve a temperaturas altíssimas (acima de 1 400 °C), muito além do que uma simples fonte de calor permite, e antes disso o sal funde. Aquecer a mistura sólida não separa o sal.",
+   "D": "Depois de evaporar a água, sal, areia e ferro continuariam misturados, pois a areia não se dissolve e não sai por evaporação. Além disso, o ferro em água úmida pode enferrujar. A ordem proposta não separa nada.",
+   "E": "Decantação separa sólido de líquido (ou líquidos entre si) e não separa dois sólidos secos. Além disso, o ímã não atrai o sal; ele atrai o ferro."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "conceito",
+   "D": "detalhe",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "QU01",
+  "base": [
+   "Um posto de combustíveis usa um teste simples para verificar o teor de etanol anidro na gasolina: em uma proveta, misturam-se 50 mL da gasolina com 50 mL de água e agita-se. Após o repouso, formam-se duas fases e a fase aquosa (a de baixo, que contém a água e todo o etanol extraído) passa a ter 66 mL.",
+   "Despreze a contração de volume e considere que a água e a gasolina pura não se misturam e que todo o etanol migra para a fase aquosa. Suponha que o regulamento da região fixe o limite de 30% de etanol em volume na gasolina."
+  ],
+  "cmd": "O teor de etanol na amostra e a conclusão do teste são, respectivamente,",
+  "alts": [
+   "32%, acima do limite permitido.",
+   "16%, abaixo do limite permitido.",
+   "24%, abaixo do limite permitido.",
+   "66%, acima do limite permitido.",
+   "34%, acima do limite permitido."
+  ],
+  "ans": "A",
+  "dif": "média",
+  "hab": "H25",
+  "ex": {
+   "A": "O volume da fase aquosa aumentou de 50 mL para 66 mL: o aumento (16 mL) é o etanol que saiu da gasolina e entrou na água. Esse etanol estava nos 50 mL de gasolina analisados: 16/50 = 0,32 = 32%. Como 32% > 30%, a amostra está acima do limite. **Lição:** o teor é calculado em relação ao volume da amostra original de gasolina (50 mL), não em relação ao volume final.",
+   "B": "16 mL é o volume de etanol, não a porcentagem. Para obter a porcentagem é preciso dividir pelos 50 mL de gasolina: 16/50 = 32%.",
+   "C": "16/66 = 24% divide o etanol pelo volume da fase aquosa final, que não é a amostra original. A referência correta é a gasolina inicial (50 mL).",
+   "D": "66 mL é o volume final da fase aquosa (água + etanol), não o teor de etanol. O etanol é só a parte que excede os 50 mL de água adicionados.",
+   "E": "34% resulta de subtrair 66 de 100 sem raciocínio físico: 100 − 66 não representa o etanol. O etanol é 66 − 50 = 16 mL."
+  },
+  "traps": {
+   "B": "unidade",
+   "C": "conta",
+   "D": "leitura",
+   "E": "conta"
+  }
+ },
+ {
+  "mod": "QU02",
+  "base": [
+   "Para remover gordura de uma panela, usa-se detergente. A molécula típica de um detergente possui uma longa cadeia de hidrocarboneto em uma extremidade e, na outra, um grupo iônico ou muito polar (por exemplo, sulfonato, –SO₃⁻)."
+  ],
+  "cmd": "A ação de limpeza do detergente sobre a gordura é explicada porque",
+  "alts": [
+   "o detergente reage quimicamente com a gordura, quebrando-a em moléculas de água e gás carbônico.",
+   "a extremidade apolar interage com a gordura, a extremidade polar interage com a água, e a gordura fica envolvida e é arrastada pelo enxágue.",
+   "toda a molécula do detergente é apolar, o que lhe permite dissolver tanto a gordura quanto a água.",
+   "a extremidade polar do detergente interage com a gordura e a apolar com a água, formando uma camada que se desprende da panela.",
+   "o detergente aumenta a densidade da gordura, que então afunda e escorre pelo ralo."
+  ],
+  "ans": "B",
+  "dif": "fácil",
+  "hab": "H24",
+  "ex": {
+   "B": "A cadeia de hidrocarboneto é apolar e interage com a gordura (apolar) por forças dipolo induzido–dipolo induzido; o grupo iônico é polar e interage com a água (íon–dipolo e ligações de hidrogênio). A gordura fica cercada de moléculas de detergente (micelas) e é removida com a água. **Lição:** semelhante dissolve semelhante; o detergente é anfifílico, com uma parte para cada meio.",
+   "A": "Não ocorre reação que transforme gordura em água e CO₂; a ação é de interações intermoleculares, não de uma reação de decomposição.",
+   "C": "O detergente tem uma parte polar. Uma molécula totalmente apolar não se dissolveria em água, que é polar.",
+   "D": "As afinidades foram invertidas: a parte polar não interage bem com a gordura apolar, e a parte apolar não interage bem com a água polar.",
+   "E": "O detergente não muda a densidade da gordura; ele permite que ela seja dispersa na água em pequenas gotas (emulsão)."
+  },
+  "traps": {
+   "A": "conceito",
+   "C": "conceito",
+   "D": "inversao",
+   "E": "detalhe"
+  }
+ },
+ {
+  "mod": "QU02",
+  "base": [
+   "Em regiões de clima frio, lagos e rios congelam apenas na superfície, e a vida aquática sobrevive na água líquida que permanece embaixo da camada de gelo. Isso ocorre porque o gelo (água sólida) tem menor densidade que a água líquida e, por isso, flutua."
+  ],
+  "cmd": "Em nível molecular, a menor densidade do gelo se deve ao fato de que, ao congelar,",
+  "alts": [
+   "as moléculas de água aumentam de tamanho, passando a ocupar mais espaço.",
+   "o gelo se forma com bolhas de ar em seu interior, e é esse ar que o torna menos denso.",
+   "as ligações de hidrogênio entre as moléculas de água se rompem, e as moléculas se afastam livremente.",
+   "as ligações de hidrogênio organizam as moléculas em um arranjo ordenado com muitos espaços vazios, ocupando volume maior.",
+   "a massa de água diminui, pois parte das moléculas é perdida para o ambiente."
+  ],
+  "ans": "D",
+  "dif": "média",
+  "hab": "H24",
+  "ex": {
+   "D": "No gelo, cada molécula de água faz ligações de hidrogênio com quatro vizinhas, formando uma estrutura hexagonal aberta e rígida, com espaços vazios. Na água líquida, as moléculas se aproximam mais. O mesmo número de moléculas ocupa mais volume no gelo: menor densidade. **Lição:** densidade = massa/volume; a massa não muda ao congelar, o volume aumenta.",
+   "A": "As moléculas de H₂O não mudam de tamanho ao congelar; muda o arranjo entre elas.",
+   "B": "Bolhas podem existir no gelo comum, mas não explicam a menor densidade do gelo puro e transparente, que também flutua.",
+   "C": "É o contrário: no gelo as ligações de hidrogênio são mais numerosas e ordenadas; na fusão, parte delas se rompe.",
+   "E": "A massa se conserva no congelamento. O que muda é o volume, não a massa."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "detalhe",
+   "C": "inversao",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "QU03",
+  "base": [
+   "O suco de limão tem pH aproximado de 2,0, enquanto o leite tem pH aproximado de 6,5, ambos a 25 °C. Dado: 10^0,5 ≈ 3."
+  ],
+  "cmd": "A concentração de íons H⁺ no suco de limão é, aproximadamente, quantas vezes a do leite?",
+  "alts": [
+   "4,5 vezes maior.",
+   "3,25 vezes maior.",
+   "1 × 10⁴ vezes maior.",
+   "3 × 10⁻⁵ vezes maior.",
+   "3 × 10⁴ vezes maior."
+  ],
+  "ans": "E",
+  "dif": "média",
+  "hab": "H24",
+  "ex": {
+   "E": "pH = −log[H⁺], logo [H⁺] = 10^−pH. Limão: 10⁻² mol/L; leite: 10^−6,5 mol/L. Razão = 10⁻²/10^−6,5 = 10^4,5 = 10⁴ × 10^0,5 ≈ 3 × 10⁴. **Lição:** a escala de pH é logarítmica; uma diferença de pH é um expoente, não uma subtração direta de concentrações.",
+   "A": "A conta correta dá 0,4 L = 400 mL; 40 mL é erro de uma ordem de grandeza ao converter litros em mililitros.",
+   "B": "6,5/2,0 = 3,25 é a razão entre os pH, o que não tem significado físico, pois a escala é logarítmica.",
+   "C": "10⁴ ignora a meia unidade de pH: a diferença é 4,5, e não 4. 10^4,5 ≈ 3 × 10⁴.",
+   "D": "Esse valor é o inverso da razão pedida: corresponde a [H⁺] do leite em relação ao limão. O limão é o mais ácido."
+  },
+  "traps": {
+   "A": "conta",
+   "B": "conceito",
+   "C": "detalhe",
+   "D": "inversao"
+  }
+ },
+ {
+  "mod": "QU03",
+  "base": [
+   "Um antiácido em comprimido contém 1,16 g de hidróxido de magnésio, Mg(OH)₂, que neutraliza o excesso de ácido clorídrico do estômago segundo a equação:",
+   "Mg(OH)₂ + 2 HCl → MgCl₂ + 2 H₂O",
+   "Considere que o suco gástrico em excesso tem concentração de HCl igual a 0,10 mol/L. Massas molares: H = 1 g/mol; O = 16 g/mol; Mg = 24 g/mol."
+  ],
+  "cmd": "O volume de suco gástrico, em mililitro, cujo ácido é totalmente neutralizado por um comprimido é",
+  "alts": [
+   "40.",
+   "200.",
+   "400.",
+   "800.",
+   "4 000."
+  ],
+  "ans": "C",
+  "dif": "média",
+  "hab": "H25",
+  "ex": {
+   "C": "M[Mg(OH)₂] = 24 + 2 × 17 = 58 g/mol. n = 1,16/58 = 0,02 mol. A proporção é 1 : 2, então n(HCl) = 0,04 mol. V = n/C = 0,04/0,10 = 0,40 L = 400 mL. **Lição:** a base tem dois OH⁻, então neutraliza o dobro de mols de ácido monoprótico.",
+   "A": "A conta correta dá 0,4 L = 400 mL; 40 mL é erro de uma ordem de grandeza ao converter litros em mililitros.",
+   "B": "200 mL corresponde a assumir proporção 1 : 1 (0,02 mol de HCl), ignorando que há dois OH⁻ por fórmula.",
+   "D": "800 mL aparece ao aplicar o fator 2 duas vezes (por exemplo, usar 0,08 mol de HCl por contar duas vezes os OH⁻).",
+   "E": "4 000 mL seria 4 L: erro de uma ordem de grandeza na conta ou na conversão de litro para mililitro."
+  },
+  "traps": {
+   "A": "unidade",
+   "B": "conceito",
+   "D": "conta",
+   "E": "unidade"
+  }
+ },
+ {
+  "mod": "QU04",
+  "base": [
+   "O etanol é um combustível renovável, mas sua queima também libera CO₂. A combustão completa do etanol é representada por:",
+   "C₂H₅OH + 3 O₂ → 2 CO₂ + 3 H₂O",
+   "Considere que 1 litro de etanol tem massa de 0,80 kg. Massas molares: C₂H₅OH = 46 g/mol; CO₂ = 44 g/mol."
+  ],
+  "cmd": "A massa de CO₂ liberada na combustão completa de 1 litro de etanol é, aproximadamente,",
+  "alts": [
+   "1,5 kg.",
+   "0,77 kg.",
+   "2,3 kg.",
+   "0,80 kg.",
+   "1 530 kg."
+  ],
+  "ans": "A",
+  "dif": "média",
+  "hab": "H25",
+  "ex": {
+   "A": "800 g de etanol ÷ 46 g/mol ≈ 17,4 mol. Pela equação, 1 mol de etanol gera 2 mol de CO₂: 34,8 mol. Massa = 34,8 × 44 ≈ 1 530 g ≈ 1,5 kg. **Lição:** converta volume em massa (densidade), massa em mol, aplique a proporção da equação e volte para massa; atenção às unidades finais.",
+   "B": "0,77 kg vem de esquecer o coeficiente 2 do CO₂ (17,4 × 44 ≈ 765 g).",
+   "C": "2,3 kg resulta de usar o coeficiente 3 (do O₂ ou da H₂O) no lugar do 2 do CO₂.",
+   "D": "0,80 kg é a massa do próprio etanol; supor que a massa de CO₂ seja igual à do combustível ignora o O₂ consumido.",
+   "E": "1 530 está em gramas; tratar esse número como quilogramas é erro de unidade."
+  },
+  "traps": {
+   "B": "conta",
+   "C": "leitura",
+   "D": "conceito",
+   "E": "unidade"
+  }
+ },
+ {
+  "mod": "QU04",
+  "base": [
+   "Em um airbag, a colisão aciona um sensor que provoca a decomposição rápida da azida de sódio (NaN₃) e libera nitrogênio gasoso, que infla a bolsa:",
+   "2 NaN₃(s) → 2 Na(s) + 3 N₂(g)",
+   "Considere que o volume molar dos gases, nas condições do ocorrido, é 24 L/mol, que a reação é completa e que um airbag precisa de 36 L de N₂. Massas molares: N = 14 g/mol; Na = 23 g/mol."
+  ],
+  "cmd": "A massa de azida de sódio necessária para encher um airbag é",
+  "alts": [
+   "36 g.",
+   "65 g.",
+   "97,5 g.",
+   "130 g.",
+   "146 g."
+  ],
+  "ans": "B",
+  "dif": "média",
+  "hab": "H25",
+  "ex": {
+   "B": "n(N₂) = 36/24 = 1,5 mol. Pela equação, 3 mol de N₂ vêm de 2 mol de NaN₃, então n(NaN₃) = 1,5 × 2/3 = 1,0 mol. M(NaN₃) = 23 + 3 × 14 = 65 g/mol; m = 65 g. **Lição:** use a razão dos coeficientes (2 : 3), não os números absolutos da equação.",
+   "A": "36 é o volume em litros de N₂; trocá-lo por massa de azida mistura grandezas diferentes.",
+   "C": "97,5 g = 1,5 mol × 65 g/mol supõe proporção 1 : 1 entre NaN₃ e N₂, ignorando os coeficientes 2 e 3.",
+   "D": "130 g corresponde a 2 mol de NaN₃, ou seja, usar o coeficiente 2 da equação como se fosse a quantidade real de mols.",
+   "E": "146 g vem de inverter a razão (3/2 em vez de 2/3): 2,25 mol × 65 ≈ 146 g."
+  },
+  "traps": {
+   "A": "leitura",
+   "C": "conceito",
+   "D": "detalhe",
+   "E": "inversao"
+  }
+ },
+ {
+  "mod": "QU05",
+  "base": [
+   "Uma bolsa de soro fisiológico de 500 mL contém 4,5 g de cloreto de sódio dissolvidos em água. Massas molares: Na = 23 g/mol; Cl = 35,5 g/mol."
+  ],
+  "cmd": "A concentração de NaCl nessa solução, em mol/L, é de aproximadamente",
+  "alts": [
+   "0,015.",
+   "0,077.",
+   "0,90.",
+   "0,15.",
+   "0,31."
+  ],
+  "ans": "D",
+  "dif": "fácil",
+  "hab": "H25",
+  "ex": {
+   "D": "Concentração em massa = 4,5 g / 0,5 L = 9 g/L. M(NaCl) = 58,5 g/mol. C = 9/58,5 ≈ 0,154 mol/L ≈ 0,15 mol/L. **Lição:** concentração em mol/L = (massa/massa molar)/volume em litros.",
+   "A": "0,015 resulta de usar 0,9 g/L, isto é, esquecer que 500 mL é meio litro (4,5 g em 0,5 L dá 9 g/L, não 0,9).",
+   "B": "0,077 resulta de dividir o valor correto por 2, como se os dois íons repartissem a quantidade de NaCl; a pergunta é sobre mol de NaCl por litro.",
+   "C": "0,90 aparece ao confundir o 0,9% m/V do soro com a concentração em mol/L, sem converter a massa em mol.",
+   "E": "0,31 mol/L é a concentração total de íons (Na⁺ + Cl⁻), o dobro da pedida, que é a de NaCl."
+  },
+  "traps": {
+   "A": "unidade",
+   "B": "conceito",
+   "C": "leitura",
+   "E": "detalhe"
+  }
+ },
+ {
+  "mod": "QU05",
+  "base": [
+   "Um agricultor mistura duas soluções de cloreto de potássio (KCl) para preparar uma solução nutritiva: 300 mL de uma solução 0,40 mol/L e 200 mL de outra solução 0,15 mol/L. Não ocorre reação entre os componentes e os volumes são aditivos."
+  ],
+  "cmd": "A concentração de KCl na solução final, em mol/L, é",
+  "alts": [
+   "0,25.",
+   "0,275.",
+   "0,55.",
+   "0,15.",
+   "0,30."
+  ],
+  "ans": "E",
+  "dif": "média",
+  "hab": "H25",
+  "ex": {
+   "E": "n₁ = 0,40 × 0,300 = 0,12 mol; n₂ = 0,15 × 0,200 = 0,03 mol; total = 0,15 mol em 0,500 L. C = 0,15/0,50 = 0,30 mol/L. **Lição:** na mistura de soluções do mesmo soluto, some os mols e divida pelo volume total (média ponderada pelos volumes).",
+   "A": "0,25 resulta de ponderar as concentrações pelos volumes trocados (200 mL com 0,40 e 300 mL com 0,15). A solução mais concentrada é a de maior volume, logo o resultado deve estar mais perto de 0,40.",
+   "B": "0,275 é a média simples (0,40 + 0,15)/2, que ignora os volumes diferentes.",
+   "C": "0,55 é a soma das concentrações; concentrações não se somam na mistura, pois o volume aumenta.",
+   "D": "0,15 é o número total de mols de KCl (0,15 mol), e não a concentração; faltou dividir pelo volume final."
+  },
+  "traps": {
+   "A": "inversao",
+   "B": "conceito",
+   "C": "conta",
+   "D": "unidade"
+  }
+ },
+ {
+  "mod": "QU06",
+  "base": [
+   "Ao comparar combustíveis, uma equipe de engenharia reuniu a energia liberada na combustão completa de 1 mol de cada substância (entalpia de combustão, em módulo):",
+   "• hidrogênio (H₂): 286 kJ/mol; • octano (C₈H₁₈, componente da gasolina): 5 470 kJ/mol; • etanol (C₂H₆O): 1 370 kJ/mol; • metano (CH₄): 890 kJ/mol; • carvão (C, grafite): 394 kJ/mol.",
+   "Massas molares: H = 1 g/mol; C = 12 g/mol; O = 16 g/mol."
+  ],
+  "cmd": "Para um veículo em que o peso do combustível transportado é o fator decisivo, o combustível mais vantajoso, por liberar maior energia por grama, é o",
+  "alts": [
+   "octano, porque tem a maior entalpia de combustão por mol.",
+   "hidrogênio, porque libera cerca de 143 kJ por grama.",
+   "metano, porque libera cerca de 56 kJ por grama.",
+   "etanol, porque libera cerca de 30 kJ por grama.",
+   "carvão, porque libera cerca de 33 kJ por grama."
+  ],
+  "ans": "B",
+  "dif": "média",
+  "hab": "H26",
+  "ex": {
+   "B": "Energia por grama = ΔH/M: H₂ = 286/2 = 143; octano = 5 470/114 ≈ 48; etanol = 1 370/46 ≈ 30; metano = 890/16 ≈ 56; C = 394/12 ≈ 33 kJ/g. O maior valor é o do hidrogênio. **Lição:** compare combustíveis na mesma base de comparação do problema (massa, volume ou mol); por mol e por grama a ordem muda.",
+   "A": "O octano tem a maior energia por mol, mas a pergunta é por grama; sua massa molar é grande (114 g/mol), o que reduz o valor para ≈ 48 kJ/g.",
+   "C": "O metano libera ≈ 56 kJ/g, valor correto, mas menor que o do hidrogênio (143 kJ/g).",
+   "D": "O etanol libera ≈ 30 kJ/g, o que o deixa entre os menores da lista.",
+   "E": "O carvão libera ≈ 33 kJ/g, bem abaixo do hidrogênio."
+  },
+  "traps": {
+   "A": "conceito",
+   "C": "detalhe",
+   "D": "detalhe",
+   "E": "detalhe"
+  }
+ },
+ {
+  "mod": "QU06",
+  "base": [
+   "Os alimentos perecíveis duram mais quando mantidos na geladeira. A deterioração é causada por reações químicas, muitas delas catalisadas por enzimas de microrganismos, cuja velocidade depende da temperatura."
+  ],
+  "cmd": "Do ponto de vista da cinética química, a refrigeração retarda a deterioração porque",
+  "alts": [
+   "aumenta a energia de ativação das reações de deterioração, tornando-as mais difíceis.",
+   "diminui a energia dos reagentes a ponto de as reações se tornarem endotérmicas.",
+   "diminui a fração de colisões com energia igual ou superior à energia de ativação, reduzindo a velocidade das reações.",
+   "interrompe completamente todas as reações químicas do alimento.",
+   "aumenta a quantidade de calor liberado pelas reações, que passam a ser mais lentas."
+  ],
+  "ans": "C",
+  "dif": "fácil",
+  "hab": "H25",
+  "ex": {
+   "C": "A energia de ativação é uma propriedade da reação (muda com catalisador, não com a temperatura). Em temperatura menor, menos moléculas têm energia ≥ Ea, há menos colisões efetivas por segundo e a velocidade cai. **Lição:** temperatura afeta a velocidade pela fração de colisões efetivas, não pela Ea.",
+   "A": "A refrigeração não altera a Ea. Somente um catalisador (ou inibidor) muda o caminho da reação e sua Ea.",
+   "B": "Resfriar não transforma o tipo termodinâmico da reação (exo ou endotérmica), que depende das energias de reagentes e produtos.",
+   "D": "A refrigeração apenas retarda as reações; não as interrompe totalmente (por isso o alimento acaba estragando, e o congelamento retarda ainda mais).",
+   "E": "Velocidade e calor liberado (ΔH) são conceitos diferentes; a velocidade menor não vem de maior liberação de calor."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "conceito",
+   "D": "exagero",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "QU07",
+  "base": [
+   "Na indústria, a amônia, matéria-prima de fertilizantes, é produzida pelo processo Haber-Bosch:",
+   "N₂(g) + 3 H₂(g) ⇌ 2 NH₃(g)   ΔH = −92 kJ",
+   "O reator opera com altas pressões e com catalisador. A mistura que sai do reator é resfriada para liquefazer a amônia, que é retirada continuamente; o N₂ e o H₂ que não reagiram são devolvidos ao reator."
+  ],
+  "cmd": "A retirada contínua da amônia líquida contribui para aumentar o rendimento porque",
+  "alts": [
+   "desloca o equilíbrio para a esquerda, favorecendo a formação dos reagentes.",
+   "aumenta o valor da constante de equilíbrio da reação.",
+   "atua como um catalisador, acelerando a formação de mais amônia.",
+   "reduz a pressão total do sistema, favorecendo o lado com menos mols de gás.",
+   "diminui a concentração de produto, e o equilíbrio se desloca para a direita para repô-lo."
+  ],
+  "ans": "E",
+  "dif": "média",
+  "hab": "H27",
+  "ex": {
+   "E": "Retirar NH₃ reduz a concentração de produto; pelo princípio de Le Chatelier, o sistema reage formando mais NH₃, deslocando-se para a direita. Como N₂ e H₂ são reciclados, o aproveitamento global aumenta. **Lição:** remover um produto desloca o equilíbrio no sentido de formá-lo.",
+   "A": "Seria o inverso: a diminuição da concentração do produto favorece a reação direta, não a inversa.",
+   "B": "A constante de equilíbrio só varia com a temperatura; retirar produto não altera K.",
+   "C": "Retirar o produto não faz dele um catalisador. O catalisador é outro recurso do processo: acelera a reação, mas não altera o equilíbrio.",
+   "D": "Retirar amônia não reduz a pressão no reator, que é mantida alta; e diminuir a pressão favoreceria o lado com mais mols de gás, o dos reagentes."
+  },
+  "traps": {
+   "A": "inversao",
+   "B": "conceito",
+   "C": "conceito",
+   "D": "detalhe"
+  }
+ },
+ {
+  "mod": "QU07",
+  "base": [
+   "Em uma aula prática, uma solução amarela de cromato de potássio (K₂CrO₄) foi acidificada e passou a laranja devido ao equilíbrio:",
+   "2 CrO₄²⁻(aq) (amarelo) + 2 H⁺(aq) ⇌ Cr₂O₇²⁻(aq) (laranja) + H₂O(l)",
+   "Em seguida, o professor adicionou à solução laranja algumas gotas de solução de hidróxido de sódio (NaOH)."
+  ],
+  "cmd": "Após a adição do NaOH, espera-se que a solução",
+  "alts": [
+   "volte a ficar amarela, pois o OH⁻ consome H⁺ e o equilíbrio se desloca para a esquerda.",
+   "permaneça laranja, pois a base não participa do equilíbrio.",
+   "fique ainda mais laranja, pois o OH⁻ desloca o equilíbrio para a direita.",
+   "fique verde, pois o cromo é reduzido pela base.",
+   "fique ainda mais laranja, pois a água adicionada com o NaOH desloca o equilíbrio para a direita."
+  ],
+  "ans": "A",
+  "dif": "média",
+  "hab": "H27",
+  "ex": {
+   "A": "OH⁻ + H⁺ → H₂O: a base consome H⁺, que é reagente do equilíbrio. Diminuindo [H⁺], o equilíbrio se desloca para a esquerda (lado do cromato), e a cor amarela reaparece. **Lição:** um íon que não aparece na equação pode agir indiretamente reagindo com uma das espécies do equilíbrio.",
+   "B": "O OH⁻ reage com o H⁺, que faz parte do equilíbrio; logo, interfere nele.",
+   "C": "Sentido invertido: reduzir o H⁺ desloca para o lado que o produz (esquerda), não para a direita.",
+   "D": "A cor verde é característica do Cr³⁺, formado por redução em meio ácido com redutor, não pela adição de uma base.",
+   "E": "A água do solvente tem concentração praticamente constante e, em gotas, a quantidade adicionada é pequena; o efeito dominante é o do consumo de H⁺."
+  },
+  "traps": {
+   "B": "conceito",
+   "C": "inversao",
+   "D": "conceito",
+   "E": "detalhe"
+  }
+ },
+ {
+  "mod": "QU08",
+  "base": [
+   "A água sanitária é produzida borbulhando-se gás cloro em solução de hidróxido de sódio, segundo a equação:",
+   "Cl₂ + 2 NaOH → NaCl + NaClO + H₂O",
+   "Considere os números de oxidação: Na = +1, O = −2, H = +1."
+  ],
+  "cmd": "Do ponto de vista da oxirredução, nessa reação o cloro",
+  "alts": [
+   "sofre apenas oxidação, passando de 0 para +1.",
+   "sofre apenas redução, passando de 0 para −1.",
+   "é o agente redutor, e o NaOH é o agente oxidante.",
+   "sofre oxidação (0 → +1) e redução (0 → −1) ao mesmo tempo.",
+   "mantém o número de oxidação constante, e o hidrogênio é o elemento que se reduz."
+  ],
+  "ans": "D",
+  "dif": "média",
+  "hab": "H25",
+  "ex": {
+   "D": "No Cl₂ o nox do cloro é 0. No NaCl é −1 (redução) e no NaClO é +1 (Na +1, O −2 → Cl +1; oxidação). O mesmo reagente se oxida e se reduz: é uma reação de desproporcionamento (dismutação), e o Cl₂ é ao mesmo tempo agente oxidante e redutor. **Lição:** calcule o nox em reagentes e produtos; quando uma mesma espécie gera produtos com nox maior e menor, houve desproporcionamento.",
+   "A": "Apenas metade dos átomos de cloro se oxida (para +1); a outra metade vai para −1 no NaCl.",
+   "B": "Metade dos átomos de cloro é reduzida (−1), mas a outra se oxida (+1).",
+   "C": "O NaOH não tem elemento que varie o nox (Na +1, O −2, H +1 antes e depois); portanto não é agente oxidante.",
+   "E": "O cloro varia o nox (0, −1, +1); o hidrogênio permanece +1."
+  },
+  "traps": {
+   "A": "detalhe",
+   "B": "detalhe",
+   "C": "conceito",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "QU08",
+  "base": [
+   "A indústria cloro-álcali produz gás cloro, gás hidrogênio e hidróxido de sódio por eletrólise de uma solução aquosa concentrada de cloreto de sódio (salmoura). Na solução, há os íons Na⁺, Cl⁻ e as moléculas de água. Nessas condições, o sódio metálico não se forma, pois a água se reduz mais facilmente que o Na⁺."
+  ],
+  "cmd": "Durante a eletrólise da salmoura, formam-se",
+  "alts": [
+   "Cl₂ no ânodo, onde o Cl⁻ se oxida, e H₂ e OH⁻ no cátodo, onde a água se reduz.",
+   "Na metálico no cátodo e Cl₂ no ânodo, como na eletrólise do NaCl fundido.",
+   "O₂ no cátodo e H₂ no ânodo, pela decomposição da água.",
+   "Cl₂ no cátodo, onde o Cl⁻ se reduz, e H₂ no ânodo, onde a água se oxida.",
+   "Na₂O no ânodo e HCl no cátodo, como produtos da reação entre os íons."
+  ],
+  "ans": "A",
+  "dif": "média",
+  "hab": "H25",
+  "ex": {
+   "A": "No ânodo ocorre oxidação: 2 Cl⁻ → Cl₂ + 2 e⁻. No cátodo ocorre redução: 2 H₂O + 2 e⁻ → H₂ + 2 OH⁻. Os íons Na⁺ ficam em solução com OH⁻, formando NaOH. **Lição:** na eletrólise aquosa, a água pode participar; ânodo = oxidação, cátodo = redução.",
+   "B": "Isso ocorre na eletrólise ígnea (NaCl fundido, sem água). O enunciado diz que o sódio não se forma em meio aquoso.",
+   "C": "O₂ e H₂ se formam em eletrólise da água, mas aqui o Cl⁻ é oxidado no ânodo, e os gases estão nos eletrodos trocados.",
+   "D": "Eletrodos trocados: oxidação é no ânodo, e o Cl⁻ não pode ser reduzido, já que está no estado −1.",
+   "E": "Na₂O e HCl não são produtos desse processo; o cátodo produz H₂ e OH⁻."
+  },
+  "traps": {
+   "B": "conceito",
+   "C": "inversao",
+   "D": "inversao",
+   "E": "conceito"
+  }
+ },
+ {
+  "mod": "QU09",
+  "base": [
+   "O ácido lático, CH₃–CH(OH)–COOH, é produzido nos músculos durante exercício intenso e no processo de fermentação de iogurtes. Existem duas formas dessa molécula, com a mesma fórmula estrutural plana, que desviam o plano da luz polarizada em sentidos opostos e são imagens especulares não sobreponíveis uma da outra (enantiômeros)."
+  ],
+  "cmd": "A existência desses dois isômeros ópticos deve-se ao fato de que a molécula",
+  "alts": [
+   "possui uma ligação dupla entre carbonos, com grupos diferentes de cada lado.",
+   "possui um grupo carboxila e um hidroxila, que são funções diferentes.",
+   "possui um carbono ligado a quatro grupos diferentes (H, OH, CH₃ e COOH).",
+   "tem cadeia carbônica ramificada, o que permite duas disposições espaciais.",
+   "tem mais de um grupo hidroxila, que podem estar de lados opostos."
+  ],
+  "ans": "C",
+  "dif": "média",
+  "hab": "H24",
+  "ex": {
+   "C": "O carbono central está ligado a H, OH, CH₃ e COOH, quatro grupos diferentes: é um carbono assimétrico (quiral). Isso gera duas disposições espaciais que são imagens especulares não sobreponíveis (isomeria óptica). **Lição:** um carbono quiral = quatro ligantes diferentes.",
+   "A": "A ligação dupla com grupos diferentes causa isomeria geométrica (cis-trans), não óptica; o ácido lático não tem C=C.",
+   "B": "A presença de funções diferentes explicaria isomeria de função entre moléculas distintas; não é o caso de dois enantiômeros com a mesma fórmula estrutural.",
+   "D": "A cadeia do ácido lático (3 carbonos) não é ramificada, e ramificação não gera isomeria óptica.",
+   "E": "O ácido lático tem um só grupo hidroxila (alcoólico); além disso, mais hidroxilas não garantem quiralidade."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "conceito",
+   "D": "detalhe",
+   "E": "leitura"
+  }
+ },
+ {
+  "mod": "QU09",
+  "base": [
+   "O PET (politereftalato de etileno), usado em garrafas de refrigerante, é produzido a partir do ácido tereftálico (que possui dois grupos –COOH) e do etilenoglicol (que possui dois grupos –OH). As moléculas se unem repetidamente em uma longa cadeia, com liberação de moléculas de água."
+  ],
+  "cmd": "O PET é classificado como",
+  "alts": [
+   "poliamida, formada por ligações amida entre um ácido e uma amina.",
+   "polímero de adição, formado pela abertura de duplas ligações, sem subprodutos.",
+   "polietileno, formado apenas pela união de unidades de etileno.",
+   "poliéter, formado pela desidratação entre dois álcoois.",
+   "poliéster, formado por reação de condensação entre ácido carboxílico e álcool, com ligações éster."
+  ],
+  "ans": "E",
+  "dif": "fácil",
+  "hab": "H24",
+  "ex": {
+   "E": "Ácido carboxílico + álcool → éster + água. Como cada monômero tem dois grupos, a reação se repete e forma um poliéster, por condensação, com liberação de água. **Lição:** liberação de molécula pequena (água) indica polimerização por condensação.",
+   "A": "A poliamida (náilon) se forma entre ácido carboxílico e amina. O PET não tem nitrogênio em seus monômeros.",
+   "B": "Polímeros de adição não liberam subprodutos; no PET há liberação de água.",
+   "C": "O polietileno é feito apenas de etileno, e o PET tem outros monômeros (ácido tereftálico e etilenoglicol).",
+   "D": "A ligação do PET é éster (de ácido com álcool), e não éter. Um dos monômeros é um ácido."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "oposto",
+   "C": "detalhe",
+   "D": "conceito"
+  }
+ },
+ {
+  "mod": "QU10",
+  "base": [
+   "O césio-137, liberado em acidentes radiológicos, tem meia-vida de aproximadamente 30 anos. Em um terreno contaminado, a atividade do solo é de 640 unidades, e a legislação permite o uso agrícola do local quando a atividade cair para 40 unidades."
+  ],
+  "cmd": "O tempo mínimo de espera, em anos, até que o terreno possa ser usado para a agricultura, considerando apenas o decaimento radioativo, é",
+  "alts": [
+   "60.",
+   "120.",
+   "150.",
+   "480.",
+   "600."
+  ],
+  "ans": "B",
+  "dif": "média",
+  "hab": "H27",
+  "ex": {
+   "B": "Razão = 640/40 = 16 = 2⁴, ou seja, 4 meias-vidas: 640 → 320 → 160 → 80 → 40. Tempo = 4 × 30 = 120 anos. **Lição:** o decaimento é exponencial: cada meia-vida divide a atividade por 2, e o número de meias-vidas é o expoente de 2.",
+   "A": "60 anos são 2 meias-vidas, em que a atividade só cai para 160, não para 40.",
+   "C": "150 anos são 5 meias-vidas; nesse tempo a atividade cairia para 20, abaixo do necessário. O tempo mínimo é 4.",
+   "D": "480 = 16 × 30 trata o decaimento como linear (1 meia-vida por fator de redução), o que é incorreto.",
+   "E": "600 resulta de 640 − 40, subtraindo valores de atividade como se fossem anos."
+  },
+  "traps": {
+   "A": "conta",
+   "C": "conta",
+   "D": "conceito",
+   "E": "leitura"
+  }
+ },
+ {
+  "mod": "QU10",
+  "base": [
+   "Um lago raso próximo a uma cidade passou a receber esgoto doméstico não tratado e água de chuva carregada de fertilizantes usados em lavouras vizinhas. Em poucas semanas, a água ficou esverdeada, com grande quantidade de algas, e foi observada mortandade de peixes."
+  ],
+  "cmd": "A causa mais provável da mortandade de peixes é",
+  "alts": [
+   "a chuva ácida, que reduz o pH do lago e dissolve o oxigênio da água.",
+   "o efeito estufa, que aquece a atmosfera e evapora a água do lago.",
+   "a inversão térmica, que concentra poluentes do ar sobre a cidade.",
+   "a eutrofização: o excesso de nitrogênio e fósforo estimula as algas, e a decomposição da matéria orgânica por bactérias consome o oxigênio dissolvido.",
+   "o excesso de oxigênio produzido pelas algas, que forma bolhas e intoxica os peixes."
+  ],
+  "ans": "D",
+  "dif": "média",
+  "hab": "H27",
+  "ex": {
+   "D": "Nitrogênio e fósforo (esgoto e fertilizantes) são nutrientes: as algas proliferam (eutrofização). Quando morrem, são decompostas por microrganismos aeróbios que consomem o oxigênio dissolvido; a falta de O₂ mata os peixes. **Lição:** na eutrofização, o problema final é a falta de oxigênio, causada por excesso de nutrientes.",
+   "A": "A chuva ácida resulta de SO₂ e NOₓ, não de fertilizantes e esgoto, e não aumenta o oxigênio dissolvido.",
+   "B": "O efeito estufa é um fenômeno global e não explica a proliferação de algas por nutrientes do esgoto.",
+   "C": "A inversão térmica é um fenômeno atmosférico que retém poluentes do ar, sem relação com o lago.",
+   "E": "No processo, o oxigênio acaba faltando, e não sobrando: o consumo na decomposição supera a produção. O raciocínio está invertido."
+  },
+  "traps": {
+   "A": "conceito",
+   "B": "conceito",
+   "C": "conceito",
+   "E": "inversao"
+  }
+ }
+]
