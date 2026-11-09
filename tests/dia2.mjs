@@ -78,6 +78,23 @@ if (DATA_FILES.includes('data/dia2.js')) {
   }
 }
 
+/* Plano de 09 a 14/11 (tools/plano_dia2.py): todo id existe, toda questão oficial tem imagem e gabarito, e a prova de 2024 fica inteira para o simulado. */
+{
+  const D0 = loadData(), ids = new Set((D0.dia2 ? D0.dia2.modules : []).map(m => m.id)), plan = D0.plan.filter(p => p.d >= '2026-11-09' && p.d <= '2026-11-14');
+  check(plan.length === 6, `plano: ${plan.length} dias entre 09 e 14/11 (esperados 6)`);
+  const vistos = new Set(); let qo = 0, est = 0;
+  for (const p of plan) for (const t of p.tasks) {
+    if (t.k === 'est' || t.k === 'ver') { check(ids.has(t.a), `plano ${p.d}: ${t.k} ${t.a} não existe`); if (t.k === 'est') { est++; check(!vistos.has(t.a), `plano: ${t.a} aparece em dois dias`); vistos.add(t.a); } }
+    if (t.k === 'qo') for (const [ex, n] of t.q) { qo++; check(ex === '25d2' && D0.exams[ex].img[n] && D0.exams[ex].key[n], `plano ${p.d}: questão oficial ${ex} q.${n} sem imagem ou anulada`); }
+    if (t.k !== 'out') check(t.t || t.k === 'game', `plano ${p.d}: tarefa ${t.k} sem texto`);
+  }
+  check(est >= 20 && qo >= 20, `plano: poucas estações (${est}) ou questões oficiais (${qo})`);
+  check(!plan.some(p => p.tasks.some(t => t.k === 'qo' && t.q.some(([ex]) => ex === '24d2'))), 'plano: questões de 2024 usadas no treino por assunto (a prova de 2024 é o simulado)');
+  check(plan.some(p => p.d === '2026-11-13' && p.tasks.some(t => t.k === 'prova' && t.a === '24d2:NM')), 'plano: falta o simulado de 2024 na sexta');
+  const tempo = p => p.tasks.filter(t => !t.o).reduce((a, t) => a + (t.m || 0), 0);
+  for (const p of plan.filter(p => ['2026-11-09', '2026-11-10', '2026-11-11', '2026-11-12'].includes(p.d))) check(tempo(p) >= 180 && tempo(p) <= 300, `plano ${p.d}: ${tempo(p)} min fora de 3 a 5 horas`);
+}
+
 /* Interface: guardado até o dia 2 liberar; depois aparece no mapa, nos anéis e no relatório. */
 const server = http.createServer((req, res) => {
   const p = path.join(ROOT, decodeURIComponent(new URL(req.url, 'http://x').pathname));
@@ -125,6 +142,13 @@ try {
               if (tab === 'q') check(!/volume \d/.test(txt) && !/são da apostila/.test(txt), `liberado: as questões de ${id} aparecem como "volume" da apostila de Humanas`);
             }
           }
+          await page.evaluate(() => go('plano')); await page.waitForTimeout(300);
+          const links = await page.locator('.ptask a[data-ex]').count();
+          check(links >= 20, `plano: só ${links} questões oficiais tocáveis`);
+          check(await page.locator('#d-2026-11-09 .ptask').count() >= 8, 'plano: o dia 09/11 não lista as tarefas');
+          await page.locator('.ptask a[data-ex]').first().click(); await page.waitForTimeout(300);
+          check(await page.locator('.qview img').count() === 1, 'plano: tocar na questão oficial não abriu a imagem');
+          await page.keyboard.press('Escape'); await page.waitForTimeout(150);
           await page.evaluate(() => go('linhas'));
           const rep = await page.evaluate(() => typeof buildReport === 'function' ? buildReport() : '');
           for (const nm of ['Matemática', 'Física', 'Química', 'Biologia']) check(new RegExp(nm + ': ').test(rep), `liberado: o relatório do Painel não lista ${nm}`);
