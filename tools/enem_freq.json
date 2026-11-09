@@ -1,0 +1,7435 @@
+{
+ "provas": 12,
+ "anos": [
+  "2014",
+  "2025"
+ ],
+ "questoes": 1080,
+ "mods": {
+  "BI01": {
+   "area": "CN",
+   "total": 24,
+   "sec": 19,
+   "por_prova": 2.0,
+   "ult5": 1.4,
+   "expo": 2.63,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 5,
+    "2015": 1,
+    "2016": 3,
+    "2017": 2,
+    "2018": 1,
+    "2019": 3,
+    "2020": 2,
+    "2021": 2,
+    "2022": 0,
+    "2023": 1,
+    "2024": 3,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2014",
+     49,
+     "decomposição anaeróbia/biogás (metano)"
+    ],
+    [
+     "2014",
+     60,
+     "relações ecológicas: competição"
+    ],
+    [
+     "2014",
+     63,
+     "ciclo do nitrogênio: desnitrificação"
+    ],
+    [
+     "2014",
+     78,
+     "biodegradação por decompositores (plástico com amido)"
+    ],
+    [
+     "2014",
+     81,
+     "cadeia alimentar e parasitismo/controle biológico"
+    ],
+    [
+     "2015",
+     61,
+     "ciclo do nitrogênio e fluxo de matéria nas cadeias tróficas"
+    ],
+    [
+     "2016",
+     48,
+     "decomposição anaeróbia/biodigestor e biogás (metano)"
+    ],
+    [
+     "2016",
+     61,
+     "predação e densidade populacional (interpretação de dados)"
+    ],
+    [
+     "2016",
+     62,
+     "produtores e transição do carbono inorgânico para orgânico (fotossíntese)"
+    ],
+    [
+     "2017",
+     105,
+     "ciclo do nitrogênio"
+    ],
+    [
+     "2017",
+     112,
+     "bioacumulação em cadeia alimentar"
+    ],
+    [
+     "2018",
+     104,
+     "fixação de nitrogênio / síntese de amônia (Haber)"
+    ],
+    [
+     "2019",
+     102,
+     "relações ecológicas interespecíficas (competição)"
+    ],
+    [
+     "2019",
+     104,
+     "ciclagem de C e N / decomposição de resíduos orgânicos"
+    ],
+    [
+     "2019",
+     126,
+     "estratégias r e K e sucessão ecológica"
+    ],
+    [
+     "2020",
+     100,
+     "sucessão ecológica, espécies pioneiras"
+    ],
+    [
+     "2020",
+     129,
+     "ciclo do carbono e combustíveis fósseis"
+    ],
+    [
+     "2021",
+     95,
+     "dispersão de sementes, extinção de megafauna"
+    ],
+    [
+     "2021",
+     120,
+     "bioacumulação na cadeia alimentar"
+    ],
+    [
+     "2023",
+     132,
+     "ciclo do nitrogênio: papel dos decompositores (amonificação)"
+    ],
+    [
+     "2024",
+     108,
+     "sucessão ecológica"
+    ],
+    [
+     "2024",
+     113,
+     "ciclo do nitrogênio e nitrificação (redox)"
+    ],
+    [
+     "2024",
+     117,
+     "comportamento animal/comunicação acústica"
+    ],
+    [
+     "2025",
+     96,
+     "cadeia alimentar/origem da toxina pela dieta"
+    ]
+   ],
+   "palavras": [
+    [
+     "nitrogênio",
+     6
+    ],
+    [
+     "ciclo",
+     6
+    ],
+    [
+     "alimentar",
+     4
+    ],
+    [
+     "cadeia",
+     4
+    ],
+    [
+     "decomposição",
+     3
+    ]
+   ],
+   "rank": 7,
+   "de": 31
+  },
+  "BI02": {
+   "area": "CN",
+   "total": 27,
+   "sec": 13,
+   "por_prova": 2.2,
+   "ult5": 2.2,
+   "expo": 2.79,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 2,
+    "2015": 1,
+    "2016": 3,
+    "2017": 2,
+    "2018": 2,
+    "2019": 2,
+    "2020": 4,
+    "2021": 1,
+    "2022": 1,
+    "2023": 2,
+    "2024": 1,
+    "2025": 6
+   },
+   "itens": [
+    [
+     "2014",
+     61,
+     "adaptações de plantas do Cerrado"
+    ],
+    [
+     "2014",
+     71,
+     "acidificação oceânica e corais (equilíbrio CO2/carbonato)"
+    ],
+    [
+     "2015",
+     47,
+     "poluição da água por corantes: inibição da fotossíntese"
+    ],
+    [
+     "2016",
+     71,
+     "adaptações da vegetação de manguezal"
+    ],
+    [
+     "2016",
+     73,
+     "sucessão ecológica e recuperação de áreas degradadas (sistemas agroflorestais)"
+    ],
+    [
+     "2016",
+     80,
+     "mudanças climáticas: estratégias de mitigação e adaptação"
+    ],
+    [
+     "2017",
+     110,
+     "impacto ambiental de barragens / migração de peixes"
+    ],
+    [
+     "2017",
+     119,
+     "impermeabilização do solo urbano"
+    ],
+    [
+     "2018",
+     93,
+     "corredores ecológicos e fluxo gênico"
+    ],
+    [
+     "2018",
+     115,
+     "adaptações ao deserto (excreção concentrada)"
+    ],
+    [
+     "2019",
+     105,
+     "agricultura orgânica e controle biológico de pragas"
+    ],
+    [
+     "2019",
+     111,
+     "impactos ambientais da extração mineral e reciclagem de concreto"
+    ],
+    [
+     "2020",
+     105,
+     "derramamento de petróleo e fauna (penas impermeabilizantes)"
+    ],
+    [
+     "2020",
+     115,
+     "poluição da água: OD e DBO, esgoto"
+    ],
+    [
+     "2020",
+     120,
+     "derramamento de petróleo: hidrofobicidade e trocas gasosas"
+    ],
+    [
+     "2020",
+     127,
+     "fragmentação de hábitats e corredores ecológicos"
+    ],
+    [
+     "2021",
+     122,
+     "educação ambiental e coleta seletiva"
+    ],
+    [
+     "2022",
+     104,
+     "espécies exóticas invasoras e perda de biodiversidade"
+    ],
+    [
+     "2023",
+     123,
+     "conservação de polinizadores: oferta de alimento"
+    ],
+    [
+     "2023",
+     131,
+     "biorremediação e bioacumulação de metais pesados"
+    ],
+    [
+     "2024",
+     134,
+     "fitorremediação de solos contaminados"
+    ],
+    [
+     "2025",
+     98,
+     "espécies exóticas invasoras"
+    ],
+    [
+     "2025",
+     99,
+     "características dos biomas/adaptações ao semiárido (Caatinga)"
+    ],
+    [
+     "2025",
+     104,
+     "mudanças climáticas e mitigação (sequestro de CO2)"
+    ],
+    [
+     "2025",
+     105,
+     "poluição térmica e solubilidade do oxigênio"
+    ],
+    [
+     "2025",
+     111,
+     "eutrofização e descarte de resíduos"
+    ],
+    [
+     "2025",
+     116,
+     "endemismo e seleção em ambientes extremos"
+    ]
+   ],
+   "palavras": [
+    [
+     "adaptações",
+     4
+    ],
+    [
+     "poluição",
+     3
+    ]
+   ],
+   "rank": 4,
+   "de": 31
+  },
+  "BI03": {
+   "area": "CN",
+   "total": 19,
+   "sec": 7,
+   "por_prova": 1.6,
+   "ult5": 1.4,
+   "expo": 1.77,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 2,
+    "2015": 1,
+    "2016": 3,
+    "2017": 2,
+    "2018": 2,
+    "2019": 2,
+    "2020": 0,
+    "2021": 0,
+    "2022": 3,
+    "2023": 1,
+    "2024": 2,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2014",
+     47,
+     "aminoácidos essenciais"
+    ],
+    [
+     "2014",
+     73,
+     "origem das mitocôndrias (endossimbiose)"
+    ],
+    [
+     "2015",
+     48,
+     "via secretora de proteínas (RE, Golgi, vesículas)"
+    ],
+    [
+     "2016",
+     53,
+     "hidrólise do amido (carboidratos) para fermentação"
+    ],
+    [
+     "2016",
+     56,
+     "organelas e endereçamento proteico (mitocôndria/ciclo de Krebs)"
+    ],
+    [
+     "2016",
+     69,
+     "proteínas e nitrogênio (assimilação de nitrato)"
+    ],
+    [
+     "2017",
+     98,
+     "membrana plasmática: fluidez e mosaico fluido"
+    ],
+    [
+     "2017",
+     126,
+     "osmose em células e conservação de alimentos"
+    ],
+    [
+     "2018",
+     95,
+     "ciclo celular: p53 e câncer"
+    ],
+    [
+     "2018",
+     114,
+     "organelas e metabolismo celular (síntese de proteínas)"
+    ],
+    [
+     "2019",
+     112,
+     "fluidez da membrana e insaturação dos lipídios"
+    ],
+    [
+     "2019",
+     134,
+     "transporte através da membrana: difusão/osmose"
+    ],
+    [
+     "2022",
+     128,
+     "osmose em célula vegetal em meio hipotônico (vacúolo)"
+    ],
+    [
+     "2022",
+     134,
+     "enzimas: desnaturação por temperatura"
+    ],
+    [
+     "2022",
+     135,
+     "alvos de antimicrobianos: células eucarióticas vs procarióticas, ribossomos, microtúbulos"
+    ],
+    [
+     "2023",
+     113,
+     "divisão celular: origem dos micronúcleos (cromossomos)"
+    ],
+    [
+     "2024",
+     102,
+     "desnaturação de enzimas"
+    ],
+    [
+     "2024",
+     115,
+     "citoesqueleto (microfilamentos)"
+    ],
+    [
+     "2025",
+     103,
+     "lisossomos e digestão intracelular"
+    ]
+   ],
+   "palavras": [
+    [
+     "proteínas",
+     3
+    ],
+    [
+     "membrana",
+     3
+    ],
+    [
+     "osmose",
+     3
+    ],
+    [
+     "celular",
+     3
+    ]
+   ],
+   "rank": 14,
+   "de": 31
+  },
+  "BI04": {
+   "area": "CN",
+   "total": 11,
+   "sec": 12,
+   "por_prova": 0.9,
+   "ult5": 1.2,
+   "expo": 1.49,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 0,
+    "2015": 1,
+    "2016": 0,
+    "2017": 1,
+    "2018": 1,
+    "2019": 1,
+    "2020": 1,
+    "2021": 1,
+    "2022": 1,
+    "2023": 2,
+    "2024": 1,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2015",
+     69,
+     "respiração aeróbica vs anaeróbica (consumo de glicose e O2)"
+    ],
+    [
+     "2017",
+     109,
+     "fotossíntese: absorção de fótons (fase clara)"
+    ],
+    [
+     "2018",
+     134,
+     "conversão de energia na fotossíntese"
+    ],
+    [
+     "2019",
+     92,
+     "cadeia respiratória e fosforilação oxidativa (desacoplador)"
+    ],
+    [
+     "2020",
+     117,
+     "fotossíntese: espectro de ação (Engelmann)"
+    ],
+    [
+     "2021",
+     118,
+     "fermentação e subprodutos combustíveis"
+    ],
+    [
+     "2022",
+     98,
+     "fosforilação oxidativa e ATP sintetase"
+    ],
+    [
+     "2023",
+     104,
+     "fotossíntese: cloroplastos e produção de carboidratos"
+    ],
+    [
+     "2023",
+     122,
+     "cadeia respiratória e inibição por cianeto"
+    ],
+    [
+     "2024",
+     124,
+     "metabolismo bacteriano aeróbio/anaeróbio"
+    ],
+    [
+     "2025",
+     123,
+     "fotossíntese oxigênica x anoxigênica"
+    ]
+   ],
+   "palavras": [
+    [
+     "fotossíntese",
+     5
+    ]
+   ],
+   "rank": 18,
+   "de": 31
+  },
+  "BI05": {
+   "area": "CN",
+   "total": 16,
+   "sec": 4,
+   "por_prova": 1.3,
+   "ult5": 1.0,
+   "expo": 1.38,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 2,
+    "2015": 2,
+    "2016": 1,
+    "2017": 1,
+    "2018": 2,
+    "2019": 1,
+    "2020": 2,
+    "2021": 1,
+    "2022": 1,
+    "2023": 1,
+    "2024": 1,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2014",
+     74,
+     "heredograma e padrão de herança"
+    ],
+    [
+     "2014",
+     79,
+     "sistema ABO e aglutinação"
+    ],
+    [
+     "2015",
+     54,
+     "origem das células do corpo (zigoto) / microquimerismo"
+    ],
+    [
+     "2015",
+     66,
+     "alterações cromossômicas numéricas (aneuploidia)"
+    ],
+    [
+     "2016",
+     83,
+     "meiose: permutação (crossing-over) e recombinação"
+    ],
+    [
+     "2017",
+     118,
+     "herança ligada ao X: inativação do cromossomo X (DMD)"
+    ],
+    [
+     "2018",
+     121,
+     "reprodução assexuada (enxertia) e manutenção do genótipo"
+    ],
+    [
+     "2018",
+     130,
+     "herança de alelos / marcadores de DNA (análise de paternidade)"
+    ],
+    [
+     "2019",
+     106,
+     "2ª lei de Mendel e ligação gênica (linkage)"
+    ],
+    [
+     "2020",
+     114,
+     "alterações cromossômicas: poliploidia"
+    ],
+    [
+     "2020",
+     121,
+     "genética de populações: Hardy-Weinberg e sistema ABO"
+    ],
+    [
+     "2021",
+     91,
+     "herança autossômica recessiva"
+    ],
+    [
+     "2022",
+     117,
+     "herança ligada ao X, inativação do cromossomo X (mosaicismo)"
+    ],
+    [
+     "2023",
+     120,
+     "alterações cromossômicas: trissomia e segregação de gametas"
+    ],
+    [
+     "2024",
+     112,
+     "herança ligada ao X (daltonismo)"
+    ],
+    [
+     "2025",
+     107,
+     "1ª lei de Mendel/proporção fenotípica"
+    ]
+   ],
+   "palavras": [
+    [
+     "herança",
+     6
+    ],
+    [
+     "alterações",
+     3
+    ],
+    [
+     "cromossômicas",
+     3
+    ],
+    [
+     "ligada",
+     3
+    ]
+   ],
+   "rank": 21,
+   "de": 31
+  },
+  "BI06": {
+   "area": "CN",
+   "total": 14,
+   "sec": 5,
+   "por_prova": 1.2,
+   "ult5": 1.4,
+   "expo": 1.47,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 2,
+    "2015": 2,
+    "2016": 0,
+    "2017": 0,
+    "2018": 2,
+    "2019": 0,
+    "2020": 1,
+    "2021": 2,
+    "2022": 2,
+    "2023": 1,
+    "2024": 1,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2014",
+     69,
+     "organismo transgênico/engenharia genética"
+    ],
+    [
+     "2014",
+     89,
+     "células-tronco e diferenciação celular"
+    ],
+    [
+     "2015",
+     74,
+     "DNA recombinante / bactéria transgênica"
+    ],
+    [
+     "2015",
+     87,
+     "diferenciação celular e expressão gênica"
+    ],
+    [
+     "2018",
+     107,
+     "biotecnologia: organismos geneticamente modificados (enzimas)"
+    ],
+    [
+     "2018",
+     112,
+     "conceito de código genético"
+    ],
+    [
+     "2020",
+     110,
+     "transgenia (organismo geneticamente modificado)"
+    ],
+    [
+     "2021",
+     123,
+     "mapeamento genético e consanguinidade"
+    ],
+    [
+     "2021",
+     130,
+     "mutações, código genético e proteína truncada"
+    ],
+    [
+     "2022",
+     107,
+     "PCR e transcrição reversa (RT-PCR)"
+    ],
+    [
+     "2022",
+     121,
+     "terapia gênica e expressão gênica"
+    ],
+    [
+     "2023",
+     99,
+     "vacina de RNAm: tradução e resposta imune"
+    ],
+    [
+     "2024",
+     95,
+     "RT-PCR e expressão gênica"
+    ],
+    [
+     "2025",
+     92,
+     "transferência gênica/organismo transgênico"
+    ]
+   ],
+   "palavras": [
+    [
+     "gênica",
+     4
+    ],
+    [
+     "organismo",
+     3
+    ],
+    [
+     "expressão",
+     3
+    ],
+    [
+     "genético",
+     3
+    ]
+   ],
+   "rank": 19,
+   "de": 31
+  },
+  "BI07": {
+   "area": "CN",
+   "total": 24,
+   "sec": 6,
+   "por_prova": 2.0,
+   "ult5": 2.6,
+   "expo": 2.55,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 1,
+    "2015": 2,
+    "2016": 1,
+    "2017": 2,
+    "2018": 1,
+    "2019": 2,
+    "2020": 2,
+    "2021": 1,
+    "2022": 3,
+    "2023": 2,
+    "2024": 3,
+    "2025": 4
+   },
+   "itens": [
+    [
+     "2014",
+     85,
+     "vacinas e soros: estímulo à produção de anticorpos"
+    ],
+    [
+     "2015",
+     72,
+     "vírus: variabilidade antigênica e vacinas"
+    ],
+    [
+     "2015",
+     89,
+     "esquistossomose e hospedeiro intermediário"
+    ],
+    [
+     "2016",
+     79,
+     "imunidade: mecanismos de probióticos vs vacina"
+    ],
+    [
+     "2017",
+     94,
+     "hemofilia / coagulação sanguínea"
+    ],
+    [
+     "2017",
+     107,
+     "antibióticos: ação sobre células bacterianas"
+    ],
+    [
+     "2018",
+     123,
+     "doenças transmitidas por insetos vetores (leishmaniose)"
+    ],
+    [
+     "2019",
+     96,
+     "vacina e esquistossomose"
+    ],
+    [
+     "2019",
+     110,
+     "retrovírus (HIV) e antirretrovirais"
+    ],
+    [
+     "2020",
+     97,
+     "fotoimunoterapia: anticorpos e radiação infravermelha"
+    ],
+    [
+     "2020",
+     102,
+     "interpretação de gráfico: quimioterápicos e células tumorais"
+    ],
+    [
+     "2021",
+     110,
+     "controle da dengue, ciclo do mosquito"
+    ],
+    [
+     "2022",
+     94,
+     "imunologia: apresentação de antígeno, vacina"
+    ],
+    [
+     "2022",
+     103,
+     "controle da dengue: Wolbachia, competição por recursos"
+    ],
+    [
+     "2022",
+     123,
+     "profilaxia de doenças tropicais: controle de vetores"
+    ],
+    [
+     "2023",
+     105,
+     "transmissão de zoonose por protozoário (leishmaniose visceral)"
+    ],
+    [
+     "2023",
+     124,
+     "prevenção da anemia ferropriva (ferro)"
+    ],
+    [
+     "2024",
+     104,
+     "arboviroses e urbanização"
+    ],
+    [
+     "2024",
+     120,
+     "retrovírus HTLV-1 e câncer"
+    ],
+    [
+     "2024",
+     126,
+     "vacinas e resposta imune"
+    ],
+    [
+     "2025",
+     97,
+     "vacinas e resposta imune"
+    ],
+    [
+     "2025",
+     102,
+     "intoxicação alimentar por toxina"
+    ],
+    [
+     "2025",
+     112,
+     "deficiência de vitamina A/alimento transgênico"
+    ],
+    [
+     "2025",
+     129,
+     "controle de doenças (esquistossomose e moluscos)"
+    ]
+   ],
+   "palavras": [
+    [
+     "vacinas",
+     4
+    ],
+    [
+     "controle",
+     4
+    ],
+    [
+     "esquistossomose",
+     3
+    ],
+    [
+     "vacina",
+     3
+    ],
+    [
+     "doenças",
+     3
+    ]
+   ],
+   "rank": 8,
+   "de": 31
+  },
+  "BI08": {
+   "area": "CN",
+   "total": 10,
+   "sec": 9,
+   "por_prova": 0.8,
+   "ult5": 1.0,
+   "expo": 1.21,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 1,
+    "2015": 1,
+    "2016": 1,
+    "2017": 0,
+    "2018": 1,
+    "2019": 0,
+    "2020": 1,
+    "2021": 2,
+    "2022": 1,
+    "2023": 0,
+    "2024": 2,
+    "2025": 0
+   },
+   "itens": [
+    [
+     "2014",
+     53,
+     "conceito de evolução"
+    ],
+    [
+     "2015",
+     56,
+     "especiação e fluxo gênico"
+    ],
+    [
+     "2016",
+     90,
+     "evidências de origem comum da vida (processos universais: síntese proteica)"
+    ],
+    [
+     "2018",
+     120,
+     "especiação e isolamento reprodutivo"
+    ],
+    [
+     "2020",
+     124,
+     "especiação e isolamento reprodutivo/geográfico"
+    ],
+    [
+     "2021",
+     100,
+     "coevolução patógeno-hospedeiro"
+    ],
+    [
+     "2021",
+     135,
+     "seleção natural e mimetismo"
+    ],
+    [
+     "2022",
+     131,
+     "estratégias reprodutivas e seleção natural"
+    ],
+    [
+     "2024",
+     98,
+     "evolução da reprodução em vertebrados/cladograma"
+    ],
+    [
+     "2024",
+     110,
+     "mimetismo/seleção natural"
+    ]
+   ],
+   "palavras": [
+    [
+     "especiação",
+     3
+    ],
+    [
+     "seleção",
+     3
+    ],
+    [
+     "natural",
+     3
+    ]
+   ],
+   "rank": 23,
+   "de": 31
+  },
+  "BI09": {
+   "area": "CN",
+   "total": 22,
+   "sec": 16,
+   "por_prova": 1.8,
+   "ult5": 2.4,
+   "expo": 2.66,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 1,
+    "2015": 1,
+    "2016": 1,
+    "2017": 2,
+    "2018": 2,
+    "2019": 3,
+    "2020": 0,
+    "2021": 2,
+    "2022": 4,
+    "2023": 3,
+    "2024": 3,
+    "2025": 0
+   },
+   "itens": [
+    [
+     "2014",
+     75,
+     "enzimas digestivas e pH (protease gástrica)"
+    ],
+    [
+     "2015",
+     67,
+     "fisiologia renal: concentração da urina na desidratação"
+    ],
+    [
+     "2016",
+     87,
+     "hormônio ADH e função renal"
+    ],
+    [
+     "2017",
+     129,
+     "transfusão de sangue (terapia celular)"
+    ],
+    [
+     "2017",
+     135,
+     "visão: função dos cones (cores)"
+    ],
+    [
+     "2018",
+     91,
+     "digestão de lipídios: ação emulsificante da bile"
+    ],
+    [
+     "2018",
+     126,
+     "hormônios glucagon/insulina e metabolismo de glicogênio"
+    ],
+    [
+     "2019",
+     99,
+     "tecido ósseo: acúmulo de estrôncio-90 (análogo do cálcio)"
+    ],
+    [
+     "2019",
+     121,
+     "hemácias e transporte de oxigênio (EPO, doping)"
+    ],
+    [
+     "2019",
+     130,
+     "excreção: função renal e remoção de ureia (hemodiálise)"
+    ],
+    [
+     "2021",
+     125,
+     "sistema nervoso, medula e arco reflexo"
+    ],
+    [
+     "2021",
+     132,
+     "circulação fetal e comparação entre vertebrados"
+    ],
+    [
+     "2022",
+     91,
+     "sangue: eritropoietina, hemácias e transporte de O2"
+    ],
+    [
+     "2022",
+     101,
+     "visão: cones e bastonetes"
+    ],
+    [
+     "2022",
+     113,
+     "hormônios sexuais (testosterona) e disruptores endócrinos"
+    ],
+    [
+     "2022",
+     114,
+     "coagulação sanguínea e fármaco anticoagulante"
+    ],
+    [
+     "2023",
+     100,
+     "fecundação: acrossomo e reprodução humana"
+    ],
+    [
+     "2023",
+     107,
+     "ciclo menstrual e hormônios (corpo lúteo)"
+    ],
+    [
+     "2023",
+     127,
+     "músculo vermelho e metabolismo aeróbico em aves"
+    ],
+    [
+     "2024",
+     105,
+     "tecido adiposo e acúmulo de poluentes lipossolúveis"
+    ],
+    [
+     "2024",
+     107,
+     "digestão no estômago (ácido clorídrico)"
+    ],
+    [
+     "2024",
+     109,
+     "tipos de fibras musculares"
+    ]
+   ],
+   "palavras": [
+    [
+     "renal",
+     3
+    ],
+    [
+     "função",
+     3
+    ],
+    [
+     "hormônios",
+     3
+    ]
+   ],
+   "rank": 6,
+   "de": 31
+  },
+  "BI10": {
+   "area": "CN",
+   "total": 18,
+   "sec": 16,
+   "por_prova": 1.5,
+   "ult5": 1.6,
+   "expo": 2.26,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 0,
+    "2015": 1,
+    "2016": 2,
+    "2017": 2,
+    "2018": 2,
+    "2019": 2,
+    "2020": 1,
+    "2021": 3,
+    "2022": 0,
+    "2023": 3,
+    "2024": 1,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2015",
+     83,
+     "características dos anfíbios (pele permeável)"
+    ],
+    [
+     "2016",
+     65,
+     "adaptações alimentares de animais (hematófagos)"
+    ],
+    [
+     "2016",
+     75,
+     "transporte de seiva xilemática (transpiração, tensão-coesão)"
+    ],
+    [
+     "2017",
+     92,
+     "classificação biológica: reinos e domínios (filogenia)"
+    ],
+    [
+     "2017",
+     115,
+     "adaptação de plantas epífitas (bromélias)"
+    ],
+    [
+     "2018",
+     102,
+     "insetos: holometabolia e diversidade"
+    ],
+    [
+     "2018",
+     105,
+     "reprodução de angiospermas: polinização pelo vento"
+    ],
+    [
+     "2019",
+     118,
+     "tropismos/taxias: fototaxia em larvas de Artemia"
+    ],
+    [
+     "2019",
+     128,
+     "evolução das plantas: adaptações à vida terrestre"
+    ],
+    [
+     "2020",
+     98,
+     "artrópodes: exoesqueleto e adaptação ao meio terrestre"
+    ],
+    [
+     "2021",
+     97,
+     "angiospermas, dupla fertilização, endosperma"
+    ],
+    [
+     "2021",
+     102,
+     "hormônios vegetais (auxina), enraizamento"
+    ],
+    [
+     "2021",
+     114,
+     "anatomia vegetal, tecidos da madeira"
+    ],
+    [
+     "2023",
+     103,
+     "hormônio vegetal etileno e amadurecimento de frutos"
+    ],
+    [
+     "2023",
+     109,
+     "evolução das plantas: semente e tubo polínico (independência da água)"
+    ],
+    [
+     "2023",
+     111,
+     "fisiologia vegetal: transporte de seiva elaborada pelo floema"
+    ],
+    [
+     "2024",
+     111,
+     "exoesqueleto e muda em crustáceos"
+    ],
+    [
+     "2025",
+     93,
+     "adaptações de aves (glândula uropigial)"
+    ]
+   ],
+   "palavras": [
+    [
+     "adaptações",
+     3
+    ],
+    [
+     "plantas",
+     3
+    ],
+    [
+     "vegetal",
+     3
+    ]
+   ],
+   "rank": 10,
+   "de": 31
+  },
+  "FI01": {
+   "area": "CN",
+   "total": 13,
+   "sec": 9,
+   "por_prova": 1.1,
+   "ult5": 1.4,
+   "expo": 1.52,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 1,
+    "2015": 0,
+    "2016": 1,
+    "2017": 1,
+    "2018": 0,
+    "2019": 1,
+    "2020": 2,
+    "2021": 1,
+    "2022": 1,
+    "2023": 2,
+    "2024": 1,
+    "2025": 2
+   },
+   "itens": [
+    [
+     "2014",
+     46,
+     "pêndulo simples (período)"
+    ],
+    [
+     "2016",
+     63,
+     "MRU e MRUV: velocidade x distância (frenagem)"
+    ],
+    [
+     "2017",
+     125,
+     "MRUV: frenagem e tempo de reação"
+    ],
+    [
+     "2019",
+     135,
+     "movimento uniforme (v=Δs/Δt) com geometria"
+    ],
+    [
+     "2020",
+     108,
+     "lançamento horizontal, composição de movimentos"
+    ],
+    [
+     "2020",
+     122,
+     "MRUV e MRU: tempo de percurso"
+    ],
+    [
+     "2021",
+     128,
+     "lançamento oblíquo, alcance mínimo de velocidade"
+    ],
+    [
+     "2022",
+     105,
+     "lançamento horizontal e vertical (queda livre)"
+    ],
+    [
+     "2023",
+     106,
+     "lançamento vertical: velocidade e aceleração no ponto mais alto"
+    ],
+    [
+     "2023",
+     135,
+     "velocidade média e tempo de percurso"
+    ],
+    [
+     "2024",
+     119,
+     "composição de velocidades"
+    ],
+    [
+     "2025",
+     120,
+     "velocidade média/tempo de travessia (MU)"
+    ],
+    [
+     "2025",
+     126,
+     "independência dos movimentos/composição de velocidades"
+    ]
+   ],
+   "palavras": [
+    [
+     "velocidade",
+     5
+    ],
+    [
+     "tempo",
+     4
+    ],
+    [
+     "lançamento",
+     4
+    ],
+    [
+     "mruv",
+     3
+    ],
+    [
+     "composição",
+     3
+    ]
+   ],
+   "rank": 17,
+   "de": 31
+  },
+  "FI02": {
+   "area": "CN",
+   "total": 18,
+   "sec": 3,
+   "por_prova": 1.5,
+   "ult5": 1.6,
+   "expo": 1.62,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 2,
+    "2015": 1,
+    "2016": 2,
+    "2017": 1,
+    "2018": 3,
+    "2019": 1,
+    "2020": 0,
+    "2021": 1,
+    "2022": 2,
+    "2023": 2,
+    "2024": 2,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2014",
+     67,
+     "inércia/1ª lei de Newton (plano de Galileu)"
+    ],
+    [
+     "2014",
+     82,
+     "movimento circular uniforme: aceleração tangencial/centrípeta"
+    ],
+    [
+     "2015",
+     82,
+     "equilíbrio de corpo rígido: torque/alavanca"
+    ],
+    [
+     "2016",
+     66,
+     "movimento circular: acoplamento de engrenagens e frequência"
+    ],
+    [
+     "2016",
+     82,
+     "atrito estático e associação de polias (máquinas simples)"
+    ],
+    [
+     "2017",
+     97,
+     "movimento circular: centrifugação"
+    ],
+    [
+     "2018",
+     118,
+     "alavancas e momento de força (torque)"
+    ],
+    [
+     "2018",
+     131,
+     "3ª lei de Newton (ação e reação)"
+    ],
+    [
+     "2018",
+     133,
+     "centro de massa/estabilidade e velocidade no velocímetro (raio da roda)"
+    ],
+    [
+     "2019",
+     117,
+     "equilíbrio de forças: decomposição de tração"
+    ],
+    [
+     "2021",
+     112,
+     "queda dos corpos e resistência do ar"
+    ],
+    [
+     "2022",
+     108,
+     "diagrama de forças: atrito estático e normal"
+    ],
+    [
+     "2022",
+     126,
+     "movimento circular, tensão na corda e conservação de energia"
+    ],
+    [
+     "2023",
+     102,
+     "equilíbrio de forças em polias fixa e móvel"
+    ],
+    [
+     "2023",
+     130,
+     "leis de Newton e atrito estático em referencial acelerado"
+    ],
+    [
+     "2024",
+     96,
+     "centro de massa e movimento circular"
+    ],
+    [
+     "2024",
+     121,
+     "força normal e atrito/força resultante"
+    ],
+    [
+     "2025",
+     108,
+     "força de atrito cinético em plano inclinado"
+    ]
+   ],
+   "palavras": [
+    [
+     "circular",
+     5
+    ],
+    [
+     "movimento",
+     5
+    ],
+    [
+     "atrito",
+     5
+    ],
+    [
+     "newton",
+     3
+    ],
+    [
+     "equilíbrio",
+     3
+    ]
+   ],
+   "rank": 16,
+   "de": 31
+  },
+  "FI03": {
+   "area": "CN",
+   "total": 15,
+   "sec": 4,
+   "por_prova": 1.2,
+   "ult5": 0.8,
+   "expo": 1.29,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 1,
+    "2015": 3,
+    "2016": 2,
+    "2017": 2,
+    "2018": 1,
+    "2019": 2,
+    "2020": 0,
+    "2021": 1,
+    "2022": 2,
+    "2023": 0,
+    "2024": 1,
+    "2025": 0
+   },
+   "itens": [
+    [
+     "2014",
+     64,
+     "colisão elástica e conservação do momento (pêndulo de Newton)"
+    ],
+    [
+     "2015",
+     49,
+     "energia/potência e energia cinética (rendimento de painel solar)"
+    ],
+    [
+     "2015",
+     64,
+     "trabalho e energia cinética"
+    ],
+    [
+     "2015",
+     70,
+     "energia potencial elástica e alcance de lançamento"
+    ],
+    [
+     "2016",
+     47,
+     "potência de usina hidrelétrica (P = ρ·g·h·Q)"
+    ],
+    [
+     "2016",
+     77,
+     "colisão inelástica e conservação da quantidade de movimento"
+    ],
+    [
+     "2017",
+     93,
+     "impulso e variação da quantidade de movimento (colisão)"
+    ],
+    [
+     "2017",
+     124,
+     "conservação de energia mecânica (energia cinética × altura, molas)"
+    ],
+    [
+     "2018",
+     98,
+     "energia potencial elástica → cinética"
+    ],
+    [
+     "2019",
+     97,
+     "conservação de energia mecânica (energia cinética de rotação)"
+    ],
+    [
+     "2019",
+     107,
+     "impulso e quantidade de movimento (queda e impacto)"
+    ],
+    [
+     "2021",
+     104,
+     "potência e variação de energia cinética"
+    ],
+    [
+     "2022",
+     92,
+     "impulso, força média e energia dissipada em colisão"
+    ],
+    [
+     "2022",
+     124,
+     "potência, irradiância, rendimento e área"
+    ],
+    [
+     "2024",
+     91,
+     "impulso e quantidade de movimento/colisões"
+    ]
+   ],
+   "palavras": [
+    [
+     "energia",
+     8
+    ],
+    [
+     "cinética",
+     6
+    ],
+    [
+     "colisão",
+     4
+    ],
+    [
+     "conservação",
+     4
+    ],
+    [
+     "potência",
+     4
+    ]
+   ],
+   "rank": 22,
+   "de": 31
+  },
+  "FI04": {
+   "area": "CN",
+   "total": 9,
+   "sec": 5,
+   "por_prova": 0.8,
+   "ult5": 0.2,
+   "expo": 0.77,
+   "faixa": "C",
+   "por_ano": {
+    "2014": 1,
+    "2015": 0,
+    "2016": 0,
+    "2017": 0,
+    "2018": 2,
+    "2019": 1,
+    "2020": 4,
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2014",
+     55,
+     "pressão hidrostática e vazão (cálculo de volume)"
+    ],
+    [
+     "2018",
+     103,
+     "pressão atmosférica (sucção com canudos)"
+    ],
+    [
+     "2018",
+     127,
+     "densidade de soluções e empuxo (densímetro)"
+    ],
+    [
+     "2019",
+     131,
+     "capilaridade (adesão/coesão, tensão superficial)"
+    ],
+    [
+     "2020",
+     113,
+     "densidade por deslocamento de volume"
+    ],
+    [
+     "2020",
+     118,
+     "densidade e flutuação (centrífugo-flutuação)"
+    ],
+    [
+     "2020",
+     134,
+     "pressão hidrostática (teorema de Stevin)"
+    ],
+    [
+     "2020",
+     135,
+     "pressão = força/área, escala geométrica"
+    ],
+    [
+     "2025",
+     118,
+     "pressão e pressão hidrostática (p = d.g.h)"
+    ]
+   ],
+   "palavras": [
+    [
+     "pressão",
+     5
+    ],
+    [
+     "hidrostática",
+     3
+    ],
+    [
+     "densidade",
+     3
+    ]
+   ],
+   "rank": 29,
+   "de": 31
+  },
+  "FI05": {
+   "area": "CN",
+   "total": 29,
+   "sec": 6,
+   "por_prova": 2.4,
+   "ult5": 2.6,
+   "expo": 2.72,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 2,
+    "2015": 4,
+    "2016": 2,
+    "2017": 1,
+    "2018": 1,
+    "2019": 3,
+    "2020": 3,
+    "2021": 4,
+    "2022": 1,
+    "2023": 3,
+    "2024": 4,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2014",
+     62,
+     "capacidade calorífica e expansão de gases"
+    ],
+    [
+     "2014",
+     66,
+     "máquina térmica: rejeição de calor na condensação"
+    ],
+    [
+     "2015",
+     57,
+     "mudança de estado, calor e trabalho (armazenamento de energia em N2 líquido)"
+    ],
+    [
+     "2015",
+     63,
+     "transformação gasosa (queda de pressão interna por resfriamento)"
+    ],
+    [
+     "2015",
+     65,
+     "calorimetria: equilíbrio térmico e variação percentual de temperatura"
+    ],
+    [
+     "2015",
+     79,
+     "calor específico"
+    ],
+    [
+     "2016",
+     54,
+     "calorimetria: Q = m·c·ΔT e potência dissipada"
+    ],
+    [
+     "2016",
+     84,
+     "condução térmica (condutividade)"
+    ],
+    [
+     "2017",
+     134,
+     "calorimetria e potência elétrica (ducha)"
+    ],
+    [
+     "2018",
+     122,
+     "dilatação térmica (energia de ligação × distância)"
+    ],
+    [
+     "2019",
+     113,
+     "calorimetria: Q = m·c·ΔT com aproveitamento de energia"
+    ],
+    [
+     "2019",
+     122,
+     "condução térmica (lei de Fourier) e calor latente"
+    ],
+    [
+     "2019",
+     124,
+     "conceitos de calor, isolamento e perda de calor"
+    ],
+    [
+     "2020",
+     92,
+     "pressão e temperatura de ebulição (panela de pressão)"
+    ],
+    [
+     "2020",
+     101,
+     "calorimetria: calor específico e potência"
+    ],
+    [
+     "2020",
+     133,
+     "máquina térmica/refrigerador e trocas de calor"
+    ],
+    [
+     "2021",
+     93,
+     "dilatação térmica e densidade"
+    ],
+    [
+     "2021",
+     107,
+     "evaporação do suor e umidade do ar"
+    ],
+    [
+     "2021",
+     111,
+     "mecanismos de transferência de calor"
+    ],
+    [
+     "2021",
+     126,
+     "condução de calor em materiais compostos"
+    ],
+    [
+     "2022",
+     129,
+     "calorimetria: calor específico e variação de temperatura"
+    ],
+    [
+     "2023",
+     95,
+     "calor latente e calor sensível, mudança de fase"
+    ],
+    [
+     "2023",
+     117,
+     "condutividade térmica e materiais não biodegradáveis"
+    ],
+    [
+     "2023",
+     119,
+     "transformação isovolumétrica de gás ideal (P x T)"
+    ],
+    [
+     "2024",
+     103,
+     "propagação de calor: convecção"
+    ],
+    [
+     "2024",
+     122,
+     "mudança de fase/temperatura de solidificação"
+    ],
+    [
+     "2024",
+     129,
+     "calorimetria e eficiência de potência"
+    ],
+    [
+     "2024",
+     130,
+     "termodinâmica: ciclo de Otto"
+    ],
+    [
+     "2025",
+     95,
+     "propagação de calor: irradiação"
+    ]
+   ],
+   "palavras": [
+    [
+     "calor",
+     13
+    ],
+    [
+     "térmica",
+     7
+    ],
+    [
+     "calorimetria",
+     7
+    ],
+    [
+     "temperatura",
+     4
+    ],
+    [
+     "potência",
+     4
+    ]
+   ],
+   "rank": 5,
+   "de": 31
+  },
+  "FI06": {
+   "area": "CN",
+   "total": 33,
+   "sec": 2,
+   "por_prova": 2.8,
+   "ult5": 2.8,
+   "expo": 2.82,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 3,
+    "2015": 3,
+    "2016": 4,
+    "2017": 3,
+    "2018": 2,
+    "2019": 1,
+    "2020": 3,
+    "2021": 2,
+    "2022": 1,
+    "2023": 5,
+    "2024": 3,
+    "2025": 3
+   },
+   "itens": [
+    [
+     "2014",
+     76,
+     "espectro eletromagnético: infravermelho"
+    ],
+    [
+     "2014",
+     84,
+     "ressonância e sintonia de rádio"
+    ],
+    [
+     "2014",
+     87,
+     "qualidades do som: altura/frequência"
+    ],
+    [
+     "2015",
+     50,
+     "espectro UV: frequência, comprimento de onda e absorção"
+    ],
+    [
+     "2015",
+     53,
+     "interferência em película fina"
+    ],
+    [
+     "2015",
+     86,
+     "qualidades do som: timbre"
+    ],
+    [
+     "2016",
+     49,
+     "efeito Doppler"
+    ],
+    [
+     "2016",
+     55,
+     "intensidade sonora, frequência e distância"
+    ],
+    [
+     "2016",
+     57,
+     "efeito Doppler e eco (ultrassom)"
+    ],
+    [
+     "2016",
+     86,
+     "ondas estacionárias (nós e ventres)"
+    ],
+    [
+     "2017",
+     99,
+     "espectro eletromagnético e emissão de lâmpadas"
+    ],
+    [
+     "2017",
+     113,
+     "interferência sonora e frequência (v=λf)"
+    ],
+    [
+     "2017",
+     123,
+     "absorção por comprimento de onda (leitura de gráfico)"
+    ],
+    [
+     "2018",
+     117,
+     "frequência f=v/d de vibração"
+    ],
+    [
+     "2018",
+     124,
+     "interferência destrutiva de ondas sonoras (fase)"
+    ],
+    [
+     "2019",
+     132,
+     "natureza da luz: modelo ondulatório × corpuscular (história)"
+    ],
+    [
+     "2020",
+     94,
+     "interferência destrutiva de ondas sonoras"
+    ],
+    [
+     "2020",
+     109,
+     "ressonância em tubo sonoro fechado (harmônicos)"
+    ],
+    [
+     "2020",
+     131,
+     "espectro eletromagnético: infravermelho e aquecimento"
+    ],
+    [
+     "2021",
+     99,
+     "frequência/período em gráfico (batimentos por minuto)"
+    ],
+    [
+     "2021",
+     134,
+     "frequência fundamental e velocidade do som"
+    ],
+    [
+     "2022",
+     95,
+     "velocidade do som em meios diferentes (v = d/t)"
+    ],
+    [
+     "2023",
+     91,
+     "propagação do som e atenuação da amplitude"
+    ],
+    [
+     "2023",
+     92,
+     "difração e comprimento de onda no espectro visível"
+    ],
+    [
+     "2023",
+     93,
+     "intensidade de onda esférica (potência/área)"
+    ],
+    [
+     "2023",
+     114,
+     "velocidade do som e reflexão (eco)"
+    ],
+    [
+     "2023",
+     115,
+     "interferência de ondas eletromagnéticas: mesma frequência"
+    ],
+    [
+     "2024",
+     99,
+     "efeito Doppler"
+    ],
+    [
+     "2024",
+     101,
+     "nível sonoro (dB) e atenuação com a distância"
+    ],
+    [
+     "2024",
+     106,
+     "raios X (espectro eletromagnético, absorção)"
+    ],
+    [
+     "2025",
+     114,
+     "ressonância e frequência"
+    ],
+    [
+     "2025",
+     132,
+     "nível sonoro em dB (escala logarítmica)"
+    ],
+    [
+     "2025",
+     135,
+     "espectro luminoso: frequência e comprimento de onda"
+    ]
+   ],
+   "palavras": [
+    [
+     "frequência",
+     10
+    ],
+    [
+     "espectro",
+     7
+    ],
+    [
+     "onda",
+     5
+    ],
+    [
+     "interferência",
+     5
+    ],
+    [
+     "eletromagnético",
+     4
+    ]
+   ],
+   "rank": 2,
+   "de": 31
+  },
+  "FI07": {
+   "area": "CN",
+   "total": 13,
+   "sec": 3,
+   "por_prova": 1.1,
+   "ult5": 0.8,
+   "expo": 1.08,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 2,
+    "2015": 2,
+    "2016": 0,
+    "2017": 1,
+    "2018": 2,
+    "2019": 2,
+    "2020": 0,
+    "2021": 1,
+    "2022": 1,
+    "2023": 0,
+    "2024": 1,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2014",
+     50,
+     "cores-luz primárias e secundárias, filtros"
+    ],
+    [
+     "2014",
+     68,
+     "refração e lei de Snell"
+    ],
+    [
+     "2015",
+     75,
+     "refração da luz (miragem)"
+    ],
+    [
+     "2015",
+     85,
+     "óptica da visão: analogia câmara escura e olho"
+    ],
+    [
+     "2017",
+     101,
+     "fibra óptica: atenuação do sinal (leitura de gráfico)"
+    ],
+    [
+     "2018",
+     96,
+     "visão de cores: cones e espectro (daltonismo)"
+    ],
+    [
+     "2018",
+     128,
+     "refração e dispersão da luz em prisma"
+    ],
+    [
+     "2019",
+     103,
+     "percepção de cores, síntese aditiva e daltonismo"
+    ],
+    [
+     "2019",
+     129,
+     "visão: pupila, refração e aberração"
+    ],
+    [
+     "2021",
+     115,
+     "absorção de luz e cores complementares"
+    ],
+    [
+     "2022",
+     96,
+     "refração da luz (luz engarrafada)"
+    ],
+    [
+     "2024",
+     100,
+     "espelhos côncavos e formação de imagem"
+    ],
+    [
+     "2025",
+     101,
+     "visão: pupila, retina e luz refletida"
+    ]
+   ],
+   "palavras": [
+    [
+     "refração",
+     5
+    ],
+    [
+     "cores",
+     4
+    ],
+    [
+     "visão",
+     4
+    ]
+   ],
+   "rank": 24,
+   "de": 31
+  },
+  "FI08": {
+   "area": "CN",
+   "total": 27,
+   "sec": 7,
+   "por_prova": 2.2,
+   "ult5": 2.8,
+   "expo": 2.81,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 1,
+    "2015": 1,
+    "2016": 2,
+    "2017": 3,
+    "2018": 3,
+    "2019": 1,
+    "2020": 2,
+    "2021": 3,
+    "2022": 4,
+    "2023": 1,
+    "2024": 2,
+    "2025": 4
+   },
+   "itens": [
+    [
+     "2014",
+     57,
+     "associação de resistores e brilho de lâmpadas"
+    ],
+    [
+     "2015",
+     68,
+     "circuito residencial: ligação em paralelo e interruptor"
+    ],
+    [
+     "2016",
+     59,
+     "associação de resistores e leis de Ohm"
+    ],
+    [
+     "2016",
+     74,
+     "circuito misto: lei dos nós e correntes"
+    ],
+    [
+     "2017",
+     108,
+     "resistência elétrica e lei de Ohm (gráfico V×i)"
+    ],
+    [
+     "2017",
+     111,
+     "associação de resistores e corrente máxima (fusível)"
+    ],
+    [
+     "2017",
+     130,
+     "resistência interna do gerador e corrente (cerca elétrica)"
+    ],
+    [
+     "2018",
+     106,
+     "associação de resistores (resistência equivalente)"
+    ],
+    [
+     "2018",
+     109,
+     "potência elétrica P=iV"
+    ],
+    [
+     "2018",
+     110,
+     "resistência elétrica não ôhmica (R=V/i, gráfico)"
+    ],
+    [
+     "2019",
+     91,
+     "associação de resistores e tensão (cabo mal dimensionado)"
+    ],
+    [
+     "2020",
+     96,
+     "divisor de tensão, associação de resistores"
+    ],
+    [
+     "2020",
+     106,
+     "amperímetro em série, carga (Ah) e corrente"
+    ],
+    [
+     "2021",
+     96,
+     "energia elétrica P=U·i e tempo de recarga"
+    ],
+    [
+     "2021",
+     105,
+     "associação de lâmpadas e interruptores"
+    ],
+    [
+     "2021",
+     117,
+     "segunda lei de Ohm, resistência e geometria do fio"
+    ],
+    [
+     "2022",
+     99,
+     "primeira lei de Ohm (R = U/i) por analogia"
+    ],
+    [
+     "2022",
+     111,
+     "potência elétrica, calor específico e corrente do chuveiro (disjuntor)"
+    ],
+    [
+     "2022",
+     119,
+     "lei de Ohm e associação de baterias (série/paralelo)"
+    ],
+    [
+     "2022",
+     133,
+     "gerador real: fem, resistência interna, pilhas em série"
+    ],
+    [
+     "2023",
+     98,
+     "associação mista de resistores e brilho de lâmpadas"
+    ],
+    [
+     "2024",
+     131,
+     "circuito com LED e resistores"
+    ],
+    [
+     "2024",
+     132,
+     "associação de resistores/lâmpadas, divisor de tensão"
+    ],
+    [
+     "2025",
+     94,
+     "potência elétrica e corrente (P = i.V)"
+    ],
+    [
+     "2025",
+     119,
+     "geradores não ideais e associação de placas"
+    ],
+    [
+     "2025",
+     128,
+     "resistência elétrica x temperatura/leitura de gráfico"
+    ],
+    [
+     "2025",
+     130,
+     "associação de resistores em série/lei de Ohm"
+    ]
+   ],
+   "palavras": [
+    [
+     "associação",
+     12
+    ],
+    [
+     "resistores",
+     10
+    ],
+    [
+     "elétrica",
+     8
+    ],
+    [
+     "resistência",
+     7
+    ],
+    [
+     "corrente",
+     5
+    ]
+   ],
+   "rank": 3,
+   "de": 31
+  },
+  "FI09": {
+   "area": "CN",
+   "total": 11,
+   "sec": 0,
+   "por_prova": 0.9,
+   "ult5": 0.8,
+   "expo": 0.87,
+   "faixa": "C",
+   "por_ano": {
+    "2014": 1,
+    "2015": 0,
+    "2016": 1,
+    "2017": 1,
+    "2018": 1,
+    "2019": 2,
+    "2020": 1,
+    "2021": 1,
+    "2022": 1,
+    "2023": 1,
+    "2024": 0,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2014",
+     72,
+     "indução eletromagnética (lei de Faraday/Lenz)"
+    ],
+    [
+     "2016",
+     88,
+     "campo magnético alternado e aquecimento de nanopartículas"
+    ],
+    [
+     "2017",
+     127,
+     "indução eletromagnética: gerador (lei de Faraday)"
+    ],
+    [
+     "2018",
+     92,
+     "indução eletromagnética por onda de rádio (RFID)"
+    ],
+    [
+     "2019",
+     95,
+     "indução eletromagnética e aterramento"
+    ],
+    [
+     "2019",
+     109,
+     "força magnética sobre carga e MCU (espectrômetro de massa)"
+    ],
+    [
+     "2020",
+     130,
+     "lei de Faraday: indução eletromagnética em geradores"
+    ],
+    [
+     "2021",
+     121,
+     "força magnética sobre cargas, regra da mão"
+    ],
+    [
+     "2022",
+     118,
+     "campo magnético de fio retilíneo (Oersted)"
+    ],
+    [
+     "2023",
+     101,
+     "indução eletromagnética: campo magnético variável"
+    ],
+    [
+     "2025",
+     122,
+     "indução eletromagnética e efeito Joule"
+    ]
+   ],
+   "palavras": [
+    [
+     "indução",
+     7
+    ],
+    [
+     "eletromagnética",
+     7
+    ],
+    [
+     "faraday",
+     3
+    ],
+    [
+     "campo",
+     3
+    ],
+    [
+     "magnético",
+     3
+    ]
+   ],
+   "rank": 27,
+   "de": 31
+  },
+  "FI10": {
+   "area": "CN",
+   "total": 4,
+   "sec": 1,
+   "por_prova": 0.3,
+   "ult5": 0.4,
+   "expo": 0.42,
+   "faixa": "C",
+   "por_ano": {
+    "2014": 0,
+    "2015": 0,
+    "2016": 0,
+    "2017": 0,
+    "2018": 0,
+    "2019": 0,
+    "2020": 2,
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 1,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2020",
+     112,
+     "blindagem eletrostática (gaiola de Faraday)"
+    ],
+    [
+     "2020",
+     125,
+     "eletrização por atrito, transferência de elétrons"
+    ],
+    [
+     "2024",
+     127,
+     "linhas de campo e blindagem eletrostática"
+    ],
+    [
+     "2025",
+     113,
+     "força elétrica sobre carga em campo elétrico"
+    ]
+   ],
+   "palavras": [],
+   "rank": 31,
+   "de": 31
+  },
+  "FI11": {
+   "area": "CN",
+   "total": 6,
+   "sec": 3,
+   "por_prova": 0.5,
+   "ult5": 0.8,
+   "expo": 0.78,
+   "faixa": "C",
+   "por_ano": {
+    "2014": 0,
+    "2015": 1,
+    "2016": 0,
+    "2017": 0,
+    "2018": 0,
+    "2019": 1,
+    "2020": 0,
+    "2021": 1,
+    "2022": 1,
+    "2023": 1,
+    "2024": 1,
+    "2025": 0
+   },
+   "itens": [
+    [
+     "2015",
+     73,
+     "fissão nuclear e reação em cadeia"
+    ],
+    [
+     "2019",
+     120,
+     "velocidade angular orbital (satélite/foguete) e gravitação"
+    ],
+    [
+     "2021",
+     116,
+     "sistema solar, distância e densidade planetária"
+    ],
+    [
+     "2022",
+     115,
+     "gravitação: órbitas e massa do corpo central"
+    ],
+    [
+     "2023",
+     133,
+     "radiação ionizante: dose e cálculo proporcional"
+    ],
+    [
+     "2024",
+     125,
+     "transições eletrônicas/fosforescência"
+    ]
+   ],
+   "palavras": [],
+   "rank": 28,
+   "de": 31
+  },
+  "MA01": {
+   "area": "MT",
+   "total": 77,
+   "sec": 34,
+   "por_prova": 6.4,
+   "ult5": 6.0,
+   "expo": 7.7,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 6,
+    "2015": 3,
+    "2016": 9,
+    "2017": 5,
+    "2018": 9,
+    "2019": 7,
+    "2020": 8,
+    "2021": 4,
+    "2022": 8,
+    "2023": 5,
+    "2024": 6,
+    "2025": 7
+   },
+   "itens": [
+    [
+     "2014",
+     136,
+     "escala"
+    ],
+    [
+     "2014",
+     144,
+     "regra de três composta"
+    ],
+    [
+     "2014",
+     149,
+     "razão e comparação de desempenho"
+    ],
+    [
+     "2014",
+     153,
+     "velocidade média"
+    ],
+    [
+     "2014",
+     160,
+     "escala e volume de paralelepípedo"
+    ],
+    [
+     "2014",
+     168,
+     "proporção inversa (volume constante)"
+    ],
+    [
+     "2015",
+     144,
+     "proporção/escala em fotografia"
+    ],
+    [
+     "2015",
+     154,
+     "razão e equação com fórmula dada"
+    ],
+    [
+     "2015",
+     173,
+     "leitura de tabela e proporção"
+    ],
+    [
+     "2016",
+     137,
+     "grandezas direta e inversamente proporcionais"
+    ],
+    [
+     "2016",
+     142,
+     "razão entre altura e largura"
+    ],
+    [
+     "2016",
+     149,
+     "razão/concentração e comparação de frações"
+    ],
+    [
+     "2016",
+     161,
+     "regra de três composta e porcentagem"
+    ],
+    [
+     "2016",
+     168,
+     "razão (densidade) e comparação"
+    ],
+    [
+     "2016",
+     169,
+     "rendimento (km/L) e autonomia"
+    ],
+    [
+     "2016",
+     173,
+     "razão e comparação"
+    ],
+    [
+     "2016",
+     176,
+     "escala e redução percentual"
+    ],
+    [
+     "2016",
+     179,
+     "densidade, taxa e área de quadrado"
+    ],
+    [
+     "2017",
+     150,
+     "volume de paralelepípedo e regra de três"
+    ],
+    [
+     "2017",
+     152,
+     "velocidade média / movimento uniforme"
+    ],
+    [
+     "2017",
+     162,
+     "razão e proporcionalidade direta"
+    ],
+    [
+     "2017",
+     165,
+     "escala e volume (razão ao cubo)"
+    ],
+    [
+     "2017",
+     166,
+     "razão e comparação de frações"
+    ],
+    [
+     "2018",
+     136,
+     "velocidade média (distância = v·t)"
+    ],
+    [
+     "2018",
+     138,
+     "proporção e custo por pessoa alcançada"
+    ],
+    [
+     "2018",
+     141,
+     "escala de mapa e conversão cm/km"
+    ],
+    [
+     "2018",
+     142,
+     "produtividade como razão e aumento percentual"
+    ],
+    [
+     "2018",
+     144,
+     "escala e inequação de medidas"
+    ],
+    [
+     "2018",
+     151,
+     "grandezas diretamente e inversamente proporcionais com gráfico"
+    ],
+    [
+     "2018",
+     152,
+     "mistura/liga e proporção (pureza)"
+    ],
+    [
+     "2018",
+     153,
+     "produto de tempo por número de pessoas (comparação)"
+    ],
+    [
+     "2018",
+     175,
+     "razão e inclinação percentual"
+    ],
+    [
+     "2019",
+     143,
+     "conversão de moedas (câmbio) e comparação"
+    ],
+    [
+     "2019",
+     145,
+     "grandezas diretamente proporcionais (proporção composta)"
+    ],
+    [
+     "2019",
+     149,
+     "grandezas inversamente proporcionais (diâmetro) e porcentagem"
+    ],
+    [
+     "2019",
+     155,
+     "divisão proporcional"
+    ],
+    [
+     "2019",
+     156,
+     "divisão em partes inversamente proporcionais"
+    ],
+    [
+     "2019",
+     162,
+     "escala (razão de volumes) e conversão cm³/L"
+    ],
+    [
+     "2019",
+     170,
+     "razão e desigualdade (concentração de álcool)"
+    ],
+    [
+     "2020",
+     138,
+     "escala de miniatura (razão entre medidas)"
+    ],
+    [
+     "2020",
+     140,
+     "grandezas inversamente proporcionais (consumo)"
+    ],
+    [
+     "2020",
+     144,
+     "regra de três (consumo de combustível)"
+    ],
+    [
+     "2020",
+     146,
+     "velocidade média e tempo"
+    ],
+    [
+     "2020",
+     148,
+     "proporção de módulos e círculo inscrito"
+    ],
+    [
+     "2020",
+     149,
+     "razão entre partes e total"
+    ],
+    [
+     "2020",
+     161,
+     "produto de grandezas/densidade e unidades"
+    ],
+    [
+     "2020",
+     177,
+     "divisão proporcional e frações"
+    ],
+    [
+     "2021",
+     140,
+     "custo por usuário, razão"
+    ],
+    [
+     "2021",
+     151,
+     "razão km/L, rendimento de combustível"
+    ],
+    [
+     "2021",
+     158,
+     "grandezas inversamente proporcionais"
+    ],
+    [
+     "2021",
+     163,
+     "escala"
+    ],
+    [
+     "2022",
+     137,
+     "regra de três com tempo"
+    ],
+    [
+     "2022",
+     138,
+     "regra de três/ relação entre períodos"
+    ],
+    [
+     "2022",
+     154,
+     "proporção direta"
+    ],
+    [
+     "2022",
+     156,
+     "proporcionalidade e porcentagem"
+    ],
+    [
+     "2022",
+     160,
+     "escala 1:50 e conversão de unidades"
+    ],
+    [
+     "2022",
+     171,
+     "múltiplos/porcentagem de medida e contagem de fileiras"
+    ],
+    [
+     "2022",
+     172,
+     "proporcionalidade com potências (razão entre luminosidades)"
+    ],
+    [
+     "2022",
+     179,
+     "escala (área) e área de polígono em L"
+    ],
+    [
+     "2023",
+     136,
+     "regra de três e arredondamento"
+    ],
+    [
+     "2023",
+     138,
+     "escala (conversão km para cm)"
+    ],
+    [
+     "2023",
+     140,
+     "proporção direta e desconto percentual"
+    ],
+    [
+     "2023",
+     141,
+     "conversão de ciclos/anos (regra de três)"
+    ],
+    [
+     "2023",
+     146,
+     "vazão (razão) e volume de cilindro"
+    ],
+    [
+     "2024",
+     151,
+     "escala de área"
+    ],
+    [
+     "2024",
+     158,
+     "regra de três e minimização de custo"
+    ],
+    [
+     "2024",
+     160,
+     "vazão e regra de três inversa"
+    ],
+    [
+     "2024",
+     166,
+     "razão (densidade demográfica)"
+    ],
+    [
+     "2024",
+     172,
+     "velocidade média e encontro de móveis"
+    ],
+    [
+     "2024",
+     179,
+     "divisão proporcional (horas trabalhadas)"
+    ],
+    [
+     "2025",
+     136,
+     "regra de três e consumo"
+    ],
+    [
+     "2025",
+     148,
+     "comparação de deslocamentos por escala"
+    ],
+    [
+     "2025",
+     150,
+     "regra de três composta"
+    ],
+    [
+     "2025",
+     156,
+     "escala"
+    ],
+    [
+     "2025",
+     157,
+     "razão entre grandezas"
+    ],
+    [
+     "2025",
+     166,
+     "pace como razão tempo/distância"
+    ],
+    [
+     "2025",
+     176,
+     "velocidade média constante"
+    ]
+   ],
+   "palavras": [
+    [
+     "razão",
+     22
+    ],
+    [
+     "escala",
+     16
+    ],
+    [
+     "três",
+     12
+    ],
+    [
+     "regra",
+     12
+    ],
+    [
+     "proporção",
+     9
+    ]
+   ],
+   "rank": 1,
+   "de": 14
+  },
+  "MA02": {
+   "area": "MT",
+   "total": 49,
+   "sec": 41,
+   "por_prova": 4.1,
+   "ult5": 3.8,
+   "expo": 5.6,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 9,
+    "2015": 3,
+    "2016": 5,
+    "2017": 4,
+    "2018": 2,
+    "2019": 4,
+    "2020": 3,
+    "2021": 6,
+    "2022": 3,
+    "2023": 4,
+    "2024": 3,
+    "2025": 3
+   },
+   "itens": [
+    [
+     "2014",
+     138,
+     "porcentagem de uma quantidade"
+    ],
+    [
+     "2014",
+     142,
+     "variação percentual"
+    ],
+    [
+     "2014",
+     147,
+     "porcentagem"
+    ],
+    [
+     "2014",
+     148,
+     "lucro e leitura de gráficos"
+    ],
+    [
+     "2014",
+     156,
+     "redução percentual e função afim"
+    ],
+    [
+     "2014",
+     159,
+     "porcentagem"
+    ],
+    [
+     "2014",
+     169,
+     "porcentagem de quantidade"
+    ],
+    [
+     "2014",
+     175,
+     "aumento percentual e equação"
+    ],
+    [
+     "2014",
+     180,
+     "porcentagens sucessivas"
+    ],
+    [
+     "2015",
+     150,
+     "porcentagem de porcentagem em gráficos"
+    ],
+    [
+     "2015",
+     152,
+     "juros sobre saldo devedor"
+    ],
+    [
+     "2015",
+     155,
+     "porcentagem do total e média"
+    ],
+    [
+     "2016",
+     138,
+     "aumento percentual com leitura de gráfico"
+    ],
+    [
+     "2016",
+     151,
+     "aumento percentual com leitura de tabela"
+    ],
+    [
+     "2016",
+     155,
+     "porcentagem com faixas e inequação"
+    ],
+    [
+     "2016",
+     156,
+     "lucro e aumento percentual"
+    ],
+    [
+     "2016",
+     164,
+     "razão percentual e comparação"
+    ],
+    [
+     "2017",
+     144,
+     "juros compostos, valor presente de parcelas"
+    ],
+    [
+     "2017",
+     153,
+     "porcentagem com leitura de gráfico de linhas"
+    ],
+    [
+     "2017",
+     172,
+     "porcentagem e equação linear de economia"
+    ],
+    [
+     "2017",
+     177,
+     "variação percentual a partir de gráficos de setores"
+    ],
+    [
+     "2018",
+     137,
+     "variações percentuais sucessivas"
+    ],
+    [
+     "2018",
+     167,
+     "porcentagem do total a partir de tabela"
+    ],
+    [
+     "2019",
+     141,
+     "porcentagem e equação com frações"
+    ],
+    [
+     "2019",
+     154,
+     "juros compostos, valor presente"
+    ],
+    [
+     "2019",
+     157,
+     "aumentos percentuais sucessivos"
+    ],
+    [
+     "2019",
+     179,
+     "porcentagem, desconto e acréscimo"
+    ],
+    [
+     "2020",
+     145,
+     "aumentos percentuais sucessivos; volume de prisma"
+    ],
+    [
+     "2020",
+     155,
+     "porcentagem de total a partir de gráfico"
+    ],
+    [
+     "2020",
+     174,
+     "aumento e redução percentual"
+    ],
+    [
+     "2021",
+     141,
+     "porcentagem de faixa de frequência cardíaca"
+    ],
+    [
+     "2021",
+     143,
+     "descontos percentuais e comparação de preços"
+    ],
+    [
+     "2021",
+     157,
+     "variações percentuais sucessivas"
+    ],
+    [
+     "2021",
+     160,
+     "variação percentual e custo constante"
+    ],
+    [
+     "2021",
+     164,
+     "variação percentual projetada e razão por mil"
+    ],
+    [
+     "2021",
+     166,
+     "aumento percentual em gráfico de barras"
+    ],
+    [
+     "2022",
+     140,
+     "aumento e desconto percentual"
+    ],
+    [
+     "2022",
+     149,
+     "variação percentual (valor inicial)"
+    ],
+    [
+     "2022",
+     170,
+     "porcentagem e conversão de tempo"
+    ],
+    [
+     "2023",
+     151,
+     "aumento/redução percentual"
+    ],
+    [
+     "2023",
+     155,
+     "lucro, porcentagem e comparação de cenários"
+    ],
+    [
+     "2023",
+     161,
+     "porcentagem de uma quantidade (expressão algébrica)"
+    ],
+    [
+     "2023",
+     170,
+     "juros compostos (taxa de financiamento)"
+    ],
+    [
+     "2024",
+     140,
+     "porcentagem e porcentagem de porcentagem"
+    ],
+    [
+     "2024",
+     143,
+     "lucro e porcentagem"
+    ],
+    [
+     "2024",
+     153,
+     "taxa percentual em forma decimal"
+    ],
+    [
+     "2025",
+     140,
+     "porcentagem de mistura"
+    ],
+    [
+     "2025",
+     158,
+     "aumento percentual e lucro"
+    ],
+    [
+     "2025",
+     162,
+     "porcentagem e redução de custo"
+    ]
+   ],
+   "palavras": [
+    [
+     "porcentagem",
+     21
+    ],
+    [
+     "percentual",
+     17
+    ],
+    [
+     "aumento",
+     9
+    ],
+    [
+     "variação",
+     5
+    ],
+    [
+     "lucro",
+     5
+    ]
+   ],
+   "rank": 2,
+   "de": 14
+  },
+  "MA03": {
+   "area": "MT",
+   "total": 23,
+   "sec": 30,
+   "por_prova": 1.9,
+   "ult5": 1.6,
+   "expo": 3.18,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 2,
+    "2015": 4,
+    "2016": 1,
+    "2017": 1,
+    "2018": 0,
+    "2019": 4,
+    "2020": 3,
+    "2021": 2,
+    "2022": 1,
+    "2023": 1,
+    "2024": 2,
+    "2025": 2
+   },
+   "itens": [
+    [
+     "2014",
+     176,
+     "fuso horário e aritmética de horas"
+    ],
+    [
+     "2014",
+     178,
+     "conversão de unidades de área"
+    ],
+    [
+     "2015",
+     147,
+     "unidades de medida e divisão"
+    ],
+    [
+     "2015",
+     153,
+     "notação científica"
+    ],
+    [
+     "2015",
+     172,
+     "conversão mL/L e divisão"
+    ],
+    [
+     "2015",
+     174,
+     "conversão m³ para litros"
+    ],
+    [
+     "2016",
+     177,
+     "conversão de unidades de comprimento"
+    ],
+    [
+     "2017",
+     174,
+     "leitura de escala de medida"
+    ],
+    [
+     "2019",
+     136,
+     "conversão de unidades e proporção (dosagem)"
+    ],
+    [
+     "2019",
+     144,
+     "notação científica"
+    ],
+    [
+     "2019",
+     152,
+     "conversão m³ para litros e razão"
+    ],
+    [
+     "2019",
+     167,
+     "conversão de unidades de comprimento"
+    ],
+    [
+     "2020",
+     147,
+     "notação científica e prefixos"
+    ],
+    [
+     "2020",
+     150,
+     "escala de volume e conversão litro/dm³"
+    ],
+    [
+     "2020",
+     165,
+     "notação científica e conversão de unidades/vazão"
+    ],
+    [
+     "2021",
+     138,
+     "conversão hectare-m² e divisão em lotes"
+    ],
+    [
+     "2021",
+     149,
+     "análise dimensional de unidades"
+    ],
+    [
+     "2022",
+     144,
+     "escrita de número com bilhão (potências de 10)"
+    ],
+    [
+     "2023",
+     143,
+     "unidade de grandeza derivada (razão de unidades)"
+    ],
+    [
+     "2024",
+     136,
+     "conversão de unidades (micrômetro/mm) e ampliação"
+    ],
+    [
+     "2024",
+     159,
+     "unidade de medida composta (fluxo)"
+    ],
+    [
+     "2025",
+     159,
+     "conversão cm³ e mL"
+    ],
+    [
+     "2025",
+     179,
+     "unidade composta (luminância)"
+    ]
+   ],
+   "palavras": [
+    [
+     "conversão",
+     12
+    ],
+    [
+     "unidades",
+     9
+    ],
+    [
+     "notação",
+     4
+    ],
+    [
+     "científica",
+     4
+    ],
+    [
+     "medida",
+     3
+    ]
+   ],
+   "rank": 9,
+   "de": 14
+  },
+  "MA04": {
+   "area": "MT",
+   "total": 43,
+   "sec": 6,
+   "por_prova": 3.6,
+   "ult5": 3.8,
+   "expo": 3.94,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 4,
+    "2015": 2,
+    "2016": 6,
+    "2017": 3,
+    "2018": 4,
+    "2019": 3,
+    "2020": 2,
+    "2021": 7,
+    "2022": 4,
+    "2023": 3,
+    "2024": 3,
+    "2025": 2
+   },
+   "itens": [
+    [
+     "2014",
+     150,
+     "média ponderada"
+    ],
+    [
+     "2014",
+     155,
+     "média aritmética"
+    ],
+    [
+     "2014",
+     161,
+     "média, mediana e moda"
+    ],
+    [
+     "2014",
+     170,
+     "mediana"
+    ],
+    [
+     "2015",
+     160,
+     "mediana"
+    ],
+    [
+     "2015",
+     166,
+     "média aritmética"
+    ],
+    [
+     "2016",
+     141,
+     "desvio padrão e regularidade"
+    ],
+    [
+     "2016",
+     144,
+     "média aritmética"
+    ],
+    [
+     "2016",
+     148,
+     "média aritmética e comparação"
+    ],
+    [
+     "2016",
+     150,
+     "moda"
+    ],
+    [
+     "2016",
+     167,
+     "média aritmética"
+    ],
+    [
+     "2016",
+     180,
+     "média aritmética"
+    ],
+    [
+     "2017",
+     148,
+     "média ponderada"
+    ],
+    [
+     "2017",
+     159,
+     "média aritmética com tabela"
+    ],
+    [
+     "2017",
+     170,
+     "mediana de dados em gráfico"
+    ],
+    [
+     "2018",
+     147,
+     "média aritmética com dados de gráfico"
+    ],
+    [
+     "2018",
+     154,
+     "média ponderada com tabela de frequência"
+    ],
+    [
+     "2018",
+     156,
+     "média ponderada / soma ponderada de pontuações (Método de Borda)"
+    ],
+    [
+     "2018",
+     162,
+     "média ponderada com valor desconhecido"
+    ],
+    [
+     "2019",
+     165,
+     "média aritmética com troca de elemento"
+    ],
+    [
+     "2019",
+     166,
+     "média ponderada com tabela de frequência"
+    ],
+    [
+     "2019",
+     172,
+     "média, mediana e moda (interpretação)"
+    ],
+    [
+     "2020",
+     162,
+     "média ponderada"
+    ],
+    [
+     "2020",
+     172,
+     "média aritmética (condição mínima)"
+    ],
+    [
+     "2021",
+     167,
+     "mediana/frequência acumulada em histograma"
+    ],
+    [
+     "2021",
+     169,
+     "mediana de dados em tabela"
+    ],
+    [
+     "2021",
+     171,
+     "média ponderada em gráfico de frequências"
+    ],
+    [
+     "2021",
+     172,
+     "média ponderada com incógnitas"
+    ],
+    [
+     "2021",
+     173,
+     "desvio padrão e coeficiente de variação"
+    ],
+    [
+     "2021",
+     174,
+     "média aritmética em tabela"
+    ],
+    [
+     "2021",
+     175,
+     "média ponderada e faixas de comissão"
+    ],
+    [
+     "2022",
+     136,
+     "média ponderada e reajuste percentual"
+    ],
+    [
+     "2022",
+     153,
+     "mediana a partir de gráfico"
+    ],
+    [
+     "2022",
+     166,
+     "média aritmética (pontuação necessária)"
+    ],
+    [
+     "2022",
+     173,
+     "mediana em tabela de frequências"
+    ],
+    [
+     "2023",
+     145,
+     "média, mediana e moda de distribuição em gráfico"
+    ],
+    [
+     "2023",
+     165,
+     "média ponderada"
+    ],
+    [
+     "2023",
+     169,
+     "média de dois meses consecutivos (média móvel)"
+    ],
+    [
+     "2024",
+     137,
+     "média aritmética (erro no divisor)"
+    ],
+    [
+     "2024",
+     154,
+     "média aritmética"
+    ],
+    [
+     "2024",
+     178,
+     "mediana"
+    ],
+    [
+     "2025",
+     142,
+     "mediana"
+    ],
+    [
+     "2025",
+     165,
+     "média, mediana, moda e desvio padrão"
+    ]
+   ],
+   "palavras": [
+    [
+     "média",
+     31
+    ],
+    [
+     "aritmética",
+     14
+    ],
+    [
+     "mediana",
+     13
+    ],
+    [
+     "ponderada",
+     12
+    ],
+    [
+     "tabela",
+     6
+    ]
+   ],
+   "rank": 7,
+   "de": 14
+  },
+  "MA05": {
+   "area": "MT",
+   "total": 42,
+   "sec": 35,
+   "por_prova": 3.5,
+   "ult5": 4.4,
+   "expo": 5.46,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 3,
+    "2015": 2,
+    "2016": 3,
+    "2017": 3,
+    "2018": 1,
+    "2019": 5,
+    "2020": 3,
+    "2021": 3,
+    "2022": 4,
+    "2023": 6,
+    "2024": 2,
+    "2025": 7
+   },
+   "itens": [
+    [
+     "2014",
+     141,
+     "leitura de gráfico e soma de taxas"
+    ],
+    [
+     "2014",
+     143,
+     "comparação de percentuais em tabela"
+    ],
+    [
+     "2014",
+     172,
+     "leitura de gráfico e soma de séries"
+    ],
+    [
+     "2015",
+     139,
+     "leitura de gráfico de linha"
+    ],
+    [
+     "2015",
+     178,
+     "leitura de gráfico de barras"
+    ],
+    [
+     "2016",
+     139,
+     "leitura de gráfico com múltiplas condições"
+    ],
+    [
+     "2016",
+     160,
+     "leitura de gráfico de duas curvas periódicas"
+    ],
+    [
+     "2016",
+     163,
+     "leitura de gráficos de vazão"
+    ],
+    [
+     "2017",
+     136,
+     "gráfico velocidade x tempo"
+    ],
+    [
+     "2017",
+     173,
+     "leitura de gráfico de linhas (interseção)"
+    ],
+    [
+     "2017",
+     178,
+     "razão entre alturas de colunas (gráfico truncado)"
+    ],
+    [
+     "2018",
+     173,
+     "leitura de quadros e cálculo de notas com comparação"
+    ],
+    [
+     "2019",
+     142,
+     "leitura de gráfico de consumo acumulado e planta"
+    ],
+    [
+     "2019",
+     147,
+     "leitura de gráfico e taxa (kcal por minuto)"
+    ],
+    [
+     "2019",
+     150,
+     "leitura de gráfico de duas variáveis e condições"
+    ],
+    [
+     "2019",
+     175,
+     "leitura de gráfico de barras e soma de quantidades"
+    ],
+    [
+     "2019",
+     177,
+     "razão (taxa) a partir de gráficos de barras"
+    ],
+    [
+     "2020",
+     151,
+     "razão entre dois gráficos (eficiência)"
+    ],
+    [
+     "2020",
+     167,
+     "produto preço×porcentagem a partir de gráficos"
+    ],
+    [
+     "2020",
+     171,
+     "leitura de gráfico (intervalo de horas)"
+    ],
+    [
+     "2021",
+     165,
+     "leitura de gráfico, lucro = receita - despesa"
+    ],
+    [
+     "2021",
+     168,
+     "frequência de letras e cifra de César"
+    ],
+    [
+     "2021",
+     170,
+     "leitura de gráfico, capacidade × ocupação"
+    ],
+    [
+     "2022",
+     139,
+     "leitura de gráfico distância×tempo (ultrapassagens)"
+    ],
+    [
+     "2022",
+     143,
+     "razão entre dados de gráficos"
+    ],
+    [
+     "2022",
+     151,
+     "leitura de gráfico e raízes de função quadrática"
+    ],
+    [
+     "2022",
+     168,
+     "leitura de tabela e multiplicação/soma"
+    ],
+    [
+     "2023",
+     139,
+     "leitura de tabelas e soma de produtos"
+    ],
+    [
+     "2023",
+     154,
+     "leitura de gráfico de dispersão e percentual"
+    ],
+    [
+     "2023",
+     162,
+     "leitura e comparação de dois gráficos de linha"
+    ],
+    [
+     "2023",
+     172,
+     "interpretar gráfico distância×tempo e trajetória"
+    ],
+    [
+     "2023",
+     176,
+     "leitura de gráfico (intervalo de tempo)"
+    ],
+    [
+     "2023",
+     177,
+     "leitura de gráfico de barras (percentuais)"
+    ],
+    [
+     "2024",
+     139,
+     "comparação de custos em tabela"
+    ],
+    [
+     "2024",
+     152,
+     "leitura de gráfico (saldo da balança comercial)"
+    ],
+    [
+     "2025",
+     143,
+     "leitura de rótulos e cálculo por pacote"
+    ],
+    [
+     "2025",
+     147,
+     "percentual aplicado a total lido em gráficos"
+    ],
+    [
+     "2025",
+     154,
+     "leitura de gráfico (estoque x demanda)"
+    ],
+    [
+     "2025",
+     163,
+     "leitura de gráficos com percentuais"
+    ],
+    [
+     "2025",
+     167,
+     "leitura de gráficos de rendimento e consumo"
+    ],
+    [
+     "2025",
+     168,
+     "comparação de custos em tabela"
+    ],
+    [
+     "2025",
+     169,
+     "gráfico de linhas, produção e conversão de unidades"
+    ]
+   ],
+   "palavras": [
+    [
+     "leitura",
+     29
+    ],
+    [
+     "gráfico",
+     25
+    ],
+    [
+     "gráficos",
+     9
+    ],
+    [
+     "soma",
+     5
+    ],
+    [
+     "comparação",
+     5
+    ]
+   ],
+   "rank": 3,
+   "de": 14
+  },
+  "MA06": {
+   "area": "MT",
+   "total": 31,
+   "sec": 1,
+   "por_prova": 2.6,
+   "ult5": 2.4,
+   "expo": 2.58,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 2,
+    "2015": 4,
+    "2016": 1,
+    "2017": 3,
+    "2018": 4,
+    "2019": 2,
+    "2020": 3,
+    "2021": 1,
+    "2022": 2,
+    "2023": 3,
+    "2024": 3,
+    "2025": 3
+   },
+   "itens": [
+    [
+     "2014",
+     152,
+     "probabilidade de eventos independentes (binomial)"
+    ],
+    [
+     "2014",
+     162,
+     "probabilidade condicional (sensibilidade)"
+    ],
+    [
+     "2015",
+     149,
+     "probabilidade do evento complementar"
+    ],
+    [
+     "2015",
+     158,
+     "probabilidade e porcentagem"
+    ],
+    [
+     "2015",
+     175,
+     "comparação de probabilidades"
+    ],
+    [
+     "2015",
+     180,
+     "probabilidade simples"
+    ],
+    [
+     "2016",
+     147,
+     "probabilidade em árvore de caminhos"
+    ],
+    [
+     "2017",
+     142,
+     "probabilidade total / condicional"
+    ],
+    [
+     "2017",
+     155,
+     "probabilidade clássica"
+    ],
+    [
+     "2017",
+     171,
+     "probabilidade binomial (eventos independentes)"
+    ],
+    [
+     "2018",
+     140,
+     "probabilidade com moda e mediana"
+    ],
+    [
+     "2018",
+     163,
+     "probabilidade clássica com porcentagem"
+    ],
+    [
+     "2018",
+     176,
+     "probabilidade sem reposição e comparação de opções"
+    ],
+    [
+     "2018",
+     180,
+     "probabilidade clássica em tabuleiro"
+    ],
+    [
+     "2019",
+     164,
+     "probabilidade do evento complementar e potência"
+    ],
+    [
+     "2019",
+     176,
+     "probabilidade condicional (Bayes)"
+    ],
+    [
+     "2020",
+     141,
+     "probabilidade com sorteio (casos favoráveis/possíveis)"
+    ],
+    [
+     "2020",
+     160,
+     "valor esperado com probabilidades"
+    ],
+    [
+     "2020",
+     163,
+     "probabilidade de posição em ordem com sorteio"
+    ],
+    [
+     "2021",
+     177,
+     "probabilidade do evento complementar"
+    ],
+    [
+     "2022",
+     152,
+     "probabilidade em série de partidas"
+    ],
+    [
+     "2022",
+     162,
+     "probabilidade com eventos sucessivos"
+    ],
+    [
+     "2023",
+     149,
+     "probabilidade com casos ponderados"
+    ],
+    [
+     "2023",
+     158,
+     "probabilidade em etapas (sorteio em duas urnas)"
+    ],
+    [
+     "2023",
+     166,
+     "probabilidade de eventos independentes"
+    ],
+    [
+     "2024",
+     165,
+     "probabilidade de eventos independentes"
+    ],
+    [
+     "2024",
+     169,
+     "probabilidade sem reposição"
+    ],
+    [
+     "2024",
+     173,
+     "probabilidade a partir de gráfico"
+    ],
+    [
+     "2025",
+     137,
+     "probabilidade a partir de infográfico"
+    ],
+    [
+     "2025",
+     152,
+     "probabilidade (permutação)"
+    ],
+    [
+     "2025",
+     178,
+     "probabilidade com dados"
+    ]
+   ],
+   "palavras": [
+    [
+     "probabilidade",
+     29
+    ],
+    [
+     "eventos",
+     5
+    ],
+    [
+     "independentes",
+     4
+    ],
+    [
+     "condicional",
+     3
+    ],
+    [
+     "evento",
+     3
+    ]
+   ],
+   "rank": 10,
+   "de": 14
+  },
+  "MA07": {
+   "area": "MT",
+   "total": 24,
+   "sec": 4,
+   "por_prova": 2.0,
+   "ult5": 1.8,
+   "expo": 2.1,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 1,
+    "2015": 2,
+    "2016": 2,
+    "2017": 4,
+    "2018": 1,
+    "2019": 2,
+    "2020": 3,
+    "2021": 2,
+    "2022": 2,
+    "2023": 1,
+    "2024": 2,
+    "2025": 2
+   },
+   "itens": [
+    [
+     "2014",
+     151,
+     "princípio multiplicativo e permutação"
+    ],
+    [
+     "2015",
+     142,
+     "princípio multiplicativo com condição"
+    ],
+    [
+     "2015",
+     170,
+     "arranjo/permutação em poltronas"
+    ],
+    [
+     "2016",
+     153,
+     "princípio multiplicativo e permutação com repetição"
+    ],
+    [
+     "2016",
+     157,
+     "combinação com restrição"
+    ],
+    [
+     "2017",
+     140,
+     "princípio multiplicativo (senhas)"
+    ],
+    [
+     "2017",
+     141,
+     "combinação simples (número de partidas)"
+    ],
+    [
+     "2017",
+     149,
+     "combinação com repetição"
+    ],
+    [
+     "2017",
+     167,
+     "princípio multiplicativo (coloração de regiões)"
+    ],
+    [
+     "2018",
+     161,
+     "combinação simples e princípio multiplicativo"
+    ],
+    [
+     "2019",
+     137,
+     "combinação com repetição de cores (permutação com repetição via combinações)"
+    ],
+    [
+     "2019",
+     160,
+     "combinação e agrupamento em duplas com restrição"
+    ],
+    [
+     "2020",
+     142,
+     "contagem de caminhos (combinação com restrição)"
+    ],
+    [
+     "2020",
+     153,
+     "contagem de algarismos"
+    ],
+    [
+     "2020",
+     170,
+     "anagramas com restrição (permutação)"
+    ],
+    [
+     "2021",
+     139,
+     "combinação simples"
+    ],
+    [
+     "2021",
+     178,
+     "permutações com restrições por linha"
+    ],
+    [
+     "2022",
+     150,
+     "combinação com restrição (princípio multiplicativo)"
+    ],
+    [
+     "2022",
+     157,
+     "princípio multiplicativo e subconjuntos"
+    ],
+    [
+     "2023",
+     157,
+     "arranjos com restrição e probabilidade"
+    ],
+    [
+     "2024",
+     138,
+     "princípio multiplicativo (arranjo)"
+    ],
+    [
+     "2024",
+     180,
+     "combinação com restrição (pelo menos)"
+    ],
+    [
+     "2025",
+     155,
+     "princípio multiplicativo com restrição"
+    ],
+    [
+     "2025",
+     175,
+     "combinação e princípio multiplicativo"
+    ]
+   ],
+   "palavras": [
+    [
+     "multiplicativo",
+     11
+    ],
+    [
+     "princípio",
+     11
+    ],
+    [
+     "combinação",
+     11
+    ],
+    [
+     "restrição",
+     8
+    ],
+    [
+     "permutação",
+     5
+    ]
+   ],
+   "rank": 11,
+   "de": 14
+  },
+  "MA08": {
+   "area": "MT",
+   "total": 54,
+   "sec": 14,
+   "por_prova": 4.5,
+   "ult5": 3.6,
+   "expo": 4.69,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 4,
+    "2015": 7,
+    "2016": 4,
+    "2017": 5,
+    "2018": 7,
+    "2019": 4,
+    "2020": 5,
+    "2021": 3,
+    "2022": 2,
+    "2023": 5,
+    "2024": 6,
+    "2025": 2
+   },
+   "itens": [
+    [
+     "2014",
+     137,
+     "comprimento da circunferência"
+    ],
+    [
+     "2014",
+     163,
+     "disposição de pontos em retângulo com espaçamento"
+    ],
+    [
+     "2014",
+     166,
+     "desigualdade triangular e contagem de triângulos"
+    ],
+    [
+     "2014",
+     174,
+     "Pitágoras (diagonal) e proporção"
+    ],
+    [
+     "2015",
+     140,
+     "círculo circunscrito a triângulo equilátero"
+    ],
+    [
+     "2015",
+     145,
+     "área e porcentagem de cobertura"
+    ],
+    [
+     "2015",
+     148,
+     "simetria e dobraduras"
+    ],
+    [
+     "2015",
+     151,
+     "área de círculos"
+    ],
+    [
+     "2015",
+     161,
+     "área de trapézio e retângulo"
+    ],
+    [
+     "2015",
+     164,
+     "divisão de polígonos em áreas proporcionais"
+    ],
+    [
+     "2015",
+     171,
+     "área de setores circulares"
+    ],
+    [
+     "2016",
+     154,
+     "áreas de triângulos e trapézios em gráfico"
+    ],
+    [
+     "2016",
+     159,
+     "diagonal de quadrado e altura de triângulo equilátero"
+    ],
+    [
+     "2016",
+     166,
+     "área de figura composta e equação do 2º grau"
+    ],
+    [
+     "2016",
+     171,
+     "comprimento de semicircunferência e diagonal"
+    ],
+    [
+     "2017",
+     137,
+     "área de retângulo com círculos tangentes"
+    ],
+    [
+     "2017",
+     147,
+     "ângulos e rotação de figura"
+    ],
+    [
+     "2017",
+     157,
+     "triângulo equilátero e altura"
+    ],
+    [
+     "2017",
+     163,
+     "triângulo isósceles com ângulo de 120° (raio da circunferência)"
+    ],
+    [
+     "2017",
+     175,
+     "comprimento da circunferência e velocidade"
+    ],
+    [
+     "2018",
+     139,
+     "classificação de triângulo por ângulos e lados"
+    ],
+    [
+     "2018",
+     155,
+     "medida de ângulos e rotações (rosa dos ventos)"
+    ],
+    [
+     "2018",
+     157,
+     "comprimento de arcos e circunferências em malha polar"
+    ],
+    [
+     "2018",
+     169,
+     "triângulos retângulos isósceles e lado do quadrado"
+    ],
+    [
+     "2018",
+     174,
+     "mediana relativa à hipotenusa e interpretação de gráfico"
+    ],
+    [
+     "2018",
+     177,
+     "semelhança e razão entre áreas"
+    ],
+    [
+     "2018",
+     179,
+     "corda tangente e área de coroa circular"
+    ],
+    [
+     "2019",
+     146,
+     "área do círculo"
+    ],
+    [
+     "2019",
+     151,
+     "área de figura composta (círculo e retângulo)"
+    ],
+    [
+     "2019",
+     169,
+     "área de figura composta e volume (laje)"
+    ],
+    [
+     "2019",
+     171,
+     "Pitágoras e dobradura (triângulo retângulo)"
+    ],
+    [
+     "2020",
+     152,
+     "área de retângulo/quadrado e otimização de compra"
+    ],
+    [
+     "2020",
+     154,
+     "áreas de retângulos e densidade"
+    ],
+    [
+     "2020",
+     169,
+     "área de retângulos e porcentagem da área"
+    ],
+    [
+     "2020",
+     178,
+     "polígonos regulares e ângulos (preenchimento do plano)"
+    ],
+    [
+     "2020",
+     179,
+     "Pitágoras (geratriz de cone)"
+    ],
+    [
+     "2021",
+     144,
+     "identificação de figuras planas em estrutura"
+    ],
+    [
+     "2021",
+     146,
+     "triângulo equilátero, altura e perímetro"
+    ],
+    [
+     "2021",
+     148,
+     "áreas de polígonos e círculo com custo"
+    ],
+    [
+     "2022",
+     145,
+     "menor caminho por reflexão (distância entre pontos)"
+    ],
+    [
+     "2022",
+     163,
+     "simetria e dobraduras (círculo/setor)"
+    ],
+    [
+     "2023",
+     142,
+     "área de círculos, Pitágoras e ângulo do triângulo"
+    ],
+    [
+     "2023",
+     147,
+     "ângulo inscrito (arco capaz)"
+    ],
+    [
+     "2023",
+     174,
+     "setor circular (ângulo de 60°)"
+    ],
+    [
+     "2023",
+     175,
+     "área de quadrado e região de borda"
+    ],
+    [
+     "2023",
+     178,
+     "área de superfícies retangulares (degraus)"
+    ],
+    [
+     "2024",
+     145,
+     "área de retângulo (diferença)"
+    ],
+    [
+     "2024",
+     150,
+     "círculos alinhados e vãos (otimização de custo)"
+    ],
+    [
+     "2024",
+     155,
+     "área de setor circular"
+    ],
+    [
+     "2024",
+     163,
+     "comprimento de correia (arcos e tangentes)"
+    ],
+    [
+     "2024",
+     164,
+     "circuncentro de triângulo equilátero (distância)"
+    ],
+    [
+     "2024",
+     171,
+     "área de polígonos regulares com mesmo perímetro"
+    ],
+    [
+     "2025",
+     139,
+     "comprimento de circunferência (proteção da ciclovia)"
+    ],
+    [
+     "2025",
+     173,
+     "áreas de semicírculos"
+    ]
+   ],
+   "palavras": [
+    [
+     "área",
+     18
+    ],
+    [
+     "triângulo",
+     9
+    ],
+    [
+     "retângulo",
+     7
+    ],
+    [
+     "comprimento",
+     6
+    ],
+    [
+     "áreas",
+     6
+    ]
+   ],
+   "rank": 5,
+   "de": 14
+  },
+  "MA09": {
+   "area": "MT",
+   "total": 58,
+   "sec": 9,
+   "por_prova": 4.8,
+   "ult5": 5.0,
+   "expo": 5.24,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 8,
+    "2015": 6,
+    "2016": 5,
+    "2017": 3,
+    "2018": 3,
+    "2019": 3,
+    "2020": 5,
+    "2021": 5,
+    "2022": 8,
+    "2023": 2,
+    "2024": 4,
+    "2025": 6
+   },
+   "itens": [
+    [
+     "2014",
+     139,
+     "volume de sólidos e gráfico altura x tempo"
+    ],
+    [
+     "2014",
+     140,
+     "planificação de cone"
+    ],
+    [
+     "2014",
+     145,
+     "planificação de paralelepípedo e dimensões"
+    ],
+    [
+     "2014",
+     146,
+     "volume de paralelepípedo e variação percentual"
+    ],
+    [
+     "2014",
+     154,
+     "projeção ortogonal"
+    ],
+    [
+     "2014",
+     158,
+     "volume de cilindro e esfera"
+    ],
+    [
+     "2014",
+     171,
+     "volume de prisma trapezoidal"
+    ],
+    [
+     "2014",
+     173,
+     "volume de cubos e vazão"
+    ],
+    [
+     "2015",
+     137,
+     "volume de elipsoide dado por fórmula"
+    ],
+    [
+     "2015",
+     143,
+     "empilhamento de paralelepípedos (volume/dimensões)"
+    ],
+    [
+     "2015",
+     156,
+     "poliedros: faces e truncamento de cubo"
+    ],
+    [
+     "2015",
+     163,
+     "volume de cilindro"
+    ],
+    [
+     "2015",
+     167,
+     "volume de cilindro e índice pluviométrico"
+    ],
+    [
+     "2015",
+     179,
+     "volume de paralelepípedo e aumento percentual"
+    ],
+    [
+     "2016",
+     146,
+     "volume de paralelepípedo"
+    ],
+    [
+     "2016",
+     162,
+     "seções planas de pirâmide"
+    ],
+    [
+     "2016",
+     172,
+     "projeção ortogonal em esfera"
+    ],
+    [
+     "2016",
+     175,
+     "volume de cilindro e cone"
+    ],
+    [
+     "2016",
+     178,
+     "vista lateral de objeto (projeção)"
+    ],
+    [
+     "2017",
+     139,
+     "volume de paralelepípedo e cubo"
+    ],
+    [
+     "2017",
+     154,
+     "identificação de sólido geométrico"
+    ],
+    [
+     "2017",
+     180,
+     "calota esférica e Pitágoras"
+    ],
+    [
+     "2018",
+     146,
+     "visualização espacial de cubo (composição de sólidos)"
+    ],
+    [
+     "2018",
+     158,
+     "empilhamento de cilindros em paralelepípedo"
+    ],
+    [
+     "2018",
+     170,
+     "planificação do cilindro e tangente de 30°"
+    ],
+    [
+     "2019",
+     139,
+     "projeção ortogonal de sólidos/figuras (sombra)"
+    ],
+    [
+     "2019",
+     161,
+     "poliedros (faces de tetraedro truncado)"
+    ],
+    [
+     "2019",
+     178,
+     "volume de cilindro e vasos comunicantes"
+    ],
+    [
+     "2020",
+     137,
+     "projeções ortogonais de sólido"
+    ],
+    [
+     "2020",
+     158,
+     "tronco de pirâmide: faces"
+    ],
+    [
+     "2020",
+     159,
+     "visualização espacial de telhado"
+    ],
+    [
+     "2020",
+     168,
+     "volume de cilindro (relação raio×altura)"
+    ],
+    [
+     "2020",
+     175,
+     "volume de paralelepípedo / volume deslocado"
+    ],
+    [
+     "2021",
+     145,
+     "octaedro regular e planificação"
+    ],
+    [
+     "2021",
+     147,
+     "volume de tronco de cone"
+    ],
+    [
+     "2021",
+     152,
+     "áreas de paralelepípedo ao ampliar dimensões"
+    ],
+    [
+     "2021",
+     153,
+     "volume de cilindro"
+    ],
+    [
+     "2021",
+     180,
+     "projeção ortogonal de trajeto em cubo"
+    ],
+    [
+     "2022",
+     142,
+     "volume de cilindro e comparação"
+    ],
+    [
+     "2022",
+     147,
+     "volume de esfera e proporção"
+    ],
+    [
+     "2022",
+     148,
+     "volume de cone e redução percentual"
+    ],
+    [
+     "2022",
+     158,
+     "planificação do cubo"
+    ],
+    [
+     "2022",
+     165,
+     "projeção ortogonal sobre plano (esfera/meridianos)"
+    ],
+    [
+     "2022",
+     167,
+     "área da superfície de paralelepípedo e litros/m³"
+    ],
+    [
+     "2022",
+     169,
+     "volume de cilindro e esfera"
+    ],
+    [
+     "2022",
+     178,
+     "projeção ortogonal de trajeto em cubo"
+    ],
+    [
+     "2023",
+     150,
+     "volume de cilindro, litros e consumo"
+    ],
+    [
+     "2023",
+     164,
+     "volume de tronco de cone e cilindro; densidade"
+    ],
+    [
+     "2024",
+     144,
+     "sólido de revolução"
+    ],
+    [
+     "2024",
+     149,
+     "volume de cilindro e cubo"
+    ],
+    [
+     "2024",
+     174,
+     "projeção ortogonal de trajetória"
+    ],
+    [
+     "2024",
+     175,
+     "volume de cilindro"
+    ],
+    [
+     "2025",
+     138,
+     "projeções ortogonais em eixos coordenados"
+    ],
+    [
+     "2025",
+     144,
+     "faces de poliedro (prisma e tronco de pirâmide)"
+    ],
+    [
+     "2025",
+     149,
+     "vértices de poliedro (planificação)"
+    ],
+    [
+     "2025",
+     170,
+     "volume de paralelepípedo e conversão dm³/mL"
+    ],
+    [
+     "2025",
+     171,
+     "dimensões de cilindro dentro de prisma"
+    ],
+    [
+     "2025",
+     177,
+     "volume de cilindro menos prisma"
+    ]
+   ],
+   "palavras": [
+    [
+     "volume",
+     28
+    ],
+    [
+     "cilindro",
+     16
+    ],
+    [
+     "paralelepípedo",
+     10
+    ],
+    [
+     "projeção",
+     8
+    ],
+    [
+     "ortogonal",
+     7
+    ]
+   ],
+   "rank": 4,
+   "de": 14
+  },
+  "MA10": {
+   "area": "MT",
+   "total": 42,
+   "sec": 10,
+   "por_prova": 3.5,
+   "ult5": 4.2,
+   "expo": 4.23,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 2,
+    "2015": 4,
+    "2016": 4,
+    "2017": 4,
+    "2018": 1,
+    "2019": 3,
+    "2020": 3,
+    "2021": 3,
+    "2022": 4,
+    "2023": 4,
+    "2024": 7,
+    "2025": 3
+   },
+   "itens": [
+    [
+     "2014",
+     157,
+     "interpretação de gráfico de função afim"
+    ],
+    [
+     "2014",
+     164,
+     "função quadrática a partir de pontos"
+    ],
+    [
+     "2015",
+     136,
+     "máximo de função quadrática"
+    ],
+    [
+     "2015",
+     138,
+     "gráfico de função afim por partes"
+    ],
+    [
+     "2015",
+     141,
+     "comparação de funções afim em gráfico"
+    ],
+    [
+     "2015",
+     157,
+     "inequação/função quadrática (receita)"
+    ],
+    [
+     "2016",
+     136,
+     "parábola (vértice) e coeficiente angular de reta"
+    ],
+    [
+     "2016",
+     140,
+     "função afim em gráfico (taxa de variação/vazão)"
+    ],
+    [
+     "2016",
+     143,
+     "função afim a partir de gráfico (extrapolação)"
+    ],
+    [
+     "2016",
+     152,
+     "raízes de parábola e área sob parábola"
+    ],
+    [
+     "2017",
+     143,
+     "taxa de variação constante (vazão)"
+    ],
+    [
+     "2017",
+     156,
+     "interpretação de gráfico de função por partes"
+    ],
+    [
+     "2017",
+     168,
+     "máximo de função quadrática (área do retângulo)"
+    ],
+    [
+     "2017",
+     176,
+     "função quadrática (parábola) a partir de pontos"
+    ],
+    [
+     "2018",
+     143,
+     "interpolação linear a partir de gráfico"
+    ],
+    [
+     "2019",
+     138,
+     "extrapolação linear com média de gráfico"
+    ],
+    [
+     "2019",
+     163,
+     "gráfico de função afim por partes"
+    ],
+    [
+     "2019",
+     173,
+     "modelagem de função afim"
+    ],
+    [
+     "2020",
+     136,
+     "interpretar gráficos de função afim (lucro = receita − custo)"
+    ],
+    [
+     "2020",
+     139,
+     "inequação modular/ intervalo"
+    ],
+    [
+     "2020",
+     173,
+     "esboço de gráfico de função (altura × tempo em recipiente)"
+    ],
+    [
+     "2021",
+     154,
+     "função afim definida por partes, gráfico"
+    ],
+    [
+     "2021",
+     155,
+     "função quadrática, arrecadação máxima, gráfico"
+    ],
+    [
+     "2021",
+     176,
+     "modelagem algébrica com taxa percentual"
+    ],
+    [
+     "2022",
+     174,
+     "altura máxima da parábola (vértice)"
+    ],
+    [
+     "2022",
+     175,
+     "função afim definida por partes"
+    ],
+    [
+     "2022",
+     176,
+     "máximo de função quadrática"
+    ],
+    [
+     "2022",
+     180,
+     "função afim a partir de gráfico (extrapolação)"
+    ],
+    [
+     "2023",
+     144,
+     "variação linear mês a mês (retas que se cruzam)"
+    ],
+    [
+     "2023",
+     160,
+     "mínimo de função quadrática"
+    ],
+    [
+     "2023",
+     167,
+     "gráfico de função definida por partes (volume×tempo)"
+    ],
+    [
+     "2023",
+     171,
+     "função afim (modelagem custo fixo + variável)"
+    ],
+    [
+     "2024",
+     141,
+     "composição de funções afins em gráficos"
+    ],
+    [
+     "2024",
+     146,
+     "otimização de área (parábola) com custo"
+    ],
+    [
+     "2024",
+     156,
+     "expressão de função afim"
+    ],
+    [
+     "2024",
+     157,
+     "equação linear (taxa fixa + preço por unidade)"
+    ],
+    [
+     "2024",
+     161,
+     "gráfico de altura x tempo (enchimento de tanque)"
+    ],
+    [
+     "2024",
+     176,
+     "reta de tendência em gráfico (extrapolação)"
+    ],
+    [
+     "2024",
+     177,
+     "função afim a partir de tabela (custo fixo+variável)"
+    ],
+    [
+     "2025",
+     141,
+     "relação afim com perda constante"
+    ],
+    [
+     "2025",
+     145,
+     "interpretação de gráfico de função decrescente e constante"
+    ],
+    [
+     "2025",
+     174,
+     "equação do 2º grau/sistema (parcelas)"
+    ]
+   ],
+   "palavras": [
+    [
+     "função",
+     25
+    ],
+    [
+     "gráfico",
+     17
+    ],
+    [
+     "afim",
+     15
+    ],
+    [
+     "quadrática",
+     8
+    ],
+    [
+     "partir",
+     6
+    ]
+   ],
+   "rank": 6,
+   "de": 14
+  },
+  "MA11": {
+   "area": "MT",
+   "total": 16,
+   "sec": 4,
+   "por_prova": 1.3,
+   "ult5": 1.0,
+   "expo": 1.42,
+   "faixa": "C",
+   "por_ano": {
+    "2014": 0,
+    "2015": 2,
+    "2016": 2,
+    "2017": 1,
+    "2018": 2,
+    "2019": 2,
+    "2020": 2,
+    "2021": 0,
+    "2022": 0,
+    "2023": 2,
+    "2024": 2,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2015",
+     159,
+     "crescimento exponencial (PG)"
+    ],
+    [
+     "2015",
+     165,
+     "função logarítmica"
+    ],
+    [
+     "2016",
+     145,
+     "decaimento exponencial e logaritmo"
+    ],
+    [
+     "2016",
+     174,
+     "escala logarítmica (Richter)"
+    ],
+    [
+     "2017",
+     145,
+     "logaritmo em fórmula de prestação"
+    ],
+    [
+     "2018",
+     165,
+     "logaritmo e juros compostos (valor presente)"
+    ],
+    [
+     "2018",
+     171,
+     "crescimento exponencial e logaritmo (Lei de Moore)"
+    ],
+    [
+     "2019",
+     140,
+     "logaritmo e inequação logarítmica (pH)"
+    ],
+    [
+     "2019",
+     158,
+     "logaritmo em escala (Richter)"
+    ],
+    [
+     "2020",
+     156,
+     "propriedades de logaritmo/ linearização de lei de potência"
+    ],
+    [
+     "2020",
+     157,
+     "função exponencial (meia-vida)"
+    ],
+    [
+     "2023",
+     156,
+     "crescimento exponencial"
+    ],
+    [
+     "2023",
+     163,
+     "logaritmo (escala decibel)"
+    ],
+    [
+     "2024",
+     148,
+     "função exponencial a partir de gráfico"
+    ],
+    [
+     "2024",
+     170,
+     "logaritmo em escala Richter"
+    ],
+    [
+     "2025",
+     172,
+     "logaritmo com função quadrática"
+    ]
+   ],
+   "palavras": [
+    [
+     "logaritmo",
+     10
+    ],
+    [
+     "exponencial",
+     6
+    ],
+    [
+     "função",
+     4
+    ],
+    [
+     "escala",
+     4
+    ],
+    [
+     "crescimento",
+     3
+    ]
+   ],
+   "rank": 13,
+   "de": 14
+  },
+  "MA12": {
+   "area": "MT",
+   "total": 12,
+   "sec": 3,
+   "por_prova": 1.0,
+   "ult5": 1.2,
+   "expo": 1.15,
+   "faixa": "C",
+   "por_ano": {
+    "2014": 0,
+    "2015": 1,
+    "2016": 0,
+    "2017": 2,
+    "2018": 1,
+    "2019": 1,
+    "2020": 1,
+    "2021": 1,
+    "2022": 0,
+    "2023": 2,
+    "2024": 1,
+    "2025": 2
+   },
+   "itens": [
+    [
+     "2015",
+     176,
+     "função cosseno (máximo)"
+    ],
+    [
+     "2017",
+     146,
+     "seno de ângulo notável"
+    ],
+    [
+     "2017",
+     179,
+     "função periódica cosseno (período e amplitude)"
+    ],
+    [
+     "2018",
+     145,
+     "função trigonométrica (gráfico senoidal)"
+    ],
+    [
+     "2019",
+     180,
+     "função seno e período"
+    ],
+    [
+     "2020",
+     180,
+     "tangente/razões trigonométricas"
+    ],
+    [
+     "2021",
+     161,
+     "função cosseno, amplitude e período"
+    ],
+    [
+     "2023",
+     137,
+     "seno em triângulo retângulo"
+    ],
+    [
+     "2023",
+     153,
+     "função periódica (altura em roda-gigante)"
+    ],
+    [
+     "2024",
+     168,
+     "gráfico de função senoidal (amplitude)"
+    ],
+    [
+     "2025",
+     160,
+     "função tangente e assíntotas"
+    ],
+    [
+     "2025",
+     164,
+     "lei dos cossenos em triângulo"
+    ]
+   ],
+   "palavras": [
+    [
+     "função",
+     8
+    ],
+    [
+     "cosseno",
+     3
+    ],
+    [
+     "seno",
+     3
+    ],
+    [
+     "amplitude",
+     3
+    ],
+    [
+     "período",
+     3
+    ]
+   ],
+   "rank": 14,
+   "de": 14
+  },
+  "MA13": {
+   "area": "MT",
+   "total": 14,
+   "sec": 5,
+   "por_prova": 1.2,
+   "ult5": 1.6,
+   "expo": 1.54,
+   "faixa": "C",
+   "por_ano": {
+    "2014": 0,
+    "2015": 0,
+    "2016": 1,
+    "2017": 0,
+    "2018": 2,
+    "2019": 1,
+    "2020": 2,
+    "2021": 1,
+    "2022": 1,
+    "2023": 3,
+    "2024": 2,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2016",
+     170,
+     "PA e MMC (coincidência de sequências)"
+    ],
+    [
+     "2018",
+     149,
+     "soma de termos de PG"
+    ],
+    [
+     "2018",
+     159,
+     "termo geral e número de termos de PA"
+    ],
+    [
+     "2019",
+     153,
+     "termo de PA (redução absoluta constante)"
+    ],
+    [
+     "2020",
+     164,
+     "PA (incremento constante) e porcentagem"
+    ],
+    [
+     "2020",
+     166,
+     "PG (termo geral)"
+    ],
+    [
+     "2021",
+     179,
+     "potências de Φ e sequência de Fibonacci"
+    ],
+    [
+     "2022",
+     164,
+     "PA e média aritmética"
+    ],
+    [
+     "2023",
+     148,
+     "PA e raciocínio lógico (triângulo mágico)"
+    ],
+    [
+     "2023",
+     152,
+     "sequência (números figurados pentagonais)"
+    ],
+    [
+     "2023",
+     159,
+     "PG (termo geral, razão 2/3)"
+    ],
+    [
+     "2024",
+     142,
+     "PG (dobro a cada etapa)"
+    ],
+    [
+     "2024",
+     162,
+     "PG com acréscimo percentual (parcelas)"
+    ],
+    [
+     "2025",
+     180,
+     "padrão linear (PA) de variação"
+    ]
+   ],
+   "palavras": [
+    [
+     "termo",
+     4
+    ],
+    [
+     "geral",
+     3
+    ]
+   ],
+   "rank": 12,
+   "de": 14
+  },
+  "MA14": {
+   "area": "MT",
+   "total": 28,
+   "sec": 23,
+   "por_prova": 2.3,
+   "ult5": 2.2,
+   "expo": 3.29,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 3,
+    "2015": 4,
+    "2016": 1,
+    "2017": 4,
+    "2018": 2,
+    "2019": 2,
+    "2020": 1,
+    "2021": 4,
+    "2022": 3,
+    "2023": 1,
+    "2024": 2,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2014",
+     165,
+     "número de divisores via fatoração"
+    ],
+    [
+     "2014",
+     177,
+     "sistema de numeração decimal posicional"
+    ],
+    [
+     "2014",
+     179,
+     "divisão e operações com decimais"
+    ],
+    [
+     "2015",
+     146,
+     "MDC"
+    ],
+    [
+     "2015",
+     162,
+     "MDC"
+    ],
+    [
+     "2015",
+     169,
+     "comparação de números decimais"
+    ],
+    [
+     "2015",
+     177,
+     "equivalência entre fração, decimal e porcentagem"
+    ],
+    [
+     "2016",
+     158,
+     "sistema de numeração decimal posicional"
+    ],
+    [
+     "2017",
+     138,
+     "operações com frações / custo de mistura"
+    ],
+    [
+     "2017",
+     151,
+     "avaliação de fórmula com raiz e comparação"
+    ],
+    [
+     "2017",
+     164,
+     "comparação e aproximação de números decimais"
+    ],
+    [
+     "2017",
+     169,
+     "frações e densidade (massa/volume)"
+    ],
+    [
+     "2018",
+     150,
+     "frações e conversão anos/meses"
+    ],
+    [
+     "2018",
+     160,
+     "operações com números inteiros (soma algébrica)"
+    ],
+    [
+     "2019",
+     159,
+     "divisão com resto em sequência periódica"
+    ],
+    [
+     "2019",
+     168,
+     "comparação de potências e raízes de número entre 0 e 1"
+    ],
+    [
+     "2020",
+     143,
+     "operações com decimais e comparação de custos"
+    ],
+    [
+     "2021",
+     136,
+     "sistema de numeração romano"
+    ],
+    [
+     "2021",
+     137,
+     "adição em base binária"
+    ],
+    [
+     "2021",
+     142,
+     "menor número inteiro de lavagens para receita mínima"
+    ],
+    [
+     "2021",
+     159,
+     "comparação de custo com requisitos mínimos"
+    ],
+    [
+     "2022",
+     146,
+     "operações com decimais e comparação de custo total"
+    ],
+    [
+     "2022",
+     159,
+     "resto da divisão e cálculo de dígito verificador"
+    ],
+    [
+     "2022",
+     177,
+     "padrão periódico/resto da divisão"
+    ],
+    [
+     "2023",
+     173,
+     "operações aritméticas e comparação (tempo de espera)"
+    ],
+    [
+     "2024",
+     147,
+     "representações equivalentes de racionais"
+    ],
+    [
+     "2024",
+     167,
+     "operações com frações/números mistos e arredondamento"
+    ],
+    [
+     "2025",
+     146,
+     "subtração de decimais"
+    ]
+   ],
+   "palavras": [
+    [
+     "comparação",
+     8
+    ],
+    [
+     "operações",
+     7
+    ],
+    [
+     "decimais",
+     6
+    ],
+    [
+     "divisão",
+     4
+    ],
+    [
+     "números",
+     4
+    ]
+   ],
+   "rank": 8,
+   "de": 14
+  },
+  "QU01": {
+   "area": "CN",
+   "total": 14,
+   "sec": 8,
+   "por_prova": 1.2,
+   "ult5": 1.0,
+   "expo": 1.38,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 2,
+    "2015": 1,
+    "2016": 1,
+    "2017": 3,
+    "2018": 0,
+    "2019": 0,
+    "2020": 2,
+    "2021": 0,
+    "2022": 2,
+    "2023": 0,
+    "2024": 1,
+    "2025": 2
+   },
+   "itens": [
+    [
+     "2014",
+     51,
+     "separação por adsorção em carvão ativo"
+    ],
+    [
+     "2014",
+     80,
+     "destilação fracionada (diferença de ponto de ebulição)"
+    ],
+    [
+     "2015",
+     51,
+     "processos de separação (floculação/separação magnética)"
+    ],
+    [
+     "2016",
+     72,
+     "extração por arraste a vapor"
+    ],
+    [
+     "2017",
+     95,
+     "extração por solvente, filtração e destilação"
+    ],
+    [
+     "2017",
+     122,
+     "volatilização de óleos essenciais (mudança de estado)"
+    ],
+    [
+     "2017",
+     131,
+     "cromatografia em papel e polaridade"
+    ],
+    [
+     "2020",
+     103,
+     "separação de misturas: extração por polaridade"
+    ],
+    [
+     "2020",
+     119,
+     "separação de mistura imiscível: decantação"
+    ],
+    [
+     "2022",
+     97,
+     "decantação no tratamento de água"
+    ],
+    [
+     "2022",
+     120,
+     "separação de isótopos por centrifugação (diferença de massa)"
+    ],
+    [
+     "2024",
+     116,
+     "filtração de mistura heterogênea"
+    ],
+    [
+     "2025",
+     91,
+     "adsorção/carvão ativado"
+    ],
+    [
+     "2025",
+     100,
+     "tipos de água (destilada, dura)"
+    ]
+   ],
+   "palavras": [
+    [
+     "separação",
+     5
+    ],
+    [
+     "extração",
+     3
+    ]
+   ],
+   "rank": 20,
+   "de": 31
+  },
+  "QU02": {
+   "area": "CN",
+   "total": 24,
+   "sec": 11,
+   "por_prova": 2.0,
+   "ult5": 1.0,
+   "expo": 2.0,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 2,
+    "2015": 1,
+    "2016": 6,
+    "2017": 4,
+    "2018": 2,
+    "2019": 4,
+    "2020": 0,
+    "2021": 0,
+    "2022": 0,
+    "2023": 3,
+    "2024": 0,
+    "2025": 2
+   },
+   "itens": [
+    [
+     "2014",
+     58,
+     "sabão: molécula anfifílica, polaridade e micelas"
+    ],
+    [
+     "2014",
+     65,
+     "geometria molecular/hibridização de grupos"
+    ],
+    [
+     "2015",
+     80,
+     "polaridade e solubilidade (bioacumulação em lipídios)"
+    ],
+    [
+     "2016",
+     46,
+     "polaridade e solubilidade (capsaicina apolar em água)"
+    ],
+    [
+     "2016",
+     60,
+     "forças intermoleculares: dipolo induzido (adsorção)"
+    ],
+    [
+     "2016",
+     67,
+     "mudanças de estado físico e organização microscópica da matéria"
+    ],
+    [
+     "2016",
+     81,
+     "polaridade e lipofilia (afinidade por meios apolares)"
+    ],
+    [
+     "2016",
+     85,
+     "tensoativos: anfifilicidade e arranjo em água (micelas)"
+    ],
+    [
+     "2016",
+     89,
+     "polaridade e aquecimento por micro-ondas"
+    ],
+    [
+     "2017",
+     91,
+     "teste de chama / modelo atômico (emissão de fótons)"
+    ],
+    [
+     "2017",
+     100,
+     "forças intermoleculares: interação íon-dipolo"
+    ],
+    [
+     "2017",
+     132,
+     "ligações de hidrogênio entre bases do DNA (PCR)"
+    ],
+    [
+     "2017",
+     133,
+     "propriedades periódicas: eletronegatividade, gases nobres"
+    ],
+    [
+     "2018",
+     97,
+     "hibridação do carbono e geometria (grafeno)"
+    ],
+    [
+     "2018",
+     119,
+     "tabela periódica: famílias e propriedades"
+    ],
+    [
+     "2019",
+     93,
+     "modelos atômicos (Dalton)"
+    ],
+    [
+     "2019",
+     108,
+     "forças intermoleculares e temperatura de ebulição"
+    ],
+    [
+     "2019",
+     116,
+     "teste de chama: transição eletrônica (modelo de Bohr)"
+    ],
+    [
+     "2019",
+     119,
+     "ligação covalente, estrutura de Lewis e expansão do octeto"
+    ],
+    [
+     "2023",
+     94,
+     "eletronegatividade e caráter iônico da ligação"
+    ],
+    [
+     "2023",
+     116,
+     "polaridade e solubilidade (composto apolar acumula em lipídios)"
+    ],
+    [
+     "2023",
+     121,
+     "caráter iônico/solubilidade em água de sal de amina"
+    ],
+    [
+     "2025",
+     133,
+     "polaridade/interações intermoleculares e separação óleo-água"
+    ],
+    [
+     "2025",
+     134,
+     "polaridade e solubilidade (ligações de hidrogênio)"
+    ]
+   ],
+   "palavras": [
+    [
+     "polaridade",
+     8
+    ],
+    [
+     "solubilidade",
+     5
+    ],
+    [
+     "água",
+     4
+    ],
+    [
+     "intermoleculares",
+     4
+    ],
+    [
+     "forças",
+     3
+    ]
+   ],
+   "rank": 12,
+   "de": 31
+  },
+  "QU03": {
+   "area": "CN",
+   "total": 22,
+   "sec": 8,
+   "por_prova": 1.8,
+   "ult5": 2.2,
+   "expo": 2.38,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 2,
+    "2015": 2,
+    "2016": 1,
+    "2017": 1,
+    "2018": 2,
+    "2019": 0,
+    "2020": 3,
+    "2021": 3,
+    "2022": 4,
+    "2023": 1,
+    "2024": 1,
+    "2025": 2
+   },
+   "itens": [
+    [
+     "2014",
+     70,
+     "correção de pH e hidrólise de sais"
+    ],
+    [
+     "2014",
+     86,
+     "neutralização ácido-base (piridina e ácido acético)"
+    ],
+    [
+     "2015",
+     52,
+     "higroscopia do hidróxido de sódio"
+    ],
+    [
+     "2015",
+     62,
+     "óxidos ácidos e indicador ácido-base (pH)"
+    ],
+    [
+     "2016",
+     51,
+     "solubilidade de sais: precipitação de sulfato de bário"
+    ],
+    [
+     "2017",
+     120,
+     "ácido-base orgânico: pKa e extração"
+    ],
+    [
+     "2018",
+     94,
+     "propriedades de substâncias: amônia (gás tóxico e corrosivo)"
+    ],
+    [
+     "2018",
+     132,
+     "correção de pH do solo com calcário"
+    ],
+    [
+     "2020",
+     91,
+     "pH e liberação de fármaco (revestimento entérico)"
+    ],
+    [
+     "2020",
+     104,
+     "CO2 e acidificação da água (pH)"
+    ],
+    [
+     "2020",
+     123,
+     "identificação de gás ácido (HCl) na queima de PVC"
+    ],
+    [
+     "2021",
+     108,
+     "reação ácido-base de Brønsted-Lowry em pesticidas"
+    ],
+    [
+     "2021",
+     119,
+     "titulação ácido-base de AAS"
+    ],
+    [
+     "2021",
+     133,
+     "correção de pH com base"
+    ],
+    [
+     "2022",
+     93,
+     "pKa e ionização de grupos funcionais em função do pH"
+    ],
+    [
+     "2022",
+     100,
+     "pH do solo e espécies nitrogenadas (NH3/NH4+)"
+    ],
+    [
+     "2022",
+     112,
+     "reação ácido + carbonato produz CO2"
+    ],
+    [
+     "2022",
+     125,
+     "reações ácido-base e oxirredução: HCN e HNO3"
+    ],
+    [
+     "2023",
+     126,
+     "sais pouco solúveis (cálcio) e dureza da água"
+    ],
+    [
+     "2024",
+     94,
+     "teoria ácido-base de Brönsted-Lowry"
+    ],
+    [
+     "2025",
+     106,
+     "fórmulas de ácido e sal"
+    ],
+    [
+     "2025",
+     121,
+     "neutralização ácido-base (amina com ácido)"
+    ]
+   ],
+   "palavras": [
+    [
+     "ácido",
+     11
+    ],
+    [
+     "base",
+     9
+    ],
+    [
+     "correção",
+     3
+    ],
+    [
+     "sais",
+     3
+    ]
+   ],
+   "rank": 9,
+   "de": 31
+  },
+  "QU04": {
+   "area": "CN",
+   "total": 15,
+   "sec": 7,
+   "por_prova": 1.2,
+   "ult5": 1.6,
+   "expo": 1.69,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 1,
+    "2015": 1,
+    "2016": 1,
+    "2017": 1,
+    "2018": 0,
+    "2019": 1,
+    "2020": 2,
+    "2021": 1,
+    "2022": 0,
+    "2023": 3,
+    "2024": 2,
+    "2025": 2
+   },
+   "itens": [
+    [
+     "2014",
+     88,
+     "estequiometria com rendimento"
+    ],
+    [
+     "2015",
+     76,
+     "estequiometria com pureza e rendimento"
+    ],
+    [
+     "2016",
+     58,
+     "rendimento molar e reagente limitante"
+    ],
+    [
+     "2017",
+     114,
+     "estequiometria com rendimento"
+    ],
+    [
+     "2019",
+     100,
+     "gases: pressão, volume e massa de ar"
+    ],
+    [
+     "2020",
+     116,
+     "estequiometria de combustão (massa de etanol/CO2)"
+    ],
+    [
+     "2020",
+     132,
+     "química verde: economia atômica/rendimento"
+    ],
+    [
+     "2021",
+     113,
+     "estequiometria com rendimento e densidade"
+    ],
+    [
+     "2023",
+     97,
+     "equação de estado dos gases ideais (PV=nRT)"
+    ],
+    [
+     "2023",
+     128,
+     "cálculo estequiométrico: massa de hidratação (%)"
+    ],
+    [
+     "2023",
+     129,
+     "estequiometria e reagente limitante (gráfico massa produto x reagente)"
+    ],
+    [
+     "2024",
+     133,
+     "mol e cálculo estequiométrico"
+    ],
+    [
+     "2024",
+     135,
+     "estequiometria/cálculo de massa"
+    ],
+    [
+     "2025",
+     125,
+     "gases ideais e estequiometria com rendimento"
+    ],
+    [
+     "2025",
+     131,
+     "estequiometria com excesso de reagente"
+    ]
+   ],
+   "palavras": [
+    [
+     "estequiometria",
+     9
+    ],
+    [
+     "rendimento",
+     7
+    ],
+    [
+     "massa",
+     5
+    ],
+    [
+     "reagente",
+     3
+    ],
+    [
+     "gases",
+     3
+    ]
+   ],
+   "rank": 15,
+   "de": 31
+  },
+  "QU05": {
+   "area": "CN",
+   "total": 10,
+   "sec": 5,
+   "por_prova": 0.8,
+   "ult5": 0.8,
+   "expo": 1.06,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 1,
+    "2015": 1,
+    "2016": 1,
+    "2017": 2,
+    "2018": 0,
+    "2019": 1,
+    "2020": 0,
+    "2021": 0,
+    "2022": 2,
+    "2023": 1,
+    "2024": 1,
+    "2025": 0
+   },
+   "itens": [
+    [
+     "2014",
+     83,
+     "cálculo de concentração (mg/kg, mg/L)"
+    ],
+    [
+     "2015",
+     55,
+     "concentração molar e diluição"
+    ],
+    [
+     "2016",
+     68,
+     "cálculo de concentração (mg/L) e massa de soluto"
+    ],
+    [
+     "2017",
+     106,
+     "concentração e dose (DL50) – cálculo de proporção"
+    ],
+    [
+     "2017",
+     121,
+     "propriedades coligativas: osmose reversa"
+    ],
+    [
+     "2019",
+     133,
+     "titulação ácido-base e cálculo de concentração"
+    ],
+    [
+     "2022",
+     106,
+     "cálculo de concentração com redução percentual"
+    ],
+    [
+     "2022",
+     110,
+     "titulação ácido-base, concentração"
+    ],
+    [
+     "2023",
+     118,
+     "propriedades de soluções: densidade/massa de soluto"
+    ],
+    [
+     "2024",
+     97,
+     "concentração de soluções"
+    ]
+   ],
+   "palavras": [
+    [
+     "concentração",
+     8
+    ],
+    [
+     "cálculo",
+     5
+    ]
+   ],
+   "rank": 25,
+   "de": 31
+  },
+  "QU06": {
+   "area": "CN",
+   "total": 11,
+   "sec": 6,
+   "por_prova": 0.9,
+   "ult5": 0.4,
+   "expo": 0.94,
+   "faixa": "C",
+   "por_ano": {
+    "2014": 0,
+    "2015": 1,
+    "2016": 1,
+    "2017": 1,
+    "2018": 3,
+    "2019": 1,
+    "2020": 2,
+    "2021": 0,
+    "2022": 1,
+    "2023": 0,
+    "2024": 0,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2015",
+     84,
+     "lei de Hess / entalpia de combustão"
+    ],
+    [
+     "2016",
+     50,
+     "lei de Hess / entalpia de combustão"
+    ],
+    [
+     "2017",
+     116,
+     "lei de Hess"
+    ],
+    [
+     "2018",
+     100,
+     "calor de combustão e densidade (cálculo de volume)"
+    ],
+    [
+     "2018",
+     108,
+     "entalpia de combustão e massa molar"
+    ],
+    [
+     "2018",
+     116,
+     "catálise: diminuição da energia de ativação"
+    ],
+    [
+     "2019",
+     125,
+     "entalpia de combustão: respiração × fermentação lática"
+    ],
+    [
+     "2020",
+     93,
+     "catalisadores e superfície de contato (cinética)"
+    ],
+    [
+     "2020",
+     128,
+     "cinética: meia-vida e concentração"
+    ],
+    [
+     "2022",
+     109,
+     "catálise ácida (H+ aumenta velocidade)"
+    ],
+    [
+     "2025",
+     127,
+     "catálise e energia de ativação"
+    ]
+   ],
+   "palavras": [
+    [
+     "combustão",
+     5
+    ],
+    [
+     "entalpia",
+     4
+    ],
+    [
+     "hess",
+     3
+    ],
+    [
+     "catálise",
+     3
+    ]
+   ],
+   "rank": 26,
+   "de": 31
+  },
+  "QU07": {
+   "area": "CN",
+   "total": 7,
+   "sec": 4,
+   "por_prova": 0.6,
+   "ult5": 0.6,
+   "expo": 0.73,
+   "faixa": "C",
+   "por_ano": {
+    "2014": 0,
+    "2015": 2,
+    "2016": 1,
+    "2017": 0,
+    "2018": 0,
+    "2019": 0,
+    "2020": 1,
+    "2021": 0,
+    "2022": 0,
+    "2023": 1,
+    "2024": 1,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2015",
+     46,
+     "deslocamento de equilíbrio (Le Chatelier): pressão parcial de O2 e hemoglobina"
+    ],
+    [
+     "2015",
+     71,
+     "constante de equilíbrio (combinação de equilíbrios)"
+    ],
+    [
+     "2016",
+     78,
+     "constantes de ionização (Kb/Ka) e neutralização de gases ácidos"
+    ],
+    [
+     "2020",
+     95,
+     "deslocamento de equilíbrio por temperatura"
+    ],
+    [
+     "2023",
+     110,
+     "deslocamento de equilíbrio químico (Le Chatelier)"
+    ],
+    [
+     "2024",
+     118,
+     "deslocamento de equilíbrio e pH"
+    ],
+    [
+     "2025",
+     117,
+     "deslocamento de equilíbrio (Le Chatelier)"
+    ]
+   ],
+   "palavras": [
+    [
+     "equilíbrio",
+     6
+    ],
+    [
+     "deslocamento",
+     5
+    ],
+    [
+     "chatelier",
+     3
+    ]
+   ],
+   "rank": 30,
+   "de": 31
+  },
+  "QU08": {
+   "area": "CN",
+   "total": 22,
+   "sec": 6,
+   "por_prova": 1.8,
+   "ult5": 2.0,
+   "expo": 2.21,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 1,
+    "2015": 2,
+    "2016": 1,
+    "2017": 2,
+    "2018": 2,
+    "2019": 4,
+    "2020": 0,
+    "2021": 4,
+    "2022": 3,
+    "2023": 0,
+    "2024": 2,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2014",
+     59,
+     "potencial de redução e recuperação de prata"
+    ],
+    [
+     "2015",
+     58,
+     "corrosão do ferro e proteção por estanho"
+    ],
+    [
+     "2015",
+     81,
+     "potencial de redução e espontaneidade de reação redox"
+    ],
+    [
+     "2016",
+     64,
+     "potencial de pilha e associação em série"
+    ],
+    [
+     "2017",
+     104,
+     "eletrólise de solução aquosa de NaCl"
+    ],
+    [
+     "2017",
+     117,
+     "pilhas: potencial padrão e associação em série"
+    ],
+    [
+     "2018",
+     113,
+     "oxirredução: regeneração do corante em célula solar"
+    ],
+    [
+     "2018",
+     125,
+     "pilha: eletrodos e potenciais padrão"
+    ],
+    [
+     "2019",
+     94,
+     "potenciais de redução (reatividade do alumínio)"
+    ],
+    [
+     "2019",
+     98,
+     "agente redutor (redução de ligação S–S)"
+    ],
+    [
+     "2019",
+     114,
+     "pilha/bateria zinco-ar: reação no ânodo"
+    ],
+    [
+     "2019",
+     123,
+     "classificação de reações: oxirredução"
+    ],
+    [
+     "2021",
+     92,
+     "pilhas em série, ddp total"
+    ],
+    [
+     "2021",
+     106,
+     "células a combustível, eletrólito e temperatura"
+    ],
+    [
+     "2021",
+     124,
+     "reações do ciclo do cobre, etapa de redução"
+    ],
+    [
+     "2021",
+     127,
+     "pilha de Daniell e circuito equivalente"
+    ],
+    [
+     "2022",
+     116,
+     "agente oxidante (ozônio)"
+    ],
+    [
+     "2022",
+     122,
+     "reações de oxirredução em remediação (persulfato)"
+    ],
+    [
+     "2022",
+     127,
+     "corrosão do ferro e proteção por barreira"
+    ],
+    [
+     "2024",
+     92,
+     "pilha/célula a combustível, reação global"
+    ],
+    [
+     "2024",
+     128,
+     "geração de ddp por grafeno e íons"
+    ],
+    [
+     "2025",
+     124,
+     "potenciais-padrão e ddp de reações redox"
+    ]
+   ],
+   "palavras": [
+    [
+     "redução",
+     5
+    ],
+    [
+     "pilha",
+     5
+    ],
+    [
+     "potencial",
+     4
+    ],
+    [
+     "reações",
+     4
+    ],
+    [
+     "reação",
+     3
+    ]
+   ],
+   "rank": 11,
+   "de": 31
+  },
+  "QU09": {
+   "area": "CN",
+   "total": 32,
+   "sec": 14,
+   "por_prova": 2.7,
+   "ult5": 2.6,
+   "expo": 3.15,
+   "faixa": "A",
+   "por_ano": {
+    "2014": 3,
+    "2015": 3,
+    "2016": 2,
+    "2017": 2,
+    "2018": 5,
+    "2019": 2,
+    "2020": 2,
+    "2021": 4,
+    "2022": 1,
+    "2023": 4,
+    "2024": 2,
+    "2025": 2
+   },
+   "itens": [
+    [
+     "2014",
+     52,
+     "isomeria óptica (enantiômeros)"
+    ],
+    [
+     "2014",
+     54,
+     "ácidos graxos saturados e ésteres (biodiesel)"
+    ],
+    [
+     "2014",
+     77,
+     "classificação de cadeia carbônica e quiralidade"
+    ],
+    [
+     "2015",
+     59,
+     "identificação de funções orgânicas (álcool, éster)"
+    ],
+    [
+     "2015",
+     60,
+     "reações de oxidação de alcenos (KMnO4)"
+    ],
+    [
+     "2015",
+     77,
+     "reação de Kolbe e nomenclatura de hidrocarbonetos"
+    ],
+    [
+     "2016",
+     52,
+     "estereoisomeria geométrica (cis-trans)"
+    ],
+    [
+     "2016",
+     76,
+     "substituição nucleofílica e funções orgânicas (éter)"
+    ],
+    [
+     "2017",
+     96,
+     "função orgânica éster / transesterificação"
+    ],
+    [
+     "2017",
+     128,
+     "reações orgânicas: ozonólise de alcenos"
+    ],
+    [
+     "2018",
+     99,
+     "isomeria cis-trans (azobenzeno)"
+    ],
+    [
+     "2018",
+     101,
+     "isomeria de posição / fórmula estrutural"
+    ],
+    [
+     "2018",
+     111,
+     "reatividade em substituição nucleofílica"
+    ],
+    [
+     "2018",
+     129,
+     "cadeia ramificada e biodegradabilidade de tensoativos"
+    ],
+    [
+     "2018",
+     135,
+     "craqueamento do petróleo"
+    ],
+    [
+     "2019",
+     101,
+     "cadeia conjugada e cor (carotenoides)"
+    ],
+    [
+     "2019",
+     127,
+     "transesterificação: reciclagem química do PET"
+    ],
+    [
+     "2020",
+     107,
+     "funções orgânicas: álcool e cadeia insaturada"
+    ],
+    [
+     "2020",
+     126,
+     "polímeros biodegradáveis"
+    ],
+    [
+     "2021",
+     94,
+     "polímeros condutores, ligações duplas conjugadas"
+    ],
+    [
+     "2021",
+     98,
+     "ésteres, nomenclatura e cadeia saturada"
+    ],
+    [
+     "2021",
+     103,
+     "isomeria geométrica (cis-trans)"
+    ],
+    [
+     "2021",
+     131,
+     "saponificação de óleo"
+    ],
+    [
+     "2022",
+     102,
+     "compostos aromáticos: anel benzênico"
+    ],
+    [
+     "2023",
+     96,
+     "hidrocarbonetos ramificados, nomenclatura e octanagem"
+    ],
+    [
+     "2023",
+     108,
+     "oxidação de álcool secundário a cetona"
+    ],
+    [
+     "2023",
+     112,
+     "tensoativos: cadeia ramificada vs normal e biodegradabilidade"
+    ],
+    [
+     "2023",
+     134,
+     "isomeria óptica (carbono quiral)"
+    ],
+    [
+     "2024",
+     93,
+     "conceito de composto orgânico"
+    ],
+    [
+     "2024",
+     123,
+     "funções orgânicas"
+    ],
+    [
+     "2025",
+     109,
+     "tipos de reação orgânica (descarboxilação)"
+    ],
+    [
+     "2025",
+     115,
+     "oxidação de álcool secundário/fórmula molecular"
+    ]
+   ],
+   "palavras": [
+    [
+     "cadeia",
+     6
+    ],
+    [
+     "isomeria",
+     5
+    ],
+    [
+     "orgânicas",
+     5
+    ],
+    [
+     "funções",
+     4
+    ],
+    [
+     "álcool",
+     4
+    ]
+   ],
+   "rank": 1,
+   "de": 31
+  },
+  "QU10": {
+   "area": "CN",
+   "total": 14,
+   "sec": 15,
+   "por_prova": 1.2,
+   "ult5": 1.2,
+   "expo": 1.83,
+   "faixa": "B",
+   "por_ano": {
+    "2014": 2,
+    "2015": 1,
+    "2016": 1,
+    "2017": 1,
+    "2018": 0,
+    "2019": 1,
+    "2020": 2,
+    "2021": 3,
+    "2022": 1,
+    "2023": 0,
+    "2024": 1,
+    "2025": 1
+   },
+   "itens": [
+    [
+     "2014",
+     48,
+     "destruição da camada de ozônio por CFC (catálise radicalar)"
+    ],
+    [
+     "2014",
+     56,
+     "cálculo percentual de redução de enxofre (chuva ácida)"
+    ],
+    [
+     "2015",
+     90,
+     "química verde: rotas sintéticas limpas"
+    ],
+    [
+     "2016",
+     70,
+     "radioatividade: datação por carbono-14"
+    ],
+    [
+     "2017",
+     102,
+     "radioatividade: meia-vida e datação por carbono-14"
+    ],
+    [
+     "2019",
+     115,
+     "contaminação da água por fármacos e tratamento de efluentes"
+    ],
+    [
+     "2020",
+     99,
+     "fissão nuclear na bomba atômica"
+    ],
+    [
+     "2020",
+     111,
+     "poluição atmosférica: metais pesados e gases tóxicos"
+    ],
+    [
+     "2021",
+     101,
+     "tratamento de esgoto, decantação do lodo"
+    ],
+    [
+     "2021",
+     109,
+     "biogás de dejetos suínos, biocombustível"
+    ],
+    [
+     "2021",
+     129,
+     "meia-vida e decaimento radioativo"
+    ],
+    [
+     "2022",
+     130,
+     "meia-vida de radioisótopo (decaimento)"
+    ],
+    [
+     "2024",
+     114,
+     "poluição atmosférica por veículos/leitura de gráfico"
+    ],
+    [
+     "2025",
+     110,
+     "meia-vida de radioisótopo"
+    ]
+   ],
+   "palavras": [
+    [
+     "meia",
+     4
+    ],
+    [
+     "vida",
+     4
+    ]
+   ],
+   "rank": 13,
+   "de": 31
+  }
+ },
+ "fora": {
+  "CN": [
+   [
+    "2014",
+    90,
+    "interpretação de tabela de dados (lentes fotocromáticas)"
+   ],
+   [
+    "2015",
+    78,
+    "primeiros socorros em queimaduras"
+   ],
+   [
+    "2015",
+    88,
+    "localização por triangulação/trilateração (geometria)"
+   ],
+   [
+    "2017",
+    103,
+    "geração de energia híbrida eólica/hidrogênio/biogás"
+   ],
+   [
+    "2022",
+    132,
+    "astronomia: inclinação do eixo da Terra, estações e latitude"
+   ],
+   [
+    "2023",
+    125,
+    "energia nuclear: vantagens e desvantagens como fonte de energia"
+   ]
+  ],
+  "MT": [
+   [
+    "2014",
+    167,
+    "equação da circunferência (geometria analítica)"
+   ],
+   [
+    "2015",
+    168,
+    "plano cartesiano e distâncias (geometria analítica)"
+   ],
+   [
+    "2016",
+    165,
+    "distância em malha de ruas (raciocínio geométrico/taxicab)"
+   ],
+   [
+    "2017",
+    158,
+    "orientação espacial / localização em mapa"
+   ],
+   [
+    "2017",
+    160,
+    "equação de hipérbole (curvas no plano)"
+   ],
+   [
+    "2017",
+    161,
+    "raciocínio lógico: menor custo de trajetos"
+   ],
+   [
+    "2018",
+    148,
+    "lugar geométrico (circunferência de Apolônio)"
+   ],
+   [
+    "2018",
+    164,
+    "matrizes (soma de linhas)"
+   ],
+   [
+    "2018",
+    166,
+    "geometria analítica: equações de reta e circunferência"
+   ],
+   [
+    "2018",
+    168,
+    "equações/sistema do 1º grau com porcentagem"
+   ],
+   [
+    "2018",
+    172,
+    "equações/sistema do 1º grau (grandezas inversamente proporcionais)"
+   ],
+   [
+    "2018",
+    178,
+    "inequações e região do plano cartesiano"
+   ],
+   [
+    "2019",
+    148,
+    "matrizes (soma de colunas)"
+   ],
+   [
+    "2019",
+    174,
+    "geometria analítica: distância entre pontos e circunferência"
+   ],
+   [
+    "2020",
+    176,
+    "teoria dos conjuntos (união/interseção, diagrama de Venn)"
+   ],
+   [
+    "2021",
+    150,
+    "sistema linear de equações"
+   ],
+   [
+    "2021",
+    156,
+    "matrizes, leitura de elementos e soma de colunas"
+   ],
+   [
+    "2021",
+    162,
+    "operações definidas e equação"
+   ],
+   [
+    "2022",
+    141,
+    "orientação espacial/ raciocínio lógico (sentido de giros)"
+   ],
+   [
+    "2022",
+    155,
+    "sistema linear 2x2 e otimização inteira"
+   ],
+   [
+    "2022",
+    161,
+    "raciocínio lógico: contagem de jogos e calendário"
+   ],
+   [
+    "2023",
+    168,
+    "sistemas de numeração (contagem em outra base)"
+   ],
+   [
+    "2023",
+    179,
+    "orientação e localização em mapa (raciocínio espacial)"
+   ],
+   [
+    "2023",
+    180,
+    "sistema de equações lineares"
+   ],
+   [
+    "2025",
+    151,
+    "interpretação de regra de formação de código"
+   ],
+   [
+    "2025",
+    153,
+    "geometria analítica: mediatriz/equação da reta"
+   ],
+   [
+    "2025",
+    161,
+    "orientação espacial em mapa"
+   ]
+  ]
+ }
+}

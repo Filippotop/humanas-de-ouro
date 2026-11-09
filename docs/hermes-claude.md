@@ -39,6 +39,8 @@ Pontos de partida reais do estudante (Enem 2025, dia 1): Linguagens 37/45, Hist.
 
 Formato: `AAAA-MM-DD HH:MM · quem · o que fez / o que falta / o que não mexer`. Mais novo em cima.
 
+- 2026-11-09 · Hermes · Frequência do dia 2 em 12 provas (2014-2025) na branch `hermes/enem-frequencia`. Mexi em `data/dia2.js` (gerado: faixas A/B/C refeitas, seção "Quanto cai e como já caiu" em cada estação, GD1 seção 0.5 reescrita, GD4 novo), `tools/` (enem_freq.py, enem_freq.json, enem_labels_d2.json, dia2_lacunas.md, apostila_dia2.py), `sw.js` (VER) e duas linhas de `index.html` (desempate por frequência em `priority()` e um chip "cai ~X por prova" no cabeçalho da estação). Nada de design/animação. Classificação feita por leitura das provas do Inep, não é oficial.
+
 - 2026-11-09 · Hermes · Foco no dia 2 (pedido do estudante): depois de 08/11 19h e com o dia 2 liberado, a tela inicial só sugere Matemática/Natureza (sem Redação, Filosofia/Sociologia, reforço de 2025 nem cartões de Humanas). Mexi em `index.html` (`focoDia2()`, `priority`, `dueCards`, `vLinhas`), `sw.js` (VER) e testes. `npm test` passou.
 
 - 2026-11-08 · Hermes · Aprofundamento do dia 2 na branch `hermes/dia2-aprofundamento`: +90 questões inéditas (Mat 28, Fís 22, Quí 20, Bio 20; total 209) em `tools/extra/*.json`, geradas por `tools/apostila_dia2.py`; gabaritos conferidos por 3 resoluções independentes às cegas (90/90 coincidem). Toquei só `data/dia2.js` e a constante VER do `sw.js`. `npm test` passou. Não está em `main`; juntar só com OK do estudante.

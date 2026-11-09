@@ -752,6 +752,7 @@ function priority(m){
   if(focoDia2() && !'MPQB'.includes(m.line)) return -99;
   const s=modStats(m.id);
   let p={A:3,B:2,C:1}[m.faixa];
+  if(m.fx) p+=Math.min(0.9,m.fx/10); /* dentro da mesma faixa, o assunto que mais cai no Enem vem primeiro (tools/enem_freq.py) */
   if(ERRMOD[m.id]) p+=2;
   if(m.vol==='FS') p+=1.5;
   if('MPQB'.includes(m.line)&&Date.now()<EXAM.getTime()) p-=2; /* dia 2 liberado cedo (72/90): o dia 1 ainda vem primeiro */
@@ -845,7 +846,7 @@ function vMod(){
   const lineMods=DATA.modules.filter(x=>x.line===m.line); const idx=lineMods.indexOf(m);
   app.innerHTML=`<div class="lc-${m.line}">
     <button class="back" id="back">← ${m.line==='R'?'Redação':'mapa das linhas'}</button>
-    <div class="mod-head"><div class="row"><span class="eyebrow">Linha ${LINES[m.line].name} · estação ${idx+1} de ${lineMods.length}</span>${m.faixa?`<span class="chip ${m.faixa}">Faixa ${m.faixa}</span>`:''}<span class="chip">${esc(m.habs)}</span>${m.mins?`<span class="chip">estudo sugerido ~${m.mins} min</span>`:''}<span class="chip">leitura ~${Math.max(3,Math.round(strip(m.html).split(/\s+/).length/180))} min</span>${ERRMOD[m.id]?`<span class="chip" style="background:var(--bad-soft);color:var(--bad)">seu erro 2025: q. ${ERRMOD[m.id]}</span>`:''}</div>
+    <div class="mod-head"><div class="row"><span class="eyebrow">Linha ${LINES[m.line].name} · estação ${idx+1} de ${lineMods.length}</span>${m.faixa?`<span class="chip ${m.faixa}">Faixa ${m.faixa}</span>`:''}${m.cai?`<span class="chip">${esc(m.cai)}</span>`:''}<span class="chip">${esc(m.habs)}</span>${m.mins?`<span class="chip">estudo sugerido ~${m.mins} min</span>`:''}<span class="chip">leitura ~${Math.max(3,Math.round(strip(m.html).split(/\s+/).length/180))} min</span>${ERRMOD[m.id]?`<span class="chip" style="background:var(--bad-soft);color:var(--bad)">seu erro 2025: q. ${ERRMOD[m.id]}</span>`:''}</div>
       <h1>${m.id} · ${esc(m.title)}</h1>${m.note?`<p class="note">${m.note}</p>`:''}</div>
     <div class="subtabs">
       ${[['teoria','Teoria'],['resumo','Cartões-resumo'],['vf','V ou F'],['q',`Questões ${s.done}/${s.n}`],['notas',S.snotes[m.id]?'Anotações ●':'Anotações'],['tutor','Pergunte ao tutor']].map(([k,l])=>`<button data-t="${k}" aria-current="${k===tab}" class="${k==='tutor'?'tutor-only':''}">${l}</button>`).join('')}

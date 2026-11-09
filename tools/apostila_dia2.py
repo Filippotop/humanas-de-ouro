@@ -140,7 +140,134 @@ def guia(md):
         return dict(id=f'GD{i}', title=title, habs='Guia', faixa='', note=inline(note), html=html, resumo=[], qs=[], vol='GD', line='D')
     return [mod(1, 'Antes de começar: prova, nota e estratégia', 'Como esta apostila funciona, o que mais caiu, a Matriz de Referência, a TRI e a estratégia para os 300 minutos.', s0),
             mod(2, 'Visão geral das quatro áreas', 'Como a prova de cada área pensa e como estudar Matemática, Física, Química e Biologia.', gerais),
-            mod(3, 'Formulário-mestre do 2º dia', 'Todas as fórmulas num só lugar, com o significado de cada símbolo. As marcadas com ★ precisam ser sabidas de cor.', s5, intro5)]
+            mod(3, 'Formulário-mestre do 2º dia', 'Todas as fórmulas num só lugar, com o significado de cada símbolo. As marcadas com ★ precisam ser sabidas de cor.', s5, intro5)] + lacunas(mod)
+
+
+def lacunas(mod):
+    """GD4: o que cai em Matemática e nenhuma das 14 estações ensina (tools/dia2_lacunas.md)."""
+    f = pathlib.Path(__file__).resolve().parent / 'dia2_lacunas.md'
+    if not f.exists():
+        return []
+    intro, secs = secoes_h2(f.read_text(encoding='utf8'))
+    return [mod(4, 'Fora das estações: sistemas, geometria analítica, matrizes e lógica', 'O que cai em cerca de 5% da Matemática e nenhuma estação ensina: base mínima, com exemplos conferidos.', secs)]
+
+
+AQUI = pathlib.Path(__file__).resolve().parent
+EX_ANO = {'2024': '24d2', '2025': '25d2'}  # provas do dia 2 que o app guarda como imagem (questões tocáveis)
+
+
+def fmt(x):
+    return f'{x:.1f}'.replace('.', ',')
+
+
+def freq_json():
+    """Frequência dos assuntos em 12 provas (2014 a 2025), gerada por tools/enem_freq.py."""
+    f = AQUI / 'enem_freq.json'
+    return json.loads(f.read_text(encoding='utf8')) if f.exists() else None
+
+
+def bloco_freq(m, fq, F):
+    """Seção 'Quanto cai e como já caiu' no fim da teoria de cada estação."""
+    esc = lambda s: s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+    area = 'Matemática' if fq['area'] == 'MT' else 'Ciências da Natureza'
+    anos = F['anos']
+    h = [f'<h4>Quanto cai e como já caiu ({F["provas"]} provas, {anos[0]} a {anos[1]})</h4>']
+    h.append(f'<p>Este tema foi o assunto principal de <strong>{fq["total"]} questões</strong>: <strong>{fmt(fq["por_prova"])} por prova</strong> '
+             f'(nas últimas 5 provas, {fmt(fq["ult5"])}). Ocupa a posição <strong>{fq["rank"]} de {fq["de"]}</strong> em {area} e apareceu como assunto '
+             f'secundário em mais {fq["sec"]}. Faixa <strong>{fq["faixa"]}</strong> por frequência.</p>')
+    if fq['palavras']:
+        h.append('<p>O que mais se repete nos enunciados: ' + ', '.join(f'<strong>{esc(w)}</strong> ({n})' for w, n in fq['palavras']) + '.</p>')
+    h.append('<p>Questões por prova: ' + ' · '.join(f'{y}: {n}' for y, n in fq['por_ano'].items()) + '.</p>')
+    por = {}
+    for y, n, sub in fq['itens']:
+        por.setdefault(y, []).append((n, sub))
+    li = []
+    for y in sorted(por, reverse=True):
+        itens = []
+        for n, sub in sorted(por[y]):
+            ref = f'<a href="#" data-ex="{EX_ANO[y]}" data-n="{n}">q. {n}</a>' if y in EX_ANO else f'q. {n}'
+            itens.append(f'{ref}: {esc(sub)}')
+        li.append(f'<li><strong>{y}</strong> · ' + '; '.join(itens) + '</li>')
+    h.append(f'<details><summary>Ver as {fq["total"]} questões, ano a ano</summary><ul>' + ''.join(li) + '</ul></details>')
+    h.append('<p class="note">Classificação feita por leitura das provas oficiais do Inep (não é oficial; 2021 veio de OCR). '
+             'Em 2024 e 2025 você toca no número para abrir a questão (caderno 7, o mesmo do app). De 2014 a 2023 os números seguem a numeração de um dos cadernos do Inep, não necessariamente o do seu: cada cor de caderno tem a mesma prova em outra ordem.</p>')
+    return '\n'.join(h)
+
+
+def aplicar_freq(mods, F):
+    """Refaz a faixa A/B/C pela frequência real, acrescenta a seção e o texto curto 'cai X por prova'. Devolve [(id, antes, depois)]."""
+    mudou = []
+    for m in mods:
+        fq = F['mods'].get(m['id'])
+        if not fq:
+            continue
+        if m['faixa'] != fq['faixa']:
+            mudou.append((m['id'], m['faixa'], fq['faixa']))
+        m['faixa'] = fq['faixa']
+        m['fx'] = fq['expo']
+        m['cai'] = f'cai ~{fmt(fq["por_prova"])} por prova · nº {fq["rank"]} de {fq["de"]}'
+        m['note'] += f' Cai {fmt(fq["por_prova"])} por prova em média.'
+        m['html'] += '\n' + bloco_freq(m, fq, F)
+    return mudou
+
+
+def secao_05(md, F, mods, mudou):
+    """Troca a seção 0.5 da Parte 0 (contagem de 2 anos) pela contagem de 12 provas."""
+    tit = {m['id']: m['title'] for m in mods}
+    antes = {i: a for i, a, _ in mudou}
+    linhas = []
+    for area, nome in (('MT', 'Matemática'), ('CN', 'Ciências da Natureza')):
+        rows = sorted(((v['rank'], m, v) for m, v in F['mods'].items() if v['area'] == area), key=lambda x: x[0])
+        linhas.append(f'### {nome}\n\n| # | Estação | Questões por prova | Últimas 5 | Exposição | Faixa |\n|---|---|---|---|---|---|')
+        for r, m, v in rows:
+            ch = f' (era {antes[m]})' if m in antes else ''
+            linhas.append(f'| {r} | {m} · {tit[m].split(":")[0]} | {fmt(v["por_prova"])} | {fmt(v["ult5"])} | {fmt(v["expo"])} | {v["faixa"]}{ch} |')
+        linhas.append('')
+    disc = {d: sum(v['total'] for m, v in F['mods'].items() if m.startswith(p)) / F['provas'] for d, p in (('Física', 'FI'), ('Química', 'QU'), ('Biologia', 'BI'))}
+    fora = F['fora'].get('MT', [])
+    cats = [('Geometria analítica (distância, reta, circunferência, mediatriz)', r'analítica|circunfer|hipérbole|cartesiano|mediatriz|lugar geom|inequa'),
+            ('Sistemas de equações do 1º grau', r'sistema|equaç'), ('Matrizes', r'matriz'),
+            ('Orientação espacial, mapas, trajetos e raciocínio lógico', r'orienta|lógic|malha|código|trajeto|calend|regra de forma'),
+            ('Conjuntos e sistemas de numeração', r'conjunto|numeração')]
+    usado, tab = set(), []
+    for nome_c, pat in cats:
+        n = [i for i, (_, _, s) in enumerate(fora) if i not in usado and re.search(pat, s, re.I)]
+        usado |= set(n)
+        tab.append(f'| {nome_c} | {len(n)} |')
+    resto = len(fora) - len(usado)
+    if resto:
+        tab.append(f'| Outros | {resto} |')
+    raros = ', '.join(f'{m} ({fmt(v["por_prova"])})' for m, v in sorted(F['mods'].items(), key=lambda x: x[1]['por_prova']) if v['por_prova'] < 0.8)
+    novas = ', '.join(f'{i} ({a}→{d})' for i, a, d in mudou) or 'nenhuma'
+    txt = f'''## 0.5 O que mais caiu: 12 provas, 2014 a 2025
+
+Li as {str(F["questoes"])[:-3]}.{str(F["questoes"])[-3:]} questões do 2º dia de {F["provas"]} provas do Inep (45 de Natureza e 45 de Matemática em cada uma) e classifiquei cada questão na estação que ela exige para ser resolvida. **A classificação é minha, feita por leitura, e não é oficial**; a prova de 2021 veio de OCR (o PDF oficial tem fonte corrompida) e tem mais incerteza. Use para decidir a ordem de estudo, não para prever a prova de 2026: frequência passada não garante nada.
+
+"Questões por prova" conta as questões em que a estação é o assunto principal. A faixa A/B/C segue a **exposição**, que também conta meia questão quando a estação é assunto secundário (uma conversão de unidades dentro de um problema de volume, por exemplo), com peso 60% para as 12 provas e 40% para as últimas 5. Por isso uma estação com menos questões como assunto principal pode ter faixa mais alta (limites: A a partir de 3,0 por prova em Matemática e 2,0 em Natureza; B a partir de 1,8 e 1,0). Mudaram em relação à apostila original: {novas}.
+
+{chr(10).join(linhas)}
+Natureza tem, em média por prova, **{fmt(disc["Física"])} questões de Física, {fmt(disc["Química"])} de Química e {fmt(disc["Biologia"])} de Biologia** (as demais não se encaixam numa das três).
+
+### O que cai e as 45 estações não cobrem
+
+Em Matemática, {len(fora)} questões em {F["provas"]} provas ficaram fora de qualquer estação. O guia **GD4** resume o essencial de cada assunto.
+
+| Assunto | Questões |
+|---|---|
+{chr(10).join(tab)}
+
+### Conferência com outras fontes
+
+- **Matemática:** as páginas consultadas (Tessat, Aprova Total, Quanta, Politano, XTRI) também colocam razão e proporção, porcentagem, gráficos e tabelas e geometria no topo, e deixam matrizes, geometria analítica, PA e PG, logaritmo e trigonometria na cauda. Discordam em geometria plana (de 8% a 18%) e em funções (de 5% a 12%), conforme o agrupamento.
+- **Natureza:** em Física, ondulatória, termologia e eletrodinâmica são os três primeiros nas nossas contas e também na contagem da Tessat (2010 a 2025); em Biologia, ecologia e impactos ambientais formam o maior bloco nas duas; em Química, orgânica é a estação mais cobrada nas nossas contas.
+- **Cai pouco (menos de 0,8 por prova como assunto principal):** {raros}.
+
+> **Dica de prova:** razão, proporção, porcentagem, unidades, escala e aritmética somam cerca de um terço da Matemática ({round(100*sum(F["mods"][m]["total"] for m in ("MA01","MA02","MA03","MA14"))/ (F["provas"]*45))}% dos itens como assunto principal). É o bloco que mais rende por hora de estudo, e onde um erro bobo pesa mais na TRI.
+
+'''
+    novo, n = re.subn(r'^## 0\.5 .*?(?=^## 0\.6)', lambda _: txt, md, count=1, flags=re.M | re.S)
+    assert n == 1, 'seção 0.5 não encontrada'
+    return novo
 
 
 def extras(mods):
@@ -188,6 +315,11 @@ def main(path):
     n_base = len(qs)
     qs += extras(mods)  # questões extras de tools/extra/*.json (aprofundamento da semana de 09 a 15/11)
     print(f'{len(qs) - n_base} questões extras')
+    F = freq_json()
+    if F:  # frequência de 12 provas (tools/enem_freq.py): refaz as faixas, acrescenta a seção em cada estação e troca a seção 0.5
+        mudou = aplicar_freq(mods, F)
+        text = secao_05(text, F, mods, mudou)
+        print(f'faixas alteradas: {mudou}')
     guide = guia(text)
     mods = guide + mods
     vf_file = pathlib.Path(__file__).resolve().parent / 'dia2_vf.json'  # V ou F: 4 por estação, escritos à parte (a apostila não os traz)

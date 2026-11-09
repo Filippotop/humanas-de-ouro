@@ -25,7 +25,7 @@ check(DATA_FILES.indexOf('data/dia2.js') > DATA_FILES.indexOf('data/base.js'), '
 check(/SHELL_FILES=\[[^\]]*'data\/dia2\.js'/.test(fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8')), 'dia 2: data/dia2.js não está em SHELL_FILES do sw.js');
 
 /* Estações da apostila: 14 + 11 + 10 + 10. A linha M é Matemática (vol MT); P, Q e B são Natureza (vol CN). */
-const LINES = { D: { vol: 'GD', name: 'Guia do dia 2', n: 3, guide: true }, M: { vol: 'MT', name: 'Matemática', n: 14 }, P: { vol: 'CN', name: 'Física', n: 11 }, Q: { vol: 'CN', name: 'Química', n: 10 }, B: { vol: 'CN', name: 'Biologia', n: 10 } };
+const LINES = { D: { vol: 'GD', name: 'Guia do dia 2', n: 4, guide: true }, M: { vol: 'MT', name: 'Matemática', n: 14 }, P: { vol: 'CN', name: 'Física', n: 11 }, Q: { vol: 'CN', name: 'Química', n: 10 }, B: { vol: 'CN', name: 'Biologia', n: 10 } };
 const RAW = /\*\*|\]\(fig\/|^\s*\|\s*-{3}/m;
 if (DATA_FILES.includes('data/dia2.js')) {
   const D0 = loadData(), D = Object.assign({ modules: [], questions: [], cards: [], vf: [] }, D0.dia2), ids = new Set(D.questions.map(q => q.id));
