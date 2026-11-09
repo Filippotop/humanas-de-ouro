@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Plano de 09 a 14/11 (dia 2 do Enem em 15/11): estações na ordem do que mais cai, com tempo marcado.
+Segunda a quinta: até 3 h por dia (LIMITE_MIN). O que não cabe vira "se sobrar" (OPC), nunca some do app.
 Lê tools/enem_freq.json (frequência em 12 provas) e tools/enem_labels_d2.json (para achar as questões oficiais de 2025 de cada estação)
 e reescreve só os dias 2026-11-09 a 2026-11-14 de DATA.plan em data/base.js.
 Uso: python3 tools/plano_dia2.py"""
@@ -39,7 +40,7 @@ def est(m, mins, opc=False, hint=HINT):
     return t
 
 
-def qo(m, n=3, opc=False):
+def qo(m, n=2, opc=False):
     qs = OFICIAIS.get(m, [])[:n]
     if not qs:
         return []
@@ -68,16 +69,16 @@ def dia(d, l, foco, tasks):
     return {'d': d, 'l': l, 'foco': 'Dia 2 · ' + foco, 'tasks': ts}
 
 
-seg = ['MA01', 'MA02', 'MA05', 'MA14', 'MA03']
-ter = ['MA09', 'MA08', 'MA04', 'MA10', 'MA06']
-qua = ['QU09', 'FI06', 'FI08', 'FI05', 'QU03']
-qui = ['BI02', 'BI09', 'BI01', 'BI07', 'BI10', 'QU08']
-MIN = {'MA01': 40, 'MA02': 40, 'MA05': 35, 'MA14': 30, 'MA03': 30, 'MA09': 40, 'MA08': 40, 'MA04': 35, 'MA10': 40, 'MA06': 30, 'MA07': 30,
-       'QU09': 35, 'FI06': 35, 'FI08': 40, 'FI05': 40, 'QU03': 35, 'QU08': 35,
-       'BI02': 35, 'BI01': 35, 'BI09': 35, 'BI07': 40, 'BI10': 25, 'QU02': 30,
-       'QU10': 25, 'BI03': 35, 'FI02': 35, 'FI01': 25}
-NQ = {'MA03': 2, 'MA14': 1}
-OPC = {'MA07', 'QU02', 'QU10', 'BI03', 'FI02', 'FI01'}  # reserva: só depois do essencial do dia
+LIMITE_MIN = 180  # segunda a quinta
+seg = ['MA01', 'MA02', 'MA05', 'MA09']
+ter = ['MA08', 'MA10', 'MA04', 'MA14', 'MA03']
+qua = ['QU09', 'FI06', 'FI08', 'FI05']
+qui = ['BI02', 'BI09', 'BI01', 'BI07']
+MIN = {'MA01': 30, 'MA02': 30, 'MA05': 30, 'MA09': 30, 'MA08': 30, 'MA10': 30, 'MA04': 30, 'MA14': 25, 'MA03': 25, 'MA06': 25, 'MA07': 25,
+       'QU09': 30, 'FI06': 30, 'FI08': 30, 'FI05': 30, 'QU03': 30, 'QU08': 30,
+       'BI02': 30, 'BI01': 30, 'BI09': 30, 'BI07': 30, 'BI10': 25}
+NQ = {'MA14': 1, 'MA03': 1}
+OPC = {'MA06', 'MA07', 'QU03', 'BI10', 'QU08'}  # reserva: só depois do essencial do dia
 
 
 def bloco(ids):
@@ -96,11 +97,11 @@ plano = {}
 t = [{'k': 'ver', 'a': 'GD1', 't': 'GD1 · Antes de começar: prova, nota e estratégia', 'm': 10,
       'h': "Leia só a seção 0.5 (o que mais caiu) e a parte da TRI e da estratégia. Pule o resto."}] + bloco(seg) + [CARDS]
 plano['2026-11-09'] = dia('2026-11-09', 'seg 09/11', f'Matemática básica: {len(seg)} estações = {cob(seg)}% do que cai em Matemática · ~{hh(tempo(t))}', t)
-t = bloco(ter) + [CARDS] + bloco(['MA07'])
+t = bloco(ter) + [CARDS] + bloco(['MA06', 'MA07'])
 plano['2026-11-10'] = dia('2026-11-10', 'ter 10/11', f'Geometria, estatística e funções: {len(ter)} estações = {cob(ter)}% de Matemática · ~{hh(tempo(t))}', t)
-t = bloco(qua) + [CARDS]
+t = bloco(qua) + [CARDS] + bloco(['QU03'])
 plano['2026-11-11'] = dia('2026-11-11', 'qua 11/11', f'Natureza 1, Física e Química: {len(qua)} estações = {cob(qua)}% de Natureza · ~{hh(tempo(t))}', t)
-t = bloco(qui) + [CARDS] + bloco(['QU02', 'QU10', 'BI03', 'FI02', 'FI01'])
+t = bloco(qui) + [CARDS] + bloco(['BI10', 'QU08'])
 plano['2026-11-12'] = dia('2026-11-12', 'qui 12/11', f'Natureza 2, Biologia e Oxirredução: {len(qui)} estações = {cob(qui)}% de Natureza (mais a reserva) · ~{hh(tempo(t))}', t)
 plano['2026-11-13'] = dia('2026-11-13', 'sex 13/11', 'Simulado completo de 2024 e correção', [
     {'k': 'out', 't': 'Antes de começar: água, lanche, caneta preta, relógio e celular longe, como no dia', 'm': 5},
@@ -115,6 +116,9 @@ plano['2026-11-14'] = dia('2026-11-14', 'sáb 14/11', 'Fechar os buracos do simu
     CARDS,
     {'k': 'out', 't': 'Separar documento oficial com foto, caneta preta de tubo transparente e cartão de confirmação; dormir cedo', 'm': 5}])
 
+for d_, p_ in plano.items():  # trava: segunda a quinta nunca passam de 3 h de tarefas essenciais
+    if d_ <= '2026-11-12':
+        assert tempo(p_['tasks']) * 60 <= LIMITE_MIN, (d_, tempo(p_['tasks']) * 60)
 for p in D['plan']:
     if p['d'] in plano:
         p.update(plano.pop(p['d']))

@@ -107,7 +107,7 @@ if (DATA_FILES.includes('data/dia2.js')) {
   check(!plan.some(p => p.tasks.some(t => t.k === 'qo' && t.q.some(([ex]) => ex === '24d2'))), 'plano: questões de 2024 usadas no treino por assunto (a prova de 2024 é o simulado)');
   check(plan.some(p => p.d === '2026-11-13' && p.tasks.some(t => t.k === 'prova' && t.a === '24d2:NM')), 'plano: falta o simulado de 2024 na sexta');
   const tempo = p => p.tasks.filter(t => !t.o).reduce((a, t) => a + (t.m || 0), 0);
-  for (const p of plan.filter(p => ['2026-11-09', '2026-11-10', '2026-11-11', '2026-11-12'].includes(p.d))) check(tempo(p) >= 180 && tempo(p) <= 300, `plano ${p.d}: ${tempo(p)} min fora de 3 a 5 horas`);
+  for (const p of plan.filter(p => ['2026-11-09', '2026-11-10', '2026-11-11', '2026-11-12'].includes(p.d))) check(tempo(p) >= 120 && tempo(p) <= 180, `plano ${p.d}: ${tempo(p)} min fora de 2 a 3 horas`);
 }
 
 /* Interface: guardado até o dia 2 liberar; depois aparece no mapa, nos anéis e no relatório. */
