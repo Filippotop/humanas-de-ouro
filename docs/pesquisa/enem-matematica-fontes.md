@@ -1,0 +1,157 @@
+# O que mais cai em Matemática no Enem — pesquisa com fontes (feita em 09/11/2026)
+
+Prova-alvo: Enem 2026, dia 2, 15/11/2026 (45 questões de Matemática + 45 de Natureza, 5 h).
+Regra deste relatório: só há número onde eu o vi na página da fonte (URL ao lado). Cálculos meus estão marcados **[cálculo meu]**. Fonte sem dados = **opinião**.
+
+---------------------------------------------------------------------
+
+## 1. Ranking consolidado (taxonomia MA01–MA14 + OUT)
+
+Como foi montado: usei as 4 fontes que dão contagem por assunto bem granular (Quanta, Politano, Tessat, Acertei) e fiz a **média simples** dos percentuais **[cálculo meu]**. As demais fontes entram como conferência (coluna "faixa nas outras fontes"). Os recortes de assunto de cada fonte se sobrepõem de forma diferente, então trate o número como **ordem de grandeza**, não como valor exato. "q/prova" = % × 45 **[cálculo meu]**.
+
+| # | Assunto | % médio (granulares) | Faixa entre fontes | ≈ q/prova | Observação |
+|---|---|---|---|---|---|
+| 1 | **MA02 Porcentagem/juros** | ~10% | 7,6% (Tessat) a 15,6% (Quanta, porcentagem 13,6 + mat. financeira 2,0) | 3–7 | Quanta o põe em 1º. Juros compostos em si caem pouco (Tessat: juros 7 q de 721; Politano: mat. financeira 8 q de 990). |
+| 2 | **MA09 Geometria espacial** | ~10% | 6,9% a 12,5% | 3–6 | Quanta 12,5% (2º); Aprova Total 11,2%. Em 2025 a Anglo diz que a espacial pesou mais que a plana (CNN). Volume é o grosso (Tessat: cálculo de volume 32 q). |
+| 3 | **MA05 Leitura de gráficos e tabelas** | ~9% | 7,1% a 12,2% | 3–5 | Acertei: 1º lugar isolado (12,2%). Tessat: "Tabelas e gráficos" é o tópico nº 1 de toda a Matemática (45 q). Politano: é o assunto de **menor** dificuldade mediana (b=1,26). |
+| 4 | **MA08 Geometria plana** | ~9% | 8,5% a 10% (Estudo do Dia destoa: 18,2%) | 3–5 | Área de figuras planas é o tópico principal (Tessat: 28 de 65). XTRI 2025: só 2 q válidas de plana. |
+| 5 | **MA01 Razão/proporção/regra de três** | ~9% | 6% a 12%; em recortes "macro" 13–17% (Evolucional 17%, Farias Brito 13,6% c/ escala) | 3–6 | XTRI: é a habilidade que mais separa nota 600 de 700. Unanimidade entre as fontes de que é tema nº 1–2 quando agrupado. |
+| 6 | **MA14 Aritmética/frações/decimais/MMC-MDC/potências** | ~6–10% | Tessat 5,8%; Acertei 7,2%; Politano 14,0% (junto com "unidades"); Farias Brito 17,7% | 3–6 | "Matemática básica" do Aprova Total (37,3%) engloba MA01+MA02+MA03+MA14. |
+| 7 | **MA04 Estatística (média, mediana, moda, desvio)** | ~7% | 6,4% a 7,7% estrito; 11–15% em recortes que incluem gráficos | 3 | Média/moda/mediana = 44 q em Tessat (85% da "estatística"); dispersão/desvio só 7 q. |
+| 8 | **MA03 Grandezas/unidades/escala/notação científica** | ~7% | 3,1% (Politano, só escala) a 10,2% (Quanta) | 2–4 | Conversão de unidades: 17 q (Tessat); vazão/consumo 9; notação científica 7. |
+| 9 | **MA10 Funções afim e quadrática** | ~5–7% | Quanta 6,6%; Politano 10,9% (todas as funções); Tessat afim+quadrática 5,1% | 2–4 | Maioria é função afim (lei/gráfico) e problemas de máximo/mínimo na quadrática. |
+| 10 | **MA06 Probabilidade** | ~5,4% | 4,8% a 6,7% | 2–3 | Tessat: probabilidade condicional/eventos sucessivos é 56% do tema. Mediana de dificuldade alta (b=2,25, Politano). |
+| 11 | OUT Equações/sistemas/inequações | ~3,7% | 3,2% a 4,3% | 1–2 | |
+| 12 | **MA07 Análise combinatória** | ~3,1% | 2,3% a 4,4% | 1–2 | Presença: 7 de 10 provas (Quanta). Difícil (b=2,40, Politano). |
+| 13 | **MA13 PA e PG** | ~2,2% | 1,1% a 3,2% | ~1 | PA > PG (Tessat: PA 11, PG 4). Quanta: apareceu em só 4 de 10 provas. |
+| 14 | **MA11 Exponencial e logaritmo** | ~2% | 2,1% a 2,5% (Aprova Total 2016–2022: 4,2%) | ~1 | Tessat: "logaritmos e propriedades" 10 q em 16 anos. |
+| 15 | **MA12 Trigonometria** | ~1,5% | 0,2% (Quanta – classificação duvidosa) a 3,7% (Aprova Total) | 0–1 | Quando cai costuma ser **muito difícil** (ver 2025, Q160). |
+| 16 | OUT Geometria analítica | ~1,3% | 0,5% a 2,6% | 0–1 | |
+| 17 | OUT Matrizes/determinantes | <1% | Bernoulli 0,93%; Tessat 4 q em 721 | ~0 | |
+| – | OUT Raciocínio lógico/conjuntos | ~2% | Tessat 15 q (2%) | 0–1 | |
+
+### Prioridade prática (derivada dos dados acima)
+- **Bloco A — "matemática do dia a dia" (~45–55% da prova):** MA02, MA01, MA03, MA14, MA05, MA04. Em 2025 a XTRI contou **18 q de "Matemática básica" (40%) + 11 de Estatística/Probabilidade (24%) = 29 de 45 (64%)** (https://xtri.online/2026/10/25/conteudos-que-diminuem-a-tri-em-matematica-no-enem/).
+- **Bloco B — geometria (~18–20%):** MA08 + MA09 (Acertei: 205 q de geometria em 983 = "uma em cada cinco"; https://enem.acertei.app/o-que-mais-cai-matematica-enem/).
+- **Bloco C — funções + probabilidade + AC (~13–15%):** MA10, MA06, MA07.
+- **Fim da fila:** MA13, MA11, MA12, geometria analítica, matrizes, lógica.
+
+### Onde as fontes CONCORDAM
+1. Razão/proporção/regra de três + porcentagem + aritmética/unidades formam o maior bloco (todas as fontes com números).
+2. Estatística/leitura de gráficos e tabelas está sempre no top 5.
+3. Geometria (plana + espacial) soma ~18–21% (Acertei 21%; Quanta 22,3%; Tessat 19,7%; Politano 18,3%; Farias Brito 20,4%) — os números de cada fonte somados por mim **[cálculo meu]**.
+4. Matrizes, geometria analítica, trigonometria, PA/PG, log ficam na cauda.
+5. Todas dizem "frequência ≠ previsão": o Enem pode cobrar qualquer habilidade da matriz (EnemPro; InfoEscola/Bernoulli).
+
+### Onde DISCORDAM (e por quê)
+- **Geometria plana:** Estudo do Dia 18,2% (classificação automática por palavras do enunciado, 2009–2023) vs 7,7–10% nas demais. Provável viés de método.
+- **Funções:** 4,9% (Estudo do Dia) a 10,9% (Politano) e 12,1% (Farias Brito, que junta equações/inequações/gráficos). Depende de onde "leitura de gráfico de função" é contada (Tessat: 27 q de "outras funções" são leitura de gráfico).
+- **Porcentagem como nº 1** (Quanta 13,6%) vs **razão/proporção como nº 1** (Politano, Evolucional, SAS). É questão de agrupamento: juntos (MA01+MA02) dão ~17–20%.
+- **Trigonometria:** 0,2% (Quanta, 1 q em 10 anos) vs 1,6% (Politano, 16 q) vs 2,4% (Tessat) vs 3,7% (Aprova Total). A XTRI mostra tangente/função trigonométrica como a questão mais difícil de 2025, então o 0,2% do Quanta parece subestimado.
+- **Tendência recente:** Akira diz "caindo" em tudo (mas a contagem dele é inconsistente, ver limites). Anglo (CNN, 2025) diz que espacial ganhou peso. XTRI 2025: estatística/probabilidade 24% e geometria plana só 4%.
+- **Contagens do SAS** (1.507 "itens" de Matemática em 2009–2025) excedem 45×17=765; provavelmente contam tags por item, não questões. Use só a **ordem**, não os valores absolutos.
+
+---------------------------------------------------------------------
+
+## 2. Tabela de fontes (≥12 com números)
+
+Legenda: **D** = traz dados/contagem; **O** = opinião sem números.
+
+| # | Fonte (URL) | Período | O que mostra | Tipo |
+|---|---|---|---|---|
+| 1 | Politano Aprova (PDF) https://politanoaprova.com.br/materiais/frequencia-assuntos-enem-2015-2025.pdf | 2015–2025, 990 q (22 cadernos do dia 2: regulares + reaplicações/PPL) | 16 assuntos. Aritmética e unidades 139 (14,0%); Razão e proporção 116 (11,7%); Funções 108 (10,9%); Geo espacial 97 (9,8%); Gráficos/tabelas 84 (8,5%); Geo plana 84 (8,5%); Porcentagem 83 (8,4%); Estatística 76 (7,7%); Probabilidade 48 (4,8%); AC 34 (3,4%); Equações 32 (3,2%); Escala 31 (3,1%); PA/PG 22 (2,2%); Trig 16 (1,6%); Geo analítica 12 (1,2%); Mat. financeira 8 (0,8%). Mediana do parâmetro b (dificuldade TRI): gráficos 1,26 (mais fácil), aritmética 1,66, estatística 1,75, porcentagem 1,80, PA/PG 1,81, razão 1,87, escala 1,87, geo esp 2,02, funções 2,10, geo plana 2,12, trig 2,21, prob 2,25, AC 2,40, geo analítica 2,57, mat. fin. 2,94 (mais difícil). Regulares têm mais AC e trig; PPL mais aritmética/unidades/escala. | D |
+| 2 | Tessat https://tessat.com.br/portal/analise-de-incidencia/enem | 2010–2025, 721 q de Matemática (2.880 no total) | Árvore por tópico: Aritmética e grandezas 217 (30%); Estatística e prob. 174 (24%); Funções 82 (11%); Geo espacial 77 (11%); Geo plana 65 (9%); Álgebra 59 (8%); Trig 17; Geo analítica 15; Lógica 15. Top tópicos: Tabelas e gráficos 45, Média/moda/mediana 44, Razão e proporção 43, Cálculo de volume 32, Porcentagem 31, Área de fig. planas 28, Regra de três 26. "33 dos 70 tópicos respondem por 81%". | D |
+| 3 | Quanta Aulas https://quantaaulas.com/enem/incidencia/ | Regulares 2016–2025, 440 q, 10 edições | Porcentagem 60 (13,6%); Geo espacial 55 (12,5%); Grandezas/unidades/escalas 45 (10,2%); Geo plana 43 (9,8%); Mat. básica 43 (9,8%); Gráficos/tabelas 39 (8,9%); Funções 29 (6,6%); Estatística 28 (6,4%); Razão/prop 27 (6,1%); Prob 25 (5,7%); Equações 19 (4,3%); AC 10 (2,3%); Mat. fin. 9 (2,0%); PA/PG 5 (1,1%); Geo analítica 2; Trig 1. Mostra também "presença" (em quantas das 10 provas o tema apareceu). Classificação automática "em revisão". | D |
+| 4 | Acertei ENEM https://enem.acertei.app/o-que-mais-cai-matematica-enem/ | 2015–2025, 983–984 q | Gráficos e tabelas 120 (12,2%); Porcentagem 78 (7,9%); Geo espacial 68 (6,9%); Unidades de medida 63 (6,4%); Quadriláteros 43 (4,4%); Operações c/ naturais 39 (4,0%); Regra de três 36 (3,7%); Média 35 (3,6%); Decimais 31 (3,2%); Proporções 30 (3,1%); AC 26 (2,6%); Função 1º grau 22 (2,2%). 12 assuntos = 60%. Funções (todas) 61 q = 6%; log + trig 21 q. | D |
+| 5 | Estudo do Dia https://estudododia.com.br/o-que-mais-cai-em-matematica-no-enem/ | 2009–2023, 638 q | Geo plana 116 (18,2%); Estatística 93 (14,6%); Porcentagem e juros 69 (10,8%); Geo esp 47 (7,4%); Prob 43 (6,7%); Razão/prop/regra de 3 41 (6,4%); Escala e unidades 37 (5,8%); Funções 31 (4,9%); AC 26 (4,1%); PA/PG 8 (1,3%). Diz que "matrizes, logaritmos, geometria analítica e progressões quase não aparecem". Classificação automática por palavras. | D |
+| 6 | Aprova Total https://aprovatotal.com.br/matematica-no-enem/ (também https://aprovatotal.com.br/assuntos-mais-cobrados-no-enem) | 2016–2025 | Matemática básica 37,3%; Estatística 11,2%; Geo esp 11,2%; Funções 10,2%; Geo plana 7,7%; Prob 5,2%; AC 4,1%; Trig 3,7%. Edições anteriores via Guia do Estudante: 2016–2022 (https://guiadoestudante.abril.com.br/enem/enem-o-que-mais-cai-em-matematica-e-dicas-de-como-estudar/): Mat. básica 32,7; Estat 17,6; Geo esp 10,9; Geo plana 9,0; Funções 6,4; Prob 4,5; AC 4,5; Exp/Log 4,2; Trig 3,5; Sequências 3,2; Geo analítica 1,3. Outra edição (https://guiadoestudante.abril.com.br/enem/os-5-assuntos-de-matematica-que-mais-caem-no-enem/): 33,8 / 12,5 / 11,4 / 10,8 / 8,0. | D |
+| 7 | SAS Educação (via Guia do Estudante, CNN, Brasil Escola, G1) https://guiadoestudante.abril.com.br/estudo/quais-sao-os-5-temas-de-matematica-que-mais-caem-no-enem/ ; https://vestibular.brasilescola.uol.com.br/enem/3-meses-para-o-enem-confira-assuntos-que-mais-caem-na-prova/358866.html ; https://www.cnnbrasil.com.br/educacao/enem-saiba-quais-os-assuntos-de-matematica-que-mais-caem-no-exame/ ; PDF https://sasvestibulares.com.br/wp-content/uploads/2026/10/RAIO-X_ENEM-SAS.pdf | 2009–2024 e 2009–2025 | 2009–2025: Proporcionalidade direta/indireta 223; Estatística 190; Geo plana 111; Geo esp 99; Prob 83; Funções 81; Razão 57; Volume 56; AC 56; Unidades de medida 49. 2009–2024: ... Mat. financeira 48, Equações 45, Geo analítica 38, Números racionais 34, Áreas de fig. planas 25. Guia do Estudante: "1.462 questões analisadas" e top 5 = 14,6 / 12,8 / 7,5 / 6,5 / 5,5%. Raio-X 2024 (CNN 2024, https://www.cnnbrasil.com.br/educacao/enem-2024-veja-os-assuntos-de-matematica-que-mais-caem/): Geometria 21,9%; Escala/razão/prop 13,8%; Aritmética 11,3%; Gráficos e tabelas 9,4%; Funções 9%. | D (contagem de "itens"/tags, ver limites) |
+| 8 | Farias Brito (via Folha 10/09/2026) https://www1.folha.uol.com.br/educacao/2026/09/matematica-no-enem-exige-dominio-de-operacoes-e-estrategia-saiba-o-que-estudar.shtml ; repete EnemPro https://enempro.com.br/noticias/enem-2026-os-assuntos-de-matematica-que-mais-caem | 2009–2025 | Aritmética 17,7%; Razão/prop/escala 13,6%; Funções/equações/inequações/gráficos 12,1%; Estatística 10,8%; Geo espacial 10,8%; Geo plana 9,6%; Porcentagem e mat. financeira 9,4%. | D |
+| 9 | Anglo Analisa (via Quero Bolsa) https://querobolsa.com.br/revista/o-que-mais-cai-no-enem-de-matematica ; G1 cita Anglo 2019–2024 https://g1.globo.com/educacao/enem/2025/noticia/2025/09/17/matematica-no-enem-veja-os-temas-que-mais-caem-na-prova-e-como-estudar.ghtml | "últimos 5 anos" (G1: 2019–2024) | Estatística e prob 32,7%; Números e álgebra 28,2%; Geometria 20,1%; Grandezas e medidas 11,8%; Álgebra 3,5%; Números 3,8%. (Agrupamento muito largo.) | D |
+| 10 | Evolucional https://blog.evolucional.com.br/o-que-mais-cai-no-enem/ | 2015–2024 | Razão e proporção 17%; Estatística 15%; Funções e equações 12%; Números e conjuntos 11%; Geo esp 11%; Geo plana 7% (6 temas = 72%+). | D |
+| 11 | Arco Educação (via O Globo 02/11/2026 e Estadão 23/10/2026) https://oglobo.globo.com/brasil/educacao/enem-e-vestibular/noticia/2026/11/02/das-tabelas-e-graficos-ao-meio-ambiente-analise-em-2500-questoes-dos-ultimos-14-anos-mostra-o-que-mais-cai-no-enem.ghtml ; https://www.estadao.com.br/educacao/no-enem-o-que-cai-na-prova-de-matematica-veja-os-temas-mais-comuns/ | ~14 anos, >2.500 q (todas as áreas), microdados Inep | Matemática: "quase 20%" envolvem porcentagem, conjuntos numéricos ou juros; na competência mais recorrente 1/4 das q é fácil e 15% muito difícil; q fáceis = interpretação de gráficos e tabelas (competência menos cobrada). Estadão: "cerca de dois terços da prova (≈30 q) cobram matemática basilar do fundamental". | D (parcial) |
+| 12 | Bernoulli (via InfoEscola) https://www.infoescola.com/educacao/assuntos-que-mais-caem-no-enem-em-cada-area/ | 2014–2025 | Mat. financeira + estatística 23,15%; equações/inequações/polinômios 17,04%; prob + AC + sequências 11,3%; trigonometria 2,04%; matrizes 0,93%. (Fonte secundária: Bernoulli → O Tempo → InfoEscola.) | D (2ª mão) |
+| 13 | Memorize https://www.memorizevestibular.com/blog/artigos/o-que-mais-cai-em-matematica-no-enem | 2016–2025 regulares | Mat. básica 35%; Estatística 11,7%; Geo esp 11,2%; Funções 11%; Geo plana 8,3%; Prob 5,6%; AC 4,4%; demais 12,8%. | D |
+| 14 | Passo ENEM https://passoenem.com.br/dados/topicos-mais-caem/matematica/ | 2009–2025, 727 q | Contagens: Estat+Prob 137; Razão e prop 117; Geo esp 101; Funções 70; Geo plana 61; Aritmética 52; AC 41; Mat. fin. 33; Porcentagem 27; Progressões 20; Geo analítica 19; Álgebra 15; Trig 8. | D |
+| 15 | Azimus https://azimus.com.br/matriz-referencia-enem/matematica | 2017–2025, 395 q | Por competência: Números e operações 19,5%; Álgebra 15,4%; Grandezas e medidas 14,9%; Geometria 14,2%; Estat/prob 13,4%. | D |
+| 16 | Akira https://app.akiraenem.com/analise/enem/matematica | "2022–2025", 241 q | Aritmética 79 (32,8%; proporcionalidade 46); Geometria 61 (esp 30, plana 22, trig 6, analítica 2); Álgebra 44 (funções 21, equações 9, progressões 8); Estat/prob 40 (desc. 17, prob 12, AC 6); Mat. fin. 13; Unidades 5. Página diz "4 anos" e "5 anos" ao mesmo tempo e 241 > 180 (4×45). | D (inconsistente) |
+| 17 | XTRI – microdados 2025 https://xtri.online/2026/10/16/como-comecar-o-dia-2-do-enem/ ; https://xtri.online/2026/10/25/conteudos-que-diminuem-a-tri-em-matematica-no-enem/ | Só Enem 2025 (+ banco 2009–2025) | 2025: Mat. básica 18 q (40%, dificuldade TRI média 636, acerto 37,0%); Estat/prob 11 (24%, 677, 30,9%); Geo esp 6 (734, 25,9%); Álgebra/funções/trig 4 válidas + 2 fora da TRI; Geo analítica 2; Geo plana 2 (754). 2 anuladas (álgebra). Histórico 2009–2025: razão/prop/regra de 3/escala = 96 q (média 5,84/prova); porcentagem 57 aparições. | D |
+| 18 | CNN/Anglo sobre a prova de 2025 https://www.cnnbrasil.com.br/educacao/enem-veja-as-questoes-mais-faceis-e-dificeis-da-prova-de-domingo-16 | 2025 | Matemática 2025 cobrou probabilidade, combinatória, porcentagem, razão e proporção; ampliou o peso de geometria espacial vs. plana. Q139 (subtração de tempos, Bolt) = mais fácil; Q155 (várias informações + conversão de grandezas) = mais difícil. | O/qualitativo do diretor do Anglo |
+| 19 | Estratégia Vestibulares https://vestibulares.estrategia.com/portal/enem-e-vestibulares/vestibulares/o-que-mais-cai-de-matematica-no-enem | sem período | Lista sem números (prof. Andrew Cazemiro): operações básicas, porcentagem, razões, proporções, grandezas, equações e funções 1º/2º, áreas, volumes, triângulos, probabilidade, circunferência. | O |
+| 20 | Quero Bolsa 5 anos https://querobolsa.com.br/revista/quais-assuntos-mais-cairam-no-enem-nos-ultimos-5-anos | 2021–2025 | Lista sem números: razão/proporção/regra de 3; porcentagem e mat. financeira; estatística e gráficos; geo plana; geo esp; funções; prob e AC. | O |
+| 21 | Descomplica https://descomplica.com.br/blog/matematica-enem/ | blog atualizado 05/11/2024 | Proporcionalidade, estatística, geo espacial, geo plana, AC+prob (sem números). | O |
+| 22 | Professor Ferretto https://blog.professorferretto.com.br/matematica/assuntos-de-matematica-mais-caem-enem/ | 03/2026 | Grandezas proporcionais, estatística, mat. básica, geometria, funções (sem números). | O |
+| 23 | Brasil Escola (artigo de matéria) https://brasilescola.uol.com.br/matematica/temas-matematica-que-voce-precisa-saber-para-enem.htm | sem período | Lista longa de conteúdos, sem ranking numérico. | O |
+| 24 | Kumon https://kumon.com.br/blog/matematica/matematica-no-enem | sem período | Grandezas proporcionais, gráficos e tabelas, aritmética, geo esp, funções, geo plana, estatística, prob, matrizes (sem números; menciona matrizes, o que destoa dos dados). | O |
+| 25 | Guia do Estudante/Folha/G1 (Ghiu, pH; Moura, Farias Brito) e Mackenzie (via Quero Bolsa) https://blog.mackenzie.br/vestibular/materias-vestibular/o-que-mais-cai-em-matematica-no-enem/ | 2025–2026 | Opinião de professores: foco cirúrgico em maior incidência, regra de três, geometria, porcentagem, funções. | O |
+
+Fontes citadas pelo usuário que **não consegui acessar ou não achei com números**: Jornada 1000 (paywall: https://www.jornada1000.com.br/o-que-mais-cai-no-enem), BBC Brasil (falha na extração: https://bbc.com/portuguese/articles/c1mlz3z5d0lo), Me Salva! PDF (bloqueado pelo extrator), Folha 09/09/2025 (extração parcial/truncada). Toda Matéria, Stoodi, Hexag, Poliedro (só via G1/Guia do Estudante/Folha, que citam Anglo/pH), Kuadro, Gran Cursos, Mairo Vergara, Mundo Educação: **não localizei página própria com contagem** em Matemática; não afirmo nada sobre eles.
+
+---------------------------------------------------------------------
+
+## 3. Vídeos do YouTube (transcrições obtidas com youtube-transcript-api; legendas automáticas em pt)
+
+1. **Descomplica – "AO VIVO | O QUE MAIS CAI EM MATEMÁTICA NO ENEM"** https://www.youtube.com/watch?v=_f7OUYGwbl4 (≈47 min). Professor da Descomplica ordena os temas: (1) razão, proporção e porcentagem ("tudo no mesmo bolo": porcentagem é razão sobre 100; proporção = igualdade de razões; regra de três dentro disso); (2) funções (1º grau, 2º grau, exponencial, log; "saiba o gráfico de cada uma"); (3) geometria plana ("conheça os polígonos e as fórmulas de área; não me lembro de prova sem questão de área"); (4) análise combinatória + probabilidade, que ele agrupa e estima em "seis a sete questões" numa prova (legenda automática confusa); depois geo espacial. Diz que razão/proporção/porcentagem é o que mais caiu na série 2009–2018 mas que "vem diminuindo ano após ano" e a prova está "mais conteudista". Vídeo **antigo** (fala em série até 2018), usar com cautela. Dados verbais, sem tabela.
+2. **ENEM ACTION – "O que mais cai em Matemática no Enem?"** https://www.youtube.com/watch?v=huu_F4P_6yU (≈3 min). Lista (sem números): matemática básica (inteiros, decimais, frações, razão/proporção, porcentagem, potenciação/radiciação, regra de três; contextos de mapas, finanças, medidas, tempo; revisar conversão de unidades), geometria espacial (posição/projeção, volumes e superfícies de cilindro, pirâmide, prisma), geo plana (triângulos, semelhança, áreas, circunferência), estatística ("respostas escondidas no texto/gráfico"), funções (1º, 2º, exponencial, log). Opinião de canal.
+3. **Aprenda Qualquer Coisa (Rio) – "Estude Apenas isso de Matemática para o ENEM (Usando Ferretto)"** https://youtube.com/watch?v=fgtPgJzHWVY (≈13 min). Ordem de estudo proposta: matemática básica → razão/proporção/escala/porcentagem (afirma garantir "de 5 a 35 pontos" na escala da prova, sem fonte) → PA (PG "não precisa") → estatística (média, moda, mediana, gráficos: "fácil, fácil") → mat. financeira só juros simples e % → geometria plana (triângulos, quadriláteros, circunferência, hexágono) → geo espacial (prismas, cilindro, pirâmide, cone; tronco e esfera "no máximo uma q") → função afim → sistema 2x2 → AC (PFC, permutação, combinação, arranjo) e probabilidade → função quadrática → trigonometria (circunferência trigonométrica, seno/cosseno; leis dos senos/cossenos "no máximo uma por ano") → exponencial (gráfico) → log (definição e propriedades) → juros compostos por último. Matrizes: "cai só conceito, não cai determinante; chute que não cai". Opinião de monitor, baseada nas indicações de relevância do Ferretto.
+4. **Lauro Interpreta – "Revisar os conteúdos que mais caem no ENEM é a melhor estratégia?"** https://www.youtube.com/watch?v=rolfiUap5a8 (≈14 min). Contra-argumento: cita que matemática básica é "disparado" o que mais cai, mas diz que o que derruba muita gente é interpretação, ansiedade, pressa, falta de estratégia de prova, cansaço e desmotivação; recomenda pautar a revisão pelo que **você** erra, não só pela incidência. Sem números. (Contém propaganda de curso.)
+5. **Felipe Rabelo – "COMO CRIAR uma ESTRATÉGIA de PROVA para o ENEM!"** https://youtube.com/watch?v=Ic5FBT-KT5E (≈9 min). TRI/coerência: com 35 acertos em Matemática ele fez 822, e outros com os mesmos 35 acertos tiraram 780 a 850+ (relato pessoal). Diz que ~50% das questões são médias, ~25% fáceis, ~25% difíceis; que tamanho do enunciado **não** é bom indicador de dificuldade; propõe 3–4 "passadas" (fáceis para você → demoradas → complexas → as mais difíceis se sobrar tempo); começar pela área em que você é mais forte; olhar o relógio na 1ª meia hora; aceitar que não vai resolver tudo.
+6. **Prof. Jaques Braga – "Microdados do Enem 2025 – qual questão vale mais?"** https://www.youtube.com/watch?v=IJdKk4NbaeA (≈11 min). Na mesma faixa (33–41 acertos) um acerto a mais vale em Matemática ~13 pts (33→34), contra 7 (Linguagens), 9 (Humanas), 10 (Natureza); em 35→37, Matemática 14–15 pts por acerto; média de 33 acertos: Linguagens 620, Humanas 667, Natureza 707, Matemática 800. Diz que em 2024 as áreas valiam parecido e em 2025 Matemática se destacou. Dados do próprio professor (microdados).
+7. **Radar do Educador – "O que mais cai no Enem 2015–2024"** https://youtu.be/t4wMk3h23qs : é o vídeo da Evolucional (mesma análise do item 10 da tabela de fontes). Transcrição obtida, conteúdo redundante com o blog.
+8. (Não usados) "MATEMÁTICA NO ENEM: Lucas Borguezan…" https://www.youtube.com/watch?v=ccRgzTGLHfc – resolução cronometrada de uma questão de 2022 (média ponderada + aumento de 25% + inequação); mostra técnica (porcentagem por frações: 25% = metade da metade; cuidado ao "cortar zeros"), sem ranking.
+
+---------------------------------------------------------------------
+
+## 4. Assuntos que quase nunca caem (deixar para o fim)
+Dados: Quanta (presença em 10 provas), Politano, Tessat, Bernoulli, Estudo do Dia.
+- **Matrizes e determinantes:** 0,93% (Bernoulli); 4 q em 721 (Tessat). Ferretto/monitor: "nunca caiu determinante".
+- **Geometria analítica:** 0,5% (Quanta, só 2 das 10 provas), 1,2% (Politano), 2,1% (Tessat). Quando cai, é dos itens mais difíceis (b=2,57, Politano). XTRI 2025 teve 2 q (Q153, Q161).
+- **PG** (Tessat 4 q em 16 anos) e **PA/PG em geral** (Quanta: 4 de 10 provas).
+- **Trigonometria** (≈1–4% conforme a fonte) — exceção: leitura de gráfico de função trigonométrica e razões no triângulo retângulo. Em 2025 a Q160 (tangente) foi a mais difícil de toda a prova (b=4,24; 15% de acerto) e errar um item assim "quase não mexe" na nota (XTRI).
+- **Exponencial/logaritmo:** 18 q em 721 (Tessat), ~2%; "propriedades de log" = 10 q.
+- **Mat. financeira (juros compostos):** 8 q em 990 (Politano), 9 em 440 (Quanta); dificuldade mediana mais alta de todas (b=2,94).
+- **Esfera/tronco de cone, cônicas, lei dos senos/cossenos:** 1–2 q no histórico (Tessat: esferas 2, cônicas 2, lei dos cossenos 1).
+- **Lógica/raciocínio** (15 q em 721) e **conjuntos** (6 q).
+
+## 5. "Armadilhas" recorrentes citadas pelas fontes
+1. **Unidades e conversões:** esquecer cm→m, litro→m³, trocar escalas; área em unidade², volume em unidade³. G1 (prof. Ghiu): "checagem dimensional" antes de marcar (https://g1.globo.com/educacao/enem/2025/noticia/2025/11/15/matematica-no-enem-sem-panico-veja-estrategias-para-resolver-a-prova-e-pontuar-melhor.ghtml). XTRI: "quem erra conversão de vírgula cai no distrator calibrado pela banca" (item de conversão litros→m³).
+2. **Porcentagem:** valor de referência errado, aumentos/descontos sucessivos (não se somam), "juros simples". Em 2025 a questão com **menor acerto do dia** foi de porcentagem: Q140, 9,1% de acerto (XTRI dia 2). Memorize: "porcentagem é o subtema que mais engana quem acha que já sabe".
+3. **Estatística:** calcular mediana **sem ordenar** o rol (e com número par de dados); esquecer os **pesos** na média ponderada (XTRI, 25/10/2026).
+4. **Leitura de gráficos/tabelas:** eixo, unidade, legenda, escala; achar o dado certo; "leitura apressada" (Acertei; Memorize). Muita questão não tem conta, só pede leitura correta.
+5. **Regra de três inversa** (Quero Bolsa/Mackenzie) e grandezas inversamente proporcionais (ex.: grupos de pneus na Fórmula 1 em Kumon, exemplo de 2021).
+6. **Geometria:** não fazer esboço/anotar dados e unidades (Ghiu); visualizar sólido/planificação/vistas (Ferretto); associar enunciado a fórmula (Anglo: terreno+grama→área, cerca→perímetro, caixa→volume, mapa→escala).
+7. **Questão longa não = difícil, curta não = fácil** (Rabelo). A posição no caderno também não ajuda: correlação de Spearman entre posição e dificuldade em Matemática 2025 = 0,17 (XTRI) — fáceis e difíceis estão misturadas.
+8. **Itens com muitas informações + conversão de grandezas** foram a questão mais difícil de 2025 segundo o Anglo (Q155).
+9. **Cortar zeros / simplificar** sem regra (Borguezan) e **escala** sem converter unidades antes (NE10: https://ne10.uol.com.br/enem/2026/11/06/enem-2026-como-revisar-escalas-e-unidades-de-medida.html).
+
+## 6. Estratégia de prova para Matemática (o que as fontes trazem)
+**TRI / coerência pedagógica**
+- A TRI olha o padrão de respostas, não só a soma: acertar difíceis e errar fáceis sugere chute e derruba a nota. (G1 05/11/2026 https://g1.globo.com/educacao/enem/2026/noticia/2026/11/05/enem-2026-veja-estrategias-para-se-dar-bem-na-tri.ghtml; G1 2025.) G1 2026 diz que deixar em branco é pior que chutar.
+- Números dos microdados 2025 (XTRI): com 12 acertos a nota foi de 394 a 555 (p5–p95); com 15 acertos, 353 a 635; quem errou ≥4 fáceis com 12 acertos perdeu ~130 pts na mediana; nota 600 ≈ 16,5 acertos e nota 700 ≈ 23,8 acertos em média; quem tirou ≥700 ainda errou em média 13,43 questões; mediana nacional de Matemática 501,7; nota 700 = percentil ~89,6.
+- Politano (microdados 2015–2025): os assuntos mais "baratos" por dificuldade mediana são gráficos/tabelas, aritmética, estatística e porcentagem; os mais caros, mat. financeira, geo analítica, AC e probabilidade.
+- Arco/O Globo: começar pelas questões fáceis (interpretação de gráficos e tabelas), depois pela competência mais recorrente, por fim o resto.
+**Ordem / passadas (várias fontes)**
+- G1 (Ghiu, pH), ~2h30 em Matemática em 3 passadas: 1ª (1h a 1h10) questões curtas e diretas — proporção, porcentagem, gráfico, função linear; 2ª (1h10 a 1h20) geometria com desenho, quadrática, exponencial; 3ª (tempo restante) estatística/probabilidade e itens de muita leitura. Regra "2-2-1": se após 2 min e 2 tentativas não destravou, marca e segue.
+- Waldemática: 1ª varredura = gráficos/tabelas, razão e proporção básicas, geometria conceitual (vistas, planificação), estatística básica; 2ª = porcentagem com aumentos sucessivos, volumes/áreas, prob/AC clássica, funções 1º/2º (3–5 min cada); 3ª = longas e inventadas. Critica a regra fixa de "3 min por questão" como armadilha (https://blog.waldematica.com.br/tempo-prova-matematica-enem/).
+- Memorize: folheia o caderno inteiro; Matemática ciclo 1 ≈ 1h (só fáceis), ciclo 2 ≈ 30–40 min (médias); depois Natureza; reserva 1h30 no fim para difíceis e gabarito (45 min por prova) (https://www.memorizevestibular.com/blog/artigos/segundo-dia-do-enem-estrategia).
+- Folha 2026 (prof. Covi/Farias Brito): checagem inicial para marcar fáceis e médias, segunda leitura para médias, difíceis por último.
+- Estratégia Vestibulares (Cazemiro): fáceis → médias → difíceis, por causa da TRI.
+- Quero Bolsa: ~2 a 3 min por questão, reservar tempo final para revisão e marcação; eliminar alternativas absurdas e usar estimativa.
+- G1 2025 (tempo): ~20 questões/hora no dia 2 (3 min), 20–30 min para o cartão; Extra 2026 e Colégio Qi: ~3 min/questão, duas passagens, 15–20 min para o cartão.
+**Começar por qual prova no dia 2?**
+- SAS (Celedônio, G1 2025): "comece pela Matemática". Rabelo: comece pela área em que você é mais forte. O Globo/Arco: em Natureza, comece por Biologia. XTRI: "zona verde" de 2025 = Biologia e Matemática básica (acerto 41,9% e 37,0% vs 33,2% do dia). Jaques Braga: em 2025 cada acerto extra em Matemática valeu mais pontos que nas outras áreas.
+**Outros**: esboçar figuras e escrever unidades; reconhecer padrões repetidos (proporção, função, média ponderada); treinar com provas anteriores cronometrado (Estadão/Bernoulli, G1, CNN).
+
+---------------------------------------------------------------------
+
+## 7. Limites do que encontrei
+- **Classificação por assunto não é oficial do Inep.** Cada fonte usa taxonomia e método próprios (várias são automáticas por palavras-chave: Quanta, Estudo do Dia). Por isso os percentuais não são comparáveis em valor absoluto.
+- **Períodos diferentes:** de 2009 a 2025; só Quanta, Aprova Total, Memorize e Acertei têm janela de ~10 anos recentes; Politano e Quanta separam regulares e PPL. Várias fontes não indicam se inclui reaplicação/PPL.
+- **SAS:** 1.462–1.507 "itens" de Matemática são mais que 45 q × 16–17 provas; contagem provavelmente por tags/assuntos. Use apenas a ordem.
+- **Akira:** inconsistente (4 vs 5 anos; 241 > 180).
+- **Anglo e Bernoulli:** só vi secundárias (Quero Bolsa, G1, InfoEscola), sem o relatório original.
+- **Guia do Estudante/Estadão/O Globo:** o texto do Estadão e do O Globo vem truncado/resumido na extração; Folha 2025 só em parte.
+- **Vídeos:** legendas automáticas (erros de reconhecimento); o vídeo da Descomplica é antigo; os demais são opinião ou repetem levantamentos de blogs.
+- Páginas de blogs/cursinhos têm interesse comercial; as com dados reproduzíveis (Politano, Quanta, Tessat, Acertei) são pequenas e não verifiquei as contagens contra as provas oficiais do Inep. XTRI usa parâmetro b do Inep (microdados 2025) para dificuldade — dado público, mas a classificação por assunto é da XTRI.
+- Frequência histórica **não prevê** o Enem 2026 (EnemPro, InfoEscola/Bernoulli, Memorize, NE10 dizem o mesmo).
+- Não consultei as provas oficiais do Inep para contar nada eu mesmo.
