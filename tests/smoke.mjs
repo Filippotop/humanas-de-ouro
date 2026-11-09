@@ -380,7 +380,7 @@ async function testReading(browser) {
 async function testHome(browser) {
   for (const vp of ['375', '1280']) {
     const ctx = await browser.newContext({ viewport: VIEWPORTS[vp], serviceWorkers: 'block' });
-    const page = await ctx.newPage(); await page.goto(URL_); await page.waitForTimeout(400);
+    const page = await ctx.newPage(); await page.clock.setFixedTime(new Date('2026-10-23T12:00:00-03:00')); await page.goto(URL_); await page.waitForTimeout(400);
     const h = await page.evaluate(() => ({
       count: (document.querySelector('.hero .countdown') || {}).textContent || '', days: String(daysLeft()),
       rings: [...document.querySelectorAll('.hero .rings [data-area]')].map(r => [r.dataset.area, r.getAttribute('aria-label') || '']),
@@ -395,7 +395,7 @@ async function testHome(browser) {
     check(h.next.length > 0, `início/${vp}: falta o bloco "Próximo passo"`);
     check(await page.evaluate(() => [...document.querySelectorAll('.hero .stat .l')].some(l => /Linguagens · 2025: 82%/.test(l.textContent))), `início/${vp}: falta a estatística de Linguagens comparada a 2025`);
     check(/72/.test(h.d2), `início/${vp}: falta o status do dia 2 com a meta 72 ("${h.d2.trim().slice(0, 60)}")`);
-    const bad = h.icons.filter(i => i !== 'svg' && !/^[A-Z]\d+$/.test(i));
+    const bad = h.icons.filter(i => i !== 'svg' && !/^[A-Z]{1,2}\d+$/.test(i));
     check(!bad.length, `início/${vp}: ícones de tarefa que não são desenhos (${bad.join(' ')})`);
     if (vp === '1280') check(h.statH <= 200, `início/${vp}: cartão de estatística esticado (${Math.round(h.statH)} px)`);
     if (h.next) { await page.click('.hero .next'); await page.waitForTimeout(200);

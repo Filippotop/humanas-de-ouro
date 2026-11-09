@@ -724,7 +724,7 @@ function volStats(vol){
   let done=0,ok=0; DATA.questions.filter(q=>q.vol===vol).forEach(q=>{const a=S.ans[q.id]; if(a){done++; if(a.ok) ok++;}});
   return {done,ok};
 }
-function dueCards(vol){ const t=today(); return DATA.cards.filter(c=>(!vol||c.vol===vol) && (!S.cards[c.id] || S.cards[c.id].due<=t)); }
+function dueCards(vol){ const t=today(); return DATA.cards.filter(c=>(!vol||c.vol===vol) && (vol||!focoDia2()||c.vol==='CN'||c.vol==='MT') && (!S.cards[c.id] || S.cards[c.id].due<=t)); }
 /* Modo Dia 1: o dia 2 fica guardado até 72/90 no dia 1 de 2024 (inteiro, cronometrado), até 9/11 ou até a liberação manual. */
 const DIA2_META=72, DIA2_DATA='2026-11-09';
 function dia2Best(){ const rs=pvState('24d1').runs.filter(r=>r.done&&r.mode==='prova'&&r.areas==='LH'); return rs.length?Math.max(...rs.map(r=>scoreRun('24d1',r).ok)):null; }
@@ -745,8 +745,11 @@ function dia2Status(){ const best=dia2Best();
 function unlockDia2(){ S.dia2={t:Date.now(),via:'manual'}; save(); }
 function examTarget(){ return Date.now()<Date.parse('2026-11-08T19:00:00-03:00') ? EXAM : new Date('2026-11-15T13:30:00-03:00'); }
 function daysLeft(){ const n=new Date(), t=examTarget(); const a=Date.UTC(n.getFullYear(),n.getMonth(),n.getDate()); const b=Date.UTC(t.getFullYear(),t.getMonth(),t.getDate()); return Math.max(0,Math.round((b-a)/86400000)); }
+/* Depois da prova do dia 1 (08/11, 19h) e com o dia 2 liberado, a missão do dia só mostra o dia 2 (Matemática e Natureza). */
+function focoDia2(){ return Date.now()>=Date.parse('2026-11-08T19:00:00-03:00') && dia2Status().open; }
 function priority(m){
   if(m.line==='R') return -99;
+  if(focoDia2() && !'MPQB'.includes(m.line)) return -99;
   const s=modStats(m.id);
   let p={A:3,B:2,C:1}[m.faixa];
   if(ERRMOD[m.id]) p+=2;
@@ -784,20 +787,20 @@ function ring(area,name,st){ const p=st.n?Math.round(100*st.done/st.n):0, r=26, 
 function vLinhas(){
   const nm=nextModules(2); const due=dueCards().length; const pday=planToday();
   const rc=DATA.recal.find(r=>!S.recal[r.vol+r.num]);
-  const tasks=[];
+  const tasks=[]; const F2=focoDia2();
   if(dia2Status().open) { const r25=allRuns('25d2'); const cur=pvState('25d2').runs.find(r=>!r.done); const doneAreas=r25.filter(runReal).map(r=>r.areas).join(''); const miss=['N','M'].filter(a=>!doneAreas.includes(a));
     if(miss.length) tasks.push({ic:'!',t:cur?'Continuar o ENEM 2025 · 2º dia':`Diagnóstico pendente: ENEM 2025 · ${miss.map(a=>AREAS[a].name).join(' e ')}`,s:cur?`${Object.keys(cur.ans).length} questões respondidas · o cronômetro continua correndo`:'A prova oficial está dentro do app, com cartão-resposta e correção. É a tarefa mais importante da semana.',act:()=> cur? go('prova',{id:'25d2',run:pvState('25d2').runs.indexOf(cur)}) : go('provas')});
     if(miss.length) tasks.push({ic:'✎',t:'Fez a prova no papel? Lance as respostas',s:'Marque as letras no cartão-resposta e o app corrige pelo gabarito oficial, como se você tivesse feito aqui.',act:()=>go('papel',{id:'25d2',areas:miss.join('')})}); }
   else { const b=dia2Status().best; tasks.push({key:'sim24',ic:'★',t:'Simulado do dia 1 de 2024 · dom 1/11, 13h30',s:b==null?`É a chave do dia 2: ${DIA2_META}/90, inteiro e cronometrado (5h30), libera. Até lá, não abra essa prova.`:`Seu melhor: ${b}/90. Meta para liberar o dia 2: ${DIA2_META}/90.`,act:()=>go('provas')}); }
   { const w=Object.values(S.ans).filter(a=>!a.ok); const au=w.filter(a=>a.trap==='autor').length;
     { const rd=(S.red&&Array.isArray(S.red.drafts)?S.red.drafts:[]).filter(d=>d.done).map(d=>d.end||0); const last=rd.length?Math.max(...rd):0; const dd=last?Math.floor((Date.now()-last)/864e5):null;
-      if(dd==null||dd>=4) tasks.push({ic:'✍',t:dd==null?'Redação: você ainda não escreveu nenhuma aqui':`Redação: ${dd} dias sem escrever`,s:'Até 1.000 pontos dependem de treino escrito. A Oficina tem projeto, cronômetro e correção por competência.',act:()=>go('redacao',{s:'oficina',novo:1})}); }
-    if(w.length>=3 && au>=2 && au/w.length>=0.4) tasks.push({ic:'?',t:`Seu padrão: ${au} de ${w.length} erros foram "autor errado"`,s:'Não é falta de conteúdo: você conhece a ideia e troca o dono dela. O Quem disse? agora coloca lado a lado os autores que se confundem.',act:()=>go('game',{g:'quem'})}); }
-  const last=lsGet('humanas-last'); if(last&&M[last.id]){ const lm=M[last.id], ls=modStats(lm.id); if(ls.done<ls.n) tasks.push({lc:lm.line,ic:'▸',t:`Continuar: ${lm.id} · ${lm.title}`,s:`Você parou em ${({teoria:'Teoria',resumo:'Cartões-resumo',vf:'V ou F',q:'Questões',tutor:'Tutor',notas:'Anotações'})[last.tab]||'Teoria'} · ${ls.done}/${ls.n} questões`,act:()=>go('mod',{id:lm.id,tab:last.tab})}); }
+      if(!F2 && (dd==null||dd>=4)) tasks.push({ic:'✍',t:dd==null?'Redação: você ainda não escreveu nenhuma aqui':`Redação: ${dd} dias sem escrever`,s:'Até 1.000 pontos dependem de treino escrito. A Oficina tem projeto, cronômetro e correção por competência.',act:()=>go('redacao',{s:'oficina',novo:1})}); }
+    if(!F2 && w.length>=3 && au>=2 && au/w.length>=0.4) tasks.push({ic:'?',t:`Seu padrão: ${au} de ${w.length} erros foram "autor errado"`,s:'Não é falta de conteúdo: você conhece a ideia e troca o dono dela. O Quem disse? agora coloca lado a lado os autores que se confundem.',act:()=>go('game',{g:'quem'})}); }
+  const last=lsGet('humanas-last'); if(last&&M[last.id]&&(!F2||'MPQB'.includes(M[last.id].line))){ const lm=M[last.id], ls=modStats(lm.id); if(ls.done<ls.n) tasks.push({lc:lm.line,ic:'▸',t:`Continuar: ${lm.id} · ${lm.title}`,s:`Você parou em ${({teoria:'Teoria',resumo:'Cartões-resumo',vf:'V ou F',q:'Questões',tutor:'Tutor',notas:'Anotações'})[last.tab]||'Teoria'} · ${ls.done}/${ls.n} questões`,act:()=>go('mod',{id:lm.id,tab:last.tab})}); }
   if(pday){ const pd=planDone(pday); tasks.push({ic:'▦',t:`Plano de hoje: ${pday.foco}`,s:`${pd.done} de ${pd.n} tarefas feitas · ${pday.l}`,act:()=>go('plano'),done:pd.done===pd.n}); }
   nm.forEach(m=>{const s=modStats(m.id); tasks.push({lc:m.line,ic:m.id,t:`${m.id} · ${m.title}`,s: s.read? `Teoria lida. Faltam ${s.n-s.done} de ${s.n} questões.` : `Faixa ${m.faixa}${ERRMOD[m.id]?` · ligado ao seu erro na questão ${ERRMOD[m.id]} de 2025`:''}`,act:()=>go('mod',{id:m.id,tab:s.read?'q':'teoria'})});});
   tasks.push({ic:'◷',t:`Revisar ${Math.min(15,due)} cartões de véspera`,s:due? `${due} cartões vencidos hoje. Leva uns 6 minutos.`:'Nenhum cartão vencido. Volte amanhã.',act:()=>go('game',{g:'cards'}),done:!due});
-  if(rc) tasks.push({ic:'↺',t:`Refazer o seu erro na questão ${rc.num} de 2025`,s:`${rc.subj}: tente de novo e faça a questão de reforço.`,act:()=>go('treino',{s:'recal'})});
+  if(rc&&!F2) tasks.push({ic:'↺',t:`Refazer o seu erro na questão ${rc.num} de 2025`,s:`${rc.subj}: tente de novo e faça a questão de reforço.`,act:()=>go('treino',{s:'recal'})});
   /* O simulado só abre a missão no próprio dia 1/11; antes disso fica no fim da lista. */
   if(isoToday()!=='2026-11-01'){ const si=tasks.findIndex(t=>t.key==='sim24'); if(si>=0) tasks.push(tasks.splice(si,1)[0]); }
   const tot=DATA.questions.length, done=Object.keys(S.ans).length, ok=Object.values(S.ans).filter(a=>a.ok).length;
@@ -807,8 +810,8 @@ function vLinhas(){
   <section class="hero">
     <div class="mission">
       <div class="eyebrow">Missão de hoje · ${new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'})}</div>
-      <h2>${done===0?'Comece pela linha que mais derrubou você em 2025.':'Continue de onde parou. A ordem abaixo já considera seus erros.'}</h2>
-      ${done===0?'<p class="lead">A missão escolhe os módulos pela incidência no ENEM, pelos seus erros no diagnóstico de 2025 e pelo que você errou aqui. Filosofia e Sociologia pesam mais porque foi lá que você mais perdeu pontos.</p>':''}
+      <h2>${F2?'Dia 2: Matemática e Natureza. Só isso importa até domingo.':done===0?'Comece pela linha que mais derrubou você em 2025.':'Continue de onde parou. A ordem abaixo já considera seus erros.'}</h2>
+      ${done===0&&!F2?'<p class="lead">A missão escolhe os módulos pela incidência no ENEM, pelos seus erros no diagnóstico de 2025 e pelo que você errou aqui. Filosofia e Sociologia pesam mais porque foi lá que você mais perdeu pontos.</p>':''}
       ${tasks.length?`<button class="next ${tasks[0].lc?'lc-'+tasks[0].lc:''}" data-i="0"><span class="eyebrow">Próximo passo</span><b>${esc(tasks[0].t)}</b><small>${esc(tasks[0].s)}</small><span class="cta">Começar ${ICON.go}</span></button>`:''}
       <div class="tasks">${tasks.map((t,i)=>i===0?'':`<button class="task ${t.done?'done':''} ${t.lc?'lc-'+t.lc:''}" data-i="${i}"><span class="ic">${TASK_IC[t.ic]||esc(t.ic)}</span><span><b>${esc(t.t)}</b><small>${esc(t.s)}</small></span><span class="go" aria-hidden="true">${ICON.go}</span></button>`).join('')}</div>
     </div>

@@ -105,6 +105,9 @@ try {
         check(!next.some(id => /^(GD|MA|FI|QU|BI)\d/.test(id)), 'guardado: nextModules sugere módulo do dia 2 antes da liberação');
         check(rings.join() === 'LC,HUM,RD', `guardado: anéis do início = ${rings.join()}`);
       } else {
+        check(next.length && next.every(id => /^(MA|FI|QU|BI)\d/.test(id)), `foco dia 2: nextModules traz módulo que não é do dia 2 (${next.slice(0, 5)})`);
+        const home = await page.evaluate(() => document.querySelector('.mission')?.parentElement?.textContent || document.body.textContent);
+        check(!/Redação: |Refazer o seu erro|autor errado/.test(home), 'foco dia 2: a tela inicial ainda mostra pendência do dia 1');
         check(Object.values(hasLine).every(Boolean), `liberado (${colorScheme}): faltam linhas no mapa (${JSON.stringify(hasLine)})`);
         check(rings.includes('CN') && rings.includes('MT'), `liberado: faltam os anéis de Natureza e Matemática (${rings.join()})`);
         const c = await page.evaluate(() => {

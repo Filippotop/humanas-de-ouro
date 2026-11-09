@@ -39,6 +39,8 @@ Pontos de partida reais do estudante (Enem 2025, dia 1): Linguagens 37/45, Hist.
 
 Formato: `AAAA-MM-DD HH:MM · quem · o que fez / o que falta / o que não mexer`. Mais novo em cima.
 
+- 2026-11-09 · Hermes · Foco no dia 2 (pedido do estudante): depois de 08/11 19h e com o dia 2 liberado, a tela inicial só sugere Matemática/Natureza (sem Redação, Filosofia/Sociologia, reforço de 2025 nem cartões de Humanas). Mexi em `index.html` (`focoDia2()`, `priority`, `dueCards`, `vLinhas`), `sw.js` (VER) e testes. `npm test` passou.
+
 - 2026-11-08 · Hermes · Aprofundamento do dia 2 na branch `hermes/dia2-aprofundamento`: +90 questões inéditas (Mat 28, Fís 22, Quí 20, Bio 20; total 209) em `tools/extra/*.json`, geradas por `tools/apostila_dia2.py`; gabaritos conferidos por 3 resoluções independentes às cegas (90/90 coincidem). Toquei só `data/dia2.js` e a constante VER do `sw.js`. `npm test` passou. Não está em `main`; juntar só com OK do estudante.
 
 - 2026-11-06 · Claude · Atualização de estado: o modo de leitura (Hermes) já está em `main` e no GitHub (commit 10b3fd8), e a correção do seletor (Claude) também (2bcf506). Este arquivo agora também está em `main`. Itens menores em aberto: 31 seções sem termos-chave no modo Essencial e 11 termos com mais de 60 caracteres; modo padrão é Destaques.
