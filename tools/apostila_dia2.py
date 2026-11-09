@@ -22,12 +22,47 @@ def inline(s):
     return re.sub(r'`(.+?)`', r'<code>\1</code>', s)
 
 
+FORM = {}  # texto original da fórmula -> {f: arquivo em fm/, w, h, lido}; preenchido por carregar_formulas() (tools/formulas.json)
+
+
+def carregar_formulas():
+    """Fórmulas desenhadas como imagem SVG (tools/formulas_render.mjs). Sem os arquivos, tudo continua como texto."""
+    aqui = pathlib.Path(__file__).resolve().parent
+    fj, fi = aqui / 'formulas.json', aqui / 'formulas_index.json'
+    FORM.clear()
+    if fj.exists() and fi.exists():
+        F, I = json.loads(fj.read_text(encoding='utf8')), json.loads(fi.read_text(encoding='utf8'))
+        FORM.update({v['original']: dict(I[k], lido=v.get('lido')) for k, v in F.items() if k in I})
+    return len(FORM)
+
+
+def fm_img(txt, cls):
+    """<img> da fórmula (o texto original vai no alt, para leitor de tela e para quem não vê a imagem), ou None."""
+    e = FORM.get(txt)
+    if not e:
+        return None
+    alt = re.sub(r'\*\*', '', txt).replace('&', '&amp;').replace('<', '&lt;').replace('"', '&quot;')
+    return f'<img class="{cls}" src="fm/{e["f"]}" alt="{alt}" style="--w:{e["w"]:.2f}ex" loading="lazy" decoding="async">'
+
+
+def split_row(r):
+    """Divide uma linha de tabela markdown; '\\|' é uma barra literal (valor absoluto), não separador de célula."""
+    return [c.replace('\\|', '|').strip() for c in re.split(r'(?<!\\)\|', r.strip().strip('|'))]
+
+
 def table(rows):
-    cells = [[c.strip() for c in r.strip().strip('|').split('|')] for r in rows if not re.match(r'^\s*\|[\s:|-]+\|\s*$', r)]
+    cells = [split_row(r) for r in rows if not re.match(r'^\s*\|[\s:|-]+\|\s*$', r)]
     head, body = cells[0], cells[1:]
     sym = ' sym' if re.match(r'(?i)s[íi]mbolo', head[0]) else ''
+    def cell(i, c):
+        if i == 0 and head[0] == 'Fórmula':  # Formulário-mestre: a fórmula vira imagem (★ = saber de cor)
+            star, txt = re.match(r'^(★\s*)?(.*)$', c, flags=re.S).groups()
+            img = fm_img(txt, 'fm-in')
+            if img:
+                return '<td>' + ('<span class="fm-star" title="saber de cor">★</span> ' if star else '') + img + '</td>'
+        return f'<td>{inline(c)}</td>'
     return ('<div class="tw"><table class="tb' + sym + '"><thead><tr>' + ''.join(f'<th>{inline(c)}</th>' for c in head) + '</tr></thead><tbody>'
-            + ''.join('<tr>' + ''.join(f'<td>{inline(c)}</td>' for c in r) + '</tr>' for r in body) + '</tbody></table></div>')
+            + ''.join('<tr>' + ''.join(cell(i, c) for i, c in enumerate(r)) + '</tr>' for r in body) + '</tbody></table></div>')
 
 
 def blocks(md):
@@ -56,6 +91,11 @@ def block_html(b):
         title, body = (m.group(1).rstrip(':').strip(), m.group(2)) if m else ('', txt)
         kind = next((v for k, v in BOX.items() if title.startswith(k)), 'conceito')
         kind += ' formula' if title.startswith('Fórmula') else ''
+        img = fm_img(body.strip(), 'fm-img') if title.startswith('Fórmula') else None
+        if img:
+            lido = FORM[body.strip()].get('lido')
+            return (f'<div class="box {kind}"><b class="box-t">{inline(title)}</b><div class="fm">{img}</div>'
+                    + (f'<p class="fm-lido"><b>Em palavras:</b> {inline(lido)}</p>' if lido else '') + '</div>')
         return f'<div class="box {kind}"><b class="box-t">{inline(title)}</b><p>{inline(body)}</p></div>'
     if re.match(r'^(- |\d+\. )', first):
         tag = 'ul' if first.startswith('- ') else 'ol'
@@ -290,6 +330,7 @@ def extras(mods):
 
 def main(path):
     text = pathlib.Path(path).read_text(encoding='utf8')
+    print(f'{carregar_formulas()} fórmulas como imagem (fm/)')
     gab = gabaritos(text)
     mods, qs, cards = [], [], []
     for code, num, title, body in re.findall(r'^## ((?:MAT|FIS|QUI|BIO))-(\d\d) — (.+?)\n(.*?)(?=^## |^# |\Z)', text, flags=re.M | re.S):

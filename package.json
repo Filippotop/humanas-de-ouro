@@ -7,7 +7,10 @@
     "test:bancada": "node --test bancada/tests/engine.test.mjs bancada/tests/missions.test.mjs && node bancada/tests/smoke.mjs"
   },
   "devDependencies": {
+    "@fontsource/stix-two-text": "^5.3.0",
     "axe-core": "4.10.2",
+    "mathjax-full": "^3.2.1",
+    "opentype.js": "^2.0.0",
     "playwright": "1.56.1"
   }
 }

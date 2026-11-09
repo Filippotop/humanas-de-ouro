@@ -187,6 +187,14 @@ td{border-bottom:1px solid var(--rule);padding:8px 10px;vertical-align:top}
 .box.pegadinha{--bx:var(--bad);--bx-bg:var(--bad-soft);--bx-t:var(--bad)}
 .box.conexao{--bx:var(--s);--bx-bg:var(--sunk);--bx-t:var(--s)}
 .box.formula{--bx:var(--gold);--bx-bg:var(--sunk);--bx-t:var(--gold-ink)} .box.formula p{font-family:var(--mono);font-size:var(--fs-4);overflow-x:auto;margin:0}
+/* Fórmulas desenhadas como imagem (tools/formulas_render.mjs): tinta escura no claro; no tema escuro o filtro inverte para branco suave. */
+.fm{overflow-x:auto;margin:var(--sp-2) 0 var(--sp-1);font-size:22px;-webkit-overflow-scrolling:touch}
+.fm .fm-img{display:block;width:var(--w);height:auto;max-width:none;margin:0 auto}
+.box.formula .fm-lido{font-family:var(--read);font-size:var(--fs-3);color:var(--muted);margin:var(--sp-2) 0 0;overflow:visible}
+.fm-in{display:inline-block;height:auto;width:min(var(--w),64vw);max-width:none;vertical-align:middle;font-size:17px}
+.fm-star{color:var(--gold);font-weight:800}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .fm-img,:root:not([data-theme="light"]) .fm-in{filter:invert(1)}}
+:root[data-theme="dark"] .fm-img,:root[data-theme="dark"] .fm-in{filter:invert(1)}
 .prose table.sym{font-size:13px} .prose table.sym td:first-child{font-family:var(--mono);white-space:nowrap}
 .prose p,.prose li{overflow-wrap:anywhere}
 figure.fig{margin:var(--sp-4) 0;text-align:center} figure.fig img{display:block;max-width:100%;height:auto;margin:0 auto;background:#fff;border:1px solid var(--rule);border-radius:var(--r-sm)}

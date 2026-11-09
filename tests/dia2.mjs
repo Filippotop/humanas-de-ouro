@@ -68,6 +68,21 @@ if (DATA_FILES.includes('data/dia2.js')) {
   const figs = [...new Set([...D.modules.map(m => m.html), ...D.questions.map(q => q.base.join(' '))].flatMap(h => [...h.matchAll(/src="(fig\/[^"]+)"/g)].map(x => x[1])))];
   check(figs.length === 56, `figuras: ${figs.length} citadas (esperadas 56)`);
   for (const f of figs) { check(fs.existsSync(path.join(ROOT, f)), `figura ${f} não existe`); check(swSrc.includes(`'${f}'`), `figura ${f} não está em FIGS do sw.js`); }
+  /* Fórmulas em imagem: toda caixa "Fórmula —" tem <img> + "Em palavras"; toda imagem existe, é SVG autossuficiente (sem <text>/fonte externa) e está no cache offline. */
+  const fmHtml = D.modules.map(m => m.html).join('\n');
+  const caixas = [...fmHtml.matchAll(/<div class="box [^"]*formula"><b class="box-t">[^<]*<\/b>(.*?)<\/div>(?:<\/div>)?/gs)];
+  check(caixas.length >= 190, `caixas de fórmula: ${caixas.length} (esperadas ≥190)`);
+  check(caixas.every(c => /class="fm-img"/.test(c[1])), `há caixa de fórmula sem imagem: ${caixas.filter(c => !/class="fm-img"/.test(c[1])).length}`);
+  check((fmHtml.match(/class="fm-lido"/g) || []).length === (fmHtml.match(/class="fm-img"/g) || []).length, 'fórmula em caixa sem a frase "Em palavras"');
+  const fmImgs = [...new Set([...fmHtml.matchAll(/src="(fm\/[^"]+\.svg)"/g)].map(x => x[1]))];
+  check(fmImgs.length >= 250, `imagens de fórmula: ${fmImgs.length}`);
+  for (const f of fmImgs) {
+    const fp = path.join(ROOT, f);
+    if (!fs.existsSync(fp)) { check(false, `imagem ${f} não existe`); continue; }
+    const svg = fs.readFileSync(fp, 'utf8');
+    check(svg.startsWith('<svg ') && !/<text|NaN|undefined/.test(svg), `imagem ${f} inválida (texto/NaN)`);
+    check(swSrc.includes(`"${f}"`), `imagem ${f} não está em FMS do sw.js`);
+  }
   for (const q of D.questions) {
     check(q.alts.length === 5 && /^[A-E]$/.test(q.ans), `${q.id}: alternativas ou gabarito inválidos`);
     check(Object.keys(q.ex || {}).sort().join('') === 'ABCDE', `${q.id}: falta explicação para alguma alternativa`);

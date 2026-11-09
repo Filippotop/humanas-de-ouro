@@ -1,0 +1,2202 @@
+{
+ "F001": {
+  "original": "r = a / b",
+  "tit": "Razão (taxa)",
+  "onde": "box",
+  "tex": "r=\\dfrac{a}{b}",
+  "lido": "A razão r é a quantidade a dividida pela quantidade b.",
+  "duvida": null
+ },
+ "F002": {
+  "original": "a/b = c/d ⇒ a · d = b · c",
+  "tit": "Propriedade fundamental da proporção",
+  "onde": "box",
+  "tex": "\\dfrac{a}{b}=\\dfrac{c}{d}\\Rightarrow a\\cdot d=b\\cdot c",
+  "lido": "Se a/b é igual a c/d, então a vezes d é igual a b vezes c.",
+  "duvida": null
+ },
+ "F003": {
+  "original": "y / x = k (ou y = k · x)",
+  "tit": "Proporção direta",
+  "onde": "box",
+  "tex": "\\dfrac{y}{x}=k\\;\\text{(ou }y=k\\cdot x\\text{)}",
+  "lido": "Na proporção direta, y dividido por x é igual a k, ou seja, y é igual a k vezes x.",
+  "duvida": null
+ },
+ "F004": {
+  "original": "x · y = k (ou y = k / x)",
+  "tit": "Proporção inversa",
+  "onde": "box",
+  "tex": "x\\cdot y=k\\;\\text{(ou }y=\\dfrac{k}{x}\\text{)}",
+  "lido": "Na proporção inversa, x vezes y é igual a k, ou seja, y é igual a k dividido por x.",
+  "duvida": null
+ },
+ "F005": {
+  "original": "y = a · x + b",
+  "tit": "Relação afim (não proporcional se b ≠ 0)",
+  "onde": "box",
+  "tex": "y=a\\cdot x+b",
+  "lido": "y é igual a a vezes x mais b.",
+  "duvida": null
+ },
+ "F006": {
+  "original": "x = x₀ · (fator₁) · (fator₂) · …",
+  "tit": "Regra de três composta (forma de fatores)",
+  "onde": "box",
+  "tex": "x=x_0\\cdot(\\text{fator}_1)\\cdot(\\text{fator}_2)\\cdot\\cdots",
+  "lido": "x é igual a x zero multiplicado pelos fatores, um após o outro.",
+  "duvida": null
+ },
+ "F007": {
+  "original": "parteᵢ = T · pᵢ / (p₁ + p₂ + … + pₙ)",
+  "tit": "Divisão diretamente proporcional",
+  "onde": "box",
+  "tex": "\\text{parte}_i=\\dfrac{T\\cdot p_i}{p_1+p_2+\\cdots+p_n}",
+  "lido": "A parte i é igual a T vezes p i, dividido pela soma de p 1, p 2 até p n.",
+  "duvida": null
+ },
+ "F008": {
+  "original": "vₘ = (d₁ + d₂ + …) / (t₁ + t₂ + …)",
+  "tit": "Velocidade média em trechos",
+  "onde": "box",
+  "tex": "v_m=\\dfrac{d_1+d_2+\\cdots}{t_1+t_2+\\cdots}",
+  "lido": "A velocidade média é a soma das distâncias dividida pela soma dos tempos.",
+  "duvida": null
+ },
+ "F009": {
+  "original": "parte = (p/100) · V",
+  "tit": "Porcentagem de um valor",
+  "onde": "box",
+  "tex": "\\text{parte}=\\left(\\dfrac{p}{100}\\right)\\cdot V",
+  "lido": "A parte é igual a p sobre 100 vezes o valor V.",
+  "duvida": null
+ },
+ "F010": {
+  "original": "V_final = V · (1 + i) (aumento) · V_final = V · (1 − i) (desconto)",
+  "tit": "Fator de aumento e de desconto",
+  "onde": "box",
+  "tex": "\\begin{gathered}V_{\\text{final}}=V\\cdot(1+i)\\;\\text{(aumento)}\\\\ V_{\\text{final}}=V\\cdot(1-i)\\;\\text{(desconto)}\\end{gathered}",
+  "lido": "No aumento, o valor final é V vezes (1 + i); no desconto, é V vezes (1 − i).",
+  "duvida": null
+ },
+ "F011": {
+  "original": "V_final = V · (1 ± i₁) · (1 ± i₂) · … · (1 ± iₙ)",
+  "tit": "Variações sucessivas",
+  "onde": "box",
+  "tex": "V_{\\text{final}}=V\\cdot(1\\pm i_1)\\cdot(1\\pm i_2)\\cdot\\cdots\\cdot(1\\pm i_n)",
+  "lido": "O valor final é V multiplicado pelos fatores (1 ± i) de cada variação sucessiva.",
+  "duvida": null
+ },
+ "F012": {
+  "original": "V = V_final / (1 ± i)",
+  "tit": "Valor original",
+  "onde": "box",
+  "tex": "V=\\dfrac{V_{\\text{final}}}{1\\pm i}",
+  "lido": "O valor original V é o valor final dividido por (1 ± i).",
+  "duvida": null
+ },
+ "F013": {
+  "original": "Δ% = (V_final − V_inicial) / V_inicial × 100",
+  "tit": "Variação percentual",
+  "onde": "box",
+  "tex": "\\Delta\\%=\\dfrac{V_{\\text{final}}-V_{\\text{inicial}}}{V_{\\text{inicial}}}\\times100",
+  "lido": "A variação percentual é a diferença entre o valor final e o inicial, dividida pelo valor inicial, vezes 100.",
+  "duvida": null
+ },
+ "F014": {
+  "original": "L = R − C",
+  "tit": "Lucro",
+  "onde": "box",
+  "tex": "L=R-C",
+  "lido": "O lucro L é igual a R menos C.",
+  "duvida": null
+ },
+ "F015": {
+  "original": "J = C · i · n ; M = C · (1 + i · n)",
+  "tit": "Juros simples",
+  "onde": "box",
+  "tex": "\\begin{gathered}J=C\\cdot i\\cdot n\\\\ M=C\\cdot(1+i\\cdot n)\\end{gathered}",
+  "lido": "Os juros J são C vezes i vezes n; o montante M é C vezes (1 + i vezes n).",
+  "duvida": null
+ },
+ "F016": {
+  "original": "M = C · (1 + i)ⁿ",
+  "tit": "Juros compostos",
+  "onde": "box",
+  "tex": "M=C\\cdot(1+i)^n",
+  "lido": "O montante M é igual a C vezes (1 + i) elevado a n.",
+  "duvida": null
+ },
+ "F017": {
+  "original": "p_final = (p₁·V₁ + p₂·V₂) / (V₁ + V₂)",
+  "tit": "Concentração de mistura",
+  "onde": "box",
+  "tex": "p_{\\text{final}}=\\dfrac{p_1\\cdot V_1+p_2\\cdot V_2}{V_1+V_2}",
+  "lido": "O p final é a soma de p 1 vezes V 1 com p 2 vezes V 2, dividida pela soma de V 1 e V 2.",
+  "duvida": null
+ },
+ "F018": {
+  "original": "fator = 10ᵈ, com d = dimensão da grandeza (1 comprimento, 2 área, 3 volume)",
+  "tit": "Fator de conversão por degrau",
+  "onde": "box",
+  "tex": "\\text{fator}=10^{d}\\text{, com }d=\\text{dimensão da grandeza }(1\\ \\text{comprimento},\\ 2\\ \\text{área},\\ 3\\ \\text{volume})",
+  "lido": "O fator é 10 elevado a d, em que d é a dimensão da grandeza: 1 para comprimento, 2 para área e 3 para volume.",
+  "duvida": null
+ },
+ "F019": {
+  "original": "1 dm³ = 1 L · 1 cm³ = 1 mL · 1 m³ = 1 000 L",
+  "tit": "Pontes volume–capacidade",
+  "onde": "box",
+  "tex": "\\begin{gathered}1\\ \\mathrm{dm}^3=1\\ \\mathrm{L}\\\\ 1\\ \\mathrm{cm}^3=1\\ \\mathrm{mL}\\\\ 1\\ \\mathrm{m}^3=1\\,000\\ \\mathrm{L}\\end{gathered}",
+  "lido": "1 dm³ equivale a 1 L, 1 cm³ equivale a 1 mL e 1 m³ equivale a 1 000 L.",
+  "duvida": null
+ },
+ "F020": {
+  "original": "1 ha = 10 000 m² (um quadrado de 100 m × 100 m) · 1 km² = 100 ha",
+  "tit": "Hectare",
+  "onde": "box",
+  "tex": "\\begin{gathered}1\\ \\mathrm{ha}=10\\,000\\ \\mathrm{m}^2\\;\\text{(um quadrado de }100\\ \\mathrm{m}\\times100\\ \\mathrm{m}\\text{)}\\\\ 1\\ \\mathrm{km}^2=100\\ \\mathrm{ha}\\end{gathered}",
+  "lido": "1 ha equivale a 10 000 m², um quadrado de 100 m por 100 m, e 1 km² equivale a 100 ha.",
+  "duvida": null
+ },
+ "F021": {
+  "original": "minutos = (parte decimal das horas) × 60",
+  "tit": "Horas decimais para minutos",
+  "onde": "box",
+  "tex": "\\text{minutos}=(\\text{parte decimal das horas})\\times60",
+  "lido": "Os minutos são a parte decimal das horas vezes 60.",
+  "duvida": null
+ },
+ "F022": {
+  "original": "v (m/s) = v (km/h) ÷ 3,6",
+  "tit": "Conversão de velocidade",
+  "onde": "box",
+  "tex": "v\\,(\\mathrm{m/s})=v\\,(\\mathrm{km/h})\\div3{,}6",
+  "lido": "A velocidade em m/s é a velocidade em km/h dividida por 3,6.",
+  "duvida": null
+ },
+ "F023": {
+  "original": "E = d / D (escrita como 1 : n, com n = D/d)",
+  "tit": "Escala linear",
+  "onde": "box",
+  "tex": "E=\\dfrac{d}{D}\\;\\text{(escrita como }1:n\\text{, com }n=\\dfrac{D}{d}\\text{)}",
+  "lido": "A escala E é d dividido por D, escrita como 1 : n, com n igual a D dividido por d.",
+  "duvida": null
+ },
+ "F024": {
+  "original": "A_real = n² · A_desenho · V_real = n³ · V_desenho",
+  "tit": "Escalas de área e de volume",
+  "onde": "box",
+  "tex": "\\begin{gathered}A_{\\text{real}}=n^2\\cdot A_{\\text{desenho}}\\\\ V_{\\text{real}}=n^3\\cdot V_{\\text{desenho}}\\end{gathered}",
+  "lido": "A área real é n ao quadrado vezes a área do desenho; o volume real é n ao cubo vezes o volume do desenho.",
+  "duvida": null
+ },
+ "F025": {
+  "original": "N = a × 10ᵏ, com 1 ≤ a < 10",
+  "tit": "Notação científica",
+  "onde": "box",
+  "tex": "N=a\\times10^k\\text{, com }1\\leq a<10",
+  "lido": "N é igual a a vezes 10 elevado a k, com a maior ou igual a 1 e menor que 10.",
+  "duvida": null
+ },
+ "F026": {
+  "original": "Q = V / t",
+  "tit": "Vazão",
+  "onde": "box",
+  "tex": "Q=\\dfrac{V}{t}",
+  "lido": "A vazão Q é o volume V dividido pelo tempo t.",
+  "duvida": null
+ },
+ "F027": {
+  "original": "x̄ = (x₁ + x₂ + … + xₙ) / n",
+  "tit": "Média aritmética",
+  "onde": "box",
+  "tex": "\\bar{x}=\\dfrac{x_1+x_2+\\cdots+x_n}{n}",
+  "lido": "A média aritmética é a soma de x 1 até x n dividida por n.",
+  "duvida": null
+ },
+ "F028": {
+  "original": "x̄ₚ = (p₁·x₁ + p₂·x₂ + … + pₙ·xₙ) / (p₁ + p₂ + … + pₙ)",
+  "tit": "Média ponderada",
+  "onde": "box",
+  "tex": "\\bar{x}_p=\\dfrac{p_1\\cdot x_1+p_2\\cdot x_2+\\cdots+p_n\\cdot x_n}{p_1+p_2+\\cdots+p_n}",
+  "lido": "A média ponderada é a soma dos produtos de cada p por seu x, dividida pela soma dos p.",
+  "duvida": null
+ },
+ "F029": {
+  "original": "n ímpar: termo de posição (n + 1)/2 · n par: média dos termos de posições n/2 e n/2 + 1",
+  "tit": "Posição da mediana",
+  "onde": "box",
+  "tex": "\\begin{gathered}n\\ \\text{ímpar: termo de posição }\\dfrac{n+1}{2}\\\\ n\\ \\text{par: média dos termos de posições }\\dfrac{n}{2}\\text{ e }\\dfrac{n}{2}+1\\end{gathered}",
+  "lido": "Se n é ímpar, a mediana é o termo de posição (n + 1)/2; se n é par, é a média dos termos de posições n/2 e n/2 + 1.",
+  "duvida": null
+ },
+ "F030": {
+  "original": "σ² = [(x₁ − x̄)² + (x₂ − x̄)² + … + (xₙ − x̄)²] / n",
+  "tit": "Variância",
+  "onde": "box",
+  "tex": "\\sigma^2=\\dfrac{[(x_1-\\bar{x})^2+(x_2-\\bar{x})^2+\\cdots+(x_n-\\bar{x})^2]}{n}",
+  "lido": "A variância é a soma dos quadrados das diferenças entre cada x e x barra, dividida por n.",
+  "duvida": null
+ },
+ "F031": {
+  "original": "σ = √σ²",
+  "tit": "Desvio padrão",
+  "onde": "box",
+  "tex": "\\sigma=\\sqrt{\\sigma^2}",
+  "lido": "O desvio padrão σ é a raiz quadrada de σ ao quadrado.",
+  "duvida": null
+ },
+ "F032": {
+  "original": "Δ = V_final − V_inicial",
+  "tit": "Variação absoluta",
+  "onde": "box",
+  "tex": "\\Delta=V_{\\text{final}}-V_{\\text{inicial}}",
+  "lido": "A variação Δ é o valor final menos o valor inicial.",
+  "duvida": null
+ },
+ "F033": {
+  "original": "m = Δy / Δx = (y₂ − y₁) / (x₂ − x₁)",
+  "tit": "Taxa média de variação",
+  "onde": "box",
+  "tex": "m=\\dfrac{\\Delta y}{\\Delta x}=\\dfrac{y_2-y_1}{x_2-x_1}",
+  "lido": "A taxa m é Δy dividido por Δx, que é y 2 menos y 1 dividido por x 2 menos x 1.",
+  "duvida": null
+ },
+ "F034": {
+  "original": "θ = (p/100) · 360°",
+  "tit": "Ângulo do setor",
+  "onde": "box",
+  "tex": "\\theta=\\left(\\dfrac{p}{100}\\right)\\cdot360^\\circ",
+  "lido": "O ângulo θ é p sobre 100 vezes 360 graus.",
+  "duvida": null
+ },
+ "F035": {
+  "original": "y = y₀ + m · (x − x₀)",
+  "tit": "Previsão pela reta",
+  "onde": "box",
+  "tex": "y=y_0+m\\cdot(x-x_0)",
+  "lido": "y é igual a y zero mais m vezes (x menos x zero).",
+  "duvida": null
+ },
+ "F036": {
+  "original": "P(E) = n(E) / n(Ω)",
+  "tit": "Probabilidade clássica",
+  "onde": "box",
+  "tex": "P(E)=\\dfrac{n(E)}{n(\\Omega)}",
+  "lido": "A probabilidade de E é n de E dividido por n de Ômega.",
+  "duvida": null
+ },
+ "F037": {
+  "original": "P(Ē) = 1 − P(E)",
+  "tit": "Complementar",
+  "onde": "box",
+  "tex": "P(\\bar{E})=1-P(E)",
+  "lido": "A probabilidade do complementar de E é 1 menos a probabilidade de E.",
+  "duvida": null
+ },
+ "F038": {
+  "original": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B)",
+  "tit": "União (\"ou\")",
+  "onde": "box",
+  "tex": "P(A\\cup B)=P(A)+P(B)-P(A\\cap B)",
+  "lido": "A probabilidade da união de A e B é P(A) mais P(B) menos P da interseção de A e B.",
+  "duvida": null
+ },
+ "F039": {
+  "original": "P(A ∩ B) = P(A) · P(B)",
+  "tit": "Interseção de independentes (\"e\")",
+  "onde": "box",
+  "tex": "P(A\\cap B)=P(A)\\cdot P(B)",
+  "lido": "A probabilidade da interseção de A e B é P(A) vezes P(B).",
+  "duvida": null
+ },
+ "F040": {
+  "original": "P(A | B) = P(A ∩ B) / P(B)",
+  "tit": "Probabilidade condicional",
+  "onde": "box",
+  "tex": "P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}",
+  "lido": "A probabilidade de A dado B é P da interseção de A e B dividida por P(B).",
+  "duvida": null
+ },
+ "F041": {
+  "original": "P = medida favorável / medida total",
+  "tit": "Probabilidade geométrica",
+  "onde": "box",
+  "tex": "P=\\dfrac{\\text{medida favorável}}{\\text{medida total}}",
+  "lido": "P é a medida favorável dividida pela medida total.",
+  "duvida": null
+ },
+ "F042": {
+  "original": "total = n₁ · n₂ · … · nₖ",
+  "tit": "Princípio fundamental da contagem",
+  "onde": "box",
+  "tex": "\\text{total}=n_1\\cdot n_2\\cdot\\cdots\\cdot n_k",
+  "lido": "O total é o produto de n 1, n 2 até n k.",
+  "duvida": null
+ },
+ "F043": {
+  "original": "n! = n · (n − 1) · (n − 2) · … · 2 · 1, com 0! = 1",
+  "tit": "Fatorial",
+  "onde": "box",
+  "tex": "n!=n\\cdot(n-1)\\cdot(n-2)\\cdot\\cdots\\cdot2\\cdot1\\text{, com }0!=1",
+  "lido": "n fatorial é n vezes (n − 1) vezes (n − 2) e assim até 2 vezes 1, com 0 fatorial igual a 1.",
+  "duvida": null
+ },
+ "F044": {
+  "original": "A(n, p) = n! / (n − p)!",
+  "tit": "Arranjo simples",
+  "onde": "box",
+  "tex": "A(n,p)=\\dfrac{n!}{(n-p)!}",
+  "lido": "A de n, p é n fatorial dividido por (n − p) fatorial.",
+  "duvida": null
+ },
+ "F045": {
+  "original": "C(n, p) = n! / [p! · (n − p)!]",
+  "tit": "Combinação simples",
+  "onde": "box",
+  "tex": "C(n,p)=\\dfrac{n!}{[p!\\cdot(n-p)!]}",
+  "lido": "C de n, p é n fatorial dividido por p fatorial vezes (n − p) fatorial.",
+  "duvida": null
+ },
+ "F046": {
+  "original": "P = n! / (a! · b! · …)",
+  "tit": "Permutação com repetição",
+  "onde": "box",
+  "tex": "P=\\dfrac{n!}{(a!\\cdot b!\\cdot\\cdots)}",
+  "lido": "P é n fatorial dividido pelo produto de a fatorial, b fatorial e assim por diante.",
+  "duvida": null
+ },
+ "F047": {
+  "original": "C(n, k₁) · C(n − k₁, k₂) · C(n − k₁ − k₂, k₃) · …",
+  "tit": "Distribuição em grupos rotulados",
+  "onde": "box",
+  "tex": "C(n,k_1)\\cdot C(n-k_1,k_2)\\cdot C(n-k_1-k_2,k_3)\\cdot\\cdots",
+  "lido": "O número de formas é o produto de C(n, k₁), C(n − k₁, k₂), C(n − k₁ − k₂, k₃) e assim por diante.",
+  "duvida": null
+ },
+ "F048": {
+  "original": "Sᵢ = (n − 2) · 180°",
+  "tit": "Soma dos ângulos internos de um polígono",
+  "onde": "box",
+  "tex": "S_i=(n-2)\\cdot180^\\circ",
+  "lido": "A soma dos ângulos internos Sᵢ é igual a (n − 2) multiplicado por 180°.",
+  "duvida": null
+ },
+ "F049": {
+  "original": "a² = b² + c²",
+  "tit": "Teorema de Pitágoras",
+  "onde": "box",
+  "tex": "a^2=b^2+c^2",
+  "lido": "O quadrado de a é igual à soma do quadrado de b com o quadrado de c.",
+  "duvida": null
+ },
+ "F050": {
+  "original": "a'/a = b'/b = c'/c = k  e  A'/A = k²",
+  "tit": "Razão de semelhança",
+  "onde": "box",
+  "tex": "\\dfrac{a'}{a}=\\dfrac{b'}{b}=\\dfrac{c'}{c}=k\\;\\text{e}\\;\\dfrac{A'}{A}=k^2",
+  "lido": "As razões a'/a, b'/b e c'/c são iguais a k, e a razão A'/A é igual a k ao quadrado.",
+  "duvida": null
+ },
+ "F051": {
+  "original": "sen θ = cateto oposto / hipotenusa · cos θ = cateto adjacente / hipotenusa · tg θ = cateto oposto / cateto adjacente",
+  "tit": "Razões trigonométricas",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\operatorname{sen}\\theta=\\dfrac{\\text{cateto oposto}}{\\text{hipotenusa}}\\\\ \\cos\\theta=\\dfrac{\\text{cateto adjacente}}{\\text{hipotenusa}}\\\\ \\operatorname{tg}\\theta=\\dfrac{\\text{cateto oposto}}{\\text{cateto adjacente}}\\end{gathered}",
+  "lido": "O seno é o cateto oposto dividido pela hipotenusa, o cosseno é o cateto adjacente dividido pela hipotenusa e a tangente é o cateto oposto dividido pelo cateto adjacente.",
+  "duvida": null
+ },
+ "F052": {
+  "original": "retângulo A = b · h · quadrado A = L² · paralelogramo A = b · h · triângulo A = (b · h)/2 · trapézio A = (B + b) · h/2 · losango A = (D · d)/2",
+  "tit": "Áreas básicas",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\text{retângulo}\\;A=b\\cdot h\\\\ \\text{quadrado}\\;A=L^2\\\\ \\text{paralelogramo}\\;A=b\\cdot h\\\\ \\text{triângulo}\\;A=\\dfrac{b\\cdot h}{2}\\\\ \\text{trapézio}\\;A=(B+b)\\cdot\\dfrac{h}{2}\\\\ \\text{losango}\\;A=\\dfrac{D\\cdot d}{2}\\end{gathered}",
+  "lido": "Retângulo e paralelogramo: A = b · h; quadrado: A = L²; triângulo: A = b · h dividido por 2; trapézio: A = (B + b) vezes h/2; losango: A = D · d dividido por 2.",
+  "duvida": null
+ },
+ "F053": {
+  "original": "C = 2πr · A = πr²",
+  "tit": "Circunferência e círculo",
+  "onde": "box",
+  "tex": "\\begin{gathered}C=2\\pi r\\\\ A=\\pi r^2\\end{gathered}",
+  "lido": "A circunferência C é igual a 2πr e a área A é igual a π vezes r ao quadrado.",
+  "duvida": null
+ },
+ "F054": {
+  "original": "ℓ = (θ/360°) · 2πr · A_setor = (θ/360°) · πr²",
+  "tit": "Arco e setor circular",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\ell=\\dfrac{\\theta}{360^\\circ}\\cdot 2\\pi r\\\\ A_{\\text{setor}}=\\dfrac{\\theta}{360^\\circ}\\cdot\\pi r^2\\end{gathered}",
+  "lido": "O arco ℓ é a fração θ/360° de 2πr, e a área do setor é a fração θ/360° de πr².",
+  "duvida": null
+ },
+ "F055": {
+  "original": "A_triângulo = L²√3/4 · A_hexágono = 6 · L²√3/4 = 3L²√3/2",
+  "tit": "Áreas do triângulo equilátero e do hexágono regular",
+  "onde": "box",
+  "tex": "\\begin{gathered}A_{\\text{triângulo}}=\\dfrac{L^2\\sqrt{3}}{4}\\\\ A_{\\text{hexágono}}=6\\cdot\\dfrac{L^2\\sqrt{3}}{4}=\\dfrac{3L^2\\sqrt{3}}{2}\\end{gathered}",
+  "lido": "A área do triângulo é L²√3 dividido por 4, e a do hexágono é 6 vezes isso, que dá 3L²√3 dividido por 2.",
+  "duvida": null
+ },
+ "F056": {
+  "original": "V − A + F = 2",
+  "tit": "Relação de Euler (poliedros convexos)",
+  "onde": "box",
+  "tex": "V-A+F=2",
+  "lido": "V menos A mais F é igual a 2.",
+  "duvida": null
+ },
+ "F057": {
+  "original": "A = (soma do número de lados de todas as faces)/2",
+  "tit": "Arestas a partir das faces",
+  "onde": "box",
+  "tex": "A=\\dfrac{\\text{soma do número de lados de todas as faces}}{2}",
+  "lido": "A é igual à soma do número de lados de todas as faces dividida por 2.",
+  "duvida": null
+ },
+ "F058": {
+  "original": "V = A_b · h",
+  "tit": "Volume de prisma (e de cilindro)",
+  "onde": "box",
+  "tex": "V=A_b\\cdot h",
+  "lido": "O volume V é igual à área da base A_b multiplicada por h.",
+  "duvida": null
+ },
+ "F059": {
+  "original": "d = √(a² + b² + c²)  (no cubo: d = a√3)",
+  "tit": "Diagonal do paralelepípedo",
+  "onde": "box",
+  "tex": "d=\\sqrt{a^2+b^2+c^2}\\;(\\text{no cubo: }d=a\\sqrt{3})",
+  "lido": "A diagonal d é a raiz quadrada da soma de a², b² e c²; no cubo, d é igual a a vezes a raiz de 3.",
+  "duvida": null
+ },
+ "F060": {
+  "original": "A_lateral = 2πr · h · A_total = 2πr² + 2πrh · V = πr²h",
+  "tit": "Cilindro",
+  "onde": "box",
+  "tex": "\\begin{gathered}A_{\\text{lateral}}=2\\pi r\\cdot h\\\\ A_{\\text{total}}=2\\pi r^2+2\\pi r h\\\\ V=\\pi r^2 h\\end{gathered}",
+  "lido": "A área lateral é 2πr vezes h, a área total é 2πr² mais 2πrh e o volume é πr²h.",
+  "duvida": null
+ },
+ "F061": {
+  "original": "V = (A_b · h)/3",
+  "tit": "Volume de pirâmide e cone",
+  "onde": "box",
+  "tex": "V=\\dfrac{A_b\\cdot h}{3}",
+  "lido": "O volume V é igual à área da base A_b vezes h, dividido por 3.",
+  "duvida": null
+ },
+ "F062": {
+  "original": "V = (4/3)πr³ · A = 4πr²",
+  "tit": "Esfera",
+  "onde": "box",
+  "tex": "\\begin{gathered}V=\\dfrac{4}{3}\\pi r^3\\\\ A=4\\pi r^2\\end{gathered}",
+  "lido": "O volume V é 4/3 de π vezes r ao cubo e a área A é 4π vezes r ao quadrado.",
+  "duvida": null
+ },
+ "F063": {
+  "original": "1 m³ = 1 000 L · 1 dm³ = 1 L · 1 cm³ = 1 mL",
+  "tit": "Conversões de volume",
+  "onde": "box",
+  "tex": "\\begin{gathered}1\\ \\mathrm{m^3}=1\\,000\\ \\mathrm{L}\\\\ 1\\ \\mathrm{dm^3}=1\\ \\mathrm{L}\\\\ 1\\ \\mathrm{cm^3}=1\\ \\mathrm{mL}\\end{gathered}",
+  "lido": "1 m³ equivale a 1 000 L, 1 dm³ equivale a 1 L e 1 cm³ equivale a 1 mL.",
+  "duvida": null
+ },
+ "F064": {
+  "original": "f(x) = a·x + b",
+  "tit": "Função afim",
+  "onde": "box",
+  "tex": "f(x)=a\\cdot x+b",
+  "lido": "f de x é igual a a vezes x mais b.",
+  "duvida": null
+ },
+ "F065": {
+  "original": "C(x) = C_f + c_v·x · R(x) = p·x · L(x) = R(x) − C(x)",
+  "tit": "Custo, receita e lucro",
+  "onde": "box",
+  "tex": "\\begin{gathered}C(x)=C_f+c_v\\cdot x\\\\ R(x)=p\\cdot x\\\\ L(x)=R(x)-C(x)\\end{gathered}",
+  "lido": "C de x é C_f mais c_v vezes x; R de x é p vezes x; L de x é R de x menos C de x.",
+  "duvida": null
+ },
+ "F066": {
+  "original": "f(x) = a·x² + b·x + c, com a ≠ 0",
+  "tit": "Função quadrática",
+  "onde": "box",
+  "tex": "f(x)=a\\cdot x^2+b\\cdot x+c,\\;\\text{com }a\\neq 0",
+  "lido": "f de x é igual a a·x² mais b·x mais c, com a diferente de zero.",
+  "duvida": null
+ },
+ "F067": {
+  "original": "Δ = b² − 4ac · x = (−b ± √Δ)/(2a)",
+  "tit": "Bhaskara",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\Delta=b^2-4ac\\\\ x=\\dfrac{-b\\pm\\sqrt{\\Delta}}{2a}\\end{gathered}",
+  "lido": "Delta é b² menos 4ac, e x é igual a menos b mais ou menos a raiz de delta, tudo dividido por 2a.",
+  "duvida": null
+ },
+ "F068": {
+  "original": "x_v = −b/(2a) · y_v = f(x_v) = −Δ/(4a)",
+  "tit": "Vértice da parábola",
+  "onde": "box",
+  "tex": "\\begin{gathered}x_v=\\dfrac{-b}{2a}\\\\ y_v=f(x_v)=\\dfrac{-\\Delta}{4a}\\end{gathered}",
+  "lido": "x_v é menos b dividido por 2a, e y_v é f de x_v, que é menos delta dividido por 4a.",
+  "duvida": null
+ },
+ "F069": {
+  "original": "f(t) = f₀ · bᵗ",
+  "tit": "Função exponencial",
+  "onde": "box",
+  "tex": "f(t)=f_0\\cdot b^t",
+  "lido": "f de t é igual a f₀ vezes b elevado a t.",
+  "duvida": null
+ },
+ "F070": {
+  "original": "Q(t) = Q₀ · (1/2)^(t/T)",
+  "tit": "Decaimento por meia-vida",
+  "onde": "box",
+  "tex": "Q(t)=Q_0\\cdot\\left(\\dfrac{1}{2}\\right)^{t/T}",
+  "lido": "Q de t é igual a Q₀ vezes um meio elevado a t/T.",
+  "duvida": null
+ },
+ "F071": {
+  "original": "T(t) = T_amb + k · bᵗ, com 0 < b < 1",
+  "tit": "Resfriamento",
+  "onde": "box",
+  "tex": "T(t)=T_{\\text{amb}}+k\\cdot b^t,\\;\\text{com }0<b<1",
+  "lido": "T de t é igual a T_amb mais k vezes b elevado a t, com b entre 0 e 1.",
+  "duvida": null
+ },
+ "F072": {
+  "original": "log_b a = x ⇔ bˣ = a",
+  "tit": "Definição de logaritmo",
+  "onde": "box",
+  "tex": "\\log_b a=x\\Leftrightarrow b^x=a",
+  "lido": "O logaritmo de a na base b é igual a x se, e somente se, b elevado a x é igual a a.",
+  "duvida": null
+ },
+ "F073": {
+  "original": "f(t) = A + B · cos(C·t + D)  (vale igual com sen)",
+  "tit": "Função senoidal",
+  "onde": "box",
+  "tex": "f(t)=A+B\\cdot\\cos(C\\cdot t+D)\\;(\\text{vale igual com sen})",
+  "lido": "f de t é igual a A mais B vezes o cosseno de (C·t + D), e vale igual com seno.",
+  "duvida": null
+ },
+ "F074": {
+  "original": "aₙ = a₁ + (n − 1) · r",
+  "tit": "Termo geral da PA",
+  "onde": "box",
+  "tex": "a_n=a_1+(n-1)\\cdot r",
+  "lido": "O termo aₙ é igual a a₁ mais (n − 1) vezes r.",
+  "duvida": null
+ },
+ "F075": {
+  "original": "Sₙ = (a₁ + aₙ) · n/2",
+  "tit": "Soma dos n primeiros termos da PA",
+  "onde": "box",
+  "tex": "S_n=(a_1+a_n)\\cdot\\dfrac{n}{2}",
+  "lido": "A soma Sₙ é igual a (a₁ + aₙ) vezes n/2.",
+  "duvida": null
+ },
+ "F076": {
+  "original": "aₙ = a₁ · qⁿ⁻¹",
+  "tit": "Termo geral da PG",
+  "onde": "box",
+  "tex": "a_n=a_1\\cdot q^{n-1}",
+  "lido": "O termo aₙ é igual a a₁ vezes q elevado a n − 1.",
+  "duvida": null
+ },
+ "F077": {
+  "original": "Sₙ = a₁ · (qⁿ − 1)/(q − 1)",
+  "tit": "Soma dos n primeiros termos da PG (q ≠ 1)",
+  "onde": "box",
+  "tex": "S_n=a_1\\cdot\\dfrac{q^n-1}{q-1}",
+  "lido": "A soma Sₙ é igual a a₁ vezes (qⁿ − 1) dividido por (q − 1).",
+  "duvida": null
+ },
+ "F078": {
+  "original": "0,(período) = período/(tantos 9 quanto os algarismos do período)",
+  "tit": "Dízima periódica simples em fração",
+  "onde": "box",
+  "tex": "0,(\\text{período})=\\dfrac{\\text{período}}{\\text{tantos }9\\text{ quanto os algarismos do período}}",
+  "lido": "0,(período) é igual ao período dividido por tantos noves quanto os algarismos do período.",
+  "duvida": null
+ },
+ "F079": {
+  "original": "MMC = produto dos primos que aparecem, cada um com o **maior** expoente · MDC = produto dos primos **comuns**, cada um com o **menor** expoente",
+  "tit": "MMC e MDC",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\text{MMC}=\\text{produto dos primos que aparecem, cada um com o }\\textbf{maior}\\text{ expoente}\\\\ \\text{MDC}=\\text{produto dos primos }\\textbf{comuns}\\text{, cada um com o }\\textbf{menor}\\text{ expoente}\\end{gathered}",
+  "lido": "O MMC é o produto dos primos que aparecem, cada um com o maior expoente; o MDC é o produto dos primos comuns, cada um com o menor expoente.",
+  "duvida": null
+ },
+ "F080": {
+  "original": "vₘ = Δs / Δt",
+  "tit": "Velocidade média",
+  "onde": "box",
+  "tex": "v_m=\\dfrac{\\Delta s}{\\Delta t}",
+  "lido": "A velocidade média vₘ é a variação Δs dividida pela variação Δt.",
+  "duvida": null
+ },
+ "F081": {
+  "original": "s = s₀ + v·t",
+  "tit": "Função horária do MRU",
+  "onde": "box",
+  "tex": "s=s_0+v\\cdot t",
+  "lido": "s é igual a s₀ mais v vezes t.",
+  "duvida": null
+ },
+ "F082": {
+  "original": "v = v₀ + a·t ; s = s₀ + v₀·t + a·t²/2 ; v² = v₀² + 2·a·Δs (Torricelli)",
+  "tit": "Equações do MRUV",
+  "onde": "box",
+  "tex": "\\begin{gathered}v=v_0+a\\cdot t\\\\ s=s_0+v_0\\cdot t+\\dfrac{a\\cdot t^2}{2}\\\\ v^2=v_0^2+2\\cdot a\\cdot\\Delta s\\;\\text{(Torricelli)}\\end{gathered}",
+  "lido": "v é v₀ mais a·t; s é s₀ mais v₀·t mais a·t² dividido por 2; v² é v₀² mais 2·a·Δs (Torricelli).",
+  "duvida": null
+ },
+ "F083": {
+  "original": "h = g·t²/2 ; v = g·t ; v² = 2·g·h",
+  "tit": "Queda livre (a partir do repouso)",
+  "onde": "box",
+  "tex": "\\begin{gathered}h=\\dfrac{g\\cdot t^2}{2}\\\\ v=g\\cdot t\\\\ v^2=2\\cdot g\\cdot h\\end{gathered}",
+  "lido": "h é g·t² dividido por 2; v é g·t; v² é 2·g·h.",
+  "duvida": null
+ },
+ "F084": {
+  "original": "vₓ = v·cos θ ; v_y = v·sen θ ; v = √(vₓ² + v_y²)",
+  "tit": "Decomposição de um vetor",
+  "onde": "box",
+  "tex": "\\begin{gathered}v_x=v\\cdot\\cos\\theta\\\\ v_y=v\\cdot\\operatorname{sen}\\theta\\\\ v=\\sqrt{v_x^2+v_y^2}\\end{gathered}",
+  "lido": "vₓ é v vezes cos θ; v_y é v vezes sen θ; v é a raiz quadrada de vₓ² mais v_y².",
+  "duvida": null
+ },
+ "F085": {
+  "original": "t_subida = v_y / g ; t_total = 2·v_y / g ; A = vₓ·t_total ; h_máx = v_y² / (2·g)",
+  "tit": "Lançamento oblíquo (sai e volta ao mesmo nível)",
+  "onde": "box",
+  "tex": "\\begin{gathered}t_{\\text{subida}}=\\dfrac{v_y}{g}\\\\ t_{\\text{total}}=\\dfrac{2\\cdot v_y}{g}\\\\ A=v_x\\cdot t_{\\text{total}}\\\\ h_{\\text{máx}}=\\dfrac{v_y^2}{2\\cdot g}\\end{gathered}",
+  "lido": "t_subida é v_y dividido por g; t_total é 2·v_y dividido por g; A é vₓ vezes t_total; h_máx é v_y² dividido por 2·g.",
+  "duvida": null
+ },
+ "F086": {
+  "original": "f = 1/T ; ω = 2π/T = 2π·f ; v = ω·R",
+  "tit": "Grandezas do MCU",
+  "onde": "box",
+  "tex": "\\begin{gathered}f=\\dfrac{1}{T}\\\\ \\omega=\\dfrac{2\\pi}{T}=2\\pi\\cdot f\\\\ v=\\omega\\cdot R\\end{gathered}",
+  "lido": "f é 1 dividido por T; ω é 2π dividido por T, que é igual a 2π·f; v é ω vezes R.",
+  "duvida": null
+ },
+ "F087": {
+  "original": "F_R = m · a",
+  "tit": "2ª lei de Newton",
+  "onde": "box",
+  "tex": "F_R=m\\cdot a",
+  "lido": "F_R é igual a m vezes a.",
+  "duvida": null
+ },
+ "F088": {
+  "original": "P = m · g",
+  "tit": "Peso",
+  "onde": "box",
+  "tex": "P=m\\cdot g",
+  "lido": "P é igual a m vezes g.",
+  "duvida": null
+ },
+ "F089": {
+  "original": "Fat_e ≤ μₑ · N (estático, máximo) ; Fat_c = μ_c · N (cinético)",
+  "tit": "Atrito",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\text{Fat}_e\\leq\\mu_e\\cdot N\\;\\text{(estático, máximo)}\\\\ \\text{Fat}_c=\\mu_c\\cdot N\\;\\text{(cinético)}\\end{gathered}",
+  "lido": "Fat_e é menor ou igual a μₑ vezes N (estático, máximo); Fat_c é igual a μ_c vezes N (cinético).",
+  "duvida": null
+ },
+ "F090": {
+  "original": "P_paralelo = P · sen θ ; P_perpendicular = P · cos θ",
+  "tit": "Decomposição do peso na rampa",
+  "onde": "box",
+  "tex": "\\begin{gathered}P_{\\text{paralelo}}=P\\cdot\\operatorname{sen}\\theta\\\\ P_{\\text{perpendicular}}=P\\cdot\\cos\\theta\\end{gathered}",
+  "lido": "P_paralelo é P vezes sen θ; P_perpendicular é P vezes cos θ.",
+  "duvida": null
+ },
+ "F091": {
+  "original": "N − P = m · a ⇒ N = m · (g + a)",
+  "tit": "Peso aparente no elevador",
+  "onde": "box",
+  "tex": "N-P=m\\cdot a\\Rightarrow N=m\\cdot(g+a)",
+  "lido": "N menos P é igual a m·a, o que implica que N é igual a m vezes (g + a).",
+  "duvida": null
+ },
+ "F092": {
+  "original": "F_cp = m · v² / R",
+  "tit": "Resultante centrípeta",
+  "onde": "box",
+  "tex": "F_{\\text{cp}}=\\dfrac{m\\cdot v^2}{R}",
+  "lido": "F_cp é igual a m·v² dividido por R.",
+  "duvida": null
+ },
+ "F093": {
+  "original": "x_CM = (m₁·x₁ + m₂·x₂) / (m₁ + m₂)",
+  "tit": "Centro de massa (uma dimensão)",
+  "onde": "box",
+  "tex": "x_{\\text{CM}}=\\dfrac{m_1\\cdot x_1+m_2\\cdot x_2}{m_1+m_2}",
+  "lido": "A posição do centro de massa é a soma dos produtos m₁ vezes x₁ e m₂ vezes x₂, dividida pela soma m₁ mais m₂.",
+  "duvida": null
+ },
+ "F094": {
+  "original": "W = F · d · cos θ",
+  "tit": "Trabalho de força constante",
+  "onde": "box",
+  "tex": "W=F\\cdot d\\cdot\\cos\\theta",
+  "lido": "O trabalho W é igual a F vezes d vezes o cosseno de θ.",
+  "duvida": null
+ },
+ "F095": {
+  "original": "E_c = m · v² / 2",
+  "tit": "Energia cinética",
+  "onde": "box",
+  "tex": "E_c=\\dfrac{m\\cdot v^2}{2}",
+  "lido": "A energia cinética é igual a m vezes v ao quadrado, dividido por 2.",
+  "duvida": null
+ },
+ "F096": {
+  "original": "E_pg = m · g · h ; E_pel = k · x² / 2",
+  "tit": "Energias potenciais",
+  "onde": "box",
+  "tex": "\\begin{gathered}E_{\\text{pg}}=m\\cdot g\\cdot h\\\\ E_{\\text{pel}}=\\dfrac{k\\cdot x^2}{2}\\end{gathered}",
+  "lido": "E_pg é igual a m vezes g vezes h; E_pel é igual a k vezes x ao quadrado, dividido por 2.",
+  "duvida": null
+ },
+ "F097": {
+  "original": "E_c,inicial + E_p,inicial = E_c,final + E_p,final",
+  "tit": "Conservação da energia mecânica",
+  "onde": "box",
+  "tex": "E_{c,\\text{inicial}}+E_{p,\\text{inicial}}=E_{c,\\text{final}}+E_{p,\\text{final}}",
+  "lido": "E_c inicial mais E_p inicial é igual a E_c final mais E_p final.",
+  "duvida": null
+ },
+ "F098": {
+  "original": "E_dissipada = E_M,inicial − E_M,final",
+  "tit": "Energia dissipada",
+  "onde": "box",
+  "tex": "E_{\\text{dissipada}}=E_{M,\\text{inicial}}-E_{M,\\text{final}}",
+  "lido": "A energia dissipada é igual a E_M inicial menos E_M final.",
+  "duvida": null
+ },
+ "F099": {
+  "original": "P = E / Δt (ou P = W / Δt) ; η = P_útil / P_total = E_útil / E_total",
+  "tit": "Potência e rendimento",
+  "onde": "box",
+  "tex": "\\begin{gathered}P=\\dfrac{E}{\\Delta t}\\;\\text{(ou }P=\\dfrac{W}{\\Delta t}\\text{)}\\\\ \\eta=\\dfrac{P_{\\text{útil}}}{P_{\\text{total}}}=\\dfrac{E_{\\text{útil}}}{E_{\\text{total}}}\\end{gathered}",
+  "lido": "A potência P é a energia E dividida por Δt (ou o trabalho W dividido por Δt); o rendimento η é a potência útil sobre a total, igual à energia útil sobre a total.",
+  "duvida": null
+ },
+ "F100": {
+  "original": "Q = m · v ; I = F · Δt = ΔQ",
+  "tit": "Quantidade de movimento e impulso",
+  "onde": "box",
+  "tex": "\\begin{gathered}Q=m\\cdot v\\\\ I=F\\cdot\\Delta t=\\Delta Q\\end{gathered}",
+  "lido": "Q é igual a m vezes v; I é igual a F vezes Δt, que é igual a ΔQ.",
+  "duvida": null
+ },
+ "F101": {
+  "original": "Q_total,antes = Q_total,depois ⇒ m₁·v₁ + m₂·v₂ = m₁·v₁' + m₂·v₂'",
+  "tit": "Conservação da quantidade de movimento",
+  "onde": "box",
+  "tex": "Q_{\\text{total,antes}}=Q_{\\text{total,depois}}\\Rightarrow m_1\\cdot v_1+m_2\\cdot v_2=m_1\\cdot v_1'+m_2\\cdot v_2'",
+  "lido": "Se Q total antes é igual a Q total depois, então m₁v₁ mais m₂v₂ é igual a m₁v₁' mais m₂v₂'.",
+  "duvida": null
+ },
+ "F102": {
+  "original": "d = m / V",
+  "tit": "Densidade",
+  "onde": "box",
+  "tex": "d=\\dfrac{m}{V}",
+  "lido": "A densidade d é a massa m dividida pelo volume V.",
+  "duvida": null
+ },
+ "F103": {
+  "original": "p = F / A",
+  "tit": "Pressão",
+  "onde": "box",
+  "tex": "p=\\dfrac{F}{A}",
+  "lido": "A pressão p é a força F dividida pela área A.",
+  "duvida": null
+ },
+ "F104": {
+  "original": "p = p₀ + ρ · g · h",
+  "tit": "Teorema de Stevin",
+  "onde": "box",
+  "tex": "p=p_0+\\rho\\cdot g\\cdot h",
+  "lido": "A pressão p é igual a p₀ mais ρ vezes g vezes h.",
+  "duvida": null
+ },
+ "F105": {
+  "original": "F₁ / A₁ = F₂ / A₂",
+  "tit": "Prensa hidráulica",
+  "onde": "box",
+  "tex": "\\dfrac{F_1}{A_1}=\\dfrac{F_2}{A_2}",
+  "lido": "F₁ dividido por A₁ é igual a F₂ dividido por A₂.",
+  "duvida": null
+ },
+ "F106": {
+  "original": "E = ρ_fluido · V_submerso · g",
+  "tit": "Empuxo",
+  "onde": "box",
+  "tex": "E=\\rho_{\\text{fluido}}\\cdot V_{\\text{submerso}}\\cdot g",
+  "lido": "O empuxo E é igual à densidade do fluido vezes o volume submerso vezes g.",
+  "duvida": null
+ },
+ "F107": {
+  "original": "V_submerso / V_total = d_corpo / d_fluido",
+  "tit": "Fração submersa",
+  "onde": "box",
+  "tex": "\\dfrac{V_{\\text{submerso}}}{V_{\\text{total}}}=\\dfrac{d_{\\text{corpo}}}{d_{\\text{fluido}}}",
+  "lido": "O volume submerso dividido pelo volume total é igual à densidade do corpo dividida pela densidade do fluido.",
+  "duvida": null
+ },
+ "F108": {
+  "original": "T_C / 5 = (T_F − 32) / 9 = (T_K − 273) / 5 ; T_K = T_C + 273",
+  "tit": "Conversão entre escalas",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\dfrac{T_C}{5}=\\dfrac{T_F-32}{9}=\\dfrac{T_K-273}{5}\\\\ T_K=T_C+273\\end{gathered}",
+  "lido": "T_C sobre 5 é igual a (T_F menos 32) sobre 9, que é igual a (T_K menos 273) sobre 5; além disso, T_K é igual a T_C mais 273.",
+  "duvida": null
+ },
+ "F109": {
+  "original": "Q = m · c · ΔT ; C = m · c",
+  "tit": "Calor sensível",
+  "onde": "box",
+  "tex": "\\begin{gathered}Q=m\\cdot c\\cdot\\Delta T\\\\ C=m\\cdot c\\end{gathered}",
+  "lido": "Q é igual a m vezes c vezes ΔT; C é igual a m vezes c.",
+  "duvida": null
+ },
+ "F110": {
+  "original": "Q = m · L",
+  "tit": "Calor latente",
+  "onde": "box",
+  "tex": "Q=m\\cdot L",
+  "lido": "Q é igual a m vezes L.",
+  "duvida": null
+ },
+ "F111": {
+  "original": "ΣQ = 0 ⇒ Q₁ + Q₂ + ... = 0",
+  "tit": "Trocas de calor em sistema isolado",
+  "onde": "box",
+  "tex": "\\sum Q=0\\Rightarrow Q_1+Q_2+\\cdots=0",
+  "lido": "Se a soma dos Q é zero, então Q₁ mais Q₂ e assim por diante é igual a zero.",
+  "duvida": null
+ },
+ "F112": {
+  "original": "η · P · Δt = m · c · ΔT ⇒ Δt = m · c · ΔT / (η · P)",
+  "tit": "Tempo de aquecimento",
+  "onde": "box",
+  "tex": "\\eta\\cdot P\\cdot\\Delta t=m\\cdot c\\cdot\\Delta T\\Rightarrow\\Delta t=\\dfrac{m\\cdot c\\cdot\\Delta T}{\\eta\\cdot P}",
+  "lido": "η vezes P vezes Δt é igual a m vezes c vezes ΔT; logo Δt é igual a m·c·ΔT dividido por η·P.",
+  "duvida": null
+ },
+ "F113": {
+  "original": "ΔL = L₀ · α · ΔT (superficial: β ≈ 2α; volumétrica: γ ≈ 3α)",
+  "tit": "Dilatação linear",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\Delta L=L_0\\cdot\\alpha\\cdot\\Delta T\\\\ \\text{(superficial: }\\beta\\approx 2\\alpha\\text{; volumétrica: }\\gamma\\approx 3\\alpha\\text{)}\\end{gathered}",
+  "lido": "ΔL é igual a L₀ vezes α vezes ΔT; na dilatação superficial β é aproximadamente 2α e na volumétrica γ é aproximadamente 3α.",
+  "duvida": null
+ },
+ "F114": {
+  "original": "p · V = n · R · T ; para massa fixa de gás: p₁·V₁/T₁ = p₂·V₂/T₂",
+  "tit": "Gases ideais",
+  "onde": "box",
+  "tex": "\\begin{gathered}p\\cdot V=n\\cdot R\\cdot T\\\\ \\text{para massa fixa de gás: }\\dfrac{p_1\\cdot V_1}{T_1}=\\dfrac{p_2\\cdot V_2}{T_2}\\end{gathered}",
+  "lido": "p vezes V é igual a n vezes R vezes T; para massa fixa de gás, p₁V₁ sobre T₁ é igual a p₂V₂ sobre T₂.",
+  "duvida": null
+ },
+ "F115": {
+  "original": "Q = W + ΔU ; trabalho a pressão constante: W = p · ΔV",
+  "tit": "1ª lei da termodinâmica",
+  "onde": "box",
+  "tex": "\\begin{gathered}Q=W+\\Delta U\\\\ \\text{trabalho a pressão constante: }W=p\\cdot\\Delta V\\end{gathered}",
+  "lido": "Q é igual a W mais ΔU; a pressão constante, W é igual a p vezes ΔV.",
+  "duvida": null
+ },
+ "F116": {
+  "original": "W = Q_q − Q_f ; η = W / Q_q = 1 − Q_f / Q_q ; η_Carnot = 1 − T_f / T_q (T em kelvin)",
+  "tit": "Rendimento de máquina térmica e de Carnot",
+  "onde": "box",
+  "tex": "\\begin{gathered}W=Q_q-Q_f\\\\ \\eta=\\dfrac{W}{Q_q}=1-\\dfrac{Q_f}{Q_q}\\\\ \\eta_{\\text{Carnot}}=1-\\dfrac{T_f}{T_q}\\;\\text{(T em kelvin)}\\end{gathered}",
+  "lido": "W é igual a Q_q menos Q_f; η é W sobre Q_q, igual a 1 menos Q_f sobre Q_q; η de Carnot é 1 menos T_f sobre T_q, com T em kelvin.",
+  "duvida": null
+ },
+ "F117": {
+  "original": "v = λ · f   (ou v = λ / T)",
+  "tit": "Equação fundamental da ondulatória",
+  "onde": "box",
+  "tex": "v=\\lambda\\cdot f\\;\\;\\text{(ou }v=\\dfrac{\\lambda}{T}\\text{)}",
+  "lido": "A velocidade v é igual a λ vezes f (ou a λ dividido por T).",
+  "duvida": null
+ },
+ "F118": {
+  "original": "β = 10 · log (I / I₀)",
+  "tit": "Nível sonoro",
+  "onde": "box",
+  "tex": "\\beta=10\\cdot\\log\\left(\\dfrac{I}{I_0}\\right)",
+  "lido": "β é igual a 10 vezes o logaritmo de I dividido por I₀.",
+  "duvida": null
+ },
+ "F119": {
+  "original": "T = 2π · √(L / g)",
+  "tit": "Período do pêndulo simples (pequenas oscilações)",
+  "onde": "box",
+  "tex": "T=2\\pi\\cdot\\sqrt{\\dfrac{L}{g}}",
+  "lido": "T é igual a 2π vezes a raiz quadrada de L dividido por g.",
+  "duvida": null
+ },
+ "F120": {
+  "original": "o / i = p / p'",
+  "tit": "Câmara escura",
+  "onde": "box",
+  "tex": "\\dfrac{o}{i}=\\dfrac{p}{p'}",
+  "lido": "o dividido por i é igual a p dividido por p'.",
+  "duvida": null
+ },
+ "F121": {
+  "original": "1/f = 1/p + 1/p'  e  A = i/o = −p'/p",
+  "tit": "Equação dos pontos conjugados (Gauss) e aumento",
+  "onde": "box",
+  "tex": "\\dfrac{1}{f}=\\dfrac{1}{p}+\\dfrac{1}{p'}\\quad\\text{e}\\quad A=\\dfrac{i}{o}=-\\dfrac{p'}{p}",
+  "lido": "1/f é igual a 1/p mais 1/p', e A é igual a i sobre o, que é igual a menos p' sobre p.",
+  "duvida": null
+ },
+ "F122": {
+  "original": "n = c / v  e  n₁ · sen θ₁ = n₂ · sen θ₂",
+  "tit": "Índice de refração e lei de Snell-Descartes",
+  "onde": "box",
+  "tex": "n=\\dfrac{c}{v}\\quad\\text{e}\\quad n_1\\cdot\\operatorname{sen}\\theta_1=n_2\\cdot\\operatorname{sen}\\theta_2",
+  "lido": "n é igual a c dividido por v, e n₁ vezes seno de θ₁ é igual a n₂ vezes seno de θ₂.",
+  "duvida": null
+ },
+ "F123": {
+  "original": "V = 1 / f",
+  "tit": "Vergência (grau da lente)",
+  "onde": "box",
+  "tex": "V=\\dfrac{1}{f}",
+  "lido": "V é igual a 1 dividido por f.",
+  "duvida": null
+ },
+ "F124": {
+  "original": "i = Q / Δt",
+  "tit": "Intensidade de corrente",
+  "onde": "box",
+  "tex": "i=\\dfrac{Q}{\\Delta t}",
+  "lido": "A corrente i é a carga Q dividida por Δt.",
+  "duvida": null
+ },
+ "F125": {
+  "original": "R = ρ · L / A",
+  "tit": "Segunda lei de Ohm",
+  "onde": "box",
+  "tex": "R=\\dfrac{\\rho\\cdot L}{A}",
+  "lido": "R é igual a ρ vezes L, dividido por A.",
+  "duvida": null
+ },
+ "F126": {
+  "original": "U = R · i",
+  "tit": "Primeira lei de Ohm",
+  "onde": "box",
+  "tex": "U=R\\cdot i",
+  "lido": "U é igual a R vezes i.",
+  "duvida": null
+ },
+ "F127": {
+  "original": "P = U · i = R · i² = U² / R",
+  "tit": "Potência elétrica",
+  "onde": "box",
+  "tex": "P=U\\cdot i=R\\cdot i^2=\\dfrac{U^2}{R}",
+  "lido": "P é igual a U vezes i, que é igual a R vezes i ao quadrado, que é igual a U ao quadrado dividido por R.",
+  "duvida": null
+ },
+ "F128": {
+  "original": "E = P · Δt",
+  "tit": "Energia consumida",
+  "onde": "box",
+  "tex": "E=P\\cdot\\Delta t",
+  "lido": "A energia E é igual a P vezes Δt.",
+  "duvida": null
+ },
+ "F129": {
+  "original": "Req = R₁ + R₂ + ... ; i igual em todos; U = U₁ + U₂ + ...",
+  "tit": "Série",
+  "onde": "box",
+  "tex": "\\begin{gathered}R_{\\text{eq}}=R_1+R_2+\\cdots\\\\ i\\text{ igual em todos}\\\\ U=U_1+U_2+\\cdots\\end{gathered}",
+  "lido": "R_eq é a soma R₁ mais R₂ e assim por diante; i é igual em todos; U é a soma U₁ mais U₂ e assim por diante.",
+  "duvida": null
+ },
+ "F130": {
+  "original": "1/Req = 1/R₁ + 1/R₂ + ... ; U igual em todos; i = i₁ + i₂ + ...",
+  "tit": "Paralelo",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\dfrac{1}{R_{\\text{eq}}}=\\dfrac{1}{R_1}+\\dfrac{1}{R_2}+\\cdots\\\\ U\\text{ igual em todos}\\\\ i=i_1+i_2+\\cdots\\end{gathered}",
+  "lido": "1/R_eq é a soma 1/R₁ mais 1/R₂ e assim por diante; U é igual em todos; i é a soma i₁ mais i₂ e assim por diante.",
+  "duvida": null
+ },
+ "F131": {
+  "original": "U = ε − r · i",
+  "tit": "Equação do gerador",
+  "onde": "box",
+  "tex": "U=\\varepsilon-r\\cdot i",
+  "lido": "U é igual a ε menos r vezes i.",
+  "duvida": null
+ },
+ "F132": {
+  "original": "B = μ₀ · (N / L) · i",
+  "tit": "Campo no interior de um solenoide (tópico raro no ENEM como conta)",
+  "onde": "box",
+  "tex": "B=\\mu_0\\cdot\\dfrac{N}{L}\\cdot i",
+  "lido": "B é igual a μ₀ vezes N dividido por L, vezes i.",
+  "duvida": null
+ },
+ "F133": {
+  "original": "F = B · i · L",
+  "tit": "Força magnética sobre um fio (fio perpendicular ao campo)",
+  "onde": "box",
+  "tex": "F=B\\cdot i\\cdot L",
+  "lido": "F é igual a B vezes i vezes L.",
+  "duvida": null
+ },
+ "F134": {
+  "original": "ε = −N · ΔΦ / Δt",
+  "tit": "Lei de Faraday (forma média)",
+  "onde": "box",
+  "tex": "\\varepsilon=-\\dfrac{N\\cdot\\Delta\\Phi}{\\Delta t}",
+  "lido": "ε é igual a menos N vezes ΔΦ, dividido por Δt.",
+  "duvida": null
+ },
+ "F135": {
+  "original": "U₁ / U₂ = N₁ / N₂  e  U₁ · i₁ = U₂ · i₂",
+  "tit": "Transformador ideal",
+  "onde": "box",
+  "tex": "\\dfrac{U_1}{U_2}=\\dfrac{N_1}{N_2}\\quad\\text{e}\\quad U_1\\cdot i_1=U_2\\cdot i_2",
+  "lido": "U₁ sobre U₂ é igual a N₁ sobre N₂, e U₁ vezes i₁ é igual a U₂ vezes i₂.",
+  "duvida": null
+ },
+ "F136": {
+  "original": "F = k · |Q₁| · |Q₂| / d²",
+  "tit": "Lei de Coulomb",
+  "onde": "box",
+  "tex": "F=\\dfrac{k\\cdot|Q_1|\\cdot|Q_2|}{d^2}",
+  "lido": "F é igual a k vezes o módulo de Q₁ vezes o módulo de Q₂, dividido por d ao quadrado.",
+  "duvida": null
+ },
+ "F137": {
+  "original": "C = Q / U  e  E = C · U² / 2",
+  "tit": "Capacitância e energia armazenada",
+  "onde": "box",
+  "tex": "C=\\dfrac{Q}{U}\\quad\\text{e}\\quad E=\\dfrac{C\\cdot U^2}{2}",
+  "lido": "C é igual a Q dividido por U, e E é igual a C vezes U ao quadrado, dividido por 2.",
+  "duvida": null
+ },
+ "F138": {
+  "original": "E = h · f = h · c / λ",
+  "tit": "Energia do fóton (Planck)",
+  "onde": "box",
+  "tex": "E=h\\cdot f=\\dfrac{h\\cdot c}{\\lambda}",
+  "lido": "E é igual a h vezes f, que é igual a h vezes c dividido por λ.",
+  "duvida": null
+ },
+ "F139": {
+  "original": "F = G · M · m / d²",
+  "tit": "Lei da gravitação universal",
+  "onde": "box",
+  "tex": "F=\\dfrac{G\\cdot M\\cdot m}{d^2}",
+  "lido": "F é igual a G vezes M vezes m, dividido por d ao quadrado.",
+  "duvida": null
+ },
+ "F140": {
+  "original": "A = Z + n",
+  "tit": "Número de massa",
+  "onde": "box",
+  "tex": "A=Z+n",
+  "lido": "A é igual a Z mais n.",
+  "duvida": null
+ },
+ "F141": {
+  "original": "HA ⇌ H⁺ + A⁻",
+  "tit": "Par conjugado",
+  "onde": "box",
+  "tex": "\\mathrm{HA}\\rightleftharpoons \\mathrm{H}^+ + \\mathrm{A}^-",
+  "lido": "HA está em equilíbrio com H⁺ mais A⁻.",
+  "duvida": null
+ },
+ "F142": {
+  "original": "H⁺(aq) + OH⁻(aq) → H₂O(l)",
+  "tit": "Neutralização (equação iônica essencial)",
+  "onde": "box",
+  "tex": "\\mathrm{H}^+\\mathrm{(aq)}+\\mathrm{OH}^-\\mathrm{(aq)}\\rightarrow \\mathrm{H_2O(l)}",
+  "lido": "H⁺ aquoso mais OH⁻ aquoso formam H₂O líquida.",
+  "duvida": null
+ },
+ "F143": {
+  "original": "pH = −log [H⁺] ; pOH = −log [OH⁻] ; pH + pOH = 14 (a 25 °C)",
+  "tit": "pH e pOH",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\mathrm{pH}=-\\log\\,[\\mathrm{H}^+]\\\\ \\mathrm{pOH}=-\\log\\,[\\mathrm{OH}^-]\\\\ \\mathrm{pH}+\\mathrm{pOH}=14\\;\\text{(a }25\\,^\\circ\\mathrm{C}\\text{)}\\end{gathered}",
+  "lido": "pH é o oposto do logaritmo de [H⁺], pOH é o oposto do logaritmo de [OH⁻], e pH mais pOH vale 14 a 25 °C.",
+  "duvida": null
+ },
+ "F144": {
+  "original": "n = m / M ; N = n × Nₐ",
+  "tit": "Quantidade de matéria",
+  "onde": "box",
+  "tex": "\\begin{gathered}n=\\dfrac{m}{M}\\\\ N=n\\times N_A\\end{gathered}",
+  "lido": "n é igual a m dividido por M, e N é igual a n vezes N_A.",
+  "duvida": null
+ },
+ "F145": {
+  "original": "m_pura = p × m_amostra",
+  "tit": "Massa pura",
+  "onde": "box",
+  "tex": "m_{\\text{pura}}=p\\times m_{\\text{amostra}}",
+  "lido": "A massa pura é igual a p vezes a massa da amostra.",
+  "duvida": null
+ },
+ "F146": {
+  "original": "η = (quantidade real obtida / quantidade teórica) × 100%",
+  "tit": "Rendimento",
+  "onde": "box",
+  "tex": "\\eta=\\dfrac{\\text{quantidade real obtida}}{\\text{quantidade teórica}}\\times 100\\%",
+  "lido": "O rendimento η é a quantidade real obtida dividida pela quantidade teórica, vezes 100%.",
+  "duvida": null
+ },
+ "F147": {
+  "original": "T(K) = θ(°C) + 273",
+  "tit": "Conversão de temperatura",
+  "onde": "box",
+  "tex": "T(\\mathrm{K})=\\theta(^\\circ\\mathrm{C})+273",
+  "lido": "A temperatura em kelvin é igual à temperatura θ em graus Celsius mais 273.",
+  "duvida": null
+ },
+ "F148": {
+  "original": "p × V = n × R × T",
+  "tit": "Equação geral dos gases ideais (Clapeyron)",
+  "onde": "box",
+  "tex": "p\\times V=n\\times R\\times T",
+  "lido": "p vezes V é igual a n vezes R vezes T.",
+  "duvida": null
+ },
+ "F149": {
+  "original": "C = m₁ / V",
+  "tit": "Concentração comum",
+  "onde": "box",
+  "tex": "C=\\dfrac{m_1}{V}",
+  "lido": "A concentração comum C é m₁ dividido por V.",
+  "duvida": null
+ },
+ "F150": {
+  "original": "M = n₁ / V = m₁ / (MM₁ × V)",
+  "tit": "Concentração molar (molaridade)",
+  "onde": "box",
+  "tex": "M=\\dfrac{n_1}{V}=\\dfrac{m_1}{\\mathrm{MM}_1\\times V}",
+  "lido": "A molaridade M é n₁ dividido por V, que é igual a m₁ dividido pelo produto de MM₁ por V.",
+  "duvida": null
+ },
+ "F151": {
+  "original": "C = M × MM",
+  "tit": "Relação C e M",
+  "onde": "box",
+  "tex": "C=M\\times \\mathrm{MM}",
+  "lido": "C é igual a M vezes MM.",
+  "duvida": null
+ },
+ "F152": {
+  "original": "τ = m₁ / m ; em porcentagem: % (m/m) = τ × 100",
+  "tit": "Título em massa",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\tau=\\dfrac{m_1}{m}\\\\ \\text{em porcentagem: }\\%\\,(m/m)=\\tau\\times 100\\end{gathered}",
+  "lido": "O título τ é m₁ dividido por m, e em porcentagem (m/m) é τ vezes 100.",
+  "duvida": null
+ },
+ "F153": {
+  "original": "ppm = (massa de soluto / massa da solução) × 10⁶",
+  "tit": "Partes por milhão",
+  "onde": "box",
+  "tex": "\\mathrm{ppm}=\\dfrac{\\text{massa de soluto}}{\\text{massa da solução}}\\times 10^6",
+  "lido": "ppm é a massa de soluto dividida pela massa da solução, vezes 10 elevado a 6.",
+  "duvida": null
+ },
+ "F154": {
+  "original": "C₁ × V₁ = C₂ × V₂ (vale também com mol/L: M₁V₁ = M₂V₂)",
+  "tit": "Diluição",
+  "onde": "box",
+  "tex": "C_1\\times V_1=C_2\\times V_2\\;\\text{(vale também com }\\mathrm{mol/L}\\text{: }M_1V_1=M_2V_2\\text{)}",
+  "lido": "C₁ vezes V₁ é igual a C₂ vezes V₂, e vale também M₁V₁ igual a M₂V₂ com mol/L.",
+  "duvida": null
+ },
+ "F155": {
+  "original": "C_f × V_f = C_A × V_A + C_B × V_B, com V_f = V_A + V_B",
+  "tit": "Mistura de mesmo soluto",
+  "onde": "box",
+  "tex": "C_f\\times V_f=C_A\\times V_A+C_B\\times V_B,\\ \\text{com }V_f=V_A+V_B",
+  "lido": "C_f vezes V_f é igual a C_A vezes V_A mais C_B vezes V_B, com V_f igual a V_A mais V_B.",
+  "duvida": null
+ },
+ "F156": {
+  "original": "concentração de partículas = i × M",
+  "tit": "Concentração de partículas (osmolaridade)",
+  "onde": "box",
+  "tex": "\\text{concentração de partículas}=i\\times M",
+  "lido": "A concentração de partículas é igual a i vezes M.",
+  "duvida": null
+ },
+ "F157": {
+  "original": "ΔH = H(produtos) − H(reagentes)",
+  "tit": "Variação de entalpia",
+  "onde": "box",
+  "tex": "\\Delta H=H(\\text{produtos})-H(\\text{reagentes})",
+  "lido": "A variação de entalpia ΔH é a entalpia dos produtos menos a entalpia dos reagentes.",
+  "duvida": null
+ },
+ "F158": {
+  "original": "ΔH = Σ ΔHf°(produtos) − Σ ΔHf°(reagentes)",
+  "tit": "ΔH a partir das entalpias de formação",
+  "onde": "box",
+  "tex": "\\Delta H=\\sum \\Delta H_f^\\circ(\\text{produtos})-\\sum \\Delta H_f^\\circ(\\text{reagentes})",
+  "lido": "ΔH é a soma das entalpias de formação dos produtos menos a soma das entalpias de formação dos reagentes.",
+  "duvida": null
+ },
+ "F159": {
+  "original": "ΔH(total) = ΔH₁ + ΔH₂ + ΔH₃ + ...",
+  "tit": "Lei de Hess",
+  "onde": "box",
+  "tex": "\\Delta H(\\text{total})=\\Delta H_1+\\Delta H_2+\\Delta H_3+\\cdots",
+  "lido": "O ΔH total é a soma ΔH₁ mais ΔH₂ mais ΔH₃ e assim por diante.",
+  "duvida": null
+ },
+ "F160": {
+  "original": "ΔH = Σ E(ligações quebradas nos reagentes) − Σ E(ligações formadas nos produtos)",
+  "tit": "ΔH por energias de ligação",
+  "onde": "box",
+  "tex": "\\Delta H=\\sum E(\\text{ligações quebradas nos reagentes})-\\sum E(\\text{ligações formadas nos produtos})",
+  "lido": "ΔH é a soma das energias das ligações quebradas nos reagentes menos a soma das energias das ligações formadas nos produtos.",
+  "duvida": null
+ },
+ "F161": {
+  "original": "PC(massa) = |ΔHc| / M ; PC(volume) = PC(massa) × d",
+  "tit": "Poder calorífico por massa e por volume",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\mathrm{PC}(\\text{massa})=\\dfrac{\\lvert\\Delta H_c\\rvert}{M}\\\\ \\mathrm{PC}(\\text{volume})=\\mathrm{PC}(\\text{massa})\\times d\\end{gathered}",
+  "lido": "O poder calorífico por massa é o módulo de ΔHc dividido por M, e por volume é o poder calorífico por massa vezes d.",
+  "duvida": null
+ },
+ "F162": {
+  "original": "Eₐ = E(complexo ativado) − E(reagentes)",
+  "tit": "Energia de ativação (leitura do diagrama)",
+  "onde": "box",
+  "tex": "E_a=E(\\text{complexo ativado})-E(\\text{reagentes})",
+  "lido": "A energia de ativação é a energia do complexo ativado menos a energia dos reagentes.",
+  "duvida": null
+ },
+ "F163": {
+  "original": "Kc = ([C]ᶜ · [D]ᵈ) / ([A]ᵃ · [B]ᵇ)",
+  "tit": "Constante de equilíbrio em concentração",
+  "onde": "box",
+  "tex": "K_c=\\dfrac{[C]^c\\cdot[D]^d}{[A]^a\\cdot[B]^b}",
+  "lido": "Kc é o produto de [C] elevado a c por [D] elevado a d, dividido pelo produto de [A] elevado a a por [B] elevado a b.",
+  "duvida": null
+ },
+ "F164": {
+  "original": "Kw = [H⁺] · [OH⁻] = 1,0 × 10⁻¹⁴",
+  "tit": "Produto iônico da água (25 °C)",
+  "onde": "box",
+  "tex": "K_w=[\\mathrm{H}^+]\\cdot[\\mathrm{OH}^-]=1{,}0\\times 10^{-14}",
+  "lido": "Kw é o produto de [H⁺] por [OH⁻], igual a 1,0 vezes 10 elevado a menos 14.",
+  "duvida": null
+ },
+ "F165": {
+  "original": "pH = −log[H⁺] ; pOH = −log[OH⁻] ; pH + pOH = 14 (a 25 °C)",
+  "tit": "pH e pOH",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\mathrm{pH}=-\\log[\\mathrm{H}^+]\\\\ \\mathrm{pOH}=-\\log[\\mathrm{OH}^-]\\\\ \\mathrm{pH}+\\mathrm{pOH}=14\\;\\text{(a }25\\,^\\circ\\mathrm{C}\\text{)}\\end{gathered}",
+  "lido": "pH é o oposto do logaritmo de [H⁺], pOH é o oposto do logaritmo de [OH⁻], e pH mais pOH vale 14 a 25 °C.",
+  "duvida": null
+ },
+ "F166": {
+  "original": "Kps = [Mg²⁺] · [OH⁻]² (o sólido não entra)",
+  "tit": "Produto de solubilidade",
+  "onde": "box",
+  "tex": "K_{ps}=[\\mathrm{Mg}^{2+}]\\cdot[\\mathrm{OH}^-]^2\\;\\text{(o sólido não entra)}",
+  "lido": "Kps é [Mg²⁺] vezes [OH⁻] ao quadrado, e o sólido não entra na expressão.",
+  "duvida": null
+ },
+ "F167": {
+  "original": "Σ (nº de átomos × Nox) = carga total da espécie",
+  "tit": "Soma dos números de oxidação",
+  "onde": "box",
+  "tex": "\\sum(\\text{nº de átomos}\\times\\text{Nox})=\\text{carga total da espécie}",
+  "lido": "A soma de (número de átomos vezes Nox) é igual à carga total da espécie.",
+  "duvida": null
+ },
+ "F168": {
+  "original": "ΔE° = E°(maior) − E°(menor) = E°(cátodo) − E°(ânodo)",
+  "tit": "Diferença de potencial (ddp) de uma pilha",
+  "onde": "box",
+  "tex": "\\Delta E^\\circ=E^\\circ(\\text{maior})-E^\\circ(\\text{menor})=E^\\circ(\\text{cátodo})-E^\\circ(\\text{ânodo})",
+  "lido": "ΔE° é E° maior menos E° menor, que é igual a E° do cátodo menos E° do ânodo.",
+  "duvida": null
+ },
+ "F169": {
+  "original": "Q = i · t",
+  "tit": "Carga elétrica",
+  "onde": "box",
+  "tex": "Q=i\\cdot t",
+  "lido": "Q é igual a i vezes t.",
+  "duvida": null
+ },
+ "F170": {
+  "original": "1 mol de elétrons ≈ 96 500 C (1 F)",
+  "tit": "Constante de Faraday",
+  "onde": "box",
+  "tex": "1\\ \\text{mol de elétrons}\\approx 96\\,500\\ \\mathrm{C}\\ (1\\ \\mathrm{F})",
+  "lido": "1 mol de elétrons corresponde aproximadamente a 96 500 C, ou 1 F.",
+  "duvida": null
+ },
+ "F171": {
+  "original": "emissão α: A diminui 4 e Z diminui 2 ; emissão β: A não muda e Z aumenta 1",
+  "tit": "Leis do decaimento (Soddy)",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\text{emissão }\\alpha\\text{: }A\\text{ diminui }4\\text{ e }Z\\text{ diminui }2\\\\ \\text{emissão }\\beta\\text{: }A\\text{ não muda e }Z\\text{ aumenta }1\\end{gathered}",
+  "lido": "Na emissão α, A diminui 4 e Z diminui 2; na emissão β, A não muda e Z aumenta 1.",
+  "duvida": null
+ },
+ "F172": {
+  "original": "m = m₀ / 2ⁿ, com n = t / t½",
+  "tit": "Decaimento por meias-vidas",
+  "onde": "box",
+  "tex": "m=\\dfrac{m_0}{2^n},\\ \\text{com }n=\\dfrac{t}{t_{1/2}}",
+  "lido": "m é m₀ dividido por 2 elevado a n, com n igual a t dividido por t½.",
+  "duvida": null
+ },
+ "F173": {
+  "original": "Eₙ ≈ E₁ × (0,1)ⁿ⁻¹",
+  "tit": "Energia disponível no nível n (regra prática)",
+  "onde": "box",
+  "tex": "E_n\\approx E_1\\times(0{,}1)^{n-1}",
+  "lido": "Eₙ é aproximadamente E₁ vezes 0,1 elevado a n menos 1.",
+  "duvida": null
+ },
+ "F174": {
+  "original": "PPL = PPB − R",
+  "tit": "Produtividade primária líquida",
+  "onde": "box",
+  "tex": "\\mathrm{PPL}=\\mathrm{PPB}-R",
+  "lido": "PPL é igual a PPB menos R.",
+  "duvida": null
+ },
+ "F175": {
+  "original": "FM = C(predador) / C(presa)",
+  "tit": "Fator de magnificação entre dois níveis",
+  "onde": "box",
+  "tex": "\\mathrm{FM}=\\dfrac{C(\\text{predador})}{C(\\text{presa})}",
+  "lido": "FM é C do predador dividido por C da presa.",
+  "duvida": null
+ },
+ "F176": {
+  "original": "ΔN = (N + I) − (M + E)",
+  "tit": "Variação do tamanho da população",
+  "onde": "box",
+  "tex": "\\Delta N=(N+I)-(M+E)",
+  "lido": "ΔN é igual a (N mais I) menos (M mais E).",
+  "duvida": null
+ },
+ "F177": {
+  "original": "mitose: 2n → 2n + 2n; meiose: 2n → n + n + n + n",
+  "tit": "Número de cromossomos após as divisões",
+  "onde": "box",
+  "tex": "\\begin{gathered}\\text{mitose: }2n\\rightarrow 2n+2n\\\\ \\text{meiose: }2n\\rightarrow n+n+n+n\\end{gathered}",
+  "lido": "Na mitose, 2n origina 2n mais 2n; na meiose, 2n origina n mais n mais n mais n.",
+  "duvida": null
+ },
+ "F178": {
+  "original": "ATP + H₂O ⇌ ADP + Pi + energia",
+  "tit": "Uso e recarga do ATP",
+  "onde": "box",
+  "tex": "\\mathrm{ATP}+\\mathrm{H_2O}\\rightleftharpoons \\mathrm{ADP}+\\mathrm{P_i}+\\text{energia}",
+  "lido": "ATP mais H₂O está em equilíbrio com ADP mais Pi mais energia.",
+  "duvida": null
+ },
+ "F179": {
+  "original": "C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + energia (ATP + calor)",
+  "tit": "Equação geral da respiração aeróbia",
+  "onde": "box",
+  "tex": "\\mathrm{C_6H_{12}O_6}+6\\,\\mathrm{O_2}\\rightarrow 6\\,\\mathrm{CO_2}+6\\,\\mathrm{H_2O}+\\text{energia (ATP + calor)}",
+  "lido": "C₆H₁₂O₆ mais 6 O₂ originam 6 CO₂ mais 6 H₂O mais energia (ATP e calor).",
+  "duvida": null
+ },
+ "F180": {
+  "original": "C₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂ + energia (2 ATP)",
+  "tit": "Fermentação alcoólica",
+  "onde": "box",
+  "tex": "\\mathrm{C_6H_{12}O_6}\\rightarrow 2\\,\\mathrm{C_2H_5OH}+2\\,\\mathrm{CO_2}+\\text{energia (2 ATP)}",
+  "lido": "C₆H₁₂O₆ origina 2 C₂H₅OH mais 2 CO₂ mais energia (2 ATP).",
+  "duvida": null
+ },
+ "F181": {
+  "original": "C₆H₁₂O₆ → 2 C₃H₆O₃ + energia (2 ATP)",
+  "tit": "Fermentação lática",
+  "onde": "box",
+  "tex": "\\mathrm{C_6H_{12}O_6}\\rightarrow 2\\,\\mathrm{C_3H_6O_3}+\\text{energia (2 ATP)}",
+  "lido": "C₆H₁₂O₆ origina 2 C₃H₆O₃ mais energia (2 ATP).",
+  "duvida": null
+ },
+ "F182": {
+  "original": "6 CO₂ + 12 H₂O + luz → C₆H₁₂O₆ + 6 O₂ + 6 H₂O",
+  "tit": "Equação geral da fotossíntese",
+  "onde": "box",
+  "tex": "6\\,\\mathrm{CO_2}+12\\,\\mathrm{H_2O}+\\text{luz}\\rightarrow \\mathrm{C_6H_{12}O_6}+6\\,\\mathrm{O_2}+6\\,\\mathrm{H_2O}",
+  "lido": "6 CO₂ mais 12 H₂O mais luz originam C₆H₁₂O₆ mais 6 O₂ mais 6 H₂O.",
+  "duvida": null
+ },
+ "F183": {
+  "original": "P(evento) = casos favoráveis / casos possíveis",
+  "tit": "Probabilidade de um evento",
+  "onde": "box",
+  "tex": "P(\\text{evento})=\\dfrac{\\text{casos favoráveis}}{\\text{casos possíveis}}",
+  "lido": "A probabilidade do evento é o número de casos favoráveis dividido pelo de casos possíveis.",
+  "duvida": null
+ },
+ "F184": {
+  "original": "P(A e B) = P(A) × P(B)",
+  "tit": "Regra do produto",
+  "onde": "box",
+  "tex": "P(A\\text{ e }B)=P(A)\\times P(B)",
+  "lido": "A probabilidade de A e B é igual à probabilidade de A vezes a de B.",
+  "duvida": null
+ },
+ "F185": {
+  "original": "P(A ou B) = P(A) + P(B)",
+  "tit": "Regra da soma",
+  "onde": "box",
+  "tex": "P(A\\text{ ou }B)=P(A)+P(B)",
+  "lido": "A probabilidade de A ou B é a probabilidade de A somada à probabilidade de B.",
+  "duvida": null
+ },
+ "F186": {
+  "original": "número de tipos = 2ⁿ",
+  "tit": "Número de tipos de gametas",
+  "onde": "box",
+  "tex": "\\text{número de tipos}=2^n",
+  "lido": "O número de tipos é igual a 2 elevado a n.",
+  "duvida": null
+ },
+ "F187": {
+  "original": "f = 2 / 2ⁿ = 1 / 2ⁿ⁻¹ (para n ≥ 1)",
+  "tit": "Fração de moléculas híbridas após n gerações (a partir de uma molécula totalmente marcada)",
+  "onde": "box",
+  "tex": "f=\\dfrac{2}{2^n}=\\dfrac{1}{2^{n-1}}\\;\\text{(para }n\\geq 1\\text{)}",
+  "lido": "f é igual a 2 dividido por 2 elevado a n, que é igual a 1 dividido por 2 elevado a n menos 1, para n maior ou igual a 1.",
+  "duvida": null
+ },
+ "F188": {
+  "original": "N = N₀ · 2ⁿ",
+  "tit": "Número de cópias na PCR (rendimento ideal)",
+  "onde": "box",
+  "tex": "N=N_0\\cdot 2^n",
+  "lido": "N é igual a N zero multiplicado por 2 elevado a n.",
+  "duvida": null
+ },
+ "F189": {
+  "original": "a/b = c/d ⇒ a·d = b·c",
+  "tit": "regra de três (MAT-01)",
+  "onde": "gd3",
+  "tex": "\\dfrac{a}{b}=\\dfrac{c}{d}\\Rightarrow a\\cdot d=b\\cdot c",
+  "lido": null,
+  "duvida": null
+ },
+ "F190": {
+  "original": "y/x = k (direta); x·y = k (inversa)",
+  "tit": "testar se grandezas são proporcionais (MAT-01)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}\\dfrac{y}{x}=k\\;\\text{(direta)}\\\\ x\\cdot y=k\\;\\text{(inversa)}\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F191": {
+  "original": "Valor final = Valor inicial × (1 + i)",
+  "tit": "aumento (MAT-02)",
+  "onde": "gd3",
+  "tex": "\\text{Valor final}=\\text{Valor inicial}\\times(1+i)",
+  "lido": null,
+  "duvida": null
+ },
+ "F192": {
+  "original": "Valor final = Valor inicial × (1 − i)",
+  "tit": "desconto (MAT-02)",
+  "onde": "gd3",
+  "tex": "\\text{Valor final}=\\text{Valor inicial}\\times(1-i)",
+  "lido": null,
+  "duvida": null
+ },
+ "F193": {
+  "original": "Variação % = (final − inicial) / inicial × 100%",
+  "tit": "variação percentual (MAT-02)",
+  "onde": "gd3",
+  "tex": "\\text{Variação }\\%=\\dfrac{\\text{final}-\\text{inicial}}{\\text{inicial}}\\times 100\\%",
+  "lido": null,
+  "duvida": null
+ },
+ "F194": {
+  "original": "J = C · i · t",
+  "tit": "juros simples (MAT-02)",
+  "onde": "gd3",
+  "tex": "J=C\\cdot i\\cdot t",
+  "lido": null,
+  "duvida": null
+ },
+ "F195": {
+  "original": "M = C · (1 + i)ᵗ",
+  "tit": "juros compostos (MAT-02)",
+  "onde": "gd3",
+  "tex": "M=C\\cdot(1+i)^t",
+  "lido": null,
+  "duvida": null
+ },
+ "F196": {
+  "original": "Escala E = medida no desenho / medida real",
+  "tit": "mapas e maquetes (MAT-03)",
+  "onde": "gd3",
+  "tex": "\\text{Escala }E=\\dfrac{\\text{medida no desenho}}{\\text{medida real}}",
+  "lido": null,
+  "duvida": null
+ },
+ "F197": {
+  "original": "Área real = área no desenho ÷ E²; Volume real = volume no desenho ÷ E³",
+  "tit": "escala de área e de volume (MAT-03)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}\\text{Área real}=\\text{área no desenho}\\div E^2\\\\ \\text{Volume real}=\\text{volume no desenho}\\div E^3\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F198": {
+  "original": "1 m³ = 1 000 L; 1 dm³ = 1 L; 1 cm³ = 1 mL",
+  "tit": "volume × capacidade (MAT-03)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}1\\ \\mathrm{m^3}=1\\,000\\ \\mathrm{L}\\\\ 1\\ \\mathrm{dm^3}=1\\ \\mathrm{L}\\\\ 1\\ \\mathrm{cm^3}=1\\ \\mathrm{mL}\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F199": {
+  "original": "Média = (x₁ + x₂ + … + xₙ) / n",
+  "tit": "média aritmética (MAT-04)",
+  "onde": "gd3",
+  "tex": "\\text{Média}=\\dfrac{x_1+x_2+\\cdots+x_n}{n}",
+  "lido": null,
+  "duvida": null
+ },
+ "F200": {
+  "original": "Média ponderada = Σ(xᵢ · pᵢ) / Σpᵢ",
+  "tit": "notas com peso, preço médio (MAT-04)",
+  "onde": "gd3",
+  "tex": "\\text{Média ponderada}=\\dfrac{\\sum(x_i\\cdot p_i)}{\\sum p_i}",
+  "lido": null,
+  "duvida": null
+ },
+ "F201": {
+  "original": "Desvio padrão σ = √[Σ(xᵢ − média)² / n]",
+  "tit": "regularidade (MAT-04)",
+  "onde": "gd3",
+  "tex": "\\text{Desvio padrão }\\sigma=\\sqrt{\\dfrac{\\sum(x_i-\\text{média})^2}{n}}",
+  "lido": null,
+  "duvida": null
+ },
+ "F202": {
+  "original": "P(A) = casos favoráveis / casos possíveis",
+  "tit": "probabilidade clássica (MAT-06)",
+  "onde": "gd3",
+  "tex": "P(A)=\\dfrac{\\text{casos favoráveis}}{\\text{casos possíveis}}",
+  "lido": null,
+  "duvida": null
+ },
+ "F203": {
+  "original": "P(não A) = 1 − P(A)",
+  "tit": "\"pelo menos um\" (MAT-06)",
+  "onde": "gd3",
+  "tex": "P(\\text{não }A)=1-P(A)",
+  "lido": null,
+  "duvida": null
+ },
+ "F204": {
+  "original": "P(A e B) = P(A) · P(B)",
+  "tit": "eventos sucessivos (MAT-06)",
+  "onde": "gd3",
+  "tex": "P(A\\text{ e }B)=P(A)\\cdot P(B)",
+  "lido": null,
+  "duvida": null
+ },
+ "F205": {
+  "original": "P(A ou B) = P(A) + P(B) − P(A e B)",
+  "tit": "união de eventos (MAT-06)",
+  "onde": "gd3",
+  "tex": "P(A\\text{ ou }B)=P(A)+P(B)-P(A\\text{ e }B)",
+  "lido": null,
+  "duvida": null
+ },
+ "F206": {
+  "original": "P(A dado B) = P(A e B) / P(B)",
+  "tit": "probabilidade condicional (MAT-06)",
+  "onde": "gd3",
+  "tex": "P(A\\text{ dado }B)=\\dfrac{P(A\\text{ e }B)}{P(B)}",
+  "lido": null,
+  "duvida": null
+ },
+ "F207": {
+  "original": "n! = n · (n − 1) · … · 1",
+  "tit": "permutações (MAT-07)",
+  "onde": "gd3",
+  "tex": "n!=n\\cdot(n-1)\\cdot\\cdots\\cdot 1",
+  "lido": null,
+  "duvida": null
+ },
+ "F208": {
+  "original": "sen θ = oposto/hipotenusa; cos θ = adjacente/hipotenusa; tg θ = oposto/adjacente",
+  "tit": "trigonometria (MAT-08)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}\\operatorname{sen}\\theta=\\dfrac{\\text{oposto}}{\\text{hipotenusa}}\\\\ \\cos\\theta=\\dfrac{\\text{adjacente}}{\\text{hipotenusa}}\\\\ \\operatorname{tg}\\theta=\\dfrac{\\text{oposto}}{\\text{adjacente}}\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F209": {
+  "original": "Área do retângulo = b · h; do triângulo = b · h / 2; do trapézio = (B + b) · h / 2",
+  "tit": "áreas (MAT-08)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}\\text{Área do retângulo}=b\\cdot h\\\\ \\text{do triângulo}=\\dfrac{b\\cdot h}{2}\\\\ \\text{do trapézio}=\\dfrac{(B+b)\\cdot h}{2}\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F210": {
+  "original": "Círculo: A = π · r²; C = 2 · π · r",
+  "tit": "círculo e circunferência (MAT-08)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}\\text{Círculo: }A=\\pi\\cdot r^2\\\\ C=2\\cdot\\pi\\cdot r\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F211": {
+  "original": "Setor: A = (α / 360°) · π · r²",
+  "tit": "setor circular (MAT-08)",
+  "onde": "gd3",
+  "tex": "\\text{Setor: }A=\\dfrac{\\alpha}{360^\\circ}\\cdot\\pi\\cdot r^2",
+  "lido": null,
+  "duvida": null
+ },
+ "F212": {
+  "original": "Soma dos ângulos internos = (n − 2) · 180°",
+  "tit": "polígonos (MAT-08)",
+  "onde": "gd3",
+  "tex": "\\text{Soma dos ângulos internos}=(n-2)\\cdot 180^\\circ",
+  "lido": null,
+  "duvida": null
+ },
+ "F213": {
+  "original": "V(prisma, cilindro) = Área da base · h",
+  "tit": "volumes (MAT-09)",
+  "onde": "gd3",
+  "tex": "V(\\text{prisma, cilindro})=\\text{Área da base}\\cdot h",
+  "lido": null,
+  "duvida": null
+ },
+ "F214": {
+  "original": "V(pirâmide, cone) = Área da base · h / 3",
+  "tit": "volumes (MAT-09)",
+  "onde": "gd3",
+  "tex": "V(\\text{pirâmide, cone})=\\dfrac{\\text{Área da base}\\cdot h}{3}",
+  "lido": null,
+  "duvida": null
+ },
+ "F215": {
+  "original": "V(esfera) = (4/3) · π · r³",
+  "tit": "volumes (MAT-09)",
+  "onde": "gd3",
+  "tex": "V(\\text{esfera})=\\dfrac{4}{3}\\cdot\\pi\\cdot r^3",
+  "lido": null,
+  "duvida": null
+ },
+ "F216": {
+  "original": "a = (y₂ − y₁) / (x₂ − x₁)",
+  "tit": "achar a taxa (MAT-10)",
+  "onde": "gd3",
+  "tex": "a=\\dfrac{y_2-y_1}{x_2-x_1}",
+  "lido": null,
+  "duvida": null
+ },
+ "F217": {
+  "original": "x = [−b ± √Δ] / (2a); Δ = b² − 4ac",
+  "tit": "raízes (MAT-10)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}x=\\dfrac{-b\\pm\\sqrt{\\Delta}}{2a}\\\\ \\Delta=b^2-4ac\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F218": {
+  "original": "xᵥ = −b / (2a)",
+  "tit": "máximo ou mínimo (MAT-10)",
+  "onde": "gd3",
+  "tex": "x_v=\\dfrac{-b}{2a}",
+  "lido": null,
+  "duvida": null
+ },
+ "F219": {
+  "original": "f(t) = a · bᵗ",
+  "tit": "exponencial (MAT-11)",
+  "onde": "gd3",
+  "tex": "f(t)=a\\cdot b^t",
+  "lido": null,
+  "duvida": null
+ },
+ "F220": {
+  "original": "m = m₀ · (1/2)^(t/T)",
+  "tit": "decaimento (MAT-11)",
+  "onde": "gd3",
+  "tex": "m=m_0\\cdot\\left(\\dfrac{1}{2}\\right)^{t/T}",
+  "lido": null,
+  "duvida": null
+ },
+ "F221": {
+  "original": "f(t) = A + B · cos(C·t + D): máx = A + |B|; mín = A − |B|; período = 2π / |C|",
+  "tit": "funções periódicas (MAT-12)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}f(t)=A+B\\cdot\\cos(C\\cdot t+D):\\\\ \\text{máx}=A+|B|\\\\ \\text{mín}=A-|B|\\\\ \\text{período}=\\dfrac{2\\pi}{|C|}\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F222": {
+  "original": "PA: aₙ = a₁ + (n − 1) · r; Sₙ = (a₁ + aₙ) · n / 2",
+  "tit": "progressão aritmética (MAT-13)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}\\text{PA: }a_n=a_1+(n-1)\\cdot r\\\\ S_n=\\dfrac{(a_1+a_n)\\cdot n}{2}\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F223": {
+  "original": "PG: aₙ = a₁ · qⁿ⁻¹",
+  "tit": "progressão geométrica (MAT-13)",
+  "onde": "gd3",
+  "tex": "\\text{PG: }a_n=a_1\\cdot q^{n-1}",
+  "lido": null,
+  "duvida": null
+ },
+ "F224": {
+  "original": "1 m/s = 3,6 km/h",
+  "tit": "conversão (FIS-01)",
+  "onde": "gd3",
+  "tex": "1\\ \\mathrm{m/s}=3{,}6\\ \\mathrm{km/h}",
+  "lido": null,
+  "duvida": null
+ },
+ "F225": {
+  "original": "v = v₀ + a·t",
+  "tit": "MRUV (FIS-01)",
+  "onde": "gd3",
+  "tex": "v=v_0+a\\cdot t",
+  "lido": null,
+  "duvida": null
+ },
+ "F226": {
+  "original": "s = s₀ + v₀·t + a·t²/2",
+  "tit": "MRUV (FIS-01)",
+  "onde": "gd3",
+  "tex": "s=s_0+v_0\\cdot t+\\dfrac{a\\cdot t^2}{2}",
+  "lido": null,
+  "duvida": null
+ },
+ "F227": {
+  "original": "v² = v₀² + 2·a·Δs",
+  "tit": "Torricelli (FIS-01)",
+  "onde": "gd3",
+  "tex": "v^2=v_0^2+2\\cdot a\\cdot\\Delta s",
+  "lido": null,
+  "duvida": null
+ },
+ "F228": {
+  "original": "v = ω · R; f = 1/T",
+  "tit": "MCU e polias (FIS-01)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}v=\\omega\\cdot R\\\\ f=\\dfrac{1}{T}\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F229": {
+  "original": "f_at = μ · N",
+  "tit": "atrito (FIS-02)",
+  "onde": "gd3",
+  "tex": "f_{\\text{at}}=\\mu\\cdot N",
+  "lido": null,
+  "duvida": null
+ },
+ "F230": {
+  "original": "Componentes no plano inclinado: P·sen θ (ao longo) e P·cos θ (perpendicular)",
+  "tit": "plano inclinado (FIS-02)",
+  "onde": "gd3",
+  "tex": "\\text{Componentes no plano inclinado: }P\\cdot\\operatorname{sen}\\theta\\;\\text{(ao longo) e }P\\cdot\\cos\\theta\\;\\text{(perpendicular)}",
+  "lido": null,
+  "duvida": null
+ },
+ "F231": {
+  "original": "E_p = m · g · h",
+  "tit": "energia potencial gravitacional (FIS-03)",
+  "onde": "gd3",
+  "tex": "E_p=m\\cdot g\\cdot h",
+  "lido": null,
+  "duvida": null
+ },
+ "F232": {
+  "original": "E_el = k · x² / 2",
+  "tit": "energia elástica (FIS-03)",
+  "onde": "gd3",
+  "tex": "E_{\\text{el}}=\\dfrac{k\\cdot x^2}{2}",
+  "lido": null,
+  "duvida": null
+ },
+ "F233": {
+  "original": "P = E / Δt",
+  "tit": "potência (FIS-03)",
+  "onde": "gd3",
+  "tex": "P=\\dfrac{E}{\\Delta t}",
+  "lido": null,
+  "duvida": null
+ },
+ "F234": {
+  "original": "η = P_útil / P_total",
+  "tit": "rendimento (FIS-03)",
+  "onde": "gd3",
+  "tex": "\\eta=\\dfrac{P_{\\text{útil}}}{P_{\\text{total}}}",
+  "lido": null,
+  "duvida": null
+ },
+ "F235": {
+  "original": "Q = m · v; I = F · Δt = ΔQ",
+  "tit": "colisões, airbag (FIS-03)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}Q=m\\cdot v\\\\ I=F\\cdot\\Delta t=\\Delta Q\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F236": {
+  "original": "ρ = m / V",
+  "tit": "densidade (FIS-04)",
+  "onde": "gd3",
+  "tex": "\\rho=\\dfrac{m}{V}",
+  "lido": null,
+  "duvida": null
+ },
+ "F237": {
+  "original": "E = ρ_líquido · V_submerso · g",
+  "tit": "Arquimedes (FIS-04)",
+  "onde": "gd3",
+  "tex": "E=\\rho_{\\text{líquido}}\\cdot V_{\\text{submerso}}\\cdot g",
+  "lido": null,
+  "duvida": null
+ },
+ "F238": {
+  "original": "T_K = T_C + 273; T_F = 1,8 · T_C + 32",
+  "tit": "escalas termométricas (FIS-05)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}T_K=T_C+273\\\\ T_F=1{,}8\\cdot T_C+32\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F239": {
+  "original": "Q = m · c · ΔT",
+  "tit": "calor sensível (FIS-05)",
+  "onde": "gd3",
+  "tex": "Q=m\\cdot c\\cdot\\Delta T",
+  "lido": null,
+  "duvida": null
+ },
+ "F240": {
+  "original": "ΔL = L₀ · α · ΔT",
+  "tit": "dilatação (FIS-05)",
+  "onde": "gd3",
+  "tex": "\\Delta L=L_0\\cdot\\alpha\\cdot\\Delta T",
+  "lido": null,
+  "duvida": null
+ },
+ "F241": {
+  "original": "p · V / T = constante",
+  "tit": "gases ideais (FIS-05)",
+  "onde": "gd3",
+  "tex": "\\dfrac{p\\cdot V}{T}=\\text{constante}",
+  "lido": null,
+  "duvida": null
+ },
+ "F242": {
+  "original": "Q = W + ΔU",
+  "tit": "1ª lei da termodinâmica (FIS-05)",
+  "onde": "gd3",
+  "tex": "Q=W+\\Delta U",
+  "lido": null,
+  "duvida": null
+ },
+ "F243": {
+  "original": "η_Carnot = 1 − T_fria / T_quente",
+  "tit": "máquina ideal (FIS-05)",
+  "onde": "gd3",
+  "tex": "\\eta_{\\text{Carnot}}=1-\\dfrac{T_{\\text{fria}}}{T_{\\text{quente}}}",
+  "lido": null,
+  "duvida": null
+ },
+ "F244": {
+  "original": "v = λ · f",
+  "tit": "ondas (FIS-06)",
+  "onde": "gd3",
+  "tex": "v=\\lambda\\cdot f",
+  "lido": null,
+  "duvida": null
+ },
+ "F245": {
+  "original": "n = c / v; n₁ · sen θ₁ = n₂ · sen θ₂",
+  "tit": "refração, Snell (FIS-07)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}n=\\dfrac{c}{v}\\\\ n_1\\cdot\\operatorname{sen}\\theta_1=n_2\\cdot\\operatorname{sen}\\theta_2\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F246": {
+  "original": "E = P · Δt (em kWh: kW × h)",
+  "tit": "consumo e conta de luz (FIS-08)",
+  "onde": "gd3",
+  "tex": "E=P\\cdot\\Delta t\\;\\text{(em }\\mathrm{kWh}\\text{: }\\mathrm{kW}\\times\\mathrm{h}\\text{)}",
+  "lido": null,
+  "duvida": null
+ },
+ "F247": {
+  "original": "Série: R_eq = R₁ + R₂ + …; Paralelo: 1/R_eq = 1/R₁ + 1/R₂ + …",
+  "tit": "associação de resistores (FIS-08)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}\\text{Série: }R_{\\text{eq}}=R_1+R_2+\\cdots\\\\ \\text{Paralelo: }\\dfrac{1}{R_{\\text{eq}}}=\\dfrac{1}{R_1}+\\dfrac{1}{R_2}+\\cdots\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F248": {
+  "original": "U₁ / U₂ = N₁ / N₂",
+  "tit": "transformador (FIS-09)",
+  "onde": "gd3",
+  "tex": "\\dfrac{U_1}{U_2}=\\dfrac{N_1}{N_2}",
+  "lido": null,
+  "duvida": null
+ },
+ "F249": {
+  "original": "F = k · |q₁ · q₂| / d²",
+  "tit": "lei de Coulomb (FIS-10)",
+  "onde": "gd3",
+  "tex": "F=\\dfrac{k\\cdot|q_1\\cdot q_2|}{d^2}",
+  "lido": null,
+  "duvida": null
+ },
+ "F250": {
+  "original": "E = h · f",
+  "tit": "energia do fóton (FIS-11)",
+  "onde": "gd3",
+  "tex": "E=h\\cdot f",
+  "lido": null,
+  "duvida": null
+ },
+ "F251": {
+  "original": "n = m / M",
+  "tit": "conversão massa ↔ mol (QUI-04)",
+  "onde": "gd3",
+  "tex": "n=\\dfrac{m}{M}",
+  "lido": null,
+  "duvida": null
+ },
+ "F252": {
+  "original": "1 mol ≈ 6,0 × 10²³ entidades",
+  "tit": "número de partículas (QUI-04)",
+  "onde": "gd3",
+  "tex": "1\\ \\text{mol}\\approx 6{,}0\\times 10^{23}\\ \\text{entidades}",
+  "lido": null,
+  "duvida": null
+ },
+ "F253": {
+  "original": "p · V = n · R · T",
+  "tit": "gases (QUI-04)",
+  "onde": "gd3",
+  "tex": "p\\cdot V=n\\cdot R\\cdot T",
+  "lido": null,
+  "duvida": null
+ },
+ "F254": {
+  "original": "Volume molar nas CNTP ≈ 22,4 L/mol",
+  "tit": "gases (QUI-04)",
+  "onde": "gd3",
+  "tex": "\\text{Volume molar nas CNTP}\\approx 22{,}4\\ \\mathrm{L/mol}",
+  "lido": null,
+  "duvida": null
+ },
+ "F255": {
+  "original": "Massa real = massa teórica × rendimento; massa pura = massa total × pureza",
+  "tit": "estequiometria (QUI-04)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}\\text{Massa real}=\\text{massa teórica}\\times\\text{rendimento}\\\\ \\text{massa pura}=\\text{massa total}\\times\\text{pureza}\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F256": {
+  "original": "C = m_soluto / V_solução",
+  "tit": "soluções (QUI-05)",
+  "onde": "gd3",
+  "tex": "C=\\dfrac{m_{\\text{soluto}}}{V_{\\text{solução}}}",
+  "lido": null,
+  "duvida": null
+ },
+ "F257": {
+  "original": "Concentração molar = n_soluto / V_solução",
+  "tit": "soluções (QUI-05)",
+  "onde": "gd3",
+  "tex": "\\text{Concentração molar}=\\dfrac{n_{\\text{soluto}}}{V_{\\text{solução}}}",
+  "lido": null,
+  "duvida": null
+ },
+ "F258": {
+  "original": "C₁ · V₁ = C₂ · V₂",
+  "tit": "diluição (QUI-05)",
+  "onde": "gd3",
+  "tex": "C_1\\cdot V_1=C_2\\cdot V_2",
+  "lido": null,
+  "duvida": null
+ },
+ "F259": {
+  "original": "ppm = partes por milhão (≈ mg/L em água)",
+  "tit": "poluentes, flúor (QUI-05)",
+  "onde": "gd3",
+  "tex": "\\text{ppm}=\\text{partes por milhão}\\;(\\approx\\mathrm{mg/L}\\text{ em água})",
+  "lido": null,
+  "duvida": null
+ },
+ "F260": {
+  "original": "ΔH = H_produtos − H_reagentes",
+  "tit": "termoquímica (QUI-06)",
+  "onde": "gd3",
+  "tex": "\\Delta H=H_{\\text{produtos}}-H_{\\text{reagentes}}",
+  "lido": null,
+  "duvida": null
+ },
+ "F261": {
+  "original": "ΔH ≈ Σ(energia das ligações quebradas) − Σ(energia das ligações formadas)",
+  "tit": "energia de ligação (QUI-06)",
+  "onde": "gd3",
+  "tex": "\\Delta H\\approx\\sum(\\text{energia das ligações quebradas})-\\sum(\\text{energia das ligações formadas})",
+  "lido": null,
+  "duvida": null
+ },
+ "F262": {
+  "original": "K_c = [produtos]^coef / [reagentes]^coef",
+  "tit": "equilíbrio (QUI-07)",
+  "onde": "gd3",
+  "tex": "K_c=\\dfrac{[\\text{produtos}]^{\\text{coef}}}{[\\text{reagentes}]^{\\text{coef}}}",
+  "lido": null,
+  "duvida": null
+ },
+ "F263": {
+  "original": "pH = −log [H⁺]; pH + pOH = 14 (a 25 °C)",
+  "tit": "acidez (QUI-03)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}\\mathrm{pH}=-\\log[\\mathrm{H}^+]\\\\ \\mathrm{pH}+\\mathrm{pOH}=14\\;\\text{(a }25\\,^\\circ\\mathrm{C}\\text{)}\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F264": {
+  "original": "ddp = E°_maior − E°_menor",
+  "tit": "pilhas (QUI-08)",
+  "onde": "gd3",
+  "tex": "\\text{ddp}=E^\\circ_{\\text{maior}}-E^\\circ_{\\text{menor}}",
+  "lido": null,
+  "duvida": null
+ },
+ "F265": {
+  "original": "Q = i · t; 1 mol de elétrons ≈ 96 500 C",
+  "tit": "eletrólise (QUI-08)",
+  "onde": "gd3",
+  "tex": "\\begin{gathered}Q=i\\cdot t\\\\ 1\\ \\text{mol de elétrons}\\approx 96\\,500\\ \\mathrm{C}\\end{gathered}",
+  "lido": null,
+  "duvida": null
+ },
+ "F266": {
+  "original": "Grandeza",
+  "tit": "",
+  "onde": "gd3",
+  "tex": null,
+  "lido": null,
+  "duvida": "Rótulo/texto da tabela de constantes, sem equação (o valor está em 'simbolos')."
+ },
+ "F267": {
+  "original": "Aceleração da gravidade",
+  "tit": "",
+  "onde": "gd3",
+  "tex": null,
+  "lido": null,
+  "duvida": "Rótulo/texto da tabela de constantes, sem equação (o valor está em 'simbolos')."
+ },
+ "F268": {
+  "original": "Velocidade da luz no vácuo",
+  "tit": "",
+  "onde": "gd3",
+  "tex": null,
+  "lido": null,
+  "duvida": "Rótulo/texto da tabela de constantes, sem equação (o valor está em 'simbolos')."
+ },
+ "F269": {
+  "original": "Velocidade do som no ar",
+  "tit": "",
+  "onde": "gd3",
+  "tex": null,
+  "lido": null,
+  "duvida": "Rótulo/texto da tabela de constantes, sem equação (o valor está em 'simbolos')."
+ },
+ "F270": {
+  "original": "Caloria",
+  "tit": "",
+  "onde": "gd3",
+  "tex": null,
+  "lido": null,
+  "duvida": "Rótulo/texto da tabela de constantes, sem equação (o valor está em 'simbolos')."
+ },
+ "F271": {
+  "original": "Calor específico da água",
+  "tit": "",
+  "onde": "gd3",
+  "tex": null,
+  "lido": null,
+  "duvida": "Rótulo/texto da tabela de constantes, sem equação (o valor está em 'simbolos')."
+ },
+ "F272": {
+  "original": "Densidade da água",
+  "tit": "",
+  "onde": "gd3",
+  "tex": null,
+  "lido": null,
+  "duvida": "Rótulo/texto da tabela de constantes, sem equação (o valor está em 'simbolos')."
+ },
+ "F273": {
+  "original": "Constante dos gases",
+  "tit": "",
+  "onde": "gd3",
+  "tex": null,
+  "lido": null,
+  "duvida": "Rótulo/texto da tabela de constantes, sem equação (o valor está em 'simbolos')."
+ },
+ "F274": {
+  "original": "Constante de Avogadro",
+  "tit": "",
+  "onde": "gd3",
+  "tex": null,
+  "lido": null,
+  "duvida": "Rótulo/texto da tabela de constantes, sem equação (o valor está em 'simbolos')."
+ },
+ "F275": {
+  "original": "Massas molares (g/mol)",
+  "tit": "",
+  "onde": "gd3",
+  "tex": null,
+  "lido": null,
+  "duvida": "Rótulo/texto da tabela de constantes, sem equação (o valor está em 'simbolos')."
+ }
+}
